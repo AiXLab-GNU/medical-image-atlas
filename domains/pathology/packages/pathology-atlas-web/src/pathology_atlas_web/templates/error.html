@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class="page-heading"><p class="eyebrow">{{ code }}</p><h1>{{ '페이지를 찾을 수 없습니다' if code == 404 else '이미지를 준비하지 못했습니다' }}</h1><p class="lead">{{ '메뉴에서 원하는 페이지를 선택해 주세요.' if code == 404 else '영상 파일의 제공 상태를 확인해야 합니다.' }}</p><p><a class="button" href="/">홈으로</a></p></section>{% endblock %}

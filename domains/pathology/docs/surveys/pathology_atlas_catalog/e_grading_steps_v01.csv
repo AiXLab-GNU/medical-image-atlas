@@ -1,0 +1,17 @@
+step_id,scheme_id,step_order,grade_ko,logic,criteria_ko,finding_ids,note_ko
+st_gleason_patterns_1,gs_gleason_patterns,1,패턴 5,any,고형 판 | 끈 · 단일 세포 | 면포 괴사,les_gleason_pattern_5;les_solid_sheets;les_comedonecrosis,
+st_gleason_patterns_2,gs_gleason_patterns,2,패턴 4,any,잘 형성되지 않은 샘 | 융합 샘 | 사상 샘 | 사구체 모양 샘,les_gleason_pattern_4;les_poorly_formed_glands;les_fused_glands;les_cribriform;les_glomeruloid,
+st_gleason_patterns_3,gs_gleason_patterns,3,패턴 3,single,따로 떨어진 잘 형성된 샘(크기 다양),les_gleason_pattern_3;ft_gland_area;ft_gland_circularity,
+st_isup_grade_group_1,gs_isup_grade_group,1,등급군 5,single,글리슨 점수 9–10,ft_gleason_score;les_gleason_pattern_5,
+st_isup_grade_group_2,gs_isup_grade_group,2,등급군 4,single,글리슨 점수 8(4+4 · 3+5 · 5+3),ft_gleason_score,
+st_isup_grade_group_3,gs_isup_grade_group,3,등급군 3,single,글리슨 점수 4+3=7,ft_gleason_score;ft_pattern4_percent,패턴 4 비율 보고
+st_isup_grade_group_4,gs_isup_grade_group,4,등급군 2,single,글리슨 점수 3+4=7,ft_gleason_score;ft_pattern4_percent,패턴 4 비율 보고
+st_isup_grade_group_5,gs_isup_grade_group,5,등급군 1,single,글리슨 점수 6 이하,ft_gleason_score;les_gleason_pattern_3,
+st_pt_stage_1,gs_pt_stage,1,pT4,single,외괄약근·직장·방광·골반벽 등 주변 구조 침범,,
+st_pt_stage_2,gs_pt_stage,2,pT3b,single,정낭 침범,les_seminal_vesicle_invasion,
+st_pt_stage_3,gs_pt_stage,3,pT3a,any,피막 밖 침범 | 방광경부 현미경 침범,les_extraprostatic_extension;ft_epe_presence,
+st_pt_stage_4,gs_pt_stage,4,pT2,single,전립선 안에 국한,ft_tumor_extent,
+st_idc_criteria_1,gs_idc_criteria,1,관내암,any,고형 또는 조밀 사상 | 느슨한 사상·미세유두 + 핵이 정상의 6배 이상 | 면포 괴사,les_intraductal_carcinoma;les_comedonecrosis;ft_basal_cell_presence;ft_idc_presence,
+st_idc_criteria_2,gs_idc_criteria,2,비정형 관내 증식,single,관내 비정형 증식이나 위 기준 미달,les_atypical_intraductal_proliferation,
+st_benign_vs_malignant_1,gs_benign_vs_malignant,1,침윤암을 지지,any,기저세포 소실 | 뚜렷한 핵소체 | 신경주위 침범 | 작은 둥근 샘의 침윤 | AMACR 양성,ft_basal_cell_presence;ft_nucleolus_prominence;les_perineural_invasion;ft_gland_circularity;ft_amacr_positivity,
+st_benign_vs_malignant_2,gs_benign_vs_malignant,2,양성(모방 병변)을 지지,any,기저세포 유지 | 위축·부분 위축 | 선증 · 유리체,les_atrophy;les_partial_atrophy;les_adenosis;ana_corpora_amylacea,

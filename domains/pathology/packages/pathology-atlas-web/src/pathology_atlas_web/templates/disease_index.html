@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% macro disease_card(d, s) -%}
+<a class="disease-card" href="/diseases/{{ d.slug }}/">
+  <span class="lc-top"><span class="item-name">{{ d.name }}</span>{% if d.abbr %}<span class="abbr">{{ d.abbr }}</span>{% endif %}</span>
+  <span class="item-en">{{ d.name_en }}</span>
+  {% if d.children %}<span class="disease-children">{% for cid in d.children %}<span>{{ diseases[cid].name }}</span>{% endfor %}</span>{% endif %}
+  {% if s.schemes %}<span class="dc-label">판정 체계</span><span class="dc-schemes">{% for g in s.schemes %}<span class="dc-scheme"><span class="dc-kind k-{{ g.kind }}">{{ {'staging': '단계', 'typing': '유형', 'diagnostic': '진단', 'representative': '대표'}[g.kind] }}</span><span class="dc-sname">{{ g.name }}{% if g.owner.id != d.id %} <small>· {{ g.owner.abbr or g.owner.name }}</small>{% endif %}</span><span class="dc-steps">{% if g.kind == 'staging' or g.kind == 'typing' %}{{ g.steps|length }}{{ '단계' if g.kind == 'staging' else '유형' }}{% endif %}{% if g.review == 'needs_source' %}<span class="dc-ns" title="근거 필요">근거 필요</span>{% endif %}</span></span>{% endfor %}</span>{% endif %}
+  {% if s.findings %}<span class="dc-label">주요 소견</span><span class="dc-findings">{{ s.findings|join(' · ') }}{% if s.more %} 외 {{ s.more }}{% endif %}</span>{% endif %}
+  <span class="lc-foot">{% for key,label in s.modalities %}<span class="obs-chip">{{ label }}</span>{% endfor %}</span>
+</a>
+{%- endmacro %}
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>질병 목록</span></div>
+<header class="map-hero"><div><h1>질병 목록</h1><p class="lead">질병마다 <strong>판정 체계</strong>(단계·유형·진단 기준)와 판단에 쓰는 소견을 묶고, <strong>어디에서</strong>, <strong>어떤 영상으로</strong>, <strong>무엇을 측정해</strong> 보는지 연결했습니다.</p></div></header>
+<nav class="axis-tabs" aria-label="질환 묶음">{% for c in clusters %}<a class="cat" href="#cl-{{ c.key }}">{{ c.label }}<small>{{ c.members|length }}</small></a>{% endfor %}</nav>
+{% for c in clusters %}
+<section class="map-section" id="cl-{{ c.key }}">
+  <header class="map-section-head"><span class="axis-num big">{{ loop.index }}</span><div><h2>{{ c.label }}</h2></div></header>
+  <div class="lesion-grid wide">{% for d, s in c.members %}{{ disease_card(d, s) }}{% endfor %}</div>
+</section>
+{% endfor %}
+<p class="draft-note">진단 규칙은 분류 체계와 판본에 따라 다릅니다. 이 목록은 영상 소견과 측정의 연결을 보여주는 참고 자료이며 진단 도구가 아닙니다.</p>
+{% endblock %}

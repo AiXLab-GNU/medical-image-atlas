@@ -1,0 +1,35 @@
+example_id,layer_key,label,tone,function,file,how
+ex_he_core,tissue,조직 면적,blue,tissue.tissue_area,ex_he_core_tissue.png,채도·밝기로 유리 배경을 빼고 구멍을 채운 조직 범위
+ex_he_core,composition,조직 구성 비율,green,tissue.tumor_fraction,ex_he_core_composition.png,조직 면적을 분모로 한 주석 class별 면적 비율
+ex_he_core,tumor,종양 면적·최대 길이·초점 수,red,tissue.tumor_area,ex_he_core_tumor.png,"종양 주석의 면적, 가장 먼 두 종양 화소 사이 거리, 100 µm 안의 조각을 합친 뒤 0.005 mm² 이상인 초점 수"
+ex_he_core,grade,글리슨 점수·등급군(판독),white,,ex_he_core_grade.png,공급자 임상표의 판정
+ex_he_benign,lesion,양성 샘 범위,green,tissue.lesion_area,ex_he_benign_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_benign,glands,샘 개수·크기·모양,green,glands.mean_area,ex_he_benign_glands.png,주석 샘 성분별 면적·원형도와 조직 면적당 개수
+ex_he_benign,lumen,내강 비율·샘당 내강 수,cyan,glands.lumen_fraction,ex_he_benign_lumen.png,"샘 안의 밝고 채도 낮은 닫힌 공간(40 µm² 이상, 슬라이드 바깥 유리와 이어진 곳 제외)을 내강으로 봄"
+ex_he_benign,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_benign_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
+ex_he_benign,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_benign_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
+ex_he_tumor,lesion,종양 범위,red,tissue.lesion_area,ex_he_tumor_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_tumor,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_tumor_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
+ex_he_tumor,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_tumor_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
+ex_he_hgpin,lesion,HGPIN 범위,orange,tissue.lesion_area,ex_he_hgpin_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_hgpin,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_hgpin_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
+ex_he_hgpin,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_hgpin_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
+ex_he_hgpin,read,판독,white,,ex_he_hgpin_read.png,공급자 주석 class를 판독 값으로 옮김
+ex_he_idc,lesion,관내암 범위,magenta,tissue.lesion_area,ex_he_idc_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_idc,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_idc_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
+ex_he_idc,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_idc_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
+ex_he_idc,read,판독,white,,ex_he_idc_read.png,공급자 주석 class를 판독 값으로 옮김
+ex_he_aip,lesion,비정형 관내 증식 범위,yellow,tissue.lesion_area,ex_he_aip_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_gp3,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp3_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
+ex_he_gp3,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp3_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_gp3,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp3_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
+ex_he_gp4,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp4_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
+ex_he_gp4,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp4_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_gp4,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp4_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
+ex_he_gp4,read,사상 패턴(판독),white,,ex_he_gp4_read.png,SICAPv2 사상 패턴 표(G4C)
+ex_he_cribriform,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_cribriform_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
+ex_he_cribriform,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_cribriform_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_cribriform,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_cribriform_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
+ex_he_cribriform,read,사상 패턴(판독),white,,ex_he_cribriform_read.png,SICAPv2 사상 패턴 표(G4C)
+ex_he_gp5,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp5_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
+ex_he_gp5,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp5_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)

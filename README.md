@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | 망막(`domains/retinal/`) | 운영 v01 — 측정 160개, 영상 종류 8가지 모두 예시, 웹 8877 | [영역 README](domains/retinal/README.md) |
 | 유방촬영(`domains/mammography/`) | v01 — 측정 61개(함수 40), 예시 16장(FFDM·DBT·CEM), 웹 8879 | [영역 README](domains/mammography/README.md) |
-| 병리(pathology) | 예정 | — |
+| 병리(`domains/pathology/`, 전립선) | v01 — 측정 32개(함수 25), PRECISE·SICAPv2 예시 10장, IHC 영상 준비 중, 웹 8881 | [영역 README](domains/pathology/README.md) |
 
 ## 구조
 
@@ -30,6 +30,7 @@ medical-image-atlas/
 uv sync                                          # 생성 코드 환경(.venv)
 cd domains/retinal/packages/retinal-atlas-web && uv sync && .venv/bin/python -B -m retinal_atlas_web --port 8877
 cd domains/mammography/packages/mammography-atlas-web && uv venv .venv && uv pip install --python .venv/bin/python -e . && .venv/bin/python -B -m mammography_atlas_web --port 8879
+cd domains/pathology/packages/pathology-atlas-web && uv venv .venv && uv pip install --python .venv/bin/python -e . && .venv/bin/python -B -m pathology_atlas_web --port 8881
 ```
 
-전체 재구축과 항목을 늘리는 방법은 영역의 재구축 절차서(망막: `domains/retinal/docs/protocols/50_retinal_atlas_rebuild_runbook_v01_ko.md`, 유방촬영: `domains/mammography/docs/protocols/50_mammography_atlas_rebuild_runbook_v01_ko.md`)를 따른다.
+전체 재구축과 항목을 늘리는 방법은 영역의 재구축 절차서(망막: `domains/retinal/docs/protocols/50_retinal_atlas_rebuild_runbook_v01_ko.md`, 유방촬영: `domains/mammography/docs/protocols/50_mammography_atlas_rebuild_runbook_v01_ko.md`, 병리: `domains/pathology/docs/protocols/50_pathology_atlas_rebuild_runbook_v01_ko.md`)를 따른다.

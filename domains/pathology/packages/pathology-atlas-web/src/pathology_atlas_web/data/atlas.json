@@ -1,0 +1,5734 @@
+{
+ "diseases": {
+  "dis_adenosis": {
+   "abbr": "AAH",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_adenosis",
+   "name": "선증(비정형 선종성 과형성)",
+   "name_en": "Adenosis",
+   "note": "이행대의 작은 샘 결절 · 암 모방",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "이행대의 작은 샘 결절 · 기저세포 조각",
+     "finding": "les_adenosis",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "scope": "representative",
+   "slug": "adenosis"
+  },
+  "dis_asap": {
+   "abbr": "ASAP",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_asap",
+   "name": "비정형 소선방 증식",
+   "name_en": "Atypical small acinar proliferation",
+   "note": "암이 의심되나 확진하기에 부족한 작은 샘 무리(진단 범주)",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "암 같은 작은 샘이 소수 있으나 확진 기준에 못 미침",
+     "finding": "les_gleason_pattern_3",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "scope": "representative",
+   "slug": "asap"
+  },
+  "dis_atrophy_benign": {
+   "abbr": "",
+   "children": [],
+   "classification_sources": [
+    "src_wang_2008"
+   ],
+   "grading": [],
+   "id": "dis_atrophy_benign",
+   "name": "위축(양성)",
+   "name_en": "Prostatic atrophy",
+   "note": "암을 모방하는 대표 양성 병변",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "세포질이 줄어든 양성 샘 · 기저세포 유지",
+     "finding": "les_atrophy",
+     "review": "source_linked",
+     "sources": [
+      "src_wang_2008"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    },
+    {
+     "condition": "부분 위축은 암을 모방",
+     "finding": "les_partial_atrophy",
+     "review": "source_linked",
+     "sources": [
+      "src_wang_2008",
+      "src_oppenheimer_1998"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "scope": "representative",
+   "slug": "atrophy-benign"
+  },
+  "dis_bph": {
+   "abbr": "BPH",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_bph",
+   "name": "양성 전립선비대증",
+   "name_en": "Benign prostatic hyperplasia",
+   "note": "이행대의 샘·간질 결절성 증식",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "이행대의 샘·간질 결절",
+     "finding": "les_nodular_hyperplasia",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "WHO 2022"
+    }
+   ],
+   "scope": "primary",
+   "slug": "bph"
+  },
+  "dis_ductal_adenocarcinoma": {
+   "abbr": "",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_ductal_adenocarcinoma",
+   "name": "관 선암",
+   "name_en": "Ductal adenocarcinoma",
+   "note": "키 큰 원주 세포의 유두·사상 구조 · 글리슨 4로 매김",
+   "parent": "dis_prostate_adenocarcinoma",
+   "relations": [],
+   "scope": "representative",
+   "slug": "ductal-adenocarcinoma"
+  },
+  "dis_hgpin": {
+   "abbr": "HGPIN",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_hgpin",
+   "name": "고등급 전립선 상피내 종양",
+   "name_en": "High-grade PIN",
+   "note": "암 전구 병변 · 단독이면 대개 즉시 재생검하지 않음",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "기존 샘 안 분비 세포의 이형과 뚜렷한 핵소체 · 기저세포 유지",
+     "finding": "les_hgpin",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "WHO 2022"
+    },
+    {
+     "condition": "기저세포가 남아 있음",
+     "finding": "ft_basal_cell_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "scope": "primary",
+   "slug": "hgpin"
+  },
+  "dis_idc_p": {
+   "abbr": "IDC-P",
+   "children": [],
+   "classification_sources": [
+    "src_guo_2006",
+    "src_isup_2019"
+   ],
+   "grading": [
+    {
+     "id": "gs_idc_criteria",
+     "imaging": [
+      "img_he_hpf",
+      "img_ihc_hmwck_amacr"
+     ],
+     "kind": "diagnostic",
+     "name": "관내암 진단 기준(Guo·Epstein)",
+     "note": "기준에 못 미치면 비정형 관내 증식",
+     "read_rule": "기저세포가 남은 관 안에서 다음 중 하나가 있으면 관내암입니다.",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "steps": [
+      {
+       "criteria": [
+        "고형 또는 조밀 사상",
+        "느슨한 사상·미세유두 + 핵이 정상의 6배 이상",
+        "면포 괴사"
+       ],
+       "findings": [
+        "les_intraductal_carcinoma",
+        "les_comedonecrosis",
+        "ft_basal_cell_presence",
+        "ft_idc_presence"
+       ],
+       "grade": "관내암",
+       "logic": "any",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "관내 비정형 증식이나 위 기준 미달"
+       ],
+       "findings": [
+        "les_atypical_intraductal_proliferation"
+       ],
+       "grade": "비정형 관내 증식",
+       "logic": "single",
+       "note": ""
+      }
+     ]
+    }
+   ],
+   "id": "dis_idc_p",
+   "name": "전립선 관내암",
+   "name_en": "Intraductal carcinoma of the prostate",
+   "note": "대개 고등급 침윤암과 함께 있으며 예후가 나쁨",
+   "parent": "dis_prostate_adenocarcinoma",
+   "relations": [
+    {
+     "condition": "기저세포가 남은 관을 고형·조밀 사상 또는 심한 이형 세포가 채움",
+     "finding": "les_intraductal_carcinoma",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "Guo·Epstein 2006"
+    },
+    {
+     "condition": "관내암 유무를 보고",
+     "finding": "ft_idc_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "기저세포가 남아 있어야 관내암(없으면 침윤 사상암)",
+     "finding": "ft_basal_cell_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    },
+    {
+     "condition": "면포 괴사가 동반될 수 있음",
+     "finding": "les_comedonecrosis",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "scope": "primary",
+   "slug": "idc-p"
+  },
+  "dis_prostate_adenocarcinoma": {
+   "abbr": "",
+   "children": [
+    "dis_idc_p",
+    "dis_ductal_adenocarcinoma"
+   ],
+   "classification_sources": [
+    "src_who_2022",
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "grading": [
+    {
+     "id": "gs_gleason_patterns",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "kind": "typing",
+     "name": "글리슨 패턴(ISUP 2014)",
+     "note": "패턴 1·2는 현재 쓰지 않음",
+     "read_rule": "보이는 성장 양상마다 한 패턴을 정합니다. 위로 갈수록 나쁩니다.",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019",
+      "src_epstein_2017"
+     ],
+     "steps": [
+      {
+       "criteria": [
+        "고형 판",
+        "끈 · 단일 세포",
+        "면포 괴사"
+       ],
+       "findings": [
+        "les_gleason_pattern_5",
+        "les_solid_sheets",
+        "les_comedonecrosis"
+       ],
+       "grade": "패턴 5",
+       "logic": "any",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "잘 형성되지 않은 샘",
+        "융합 샘",
+        "사상 샘",
+        "사구체 모양 샘"
+       ],
+       "findings": [
+        "les_gleason_pattern_4",
+        "les_poorly_formed_glands",
+        "les_fused_glands",
+        "les_cribriform",
+        "les_glomeruloid"
+       ],
+       "grade": "패턴 4",
+       "logic": "any",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "따로 떨어진 잘 형성된 샘(크기 다양)"
+       ],
+       "findings": [
+        "les_gleason_pattern_3",
+        "ft_gland_area",
+        "ft_gland_circularity"
+       ],
+       "grade": "패턴 3",
+       "logic": "single",
+       "note": ""
+      }
+     ]
+    },
+    {
+     "id": "gs_isup_grade_group",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "kind": "staging",
+     "name": "ISUP 등급군",
+     "note": "생검은 가장 많은 패턴 + 가장 높은 패턴",
+     "read_rule": "위 단계부터 확인해 처음 맞는 등급군으로 정합니다.",
+     "review": "source_linked",
+     "sources": [
+      "src_epstein_2016_gg",
+      "src_isup_2014"
+     ],
+     "steps": [
+      {
+       "criteria": [
+        "글리슨 점수 9–10"
+       ],
+       "findings": [
+        "ft_gleason_score",
+        "les_gleason_pattern_5"
+       ],
+       "grade": "등급군 5",
+       "logic": "single",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "글리슨 점수 8(4+4 · 3+5 · 5+3)"
+       ],
+       "findings": [
+        "ft_gleason_score"
+       ],
+       "grade": "등급군 4",
+       "logic": "single",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "글리슨 점수 4+3=7"
+       ],
+       "findings": [
+        "ft_gleason_score",
+        "ft_pattern4_percent"
+       ],
+       "grade": "등급군 3",
+       "logic": "single",
+       "note": "패턴 4 비율 보고"
+      },
+      {
+       "criteria": [
+        "글리슨 점수 3+4=7"
+       ],
+       "findings": [
+        "ft_gleason_score",
+        "ft_pattern4_percent"
+       ],
+       "grade": "등급군 2",
+       "logic": "single",
+       "note": "패턴 4 비율 보고"
+      },
+      {
+       "criteria": [
+        "글리슨 점수 6 이하"
+       ],
+       "findings": [
+        "ft_gleason_score",
+        "les_gleason_pattern_3"
+       ],
+       "grade": "등급군 1",
+       "logic": "single",
+       "note": ""
+      }
+     ]
+    },
+    {
+     "id": "gs_pt_stage",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "kind": "staging",
+     "name": "AJCC 8판 병리 병기(pT)",
+     "note": "pT2는 하위 분류 없음(8판)",
+     "read_rule": "근치 절제 표본에서 위 단계부터 확인합니다.",
+     "review": "source_linked",
+     "sources": [
+      "src_ajcc8_prostate_2017"
+     ],
+     "steps": [
+      {
+       "criteria": [
+        "외괄약근·직장·방광·골반벽 등 주변 구조 침범"
+       ],
+       "findings": [],
+       "grade": "pT4",
+       "logic": "single",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "정낭 침범"
+       ],
+       "findings": [
+        "les_seminal_vesicle_invasion"
+       ],
+       "grade": "pT3b",
+       "logic": "single",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "피막 밖 침범",
+        "방광경부 현미경 침범"
+       ],
+       "findings": [
+        "les_extraprostatic_extension",
+        "ft_epe_presence"
+       ],
+       "grade": "pT3a",
+       "logic": "any",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "전립선 안에 국한"
+       ],
+       "findings": [
+        "ft_tumor_extent"
+       ],
+       "grade": "pT2",
+       "logic": "single",
+       "note": ""
+      }
+     ]
+    },
+    {
+     "id": "gs_benign_vs_malignant",
+     "imaging": [
+      "img_he_hpf",
+      "img_ihc_hmwck_amacr"
+     ],
+     "kind": "representative",
+     "name": "침윤암과 모방 병변 가르기",
+     "note": "단일 소견으로 확진하지 않음",
+     "read_rule": "공인 단계는 없고 다음 소견을 함께 봅니다.",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022",
+      "src_wang_2008"
+     ],
+     "steps": [
+      {
+       "criteria": [
+        "기저세포 소실",
+        "뚜렷한 핵소체",
+        "신경주위 침범",
+        "작은 둥근 샘의 침윤",
+        "AMACR 양성"
+       ],
+       "findings": [
+        "ft_basal_cell_presence",
+        "ft_nucleolus_prominence",
+        "les_perineural_invasion",
+        "ft_gland_circularity",
+        "ft_amacr_positivity"
+       ],
+       "grade": "침윤암을 지지",
+       "logic": "any",
+       "note": ""
+      },
+      {
+       "criteria": [
+        "기저세포 유지",
+        "위축·부분 위축",
+        "선증 · 유리체"
+       ],
+       "findings": [
+        "les_atrophy",
+        "les_partial_atrophy",
+        "les_adenosis",
+        "ana_corpora_amylacea"
+       ],
+       "grade": "양성(모방 병변)을 지지",
+       "logic": "any",
+       "note": ""
+      }
+     ]
+    }
+   ],
+   "id": "dis_prostate_adenocarcinoma",
+   "name": "전립선 선암(선방형)",
+   "name_en": "Prostatic acinar adenocarcinoma",
+   "note": "글리슨 점수·ISUP 등급군으로 등급을 매기고 pT로 병기를 정함",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "가장 많은 패턴과 두 번째(생검은 가장 높은) 패턴의 합",
+     "finding": "ft_gleason_score",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "글리슨 점수를 1–5 등급군으로 묶음",
+     "finding": "ft_isup_grade_group",
+     "review": "source_linked",
+     "sources": [
+      "src_epstein_2016_gg"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 등급군"
+    },
+    {
+     "condition": "잘 형성된 따로 떨어진 샘",
+     "finding": "les_gleason_pattern_3",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "잘 형성되지 않은·융합·사상·사구체 모양 샘",
+     "finding": "les_gleason_pattern_4",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "고형 판·끈·단일 세포·면포 괴사",
+     "finding": "les_gleason_pattern_5",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "등급군 2·3에서 패턴 4 비율을 보고",
+     "finding": "ft_pattern4_percent",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019",
+      "src_gups_2021"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "소량(5% 미만)이라도 3차 패턴 5는 보고",
+     "finding": "ft_pattern5_percent",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "사상 패턴은 전이·암 사망 위험이 높아 있으면 보고",
+     "finding": "les_cribriform",
+     "review": "source_linked",
+     "sources": [
+      "src_kweldam_2015",
+      "src_cribriform_2021"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "사상 패턴 유무 보고",
+     "finding": "ft_cribriform_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "생검 코어 침범 비율·암 길이는 위험 분류에 쓰임",
+     "finding": "ft_tumor_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    },
+    {
+     "condition": "생검의 암 길이(mm)",
+     "finding": "ft_tumor_extent",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    },
+    {
+     "condition": "신경주위 침범은 암의 확실한 소견(양성에는 거의 없음)",
+     "finding": "les_perineural_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "기저세포 소실은 침윤암의 진단 근거(IHC로 확인)",
+     "finding": "ft_basal_cell_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    },
+    {
+     "condition": "AMACR 과발현은 암을 시사하나 단독으로 진단하지 않음",
+     "finding": "ft_amacr_positivity",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "뚜렷한 핵소체는 암 세포의 특징",
+     "finding": "ft_nucleolus_prominence",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "암 세포 핵은 대개 크고 짙음(연구 지표)",
+     "finding": "ft_nuclear_area",
+     "review": "source_linked",
+     "sources": [
+      "src_ruifrok_2001"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "패턴 3 암 샘은 양성 샘보다 작고 둥긂(연구 지표)",
+     "finding": "ft_gland_area",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "피막 밖 침범은 pT3a",
+     "finding": "les_extraprostatic_extension",
+     "review": "source_linked",
+     "sources": [
+      "src_ajcc8_prostate_2017"
+     ],
+     "type": "severity_classification",
+     "version": "AJCC 8판"
+    },
+    {
+     "condition": "정낭 침범은 pT3b",
+     "finding": "les_seminal_vesicle_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_ajcc8_prostate_2017"
+     ],
+     "type": "severity_classification",
+     "version": "AJCC 8판"
+    },
+    {
+     "condition": "림프혈관 침범은 나쁜 예후 인자",
+     "finding": "les_lymphovascular_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    },
+    {
+     "condition": "암 샘은 밀집해 침윤(연구 지표)",
+     "finding": "ft_gland_density",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표)",
+     "finding": "ft_lumina_per_gland",
+     "review": "source_linked",
+     "sources": [
+      "src_cribriform_2021"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "scope": "primary",
+   "slug": "prostate-adenocarcinoma"
+  },
+  "dis_prostatitis": {
+   "abbr": "",
+   "children": [],
+   "classification_sources": [
+    "src_who_2022"
+   ],
+   "grading": [],
+   "id": "dis_prostatitis",
+   "name": "전립선염",
+   "name_en": "Prostatitis",
+   "note": "급성·만성 염증 · 육아종성 포함",
+   "parent": "",
+   "relations": [
+    {
+     "condition": "염증 세포 침윤",
+     "finding": "les_prostatitis",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "scope": "representative",
+   "slug": "prostatitis"
+  }
+ },
+ "features": {
+  "ft_amacr_positivity": {
+   "axis": "color_signal",
+   "definition": "종양 의심 샘의 AMACR 과발현(적색) 여부",
+   "id": "ft_amacr_positivity",
+   "imaging": [
+    "img_ihc_hmwck_amacr"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "AMACR 양성",
+   "output": "presence",
+   "region": "—",
+   "requirements": "IHC",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_adenocarcinoma",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_artifact_fraction": {
+   "axis": "area_volume",
+   "definition": "조직 면적 중 판독 불가 인공물의 비율(품질 관리)",
+   "id": "ft_artifact_fraction",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.artifact_fraction",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "artifact pixels ÷ tissue pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "인공물 비율",
+   "output": "ratio",
+   "region": "ref_tissue_area",
+   "requirements": "인공물 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_tissue_artifact",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_basal_cell_presence": {
+   "axis": "presence_type",
+   "definition": "샘 둘레에 기저세포가 있는지(없으면 침윤암)",
+   "id": "ft_basal_cell_presence",
+   "imaging": [
+    "img_ihc_hmwck_amacr",
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "기저세포 유무",
+   "output": "presence",
+   "region": "—",
+   "requirements": "IHC(HMWCK·p63)로 확인",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_basal_cell_layer",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_benign_gland_fraction": {
+   "axis": "area_volume",
+   "definition": "조직 면적 중 양성 샘의 비율",
+   "id": "ft_benign_gland_fraction",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.benign_gland_fraction",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "benign-gland pixels ÷ tissue pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "양성 샘 비율",
+   "output": "ratio",
+   "region": "ref_tissue_area",
+   "requirements": "양성 샘 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_benign_gland",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_cribriform_presence": {
+   "axis": "presence_type",
+   "definition": "사상(체 모양) 샘이 있는지(있으면 보고 권고)",
+   "id": "ft_cribriform_presence",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "사상 패턴 유무",
+   "output": "presence",
+   "region": "les_cribriform",
+   "requirements": "—",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_cribriform",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_epe_presence": {
+   "axis": "presence_type",
+   "definition": "암이 전립선 밖 지방에 닿았는지(근치 절제 표본)",
+   "id": "ft_epe_presence",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "피막 밖 침범 유무",
+   "output": "presence",
+   "region": "les_extraprostatic_extension",
+   "requirements": "근치 절제 표본",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_extraprostatic_extension",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_gland_area": {
+   "axis": "area_volume",
+   "definition": "샘 하나의 평균 면적(암 샘은 대개 작음)",
+   "id": "ft_gland_area",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.mean_area",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "mean component area",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "샘 크기",
+   "output": "area",
+   "region": "—",
+   "requirements": "샘 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_benign_gland",
+   "type": "quantitative",
+   "unit": "µm2"
+  },
+  "ft_gland_circularity": {
+   "axis": "shape",
+   "definition": "4π·면적/둘레²(양성 샘은 굴곡져 낮고 작은 암 샘은 둥글어 높음)",
+   "id": "ft_gland_circularity",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.circularity",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "median 4π·area/perimeter² per gland",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "샘 원형도",
+   "output": "index",
+   "region": "—",
+   "requirements": "샘 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_benign_gland",
+   "type": "quantitative",
+   "unit": "index(0–1)"
+  },
+  "ft_gland_count": {
+   "axis": "count",
+   "definition": "영역 안의 샘(선방) 개수",
+   "id": "ft_gland_count",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.count",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "connected components of the gland mask",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "샘 개수",
+   "output": "count",
+   "region": "—",
+   "requirements": "샘 경계 분할",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_benign_gland",
+   "type": "quantitative",
+   "unit": "count"
+  },
+  "ft_gland_density": {
+   "axis": "count",
+   "definition": "단위 조직 면적당 샘 개수(밀집 정도)",
+   "id": "ft_gland_density",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.gland_density",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "glands per tissue area",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "샘 밀도",
+   "output": "count_per_area",
+   "region": "—",
+   "requirements": "샘 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_benign_gland",
+   "type": "quantitative",
+   "unit": "count/mm2"
+  },
+  "ft_gleason_score": {
+   "axis": "presence_type",
+   "definition": "가장 많은 패턴 + 두 번째(생검은 가장 높은) 패턴의 합(판정 결과)",
+   "id": "ft_gleason_score",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "글리슨 점수",
+   "output": "category",
+   "region": "—",
+   "requirements": "판독의 종합 판정",
+   "review": "source_linked",
+   "role": "classification",
+   "target": "les_adenocarcinoma",
+   "type": "qualitative",
+   "unit": "category"
+  },
+  "ft_hematoxylin_od": {
+   "axis": "color_signal",
+   "definition": "색 분리로 얻은 헤마톡실린 성분의 평균 광학밀도(핵 염색 정도)",
+   "id": "ft_hematoxylin_od",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.nuclei.hematoxylin_od",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "mean haematoxylin OD after HED separation",
+     "reference": "Ruifrok 2001"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "헤마톡실린 광학밀도",
+   "output": "intensity",
+   "region": "—",
+   "requirements": "염색·스캐너 차이 보정 없음",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_nucleus",
+   "type": "quantitative",
+   "unit": "OD"
+  },
+  "ft_idc_presence": {
+   "axis": "presence_type",
+   "definition": "관내암이 있는지(있으면 보고 · ISUP 2019는 등급에 넣는 방법이 나뉨)",
+   "id": "ft_idc_presence",
+   "imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "관내암 유무",
+   "output": "presence",
+   "region": "les_intraductal_carcinoma",
+   "requirements": "기저세포 확인",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_intraductal_carcinoma",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_isup_grade_group": {
+   "axis": "presence_type",
+   "definition": "글리슨 점수를 1–5로 묶은 등급군(판정 결과)",
+   "id": "ft_isup_grade_group",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "ISUP 등급군",
+   "output": "category",
+   "region": "—",
+   "requirements": "판독의 종합 판정",
+   "review": "source_linked",
+   "role": "classification",
+   "target": "les_adenocarcinoma",
+   "type": "qualitative",
+   "unit": "category(1–5)"
+  },
+  "ft_lesion_generic_area": {
+   "axis": "area_volume",
+   "definition": "소견 영역의 면적",
+   "id": "ft_lesion_generic_area",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.lesion_area",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "pixel area × calibration",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "소견 면적",
+   "output": "area",
+   "region": "—",
+   "requirements": "소견 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_generic",
+   "type": "quantitative",
+   "unit": "mm2"
+  },
+  "ft_lesion_generic_count": {
+   "axis": "count",
+   "definition": "떨어져 있는 소견 초점의 개수",
+   "id": "ft_lesion_generic_count",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.lesion_count",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "connected components",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "소견 개수(초점)",
+   "output": "count",
+   "region": "—",
+   "requirements": "소견 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_generic",
+   "type": "quantitative",
+   "unit": "count"
+  },
+  "ft_lesion_generic_fraction": {
+   "axis": "area_volume",
+   "definition": "조직 면적 중 소견 면적의 비율",
+   "id": "ft_lesion_generic_fraction",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.lesion_fraction",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "lesion pixels ÷ tissue pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "소견 비율",
+   "output": "ratio",
+   "region": "ref_tissue_area",
+   "requirements": "소견 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_generic",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_lesion_generic_presence": {
+   "axis": "presence_type",
+   "definition": "해당 소견이 있는지",
+   "id": "ft_lesion_generic_presence",
+   "imaging": [
+    "img_he_wsi",
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.presence",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "any annotated pixel",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "소견 유무",
+   "output": "presence",
+   "region": "—",
+   "requirements": "—",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_generic",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_lumen_fraction": {
+   "axis": "area_volume",
+   "definition": "샘 면적 중 내강(빈 공간)의 비율",
+   "id": "ft_lumen_fraction",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.lumen_fraction",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "bright low-saturation pixels inside glands ÷ gland area",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "내강 비율",
+   "output": "ratio",
+   "region": "—",
+   "requirements": "샘·내강 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_gland_lumen",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_lumina_per_gland": {
+   "axis": "count",
+   "definition": "샘 하나 안의 내강 개수(여러 개면 사상 패턴을 시사)",
+   "id": "ft_lumina_per_gland",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.glands.lumina_per_gland",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "lumen components per gland (cribriform proxy)",
+     "reference": "ISUP 2021 cribriform definition"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "샘당 내강 수",
+   "output": "count",
+   "region": "les_cribriform",
+   "requirements": "샘·내강 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_cribriform",
+   "type": "quantitative",
+   "unit": "count"
+  },
+  "ft_nuclear_area": {
+   "axis": "area_volume",
+   "definition": "검출한 핵의 평균 면적(암은 대개 큼)",
+   "id": "ft_nuclear_area",
+   "imaging": [
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.nuclei.mean_area",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "mean nucleus-candidate area",
+     "reference": "Ruifrok 2001"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "핵 크기",
+   "output": "area",
+   "region": "—",
+   "requirements": "핵 검출 · 고배율 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_nucleus",
+   "type": "quantitative",
+   "unit": "µm2"
+  },
+  "ft_nuclear_area_variation": {
+   "axis": "shape",
+   "definition": "핵 면적의 변동계수(다형성의 정량 근사)",
+   "id": "ft_nuclear_area_variation",
+   "imaging": [
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.nuclei.area_variation",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "coefficient of variation of nucleus area",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "핵 크기 다양성",
+   "output": "ratio",
+   "region": "—",
+   "requirements": "핵 검출",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_nucleus",
+   "type": "quantitative",
+   "unit": "ratio"
+  },
+  "ft_nuclear_density": {
+   "axis": "count",
+   "definition": "조직 면적당 핵 개수",
+   "id": "ft_nuclear_density",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.nuclei.density",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "haematoxylin Otsu + distance-transform watershed, size window",
+     "reference": "Ruifrok 2001"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "핵 밀도",
+   "output": "count_per_area",
+   "region": "—",
+   "requirements": "핵 검출(헤마톡실린 분리) · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_nucleus",
+   "type": "quantitative",
+   "unit": "count/mm2"
+  },
+  "ft_nucleolus_prominence": {
+   "axis": "presence_type",
+   "definition": "고배율에서 핵소체가 크고 뚜렷하게 보이는지",
+   "id": "ft_nucleolus_prominence",
+   "imaging": [
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "뚜렷한 핵소체",
+   "output": "presence",
+   "region": "—",
+   "requirements": "40× 시야",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_nucleolus",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_pattern3_percent": {
+   "axis": "area_volume",
+   "definition": "종양 면적 중 글리슨 패턴 3의 비율",
+   "id": "ft_pattern3_percent",
+   "imaging": [
+    "img_he_wsi",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "pattern_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.pattern_percent",
+     "input": "pattern_mask",
+     "input_label": "글리슨 패턴 주석과 종양 범위",
+     "method": "pattern-3 pixels ÷ tumour pixels",
+     "reference": "ISUP 2019"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "패턴 3 비율",
+   "output": "ratio",
+   "region": "les_adenocarcinoma",
+   "requirements": "패턴별 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_gleason_pattern_3",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_pattern4_percent": {
+   "axis": "area_volume",
+   "definition": "종양 면적 중 글리슨 패턴 4의 비율(ISUP 2019 권고 보고 항목)",
+   "id": "ft_pattern4_percent",
+   "imaging": [
+    "img_he_wsi",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "pattern_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.pattern_percent",
+     "input": "pattern_mask",
+     "input_label": "글리슨 패턴 주석과 종양 범위",
+     "method": "pattern-4 pixels ÷ tumour pixels",
+     "reference": "ISUP 2019"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "패턴 4 비율",
+   "output": "ratio",
+   "region": "les_adenocarcinoma",
+   "requirements": "패턴별 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_gleason_pattern_4",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_pattern5_percent": {
+   "axis": "area_volume",
+   "definition": "종양 면적 중 글리슨 패턴 5의 비율",
+   "id": "ft_pattern5_percent",
+   "imaging": [
+    "img_he_wsi",
+    "img_he_patch"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "pattern_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.pattern_percent",
+     "input": "pattern_mask",
+     "input_label": "글리슨 패턴 주석과 종양 범위",
+     "method": "pattern-5 pixels ÷ tumour pixels",
+     "reference": "ISUP 2019"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "패턴 5 비율",
+   "output": "ratio",
+   "region": "les_adenocarcinoma",
+   "requirements": "패턴별 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_gleason_pattern_5",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_pni_presence": {
+   "axis": "presence_type",
+   "definition": "암 샘이 신경을 둘러싸는지",
+   "id": "ft_pni_presence",
+   "imaging": [
+    "img_he_hpf"
+   ],
+   "impl": {
+    "count": 0,
+    "examples": [],
+    "inputs": [],
+    "level": "reading",
+    "package": null,
+    "sources": [],
+    "usable": 0
+   },
+   "name": "신경주위 침범 유무",
+   "output": "presence",
+   "region": "les_perineural_invasion",
+   "requirements": "—",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_perineural_invasion",
+   "type": "qualitative",
+   "unit": "presence"
+  },
+  "ft_stroma_fraction": {
+   "axis": "area_volume",
+   "definition": "조직 면적 중 간질의 비율",
+   "id": "ft_stroma_fraction",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.stroma_fraction",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "stroma pixels ÷ tissue pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "간질 비율",
+   "output": "ratio",
+   "region": "ref_tissue_area",
+   "requirements": "간질 경계(주석 또는 분할)",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_stroma",
+   "type": "quantitative",
+   "unit": "%"
+  },
+  "ft_texture_contrast": {
+   "axis": "signal_statistics",
+   "definition": "회색조 공동발생행렬(GLCM) 대비(조직 결의 거칠기)",
+   "id": "ft_texture_contrast",
+   "imaging": [
+    "img_he_hpf",
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "region_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.texture.glcm_contrast",
+     "input": "region_mask",
+     "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
+     "method": "normalised GLCM contrast, 32 levels, 4 directions",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "조직 질감 대비",
+   "output": "index",
+   "region": "—",
+   "requirements": "영역 · 회색 단계 수 고정",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_stroma",
+   "type": "quantitative",
+   "unit": "index"
+  },
+  "ft_tissue_area": {
+   "axis": "area_volume",
+   "definition": "배경(유리)을 뺀 조직 화소의 면적",
+   "id": "ft_tissue_area",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "image"
+    ],
+    "level": "auto",
+    "package": {
+     "function": "pathology_measures.tissue.tissue_area",
+     "input": "image",
+     "input_label": "H&E 영상(조직 자동 검출)",
+     "method": "saturation and luminance threshold against glass, holes filled",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "조직 면적",
+   "output": "area",
+   "region": "ref_tissue_area",
+   "requirements": "화소 크기(µm/px) · 조직 경계값",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ref_tissue_area",
+   "type": "quantitative",
+   "unit": "mm2"
+  },
+  "ft_tumor_area": {
+   "axis": "area_volume",
+   "definition": "종양 영역의 면적",
+   "id": "ft_tumor_area",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.tumor_area",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "tumour pixels × pixel area",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "종양 면적",
+   "output": "area",
+   "region": "les_adenocarcinoma",
+   "requirements": "종양 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_adenocarcinoma",
+   "type": "quantitative",
+   "unit": "mm2"
+  },
+  "ft_tumor_extent": {
+   "axis": "size_length",
+   "definition": "종양 영역의 가장 긴 지름(생검은 암 길이 mm)",
+   "id": "ft_tumor_extent",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.tumor_extent",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "maximum distance between tumour pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "종양 최대 길이",
+   "output": "length",
+   "region": "les_adenocarcinoma",
+   "requirements": "종양 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_adenocarcinoma",
+   "type": "quantitative",
+   "unit": "mm"
+  },
+  "ft_tumor_fraction": {
+   "axis": "area_volume",
+   "definition": "조직 면적 중 종양(암) 면적의 비율(생검은 코어 침범 비율)",
+   "id": "ft_tumor_fraction",
+   "imaging": [
+    "img_he_wsi"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "label_map"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.tissue.tumor_fraction",
+     "input": "label_map",
+     "input_label": "H&E 영상과 화소별 주석 지도",
+     "method": "tumour pixels ÷ tissue pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "종양 비율",
+   "output": "ratio",
+   "region": "ref_tissue_area",
+   "requirements": "종양 경계(주석 또는 검증된 분할)",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_adenocarcinoma",
+   "type": "quantitative",
+   "unit": "%"
+  }
+ },
+ "generated_by": "domains/pathology/code/build_pathology_atlas_catalog.py",
+ "imaging": {
+  "img_he": {
+   "dimensionality": "2D(조직 절편)",
+   "level": "modality",
+   "limits": "한 절편만 보며 3차원 구조는 추정; 염색·스캐너 차이가 큼",
+   "name": "H&E 조직 슬라이드",
+   "name_en": "Hematoxylin and eosin (H&E) histology",
+   "parent": "",
+   "shows": "샘 구조·핵 모양·간질·종양의 성장 양상",
+   "signal": "헤마톡실린(핵·청자색)과 에오신(세포질·간질·분홍색) 염색의 투과광",
+   "sources": [
+    "src_ruifrok_2001",
+    "src_who_2022"
+   ]
+  },
+  "img_he_hpf": {
+   "dimensionality": "2D",
+   "level": "representation",
+   "limits": "좁은 범위만 보임",
+   "name": "H&E 고배율 시야",
+   "name_en": "H&E high-power field (20–40×)",
+   "parent": "img_he",
+   "shows": "핵 크기·핵소체·유사분열·기저세포층",
+   "signal": "슬라이드 일부의 고배율 영상",
+   "sources": [
+    "src_isup_2014"
+   ]
+  },
+  "img_he_patch": {
+   "dimensionality": "2D",
+   "level": "representation",
+   "limits": "패치 경계에서 구조가 잘림",
+   "name": "H&E 패치(10× 등)",
+   "name_en": "H&E patch",
+   "parent": "img_he",
+   "shows": "글리슨 패턴·샘 모양(AI 학습 단위)",
+   "signal": "슬라이드를 일정 크기로 자른 영상",
+   "sources": [
+    "src_sicap_2020"
+   ]
+  },
+  "img_he_wsi": {
+   "dimensionality": "2D 피라미드",
+   "level": "representation",
+   "limits": "고배율 세부는 확대해야 보임; 파일이 큼",
+   "name": "H&E 전체 슬라이드 영상",
+   "name_en": "H&E whole-slide image (WSI)",
+   "parent": "img_he",
+   "shows": "종양 범위·조직 구성·병변 분포(저배율)",
+   "signal": "스캐너가 찍은 슬라이드 전체의 다중 배율 영상",
+   "sources": [
+    "src_precise_2026"
+   ]
+  },
+  "img_ihc": {
+   "dimensionality": "2D(조직 절편)",
+   "level": "modality",
+   "limits": "염색 품질·판독 기준에 좌우; 단독 진단에 쓰지 않음",
+   "name": "면역조직화학 염색",
+   "name_en": "Immunohistochemistry (IHC)",
+   "parent": "",
+   "shows": "기저세포 유무(HMWCK·p63)·AMACR 과발현",
+   "signal": "항체로 특정 단백질을 갈색(DAB)·적색으로 표시",
+   "sources": [
+    "src_precise_2026"
+   ]
+  },
+  "img_ihc_hmwck_amacr": {
+   "dimensionality": "2D",
+   "level": "representation",
+   "limits": "양성 모방 병변도 AMACR 양성일 수 있음",
+   "name": "HMWCK·AMACR 이중 염색",
+   "name_en": "HMWCK–AMACR dual IHC",
+   "parent": "img_ihc",
+   "shows": "기저세포 소실과 AMACR 양성 샘",
+   "signal": "기저세포(HMWCK 갈색)와 종양세포(AMACR 적색)를 함께 표시",
+   "sources": [
+    "src_precise_2026"
+   ]
+  }
+ },
+ "items": {
+  "ana_anterior_fibromuscular_stroma": {
+   "abbr": "AFMS",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "샘이 없는 전립선 앞쪽의 섬유근육 조직",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "region",
+   "group_label": "구역",
+   "id": "ana_anterior_fibromuscular_stroma",
+   "kind": "region",
+   "location": "전립선 앞쪽",
+   "name": "앞쪽 섬유근육 간질",
+   "name_en": "Anterior fibromuscular stroma",
+   "obs": {
+    "he": "limited",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 4,
+   "parent": "ana_prostate",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "anterior-fibromuscular-stroma",
+   "sources": [
+    "src_mcneal_1981"
+   ],
+   "subgroup": "zone"
+  },
+  "ana_basal_cell_layer": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_ihc_hmwck_amacr",
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "분비 세포 바깥의 납작한 세포층(양성 샘에는 있고 침윤암에는 없음)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "샘 둘레에 기저세포가 있는지(없으면 침윤암)",
+     "id": "ft_basal_cell_presence",
+     "imaging": [
+      "img_ihc_hmwck_amacr",
+      "img_he_hpf"
+     ],
+     "name": "기저세포 유무",
+     "region": "—",
+     "requirements": "IHC(HMWCK·p63)로 확인",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    }
+   ],
+   "group": "layer",
+   "group_label": "상피층·간질",
+   "id": "ana_basal_cell_layer",
+   "kind": "layer",
+   "location": "샘 바깥쪽 층",
+   "name": "기저세포층",
+   "name_en": "Basal cell layer",
+   "obs": {
+    "he": "limited",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 11,
+   "parent": "ana_benign_gland",
+   "related_lesions": [
+    "les_intraductal_carcinoma",
+    "les_atypical_intraductal_proliferation",
+    "les_basal_cell_hyperplasia"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "basal-cell-layer",
+   "sources": [
+    "src_mcneal_1988",
+    "src_isup_2014"
+   ],
+   "subgroup": ""
+  },
+  "ana_benign_gland": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_he_wsi"
+   ],
+   "children": [
+    "ana_gland_lumen",
+    "ana_secretory_cells",
+    "ana_basal_cell_layer"
+   ],
+   "definition": "두 층(분비 세포 + 기저세포) 상피가 내강을 둘러싼 크고 굴곡진 샘",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "조직 면적 중 양성 샘의 비율",
+     "id": "ft_benign_gland_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "양성 샘 비율",
+     "region": "ref_tissue_area",
+     "requirements": "양성 샘 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": false,
+     "definition": "영역 안의 샘(선방) 개수",
+     "id": "ft_gland_count",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "샘 개수",
+     "region": "—",
+     "requirements": "샘 경계 분할",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    },
+    {
+     "axis": "count",
+     "common": false,
+     "definition": "단위 조직 면적당 샘 개수(밀집 정도)",
+     "id": "ft_gland_density",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "샘 밀도",
+     "region": "—",
+     "requirements": "샘 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count/mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "샘 하나의 평균 면적(암 샘은 대개 작음)",
+     "id": "ft_gland_area",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "샘 크기",
+     "region": "—",
+     "requirements": "샘 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "µm2"
+    },
+    {
+     "axis": "shape",
+     "common": false,
+     "definition": "4π·면적/둘레²(양성 샘은 굴곡져 낮고 작은 암 샘은 둥글어 높음)",
+     "id": "ft_gland_circularity",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "샘 원형도",
+     "region": "—",
+     "requirements": "샘 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "index(0–1)"
+    }
+   ],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_benign_gland",
+   "kind": "structure",
+   "location": "간질 안",
+   "name": "양성 샘(선방)",
+   "name_en": "Benign prostatic gland (acinus)",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "—",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "굴곡진 큰 샘 · 두 층 상피 · 창백한 세포질",
+     "sources": [
+      "src_mcneal_1988"
+     ]
+    },
+    {
+     "condition": "—",
+     "imaging": "img_ihc_hmwck_amacr",
+     "review": "source_linked",
+     "signal": "샘 둘레의 갈색 HMWCK 기저세포 띠",
+     "sources": [
+      "src_precise_2026"
+     ]
+    }
+   ],
+   "order": 8,
+   "parent": "ana_prostate",
+   "related_lesions": [
+    "les_adenocarcinoma",
+    "les_intraductal_carcinoma",
+    "les_atypical_intraductal_proliferation",
+    "les_hgpin",
+    "les_atrophy",
+    "les_partial_atrophy",
+    "les_adenosis",
+    "les_prostatitis"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "benign-gland",
+   "sources": [
+    "src_mcneal_1988",
+    "src_precise_2026"
+   ],
+   "subgroup": ""
+  },
+  "ana_blood_vessel": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "간질 안의 동맥·정맥·모세혈관",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_investigated",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_blood_vessel",
+   "kind": "structure",
+   "location": "간질 안",
+   "name": "혈관",
+   "name_en": "Blood vessel",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 15,
+   "parent": "ana_stroma",
+   "related_lesions": [
+    "les_lymphovascular_invasion"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "blood-vessel",
+   "sources": [
+    "src_mcneal_1988"
+   ],
+   "subgroup": ""
+  },
+  "ana_capsule": {
+   "abbr": "",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "전립선 바깥의 섬유근육 띠와 그 밖의 지방 조직(피막 밖 침범의 기준)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_capsule",
+   "kind": "boundary",
+   "location": "전립선 가장자리",
+   "name": "전립선 피막·주변 지방",
+   "name_en": "Prostatic capsule and periprostatic fat",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 5,
+   "parent": "ana_prostate",
+   "related_lesions": [
+    "les_extraprostatic_extension"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "capsule",
+   "sources": [
+    "src_ajcc8_prostate_2017"
+   ],
+   "subgroup": ""
+  },
+  "ana_central_zone": {
+   "abbr": "CZ",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "사정관을 둘러싼 원뿔 모양 구역(크고 복잡한 샘)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "region",
+   "group_label": "구역",
+   "id": "ana_central_zone",
+   "kind": "region",
+   "location": "전립선 바닥 뒤쪽",
+   "name": "중심대",
+   "name_en": "Central zone",
+   "obs": {
+    "he": "limited",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 3,
+   "parent": "ana_prostate",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "central-zone",
+   "sources": [
+    "src_mcneal_1981"
+   ],
+   "subgroup": "zone"
+  },
+  "ana_corpora_amylacea": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "양성 샘 내강의 동심원 층 분비물 덩어리",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_corpora_amylacea",
+   "kind": "structure",
+   "location": "샘 내강",
+   "name": "유리체(아밀라체)",
+   "name_en": "Corpora amylacea",
+   "obs": {
+    "he": "direct",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 12,
+   "parent": "ana_gland_lumen",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "corpora-amylacea",
+   "sources": [
+    "src_mcneal_1988"
+   ],
+   "subgroup": ""
+  },
+  "ana_gland_lumen": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [
+    "ana_corpora_amylacea"
+   ],
+   "definition": "샘 가운데 비어 있는 공간(분비물·유리체가 있을 수 있음)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "샘 면적 중 내강(빈 공간)의 비율",
+     "id": "ft_lumen_fraction",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "내강 비율",
+     "region": "—",
+     "requirements": "샘·내강 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_gland_lumen",
+   "kind": "structure",
+   "location": "샘 가운데",
+   "name": "샘 내강",
+   "name_en": "Gland lumen",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 9,
+   "parent": "ana_benign_gland",
+   "related_lesions": [
+    "les_comedonecrosis"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "gland-lumen",
+   "sources": [
+    "src_mcneal_1988"
+   ],
+   "subgroup": ""
+  },
+  "ana_nerve": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "간질 안의 신경 다발(신경주위 침범의 기준)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_investigated",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_nerve",
+   "kind": "structure",
+   "location": "간질 안",
+   "name": "신경",
+   "name_en": "Nerve",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 14,
+   "parent": "ana_stroma",
+   "related_lesions": [
+    "les_perineural_invasion"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "nerve",
+   "sources": [
+    "src_isup_2014"
+   ],
+   "subgroup": ""
+  },
+  "ana_nucleolus": {
+   "abbr": "",
+   "axis": "cell",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "핵 안의 작은 점(뚜렷하게 크면 암을 시사)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "고배율에서 핵소체가 크고 뚜렷하게 보이는지",
+     "id": "ft_nucleolus_prominence",
+     "imaging": [
+      "img_he_hpf"
+     ],
+     "name": "뚜렷한 핵소체",
+     "region": "—",
+     "requirements": "40× 시야",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    }
+   ],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_nucleolus",
+   "kind": "structure",
+   "location": "핵 안",
+   "name": "핵소체",
+   "name_en": "Nucleolus",
+   "obs": {
+    "he": "direct",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 17,
+   "parent": "ana_nucleus",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "nucleolus",
+   "sources": [
+    "src_isup_2014"
+   ],
+   "subgroup": ""
+  },
+  "ana_nucleus": {
+   "abbr": "",
+   "axis": "cell",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [
+    "ana_nucleolus"
+   ],
+   "definition": "헤마톡실린으로 청자색인 세포핵(크기·모양·핵소체를 봄)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "count",
+     "common": false,
+     "definition": "조직 면적당 핵 개수",
+     "id": "ft_nuclear_density",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "핵 밀도",
+     "region": "—",
+     "requirements": "핵 검출(헤마톡실린 분리) · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count/mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "검출한 핵의 평균 면적(암은 대개 큼)",
+     "id": "ft_nuclear_area",
+     "imaging": [
+      "img_he_hpf"
+     ],
+     "name": "핵 크기",
+     "region": "—",
+     "requirements": "핵 검출 · 고배율 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "µm2"
+    },
+    {
+     "axis": "shape",
+     "common": false,
+     "definition": "핵 면적의 변동계수(다형성의 정량 근사)",
+     "id": "ft_nuclear_area_variation",
+     "imaging": [
+      "img_he_hpf"
+     ],
+     "name": "핵 크기 다양성",
+     "region": "—",
+     "requirements": "핵 검출",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "ratio"
+    },
+    {
+     "axis": "color_signal",
+     "common": false,
+     "definition": "색 분리로 얻은 헤마톡실린 성분의 평균 광학밀도(핵 염색 정도)",
+     "id": "ft_hematoxylin_od",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_wsi"
+     ],
+     "name": "헤마톡실린 광학밀도",
+     "region": "—",
+     "requirements": "염색·스캐너 차이 보정 없음",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "OD"
+    }
+   ],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_nucleus",
+   "kind": "structure",
+   "location": "세포 안",
+   "name": "세포핵",
+   "name_en": "Nucleus",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [
+    {
+     "condition": "염색 차이",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "청자색 핵",
+     "sources": [
+      "src_ruifrok_2001"
+     ]
+    }
+   ],
+   "order": 16,
+   "parent": "ana_secretory_cells",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "nucleus",
+   "sources": [
+    "src_ruifrok_2001"
+   ],
+   "subgroup": ""
+  },
+  "ana_peripheral_zone": {
+   "abbr": "PZ",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "전립선 뒤·바깥쪽의 샘 구역(선암의 약 70%가 생김)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "region",
+   "group_label": "구역",
+   "id": "ana_peripheral_zone",
+   "kind": "region",
+   "location": "전립선 뒤쪽",
+   "name": "말초대",
+   "name_en": "Peripheral zone",
+   "obs": {
+    "he": "limited",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 1,
+   "parent": "ana_prostate",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "peripheral-zone",
+   "sources": [
+    "src_mcneal_1981"
+   ],
+   "subgroup": "zone"
+  },
+  "ana_prostate": {
+   "abbr": "",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [
+    "ana_peripheral_zone",
+    "ana_transition_zone",
+    "ana_central_zone",
+    "ana_anterior_fibromuscular_stroma",
+    "ana_capsule",
+    "ana_urethra",
+    "ana_benign_gland",
+    "ana_stroma"
+   ],
+   "definition": "방광 아래 요도를 둘러싼 외분비샘 기관",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_investigated",
+   "features": [],
+   "group": "region",
+   "group_label": "구역",
+   "id": "ana_prostate",
+   "kind": "region",
+   "location": "골반 안 방광 아래",
+   "name": "전립선",
+   "name_en": "Prostate",
+   "obs": {
+    "he": "limited",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 0,
+   "parent": "",
+   "related_lesions": [
+    "les_tissue_artifact"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "prostate",
+   "sources": [
+    "src_mcneal_1981"
+   ],
+   "subgroup": ""
+  },
+  "ana_secretory_cells": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [
+    "ana_nucleus"
+   ],
+   "definition": "내강 쪽의 키 큰 원주 세포(창백한 세포질)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_investigated",
+   "features": [],
+   "group": "layer",
+   "group_label": "상피층·간질",
+   "id": "ana_secretory_cells",
+   "kind": "layer",
+   "location": "샘 안쪽 층",
+   "name": "분비(내강) 세포",
+   "name_en": "Secretory (luminal) cells",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 10,
+   "parent": "ana_benign_gland",
+   "related_lesions": [
+    "les_hgpin"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "secretory-cells",
+   "sources": [
+    "src_mcneal_1988"
+   ],
+   "subgroup": ""
+  },
+  "ana_seminal_vesicle": {
+   "abbr": "",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "전립선 뒤 위쪽의 분비샘(침범 시 pT3b; 생검에서 암과 헷갈림)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_investigated",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_seminal_vesicle",
+   "kind": "structure",
+   "location": "전립선 위 뒤쪽",
+   "name": "정낭",
+   "name_en": "Seminal vesicle",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 7,
+   "parent": "",
+   "related_lesions": [
+    "les_seminal_vesicle_invasion"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "seminal-vesicle",
+   "sources": [
+    "src_ajcc8_prostate_2017"
+   ],
+   "subgroup": ""
+  },
+  "ana_stroma": {
+   "abbr": "",
+   "axis": "tissue",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi",
+    "img_he_hpf"
+   ],
+   "children": [
+    "ana_nerve",
+    "ana_blood_vessel"
+   ],
+   "definition": "샘 사이를 채우는 평활근·섬유 조직(분홍색)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "조직 면적 중 간질의 비율",
+     "id": "ft_stroma_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "간질 비율",
+     "region": "ref_tissue_area",
+     "requirements": "간질 경계(주석 또는 분할)",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "signal_statistics",
+     "common": false,
+     "definition": "회색조 공동발생행렬(GLCM) 대비(조직 결의 거칠기)",
+     "id": "ft_texture_contrast",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_wsi"
+     ],
+     "name": "조직 질감 대비",
+     "region": "—",
+     "requirements": "영역 · 회색 단계 수 고정",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "index"
+    }
+   ],
+   "group": "layer",
+   "group_label": "상피층·간질",
+   "id": "ana_stroma",
+   "kind": "layer",
+   "location": "샘 사이",
+   "name": "섬유근육 간질",
+   "name_en": "Fibromuscular stroma",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "—",
+     "imaging": "img_he_wsi",
+     "review": "source_linked",
+     "signal": "샘 사이의 분홍 섬유근육 조직",
+     "sources": [
+      "src_mcneal_1988"
+     ]
+    }
+   ],
+   "order": 13,
+   "parent": "ana_prostate",
+   "related_lesions": [
+    "les_adenocarcinoma",
+    "les_gleason_pattern_3",
+    "les_gleason_pattern_4",
+    "les_gleason_pattern_5",
+    "les_poorly_formed_glands",
+    "les_fused_glands",
+    "les_cribriform",
+    "les_glomeruloid",
+    "les_solid_sheets",
+    "les_prostatitis"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "stroma",
+   "sources": [
+    "src_mcneal_1988",
+    "src_precise_2026"
+   ],
+   "subgroup": ""
+  },
+  "ana_transition_zone": {
+   "abbr": "TZ",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "요도 주변의 샘 구역(양성 전립선비대증이 생김)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "region",
+   "group_label": "구역",
+   "id": "ana_transition_zone",
+   "kind": "region",
+   "location": "요도 옆",
+   "name": "이행대",
+   "name_en": "Transition zone",
+   "obs": {
+    "he": "limited",
+    "ihc": "none"
+   },
+   "observations": [],
+   "order": 2,
+   "parent": "ana_prostate",
+   "related_lesions": [
+    "les_adenosis",
+    "les_nodular_hyperplasia"
+   ],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "transition-zone",
+   "sources": [
+    "src_mcneal_1981"
+   ],
+   "subgroup": "zone"
+  },
+  "ana_urethra": {
+   "abbr": "",
+   "axis": "face",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "전립선 가운데를 지나는 요로",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "structure",
+   "group_label": "구조",
+   "id": "ana_urethra",
+   "kind": "structure",
+   "location": "전립선 가운데",
+   "name": "요도",
+   "name_en": "Prostatic urethra",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 6,
+   "parent": "ana_prostate",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "urethra",
+   "sources": [
+    "src_mcneal_1988"
+   ],
+   "subgroup": ""
+  },
+  "les_adenocarcinoma": {
+   "abbr": "PCa",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi",
+    "img_he_hpf"
+   ],
+   "definition": "기저세포 없이 간질로 침윤하는 암 샘(글리슨 패턴 3·4·5의 묶음)",
+   "differentials": "양성 샘 · 위축 · 선증(AAH)",
+   "diseases": [
+    {
+     "condition": "생검 코어 침범 비율·암 길이는 위험 분류에 쓰임",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_tumor_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    },
+    {
+     "condition": "생검의 암 길이(mm)",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_tumor_extent",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    },
+    {
+     "condition": "AMACR 과발현은 암을 시사하나 단독으로 진단하지 않음",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_amacr_positivity",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "조직 면적 중 종양(암) 면적의 비율(생검은 코어 침범 비율)",
+     "id": "ft_tumor_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "종양 비율",
+     "region": "ref_tissue_area",
+     "requirements": "종양 경계(주석 또는 검증된 분할)",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "종양 영역의 면적",
+     "id": "ft_tumor_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "종양 면적",
+     "region": "les_adenocarcinoma",
+     "requirements": "종양 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "size_length",
+     "common": false,
+     "definition": "종양 영역의 가장 긴 지름(생검은 암 길이 mm)",
+     "id": "ft_tumor_extent",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "종양 최대 길이",
+     "region": "les_adenocarcinoma",
+     "requirements": "종양 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm"
+    },
+    {
+     "axis": "color_signal",
+     "common": false,
+     "definition": "종양 의심 샘의 AMACR 과발현(적색) 여부",
+     "id": "ft_amacr_positivity",
+     "imaging": [
+      "img_ihc_hmwck_amacr"
+     ],
+     "name": "AMACR 양성",
+     "region": "—",
+     "requirements": "IHC",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "carcinoma",
+   "group_label": "선암(통합)",
+   "id": "les_adenocarcinoma",
+   "kind": "region",
+   "location": "말초대가 많음",
+   "name": "선방 선암(통합)",
+   "name_en": "Acinar adenocarcinoma",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "양성 모방 병변도 AMACR 양성일 수 있음",
+     "imaging": "img_ihc_hmwck_amacr",
+     "review": "source_linked",
+     "signal": "HMWCK 기저세포 없이 AMACR 양성인 샘",
+     "sources": [
+      "src_who_2022"
+     ]
+    },
+    {
+     "condition": "—",
+     "imaging": "img_he_wsi",
+     "review": "source_linked",
+     "signal": "저배율에서 간질 사이로 퍼진 작은 샘 무리",
+     "sources": [
+      "src_precise_2026"
+     ]
+    }
+   ],
+   "order": 21,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "adenocarcinoma",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019",
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_benign_gland",
+    "ana_stroma"
+   ]
+  },
+  "les_adenosis": {
+   "abbr": "AAH",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "이행대의 작은 샘이 밀집한 결절(기저세포는 조각으로 남음)",
+   "differentials": "글리슨 패턴 3",
+   "diseases": [
+    {
+     "condition": "이행대의 작은 샘 결절 · 기저세포 조각",
+     "disease": "dis_adenosis",
+     "finding": "les_adenosis",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "benign_mimic",
+   "group_label": "암을 모방하는 양성 병변",
+   "id": "les_adenosis",
+   "kind": "gland",
+   "location": "이행대",
+   "name": "선증(비정형 선종성 과형성)",
+   "name_en": "Adenosis (atypical adenomatous hyperplasia)",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 40,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "adenosis",
+   "sources": [
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_transition_zone",
+    "ana_benign_gland"
+   ]
+  },
+  "les_atrophy": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "세포질이 줄어 작고 짙어 보이는 양성 샘(암과 헷갈림)",
+   "differentials": "글리슨 패턴 3",
+   "diseases": [
+    {
+     "condition": "세포질이 줄어든 양성 샘 · 기저세포 유지",
+     "disease": "dis_atrophy_benign",
+     "finding": "les_atrophy",
+     "review": "source_linked",
+     "sources": [
+      "src_wang_2008"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "benign_mimic",
+   "group_label": "암을 모방하는 양성 병변",
+   "id": "les_atrophy",
+   "kind": "gland",
+   "location": "샘",
+   "name": "위축",
+   "name_en": "Atrophy",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "기저세포 유지 · 핵소체 없음",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "세포질이 줄어 짙어 보이는 작은 샘",
+     "sources": [
+      "src_wang_2008"
+     ]
+    }
+   ],
+   "order": 38,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "atrophy",
+   "sources": [
+    "src_wang_2008",
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_benign_gland"
+   ]
+  },
+  "les_atypical_intraductal_proliferation": {
+   "abbr": "AIP",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "관내암 기준에 못 미치는 비정형 관내 상피 증식",
+   "differentials": "고등급 PIN · 관내암",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "intraductal",
+   "group_label": "관내·상피내 병변",
+   "id": "les_atypical_intraductal_proliferation",
+   "kind": "gland",
+   "location": "관·선방 안",
+   "name": "비정형 관내 증식",
+   "name_en": "Atypical intraductal proliferation",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 32,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "atypical-intraductal-proliferation",
+   "sources": [
+    "src_isup_2019",
+    "src_precise_2026"
+   ],
+   "structures": [
+    "ana_benign_gland",
+    "ana_basal_cell_layer"
+   ]
+  },
+  "les_basal_cell_hyperplasia": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "기저세포가 여러 층으로 늘어난 양성 샘",
+   "differentials": "고등급 PIN",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "benign_mimic",
+   "group_label": "암을 모방하는 양성 병변",
+   "id": "les_basal_cell_hyperplasia",
+   "kind": "gland",
+   "location": "샘",
+   "name": "기저세포 과형성",
+   "name_en": "Basal cell hyperplasia",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 41,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "basal-cell-hyperplasia",
+   "sources": [
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_basal_cell_layer"
+   ]
+  },
+  "les_comedonecrosis": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "사상·고형 샘 가운데의 괴사 찌꺼기(패턴 5)",
+   "differentials": "내강 분비물",
+   "diseases": [
+    {
+     "condition": "면포 괴사가 동반될 수 있음",
+     "disease": "dis_idc_p",
+     "finding": "les_comedonecrosis",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_comedonecrosis",
+   "kind": "gland",
+   "location": "샘 가운데",
+   "name": "면포 괴사",
+   "name_en": "Comedonecrosis",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 30,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "comedonecrosis",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "structures": [
+    "ana_gland_lumen"
+   ]
+  },
+  "les_cribriform": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "definition": "한 샘 안에 여러 개의 구멍(내강)이 체처럼 뚫린 큰 샘(패턴 4 · 예후 나쁨)",
+   "differentials": "관내암 · 양성 사상 증식 · 중심대 샘",
+   "diseases": [
+    {
+     "condition": "사상 패턴은 전이·암 사망 위험이 높아 있으면 보고",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_cribriform",
+     "review": "source_linked",
+     "sources": [
+      "src_kweldam_2015",
+      "src_cribriform_2021"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "사상 패턴 유무 보고",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_cribriform_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    },
+    {
+     "condition": "한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표)",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_lumina_per_gland",
+     "review": "source_linked",
+     "sources": [
+      "src_cribriform_2021"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "사상(체 모양) 샘이 있는지(있으면 보고 권고)",
+     "id": "ft_cribriform_presence",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "사상 패턴 유무",
+     "region": "les_cribriform",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "count",
+     "common": false,
+     "definition": "샘 하나 안의 내강 개수(여러 개면 사상 패턴을 시사)",
+     "id": "ft_lumina_per_gland",
+     "imaging": [
+      "img_he_hpf",
+      "img_he_patch"
+     ],
+     "name": "샘당 내강 수",
+     "region": "les_cribriform",
+     "requirements": "샘·내강 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_cribriform",
+   "kind": "gland",
+   "location": "—",
+   "name": "사상(체 모양) 샘",
+   "name_en": "Cribriform glands",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [
+    {
+     "condition": "관내암(기저세포 유지)과 구분",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "큰 샘 안의 여러 둥근 구멍",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019",
+      "src_cribriform_2021"
+     ]
+    }
+   ],
+   "order": 27,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "cribriform",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019",
+    "src_kweldam_2015",
+    "src_cribriform_2021"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_extraprostatic_extension": {
+   "abbr": "EPE",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "definition": "암이 전립선 밖 지방 조직까지 나간 것(pT3a)",
+   "differentials": "피막 안 지방(정상 변이)",
+   "diseases": [
+    {
+     "condition": "피막 밖 침범은 pT3a",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_extraprostatic_extension",
+     "review": "source_linked",
+     "sources": [
+      "src_ajcc8_prostate_2017"
+     ],
+     "type": "severity_classification",
+     "version": "AJCC 8판"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "암이 전립선 밖 지방에 닿았는지(근치 절제 표본)",
+     "id": "ft_epe_presence",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "피막 밖 침범 유무",
+     "region": "les_extraprostatic_extension",
+     "requirements": "근치 절제 표본",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "invasion",
+   "group_label": "침범",
+   "id": "les_extraprostatic_extension",
+   "kind": "region",
+   "location": "피막 밖",
+   "name": "피막 밖 침범",
+   "name_en": "Extraprostatic extension",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 36,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "extraprostatic-extension",
+   "sources": [
+    "src_ajcc8_prostate_2017"
+   ],
+   "structures": [
+    "ana_capsule"
+   ]
+  },
+  "les_fused_glands": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "샘들이 간질 없이 서로 붙은 모양(패턴 4)",
+   "differentials": "밀집한 패턴 3",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_fused_glands",
+   "kind": "gland",
+   "location": "—",
+   "name": "융합 샘",
+   "name_en": "Fused glands",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 26,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "fused-glands",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_gleason_pattern_3": {
+   "abbr": "GP3",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "definition": "따로 떨어진 잘 형성된 작은 샘이 간질로 침윤",
+   "differentials": "양성 샘 · 부분 위축 · 선증",
+   "diseases": [
+    {
+     "condition": "잘 형성된 따로 떨어진 샘",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_gleason_pattern_3",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "암 같은 작은 샘이 소수 있으나 확진 기준에 못 미침",
+     "disease": "dis_asap",
+     "finding": "les_gleason_pattern_3",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "종양 면적 중 글리슨 패턴 3의 비율",
+     "id": "ft_pattern3_percent",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_patch"
+     ],
+     "name": "패턴 3 비율",
+     "region": "les_adenocarcinoma",
+     "requirements": "패턴별 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "gleason_pattern",
+   "group_label": "글리슨 패턴",
+   "id": "les_gleason_pattern_3",
+   "kind": "region",
+   "location": "—",
+   "name": "글리슨 패턴 3",
+   "name_en": "Gleason pattern 3",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "샘 하나하나가 내강을 가져야 함",
+     "imaging": "img_he_patch",
+     "review": "source_linked",
+     "signal": "따로 떨어진 작고 둥근 샘이 간질 사이로 퍼짐",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ]
+    }
+   ],
+   "order": 22,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "gleason-pattern-3",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019",
+    "src_epstein_2017"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_gleason_pattern_4": {
+   "abbr": "GP4",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "definition": "잘 형성되지 않은 샘 · 융합 샘 · 사상(체 모양) 샘 · 사구체 모양 샘",
+   "differentials": "접선으로 잘린 패턴 3 · 관내암",
+   "diseases": [
+    {
+     "condition": "잘 형성되지 않은·융합·사상·사구체 모양 샘",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_gleason_pattern_4",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "등급군 2·3에서 패턴 4 비율을 보고",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_pattern4_percent",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019",
+      "src_gups_2021"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "종양 면적 중 글리슨 패턴 4의 비율(ISUP 2019 권고 보고 항목)",
+     "id": "ft_pattern4_percent",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_patch"
+     ],
+     "name": "패턴 4 비율",
+     "region": "les_adenocarcinoma",
+     "requirements": "패턴별 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "gleason_pattern",
+   "group_label": "글리슨 패턴",
+   "id": "les_gleason_pattern_4",
+   "kind": "region",
+   "location": "—",
+   "name": "글리슨 패턴 4",
+   "name_en": "Gleason pattern 4",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "접선 절단된 패턴 3과 구분",
+     "imaging": "img_he_patch",
+     "review": "source_linked",
+     "signal": "샘이 붙거나 내강이 없거나 체 모양",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ]
+    }
+   ],
+   "order": 23,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "gleason-pattern-4",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019",
+    "src_epstein_2017"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_gleason_pattern_5": {
+   "abbr": "GP5",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_he_patch"
+   ],
+   "definition": "샘 형성 없이 고형 판 · 끈 · 단일 세포 · 면포 괴사가 있는 침윤",
+   "differentials": "염증 세포 · 패턴 4의 접선 절단",
+   "diseases": [
+    {
+     "condition": "고형 판·끈·단일 세포·면포 괴사",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_gleason_pattern_5",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ],
+     "type": "severity_classification",
+     "version": "ISUP 2014"
+    },
+    {
+     "condition": "소량(5% 미만)이라도 3차 패턴 5는 보고",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_pattern5_percent",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "prognostic",
+     "version": "ISUP 2019"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "종양 면적 중 글리슨 패턴 5의 비율",
+     "id": "ft_pattern5_percent",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_patch"
+     ],
+     "name": "패턴 5 비율",
+     "region": "les_adenocarcinoma",
+     "requirements": "패턴별 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "gleason_pattern",
+   "group_label": "글리슨 패턴",
+   "id": "les_gleason_pattern_5",
+   "kind": "region",
+   "location": "—",
+   "name": "글리슨 패턴 5",
+   "name_en": "Gleason pattern 5",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "염증 세포와 구분",
+     "imaging": "img_he_patch",
+     "review": "source_linked",
+     "signal": "샘 없이 세포 판·끈·단일 세포",
+     "sources": [
+      "src_isup_2014",
+      "src_isup_2019"
+     ]
+    }
+   ],
+   "order": 24,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "gleason-pattern-5",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019",
+    "src_epstein_2017"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_glomeruloid": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "샘 안에 세포 덩어리가 사구체처럼 매달린 모양(패턴 4)",
+   "differentials": "사상 샘의 초기 형태",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_glomeruloid",
+   "kind": "gland",
+   "location": "—",
+   "name": "사구체 모양 샘",
+   "name_en": "Glomeruloid glands",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 28,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "glomeruloid",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_hgpin": {
+   "abbr": "HGPIN",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "기저세포가 남은 기존 샘의 분비 세포가 핵소체가 뚜렷한 이형 세포로 바뀐 것",
+   "differentials": "관내암 · 비정형 관내 증식 · 암과 붙은 PIN 유사 샘",
+   "diseases": [
+    {
+     "condition": "기존 샘 안 분비 세포의 이형과 뚜렷한 핵소체 · 기저세포 유지",
+     "disease": "dis_hgpin",
+     "finding": "les_hgpin",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "WHO 2022"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "intraductal",
+   "group_label": "관내·상피내 병변",
+   "id": "les_hgpin",
+   "kind": "gland",
+   "location": "샘 안",
+   "name": "고등급 전립선 상피내 종양",
+   "name_en": "High-grade prostatic intraepithelial neoplasia",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "기저세포 유지",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "양성 모양 샘의 분비 세포가 핵소체가 뚜렷한 이형 세포로 바뀜",
+     "sources": [
+      "src_who_2022"
+     ]
+    }
+   ],
+   "order": 33,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "hgpin",
+   "sources": [
+    "src_who_2022",
+    "src_precise_2026"
+   ],
+   "structures": [
+    "ana_benign_gland",
+    "ana_secretory_cells"
+   ]
+  },
+  "les_intraductal_carcinoma": {
+   "abbr": "IDC-P",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "기저세포가 남은 기존 관 안을 암세포가 채우고 넓힌 것(고형·조밀 사상 또는 심한 핵 이형)",
+   "differentials": "고등급 PIN · 사상 침윤암 · 비정형 관내 증식",
+   "diseases": [
+    {
+     "condition": "기저세포가 남은 관을 고형·조밀 사상 또는 심한 이형 세포가 채움",
+     "disease": "dis_idc_p",
+     "finding": "les_intraductal_carcinoma",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "Guo·Epstein 2006"
+    },
+    {
+     "condition": "관내암 유무를 보고",
+     "disease": "dis_idc_p",
+     "finding": "ft_idc_presence",
+     "review": "source_linked",
+     "sources": [
+      "src_isup_2019"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "ISUP 2019"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "관내암이 있는지(있으면 보고 · ISUP 2019는 등급에 넣는 방법이 나뉨)",
+     "id": "ft_idc_presence",
+     "imaging": [
+      "img_he_hpf",
+      "img_ihc_hmwck_amacr"
+     ],
+     "name": "관내암 유무",
+     "region": "les_intraductal_carcinoma",
+     "requirements": "기저세포 확인",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "intraductal",
+   "group_label": "관내·상피내 병변",
+   "id": "les_intraductal_carcinoma",
+   "kind": "gland",
+   "location": "관·선방 안",
+   "name": "관내암",
+   "name_en": "Intraductal carcinoma of the prostate",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "기저세포는 IHC로 확인",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "넓어진 관을 채운 이형 세포 · 둘레 기저세포",
+     "sources": [
+      "src_guo_2006"
+     ]
+    },
+    {
+     "condition": "—",
+     "imaging": "img_ihc_hmwck_amacr",
+     "review": "source_linked",
+     "signal": "AMACR 양성 세포가 채운 관 둘레의 HMWCK 양성 기저세포",
+     "sources": [
+      "src_guo_2006",
+      "src_precise_2026"
+     ]
+    }
+   ],
+   "order": 31,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "intraductal-carcinoma",
+   "sources": [
+    "src_guo_2006",
+    "src_isup_2019",
+    "src_precise_2026"
+   ],
+   "structures": [
+    "ana_benign_gland",
+    "ana_basal_cell_layer"
+   ]
+  },
+  "les_lymphovascular_invasion": {
+   "abbr": "LVI",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "내피로 둘러싸인 혈관·림프관 안의 암세포",
+   "differentials": "수축 인공 틈",
+   "diseases": [
+    {
+     "condition": "림프혈관 침범은 나쁜 예후 인자",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_lymphovascular_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "prognostic",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "invasion",
+   "group_label": "침범",
+   "id": "les_lymphovascular_invasion",
+   "kind": "focal",
+   "location": "혈관 안",
+   "name": "림프혈관 침범",
+   "name_en": "Lymphovascular invasion",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 35,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "lymphovascular-invasion",
+   "sources": [
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_blood_vessel"
+   ]
+  },
+  "les_nodular_hyperplasia": {
+   "abbr": "BPH",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "definition": "이행대의 샘·간질이 결절 모양으로 늘어난 것",
+   "differentials": "—",
+   "diseases": [
+    {
+     "condition": "이행대의 샘·간질 결절",
+     "disease": "dis_bph",
+     "finding": "les_nodular_hyperplasia",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "WHO 2022"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "benign_change",
+   "group_label": "양성 변화",
+   "id": "les_nodular_hyperplasia",
+   "kind": "region",
+   "location": "이행대",
+   "name": "결절성 과형성",
+   "name_en": "Nodular hyperplasia",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 42,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "nodular-hyperplasia",
+   "sources": [
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_transition_zone"
+   ]
+  },
+  "les_partial_atrophy": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf",
+    "img_ihc_hmwck_amacr"
+   ],
+   "definition": "세포질이 일부만 줄어 창백하고 핵이 커 보이지 않는 양성 샘(암 모방)",
+   "differentials": "글리슨 패턴 3",
+   "diseases": [
+    {
+     "condition": "부분 위축은 암을 모방",
+     "disease": "dis_atrophy_benign",
+     "finding": "les_partial_atrophy",
+     "review": "source_linked",
+     "sources": [
+      "src_wang_2008",
+      "src_oppenheimer_1998"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "benign_mimic",
+   "group_label": "암을 모방하는 양성 병변",
+   "id": "les_partial_atrophy",
+   "kind": "gland",
+   "location": "샘",
+   "name": "부분 위축",
+   "name_en": "Partial atrophy",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 39,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "partial-atrophy",
+   "sources": [
+    "src_wang_2008"
+   ],
+   "structures": [
+    "ana_benign_gland"
+   ]
+  },
+  "les_perineural_invasion": {
+   "abbr": "PNI",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "암 샘이 신경을 둘러싸거나 신경 안으로 들어간 것",
+   "differentials": "신경 옆의 양성 샘",
+   "diseases": [
+    {
+     "condition": "신경주위 침범은 암의 확실한 소견(양성에는 거의 없음)",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_perineural_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": false,
+     "definition": "암 샘이 신경을 둘러싸는지",
+     "id": "ft_pni_presence",
+     "imaging": [
+      "img_he_hpf"
+     ],
+     "name": "신경주위 침범 유무",
+     "region": "les_perineural_invasion",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "invasion",
+   "group_label": "침범",
+   "id": "les_perineural_invasion",
+   "kind": "focal",
+   "location": "신경 주위",
+   "name": "신경주위 침범",
+   "name_en": "Perineural invasion",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [
+    {
+     "condition": "—",
+     "imaging": "img_he_hpf",
+     "review": "source_linked",
+     "signal": "신경 다발을 둘러싼 암 샘",
+     "sources": [
+      "src_who_2022"
+     ]
+    }
+   ],
+   "order": 34,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "perineural-invasion",
+   "sources": [
+    "src_isup_2014",
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_nerve"
+   ]
+  },
+  "les_poorly_formed_glands": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "내강이 거의 없거나 불분명한 작은 샘 무리(패턴 4)",
+   "differentials": "접선 절단된 패턴 3",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_poorly_formed_glands",
+   "kind": "gland",
+   "location": "—",
+   "name": "잘 형성되지 않은 샘",
+   "name_en": "Poorly formed glands",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 25,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "poorly-formed-glands",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_prostatitis": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "샘·간질의 림프구·호중구 침윤",
+   "differentials": "패턴 5 단일 세포",
+   "diseases": [
+    {
+     "condition": "염증 세포 침윤",
+     "disease": "dis_prostatitis",
+     "finding": "les_prostatitis",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "benign_change",
+   "group_label": "양성 변화",
+   "id": "les_prostatitis",
+   "kind": "region",
+   "location": "간질·샘",
+   "name": "염증(전립선염)",
+   "name_en": "Prostatitis (inflammation)",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 43,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "prostatitis",
+   "sources": [
+    "src_who_2022"
+   ],
+   "structures": [
+    "ana_stroma",
+    "ana_benign_gland"
+   ]
+  },
+  "les_seminal_vesicle_invasion": {
+   "abbr": "SVI",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "definition": "암이 정낭 근육벽까지 침범한 것(pT3b)",
+   "differentials": "정낭 상피의 비정형(양성)",
+   "diseases": [
+    {
+     "condition": "정낭 침범은 pT3b",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "les_seminal_vesicle_invasion",
+     "review": "source_linked",
+     "sources": [
+      "src_ajcc8_prostate_2017"
+     ],
+     "type": "severity_classification",
+     "version": "AJCC 8판"
+    }
+   ],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "invasion",
+   "group_label": "침범",
+   "id": "les_seminal_vesicle_invasion",
+   "kind": "region",
+   "location": "정낭 벽",
+   "name": "정낭 침범",
+   "name_en": "Seminal vesicle invasion",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 37,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "seminal-vesicle-invasion",
+   "sources": [
+    "src_ajcc8_prostate_2017"
+   ],
+   "structures": [
+    "ana_seminal_vesicle"
+   ]
+  },
+  "les_solid_sheets": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "definition": "샘 없이 판·끈·흩어진 단일 세포로 자라는 모양(패턴 5)",
+   "differentials": "림프구 · 형질세포 염증",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "common_applied",
+   "features": [
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "조직 면적 중 소견 면적의 비율",
+     "id": "ft_lesion_generic_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 비율",
+     "region": "ref_tissue_area",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "gleason_architecture",
+   "group_label": "패턴을 정하는 성장 양상",
+   "id": "les_solid_sheets",
+   "kind": "region",
+   "location": "—",
+   "name": "고형 판·끈·단일 세포",
+   "name_en": "Solid sheets cords and single cells",
+   "obs": {
+    "he": "direct",
+    "ihc": "limited"
+   },
+   "observations": [],
+   "order": 29,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "solid-sheets",
+   "sources": [
+    "src_isup_2014",
+    "src_isup_2019"
+   ],
+   "structures": [
+    "ana_stroma"
+   ]
+  },
+  "les_tissue_artifact": {
+   "abbr": "",
+   "aggregate": false,
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "definition": "접힘·찢김·기포·흐림 등 판독을 방해하는 부분",
+   "differentials": "—",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "조직 면적 중 판독 불가 인공물의 비율(품질 관리)",
+     "id": "ft_artifact_fraction",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "인공물 비율",
+     "region": "ref_tissue_area",
+     "requirements": "인공물 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
+    },
+    {
+     "axis": "presence_type",
+     "common": true,
+     "definition": "해당 소견이 있는지",
+     "id": "ft_lesion_generic_presence",
+     "imaging": [
+      "img_he_wsi",
+      "img_he_hpf"
+     ],
+     "name": "소견 유무",
+     "region": "—",
+     "requirements": "—",
+     "review": "source_linked",
+     "type": "qualitative",
+     "unit": "presence"
+    },
+    {
+     "axis": "area_volume",
+     "common": true,
+     "definition": "소견 영역의 면적",
+     "id": "ft_lesion_generic_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 면적",
+     "region": "—",
+     "requirements": "소견 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    },
+    {
+     "axis": "count",
+     "common": true,
+     "definition": "떨어져 있는 소견 초점의 개수",
+     "id": "ft_lesion_generic_count",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "소견 개수(초점)",
+     "region": "—",
+     "requirements": "소견 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "count"
+    }
+   ],
+   "group": "artifact",
+   "group_label": "인공물",
+   "id": "les_tissue_artifact",
+   "kind": "region",
+   "location": "어디든",
+   "name": "조직 인공물",
+   "name_en": "Tissue artifact",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [
+    {
+     "condition": "판독과 측정에서 제외",
+     "imaging": "img_he_wsi",
+     "review": "source_linked",
+     "signal": "접힘·찢김·흐림·기포",
+     "sources": [
+      "src_precise_2026"
+     ]
+    }
+   ],
+   "order": 44,
+   "review": "source_linked",
+   "secondary": false,
+   "section": "lesions",
+   "slug": "tissue-artifact",
+   "sources": [
+    "src_precise_2026"
+   ],
+   "structures": [
+    "ana_prostate"
+   ]
+  },
+  "ref_hpf": {
+   "abbr": "HPF",
+   "axis": "reference",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_hpf"
+   ],
+   "children": [],
+   "definition": "현미경 40× 한 시야의 면적(대략 0.2–0.3 mm²; 장비마다 다름)",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "reference",
+   "group_label": "측정 기준",
+   "id": "ref_hpf",
+   "kind": "reference",
+   "location": "—",
+   "name": "고배율 시야 면적",
+   "name_en": "High-power field area",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 20,
+   "parent": "",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "hpf",
+   "sources": [
+    "src_who_2022"
+   ],
+   "subgroup": ""
+  },
+  "ref_pixel_size": {
+   "abbr": "MPP",
+   "axis": "reference",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "영상 한 화소의 실제 크기 — 길이·면적을 µm·mm로 바꾸는 기준",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "not_applicable",
+   "features": [],
+   "group": "reference",
+   "group_label": "측정 기준",
+   "id": "ref_pixel_size",
+   "kind": "reference",
+   "location": "영상 메타데이터",
+   "name": "화소 크기(µm/px)",
+   "name_en": "Pixel size (microns per pixel)",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 19,
+   "parent": "",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "pixel-size",
+   "sources": [
+    "src_precise_2026"
+   ],
+   "subgroup": ""
+  },
+  "ref_tissue_area": {
+   "abbr": "",
+   "axis": "reference",
+   "basis": "standard_consensus",
+   "best_imaging": [
+    "img_he_wsi"
+   ],
+   "children": [],
+   "definition": "배경을 뺀 조직 면적 — 비율 측정의 분모",
+   "diseases": [],
+   "existing_measures": 0,
+   "feature_status": "direct",
+   "features": [
+    {
+     "axis": "area_volume",
+     "common": false,
+     "definition": "배경(유리)을 뺀 조직 화소의 면적",
+     "id": "ft_tissue_area",
+     "imaging": [
+      "img_he_wsi"
+     ],
+     "name": "조직 면적",
+     "region": "ref_tissue_area",
+     "requirements": "화소 크기(µm/px) · 조직 경계값",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "mm2"
+    }
+   ],
+   "group": "reference",
+   "group_label": "측정 기준",
+   "id": "ref_tissue_area",
+   "kind": "reference",
+   "location": "슬라이드 전체",
+   "name": "조직 면적(분모)",
+   "name_en": "Tissue area (denominator)",
+   "obs": {
+    "he": "direct",
+    "ihc": "direct"
+   },
+   "observations": [],
+   "order": 18,
+   "parent": "",
+   "related_lesions": [],
+   "review": "source_linked",
+   "section": "anatomy",
+   "slug": "tissue-area",
+   "sources": [
+    "src_precise_2026"
+   ],
+   "subgroup": ""
+  }
+ },
+ "sources": {
+  "src_ajcc8_prostate_2017": {
+   "citation": "Buyyounouski MK et al. Prostate cancer - major changes in the AJCC eighth edition cancer staging manual. CA Cancer J Clin 2017",
+   "name": "AJCC 8판 전립선암 병기",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28222223/",
+   "verification": "pmid_checked"
+  },
+  "src_cribriform_2021": {
+   "citation": "van der Kwast TH et al. ISUP Consensus Definition of Cribriform Pattern Prostate Cancer. Am J Surg Pathol 2021",
+   "name": "ISUP 사상 패턴 정의",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33999555/",
+   "verification": "pmid_checked"
+  },
+  "src_epstein_2016_gg": {
+   "citation": "Epstein JI et al. A Contemporary Prostate Cancer Grading System: A Validated Alternative to the Gleason Score. Eur Urol 2016",
+   "name": "등급군 제안(Epstein 2016)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26166626/",
+   "verification": "pmid_checked"
+  },
+  "src_epstein_2017": {
+   "citation": "Epstein JI et al. Contemporary Gleason Grading of Prostatic Carcinoma: An Update With Discussion on Practical Issues to Implement the 2014 ISUP Consensus. Am J Surg Pathol 2017",
+   "name": "글리슨 실무 해설(Epstein 2017)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28177964/",
+   "verification": "pmid_checked"
+  },
+  "src_gleason_1992": {
+   "citation": "Gleason DF. Histologic grading of prostate cancer: a perspective. Hum Pathol 1992",
+   "name": "글리슨 등급의 관점(Gleason 1992)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/1555838/",
+   "verification": "pmid_checked"
+  },
+  "src_guo_2006": {
+   "citation": "Guo CC · Epstein JI. Intraductal carcinoma of the prostate on needle biopsy: histologic features and clinical significance. Mod Pathol 2006",
+   "name": "관내암 기준(Guo·Epstein 2006)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/16980940/",
+   "verification": "pmid_checked"
+  },
+  "src_gups_2021": {
+   "citation": "Epstein JI et al. The 2019 Genitourinary Pathology Society (GUPS) White Paper on Contemporary Grading of Prostate Cancer. Arch Pathol Lab Med 2021",
+   "name": "GUPS 2019 백서",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32589068/",
+   "verification": "pmid_checked"
+  },
+  "src_isup_2014": {
+   "citation": "Epstein JI et al. The 2014 International Society of Urological Pathology (ISUP) Consensus Conference on Gleason Grading of Prostatic Carcinoma. Am J Surg Pathol 2016",
+   "name": "ISUP 2014 글리슨 합의",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/26492179/",
+   "verification": "pmid_checked"
+  },
+  "src_isup_2019": {
+   "citation": "van Leenders GJLH et al. The 2019 ISUP Consensus Conference on Grading of Prostatic Carcinoma. Am J Surg Pathol 2020",
+   "name": "ISUP 2019 등급 합의",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32459716/",
+   "verification": "pmid_checked"
+  },
+  "src_kweldam_2015": {
+   "citation": "Kweldam CF et al. Cribriform growth is highly predictive for postoperative metastasis and disease-specific death in Gleason score 7 prostate cancer. Mod Pathol 2015",
+   "name": "사상 패턴 예후(Kweldam 2015)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25189638/",
+   "verification": "pmid_checked"
+  },
+  "src_mcneal_1981": {
+   "citation": "McNeal JE. The zonal anatomy of the prostate. Prostate 1981",
+   "name": "전립선 구역 해부(McNeal 1981)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/7279811/",
+   "verification": "pmid_checked"
+  },
+  "src_mcneal_1988": {
+   "citation": "McNeal JE. Normal histology of the prostate. Am J Surg Pathol 1988",
+   "name": "전립선 정상 조직(McNeal 1988)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/2456702/",
+   "verification": "pmid_checked"
+  },
+  "src_oppenheimer_1998": {
+   "citation": "Oppenheimer JR · Wills ML · Epstein JI. Partial atrophy in prostate needle cores: another diagnostic pitfall for the surgical pathologist. Am J Surg Pathol 1998",
+   "name": "부분 위축 함정(Oppenheimer 1998)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/9537471/",
+   "verification": "pmid_checked"
+  },
+  "src_precise_2026": {
+   "citation": "Calapaquí Terán AK · González Bernad AA · Sánchez Magdaleno L et al. PRECISE — PRostate Expert-annotated Contiguous IHC–H&E Serial sEctions. Zenodo 2026",
+   "name": "PRECISE 데이터셋",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "verification": "doi_checked"
+  },
+  "src_ruifrok_2001": {
+   "citation": "Ruifrok AC · Johnston DA. Quantification of histochemical staining by color deconvolution. Anal Quant Cytol Histol 2001",
+   "name": "색 분리(Ruifrok 2001)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/11531144/",
+   "verification": "pmid_checked"
+  },
+  "src_service_catalog_v01": {
+   "citation": "medical-image-atlas 병리(전립선) 영역 서비스 정리안(전문가 검토 전)",
+   "name": "서비스 정리안 v01",
+   "url": "",
+   "verification": "draft"
+  },
+  "src_sicap_2020": {
+   "citation": "Silva-Rodríguez J et al. Going deeper through the Gleason scoring scale: an automatic end-to-end system for histology prostate grading and cribriform pattern detection. Comput Methods Programs Biomed 2020",
+   "name": "SICAPv2(Silva-Rodríguez 2020)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/32653747/",
+   "verification": "pmid_checked"
+  },
+  "src_wang_2008": {
+   "citation": "Wang W · Sun X · Epstein JI. Partial atrophy on prostate needle biopsy cores: a morphologic and immunohistochemical study. Am J Surg Pathol 2008",
+   "name": "부분 위축(Wang 2008)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/18408595/",
+   "verification": "pmid_checked"
+  },
+  "src_who_2022": {
+   "citation": "Netto GJ et al. The 2022 World Health Organization Classification of Tumors of the Urinary System and Male Genital Organs-Part B: Prostate and Urinary Tract Tumors. Eur Urol 2022",
+   "name": "WHO 2022 비뇨생식기 종양 분류",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/35965208/",
+   "verification": "pmid_checked"
+  }
+ },
+ "version": "v01"
+}

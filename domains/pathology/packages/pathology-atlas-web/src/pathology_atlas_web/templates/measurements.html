@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% macro level_badge(lv) -%}<span class="lv lv-{{ lv }}">{{ impl_label[lv] }}</span>{%- endmacro %}
+{% macro feature_row(f) -%}
+<li class="ms-row"{% if not by %} id="{{ f.id }}"{% endif %}>
+  <div class="ms-name"><strong>{{ f.name }}</strong>{% if f.unit %}<span class="unit">{{ f.unit|unit }}</span>{% endif %}</div>
+  <div class="ms-def">{% if feature_mods.get(f.id) %}<span class="ms-mods">{% for k in feature_mods[f.id] %}<a class="ms-mod{% if k == img %} on{% endif %}" href="/measurements/?img={{ k }}">{{ img_names[k] }}</a>{% endfor %}</span>{% endif %}{{ f.definition }}{% if f.region %}<span class="m-meta">구역 · {{ f.region|region }}</span>{% endif %}{{ disease_chips(f.id) }}</div>
+  <div class="ms-impl">{{ level_badge(f.impl.level) }}{% if f.impl.count %}<span class="ms-src">구현 {{ f.impl.count }}건 · {{ f.impl.sources|join(', ') }}</span>{% endif %}{% if f.impl.package %}<span class="ms-fn"><code>{{ f.impl.package.function }}</code> · 입력 {{ f.impl.package.input_label }}</span>{% endif %}{% set cl = code_links.get(f.id) %}{% if (cl and (cl.function or cl.project)) or example_of.get(f.id) %}<span class="ms-links">{% if cl and (cl.function or cl.project) %}<a class="ms-code" href="/measurements/code/{{ f.id }}/">코드·내려받기</a>{% endif %}{% if example_of.get(f.id) %}<a class="ms-ex" href="#{{ example_of[f.id] }}" data-open-example="{{ example_of[f.id] }}">표시 예시</a>{% endif %}</span>{% endif %}</div>
+</li>
+{%- endmacro %}
+{% macro disease_chips(fid) -%}
+{% set ds = measure_diseases.get(fid, []) %}<span class="ms-dz">{% if ds %}<span class="ms-dz-h">대상 질병</span>{% for d in ds[:6] %}<a class="ms-dz-c{% if d.via %} via{% endif %}" href="/diseases/{{ d.slug }}/" title="{% if d.via %}{{ d.via }}을(를) 거쳐 연결{% else %}질병 기준이 이 측정을 직접 사용{% endif %}{% if relation_label.get(d.type) %} · {{ relation_label[d.type] }}{% endif %}">{{ d.name }}</a>{% endfor %}{% if ds|length > 6 %}<span class="ms-dz-more">외 {{ ds|length - 6 }}개</span>{% endif %}{% else %}<span class="ms-dz-h">대상 질병</span><span class="ms-dz-none">공통 지표 · 특정 질병 없음</span>{% endif %}</span>
+{%- endmacro %}
+{% macro bar(counts, total) -%}
+{% set ns = namespace(x=0) %}
+<svg class="lv-bar" viewBox="0 0 1000 18" preserveAspectRatio="none" aria-hidden="true">{% for key, n in counts %}{% if n %}{% set w = 1000 * n / total %}<rect class="lvf-{{ key }}" x="{{ ns.x }}" y="0" width="{{ w }}" height="18"/>{% set ns.x = ns.x + w %}{% endif %}{% endfor %}</svg>
+{%- endmacro %}
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>측정 목록</span></div>
+<header class="map-hero"><div><h1>측정 목록</h1><p class="lead">구조와 병변에서 <strong>무엇을 관찰하고 측정하는지</strong>만 대상별로 정리했습니다. 판정 기준·임계값은 <a href="/diseases/">질병 목록</a>에서 봅니다. 각 측정에 자동화 도구나 AI로 실제 계산할 수 있는지 표시했습니다.</p></div></header>
+
+<section class="ms-summary">
+  <div class="ms-big"><span class="ms-num">{{ ready }}</span><span class="ms-of">/ {{ total }}</span><p>계산 구현이 있는 측정<br><small>영상만 · 병변 mask 입력 · 영상 쌍</small></p><p class="ms-pkg">공개 측정 패키지 함수 <b>{{ packaged }}</b> / {{ total }}<br><small>pathology-measures · 입력을 넣으면 계산</small></p></div>
+  <div class="ms-breakdown">
+    {% set pairs = [] %}{% for key,label,note,n in summary %}{% set _ = pairs.append((key, n)) %}{% endfor %}
+    {{ bar(pairs, total) }}
+    <ul class="lv-legend">{% for key,label,note,n in summary if n %}<li><a href="/measurements/?level={{ key }}" class="{% if level == key %}on{% endif %}"><span class="lv-dot lvf-{{ key }}"></span><b>{{ label }}</b><span class="ms-n">{{ n }}</span></a><small>{{ note }}</small></li>{% endfor %}</ul>
+  </div>
+</section>
+
+{% if packages %}
+<section class="ms-pkgs" aria-label="측정 코드 내려받기">
+  <h2 class="ms-imgs-h">측정 코드 내려받기</h2>
+  <div class="ms-pkg-grid">{% for key, pkg in packages %}
+    <div class="ms-pkg-card"><b>{{ pkg.label }}</b><p>{{ pkg.summary }}</p>
+      <div class="ms-pkg-actions"><a class="button" href="/code/{{ key }}.zip">패키지 전체(.zip)</a><a class="button secondary" href="/code/{{ key }}/README.md">README</a></div>
+      <code class="ms-pip">pip install ./{{ key }}-*.zip</code></div>{% endfor %}
+  </div>
+  <p class="muted small">각 측정 줄의 <b>코드·내려받기</b>에서 그 측정을 계산하는 함수만 보거나 해당 파일을 받을 수 있습니다.</p>
+</section>
+{% endif %}
+
+{% if examples %}
+<section class="mx" id="examples" aria-label="측정 표시 예시">
+  {% set groups = [] %}{% for k, label in modalities %}{% if examples|selectattr('modality','equalto',k)|list or pending.get(k) %}{% set _ = groups.append(label) %}{% endif %}{% endfor %}
+  {% set n_layers = examples|map(attribute='layers')|map('length')|sum %}
+  <header class="mx-head">
+    <div>
+      <h2 class="ms-imgs-h">영상에 측정을 표시하는 예</h2>
+      <p class="muted small">한 장의 영상에 여러 측정을 겹쳐 봅니다. 스위치를 켜면 측정 함수가 <b>실행된 결과</b>(표시와 계산값)가, 끄면 <b>실행 전</b> 원 영상이 보입니다. 계산 코드가 없는 정성 항목은 <b>판독</b> 표시로 볼 자리만 보여 줍니다.</p>
+    </div>
+    <dl class="mx-stats"><div><dt>측정</dt><dd>{{ example_of|length }}</dd></div><div><dt>영상</dt><dd>{{ examples|length }}</dd></div><div><dt>표시 항목</dt><dd>{{ n_layers }}</dd></div></dl>
+  </header>
+  <nav class="mx-nav" aria-label="영상 종류·부위"><p class="mx-nav-note">숫자는 그 아래에 나오는 표시 항목(스위치) 개수 · 점선 +숫자는 이 영상에 해당하지만 아직 구현·표시되지 않은 측정 개수</p>
+    <div class="mx-mods" role="tablist">{% for g in groups %}{% set gk = mod_key[g] %}{% set gx = examples|selectattr('modality','equalto',gk)|list %}<button type="button" class="mx-mod{% if loop.first %} on{% endif %}" data-group="{{ loop.index0 }}" data-example="{{ gx[0].id if gx else 'pending-' ~ gk }}">{{ g }}<span class="mx-count" title="표시 항목 {{ gx|map(attribute='layers')|map('length')|sum }}개 · 영상 {{ gx|length }}장">{{ gx|map(attribute='layers')|map('length')|sum }}</span>{% set pn = pending.get(gk, [])|map(attribute='rows')|map('length')|sum %}{% if pn %}<span class="mx-count mx-count-pending" title="미구현 측정 {{ pn }}개">+{{ pn }}</span>{% endif %}</button>{% endfor %}</div>
+    {% for g in groups %}{% set gk = mod_key[g] %}{% set gi = loop.index0 %}<div class="mx-regions" data-group="{{ gi }}"{% if not loop.first %} hidden{% endif %}>{% for ex in examples if ex.modality == gk %}<button type="button" class="mx-tab{% if loop.first and gi == 0 %} on{% endif %}" data-example="{{ ex.id }}">{{ ex.region }}<span class="mx-count" title="표시 항목 {{ ex.layers|length }}개">{{ ex.layers|length }}</span></button>{% endfor %}{% set pn = pending.get(gk, [])|map(attribute='rows')|map('length')|sum %}{% if pn %}<button type="button" class="mx-tab mx-tab-pending{% if gi == 0 and not examples|selectattr('modality','equalto',gk)|list %} on{% endif %}" data-example="pending-{{ gk }}">미구현<span class="mx-count" title="이 영상에 해당하지만 표시 예시가 없는 측정 {{ pn }}개">{{ pn }}</span></button>{% endif %}</div>{% endfor %}
+  </nav>
+  {% for ex in examples %}{% set gi = groups.index(ex.modality_label) %}
+  <article class="mx-card" id="{{ ex.id }}" data-group="{{ gi }}"{% if not loop.first %} hidden{% endif %}>
+    <header class="mx-card-head">
+      <div><span class="mx-badge">{{ ex.modality_label }}</span><h3>{{ ex.title.split(' · ', 1)[-1] }}</h3><p class="mx-sub">{% set ids = [] %}{% for la in ex.layers %}{% for f in la.features if f.id not in ids %}{% set _ = ids.append(f.id) %}{% endfor %}{% endfor %}표시 항목 {{ ex.layers|length }}개 · 이 항목들이 계산하는 측정 {{ ids|length }}개</p></div>
+      <div class="mx-bulk"><span class="mx-progress" data-progress>0 / {{ ex.layers|length }} 실행</span><button type="button" data-all="on">모두 실행</button><button type="button" class="ghost" data-all="off">모두 끄기</button></div>
+    </header>
+    <div class="mx-body">
+      <figure class="mx-figure">
+        <div class="mx-stage">
+          <img class="mx-base" src="/measure-figures/{{ ex.base }}" width="{{ ex.width }}" height="{{ ex.height }}" alt="{{ ex.title }} 원 영상">
+          {% for la in ex.layers %}<img class="mx-layer" data-layer="{{ ex.id }}-{{ la.key }}" src="/measure-figures/{{ la.file }}" width="{{ ex.width }}" height="{{ ex.height }}" alt="" hidden>{% endfor %}
+          <span class="mx-stage-tag" data-stage-tag>원 영상 · 실행 전</span>
+        </div>
+        <figcaption><p class="mx-cap">{{ ex.caption }}</p>
+          <p class="figure-credit">{{ ex.credit }} · <a href="{{ ex.url }}" target="_blank" rel="noopener">출처</a> · <a href="{{ ex.license_url }}" target="_blank" rel="noopener">{{ ex.license }}</a> · 원 파일 {{ ex.source_file }}</p></figcaption>
+      </figure>
+      <ul class="mx-list">{% for la in ex.layers %}{% set reading = not la.function %}
+        <li class="mx-item{% if reading %} is-reading{% endif %}">
+          <label class="mx-row"><input type="checkbox" class="mx-switch" data-layer="{{ ex.id }}-{{ la.key }}"><span class="mx-sw sw-{{ la.tone }}" aria-hidden="true"></span><span class="mx-name">{{ la.label }}</span>{% if reading %}<span class="mx-tag">판독</span>{% endif %}<span class="mx-off">실행 전</span></label>
+          <div class="mx-state" data-state="{{ ex.id }}-{{ la.key }}">
+            <dl class="mx-vals" hidden>{% for f in la.features %}<div><dt><a href="#{{ f.id }}">{{ atlas.features[f.id].name }}</a></dt><dd class="st-{{ f.status }}">{{ f.value }}</dd></div>{% endfor %}</dl></div>
+          <details class="mx-how"><summary>방법</summary><p>{% if la.function %}<code><a href="/measurements/code/{{ la.features[0].id }}/">{{ la.function }}</a></code>{% else %}<span class="mx-read">판독 항목 · 계산 코드 없음</span>{% endif %}</p><p>{{ la.how }}</p></details>
+        </li>{% endfor %}
+      </ul>
+    </div>
+  </article>
+  {% endfor %}
+  {% for g in groups %}{% set gi = loop.index0 %}{% set gmod = mod_key[g] %}{% set pgroups = pending.get(gmod, []) %}{% if pgroups %}
+  <article class="mx-card mx-pending" id="pending-{{ gmod }}" data-group="{{ gi }}"{% if gi != 0 or examples|selectattr('modality','equalto',gmod)|list %} hidden{% endif %}>
+    <header class="mx-card-head">
+      <div><span class="mx-badge">{{ g }}</span><h3>아직 영상 예시가 없는 측정</h3><p class="mx-sub">이 영상에 해당하는 측정 {{ pgroups|map(attribute='rows')|map('length')|sum }}개 · 무엇을 재야 하는지와 현재 상태</p></div>
+    </header>
+    <div class="mx-pending-body">{% for pg in pgroups %}
+      <section class="mx-pg"><h4>{% if pg.rows[0].target %}<a href="{{ item_path(pg.rows[0].target) }}">{{ pg.label }}</a>{% else %}{{ pg.label }}{% endif %}<span class="mx-count">{{ pg.rows|length }}</span></h4>
+        <ul class="mx-list">{% for r in pg.rows %}{% set f = r.feature %}
+          <li class="mx-item is-pending">
+            <div class="mx-row"><input type="checkbox" class="mx-switch" disabled aria-label="미구현"><span class="mx-name">{{ f.name }}</span><span class="mx-tag mx-tag-todo">미구현</span></div>
+            <p class="mx-what"><b>측정할 것</b> {{ f.definition }}{% if f.unit %} <span class="mx-unit">({{ f.unit }})</span>{% endif %}{% if f.requirements and f.requirements != '—' %} · <span class="muted">조건: {{ f.requirements }}</span>{% endif %}</p>
+            <p class="mx-why">{% if r.level == 'none' %}계산 구현 없음 — 정의만 있음{% elif r.function %}측정 함수(<code>{% if f.role == 'measurement' %}<a href="/measurements/code/{{ f.id }}/">{{ r.function }}</a>{% else %}{{ r.function }}{% endif %}</code>)는 있으나 이 영상에서 실행한 예시 없음{% else %}{{ impl_label.get(r.level, r.level) }} — 이 영상에서 실행한 예시 없음{% endif %}{% if r.reason %}<br><span class="mx-reason">예시가 없는 이유: {{ r.reason }}</span>{% endif %}{% if r.elsewhere %} · <button type="button" class="mx-link" data-example="{{ r.elsewhere }}">다른 영상 예시</button>{% endif %}</p>
+          </li>{% endfor %}
+        </ul>
+      </section>{% endfor %}
+    </div>
+  </article>
+  {% endif %}{% endfor %}
+  <p class="muted small">값은 pathology-measures 함수를 PRECISE(화소 간격 µm 보정)와 SICAPv2(화소 단위) 영상의 입력(공급자 전문가 주석, 또는 캡션에 적은 서비스 자동 추정 조직·내강·핵)에 실제로 실행한 결과입니다. 임상 판정이나 검증값이 아닙니다.</p>
+</section>
+{% endif %}
+
+<section class="ms-imgs" aria-label="영상 종류별 측정">
+  <h2 class="ms-imgs-h">영상 종류별로 보기</h2>
+  <div class="ms-img-grid">{% for key, label, n, ready_n in img_counts %}
+    <a class="ms-img{% if img == key %} on{% endif %}" href="/measurements/?img={{ key }}"><b>{{ label }}</b><span class="ms-img-n">{{ n }}</span><small>계산 가능 {{ ready_n }}</small></a>{% endfor %}
+  </div>
+  {% if img %}<p class="muted small"><a href="/imaging/{{ img }}/">{{ img_names[img] }} 영상 페이지</a>에서 촬영 범위·신호 깊이와 실제 영상을 함께 봅니다.</p>{% endif %}
+</section>
+
+
+<nav class="axis-tabs" aria-label="측정 갈래">
+  <a class="cat{% if not level and not kind and not img %} on{% endif %}" href="/measurements/">전체<small>{{ total }}</small></a>
+  <a class="cat{% if level == 'ready' %} on{% endif %}" href="/measurements/?level=ready">계산 가능만<small>{{ ready }}</small></a>
+  <a class="cat{% if kind == 'qualitative' %} on{% endif %}" href="/measurements/?kind=qualitative">정성 측정<small>{{ type_counts.qualitative }}</small></a>
+  <a class="cat{% if kind == 'quantitative' %} on{% endif %}" href="/measurements/?kind=quantitative">정량 측정<small>{{ type_counts.quantitative }}</small></a>
+  <span class="tab-spacer"></span>
+  {% for s in sections %}<a class="mod" href="#ms-{{ s.key }}">{{ s.label }}</a>{% endfor %}
+  {% if common %}<a class="mod" href="#ms-common">공통 측정</a>{% endif %}{% if image %}<a class="mod" href="#ms-image">영상 신호·품질</a>{% endif %}
+</nav>
+{% if level or kind or img %}<div class="filter-result"><p>{% if img %}{{ img_names[img] }} 영상으로 재는 {% endif %}{% if kind %}{{ '정성' if kind == 'qualitative' else '정량' }} 측정 {% elif img and not level %}측정{% endif %}{% if level %}{{ '계산 구현이 있는 것' if level == 'ready' else impl_label[level] }}{% endif %}만 표시</p><a class="button secondary" href="/measurements/">전체 보기</a></div>{% endif %}
+
+{% set ns = namespace(kind='') %}
+{% for s in sections %}
+{% if s.kind != ns.kind %}{% set ns.kind = s.kind %}<h2 class="ms-kind">{{ s.kind }}에서 재는 것</h2>{% endif %}
+<section class="map-section" id="ms-{{ s.key }}">
+  <header class="map-section-head"><span class="axis-num big">{{ loop.index }}</span><div><h2>{{ s.label }}{% if s.modality %} <span class="abbr">{{ s.short }}</span>{% endif %}</h2><p>{{ s.note }}{% if s.modality %} <a href="/imaging/{{ s.modality }}/">촬영 범위·실제 영상 →</a>{% endif %}</p></div><span class="count-badge">계산 가능 {{ s.ready }} / {{ s.count }}</span></header>
+  {% for item, fs in s.rows %}
+  <div class="ms-target">
+    {% if item.pseudo %}<span class="ms-target-name">{{ item.name }}</span>{% else %}<a class="ms-target-name" href="{{ item_path(item) }}">{{ item.name }}{% if item.abbr %} <span class="abbr">{{ item.abbr }}</span>{% endif %}</a>{% endif %}
+    {% set ql = fs|selectattr('type','equalto','qualitative')|list %}{% set qn = fs|selectattr('type','equalto','quantitative')|list %}
+    {% if ql %}<p class="ms-type">정성 <span>관찰해서 기술</span></p><ul class="ms-list">{% for f in ql %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+    {% if qn %}<p class="ms-type">정량 <span>수치로 측정</span></p><ul class="ms-list">{% for f in qn %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+
+{% if common %}
+<h2 class="ms-kind">여러 대상에 공통으로 쓰는 것</h2>
+<section class="map-section" id="ms-common">
+  <header class="map-section-head"><span class="axis-num big">+</span><div><h2>공통 측정</h2><p>병변 유무·면적·조직 대비 비율·초점 수. 각 병변 페이지에 적용됩니다.</p></div></header>
+  {% set ql = common|selectattr('type','equalto','qualitative')|list %}{% set qn = common|selectattr('type','equalto','quantitative')|list %}
+  {% if ql %}<p class="ms-type">정성 <span>관찰해서 기술</span></p><ul class="ms-list">{% for f in ql %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+  {% if qn %}<p class="ms-type">정량 <span>수치로 측정</span></p><ul class="ms-list">{% for f in qn %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+</section>
+{% endif %}
+{% if image %}
+<section class="map-section" id="ms-image">
+  <header class="map-section-head"><span class="axis-num big">+</span><div><h2>영상 신호·품질</h2><p>조직 면적 등 영상 전체 기준 항목입니다.</p></div></header>
+  {% set ql = image|selectattr('type','equalto','qualitative')|list %}{% set qn = image|selectattr('type','equalto','quantitative')|list %}
+  {% if ql %}<p class="ms-type">정성 <span>관찰해서 기술</span></p><ul class="ms-list">{% for f in ql %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+  {% if qn %}<p class="ms-type">정량 <span>수치로 측정</span></p><ul class="ms-list">{% for f in qn %}{{ feature_row(f) }}{% endfor %}</ul>{% endif %}
+</section>
+{% endif %}
+<p class="draft-note">이 목록은 측정할 대상과 속성만 담습니다. 글리슨 점수·ISUP 등급군·pT 병기 같은 판정 결과는 질병 페이지에 있습니다. “영상만으로 자동”은 H&E 영상만으로 조직을 찾아 계산한다는 뜻이고, “주석·mask 입력”은 병변·샘·종양 주석(또는 검증된 분할)이 필요하다는 뜻입니다. 핵 검출은 검증된 분할이 아닌 후보이며 임상 정확도를 뜻하지 않습니다.</p>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='measure-examples.js') }}" defer></script>{% endblock %}

@@ -1,0 +1,53 @@
+{#- Hand-made H&E schematics: a benign prostatic gland in stroma, and the Gleason growth patterns. hl: item id to highlight. -#}
+{% macro c(id, hl, base) -%}{{ base }}{{ ' bs-hl' if id == hl else '' }}{%- endmacro %}
+
+{% macro benign(hl='') -%}
+<svg viewBox="0 0 260 240" role="img" aria-label="양성 전립선 샘 모식도">
+  <rect class="{{ c('ana_stroma', hl, 'pg-stroma') }}" x="0" y="0" width="260" height="240"/>
+  {% for k in range(9) %}<path class="pg-fiber" d="M{{ -10 + k * 32 }},240 C{{ 20 + k * 30 }},170 {{ k * 30 }},80 {{ 30 + k * 32 }},0"/>{% endfor %}
+  <path class="{{ c('ana_basal_cell_layer', hl, 'pg-basal') }}" d="M130,28 C190,22 222,62 214,100 C236,128 214,186 168,196 C138,222 84,214 66,184 C30,170 26,118 48,92 C44,52 86,24 130,28 Z"/>
+  <path class="{{ c('ana_secretory_cells', hl, 'pg-epi') }}" d="M130,36 C184,31 212,66 205,101 C226,128 206,180 165,188 C137,212 88,206 72,178 C40,165 36,120 56,95 C53,58 90,33 130,36 Z"/>
+  <path class="{{ c('ana_gland_lumen', hl, 'pg-lumen') }}" d="M130,62 C170,58 186,82 180,104 C196,124 182,158 156,164 C134,180 100,176 90,156 C68,148 64,120 80,104 C78,78 102,60 130,62 Z"/>
+  <circle class="{{ c('ana_corpora_amylacea', hl, 'pg-ca') }}" cx="132" cy="118" r="13"/><circle class="pg-ca-ring" cx="132" cy="118" r="8"/>
+  {% for a in range(0, 360, 20) %}{% set rad = a * 3.14159 / 180 %}<circle class="{{ c('ana_nucleus', hl, 'pg-nuc') }}" cx="{{ 130 + 66 * (rad|cos_) }}" cy="{{ 116 + 64 * (rad|sin_) }}" r="3.4"/>{% endfor %}
+  {% if hl == 'ana_nucleolus' %}<circle class="bs-hl-dot" cx="196" cy="116" r="4"/>{% endif %}
+  <ellipse class="{{ c('ana_nerve', hl, 'pg-nerve') }}" cx="38" cy="214" rx="28" ry="14"/>
+  <circle class="{{ c('ana_blood_vessel', hl, 'pg-vessel') }}" cx="232" cy="26" r="14"/><circle class="pg-rbc" cx="232" cy="26" r="7"/>
+  {% if hl == 'ana_benign_gland' %}<path class="bs-hl" d="M130,28 C190,22 222,62 214,100 C236,128 214,186 168,196 C138,222 84,214 66,184 C30,170 26,118 48,92 C44,52 86,24 130,28 Z" fill-opacity=".25"/>{% endif %}
+  <text class="pg-label" x="8" y="16">양성 샘 · H&E</text>
+</svg>
+{%- endmacro %}
+
+{% macro patterns(hl='') -%}
+<svg viewBox="0 0 390 170" role="img" aria-label="글리슨 패턴 모식도">
+  <rect class="pg-stroma" x="0" y="0" width="390" height="170"/>
+  <g class="{{ 'pg-panel-hl' if hl in ['les_gleason_pattern_3', 'les_adenocarcinoma'] else '' }}">
+    <rect class="pg-frame" x="4" y="22" width="122" height="144"/>
+    {% for x, y, r in [(30,55,13),(70,50,10),(104,62,12),(42,96,11),(86,92,14),(30,136,10),(70,134,12),(108,128,10)] %}<circle class="pg-epi" cx="{{ x }}" cy="{{ y }}" r="{{ r }}"/><circle class="pg-lumen" cx="{{ x }}" cy="{{ y }}" r="{{ r * 0.45 }}"/>{% endfor %}
+    <text class="pg-label" x="10" y="16">패턴 3</text>
+  </g>
+  <g class="{{ 'pg-panel-hl' if hl in ['les_gleason_pattern_4', 'les_cribriform', 'les_fused_glands', 'les_poorly_formed_glands', 'les_intraductal_carcinoma'] else '' }}">
+    <rect class="pg-frame" x="134" y="22" width="122" height="144"/>
+    <ellipse class="{{ c('les_cribriform', hl, 'pg-epi') }}" cx="176" cy="74" rx="34" ry="30"/>
+    {% for x, y in [(164,64),(180,58),(192,74),(170,84),(186,90),(160,80)] %}<circle class="pg-lumen" cx="{{ x }}" cy="{{ y }}" r="4.5"/>{% endfor %}
+    <path class="{{ c('les_fused_glands', hl, 'pg-epi') }}" d="M150,120 q12,-14 26,0 q12,-12 24,0 q12,-12 26,2 l0,22 q-14,10 -26,0 q-12,10 -24,0 q-12,10 -26,0 Z"/>
+    {% for x in [163,188,212] %}<circle class="pg-lumen" cx="{{ x }}" cy="{{ 130 }}" r="3.5"/>{% endfor %}
+    {% for x, y in [(232,48),(240,64),(228,86)] %}<circle class="{{ c('les_poorly_formed_glands', hl, 'pg-epi') }}" cx="{{ x }}" cy="{{ y }}" r="7"/>{% endfor %}
+    <text class="pg-label" x="140" y="16">패턴 4 · 사상·융합</text>
+  </g>
+  <g class="{{ 'pg-panel-hl' if hl in ['les_gleason_pattern_5', 'les_solid_sheets'] else '' }}">
+    <rect class="pg-frame" x="264" y="22" width="122" height="144"/>
+    <rect class="{{ c('les_solid_sheets', hl, 'pg-epi') }}" x="276" y="38" width="60" height="50" rx="8"/>
+    {% for k in range(14) %}<circle class="pg-nuc" cx="{{ 284 + (k % 5) * 11 }}" cy="{{ 48 + (k // 5) * 14 }}" r="3"/>{% endfor %}
+    {% for k in range(10) %}<circle class="pg-single" cx="{{ 280 + k * 10 }}" cy="{{ 118 + (k % 3) * 14 }}" r="3.4"/>{% endfor %}
+    <text class="pg-label" x="270" y="16">패턴 5 · 고형·단일 세포</text>
+  </g>
+</svg>
+{%- endmacro %}
+
+{% macro gland(hl='', both=True) -%}
+<div class="breast-schem{{ '' if both else ' single' }}">
+  <figure>{{ benign(hl) }}<figcaption>양성 샘: 내강 · 분비 세포 · 기저세포층 · 간질</figcaption></figure>
+  {% if both %}<figure>{{ patterns(hl) }}<figcaption>글리슨 패턴: 3(따로 떨어진 샘) · 4(사상·융합) · 5(고형·단일 세포)</figcaption></figure>{% endif %}
+</div>
+{%- endmacro %}

@@ -1,5 +1,14 @@
 # STATUS
 
+## 병리 영역 v01(전립선) — 2026-11-23
+
+- `domains/pathology/`를 같은 틀로 새로 만들었다: 지식 표(영상 표현 6·해부 21·병변 24·측정 32+판정 2·질병 9·관계 34·판정 체계 5/단계 16·
+  문헌 19, PMID는 Europe PMC로 확인), 측정 패키지 `pathology-measures`(함수 25·테스트 5), 생성 코드 4개와 테스트, 웹 `pathology-atlas-web`(테스트 9).
+- 영상: PRECISE(H&E 27장·주석 7종, 27 GB)와 SICAPv2(4.2 GB)를 `resources/datasets/public_pathology/`에 복사(git 제외, 파일 수 일치).
+  그림 17·예시 10장(층 34). SICAPv2 mask 값이 readme(1·2·3)와 달리 3·4·5임을 확인해 표에 적음.
+- 검사: 등록 표 23개 0 errors. 서비스: `pathology-atlas-web.service`, 포트 8881(8880은 다른 서버가 사용).
+- 남은 일: PRECISE IHC 슬라이드, 신경주위·피막 밖 침범 그림, 핵소체·기저세포 판정 함수, 전문가 검토.
+
 ## 유방촬영 유두 끝점 수정 — 2026-11-23
 
 - `breast.nipple_point`의 전역 최외곽점 선택을 국소 돌출 검출 + 원영상 작은 영역의 어두운 끝점 보정으로 바꿨다.

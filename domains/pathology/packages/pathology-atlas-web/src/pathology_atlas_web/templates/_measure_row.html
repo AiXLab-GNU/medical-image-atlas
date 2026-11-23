@@ -1,0 +1,5 @@
+<div class="m-row">
+  {% set impl = atlas.features[f.id].impl %}
+  <div class="m-name"><strong>{{ f.name }}</strong>{% if f.unit %}<span class="unit">{{ f.unit|unit }}</span>{% endif %}<span class="lv lv-{{ impl.level }}">{{ impl_label[impl.level] }}</span></div>
+  <div class="m-def">{{ f.definition }}{% if f.region %}<span class="m-meta">구역 · {{ f.region|region }}</span>{% endif %}{% if f.requirements and f.requirements != '—' %}<span class="m-meta">조건 · {{ f.requirements }}</span>{% endif %}{% if impl.package %}<span class="m-fn">측정 함수 <code>{{ impl.package.function }}</code> · 입력 {{ impl.package.input_label }} · {{ impl.package.method }}{% if impl.package.reference %} ({{ impl.package.reference }}){% endif %}</span>{% endif %}</div>
+</div>

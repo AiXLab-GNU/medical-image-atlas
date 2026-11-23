@@ -1,0 +1,44 @@
+/* Pathology atlas — additions to the shared design system */
+.lv-pair,.lvf-pair{background:#3aa38f;color:#fff;fill:#3aa38f}
+.lv-reading,.lvf-reading{background:#8aa3bb;color:#fff;fill:#8aa3bb}
+.mask-legend .ml-skin::before{background:#e879f9}.mask-legend .ml-fat::before{background:#38bdf8}
+.mask-legend .ml-front::before{background:#4ade80}.mask-legend .ml-mid::before{background:#ffd34d}
+.mask-legend .ml-back::before{background:#fb923c}
+
+/* breast schematic (CC and MLO) */
+.breast-schem{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0}
+.breast-schem.single{grid-template-columns:1fr}
+.breast-schem figure{margin:0;background:#0b1220;border-radius:var(--r-m);padding:10px 10px 6px;position:relative}
+.breast-schem svg{display:block;width:100%;height:auto}
+.breast-schem figcaption{color:#cbd5e1;font-size:.75rem;padding:4px 2px 0}
+.bs-tissue{fill:#3b4a5e}.bs-fat{fill:#1f2a3a}.bs-dense{fill:#94a3b8;opacity:.55}
+.bs-skin{fill:none;stroke:#cbd5e1;stroke-width:2}.bs-pect{fill:#64748b}
+.bs-line{stroke:#e2e8f0;stroke-width:1.5;stroke-dasharray:5 4;fill:none}
+.bs-label{fill:#e2e8f0;font-size:11px;font-weight:600}
+.bs-zone{fill:transparent;stroke:none}
+.bs-hl{fill:#22d3ee;fill-opacity:.45;stroke:#22d3ee;stroke-width:2}
+.bs-hl-line{stroke:#22d3ee;stroke-width:3.5;fill:none}
+.bs-hl-dot{fill:#e879f9;stroke:#fff;stroke-width:2}
+.breast-schem a .bs-zone:hover{fill:#22d3ee;fill-opacity:.18}
+.hero-visuals .breast-schem figure{background:#0b1220}
+
+/* tissue order list on the anatomy page */
+.tissue-order{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tissue-order li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:10px 14px}
+.tissue-order .to-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+.tissue-order a{font-weight:700;text-decoration:none}
+.tissue-order p{margin:2px 0 0;color:var(--muted);font-size:.875rem}
+.mx-empty{background:var(--surface);border:1px dashed var(--line-2);border-radius:var(--r-m);padding:18px;color:var(--muted)}
+
+/* H&E gland schematic */
+.pg-stroma{fill:#f6c9da}.pg-fiber{fill:none;stroke:#e9a8c2;stroke-width:1.4}
+.pg-basal{fill:#9b7fc4}.pg-epi{fill:#d9b8e6;stroke:#a487c9;stroke-width:1}.pg-lumen{fill:#fffdfd}
+.pg-ca{fill:#f2a3c1}.pg-ca-ring{fill:none;stroke:#d97aa3;stroke-width:1.5}.pg-nuc{fill:#4b2a83}
+.pg-single{fill:#5b3497}.pg-nerve{fill:#f4b7cf;stroke:#c98aa8;stroke-width:2}.pg-vessel{fill:#fbe3ea;stroke:#c98aa8;stroke-width:2}
+.pg-rbc{fill:#e04a5f}.pg-frame{fill:none;stroke:#c98aa8;stroke-width:1;stroke-dasharray:4 3}
+.pg-label{fill:#3b1f5e;font-size:11px;font-weight:700}
+.pg-panel-hl .pg-frame{stroke:#0891b2;stroke-width:3;stroke-dasharray:none}
+.breast-schem svg .bs-hl{fill:#22d3ee;fill-opacity:.55;stroke:#0e7490;stroke-width:2}
+.breast-schem figure:has(.pg-stroma){background:#fff5f8}
+.breast-schem figure:has(.pg-stroma) figcaption{color:#5b3b6e}
+.mask-legend .ml-tumor::before{background:#f87171}.mask-legend .ml-benign::before{background:#4ade80}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>영상 종류</span></div>
+<header class="map-hero"><div><h1>영상 종류</h1><p class="lead">유방촬영은 <strong>2D 영상(FFDM)</strong>, 겹침을 줄인 <strong>단층합성(DBT)</strong>, 조영 증강을 보는 <strong>CEM</strong>으로 나뉩니다. 영상을 고르면 보이는 것과 한계, 그 영상으로 보는 구조·병변과 측정을 함께 봅니다.</p></div></header>
+<div class="mv-index">{% for c in cards %}{% set first = c.figures[0] if c.figures else none %}
+  <a class="mv-tile" href="/imaging/{{ c.view.key }}/">
+    <div class="mv-tile-visual">{% if first %}<img src="/figures/{{ first.base }}" alt="" width="{{ first.width }}" height="{{ first.height }}" loading="lazy">{% else %}<div class="mx-empty">공개 CC BY·CC0 영상 준비 중</div>{% endif %}</div>
+    <div class="mv-tile-copy">
+      <span class="category">{{ c.view.short }}</span>
+      <h2>{{ c.record.name }}</h2>
+      <p>{{ c.view.summary }}</p>
+      <span class="muted small">직접 보이는 항목 {{ c.seen[('anatomy','direct')]|length + c.seen[('lesions','direct')]|length }} · 측정 {{ c.measures|length }} · 측정 표시 예시 {{ c.examples|length }}</span>
+    </div>
+  </a>{% endfor %}
+</div>
+{% endblock %}

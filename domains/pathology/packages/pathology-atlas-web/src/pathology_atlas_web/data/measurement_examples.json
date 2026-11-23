@@ -1,0 +1,1011 @@
+{
+ "generated_by": "domains/pathology/code/build_pathology_figures.py",
+ "note": "values computed by pathology-measures on PRECISE (µm-calibrated) and SICAPv2 (pixels)",
+ "examples": [
+  {
+   "id": "ex_he_core",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "생검 코어 전체",
+   "title": "H&E · 생검 코어 전체",
+   "source": "precise",
+   "source_file": "sub-23_ses-01_h-e.ome.tif",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7 · ISUP 등급군 2)의 생검 코어 전체입니다(1/16 축소 영상). 색 영역은 공급자 전문가 주석이고, 조직 범위는 서비스가 유리 배경과 색으로 가른 것입니다. 화소 간격은 OME 메타데이터를 써서 mm·mm²로 계산했습니다.",
+   "builder": "core_example",
+   "base": "ex_he_core.jpg",
+   "width": 604,
+   "height": 860,
+   "layers": [
+    {
+     "key": "tissue",
+     "label": "조직 면적",
+     "tone": "blue",
+     "function": "tissue.tissue_area",
+     "how": "채도·밝기로 유리 배경을 빼고 구멍을 채운 조직 범위",
+     "features": [
+      {
+       "id": "ft_tissue_area",
+       "value": "9.53 mm²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_core_tissue.png"
+    },
+    {
+     "key": "composition",
+     "label": "조직 구성 비율",
+     "tone": "green",
+     "function": "tissue.tumor_fraction",
+     "how": "조직 면적을 분모로 한 주석 class별 면적 비율",
+     "features": [
+      {
+       "id": "ft_tumor_fraction",
+       "value": "22.5 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_benign_gland_fraction",
+       "value": "16.3 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_stroma_fraction",
+       "value": "59.2 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_artifact_fraction",
+       "value": "관찰 안 됨",
+       "status": "not_observed"
+      }
+     ],
+     "file": "ex_he_core_composition.png"
+    },
+    {
+     "key": "tumor",
+     "label": "종양 면적·최대 길이·초점 수",
+     "tone": "red",
+     "function": "tissue.tumor_area",
+     "how": "종양 주석의 면적, 가장 먼 두 종양 화소 사이 거리, 100 µm 안의 조각을 합친 뒤 0.005 mm² 이상인 초점 수",
+     "features": [
+      {
+       "id": "ft_tumor_area",
+       "value": "2.2 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_tumor_extent",
+       "value": "10.7 mm",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "12 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_core_tumor.png"
+    },
+    {
+     "key": "grade",
+     "label": "글리슨 점수·등급군(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 임상표의 판정",
+     "features": [
+      {
+       "id": "ft_gleason_score",
+       "value": "3+4=7 (공급자 판독)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_isup_grade_group",
+       "value": "2 (공급자 판독)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_core_grade.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_benign",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "양성 샘",
+   "title": "H&E · 양성 샘과 간질",
+   "source": "precise",
+   "source_file": "sub-01_ses-01_h-e.ome.tif",
+   "caption": "PRECISE sub-01_ses-01(진단 Benign · 글리슨 0)의 양성 샘 부위입니다(화소 0.49 µm). 색 영역은 공급자 전문가 주석이고, 내강·핵은 서비스 자동 추정입니다.",
+   "builder": "window_example",
+   "base": "ex_he_benign.jpg",
+   "width": 759,
+   "height": 759,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "양성 샘 범위",
+     "tone": "green",
+     "function": "tissue.lesion_area",
+     "how": "공급자 주석 class의 면적과 창 안 조직 대비 비율",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.117 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_fraction",
+       "value": "36.7 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "3 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_benign_lesion.png"
+    },
+    {
+     "key": "glands",
+     "label": "샘 개수·크기·모양",
+     "tone": "green",
+     "function": "glands.mean_area",
+     "how": "주석 샘 성분별 면적·원형도와 조직 면적당 개수",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "3 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_density",
+       "value": "9.9 /mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "38,969 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.117",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_benign_glands.png"
+    },
+    {
+     "key": "lumen",
+     "label": "내강 비율·샘당 내강 수",
+     "tone": "cyan",
+     "function": "glands.lumen_fraction",
+     "how": "샘 안의 밝고 채도 낮은 닫힌 공간(40 µm² 이상, 슬라이드 바깥 유리와 이어진 곳 제외)을 내강으로 봄",
+     "features": [
+      {
+       "id": "ft_lumen_fraction",
+       "value": "10.9 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "9.67 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_benign_lumen.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기·다양성",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "5,757 /mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "20.1 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.427",
+       "status": "ok"
+      },
+      {
+       "id": "ft_hematoxylin_od",
+       "value": "0.0286 OD",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_benign_nuclei.png"
+    },
+    {
+     "key": "texture",
+     "label": "조직 질감 대비",
+     "tone": "orange",
+     "function": "texture.glcm_contrast",
+     "how": "GLCM 대비(32단계 · 거리 2px · 4방향 평균)",
+     "features": [
+      {
+       "id": "ft_texture_contrast",
+       "value": "0.0066",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_benign_texture.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_tumor",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "종양",
+   "title": "H&E · 종양(글리슨 4+5)",
+   "source": "precise",
+   "source_file": "sub-20_ses-01_h-e.ome.tif",
+   "caption": "PRECISE sub-20_ses-01(진단 Malignant · 글리슨 4+5=9)의 종양 부위입니다(화소 0.24 µm). 색 영역은 공급자 전문가 주석이고, 내강·핵은 서비스 자동 추정입니다.",
+   "builder": "window_example",
+   "base": "ex_he_tumor.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "종양 범위",
+     "tone": "red",
+     "function": "tissue.lesion_area",
+     "how": "공급자 주석 class의 면적과 창 안 조직 대비 비율",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.0811 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_fraction",
+       "value": "96.5 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "2 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_tumor_lesion.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기·다양성",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "7,990 /mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "22.2 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.392",
+       "status": "ok"
+      },
+      {
+       "id": "ft_hematoxylin_od",
+       "value": "0.0448 OD",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_tumor_nuclei.png"
+    },
+    {
+     "key": "texture",
+     "label": "조직 질감 대비",
+     "tone": "orange",
+     "function": "texture.glcm_contrast",
+     "how": "GLCM 대비(32단계 · 거리 2px · 4방향 평균)",
+     "features": [
+      {
+       "id": "ft_texture_contrast",
+       "value": "0.0023",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_tumor_texture.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_hgpin",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "HGPIN",
+   "title": "H&E · 고등급 PIN",
+   "source": "precise",
+   "source_file": "sub-01_ses-03_h-e.ome.tif",
+   "caption": "PRECISE sub-01_ses-03(진단 Malignant · 글리슨 3+3=6)의 HGPIN 부위입니다(화소 0.49 µm). 색 영역은 공급자 전문가 주석이고, 내강·핵은 서비스 자동 추정입니다.",
+   "builder": "window_example",
+   "base": "ex_he_hgpin.jpg",
+   "width": 759,
+   "height": 759,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "HGPIN 범위",
+     "tone": "orange",
+     "function": "tissue.lesion_area",
+     "how": "공급자 주석 class의 면적과 창 안 조직 대비 비율",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.105 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_fraction",
+       "value": "36.6 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "5 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_hgpin_lesion.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기·다양성",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "6,364 /mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "24.0 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.535",
+       "status": "ok"
+      },
+      {
+       "id": "ft_hematoxylin_od",
+       "value": "0.0333 OD",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_hgpin_nuclei.png"
+    },
+    {
+     "key": "texture",
+     "label": "조직 질감 대비",
+     "tone": "orange",
+     "function": "texture.glcm_contrast",
+     "how": "GLCM 대비(32단계 · 거리 2px · 4방향 평균)",
+     "features": [
+      {
+       "id": "ft_texture_contrast",
+       "value": "0.0086",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_hgpin_texture.png"
+    },
+    {
+     "key": "read",
+     "label": "판독",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 주석 class를 판독 값으로 옮김",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "HGPIN 있음 (공급자 주석)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_hgpin_read.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_idc",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "관내암",
+   "title": "H&E · 관내암",
+   "source": "precise",
+   "source_file": "sub-02_ses-01_h-e.ome.tif",
+   "caption": "PRECISE sub-02_ses-01(진단 Malignant · 글리슨 4+5=9)의 관내암 부위입니다(화소 0.49 µm). 색 영역은 공급자 전문가 주석이고, 내강·핵은 서비스 자동 추정입니다.",
+   "builder": "window_example",
+   "base": "ex_he_idc.jpg",
+   "width": 759,
+   "height": 759,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "관내암 범위",
+     "tone": "magenta",
+     "function": "tissue.lesion_area",
+     "how": "공급자 주석 class의 면적과 창 안 조직 대비 비율",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.0326 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_fraction",
+       "value": "8.2 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "2 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_idc_lesion.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기·다양성",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "4,111 /mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "24.8 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.465",
+       "status": "ok"
+      },
+      {
+       "id": "ft_hematoxylin_od",
+       "value": "0.0286 OD",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_idc_nuclei.png"
+    },
+    {
+     "key": "texture",
+     "label": "조직 질감 대비",
+     "tone": "orange",
+     "function": "texture.glcm_contrast",
+     "how": "GLCM 대비(32단계 · 거리 2px · 4방향 평균)",
+     "features": [
+      {
+       "id": "ft_texture_contrast",
+       "value": "0.0081",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_idc_texture.png"
+    },
+    {
+     "key": "read",
+     "label": "판독",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 주석 class를 판독 값으로 옮김",
+     "features": [
+      {
+       "id": "ft_idc_presence",
+       "value": "있음 (공급자 주석)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_idc_read.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_aip",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "비정형 관내 증식",
+   "title": "H&E · 비정형 관내 증식",
+   "source": "precise",
+   "source_file": "sub-05_ses-01_h-e.ome.tif",
+   "caption": "PRECISE sub-05_ses-01(진단 Malignant · 글리슨 3+4=7)의 비정형 관내 증식 부위입니다(화소 0.49 µm). 색 영역은 공급자 전문가 주석이고, 내강·핵은 서비스 자동 추정입니다.",
+   "builder": "window_example",
+   "base": "ex_he_aip.jpg",
+   "width": 759,
+   "height": 759,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "비정형 관내 증식 범위",
+     "tone": "yellow",
+     "function": "tissue.lesion_area",
+     "how": "공급자 주석 class의 면적과 창 안 조직 대비 비율",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.0351 mm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_fraction",
+       "value": "21.9 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "3 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_aip_lesion.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_gp3",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "글리슨 패턴 3",
+   "title": "H&E · 글리슨 패턴 3",
+   "source": "sicapv2",
+   "source_file": "images/16B0024177_Block_Region_0_8_14_xini_36647_yini_116833.jpg",
+   "caption": "SICAPv2 패치 16B0024177_Block_Region_0_8_14_xini_36647_yini_116833입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "builder": "sicap_example",
+   "base": "ex_he_gp3.jpg",
+   "width": 640,
+   "height": 640,
+   "layers": [
+    {
+     "key": "patterns",
+     "label": "글리슨 패턴 비율",
+     "tone": "orange",
+     "function": "tissue.pattern_percent",
+     "how": "종양(주석 값 3·4·5) 면적 중 패턴별 비율",
+     "features": [
+      {
+       "id": "ft_pattern3_percent",
+       "value": "100.0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern4_percent",
+       "value": "관찰 안 됨",
+       "status": "not_observed"
+      },
+      {
+       "id": "ft_pattern5_percent",
+       "value": "관찰 안 됨",
+       "status": "not_observed"
+      }
+     ],
+     "file": "ex_he_gp3_patterns.png"
+    },
+    {
+     "key": "lumen",
+     "label": "샘당 내강 수·내강 비율",
+     "tone": "cyan",
+     "function": "glands.lumina_per_gland",
+     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "features": [
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "10.5 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumen_fraction",
+       "value": "4.7 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_count",
+       "value": "2 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp3_lumen.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린 색 분리 후 핵 후보(화소 단위)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "49.1 /10⁴px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "36.0 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.955",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp3_nuclei.png"
+    }
+   ],
+   "credit": "Silva-Rodríguez J, Colomer A, Sales MA, et al. SICAPv2 (Mendeley Data 2020)",
+   "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_gp4",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "글리슨 패턴 4",
+   "title": "H&E · 글리슨 패턴 4",
+   "source": "sicapv2",
+   "source_file": "images/16B0003388_Block_Region_13_10_3_xini_10684_yini_63869.jpg",
+   "caption": "SICAPv2 패치 16B0003388_Block_Region_13_10_3_xini_10684_yini_63869입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "builder": "sicap_example",
+   "base": "ex_he_gp4.jpg",
+   "width": 640,
+   "height": 640,
+   "layers": [
+    {
+     "key": "patterns",
+     "label": "글리슨 패턴 비율",
+     "tone": "orange",
+     "function": "tissue.pattern_percent",
+     "how": "종양(주석 값 3·4·5) 면적 중 패턴별 비율",
+     "features": [
+      {
+       "id": "ft_pattern3_percent",
+       "value": "0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern4_percent",
+       "value": "100.0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern5_percent",
+       "value": "관찰 안 됨",
+       "status": "not_observed"
+      }
+     ],
+     "file": "ex_he_gp4_patterns.png"
+    },
+    {
+     "key": "lumen",
+     "label": "샘당 내강 수·내강 비율",
+     "tone": "cyan",
+     "function": "glands.lumina_per_gland",
+     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "features": [
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "9 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumen_fraction",
+       "value": "1.3 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_count",
+       "value": "1 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp4_lumen.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린 색 분리 후 핵 후보(화소 단위)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "53.2 /10⁴px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "37.7 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.694",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp4_nuclei.png"
+    },
+    {
+     "key": "read",
+     "label": "사상 패턴(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "SICAPv2 사상 패턴 표(G4C)",
+     "features": [
+      {
+       "id": "ft_cribriform_presence",
+       "value": "없음 (SICAPv2 사상 표)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_gp4_read.png"
+    }
+   ],
+   "credit": "Silva-Rodríguez J, Colomer A, Sales MA, et al. SICAPv2 (Mendeley Data 2020)",
+   "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_cribriform",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "사상 샘",
+   "title": "H&E · 사상(체 모양) 샘",
+   "source": "sicapv2",
+   "source_file": "images/16B0024177_Block_Region_0_2_2_xini_24359_yini_110689.jpg",
+   "caption": "SICAPv2 패치 16B0024177_Block_Region_0_2_2_xini_24359_yini_110689입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "builder": "sicap_example",
+   "base": "ex_he_cribriform.jpg",
+   "width": 640,
+   "height": 640,
+   "layers": [
+    {
+     "key": "patterns",
+     "label": "글리슨 패턴 비율",
+     "tone": "orange",
+     "function": "tissue.pattern_percent",
+     "how": "종양(주석 값 3·4·5) 면적 중 패턴별 비율",
+     "features": [
+      {
+       "id": "ft_pattern3_percent",
+       "value": "0.9 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern4_percent",
+       "value": "99.1 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern5_percent",
+       "value": "0 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_cribriform_patterns.png"
+    },
+    {
+     "key": "lumen",
+     "label": "샘당 내강 수·내강 비율",
+     "tone": "cyan",
+     "function": "glands.lumina_per_gland",
+     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "features": [
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "24.0 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumen_fraction",
+       "value": "1.3 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_count",
+       "value": "1 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_cribriform_lumen.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린 색 분리 후 핵 후보(화소 단위)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "56.6 /10⁴px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "27.0 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.645",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_cribriform_nuclei.png"
+    },
+    {
+     "key": "read",
+     "label": "사상 패턴(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "SICAPv2 사상 패턴 표(G4C)",
+     "features": [
+      {
+       "id": "ft_cribriform_presence",
+       "value": "있음 (SICAPv2 사상 표)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_cribriform_read.png"
+    }
+   ],
+   "credit": "Silva-Rodríguez J, Colomer A, Sales MA, et al. SICAPv2 (Mendeley Data 2020)",
+   "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_gp5",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "글리슨 패턴 5",
+   "title": "H&E · 글리슨 패턴 5",
+   "source": "sicapv2",
+   "source_file": "images/16B0008067_Block_Region_0_10_5_xini_13931_yini_107209.jpg",
+   "caption": "SICAPv2 패치 16B0008067_Block_Region_0_10_5_xini_13931_yini_107209입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "builder": "sicap_example",
+   "base": "ex_he_gp5.jpg",
+   "width": 640,
+   "height": 640,
+   "layers": [
+    {
+     "key": "patterns",
+     "label": "글리슨 패턴 비율",
+     "tone": "orange",
+     "function": "tissue.pattern_percent",
+     "how": "종양(주석 값 3·4·5) 면적 중 패턴별 비율",
+     "features": [
+      {
+       "id": "ft_pattern3_percent",
+       "value": "관찰 안 됨",
+       "status": "not_observed"
+      },
+      {
+       "id": "ft_pattern4_percent",
+       "value": "0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern5_percent",
+       "value": "100.0 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp5_patterns.png"
+    },
+    {
+     "key": "nuclei",
+     "label": "핵 밀도·크기",
+     "tone": "magenta",
+     "function": "nuclei.density",
+     "how": "헤마톡실린 색 분리 후 핵 후보(화소 단위)",
+     "features": [
+      {
+       "id": "ft_nuclear_density",
+       "value": "34.2 /10⁴px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area",
+       "value": "29.3 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nuclear_area_variation",
+       "value": "0.771",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp5_nuclei.png"
+    }
+   ],
+   "credit": "Silva-Rodríguez J, Colomer A, Sales MA, et al. SICAPv2 (Mendeley Data 2020)",
+   "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+observation_id,target_id,imaging_id,observed_signal_ko,interpretation_condition_ko,source_ids,review_status
+obs_gleason_pattern_3_he_patch,les_gleason_pattern_3,img_he_patch,따로 떨어진 작고 둥근 샘이 간질 사이로 퍼짐,샘 하나하나가 내강을 가져야 함,src_isup_2014;src_isup_2019,source_linked
+obs_gleason_pattern_4_he_patch,les_gleason_pattern_4,img_he_patch,샘이 붙거나 내강이 없거나 체 모양,접선 절단된 패턴 3과 구분,src_isup_2014;src_isup_2019,source_linked
+obs_gleason_pattern_5_he_patch,les_gleason_pattern_5,img_he_patch,샘 없이 세포 판·끈·단일 세포,염증 세포와 구분,src_isup_2014;src_isup_2019,source_linked
+obs_cribriform_he_hpf,les_cribriform,img_he_hpf,큰 샘 안의 여러 둥근 구멍,관내암(기저세포 유지)과 구분,src_isup_2014;src_isup_2019;src_cribriform_2021,source_linked
+obs_intraductal_carcinoma_he_hpf,les_intraductal_carcinoma,img_he_hpf,넓어진 관을 채운 이형 세포 · 둘레 기저세포,기저세포는 IHC로 확인,src_guo_2006,source_linked
+obs_intraductal_carcinoma_ihc_hmwck_amacr,les_intraductal_carcinoma,img_ihc_hmwck_amacr,AMACR 양성 세포가 채운 관 둘레의 HMWCK 양성 기저세포,—,src_guo_2006;src_precise_2026,source_linked
+obs_hgpin_he_hpf,les_hgpin,img_he_hpf,양성 모양 샘의 분비 세포가 핵소체가 뚜렷한 이형 세포로 바뀜,기저세포 유지,src_who_2022,source_linked
+obs_adenocarcinoma_ihc_hmwck_amacr,les_adenocarcinoma,img_ihc_hmwck_amacr,HMWCK 기저세포 없이 AMACR 양성인 샘,양성 모방 병변도 AMACR 양성일 수 있음,src_who_2022,source_linked
+obs_adenocarcinoma_he_wsi,les_adenocarcinoma,img_he_wsi,저배율에서 간질 사이로 퍼진 작은 샘 무리,—,src_precise_2026,source_linked
+obs_perineural_invasion_he_hpf,les_perineural_invasion,img_he_hpf,신경 다발을 둘러싼 암 샘,—,src_who_2022,source_linked
+obs_atrophy_he_hpf,les_atrophy,img_he_hpf,세포질이 줄어 짙어 보이는 작은 샘,기저세포 유지 · 핵소체 없음,src_wang_2008,source_linked
+obs_benign_gland_he_hpf,ana_benign_gland,img_he_hpf,굴곡진 큰 샘 · 두 층 상피 · 창백한 세포질,—,src_mcneal_1988,source_linked
+obs_benign_gland_ihc_hmwck_amacr,ana_benign_gland,img_ihc_hmwck_amacr,샘 둘레의 갈색 HMWCK 기저세포 띠,—,src_precise_2026,source_linked
+obs_stroma_he_wsi,ana_stroma,img_he_wsi,샘 사이의 분홍 섬유근육 조직,—,src_mcneal_1988,source_linked
+obs_nucleus_he_hpf,ana_nucleus,img_he_hpf,청자색 핵,염색 차이,src_ruifrok_2001,source_linked
+obs_tissue_artifact_he_wsi,les_tissue_artifact,img_he_wsi,접힘·찢김·흐림·기포,판독과 측정에서 제외,src_precise_2026,source_linked

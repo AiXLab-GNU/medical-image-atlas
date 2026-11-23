@@ -1,0 +1,9 @@
+scope,class_id,feature_id,note_ko
+lesion,region,ft_lesion_generic_presence,
+lesion,region,ft_lesion_generic_area,
+lesion,region,ft_lesion_generic_fraction,
+lesion,region,ft_lesion_generic_count,
+lesion,gland,ft_lesion_generic_presence,
+lesion,gland,ft_lesion_generic_fraction,
+lesion,focal,ft_lesion_generic_presence,
+lesion,focal,ft_lesion_generic_count,

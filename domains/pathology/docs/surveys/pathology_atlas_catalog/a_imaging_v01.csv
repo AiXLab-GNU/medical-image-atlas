@@ -1,0 +1,7 @@
+imaging_id,level,parent_id,name_ko,name_en,signal,dimensionality,shows,limits,inclusion,source_ids
+img_he,modality,,H&E 조직 슬라이드,Hematoxylin and eosin (H&E) histology,헤마톡실린(핵·청자색)과 에오신(세포질·간질·분홍색) 염색의 투과광,2D(조직 절편),샘 구조·핵 모양·간질·종양의 성장 양상,한 절편만 보며 3차원 구조는 추정; 염색·스캐너 차이가 큼,detailed,src_ruifrok_2001;src_who_2022
+img_he_wsi,representation,img_he,H&E 전체 슬라이드 영상,H&E whole-slide image (WSI),스캐너가 찍은 슬라이드 전체의 다중 배율 영상,2D 피라미드,종양 범위·조직 구성·병변 분포(저배율),고배율 세부는 확대해야 보임; 파일이 큼,detailed,src_precise_2026
+img_he_hpf,representation,img_he,H&E 고배율 시야,H&E high-power field (20–40×),슬라이드 일부의 고배율 영상,2D,핵 크기·핵소체·유사분열·기저세포층,좁은 범위만 보임,detailed,src_isup_2014
+img_he_patch,representation,img_he,H&E 패치(10× 등),H&E patch,슬라이드를 일정 크기로 자른 영상,2D,글리슨 패턴·샘 모양(AI 학습 단위),패치 경계에서 구조가 잘림,detailed,src_sicap_2020
+img_ihc,modality,,면역조직화학 염색,Immunohistochemistry (IHC),항체로 특정 단백질을 갈색(DAB)·적색으로 표시,2D(조직 절편),기저세포 유무(HMWCK·p63)·AMACR 과발현,염색 품질·판독 기준에 좌우; 단독 진단에 쓰지 않음,detailed,src_precise_2026
+img_ihc_hmwck_amacr,representation,img_ihc,HMWCK·AMACR 이중 염색,HMWCK–AMACR dual IHC,기저세포(HMWCK 갈색)와 종양세포(AMACR 적색)를 함께 표시,2D,기저세포 소실과 AMACR 양성 샘,양성 모방 병변도 AMACR 양성일 수 있음,detailed,src_precise_2026

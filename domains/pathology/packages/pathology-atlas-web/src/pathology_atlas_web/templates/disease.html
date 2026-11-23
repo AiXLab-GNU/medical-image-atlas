@@ -1,0 +1,70 @@
+{% extends 'base.html' %}{% from '_macros.html' import review_badge with context %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><a href="/diseases/">질병 목록</a><span>/</span>
+{% if disease.parent %}<a href="/diseases/{{ diseases[disease.parent].slug }}/">{{ diseases[disease.parent].name }}</a><span>/</span>{% endif %}<span>{{ disease.name }}</span></div>
+<header class="item-head">
+  <div class="tags"><span class="tag">{{ '주요 질환' if disease.scope == 'primary' else '대표 소견만 수록' }}</span></div>
+  <h1>{{ disease.name }}{% if disease.abbr %} <span class="abbr big">{{ disease.abbr }}</span>{% endif %}</h1>
+  <p class="item-en">{{ disease.name_en }}</p>
+  {% if disease.note %}<p class="lead">{{ disease.note }}</p>{% endif %}
+  {% if disease.children %}<p class="links">하위 분류: {% for cid in disease.children %}<a href="/diseases/{{ diseases[cid].slug }}/">{{ diseases[cid].name }}</a>{% endfor %}</p>{% endif %}
+  {% if disease.classification_sources %}<p class="muted small">분류 근거: {% for sid in disease.classification_sources %}{% set s = atlas.sources.get(sid) %}{% if s %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}</p>{% endif %}
+</header>
+
+{% if ladders %}
+<section class="section" id="dz-grading">
+  <h2>판정 단계</h2>
+  <p class="muted small">각 분류 체계에서 무엇을 보고 어떻게 단계를 나누는지 정리했습니다. 소견 이름을 누르면 영상에서 어떻게 보이는지와 측정 방법으로 이동합니다.</p>
+  {% for g in ladders %}
+  <article class="ladder kind-{{ g.kind }}">
+    <header class="ladder-head">
+      <div><h3>{{ g.name }}</h3>
+        <p class="ladder-meta"><span class="tag">{{ {'staging': '단계 분류', 'typing': '유형 분류', 'diagnostic': '진단 기준', 'representative': '대표 소견(공인 분류 없음)'}[g.kind] }}</span>
+          {% if g.imaging_names %}<span>주로 보는 영상 · {{ g.imaging_names|join(', ') }}</span>{% endif %}
+          {% if g.inherited %}<span>상위 질병 <a href="/diseases/{{ g.owner.slug }}/">{{ g.owner.name }}</a>의 분류</span>{% endif %}</p></div>
+      <div class="ladder-src">{% for sid in g.sources %}{% set s = atlas.sources.get(sid) %}{% if s %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% endif %}{% endfor %}{% if g.review == 'needs_source' %}<span class="status status-needs_source">근거 필요</span>{% endif %}</div>
+    </header>
+    {% if g.read_rule %}<p class="ladder-rule">{{ g.read_rule }}</p>{% endif %}
+    <ol class="ladder-steps">
+      {% for st in g.steps %}
+      <li class="ladder-step{% if g.inherited and disease.abbr and (('(' ~ disease.abbr ~ ')') in st.grade or st.grade.endswith(' ' ~ disease.abbr)) or g.inherited and st.grade.startswith(disease.name) %} current{% endif %}">
+        <div class="ls-grade"><span class="ls-num">{{ loop.index }}</span><strong>{{ st.grade }}</strong></div>
+        <div class="ls-body">
+          {% if st.criteria %}{% if st.logic == 'any' and st.criteria|length > 1 %}<p class="ls-logic">다음 중 하나라도 있으면</p>{% elif st.logic == 'all' and st.criteria|length > 1 %}<p class="ls-logic">다음을 모두 만족하면</p>{% elif st.logic == 'atleast2' %}<p class="ls-logic">다음 중 2개 이상이면</p>{% elif st.logic == 'atleast3' %}<p class="ls-logic">다음 중 3개 이상이면</p>{% endif %}
+          {% if st.criteria|length > 1 %}<ul class="ls-crit">{% for c in st.criteria %}<li>{{ c }}</li>{% endfor %}</ul>{% else %}<p class="ls-one">{{ st.criteria[0] }}</p>{% endif %}{% endif %}
+          {% if st.note %}<p class="ls-note">{{ st.note }}</p>{% endif %}
+          {% if st.finding_info %}<p class="ls-look"><span>볼 것</span>{% for f in st.finding_info %}{% if f.link %}<a href="{{ f.link }}">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% endfor %}</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if g.note %}<p class="muted small ladder-note">{{ g.note }}</p>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if not grouped %}<p class="empty">이 질병에 직접 연결된 소견이 없습니다. 하위 분류를 확인하세요.</p>{% endif %}
+{% for relation_type, rows in grouped %}
+<section class="section">
+  <h2>{{ relation_label[relation_type] }}</h2>
+  <div class="measure-list">
+  {% for r in rows %}{% set f = r.finding_info %}
+    <article class="measure-card">
+      <div class="measure-head">
+        <h3>{% if f.link %}<a href="{{ f.link }}">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% if f.kind == 'feature' and f.target %} <span class="muted small">— {{ f.target.name }}의 측정</span>{% endif %}</h3>
+        {% if r.version and r.version != '—' %}<span class="tag">{{ r.version }}</span>{% endif %}
+        {% if r.review == 'needs_source' %}<span class="status status-needs_source">근거 필요</span>{% endif %}
+      </div>
+      {% if r.condition %}<p class="condition">{{ r.condition }}</p>{% endif %}
+      <dl class="measure-grid">
+        <dt>어디서</dt><dd>{% if f.location %}{{ f.location|region }}{% endif %}{% if f.where %}{% if f.location %} · {% endif %}{% for w in f.where %}<a href="{{ item_path(w) }}">{{ w.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}{% if not f.location and not f.where %}—{% endif %}</dd>
+        <dt>어떤 영상으로</dt><dd>{{ f.modalities|join(' · ') if f.modalities else '—' }}</dd>
+        <dt>무엇을 측정</dt><dd>{% if f.measures %}<ul class="measure-items">{% for m in f.measures %}<li><strong>{{ m.name }}</strong>{% if m.unit %} <span class="unit">{{ m.unit|unit }}</span>{% endif %}{% if m.region %}<span class="muted"> · {{ m.region|region }}</span>{% endif %}{% if m.requirements and m.requirements != '—' %}<span class="req">조건: {{ m.requirements }}</span>{% endif %}</li>{% endfor %}</ul>{% else %}<span class="muted">정리된 측정 없음(소견 유무로 판단)</span>{% endif %}</dd>
+      </dl>
+    </article>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}
+<p class="draft-note">판단 규칙은 분류 체계·판본에 따라 다르며, 이 페이지는 영상 소견과 측정의 연결을 보여주는 참고 자료입니다.</p>
+{% endblock %}

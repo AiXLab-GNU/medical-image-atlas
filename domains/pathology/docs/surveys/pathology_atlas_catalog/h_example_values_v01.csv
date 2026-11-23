@@ -1,0 +1,94 @@
+example_id,layer_key,feature_id,status,value
+ex_he_core,tissue,ft_tissue_area,ok,9.53 mm²
+ex_he_core,composition,ft_tumor_fraction,ok,22.5 %
+ex_he_core,composition,ft_benign_gland_fraction,ok,16.3 %
+ex_he_core,composition,ft_stroma_fraction,ok,59.2 %
+ex_he_core,composition,ft_artifact_fraction,not_observed,관찰 안 됨
+ex_he_core,tumor,ft_tumor_area,ok,2.2 mm²
+ex_he_core,tumor,ft_tumor_extent,ok,10.7 mm
+ex_he_core,tumor,ft_lesion_generic_count,ok,12 개
+ex_he_core,grade,ft_gleason_score,reading,3+4=7 (공급자 판독)
+ex_he_core,grade,ft_isup_grade_group,reading,2 (공급자 판독)
+ex_he_benign,lesion,ft_lesion_generic_presence,ok,있음
+ex_he_benign,lesion,ft_lesion_generic_area,ok,0.117 mm²
+ex_he_benign,lesion,ft_lesion_generic_fraction,ok,36.7 %
+ex_he_benign,lesion,ft_lesion_generic_count,ok,3 개
+ex_he_benign,glands,ft_gland_count,ok,3 개
+ex_he_benign,glands,ft_gland_density,ok,9.9 /mm²
+ex_he_benign,glands,ft_gland_area,ok,"38,969 µm²"
+ex_he_benign,glands,ft_gland_circularity,ok,0.117
+ex_he_benign,lumen,ft_lumen_fraction,ok,10.9 %
+ex_he_benign,lumen,ft_lumina_per_gland,ok,9.67 개
+ex_he_benign,nuclei,ft_nuclear_density,ok,"5,757 /mm²"
+ex_he_benign,nuclei,ft_nuclear_area,ok,20.1 µm²
+ex_he_benign,nuclei,ft_nuclear_area_variation,ok,0.427
+ex_he_benign,nuclei,ft_hematoxylin_od,ok,0.0286 OD
+ex_he_benign,texture,ft_texture_contrast,ok,0.0066
+ex_he_tumor,lesion,ft_lesion_generic_presence,ok,있음
+ex_he_tumor,lesion,ft_lesion_generic_area,ok,0.0811 mm²
+ex_he_tumor,lesion,ft_lesion_generic_fraction,ok,96.5 %
+ex_he_tumor,lesion,ft_lesion_generic_count,ok,2 개
+ex_he_tumor,nuclei,ft_nuclear_density,ok,"7,990 /mm²"
+ex_he_tumor,nuclei,ft_nuclear_area,ok,22.2 µm²
+ex_he_tumor,nuclei,ft_nuclear_area_variation,ok,0.392
+ex_he_tumor,nuclei,ft_hematoxylin_od,ok,0.0448 OD
+ex_he_tumor,texture,ft_texture_contrast,ok,0.0023
+ex_he_hgpin,lesion,ft_lesion_generic_presence,ok,있음
+ex_he_hgpin,lesion,ft_lesion_generic_area,ok,0.105 mm²
+ex_he_hgpin,lesion,ft_lesion_generic_fraction,ok,36.6 %
+ex_he_hgpin,lesion,ft_lesion_generic_count,ok,5 개
+ex_he_hgpin,nuclei,ft_nuclear_density,ok,"6,364 /mm²"
+ex_he_hgpin,nuclei,ft_nuclear_area,ok,24.0 µm²
+ex_he_hgpin,nuclei,ft_nuclear_area_variation,ok,0.535
+ex_he_hgpin,nuclei,ft_hematoxylin_od,ok,0.0333 OD
+ex_he_hgpin,texture,ft_texture_contrast,ok,0.0086
+ex_he_hgpin,read,ft_lesion_generic_presence,reading,HGPIN 있음 (공급자 주석)
+ex_he_idc,lesion,ft_lesion_generic_presence,ok,있음
+ex_he_idc,lesion,ft_lesion_generic_area,ok,0.0326 mm²
+ex_he_idc,lesion,ft_lesion_generic_fraction,ok,8.2 %
+ex_he_idc,lesion,ft_lesion_generic_count,ok,2 개
+ex_he_idc,nuclei,ft_nuclear_density,ok,"4,111 /mm²"
+ex_he_idc,nuclei,ft_nuclear_area,ok,24.8 µm²
+ex_he_idc,nuclei,ft_nuclear_area_variation,ok,0.465
+ex_he_idc,nuclei,ft_hematoxylin_od,ok,0.0286 OD
+ex_he_idc,texture,ft_texture_contrast,ok,0.0081
+ex_he_idc,read,ft_idc_presence,reading,있음 (공급자 주석)
+ex_he_aip,lesion,ft_lesion_generic_presence,ok,있음
+ex_he_aip,lesion,ft_lesion_generic_area,ok,0.0351 mm²
+ex_he_aip,lesion,ft_lesion_generic_fraction,ok,21.9 %
+ex_he_aip,lesion,ft_lesion_generic_count,ok,3 개
+ex_he_gp3,patterns,ft_pattern3_percent,ok,100.0 %
+ex_he_gp3,patterns,ft_pattern4_percent,not_observed,관찰 안 됨
+ex_he_gp3,patterns,ft_pattern5_percent,not_observed,관찰 안 됨
+ex_he_gp3,lumen,ft_lumina_per_gland,ok,10.5 개
+ex_he_gp3,lumen,ft_lumen_fraction,ok,4.7 %
+ex_he_gp3,lumen,ft_gland_count,ok,2 개
+ex_he_gp3,nuclei,ft_nuclear_density,ok,49.1 /10⁴px²
+ex_he_gp3,nuclei,ft_nuclear_area,ok,36.0 px²
+ex_he_gp3,nuclei,ft_nuclear_area_variation,ok,0.955
+ex_he_gp4,patterns,ft_pattern3_percent,ok,0 %
+ex_he_gp4,patterns,ft_pattern4_percent,ok,100.0 %
+ex_he_gp4,patterns,ft_pattern5_percent,not_observed,관찰 안 됨
+ex_he_gp4,lumen,ft_lumina_per_gland,ok,9 개
+ex_he_gp4,lumen,ft_lumen_fraction,ok,1.3 %
+ex_he_gp4,lumen,ft_gland_count,ok,1 개
+ex_he_gp4,nuclei,ft_nuclear_density,ok,53.2 /10⁴px²
+ex_he_gp4,nuclei,ft_nuclear_area,ok,37.7 px²
+ex_he_gp4,nuclei,ft_nuclear_area_variation,ok,0.694
+ex_he_gp4,read,ft_cribriform_presence,reading,없음 (SICAPv2 사상 표)
+ex_he_cribriform,patterns,ft_pattern3_percent,ok,0.9 %
+ex_he_cribriform,patterns,ft_pattern4_percent,ok,99.1 %
+ex_he_cribriform,patterns,ft_pattern5_percent,ok,0 %
+ex_he_cribriform,lumen,ft_lumina_per_gland,ok,24.0 개
+ex_he_cribriform,lumen,ft_lumen_fraction,ok,1.3 %
+ex_he_cribriform,lumen,ft_gland_count,ok,1 개
+ex_he_cribriform,nuclei,ft_nuclear_density,ok,56.6 /10⁴px²
+ex_he_cribriform,nuclei,ft_nuclear_area,ok,27.0 px²
+ex_he_cribriform,nuclei,ft_nuclear_area_variation,ok,0.645
+ex_he_cribriform,read,ft_cribriform_presence,reading,있음 (SICAPv2 사상 표)
+ex_he_gp5,patterns,ft_pattern3_percent,not_observed,관찰 안 됨
+ex_he_gp5,patterns,ft_pattern4_percent,ok,0 %
+ex_he_gp5,patterns,ft_pattern5_percent,ok,100.0 %
+ex_he_gp5,nuclei,ft_nuclear_density,ok,34.2 /10⁴px²
+ex_he_gp5,nuclei,ft_nuclear_area,ok,29.3 px²
+ex_he_gp5,nuclei,ft_nuclear_area_variation,ok,0.771

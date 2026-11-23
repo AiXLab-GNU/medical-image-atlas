@@ -1,0 +1,43 @@
+{% extends 'base.html' %}{% from '_macros.html' import item_card with context %}{% from '_gland_schematic.html' import gland with context %}{% block content %}
+<section class="home-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">PATHOLOGY IMAGE ATLAS · PROSTATE</p>
+    <h1>전립선 조직에서<br>무엇을 보고, 무엇을 재는가</h1>
+    <p class="lead">H&E 슬라이드에서 정상 샘과 간질, 글리슨 패턴과 관내암 같은 병변이 어떻게 보이는지, 어떤 특징을 측정하며 글리슨 점수·ISUP 등급군과 어떻게 이어지는지 한곳에서 따라갑니다.</p>
+    <form class="hero-search" action="/search/" method="get" role="search">
+      <label class="visually-hidden" for="hero-q">구조·병변 검색</label>
+      <input id="hero-q" name="q" type="search" placeholder="사상 샘, 관내암, 기저세포, 글리슨 패턴 4…">
+      <button type="submit">검색</button>
+    </form>
+    <p class="hero-hint">자주 찾는 항목 · {% for id in ['les_gleason_pattern_4','les_cribriform','les_intraductal_carcinoma','ana_basal_cell_layer','les_hgpin'] %}<a href="{{ item_path(items[id]) }}">{{ items[id].name }}</a>{% endfor %}</p>
+  </div>
+  <div class="hero-visuals"><a class="hero-card" href="/anatomy/"><span class="hero-card-label">샘 · 글리슨 패턴 모식도</span>{{ gland('les_cribriform') }}</a></div>
+</section>
+
+<section class="flow" aria-label="지도 구성">
+  <a class="flow-step" href="/anatomy/"><span class="flow-num">1</span><h2>해부학 지도</h2><p>구역 · 샘과 간질 · 기저세포층 · 핵</p><span class="flow-count">{{ counts.anatomy }}개 구조</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/lesions/"><span class="flow-num">2</span><h2>병변 목록</h2><p>글리슨 패턴 · 사상 · 관내암 · 침범 · 암 모방 양성 병변</p><span class="flow-count">{{ counts.lesions }}개 소견</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/measurements/"><span class="flow-num">3</span><h2>측정 목록</h2><p>종양 비율 · 패턴 비율 · 샘 모양 · 내강 · 핵 밀도</p><span class="flow-count">{{ counts.measures }}개 측정</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/diseases/"><span class="flow-num">4</span><h2>질병 목록</h2><p>글리슨 패턴 · ISUP 등급군 · pT 병기 · 관내암 기준</p><span class="flow-count">{{ counts.diseases }}개 주요 질환</span></a>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>먼저 보면 좋은 항목</h2><a class="more" href="/lesions/">병변 목록 전체 →</a></div>
+  <div class="item-grid">{% for id in ['ana_benign_gland','ana_basal_cell_layer','ana_stroma','les_gleason_pattern_3','les_gleason_pattern_4','les_cribriform','les_gleason_pattern_5','les_intraductal_carcinoma'] %}{{ item_card(items[id]) }}{% endfor %}</div>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>영상 종류별로 보기</h2><a class="more" href="/imaging/">영상 종류 전체 →</a></div>
+  <div class="link-chips">{% for k, label in modalities %}<a href="/imaging/{{ k }}/">{{ label }}</a>{% endfor %}</div>
+</section>
+
+<section class="section home-images">
+  <div class="section-heading"><h2>실제 영상으로 보기</h2><a class="more" href="/measurements/#examples">측정 표시 예시 →</a></div>
+  <div class="image-strip">{% for f in figures %}<a href="{{ item_path(items[f['items'][0]]) }}"><img src="/figures/{{ f.base }}" alt="" width="{{ f.width }}" height="{{ f.height }}" loading="lazy"><span>{{ items[f['items'][0]].name }}</span></a>{% endfor %}</div>
+  <p class="muted small">PRECISE(Calapaquí Terán 외, CC BY 4.0)와 SICAPv2(Silva-Rodríguez 외, CC BY 4.0) 공개 전립선 H&E 영상입니다.</p>
+</section>
+<p class="draft-note">이 지도는 ISUP·WHO 기준과 공개 문헌을 바탕으로 정리한 초안입니다. 항목마다 근거와 검토 상태를 함께 표시하며, 진단 도구가 아닙니다.</p>
+{% endblock %}

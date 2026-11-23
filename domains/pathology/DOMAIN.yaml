@@ -1,0 +1,14 @@
+domain_id: pathology
+name_ko: 병리 영상 지도(전립선)
+status: ACTIVE_V01_PROSTATE_HE_PRECISE_SICAPV2_IHC_PENDING_EXPERT_REVIEW_PENDING
+origin: new domain built 2026-11-23 in the same frame as domains/retinal and domains/mammography (tissue measures adapted from pathology-ai E022)
+scope: prostate histopathology first (H&E, IHC); other organs to be added as further lesion groups
+web_package: packages/pathology-atlas-web
+web_port: 8881
+catalog_tables: docs/surveys/pathology_atlas_catalog/README.md
+data_schema: docs/protocols/40_pathology_atlas_data_schema_v01_ko.md
+rebuild_runbook: docs/protocols/50_pathology_atlas_rebuild_runbook_v01_ko.md
+measure_package: packages/pathology-measures
+image_sources:
+  - precise (CC BY 4.0, resources/datasets/public_pathology/precise)
+  - sicapv2 (CC BY 4.0, resources/datasets/public_pathology/sicapv2)

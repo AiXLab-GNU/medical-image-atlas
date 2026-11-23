@@ -15,6 +15,9 @@
 | `datasets/public_mammography/dmid` | DMID 유방촬영 510장·ROI·보고서(CC BY 4.0, figshare 원본 zip + 푼 파일, 15 GB) | 저장소 안 파일(git 제외) |
 | `datasets/mammography_atlas_masked_figures/` | 유방촬영 항목 페이지 그림 32쌍 | 저장소 안 파일(생성물) |
 | `datasets/mammography_atlas_measurement_examples/` | 유방촬영 측정 표시 예시 16장·층 59개 | 저장소 안 파일(생성물) |
+| `datasets/public_pathology/{precise,sicapv2}` | 전립선 H&E: PRECISE 27장·주석(27 GB), SICAPv2 패치·글리슨 주석(4.2 GB), 모두 CC BY 4.0 | 저장소 안 파일(git 제외) |
+| `datasets/pathology_atlas_masked_figures/` | 병리 항목 페이지 그림 17쌍 | 저장소 안 파일(생성물) |
+| `datasets/pathology_atlas_measurement_examples/` | 병리 측정 표시 예시 10장·층 34개 | 저장소 안 파일(생성물) |
 | `datasets/mammography_atlas_provider_figures/` | DBT·CEM CC BY 4.0 논문 그림 8장(원본 파일명, SHA-256은 `g_provider_figures`) | 저장소 안 파일 |
 
 공개 원자료(약 105 GB)는 2026-11-23 oculophenome-xai에서 이 저장소로 복사했다. 다른 저장소를 가리키는 링크는 없고,

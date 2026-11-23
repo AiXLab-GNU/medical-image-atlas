@@ -1,0 +1,6 @@
+scheme_id,disease_id,name_ko,kind,imaging_ids,read_rule_ko,source_ids,review_status,note_ko
+gs_gleason_patterns,dis_prostate_adenocarcinoma,글리슨 패턴(ISUP 2014),typing,img_he_wsi;img_he_hpf;img_he_patch,보이는 성장 양상마다 한 패턴을 정합니다. 위로 갈수록 나쁩니다.,src_isup_2014;src_isup_2019;src_epstein_2017,source_linked,패턴 1·2는 현재 쓰지 않음
+gs_isup_grade_group,dis_prostate_adenocarcinoma,ISUP 등급군,staging,img_he_wsi;img_he_hpf,위 단계부터 확인해 처음 맞는 등급군으로 정합니다.,src_epstein_2016_gg;src_isup_2014,source_linked,생검은 가장 많은 패턴 + 가장 높은 패턴
+gs_pt_stage,dis_prostate_adenocarcinoma,AJCC 8판 병리 병기(pT),staging,img_he_wsi,근치 절제 표본에서 위 단계부터 확인합니다.,src_ajcc8_prostate_2017,source_linked,pT2는 하위 분류 없음(8판)
+gs_idc_criteria,dis_idc_p,관내암 진단 기준(Guo·Epstein),diagnostic,img_he_hpf;img_ihc_hmwck_amacr,기저세포가 남은 관 안에서 다음 중 하나가 있으면 관내암입니다.,src_guo_2006,source_linked,기준에 못 미치면 비정형 관내 증식
+gs_benign_vs_malignant,dis_prostate_adenocarcinoma,침윤암과 모방 병변 가르기,representative,img_he_hpf;img_ihc_hmwck_amacr,공인 단계는 없고 다음 소견을 함께 봅니다.,src_who_2022;src_wang_2008,source_linked,단일 소견으로 확진하지 않음

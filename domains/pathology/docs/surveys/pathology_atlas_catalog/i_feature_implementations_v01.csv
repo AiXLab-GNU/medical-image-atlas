@@ -1,0 +1,35 @@
+feature_id,target_id,role,level,function,input,method,reference
+ft_amacr_positivity,les_adenocarcinoma,measurement,reading,,,,
+ft_artifact_fraction,les_tissue_artifact,measurement,mask,pathology_measures.tissue.artifact_fraction,label_map,artifact pixels ÷ tissue pixels,
+ft_basal_cell_presence,ana_basal_cell_layer,measurement,reading,,,,
+ft_benign_gland_fraction,ana_benign_gland,measurement,mask,pathology_measures.tissue.benign_gland_fraction,label_map,benign-gland pixels ÷ tissue pixels,
+ft_cribriform_presence,les_cribriform,measurement,reading,,,,
+ft_epe_presence,les_extraprostatic_extension,measurement,reading,,,,
+ft_gland_area,ana_benign_gland,measurement,mask,pathology_measures.glands.mean_area,region_mask,mean component area,
+ft_gland_circularity,ana_benign_gland,measurement,mask,pathology_measures.glands.circularity,region_mask,median 4π·area/perimeter² per gland,
+ft_gland_count,ana_benign_gland,measurement,mask,pathology_measures.glands.count,region_mask,connected components of the gland mask,
+ft_gland_density,ana_benign_gland,measurement,mask,pathology_measures.glands.gland_density,region_mask,glands per tissue area,
+ft_gleason_score,les_adenocarcinoma,classification,reading,,,,
+ft_hematoxylin_od,ana_nucleus,measurement,mask,pathology_measures.nuclei.hematoxylin_od,region_mask,mean haematoxylin OD after HED separation,Ruifrok 2001
+ft_idc_presence,les_intraductal_carcinoma,measurement,reading,,,,
+ft_isup_grade_group,les_adenocarcinoma,classification,reading,,,,
+ft_lesion_generic_area,les_generic,measurement,mask,pathology_measures.tissue.lesion_area,region_mask,pixel area × calibration,
+ft_lesion_generic_count,les_generic,measurement,mask,pathology_measures.tissue.lesion_count,region_mask,connected components,
+ft_lesion_generic_fraction,les_generic,measurement,mask,pathology_measures.tissue.lesion_fraction,region_mask,lesion pixels ÷ tissue pixels,
+ft_lesion_generic_presence,les_generic,measurement,mask,pathology_measures.tissue.presence,region_mask,any annotated pixel,
+ft_lumen_fraction,ana_gland_lumen,measurement,mask,pathology_measures.glands.lumen_fraction,region_mask,bright low-saturation pixels inside glands ÷ gland area,
+ft_lumina_per_gland,les_cribriform,measurement,mask,pathology_measures.glands.lumina_per_gland,region_mask,lumen components per gland (cribriform proxy),ISUP 2021 cribriform definition
+ft_nuclear_area,ana_nucleus,measurement,mask,pathology_measures.nuclei.mean_area,region_mask,mean nucleus-candidate area,Ruifrok 2001
+ft_nuclear_area_variation,ana_nucleus,measurement,mask,pathology_measures.nuclei.area_variation,region_mask,coefficient of variation of nucleus area,
+ft_nuclear_density,ana_nucleus,measurement,mask,pathology_measures.nuclei.density,region_mask,"haematoxylin Otsu + distance-transform watershed, size window",Ruifrok 2001
+ft_nucleolus_prominence,ana_nucleolus,measurement,reading,,,,
+ft_pattern3_percent,les_gleason_pattern_3,measurement,mask,pathology_measures.tissue.pattern_percent,pattern_mask,pattern-3 pixels ÷ tumour pixels,ISUP 2019
+ft_pattern4_percent,les_gleason_pattern_4,measurement,mask,pathology_measures.tissue.pattern_percent,pattern_mask,pattern-4 pixels ÷ tumour pixels,ISUP 2019
+ft_pattern5_percent,les_gleason_pattern_5,measurement,mask,pathology_measures.tissue.pattern_percent,pattern_mask,pattern-5 pixels ÷ tumour pixels,ISUP 2019
+ft_pni_presence,les_perineural_invasion,measurement,reading,,,,
+ft_stroma_fraction,ana_stroma,measurement,mask,pathology_measures.tissue.stroma_fraction,label_map,stroma pixels ÷ tissue pixels,
+ft_texture_contrast,ana_stroma,measurement,mask,pathology_measures.texture.glcm_contrast,region_mask,"normalised GLCM contrast, 32 levels, 4 directions",
+ft_tissue_area,ref_tissue_area,measurement,auto,pathology_measures.tissue.tissue_area,image,"saturation and luminance threshold against glass, holes filled",
+ft_tumor_area,les_adenocarcinoma,measurement,mask,pathology_measures.tissue.tumor_area,label_map,tumour pixels × pixel area,
+ft_tumor_extent,les_adenocarcinoma,measurement,mask,pathology_measures.tissue.tumor_extent,label_map,maximum distance between tumour pixels,
+ft_tumor_fraction,les_adenocarcinoma,measurement,mask,pathology_measures.tissue.tumor_fraction,label_map,tumour pixels ÷ tissue pixels,

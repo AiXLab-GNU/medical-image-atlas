@@ -1,0 +1,4 @@
+target_id,feature_id,applicability,note_ko
+les_generic,,not_applicable,공통 측정을 묶는 서비스 내부 대상
+ana_corpora_amylacea,,not_applicable,양성 표지(측정 대상 아님)
+ana_urethra,,not_applicable,위치 구조(측정 대상 아님)

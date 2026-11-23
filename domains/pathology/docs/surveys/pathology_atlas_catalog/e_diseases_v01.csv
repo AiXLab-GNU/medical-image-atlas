@@ -1,0 +1,10 @@
+disease_id,parent_id,name_ko,name_en,abbreviation,scope,classification_source_ids,note_ko,status
+dis_prostate_adenocarcinoma,,전립선 선암(선방형),Prostatic acinar adenocarcinoma,,primary,src_who_2022;src_isup_2014;src_isup_2019,글리슨 점수·ISUP 등급군으로 등급을 매기고 pT로 병기를 정함,stage1_drafted
+dis_idc_p,dis_prostate_adenocarcinoma,전립선 관내암,Intraductal carcinoma of the prostate,IDC-P,primary,src_guo_2006;src_isup_2019,대개 고등급 침윤암과 함께 있으며 예후가 나쁨,stage1_drafted
+dis_ductal_adenocarcinoma,dis_prostate_adenocarcinoma,관 선암,Ductal adenocarcinoma,,representative,src_who_2022,키 큰 원주 세포의 유두·사상 구조 · 글리슨 4로 매김,stage1_drafted
+dis_hgpin,,고등급 전립선 상피내 종양,High-grade PIN,HGPIN,primary,src_who_2022,암 전구 병변 · 단독이면 대개 즉시 재생검하지 않음,stage1_drafted
+dis_asap,,비정형 소선방 증식,Atypical small acinar proliferation,ASAP,representative,src_who_2022,암이 의심되나 확진하기에 부족한 작은 샘 무리(진단 범주),stage1_drafted
+dis_bph,,양성 전립선비대증,Benign prostatic hyperplasia,BPH,primary,src_who_2022,이행대의 샘·간질 결절성 증식,stage1_drafted
+dis_prostatitis,,전립선염,Prostatitis,,representative,src_who_2022,급성·만성 염증 · 육아종성 포함,stage1_drafted
+dis_atrophy_benign,,위축(양성),Prostatic atrophy,,representative,src_wang_2008,암을 모방하는 대표 양성 병변,stage1_drafted
+dis_adenosis,,선증(비정형 선종성 과형성),Adenosis,AAH,representative,src_who_2022,이행대의 작은 샘 결절 · 암 모방,stage1_drafted

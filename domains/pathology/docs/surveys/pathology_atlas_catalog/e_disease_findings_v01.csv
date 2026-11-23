@@ -1,0 +1,35 @@
+relation_id,disease_id,finding_id,relation_type,classification_source_id,classification_version,condition_ko,status,evidence_source_ids,review_status
+rel_pca_gleason,dis_prostate_adenocarcinoma,ft_gleason_score,severity_classification,src_isup_2014,ISUP 2014,가장 많은 패턴과 두 번째(생검은 가장 높은) 패턴의 합,stage1_drafted,src_isup_2014;src_isup_2019,source_linked
+rel_pca_gg,dis_prostate_adenocarcinoma,ft_isup_grade_group,severity_classification,src_epstein_2016_gg,ISUP 등급군,글리슨 점수를 1–5 등급군으로 묶음,stage1_drafted,src_epstein_2016_gg,source_linked
+rel_pca_gp3,dis_prostate_adenocarcinoma,les_gleason_pattern_3,severity_classification,src_isup_2014,ISUP 2014,잘 형성된 따로 떨어진 샘,stage1_drafted,src_isup_2014;src_isup_2019,source_linked
+rel_pca_gp4,dis_prostate_adenocarcinoma,les_gleason_pattern_4,severity_classification,src_isup_2014,ISUP 2014,잘 형성되지 않은·융합·사상·사구체 모양 샘,stage1_drafted,src_isup_2014;src_isup_2019,source_linked
+rel_pca_gp5,dis_prostate_adenocarcinoma,les_gleason_pattern_5,severity_classification,src_isup_2014,ISUP 2014,고형 판·끈·단일 세포·면포 괴사,stage1_drafted,src_isup_2014;src_isup_2019,source_linked
+rel_pca_p4pct,dis_prostate_adenocarcinoma,ft_pattern4_percent,prognostic,src_isup_2019,ISUP 2019,등급군 2·3에서 패턴 4 비율을 보고,stage1_drafted,src_isup_2019;src_gups_2021,source_linked
+rel_pca_p5pct,dis_prostate_adenocarcinoma,ft_pattern5_percent,prognostic,src_isup_2019,ISUP 2019,소량(5% 미만)이라도 3차 패턴 5는 보고,stage1_drafted,src_isup_2019,source_linked
+rel_pca_crib,dis_prostate_adenocarcinoma,les_cribriform,prognostic,src_isup_2019,ISUP 2019,사상 패턴은 전이·암 사망 위험이 높아 있으면 보고,stage1_drafted,src_kweldam_2015;src_cribriform_2021,source_linked
+rel_pca_crib_ft,dis_prostate_adenocarcinoma,ft_cribriform_presence,prognostic,src_isup_2019,ISUP 2019,사상 패턴 유무 보고,stage1_drafted,src_isup_2019,source_linked
+rel_pca_tumor_fraction,dis_prostate_adenocarcinoma,ft_tumor_fraction,prognostic,src_who_2022,—,생검 코어 침범 비율·암 길이는 위험 분류에 쓰임,stage1_drafted,src_who_2022,source_linked
+rel_pca_tumor_extent,dis_prostate_adenocarcinoma,ft_tumor_extent,prognostic,src_who_2022,—,생검의 암 길이(mm),stage1_drafted,src_who_2022,source_linked
+rel_pca_pni,dis_prostate_adenocarcinoma,les_perineural_invasion,characteristic_nonspecific,src_who_2022,—,신경주위 침범은 암의 확실한 소견(양성에는 거의 없음),stage1_drafted,src_who_2022,source_linked
+rel_pca_basal,dis_prostate_adenocarcinoma,ft_basal_cell_presence,diagnostic_criterion,src_who_2022,—,기저세포 소실은 침윤암의 진단 근거(IHC로 확인),stage1_drafted,src_who_2022,source_linked
+rel_pca_amacr,dis_prostate_adenocarcinoma,ft_amacr_positivity,characteristic_nonspecific,src_who_2022,—,AMACR 과발현은 암을 시사하나 단독으로 진단하지 않음,stage1_drafted,src_who_2022,source_linked
+rel_pca_nucleoli,dis_prostate_adenocarcinoma,ft_nucleolus_prominence,characteristic_nonspecific,src_isup_2014,—,뚜렷한 핵소체는 암 세포의 특징,stage1_drafted,src_isup_2014,source_linked
+rel_pca_nuclear_area,dis_prostate_adenocarcinoma,ft_nuclear_area,characteristic_nonspecific,src_ruifrok_2001,—,암 세포 핵은 대개 크고 짙음(연구 지표),stage1_drafted,src_ruifrok_2001,source_linked
+rel_pca_gland_area,dis_prostate_adenocarcinoma,ft_gland_area,characteristic_nonspecific,src_isup_2014,—,패턴 3 암 샘은 양성 샘보다 작고 둥긂(연구 지표),stage1_drafted,src_isup_2014,source_linked
+rel_pca_epe,dis_prostate_adenocarcinoma,les_extraprostatic_extension,severity_classification,src_ajcc8_prostate_2017,AJCC 8판,피막 밖 침범은 pT3a,stage1_drafted,src_ajcc8_prostate_2017,source_linked
+rel_pca_svi,dis_prostate_adenocarcinoma,les_seminal_vesicle_invasion,severity_classification,src_ajcc8_prostate_2017,AJCC 8판,정낭 침범은 pT3b,stage1_drafted,src_ajcc8_prostate_2017,source_linked
+rel_pca_lvi,dis_prostate_adenocarcinoma,les_lymphovascular_invasion,prognostic,src_who_2022,—,림프혈관 침범은 나쁜 예후 인자,stage1_drafted,src_who_2022,source_linked
+rel_idc_def,dis_idc_p,les_intraductal_carcinoma,diagnostic_criterion,src_guo_2006,Guo·Epstein 2006,기저세포가 남은 관을 고형·조밀 사상 또는 심한 이형 세포가 채움,stage1_drafted,src_guo_2006,source_linked
+rel_idc_ft,dis_idc_p,ft_idc_presence,diagnostic_criterion,src_isup_2019,ISUP 2019,관내암 유무를 보고,stage1_drafted,src_isup_2019,source_linked
+rel_idc_basal,dis_idc_p,ft_basal_cell_presence,diagnostic_criterion,src_guo_2006,—,기저세포가 남아 있어야 관내암(없으면 침윤 사상암),stage1_drafted,src_guo_2006,source_linked
+rel_idc_comedo,dis_idc_p,les_comedonecrosis,characteristic_nonspecific,src_guo_2006,—,면포 괴사가 동반될 수 있음,stage1_drafted,src_guo_2006,source_linked
+rel_hgpin_def,dis_hgpin,les_hgpin,diagnostic_criterion,src_who_2022,WHO 2022,기존 샘 안 분비 세포의 이형과 뚜렷한 핵소체 · 기저세포 유지,stage1_drafted,src_who_2022,source_linked
+rel_hgpin_basal,dis_hgpin,ft_basal_cell_presence,diagnostic_criterion,src_who_2022,—,기저세포가 남아 있음,stage1_drafted,src_who_2022,source_linked
+rel_asap_def,dis_asap,les_gleason_pattern_3,characteristic_nonspecific,src_who_2022,—,암 같은 작은 샘이 소수 있으나 확진 기준에 못 미침,stage1_drafted,src_who_2022,source_linked
+rel_bph_def,dis_bph,les_nodular_hyperplasia,diagnostic_criterion,src_who_2022,WHO 2022,이행대의 샘·간질 결절,stage1_drafted,src_who_2022,source_linked
+rel_prostatitis_def,dis_prostatitis,les_prostatitis,diagnostic_criterion,src_who_2022,—,염증 세포 침윤,stage1_drafted,src_who_2022,source_linked
+rel_atrophy_def,dis_atrophy_benign,les_atrophy,diagnostic_criterion,src_wang_2008,—,세포질이 줄어든 양성 샘 · 기저세포 유지,stage1_drafted,src_wang_2008,source_linked
+rel_atrophy_partial,dis_atrophy_benign,les_partial_atrophy,characteristic_nonspecific,src_wang_2008,—,부분 위축은 암을 모방,stage1_drafted,src_wang_2008;src_oppenheimer_1998,source_linked
+rel_adenosis_def,dis_adenosis,les_adenosis,diagnostic_criterion,src_who_2022,—,이행대의 작은 샘 결절 · 기저세포 조각,stage1_drafted,src_who_2022,source_linked
+rel_pca_density,dis_prostate_adenocarcinoma,ft_gland_density,characteristic_nonspecific,src_isup_2014,—,암 샘은 밀집해 침윤(연구 지표),stage1_drafted,src_isup_2014,source_linked
+rel_pca_lumina,dis_prostate_adenocarcinoma,ft_lumina_per_gland,characteristic_nonspecific,src_cribriform_2021,—,한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표),stage1_drafted,src_cribriform_2021,source_linked
