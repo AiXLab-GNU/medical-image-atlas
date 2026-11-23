@@ -1,0 +1,24 @@
+imaging_id,level,parent_id,name_ko,name_en,signal,dimensionality,shows,limits,inclusion,source_ids
+img_cfp,modality,,컬러 안저 사진,Color fundus photography,가시광 반사의 RGB 투영,2D,후극부 구조 배치·가시 혈관·병변의 색과 투영 면적,깊이 정보 없음; 층 두께·부피를 직접 측정하지 않음; 배율은 축장·장비에 의존,detailed,src_asrs_mmi_2024
+img_cfp_45,representation,img_cfp,표준 화각 안저(30–50°),Standard-field fundus image,가시광 반사,2D,황반·유두 중심 후극부,주변부 미포함,detailed,src_asrs_mmi_2024
+img_uwf,representation,img_cfp,광각·초광각 안저,Wide-field / ultra-widefield fundus,주사 레이저 또는 광각 광학의 반사(유사 컬러),2D,중간·원주변부 병변·무관류 범위 추정,투영 왜곡으로 주변부 면적·거리 보정 필요; 유사 컬러는 실제 RGB와 다름,detailed,src_asrs_mmi_2024
+img_oct,modality,,구조 OCT,Structural optical coherence tomography,근적외선 저간섭 반사의 깊이 방향 신호,2D/3D,망막층·band·경계·액체 공간·융기·유리체망막 경계·맥락막,측면 해상도와 스캔 간격 제한; 층 경계 정의가 장비·소프트웨어마다 다를 수 있음,detailed,src_inoct_2014;src_apostel2_2021
+img_oct_bscan,representation,img_oct,OCT B-scan 단면,OCT B-scan,깊이 반사 단면,2D,층 배열·band 연속성·단면 면적·높이,한 단면은 3D 부피를 대표하지 않음,detailed,src_inoct_2014
+img_oct_volume,representation,img_oct,OCT volume(래스터 스캔),OCT volume scan,연속 B-scan 묶음,3D,두께 지도·부피·병변 3D 범위,B-scan 간격이 부피 정확도를 결정,detailed,src_apostel2_2021
+img_oct_enface,representation,img_oct,OCT en-face 영상,OCT en-face,정해진 깊이 범위의 반사 투영,2D,특정 깊이 병변의 면적·분포(예: 위축·과투과),깊이 범위 정의에 결과가 의존,detailed,src_cam3_2018
+img_oct_thickness_map,representation,img_oct,OCT 두께 지도,OCT thickness map,두 경계 사이 거리,2D(3D 유래),ETDRS 구역 두께·부피,분할 오류가 그대로 반영됨,detailed,src_apostel2_2021
+img_oct_circle_onh,representation,img_oct,유두주위 원형 스캔·유두 volume,Peripapillary circle scan / ONH volume,유두 중심 원형 단면 또는 유두 3D,2D/3D,RNFL 두께(구역별)·BMO 기반 테 폭,원 지름·중심 위치에 따라 값이 달라짐,detailed,src_apostel2_2021
+img_oct_edi_ss,representation,img_oct,EDI·SS-OCT 깊은 영상,Enhanced-depth / swept-source OCT,깊은 조직의 반사 신호 강화,2D/3D,맥락막 전체 두께·맥락막–공막 경계,장비에 따라 가용성 다름,detailed,src_asrs_mmi_2024
+img_octa,modality,,OCTA,OCT angiography,반복 OCT 신호의 motion contrast(flow 신호),3D/2D slab,모세혈관망·FAZ·무관류·신생혈관의 flow 신호,누출·혈류 속도를 직접 보여주지 않음; projection·motion artifact; 신호 없음이 곧 무관류는 아님,detailed,src_octa_guide_2020
+img_octa_scp,representation,img_octa,OCTA 표층 slab,OCTA superficial capillary plexus slab,flow 신호(표층),2D,표층 모세혈관망 밀도·FAZ,slab 경계가 장비마다 다름,detailed,src_octa_guide_2020
+img_octa_dcp,representation,img_octa,OCTA 심층 slab,OCTA deep capillary plexus slab,flow 신호(심층),2D,심층 모세혈관망 밀도·결손,표층 혈관의 projection artifact,detailed,src_octa_guide_2020
+img_octa_outer,representation,img_octa,OCTA 외망막 slab,OCTA outer retina slab,flow 신호(정상에서 무혈관),2D,외망막·망막하 신생혈관 망,분할 오류 시 가짜 신호,detailed,src_octa_guide_2020;src_conan_2020
+img_octa_cc,representation,img_octa,OCTA 맥락막모세혈관 slab,OCTA choriocapillaris slab,flow 신호(맥락막모세혈관),2D,flow deficit 면적·개수,신호 감쇠·threshold에 민감,detailed,src_octa_guide_2020
+img_octa_widefield,representation,img_octa,광각 OCTA,Wide-field OCTA,flow 신호(넓은 영역),2D,후극부 밖 무관류·신생혈관,가장자리 신호 저하,detailed,src_octa_guide_2020
+img_faf,modality,,안저 자가형광,Fundus autofluorescence,RPE 리포푸신 등 형광 신호,2D,RPE 소실(저자가형광)·스트레스(과자가형광)·망상가성드루젠,일반 회색값은 정량 비교 불가(qAF는 별도 보정 방법),observability_only,src_qaf_2011;src_asrs_mmi_2024
+img_nir,modality,,근적외선 반사·멀티컬러,Near-infrared reflectance / multicolor,파장별 반사,2D,망상가성드루젠·외망막 변화·OCT 위치 안내,컬러 사진 RGB와 같은 물리량 아님,observability_only,src_asrs_mmi_2024
+img_fa,modality,,형광안저혈관조영,Fluorescein angiography,형광 조영제의 시공간 신호,2D(시계열),누출·염색·저류·무관류·신생혈관 활동성,침습적 검사; 누출은 OCT 액체량과 다른 관측,observability_only,src_asrs_mmi_2024
+img_icga,modality,,인도시아닌그린혈관조영,Indocyanine green angiography,ICG 조영제의 시공간 신호(맥락막),2D(시계열),맥락막 혈관·결절 모양 병변·맥락막 과투과,침습적 검사,observability_only,src_asrs_mmi_2024
+img_ao,modality,,적응광학 영상,Adaptive optics imaging,파면 보정 고해상 반사,2D,광수용체 모자이크·미세혈관,특수 장비,excluded,
+img_us,modality,,안구 초음파,Ocular ultrasound,초음파 반사,2D/3D,매체 혼탁 시 박리·종괴,망막 세부층 비관측,excluded,
+img_oximetry,modality,,망막 산소포화도·분광 영상,Retinal oximetry / spectral imaging,파장별 흡광,2D,혈관 산소포화도,특수 장비,excluded,

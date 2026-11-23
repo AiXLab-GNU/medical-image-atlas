@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>영상 읽기</span></div>
+<section class="page-heading"><h1>영상 읽기</h1><p class="lead">실제 영상 한 장을 놓고 구조와 병변을 차례로 읽습니다. 표시를 따라 각 항목의 설명으로 이동할 수 있습니다.</p></section>
+<div class="sample-grid">{% for s in samples.values() %}
+<a class="sample-card" href="{{ s.path }}"><div class="thumbnail"><img src="{{ url_for('sample_image', alias=s.image) }}" alt="" width="{{ s.width }}" height="{{ s.height }}" loading="lazy"></div>
+<div class="card-copy"><span class="category">{{ s.tags|join(' · ') }}</span><h2>{{ s.title }}</h2><p>{{ s.description }}</p><span class="muted small">연결 항목 {{ s.links|length }}개</span></div></a>
+{% endfor %}</div>
+{% endblock %}

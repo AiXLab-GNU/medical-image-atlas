@@ -1,0 +1,164 @@
+feature_id,role,impl_level,package_function,package_input,package_input_label,method,reference,existing_rows,existing_usable,existing_sources
+ft_atrophy_area,measurement,package,retinal_measures.atrophy.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_atrophy_focality,measurement,package,retinal_measures.atrophy.focality,lesion_mask,병변 mask,unifocal / multifocal by components,,0,0,
+ft_atrophy_foveal_involvement,measurement,package,retinal_measures.atrophy.foveal_involvement,lesion_mask,병변 mask,mask covers fovea point,,0,0,
+ft_atrophy_growth_rate,measurement,package,retinal_measures.atrophy.growth_rate,longitudinal,두 시점 입력,square-root area change per year,Feuer 2013,0,0,
+ft_avr,measurement,package,retinal_measures.vessels.avr,av_mask,동·정맥 mask,CRAE / CRVE,Knudtson 2003,3,0,정량화 패키지
+ft_bmo_mrw,measurement,package,retinal_measures.optic_disc.bmo_mrw,oct_surfaces,OCT 경계면,shortest BMO-to-ILM distance,Chauhan 2013,0,0,
+ft_branching_angle,measurement,auto_seg,retinal_measures.vessels.branching_angle,vessel_mask,혈관 mask,angle between daughter arms,Zamir 1978,1,1,정량화 패키지
+ft_cc_flow_deficit,measurement,package,retinal_measures.octa.flow_deficit,octa_slab,OCTA 슬랩,Phansalkar local threshold FD%,Spaide 2016; Chu 2019,0,0,
+ft_cdr_vertical,measurement,package,retinal_measures.optic_disc.cup_disc_ratio,disc_cup_mask,유두·컵 mask,vertical cup / disc extent,,0,0,
+ft_central_subfield_thickness,measurement,package,retinal_measures.oct_layers.central_subfield_thickness,oct_surfaces,OCT 경계면,ILM–BM mean inside 1 mm,ETDRS grid,0,0,
+ft_choroid_thickness_map,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,BM to CSI,,0,0,
+ft_choroid_thickness_subfoveal,measurement,package,retinal_measures.oct_layers.subfoveal_choroid_thickness,oct_surfaces,OCT 경계면,BM–CSI at fovea,Spaide 2008 (EDI),0,0,
+ft_choroidal_vascularity_index,measurement,package,retinal_measures.choroid.vascularity_index,oct_surfaces,OCT 경계면,Niblack luminal / total area,Agrawal 2016,0,0,
+ft_crae,measurement,package,retinal_measures.vessels.crae,av_mask,동·정맥 mask,revised Knudtson big-6 (0.88),Knudtson 2003,0,0,
+ft_crve,measurement,package,retinal_measures.vessels.crve,av_mask,동·정맥 mask,revised Knudtson big-6 (0.95),Knudtson 2003,0,0,
+ft_cup_area,measurement,package,retinal_measures.optic_disc.cup_area,disc_cup_mask,유두·컵 mask,pixel area,,0,0,
+ft_cupping_notch,measurement,package,retinal_measures.optic_disc.rim_notch,disc_cup_mask,유두·컵 mask,focal radial rim thinning,,0,0,
+ft_cws_area,measurement,mask,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,2,2,정량화 패키지
+ft_cws_count,measurement,mask,retinal_measures.lesions.count,lesion_mask,병변 mask,connected components,,2,2,정량화 패키지
+ft_disc_area,measurement,package,retinal_measures.optic_disc.disc_area,disc_cup_mask,유두·컵 mask,pixel area,,1,0,정량화 패키지
+ft_disc_color,measurement,none,,,,,,0,0,
+ft_disc_diameter,measurement,package,retinal_measures.optic_disc.disc_diameter,disc_cup_mask,유두·컵 mask,bounding extent,,0,0,
+ft_disc_edema_rnfl,measurement,package,retinal_measures.oct_layers.rnfl_peripapillary,oct_surfaces,OCT 경계면,3.46 mm circle mean RNFL,,0,0,
+ft_disc_fovea_angle,measurement,auto_seg,retinal_measures.optic_disc.disc_fovea_geometry,landmarks,유두·중심와 위치,angle to horizontal,,1,1,정량화 패키지
+ft_disc_fovea_distance,measurement,auto_seg,retinal_measures.optic_disc.disc_fovea_geometry,landmarks,유두·중심와 위치,centre distance (DD),,3,3,정량화 패키지
+ft_disc_hem_location,measurement,package,retinal_measures.lesions.clock_hour,lesion_mask,병변 mask,clock hour around disc centre,,0,0,
+ft_disc_margin,measurement,none,,,,,,0,0,
+ft_disc_shape,measurement,package,retinal_measures.optic_disc.disc_shape,disc_cup_mask,유두·컵 mask,ellipse fit,,4,0,정량화 패키지
+ft_disc_tilt_ratio,measurement,package,retinal_measures.optic_disc.tilt_ratio,disc_cup_mask,유두·컵 mask,major / minor axis ratio,,0,0,
+ft_dril_extent,measurement,package,retinal_measures.oct_lesions.lateral_diameter,oct_mask,OCT 병변 mask,widest horizontal extent,Sun 2014,0,0,
+ft_drusen_area,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area within the grid,,0,0,
+ft_drusen_height,measurement,package,retinal_measures.oct_lesions.height,oct_mask,OCT 병변 mask,maximal RPE elevation,,0,0,
+ft_drusen_max_size,measurement,package,retinal_measures.lesions.extent,lesion_mask,병변 mask,largest component diameter,,0,0,
+ft_drusen_reflectivity,measurement,package,retinal_measures.oct_lesions.internal_reflectivity,oct_mask,OCT 병변 mask,mean intensity ratio to reference,,0,0,
+ft_drusen_volume,measurement,package,retinal_measures.oct_lesions.volume,oct_mask,OCT 병변 mask,RPE–BM elevation volume,Gregori 2011,0,0,
+ft_elm_continuity,measurement,package,retinal_measures.oct_layers.layer_continuity,oct_mask,OCT 병변 mask,gaps in per-A-scan ELM visibility,,0,0,
+ft_erm_extent,measurement,package,retinal_measures.oct_lesions.enface_area,oct_mask,OCT 병변 mask,en-face projection area,,0,0,
+ft_erm_traction_signs,measurement,none,,,,,,0,0,
+ft_etdrs_subfield_thickness,measurement,package,retinal_measures.oct_layers.etdrs_thickness,oct_surfaces,OCT 경계면,nine ETDRS subfield means,ETDRS grid,0,0,
+ft_ez_continuity,measurement,mask,retinal_measures.oct_layers.layer_continuity,oct_mask,OCT 병변 mask,gaps in per-A-scan EZ visibility,,2,2,정량화 패키지
+ft_ez_disruption_width,measurement,mask,retinal_measures.oct_layers.ez_preserved,oct_mask,OCT 병변 mask,widest gap on a B-scan,,1,1,정량화 패키지
+ft_ez_loss_area,measurement,package,retinal_measures.oct_lesions.enface_area,oct_mask,OCT 병변 mask,en-face projection area,,0,0,
+ft_ez_preserved_area,measurement,package,retinal_measures.oct_layers.ez_preserved,oct_mask,OCT 병변 mask,en-face EZ area,Birch 2011,0,0,
+ft_ez_preserved_fraction,measurement,mask,retinal_measures.oct_layers.ez_preserved,oct_mask,OCT 병변 mask,visible A-scan fraction,,2,2,정량화 패키지
+ft_faf_junctional_pattern,measurement,none,,,,,,0,0,
+ft_faf_pattern,measurement,none,,,,,,0,0,
+ft_faz_area,measurement,package,retinal_measures.octa.faz_area,octa_slab,OCTA 슬랩,FAZ mask area,,0,0,
+ft_faz_circularity,measurement,package,retinal_measures.octa.faz_shape,octa_slab,OCTA 슬랩,"4πA/P², perimeter, acircularity",,0,0,
+ft_faz_enlargement,measurement,package,retinal_measures.octa.faz_enlargement,longitudinal,두 시점 입력,FAZ area change per year,,0,0,
+ft_flame_hem_count,measurement,package,retinal_measures.lesions.count,lesion_mask,병변 mask,connected components,,0,0,
+ft_foveal_contour,measurement,package,retinal_measures.oct_layers.foveal_contour,oct_surfaces,OCT 경계면,pit / shallow / inverted from depth,,0,0,
+ft_foveal_pit_shape,measurement,package,retinal_measures.oct_layers.foveal_pit,oct_surfaces,OCT 경계면,"ILM pit depth, width, slope",,0,0,
+ft_foveal_reflex,measurement,none,,,,,,0,0,
+ft_fractal_dimension,measurement,auto_seg,retinal_measures.vessels.fractal_dimension,vessel_mask,혈관 mask,box-counting dimension,Mainster 1990,3,3,정량화 패키지
+ft_gcipl_thickness,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,RNFL/GCL to IPL/INL,,0,0,
+ft_haller_vessel_diameter,measurement,package,retinal_measures.choroid.large_vessel_diameter,oct_surfaces,OCT 경계면,max inscribed diameter in outer choroid,,0,0,
+ft_he_area,measurement,mask,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,2,2,정량화 패키지
+ft_he_distance_fovea,measurement,mask,retinal_measures.lesions.fovea_distance,lesion_mask,병변 mask,minimum distance to fovea,,2,2,정량화 패키지
+ft_he_pattern,measurement,none,,,,,,0,0,
+ft_hem_area,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_hem_count_quadrant,measurement,package,retinal_measures.lesions.quadrant_counts,lesion_mask,병변 mask,components per fovea-centred quadrant,,1,0,정량화 패키지
+ft_hem_depth,measurement,none,,,,,,0,0,
+ft_hem_severity_standard_photo,classification,none,,,,,,0,0,
+ft_hrf_count,measurement,package,retinal_measures.oct_lesions.lesion_count,oct_mask,OCT 병변 mask,connected components,,0,0,
+ft_hypertd_width,measurement,package,retinal_measures.oct_lesions.transmission_width,oct_mask,OCT 병변 mask,greatest linear dimension on sub-RPE slab,Liu 2019 / CAM,0,0,
+ft_image_color_stats,measurement,auto,retinal_measures.image.color_stats,image,영상만,"channel mean, SD, percentiles in FOV",,98,98,안저 특징 등록표(E118);정량화 패키지
+ft_image_quality,measurement,auto,retinal_measures.image.quality,image,영상만,"sharpness, contrast, illumination descriptors",,22,22,안저 특징 등록표(E118);정량화 패키지
+ft_image_texture,measurement,auto,retinal_measures.image.texture,image,영상만,GLCM + LBP entropy,Haralick 1973; Ojala 2002,12,12,정량화 패키지
+ft_irf_bscan_area,measurement,mask,retinal_measures.oct_lesions.bscan_area,oct_mask,OCT 병변 mask,largest B-scan cross-section,,2,2,정량화 패키지
+ft_irf_center_involvement,measurement,package,retinal_measures.oct_lesions.center_involvement,oct_mask,OCT 병변 mask,projection inside central 1 mm,,0,0,
+ft_irf_layer,measurement,package,retinal_measures.oct_lesions.layer_location,oct_mask,OCT 병변 mask,voxel share between surfaces,,0,0,
+ft_irf_presence,measurement,mask,retinal_measures.oct_lesions.presence,oct_mask,OCT 병변 mask,any voxel,,1,1,정량화 패키지
+ft_irf_volume,measurement,package,retinal_measures.oct_lesions.volume,oct_mask,OCT 병변 mask,voxel volume,,0,0,
+ft_irma_presence,measurement,package,retinal_measures.lesions.presence,lesion_mask,병변 mask,any component,,0,0,
+ft_irma_quadrants,measurement,package,retinal_measures.lesions.quadrant_occupancy,lesion_mask,병변 mask,quadrants containing IRMA,,0,0,
+ft_ischemic_index,measurement,package,retinal_measures.octa.nonperfusion,octa_slab,OCTA 슬랩,non-perfused / gradable field,,0,0,
+ft_isnt_pattern,measurement,package,retinal_measures.optic_disc.isnt_pattern,disc_cup_mask,유두·컵 mask,sector mean rim width order,Jonas 1988,0,0,
+ft_laser_scar_extent,measurement,package,retinal_measures.lesions.count,lesion_mask,병변 mask,connected scar components,,0,0,
+ft_layer_continuity_generic,measurement,package,retinal_measures.oct_layers.layer_continuity,oct_mask,OCT 병변 mask,gaps in per-A-scan visibility,,0,0,
+ft_layer_order,measurement,package,retinal_measures.oct_layers.layer_order,oct_surfaces,OCT 경계면,surface ordering per A-scan,,0,0,
+ft_layer_reflectivity_generic,measurement,package,retinal_measures.oct_layers.layer_reflectivity,oct_surfaces,OCT 경계면,mean intensity normalised vitreous→RPE,,0,0,
+ft_layer_thickness_generic,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,mean surface difference,,0,0,
+ft_lesion_fovea_distance,measurement,mask,retinal_measures.lesions.fovea_distance,lesion_mask,병변 mask,Euclidean distance transform to fovea,,11,11,병변 주석 계측;정량화 패키지
+ft_lesion_generic_area,measurement,mask,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area × calibration,,23,23,병변 주석 계측;정량화 패키지
+ft_lesion_generic_change,measurement,package,retinal_measures.lesions.change,longitudinal,두 시점 입력,area difference per interval,,0,0,
+ft_lesion_generic_count,measurement,mask,retinal_measures.lesions.count,lesion_mask,병변 mask,connected components (8-connectivity),,18,18,병변 주석 계측;정량화 패키지
+ft_lesion_generic_distribution,measurement,package,retinal_measures.lesions.distribution_pattern,lesion_mask,병변 mask,nearest-neighbour index,Clark & Evans 1954,0,0,
+ft_lesion_generic_extent,measurement,mask,retinal_measures.lesions.extent,lesion_mask,병변 mask,largest Feret diameter,,3,3,정량화 패키지
+ft_lesion_generic_grade,measurement,none,,,,,,0,0,
+ft_lesion_generic_height,measurement,package,retinal_measures.oct_lesions.height,oct_mask,OCT 병변 mask,maximal axial extent per A-scan,,0,0,
+ft_lesion_generic_position,measurement,mask,retinal_measures.lesions.position,lesion_mask,병변 mask,area-weighted centroid,,2,2,정량화 패키지
+ft_lesion_generic_presence,measurement,mask,retinal_measures.lesions.presence,lesion_mask,병변 mask,any connected component ≥ min area,,10,10,병변 주석 계측;정량화 패키지
+ft_lesion_generic_shape,measurement,mask,retinal_measures.lesions.shape,lesion_mask,병변 mask,"circularity, solidity, eccentricity",,30,30,병변 주석 계측;정량화 패키지
+ft_lesion_generic_volume,measurement,package,retinal_measures.oct_lesions.volume,oct_mask,OCT 병변 mask,voxel count × voxel volume,,0,0,
+ft_lesion_radial_position,measurement,mask,retinal_measures.lesions.radial_position,lesion_mask,병변 mask,radial distance of components,,7,7,병변 주석 계측
+ft_lesion_regional_fraction,measurement,mask,retinal_measures.lesions.regional_fraction,lesion_mask,병변 mask,lesion share inside a circle,,35,28,병변 주석 계측;정량화 패키지
+ft_lesion_size_distribution,measurement,mask,retinal_measures.lesions.size_distribution,lesion_mask,병변 mask,component area quantiles,,56,56,병변 주석 계측;정량화 패키지
+ft_lesion_spatial_dispersion,measurement,mask,retinal_measures.lesions.spatial_dispersion,lesion_mask,병변 mask,spread of components in fovea–disc frame,,9,9,병변 주석 계측;정량화 패키지
+ft_lesion_vessel_relation,measurement,mask,retinal_measures.lesions.vessel_relation,lesion_mask,병변 mask,distance to nearest vessel pixel,,26,26,병변 주석 계측;정량화 패키지
+ft_ma_count,measurement,mask,retinal_measures.lesions.count,lesion_mask,병변 mask,connected components,,2,2,정량화 패키지
+ft_ma_distance_fovea,measurement,mask,retinal_measures.lesions.fovea_distance,lesion_mask,병변 mask,distance to fovea,,2,2,정량화 패키지
+ft_ma_presence,measurement,package,retinal_measures.lesions.presence,lesion_mask,병변 mask,any component,,0,0,
+ft_ma_turnover,measurement,package,retinal_measures.lesions.turnover,longitudinal,두 시점 입력,formation/disappearance by overlap matching,Nunes 2009,0,0,
+ft_macular_volume,measurement,package,retinal_measures.oct_layers.macular_volume,oct_surfaces,OCT 경계면,thickness integral in 6 mm circle,,0,0,
+ft_metapm_category,classification,none,,,,,,0,0,
+ft_mh_base_diameter,measurement,package,retinal_measures.oct_lesions.hole_diameters,oct_mask,OCT 병변 mask,hole width at RPE level,,0,0,
+ft_mh_min_diameter,measurement,package,retinal_measures.oct_lesions.hole_diameters,oct_mask,OCT 병변 mask,narrowest hole width,Duker 2013 (IVTS),0,0,
+ft_mh_vmt_status,measurement,package,retinal_measures.oct_lesions.attachment_width,oct_surfaces,OCT 경계면,hyaloid–ILM contact present,,0,0,
+ft_mnv_activity,measurement,none,,,,,,0,0,
+ft_mnv_lesion_area,measurement,package,retinal_measures.oct_lesions.enface_area,oct_mask,OCT 병변 mask,en-face projection area,,0,0,
+ft_mnv_type,measurement,package,retinal_measures.oct_lesions.depth_category,oct_mask,OCT 병변 mask,voxel share above/below RPE,,0,0,
+ft_nonperfusion_area,measurement,package,retinal_measures.octa.nonperfusion,octa_slab,OCTA 슬랩,non-perfused mask area,,0,0,
+ft_nv_leakage,measurement,none,,,,,,0,0,
+ft_nvd_area,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_nvd_presence,measurement,package,retinal_measures.lesions.presence,lesion_mask,병변 mask,any component,,0,0,
+ft_nve_area,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_nve_presence,measurement,package,retinal_measures.lesions.presence,lesion_mask,병변 mask,any component,,0,0,
+ft_oct_signal_strength,measurement,package,retinal_measures.image.oct_signal,image,영상만,signal over background noise (dB),,0,0,
+ft_octa_vessel_density_dcp,measurement,package,retinal_measures.octa.vessel_density,octa_slab,OCTA 슬랩,binarised perfusion density,,0,0,
+ft_octa_vessel_density_scp,measurement,package,retinal_measures.octa.vessel_density,octa_slab,OCTA 슬랩,binarised perfusion density,,0,0,
+ft_onl_thickness,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,OPL/ONL to ELM,,0,0,
+ft_os_length,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,EZ to interdigitation,,0,0,
+ft_ped_diameter,measurement,package,retinal_measures.oct_lesions.lateral_diameter,oct_mask,OCT 병변 mask,widest lateral extent,,0,0,
+ft_ped_height,measurement,package,retinal_measures.oct_lesions.height,oct_mask,OCT 병변 mask,maximal axial extent,,0,0,
+ft_ped_internal_reflectivity,measurement,package,retinal_measures.oct_lesions.internal_reflectivity,oct_mask,OCT 병변 mask,mean intensity ratio to reference,,0,0,
+ft_ped_volume,measurement,package,retinal_measures.oct_lesions.volume,oct_mask,OCT 병변 mask,voxel volume,,0,0,
+ft_polyp_count,measurement,package,retinal_measures.oct_lesions.lesion_count,oct_mask,OCT 병변 mask,3D connected components,,0,0,
+ft_ppa_area,measurement,package,retinal_measures.optic_disc.ppa_area,disc_cup_mask,유두·컵 mask,pixel area,,1,0,정량화 패키지
+ft_prh_area,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_pvr_grade,classification,none,,,,,,0,0,
+ft_rd_extent,measurement,package,retinal_measures.lesions.field_fraction,lesion_mask,병변 mask,detached share of the field,,0,0,
+ft_rd_macula_status,measurement,package,retinal_measures.lesions.involves_point,lesion_mask,병변 mask,detachment covers fovea,,0,0,
+ft_rim_area,measurement,package,retinal_measures.optic_disc.rim_area,disc_cup_mask,유두·컵 mask,disc minus cup area,,0,0,
+ft_rnfl_defect_angle,measurement,package,retinal_measures.optic_disc.rnfl_defect_angle,profile,두께 프로파일,widest arc below reference,,0,0,
+ft_rnfl_striation,measurement,none,,,,,,0,0,
+ft_rnfl_thickness_macular,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,ILM to RNFL/GCL,,0,0,
+ft_rnfl_thickness_peripapillary,measurement,record,retinal_measures.oct_layers.rnfl_peripapillary,oct_surfaces,OCT 경계면,3.46 mm circle TSNIT profile,,1,0,정량화 패키지
+ft_rpc_density,measurement,package,retinal_measures.octa.rpc_density,octa_slab,OCTA 슬랩,density in peripapillary annulus,,0,0,
+ft_rpe_bm_thickness,measurement,package,retinal_measures.oct_layers.layer_thickness,oct_surfaces,OCT 경계면,RPE to BM,,0,0,
+ft_rpe_contour,measurement,package,retinal_measures.oct_layers.surface_contour,oct_surfaces,OCT 경계면,RMS deviation from quadratic baseline,,0,0,
+ft_sdd_extent,measurement,package,retinal_measures.lesions.area,lesion_mask,병변 mask,pixel area,,0,0,
+ft_sdd_stage,measurement,none,,,,,,0,0,
+ft_shrm_thickness,measurement,package,retinal_measures.oct_lesions.height,oct_mask,OCT 병변 mask,maximal axial extent,,0,0,
+ft_srf_height,measurement,package,retinal_measures.oct_lesions.height,oct_mask,OCT 병변 mask,maximal axial extent,,0,0,
+ft_srf_presence,measurement,mask,retinal_measures.oct_lesions.presence,oct_mask,OCT 병변 mask,any voxel,,1,1,정량화 패키지
+ft_srf_volume,measurement,package,retinal_measures.oct_lesions.volume,oct_mask,OCT 병변 mask,voxel volume,,0,0,
+ft_staphyloma_depth,measurement,package,retinal_measures.oct_layers.staphyloma_depth,oct_surfaces,OCT 경계면,BM sag below chord,,0,0,
+ft_vascular_change_extent,measurement,package,retinal_measures.lesions.quadrant_occupancy,lesion_mask,병변 mask,quadrants containing the finding,,0,0,
+ft_vb_caliber_variation,measurement,package,retinal_measures.vessels.caliber_variation,vessel_mask,혈관 mask,coefficient of variation of width along vein,,0,0,
+ft_vb_quadrants,measurement,package,retinal_measures.lesions.quadrant_occupancy,lesion_mask,병변 mask,quadrants containing beading,,0,0,
+ft_vessel_area_density,measurement,auto,retinal_measures.vessels.area_density,vessel_mask,혈관 mask,vessel pixels / field,,32,32,안저 특징 등록표(E118);정량화 패키지
+ft_vessel_caliber,measurement,auto_seg,retinal_measures.vessels.caliber,vessel_mask,혈관 mask,2 × distance transform on skeleton,,14,9,안저 특징 등록표(E118);정량화 패키지
+ft_vessel_caliber_variability,measurement,auto_seg,retinal_measures.vessels.caliber_variability,vessel_mask,혈관 mask,CV of skeleton widths,,2,2,정량화 패키지
+ft_vessel_connectivity,measurement,auto,retinal_measures.vessels.connectivity,vessel_mask,혈관 mask,largest-component share,,9,9,안저 특징 등록표(E118);정량화 패키지
+ft_vessel_length_density,measurement,auto_seg,retinal_measures.vessels.length_density,vessel_mask,혈관 mask,skeleton length / field area,,3,3,정량화 패키지
+ft_vessel_orientation,measurement,auto,retinal_measures.vessels.orientation,vessel_mask,혈관 mask,orientation histogram entropy,,4,4,안저 특징 등록표(E118);정량화 패키지
+ft_vessel_path_length,measurement,auto,retinal_measures.vessels.path_length,vessel_mask,혈관 mask,segment arc length,,2,2,안저 특징 등록표(E118)
+ft_vessel_pixel_count,measurement,auto_seg,retinal_measures.vessels.pixel_count,vessel_mask,혈관 mask,mask and skeleton pixel counts,,2,2,정량화 패키지
+ft_vessel_regional_density,measurement,auto,retinal_measures.vessels.regional_density,vessel_mask,혈관 mask,density in concentric rings,,29,29,안저 특징 등록표(E118);정량화 패키지
+ft_vessel_topology,measurement,auto_seg,retinal_measures.vessels.topology,vessel_mask,혈관 mask,branch and end points per area,,5,5,정량화 패키지
+ft_vessel_tortuosity,measurement,auto,retinal_measures.vessels.tortuosity,vessel_mask,혈관 mask,arc / chord per segment,Hart 1999,5,5,안저 특징 등록표(E118);정량화 패키지
+ft_vh_obscuration,measurement,none,,,,,,0,0,
+ft_vmt_attachment_width,measurement,package,retinal_measures.oct_lesions.attachment_width,oct_surfaces,OCT 경계면,hyaloid–ILM contact width,Duker 2013 (IVTS),0,0,

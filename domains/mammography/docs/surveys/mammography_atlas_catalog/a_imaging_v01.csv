@@ -1,0 +1,14 @@
+imaging_id,level,parent_id,name_ko,name_en,signal,dimensionality,shows,limits,inclusion,source_ids
+img_ffdm,modality,,2D 디지털 유방촬영,Full-field digital mammography (FFDM),X선 감쇠의 2D 투영,2D,종괴·석회화·구조왜곡·비대칭과 유방 실질 밀도,조직이 겹쳐 병변이 가려지거나 겹침 음영이 생김; 석회화 형태는 확대 촬영이 더 정확,detailed,src_birads_2013;src_sickles_1986
+img_ffdm_cc,representation,img_ffdm,두미 방향(CC) 영상,Craniocaudal view,위에서 아래로 투영,2D,내측·외측 위치와 유두에서의 깊이,상하 위치는 MLO와 함께 봐야 함; 외측 끝과 액와 꼬리는 일부만 포함,detailed,src_eklund_1992;src_birads_2013
+img_ffdm_mlo,representation,img_ffdm,내외사위(MLO) 영상,Mediolateral oblique view,사선 방향 투영,2D,대흉근·액와 꼬리를 포함한 상부와 하부 유방 전체,사선 투영이라 상하 위치가 실제와 조금 다름(ML 영상과 비교),detailed,src_eklund_1992;src_birads_2013
+img_ffdm_ml,representation,img_ffdm,내외측(ML·LM) 영상,True lateral view,옆 방향 투영,2D,병변의 실제 상하 위치·유즙 석회의 찻잔 모양,선별 검사의 표준 영상이 아님,detailed,src_birads_2013
+img_spot_compression,representation,img_ffdm,국소 압박 영상,Spot compression view,좁은 범위를 강하게 누른 투영,2D,겹침 음영과 실제 병변의 구분·경계 평가,좁은 영역만 포함,detailed,src_birads_2013
+img_magnification,representation,img_ffdm,확대 촬영,Magnification view,작은 초점으로 확대한 투영,2D,석회화의 형태·분포·개수,좁은 영역만 포함; 움직임 흐림에 약함,detailed,src_birads_2013
+img_dbt,modality,,디지털 유방단층합성,Digital breast tomosynthesis (DBT),여러 각도 투영으로 재구성한 단면,준3D(단면),겹침이 줄어든 종괴 경계와 구조왜곡,깊이 방향 해상도가 낮음; 석회화 군집이 여러 단면에 흩어짐,detailed,src_sechopoulos_2013a;src_sechopoulos_2013b
+img_dbt_slice,representation,img_dbt,DBT 재구성 단면,DBT reconstructed slice,한 깊이의 재구성 단면,2D 단면,한 깊이에서 본 병변 경계와 구조왜곡의 침상선,단면 밖 구조가 흐린 잔상으로 남음,detailed,src_sechopoulos_2013b
+img_dbt_slab,representation,img_dbt,DBT 두꺼운 단면(slab),DBT slab,여러 단면을 합친 영상,2D 단면,석회화 군집 전체의 분포,slab 두께에 따라 겹침이 다시 생김,detailed,src_sechopoulos_2013b
+img_synthetic_2d,representation,img_dbt,합성 2D 영상,Synthesized 2D mammogram,DBT 자료로 만든 2D 영상,2D,DBT와 함께 보는 2D 비교 영상,석회화와 종괴의 모양이 FFDM과 다를 수 있음,detailed,src_sechopoulos_2013b
+img_cem,modality,,조영증강 유방촬영,Contrast-enhanced mammography (CEM),요오드 조영제 주입 후 이중 에너지 X선,2D,조영 증강되는 병변(신생혈관)과 배경 실질 증강,조영제 부작용 위험; 시간에 따른 증강 정보는 제한적,detailed,src_jochelson_2021;src_cem_lexicon_2025
+img_cem_low_energy,representation,img_cem,CEM 저에너지 영상,CEM low-energy image,요오드 흡수 경계 아래 에너지의 투영,2D,일반 FFDM과 같은 형태 정보(석회화·종괴),조영 증강은 보이지 않음,detailed,src_jochelson_2021
+img_cem_recombined,representation,img_cem,CEM 재조합(감산) 영상,CEM recombined image,고·저에너지 영상의 가중 감산,2D,요오드 분포(증강 병변과 배경 실질 증강),해부 구조가 지워져 위치는 저에너지 영상과 함께 봄; 감산 잡음,detailed,src_jochelson_2021

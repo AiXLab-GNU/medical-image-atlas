@@ -1,0 +1,38 @@
+observation_id,target_id,imaging_id,observed_signal_ko,interpretation_condition_ko,source_ids,review_status
+obs_mass_ffdm_cc,les_mass,img_ffdm_cc,볼록한 경계를 가진 국소 고밀도 음영,MLO에서도 같은 위치(유두에서 비슷한 거리)에 보여야 종괴,src_birads_2013,source_linked
+obs_mass_spot_compression,les_mass,img_spot_compression,눌러도 퍼지지 않고 경계가 남는 음영,겹침 음영은 국소 압박으로 흩어짐,src_birads_2013,source_linked
+obs_mass_dbt_slice,les_mass,img_dbt_slice,한 단면에서 경계가 뚜렷한 종괴,DBT에서 경계 평가가 더 정확하고 겹침 음영이 줄어듦,src_sechopoulos_2013b,source_linked
+obs_mass_cem_recombined,les_mass,img_cem_recombined,증강되는 종괴,증강이 없으면 양성 가능성이 높으나 증강 없는 암도 있음,src_jochelson_2021,source_linked
+obs_mass_spiculated_ffdm_mlo,les_mass_spiculated,img_ffdm_mlo,중심 덩어리에서 방사상으로 뻗는 가는 선,수술 이력이 있으면 흉터와 구분,src_birads_2013,source_linked
+obs_mass_spiculated_dbt_slice,les_mass_spiculated,img_dbt_slice,침상선이 한 단면에서 더 잘 보임,—,src_sechopoulos_2013b,source_linked
+obs_mass_circumscribed_ffdm_cc,les_mass_circumscribed,img_ffdm_cc,매끈하고 뚜렷한 경계의 둥근·타원형 음영,경계의 25% 넘게 가려지면 가려진 경계로 적음,src_birads_2013,source_linked
+obs_mass_indistinct_ffdm_cc,les_mass_indistinct,img_ffdm_cc,경계가 주변 실질과 섞인 음영,국소 압박으로 가려짐과 불분명을 구분,src_birads_2013,source_linked
+obs_fat_containing_mass_ffdm_cc,les_fat_containing_mass,img_ffdm_cc,안이 지방처럼 어둡거나 지방과 실질이 섞인 종괴,지방이 보이면 양성(범주 2),src_birads_2013,source_linked
+obs_intramammary_lymph_node_ffdm_mlo,les_intramammary_lymph_node,img_ffdm_mlo,가운데가 어두운(지방문) 작은 콩 모양 종괴,지방문이 없으면 다른 종괴와 구분 필요,src_birads_2013,source_linked
+obs_architectural_distortion_ffdm_cc,les_architectural_distortion,img_ffdm_cc,종괴 없이 한 점으로 모이는 가는 선,두 방향 모두에서 확인 · 겹친 정상 구조와 구분,src_karssemeijer_1996,source_linked
+obs_architectural_distortion_dbt_slice,les_architectural_distortion,img_dbt_slice,FFDM에서 안 보이던 구조왜곡이 단면에서 드러남,DBT에서 더 많이 발견됨,src_sechopoulos_2013b,source_linked
+obs_asymmetry_ffdm_cc,les_asymmetry,img_ffdm_cc,한 방향에서만 보이는 실질 음영,다른 방향·국소 압박에서 사라지면 겹침 음영,src_birads_2013;src_youk_2009,source_linked
+obs_global_asymmetry_ffdm_mlo,les_global_asymmetry,img_ffdm_mlo,넓은 범위에서 반대쪽보다 많은 실질,좌우 같은 방향 영상을 나란히 비교,src_birads_2013;src_youk_2009,source_linked
+obs_focal_asymmetry_ffdm_cc,les_focal_asymmetry,img_ffdm_cc,두 방향에서 보이는 작은 실질 음영(볼록한 경계 없음),지방이 섞여 있으면 정상 섬유선 섬일 가능성,src_birads_2013;src_youk_2009,source_linked
+obs_developing_asymmetry_ffdm_cc,les_developing_asymmetry,img_ffdm_cc,이전 검사에 없던 국소 비대칭,이전 영상과 같은 방향끼리 비교,src_birads_2013;src_sickles_asym_2007,source_linked
+obs_calcification_ffdm_cc,les_calcification,img_ffdm_cc,주변보다 매우 밝은 작은 점,형태 판단은 확대 촬영으로,src_birads_2013,source_linked
+obs_calcification_magnification,les_calcification,img_magnification,석회화 하나하나의 모양·크기·개수,—,src_birads_2013,source_linked
+obs_calcification_dbt_slab,les_calcification,img_dbt_slab,군집이 여러 단면에 흩어져 한 단면에서는 일부만 보임,slab이나 합성 2D 영상으로 분포를 봄,src_sechopoulos_2013b,source_linked
+obs_calcification_cem_low_energy,les_calcification,img_cem_low_energy,FFDM과 같은 석회화,재조합 영상에서는 석회화가 지워짐,src_jochelson_2021,source_linked
+obs_calc_milk_of_calcium_ffdm_ml,les_calc_milk_of_calcium,img_ffdm_ml,반달·찻잔 모양으로 바닥에 가라앉은 석회,CC에서는 흐린 둥근 점,src_birads_2013,source_linked
+obs_calc_fine_linear_branching_magnification,les_calc_fine_linear_branching,img_magnification,가늘고 끊어진 선과 가지,혈관 석회화(평행 두 줄)와 구분,src_birads_2013,source_linked
+obs_calc_fine_pleomorphic_magnification,les_calc_fine_pleomorphic,img_magnification,모양과 크기가 다른 작은 점들,—,src_birads_2013,source_linked
+obs_calc_vascular_ffdm_mlo,les_calc_vascular,img_ffdm_mlo,관을 따라 평행한 두 줄,—,src_birads_2013,source_linked
+obs_calc_large_rodlike_ffdm_cc,les_calc_large_rodlike,img_ffdm_cc,유두 쪽으로 향하는 굵고 매끈한 막대,—,src_birads_2013,source_linked
+obs_skin_thickening_ffdm_cc,les_skin_thickening,img_ffdm_cc,유방 가장자리의 피부 띠가 두꺼움,접선 방향에서만 정확히 잴 수 있음,src_birads_2013,source_linked
+obs_trabecular_thickening_ffdm_cc,les_trabecular_thickening,img_ffdm_cc,피하 지방의 그물 모양이 짙고 굵어짐,—,src_birads_2013,source_linked
+obs_axillary_adenopathy_ffdm_mlo,les_axillary_adenopathy,img_ffdm_mlo,액와의 크고 짙은 둥근 림프절,지방문이 보이면 대개 정상,src_birads_2013,source_linked
+obs_postsurgical_scar_ffdm_cc,les_postsurgical_scar,img_ffdm_cc,수술 부위의 구조왜곡과 피부 함몰,이전 검사와 비교해 줄어들어야 함,src_birads_2013;src_taboada_2009,source_linked
+obs_enhancing_mass_cem_recombined,les_enhancing_mass,img_cem_recombined,감산 영상에서 밝게 증강되는 종괴,배경 실질 증강과 비교해 뚜렷함을 적음,src_cem_lexicon_2025,source_linked
+obs_non_mass_enhancement_cem_recombined,les_non_mass_enhancement,img_cem_recombined,종괴 없이 구역·선 모양으로 증강,분절·선형 분포는 의심,src_cem_lexicon_2025,source_linked
+obs_fibroglandular_tissue_ffdm_cc,ana_fibroglandular_tissue,img_ffdm_cc,지방보다 밝은 실질,밀도는 장비·영상 처리에 따라 다르게 보임,src_birads_2013;src_keller_2012,source_linked
+obs_fibroglandular_tissue_cem_recombined,ana_fibroglandular_tissue,img_cem_recombined,배경 실질 증강,월경 주기·호르몬 영향,src_jochelson_2021,source_linked
+obs_pectoralis_major_ffdm_mlo,ana_pectoralis_major,img_ffdm_mlo,위쪽 뒤에서 아래로 좁아지는 밝은 삼각형,후유두선 높이까지 보이면 자세가 적절,src_eklund_1992;src_kwok_2004,source_linked
+obs_axillary_lymph_nodes_ffdm_mlo,ana_axillary_lymph_nodes,img_ffdm_mlo,지방문이 있는 콩 모양 음영,—,src_birads_2013,source_linked
+obs_skin_ffdm_cc,ana_skin,img_ffdm_cc,유방 윤곽을 따라가는 얇은 밝은 띠,—,src_birads_2013,source_linked
+obs_nipple_areola_ffdm_cc,ana_nipple_areola,img_ffdm_cc,유방 앞 끝의 작은 돌출,측면으로 보이지 않으면 유륜하 병변처럼 보일 수 있음,src_eklund_1992,source_linked

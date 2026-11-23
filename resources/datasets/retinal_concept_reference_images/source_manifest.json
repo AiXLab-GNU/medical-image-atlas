@@ -1,0 +1,50 @@
+[
+  {
+    "filename": "679a4fcbad112.png",
+    "download_url": "https://storage.googleapis.com/jnl-lshtmp-j-ceh-files/journals/1/articles/833/679a4fcbad112.png",
+    "article_url": "https://cehjournal.org/articles/10.56920/cehj.833",
+    "credit": "David Yorston (2025), Figure 1",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "sha256": "335577a3e691341298f77845a8be822b9d6e0460cada954a2e084341ba6702ea",
+    "modifications": "none; original published figure including source annotations",
+    "role": "design_review_sample",
+    "retrieved_on": "2026-11-20"
+  },
+  {
+    "filename": "journal.pone.0099690.g001.png",
+    "download_url": "https://journals.plos.org/plosone/article/figure/image?download=&id=10.1371%2Fjournal.pone.0099690.g001&size=large",
+    "article_url": "https://doi.org/10.1371/journal.pone.0099690",
+    "credit": "Esmaeelpour et al. (2014), Figure 1",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "d2219b0228aa7bc48288e0ca0c70aff4b55ae13bbc770de786e69986e641920a",
+    "modifications": "none; original published figure including source annotations",
+    "role": "design_review_sample",
+    "retrieved_on": "2026-11-20"
+  },
+  {
+    "filename": "jcm-11-03266-g002-550.jpg",
+    "download_url": "https://mdpi-res.com/jcm/jcm-11-03266/article_deploy/html/images/jcm-11-03266-g002-550.jpg",
+    "article_url": "https://www.mdpi.com/2077-0383/11/12/3266",
+    "credit": "Lin et al. (2022), Figure 2",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "374e49d482f85c95a3827634a6d5b3970401a448014a25ec6a8dd3eb7889fff6",
+    "modifications": "none; original published figure including source annotations",
+    "role": "design_review_sample",
+    "retrieved_on": "2026-11-20"
+  },
+  {
+    "filename": "fnins-18-1415575-g001.webp",
+    "download_url": "https://www.frontiersin.org/files/Articles/1415575/xml-images/fnins-18-1415575-g001.webp",
+    "article_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1415575/full",
+    "credit": "Borchert et al. (2024), Figure 1",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "a4f20bf0e39db00ef22a2e9d77993682ea6c8b4bbef90ca7dfc9a77ced1764f4",
+    "modifications": "none; original published figure including source annotations",
+    "role": "design_review_sample",
+    "retrieved_on": "2026-11-20"
+  }
+]

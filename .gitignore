@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# 공개 원자료(약 105 GB): 저장소 안 복사본이지만 git에는 넣지 않는다. 지도 그림 폴더는 추적한다.
+resources/datasets/public_dr/
+resources/datasets/public_glaucoma/
+resources/datasets/public_myopia/
+resources/datasets/public_amd/
+resources/datasets/olives/
+resources/datasets/public_mammography/

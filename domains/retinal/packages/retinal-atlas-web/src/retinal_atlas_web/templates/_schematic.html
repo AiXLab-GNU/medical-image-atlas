@@ -1,0 +1,95 @@
+{#- Hand-drawn schematic of the posterior pole of a right eye (OD), as a fundus photograph shows it.
+    Geometry is illustrative: 1 disc diameter (DD) ≈ 85 px; fovea ≈ 2.5 DD temporal to the disc centre.
+    `hl` is the item id to emphasise; every region links to its atlas item. -#}
+{% macro fundus(hl='', labels=True, kids=()) -%}
+{%- macro rc(ids) -%}{% if hl in ids %} hl{% elif ids|select('in', kids)|list %} child{% endif %}{%- endmacro -%}
+<figure class="schematic">
+<svg viewBox="0 0 800 600" role="img" aria-labelledby="schematic-title">
+  <title id="schematic-title">후극부 모식도(오른눈): 시신경유두·유두주위 망막·황반·혈관 아케이드의 위치</title>
+  <defs>
+    <radialGradient id="fundus-bg" cx="45%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#d9733a"/><stop offset="70%" stop-color="#b4502a"/><stop offset="100%" stop-color="#6e2a17"/>
+    </radialGradient>
+    <radialGradient id="macula-tint" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7a2c14" stop-opacity=".75"/><stop offset="100%" stop-color="#7a2c14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc-fill" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff4d6"/><stop offset="100%" stop-color="#f2c27c"/>
+    </radialGradient>
+  </defs>
+  <circle cx="400" cy="300" r="292" fill="url(#fundus-bg)"/>
+  <circle cx="345" cy="308" r="125" fill="url(#macula-tint)"/>
+  {# vessels: arteries lighter and thinner, veins darker and wider #}
+  <g class="vessels" fill="none" stroke-linecap="round">
+    <path d="M555 270 C500 180 400 150 250 165 C190 172 140 190 110 215" stroke="#7b1610" stroke-width="7"/>
+    <path d="M555 312 C500 410 400 440 250 430 C190 425 140 405 110 380" stroke="#7b1610" stroke-width="7"/>
+    <path d="M565 268 C520 205 430 185 300 195 C230 200 175 215 140 235" stroke="#c23a24" stroke-width="4.5"/>
+    <path d="M565 314 C520 385 430 410 300 400 C230 395 175 380 140 360" stroke="#c23a24" stroke-width="4.5"/>
+    <path d="M575 262 C600 200 640 160 690 130" stroke="#7b1610" stroke-width="5"/>
+    <path d="M575 318 C600 380 640 420 690 450" stroke="#7b1610" stroke-width="5"/>
+    <path d="M585 268 C620 230 665 215 720 205" stroke="#c23a24" stroke-width="3.5"/>
+    <path d="M585 312 C620 350 665 365 720 375" stroke="#c23a24" stroke-width="3.5"/>
+    <path d="M420 178 C405 215 395 240 380 255" stroke="#c23a24" stroke-width="2"/>
+    <path d="M420 422 C405 385 395 360 380 345" stroke="#c23a24" stroke-width="2"/>
+  </g>
+  <ellipse cx="560" cy="290" rx="38" ry="44" fill="url(#disc-fill)"/>
+  <ellipse cx="564" cy="288" rx="17" ry="21" fill="#fffbee"/>
+
+  {# clickable regions (transparent until hovered or emphasised) #}
+  <a href="/anatomy/mid-periphery/" aria-label="중간 주변부 망막">
+    <path class="region{{ rc(['ana_mid_periphery']) }}" fill-rule="evenodd"
+      d="M108 300 a292 292 0 1 0 584 0 a292 292 0 1 0 -584 0 Z M180 300 a260 205 0 1 0 520 0 a260 205 0 1 0 -520 0 Z"/></a>
+  <a href="/anatomy/posterior-pole/" aria-label="후극부">
+    <ellipse class="region outline{{ rc(['ana_posterior_pole']) }}" cx="440" cy="300" rx="260" ry="205"/></a>
+  <a href="/anatomy/vascular-arcades/" aria-label="혈관 아케이드">
+    <path class="vessel-hit{{ rc(['ana_vascular_arcades','ana_retinal_vasculature','ana_vascular_tree']) }}"
+      d="M555 270 C500 180 400 150 250 165 C190 172 140 190 110 215 M555 312 C500 410 400 440 250 430 C190 425 140 405 110 380"/></a>
+  <a href="/anatomy/retinal-arterioles/" aria-label="망막 소동맥">
+    <path class="vessel-hit thin{{ rc(['ana_retinal_arterioles']) }}" d="M565 268 C520 205 430 185 300 195 C230 200 175 215 140 235 M565 314 C520 385 430 410 300 400 C230 395 175 380 140 360"/></a>
+  <a href="/anatomy/retinal-venules/" aria-label="망막 소정맥">
+    <path class="vessel-hit thin{{ rc(['ana_retinal_venules']) }}" d="M575 262 C600 200 640 160 690 130 M575 318 C600 380 640 420 690 450"/></a>
+  <a href="/anatomy/macula/" aria-label="황반">
+    <circle class="region{{ rc(['ana_macula','ana_perifovea']) }}" cx="345" cy="308" r="125"/></a>
+  <a href="/anatomy/parafovea/" aria-label="부중심와">
+    <circle class="region{{ rc(['ana_parafovea']) }}" cx="345" cy="308" r="62"/></a>
+  <a href="/anatomy/fovea/" aria-label="중심와">
+    <circle class="region{{ rc(['ana_fovea','ref_fovea_center']) }}" cx="345" cy="308" r="32"/></a>
+  <a href="/anatomy/foveola/" aria-label="중심소와">
+    <circle class="region{{ rc(['ana_foveola']) }}" cx="345" cy="308" r="9"/></a>
+  <a href="/anatomy/peripapillary-region/" aria-label="유두주위 망막">
+    <path class="region{{ rc(['ana_peripapillary_region']) }}" fill-rule="evenodd"
+      d="M482 290 a78 84 0 1 0 156 0 a78 84 0 1 0 -156 0 Z M522 290 a38 44 0 1 0 76 0 a38 44 0 1 0 -76 0 Z"/></a>
+  <a href="/anatomy/optic-disc/" aria-label="시신경유두">
+    <ellipse class="region{{ rc(['ana_optic_disc','ref_disc_center','ref_disc_diameter']) }}" cx="560" cy="290" rx="38" ry="44"/></a>
+  {% if hl == 'ana_neuroretinal_rim' %}<path class="region hl static" fill-rule="evenodd"
+      d="M522 290 a38 44 0 1 0 76 0 a38 44 0 1 0 -76 0 Z M547 288 a17 21 0 1 0 34 0 a17 21 0 1 0 -34 0 Z"/>{% endif %}
+  <a href="/anatomy/optic-cup/" aria-label="유두 함몰(컵)">
+    <ellipse class="region{{ rc(['ana_optic_cup']) }}" cx="564" cy="288" rx="17" ry="21"/></a>
+
+  {% if hl == 'zone_etdrs_grid' %}
+  <g class="grid-overlay">
+    <circle cx="345" cy="308" r="24"/><circle cx="345" cy="308" r="71"/><circle cx="345" cy="308" r="142"/>
+    <path d="M362 291 L445 208 M328 291 L245 208 M328 325 L245 408 M362 325 L445 408"/>
+  </g>
+  {% endif %}
+  {% if hl in ('ref_fovea_center','ref_disc_center') %}
+  <g class="point-mark">{% if hl == 'ref_fovea_center' %}<circle cx="345" cy="308" r="6"/>{% else %}<circle cx="560" cy="290" r="6"/>{% endif %}</g>
+  {% endif %}
+  {% if hl == 'ref_disc_diameter' %}<path class="measure-line" d="M522 352 L598 352 M522 346 L522 358 M598 346 L598 358"/>{% endif %}
+
+  {% if labels %}
+  <g class="labels" aria-hidden="true">
+    <text x="345" y="452" text-anchor="middle">황반</text>
+    <text x="345" y="350" text-anchor="middle" class="small">중심와</text>
+    <text x="560" y="365" text-anchor="middle">시신경유두</text>
+    <text x="560" y="395" text-anchor="middle" class="small">유두주위 망막</text>
+    <text x="250" y="150" text-anchor="middle" class="small">혈관 아케이드</text>
+    <text x="700" y="560" text-anchor="end" class="small">후극부 바깥: 중간 주변부</text>
+    <text x="118" y="580" class="small">이측(귀 쪽)</text>
+    <text x="682" y="580" text-anchor="end" class="small">비측(코 쪽)</text>
+  </g>
+  {% endif %}
+</svg>
+<figcaption>오른눈(OD) 기준 후극부 모식도 · 영역을 누르면 해당 항목으로 이동합니다. 크기·거리는 대략적인 비율이며 실제 영상이 아닙니다.</figcaption>
+</figure>
+{%- endmacro %}

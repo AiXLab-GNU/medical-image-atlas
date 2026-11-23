@@ -1,0 +1,109 @@
+rule_id,pattern,target_id,feature_id,relation_type,output_type,note_ko
+r001,^segmentation_agreement\|,,,qc_validation,ratio,분할 결과와 기준 mask의 일치도(환자 표현형 아님)
+r002,^clinical_text_hybrid\|.*\|ai_rnfl_thickness_value$,ana_rnfl,ft_rnfl_thickness_peripapillary,clinical_record,length,기록에서 추출한 RNFL 두께(영상 계산 아님)
+r003,^(structured_clinical|clinical_text)\|,,,clinical_record,score,시력·안압·기록 두께
+r004,^fundus_legacy_139\|(model_derived|reliability)\|(he_probability_burden|he_threshold_burden)$,les_hemorrhage_pooled,,model_output,score,모델 확률 지도 기반 부담(직접 계측 아님)
+r005,^fundus_legacy_139\|(model_derived|reliability)\|(ex_probability_burden|ex_threshold_burden)$,les_hard_exudate,,model_output,score,모델 확률 지도 기반 부담
+r006,^fundus_legacy_139\|(model_derived|reliability)\|,,,model_output,score,AI 점수·등급·불확실성
+r007,\|mask_failure$,,ft_image_quality,qc_validation,presence,분할 실패 표시
+r008,\|(fov_fraction|std512_geometry_fov_.*)$,,ft_image_quality,qc_validation,ratio,FOV 기하·유효 영역
+r009,\|std512_color_quality_(laplacian_variance|tenengrad_mean|gradient_mean|gradient_p95|edge_fraction_gradient_gt20|illumination_block_cv|illumination_block_range|fft_high_frequency_energy_ratio)$,,ft_image_quality,qc_validation,intensity,선명도·조명 균일도
+r010,^fundus_legacy_139\|color_quality\|laplacian_variance$,,ft_image_quality,qc_validation,intensity,선명도
+r011,\|std512_texture_,,ft_image_texture,image_signal,index,질감 지표(해부·병변 측정 아님)
+r012,^fundus_legacy_139\|color_quality\|,,ft_image_color_stats,image_signal,intensity,색·밝기 통계
+r013,\|(vessel_area_fraction|std512_vessel_area_fraction)$,ana_vascular_tree,ft_vessel_area_density,variant_specification,ratio,mask 면적/FOV(유효 ROI 정의 확인)
+r014,\|(skeleton_length_fraction|std512_vessel_skeleton_length_fraction)$,ana_vascular_tree,ft_vessel_length_density,variant_specification,length_per_area,골격 픽셀 수/FOV 픽셀 수(px/px²; 실제 길이와 구분)
+r015,\|(vessel_pixel_count|skeleton_pixel_count)$,ana_vascular_tree,ft_vessel_pixel_count,variant_specification,count,정규화 전 원시 픽셀 수(면적·길이 속성과 구분)
+r016,\|(fractal_dimension|std512_vessel_fractal_dimension)$,ana_vascular_tree,ft_fractal_dimension,variant_specification,index,방법·척도 범위 확인 필요
+r017a,\|(width_index|std512_vessel_area_to_skeleton_width_index|std512_vessel_width_(mean|median|std|p90)_px|vessel_width_median_dd|vessel_width_p90_dd)$,ana_retinal_vasculature,ft_vessel_caliber,variant_specification,length,면적/골격 또는 거리변환 폭(동정맥 미구분)
+r017b,\|(std512_vessel_width_cv|vessel_width_cv)$,ana_retinal_vasculature,ft_vessel_caliber_variability,variant_specification,ratio,폭 변동계수
+r018,\|(tortuosity_index|std512_vessel_branch_tortuosity)$,ana_retinal_vasculature,ft_vessel_tortuosity,variant_specification,ratio,경로 정의 확인 필요
+r019a,\|(branchpoint_density|endpoint_density|std512_vessel_endpoint_density_per_10k_fov|std512_vessel_branchpoint_density_per_10k_fov|std512_vessel_component_count_per_10k_fov)$,ana_vascular_tree,ft_vessel_topology,variant_specification,count_per_area,pixel graph 기준(실제 혈관 분지와 대응 확인 필요)
+r019b,\|(std512_vessel_branchpoint_endpoint_ratio|std512_vessel_largest_component_area_fraction)$,ana_vascular_tree,ft_vessel_connectivity,variant_specification,ratio,pixel graph 연결성
+r020,\|mean_branch_angle_deg$,ana_retinal_vasculature,ft_branching_angle,variant_specification,angle,—
+r021,\|std512_vessel_orientation_(entropy_normalized|dominance)$,ana_vascular_tree,ft_vessel_orientation,variant_specification,index,—
+r022,\|(inner_vessel_area_fraction|outer_vessel_area_fraction|outer_inner_vessel_area_fraction_ratio|inner_skeleton_length_fraction|outer_skeleton_length_fraction|outer_inner_skeleton_length_fraction_ratio|std512_vessel_(radial_inner|middle|radial_outer|upper|lower|left|right|q1|q2|q3|q4)_area_fraction|std512_vessel_(outer_inner_area_ratio|upper_lower_area_difference|left_right_area_difference|quadrant_area_range|quadrant_area_cv)|temporal_vessel_fraction|superior_inferior_density_ratio|vessel_density_grid_(cv|p95|max))$,ana_vascular_tree,ft_vessel_regional_density,variant_specification,ratio,구역 원점(FOV 중심 또는 landmark) 확인 필요
+r023,\|(av_color_cluster_separation|av_cluster_area_ratio|av_cluster_width_ratio)$,ana_retinal_vasculature,ft_avr,proxy,ratio,색 군집 기반 동정맥 근사(CRAE·CRVE와 다름)
+r024,\|(arcade_vertical_extent|arcade_orientation_coherence|arcade_axis_angle_abs_deg)$,ana_vascular_arcades,,proxy,index,아케이드 형태 근사
+r025a,\|(disc_fovea_dx_abs|disc_fovea_dy|disc_fovea_distance)$,ana_posterior_pole,ft_disc_fovea_distance,variant_specification,length,자동 landmark 기준(px 또는 정규화 단위)
+r025b,\|disc_fovea_angle_abs_deg$,ana_posterior_pole,ft_disc_fovea_angle,variant_specification,angle,자동 landmark 기준
+r026,\|(disc_center_eccentricity|fovea_center_eccentricity)$,,ft_image_quality,qc_validation,ratio,영상 안 landmark 위치(촬영 중심)
+r027,\|disc_proxy_area_fraction$,ana_optic_disc,ft_disc_area,proxy,ratio,밝기 기반 유두 근사
+r028,\|disc_proxy_(eccentricity|axis_ratio|orientation_abs_deg|circularity)$,ana_optic_disc,ft_disc_shape,proxy,index,밝기 기반 유두 형태 근사
+r029,\|peripapillary_bright_desaturated_fraction$,les_peripapillary_atrophy,ft_ppa_area,proxy,ratio,밝고 채도 낮은 유두주위 영역(위축 근사)
+r030,^[^|]+\|[^|]+\|peripapillary_,ana_peripapillary_region,,image_signal,intensity,유두주위 외관 신호
+r031,^(?!e046_known_lesion)[^|]+\|[^|]+\|macular_,ana_macula,,image_signal,intensity,황반 외관 신호
+r032,\|tessellation_texture_proxy$,les_tessellated_fundus,,proxy,index,질감 기반 호피 안저 근사
+r033,^[^|]+\|[^|]+\|background_,,ft_image_color_stats,image_signal,intensity,배경 색·밝기
+r034,^oct_mask_25\|.*\|irf_presence$,les_intraretinal_fluid,ft_irf_presence,variant_specification,presence,2D mask 존재(스캔 단위)
+r035,^oct_mask_25\|.*\|srf_presence$,les_subretinal_fluid,ft_srf_presence,variant_specification,presence,2D mask 존재
+r036,^oct_mask_25\|.*\|irf_area_(px|fraction)$,les_intraretinal_fluid,ft_irf_bscan_area,variant_specification,area,B-scan 단면 면적(px 또는 비율; 부피 아님)
+r037,^oct_mask_25\|.*\|(srf|ped|shrm)_area_(px|fraction)$,,ft_lesion_generic_area,variant_specification,area,B-scan 단면 면적(부피 아님)
+r038,^oct_mask_25\|.*\|(irf|srf|ped|shrm)_component_count$,,ft_lesion_generic_count,variant_specification,count,mask 연결성분 수(임상 병변 수 아님)
+r039,^oct_mask_25\|.*\|(irf|srf|ped|shrm)_largest_component_fraction$,,ft_lesion_size_distribution,derived,ratio,최대 성분 비율
+r040,^oct_mask_25\|.*\|(ped|shrm)_presence$,,ft_lesion_generic_presence,variant_specification,presence,2D mask 존재
+r041,^oct_mask_25\|.*\|is_os_largest_gap_px$,les_ez_disruption,ft_ez_disruption_width,variant_specification,length,원 label IS/OS(EZ 대응 확인 필요)·px
+r042a,^oct_mask_25\|.*\|(is_os_presence|is_os_central_preserved)$,ana_ellipsoid_zone,ft_ez_continuity,variant_specification,presence,원 label IS/OS(EZ 대응 확인 필요)
+r042b,^oct_mask_25\|.*\|(is_os_preserved_fraction|is_os_central_preserved_fraction)$,ana_ellipsoid_zone,ft_ez_preserved_fraction,variant_specification,ratio,원 label IS/OS(EZ 대응 확인 필요)
+r043a,^generic_binary_mask\|.*\|presence$,les_generic,ft_lesion_generic_presence,variant_specification,presence,대상 미지정 공통 연산
+r043b,^generic_binary_mask\|.*\|component_count$,les_generic,ft_lesion_generic_count,variant_specification,count,대상 미지정 공통 연산(연결성분 수)
+r044,^generic_binary_mask\|.*\|(area_px|area_fraction|area_physical)$,les_generic,ft_lesion_generic_area,variant_specification,area,대상 미지정 공통 연산
+r045a,^generic_binary_mask\|.*\|(circularity|eccentricity)$,les_generic,ft_lesion_generic_shape,variant_specification,index,대상 미지정 공통 연산
+r045b,^generic_binary_mask\|.*\|(perimeter_px|bbox_width_fraction|bbox_height_fraction)$,les_generic,ft_lesion_generic_extent,variant_specification,length,대상 미지정 공통 연산
+r046,^generic_binary_mask\|.*\|(largest_component_fraction)$,les_generic,ft_lesion_size_distribution,derived,ratio,대상 미지정 공통 연산
+r047,^generic_binary_mask\|.*\|(centroid_x_fraction|centroid_y_fraction)$,les_generic,ft_lesion_generic_position,variant_specification,ratio,대상 미지정 공통 연산
+r049,\|prespecified_interaction\|,les_generic,,derived,index,기존 측정의 곱(새 실체 아님)
+r050,\|(red|bright)_uncertain_,,,qc_validation,area,판독 불확실 표시 영역(DR 분석에서는 음성대조로 등록)
+r051,\|(lesion_type_diversity|red_to_bright_lesion_ratio|lesion_union_area_fraction|lesion_union_component_count)$,les_generic,,derived,index,여러 병변 통합 파생
+r052,\|cotton_wool_peripapillary_fraction$,les_cotton_wool_spot,ft_lesion_regional_fraction,variant_specification,ratio,유두주위 비율
+r053,\|red_lesion_quadrants_occupied$,les_red_lesion_pooled,ft_hem_count_quadrant,proxy,count,병변이 있는 사분면 수(사분면별 20개 초과 기준과 다름)
+r054,\|red_lesion_area_fraction$,les_red_lesion_pooled,ft_lesion_generic_area,variant_specification,area,FOV 대비 면적 비율
+r055a,\|red_lesion_(quadrant_burden_max|central_2dd_fraction|peripheral_fraction|peripheral_central_ratio)$,les_red_lesion_pooled,ft_lesion_regional_fraction,variant_specification,ratio,사분면·중심/주변 비율
+r055b,\|red_lesion_(quadrant_burden_cv|quadrant_entropy)$,les_red_lesion_pooled,ft_lesion_spatial_dispersion,variant_specification,index,사분면 분산·엔트로피
+r056,\|(hemorrhage|microaneurysm|hard_exudate|cotton_wool_spot)_near_vessel_0(1|25)dd$,,ft_lesion_vessel_relation,derived,ratio,병변–혈관 근접
+r057,\|(hemorrhage|microaneurysm|hard_exudate|cotton_wool_spot)_vessel_distance_mean_dd$,,ft_lesion_vessel_relation,derived,length,병변–혈관 거리
+r058,\|microaneurysm_fovea_distance_(min|median)_dd$,les_microaneurysm,ft_ma_distance_fovea,variant_specification,length,DD 단위
+r059,\|hard_exudate_fovea_distance_(min|median)_dd$,les_hard_exudate,ft_he_distance_fovea,variant_specification,length,DD 단위
+r060,\|(hemorrhage|cotton_wool_spot)_fovea_distance_(min|median)_dd$,,ft_lesion_fovea_distance,variant_specification,length,DD 단위 중심와 거리
+r061,\|(hemorrhage|microaneurysm|hard_exudate|cotton_wool_spot)_macula_(1|2)dd_fraction$,,ft_lesion_regional_fraction,variant_specification,ratio,황반 1·2 DD 안 비율
+r062,\|(hemorrhage|microaneurysm|hard_exudate|cotton_wool_spot)_expert_component_area_(mean|p90|max)_dd2$,,ft_lesion_size_distribution,derived,area,성분 크기 분포
+r063,\|(hemorrhage|microaneurysm|hard_exudate|cotton_wool_spot)_expert_component_area_cv$,,ft_lesion_size_distribution,derived,ratio,성분 크기 변동
+r064,\|hemorrhage_(expert_)?component_count$,les_hemorrhage_pooled,ft_lesion_generic_count,variant_specification,count,mask 연결성분 수(임상 개수·사분면 개수 아님)
+r065,\|microaneurysm_(expert_)?component_count$,les_microaneurysm,ft_ma_count,variant_specification,count,mask 연결성분 수(임상 개수 아님)
+r066,\|hard_exudate_(expert_)?component_count$,les_hard_exudate,ft_lesion_generic_count,variant_specification,count,mask 연결성분 수
+r067,\|cotton_wool_spot_(expert_)?component_count$,les_cotton_wool_spot,ft_cws_count,variant_specification,count,mask 연결성분 수(임상 개수 아님)
+r068,\|hemorrhage_(expert_)?area_fraction$,les_hemorrhage_pooled,ft_lesion_generic_area,variant_specification,area,FOV 대비 면적 비율(층위 미구분; 점·얼룩 출혈 면적과 구분)
+r069,\|microaneurysm_(expert_)?area_fraction$,les_microaneurysm,ft_lesion_generic_area,variant_specification,area,FOV 대비 면적 비율
+r070,\|hard_exudate_(expert_)?area_fraction$,les_hard_exudate,ft_he_area,variant_specification,area,FOV 대비 면적 비율
+r071,\|cotton_wool_spot_(expert_)?area_fraction$,les_cotton_wool_spot,ft_cws_area,variant_specification,area,FOV 대비 면적 비율
+r072,\|neovascularization_area_fraction$,les_neovascularization_pooled,ft_lesion_generic_area,variant_specification,area,NVD·NVE 통합 면적 비율(NVE 면적과 구분)
+r073,\|neovascularization_component_count$,les_neovascularization_pooled,ft_lesion_generic_count,variant_specification,count,mask 연결성분 수
+r074,\|neovascularization_peripapillary_fraction$,les_neovascularization_pooled,ft_lesion_regional_fraction,variant_specification,ratio,유두주위 비율(NVD 근사로 쓰지 않음)
+r075,\|drusen_area_fraction$,les_drusen_unspecified,ft_lesion_generic_area,variant_specification,area,FOV 대비 면적 비율(DR 분석에서는 음성대조로 등록)
+r076,\|drusen_component_count$,les_drusen_unspecified,ft_lesion_generic_count,variant_specification,count,mask 연결성분 수(DR 분석에서는 음성대조로 등록)
+k001,^e046_known_lesion\|[a-z_]+\|presence$,,ft_lesion_generic_presence,variant_specification,presence,주석 기반 존재
+k002,^e046_known_lesion\|[a-z_]+\|component_count$,,ft_lesion_generic_count,variant_specification,count_per_area,FOV 비율로 정규화한 연결성분 수(임상 개수·사분면 개수 아님)
+k003,^e046_known_lesion\|[a-z_]+\|area_fraction$,,ft_lesion_generic_area,variant_specification,area,FOV 대비 면적 비율
+k004a,^e046_known_lesion\|[a-z_]+\|component_area_(mean|median|p90|max)_disc2$,,ft_lesion_size_distribution,derived,area,성분 크기 분포(DD² 단위)
+k004b,^e046_known_lesion\|[a-z_]+\|upper_quartile_area_share$,,ft_lesion_size_distribution,derived,ratio,큰 성분의 면적 몫
+k005,^e046_known_lesion\|[a-z_]+\|(circularity|eccentricity|solidity|boundary_irregularity)_area_weighted$,,ft_lesion_generic_shape,variant_specification,index,면적 가중 형태
+k006,^e046_known_lesion\|[a-z_]+\|quadrant_occupancy$,,ft_lesion_regional_fraction,proxy,count,병변이 있는 사분면 수(4-2-1의 사분면별 기준과 다름)
+k007a,^e046_known_lesion\|[a-z_]+\|macular_(1|2)dd_area_fraction$,,ft_lesion_regional_fraction,variant_specification,ratio,황반 1·2 DD 안 면적 비율
+k007b,^e046_known_lesion\|[a-z_]+\|quadrant_burden_entropy$,,ft_lesion_spatial_dispersion,variant_specification,index,사분면 분포 엔트로피
+k007c,^e046_known_lesion\|[a-z_]+\|radial_centroid_mean_disc$,,ft_lesion_radial_position,variant_specification,length,중심으로부터 반경 위치(DD)
+k008,^e046_known_lesion\|[a-z_]+\|nearest_fovea_distance_disc$,,ft_lesion_fovea_distance,variant_specification,length,DD 단위 중심와 최소 거리
+k009a,^e046_known_lesion\|[a-z_]+\|perivascular_fraction_025dd$,,ft_lesion_vessel_relation,derived,ratio,병변–혈관 근접
+k009b,^e046_known_lesion\|[a-z_]+\|vessel_distance_mean_disc$,,ft_lesion_vessel_relation,derived,length,병변–혈관 거리
+e001,^e118_registry\|technical_qc/,,ft_image_quality,qc_validation,ratio,FOV 커버리지
+e002,^e118_registry\|derived/,,,derived,index,기존 잎 측정의 곱(새 실체 아님)
+e003,^e118_registry\|vascular_structure/density\|,ana_vascular_tree,ft_vessel_area_density,variant_specification,ratio,Sato 근사선 또는 혈관 mask 밀도(출처 구분 유지)
+e004,^e118_registry\|vascular_structure/topology\|,ana_vascular_tree,ft_vessel_connectivity,variant_specification,ratio,graph 위상 또는 Sato 분지 픽셀 비율
+e005,^e118_registry\|vascular_structure/width\|,ana_retinal_vasculature,ft_vessel_caliber,proxy,length,거리변환 폭 근사
+e006,^e118_registry\|vascular_structure/path_length\|,ana_vascular_tree,ft_vessel_path_length,variant_specification,length,적격 graph 경로 길이(길이 밀도와 다름)
+e007,^e118_registry\|vascular_structure/tortuosity\|,ana_retinal_vasculature,ft_vessel_tortuosity,variant_specification,ratio,경로 길이/현
+e008,^e118_registry\|organization/vessel_orientation\|,ana_vascular_tree,ft_vessel_orientation,variant_specification,index,graph 간선 축 방향
+e009,^e118_registry\|organization/upper_lower_balance\|,ana_vascular_tree,ft_vessel_regional_density,variant_specification,ratio,mask·골격 상하 균형
+e010,^e118_registry\|organization/gradient_orientation\|,,,image_signal,index,RGB 기울기 방향(혈관 접선 아님)
+e011,^e118_registry\|appearance/ridge\|,,,image_signal,intensity,Hessian ridge 근사(RNFL·혈관 측정으로 확정하지 않음)
+e012,^e118_registry\|appearance/,,ft_image_color_stats,image_signal,intensity,색·밝기·대비·질감
+e013,^e118_registry\|spatial_relation/,,,image_signal,ratio,밝기 가중 중심(실제 landmark 거리와 구분)

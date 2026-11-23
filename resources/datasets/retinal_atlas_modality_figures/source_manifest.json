@@ -1,0 +1,230 @@
+[
+ {
+  "file": "octa_scp.jpg",
+  "provider_file": "provider_figures/12886_2024_3283_Fig1_HTML.png",
+  "provider_sha256": "13aeb00f1bf66a5972691fb4b56066f43a9ede98fce872985810a1907e1abdf0",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-024-03283-2/MediaObjects/12886_2024_3283_Fig1_HTML.png",
+  "crop_box": [
+   0,
+   4,
+   288,
+   290
+  ],
+  "panel": "Fig. 1 A1",
+  "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20",
+  "article_url": "https://doi.org/10.1186/s12886-024-03283-2",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "4ef02fd5ae7b6ebd0a74759594b39a976ddc7a31cf6c1aac11d898025944d82f",
+  "modifications": "Fig. 1 A1 영역 (0, 4, 288, 290)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "octa_icp.jpg",
+  "provider_file": "provider_figures/12886_2024_3283_Fig1_HTML.png",
+  "provider_sha256": "13aeb00f1bf66a5972691fb4b56066f43a9ede98fce872985810a1907e1abdf0",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-024-03283-2/MediaObjects/12886_2024_3283_Fig1_HTML.png",
+  "crop_box": [
+   302,
+   4,
+   585,
+   290
+  ],
+  "panel": "Fig. 1 B1",
+  "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20",
+  "article_url": "https://doi.org/10.1186/s12886-024-03283-2",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "3be445d58ab9d96e2c6aa315213c0b31192ead60bd710c7a03fe21fdb18105b7",
+  "modifications": "Fig. 1 B1 영역 (302, 4, 585, 290)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "octa_dcp.jpg",
+  "provider_file": "provider_figures/12886_2024_3283_Fig1_HTML.png",
+  "provider_sha256": "13aeb00f1bf66a5972691fb4b56066f43a9ede98fce872985810a1907e1abdf0",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-024-03283-2/MediaObjects/12886_2024_3283_Fig1_HTML.png",
+  "crop_box": [
+   602,
+   4,
+   889,
+   290
+  ],
+  "panel": "Fig. 1 C1",
+  "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20",
+  "article_url": "https://doi.org/10.1186/s12886-024-03283-2",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "080803b6ac11f92f79527545beabf7d7a4cc82deabfc05dd9754d372c8d02873",
+  "modifications": "Fig. 1 C1 영역 (602, 4, 889, 290)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "octa_cc.jpg",
+  "provider_file": "provider_figures/12886_2024_3283_Fig1_HTML.png",
+  "provider_sha256": "13aeb00f1bf66a5972691fb4b56066f43a9ede98fce872985810a1907e1abdf0",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-024-03283-2/MediaObjects/12886_2024_3283_Fig1_HTML.png",
+  "crop_box": [
+   1209,
+   4,
+   1486,
+   290
+  ],
+  "panel": "Fig. 1 E1",
+  "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20",
+  "article_url": "https://doi.org/10.1186/s12886-024-03283-2",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "e829da9cfe80789838aa5473f88f900bc9be08e3deea2dba76149c62b5c9c32e",
+  "modifications": "Fig. 1 E1 영역 (1209, 4, 1486, 290)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "faf_bluelight.jpg",
+  "provider_file": "provider_figures/40942_2018_148_Fig2_HTML.jpg",
+  "provider_sha256": "56b1af5ef376dc6e9325d94c938d7e4c05e0ae74281613a864833c18fd209157",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs40942-018-0148-5/MediaObjects/40942_2018_148_Fig2_HTML.jpg",
+  "crop_box": [
+   0,
+   0,
+   773,
+   597
+  ],
+  "panel": "Fig. 2a",
+  "credit": "Fragiotta S, et al. (2018) Int J Retina Vitreous 4:44",
+  "article_url": "https://doi.org/10.1186/s40942-018-0148-5",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "fb1e125f6a104fc44a07567ea26006d29261cc528a656f363c919b0300726729",
+  "modifications": "Fig. 2a 영역 (0, 0, 773, 597)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "nir_macula.jpg",
+  "provider_file": "provider_figures/12886_2022_2566_Fig5_HTML.png",
+  "provider_sha256": "4fec0e3dc44190be291f22004277c53e0653b63b9d03d60c6130cbd9907b1a5d",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-022-02566-w/MediaObjects/12886_2022_2566_Fig5_HTML.png",
+  "crop_box": [
+   0,
+   0,
+   630,
+   627
+  ],
+  "panel": "Fig. 5A",
+  "credit": "Penas S, et al. (2022) BMC Ophthalmol 22:363",
+  "article_url": "https://doi.org/10.1186/s12886-022-02566-w",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "194519aacfb92040b35b57834ab5670c4543aaf9b0e510a514dbb4d173fd152e",
+  "modifications": "Fig. 5A 영역 (0, 0, 630, 627)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "nir_widefield.jpg",
+  "provider_file": "provider_figures/fmed-09-983548-g004.jpg",
+  "provider_sha256": "b62642c24e043b19fc79b9723389425ef3c3d3ea626762392ea46ca7714432ef",
+  "download_url": "https://www.frontiersin.org/files/Articles/983548/fmed-09-983548-HTML/image_m/fmed-09-983548-g004.jpg",
+  "crop_box": [
+   188,
+   185,
+   970,
+   971
+  ],
+  "panel": "Fig. 4 IR (OD)",
+  "credit": "Zhou Y, et al. (2022) Front Med 9:983548",
+  "article_url": "https://doi.org/10.3389/fmed.2022.983548",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "364cfbf473272dc521538cc8d13008bb39b93ef9a8a19aafc14205617a2e4349",
+  "modifications": "Fig. 4 IR (OD) 영역 (188, 185, 970, 971)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "fa_early.jpg",
+  "provider_file": "provider_figures/12886_2022_2566_Fig4_HTML.png",
+  "provider_sha256": "228d64030f5ad41661d6a31d4e7a83d6586dd7f08ffecf1a01e4999cc9ed8122",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-022-02566-w/MediaObjects/12886_2022_2566_Fig4_HTML.png",
+  "crop_box": [
+   0,
+   0,
+   588,
+   556
+  ],
+  "panel": "Fig. 4A",
+  "credit": "Penas S, et al. (2022) BMC Ophthalmol 22:363",
+  "article_url": "https://doi.org/10.1186/s12886-022-02566-w",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "9fe57f22b7b73a1764a7562f49b85d354383e23665693ebe4571e2501ace8b96",
+  "modifications": "Fig. 4A 영역 (0, 0, 588, 556)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "fa_late.jpg",
+  "provider_file": "provider_figures/12886_2022_2566_Fig4_HTML.png",
+  "provider_sha256": "228d64030f5ad41661d6a31d4e7a83d6586dd7f08ffecf1a01e4999cc9ed8122",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-022-02566-w/MediaObjects/12886_2022_2566_Fig4_HTML.png",
+  "crop_box": [
+   0,
+   580,
+   588,
+   1139
+  ],
+  "panel": "Fig. 4C",
+  "credit": "Penas S, et al. (2022) BMC Ophthalmol 22:363",
+  "article_url": "https://doi.org/10.1186/s12886-022-02566-w",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "9a76c6a72194cb5ba9c686c98f8d97dbe8db27e658317c94acb5fbfe3a6e75bd",
+  "modifications": "Fig. 4C 영역 (0, 580, 588, 1139)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "icga_macula.jpg",
+  "provider_file": "provider_figures/12886_2022_2566_Fig4_HTML.png",
+  "provider_sha256": "228d64030f5ad41661d6a31d4e7a83d6586dd7f08ffecf1a01e4999cc9ed8122",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-022-02566-w/MediaObjects/12886_2022_2566_Fig4_HTML.png",
+  "crop_box": [
+   596,
+   0,
+   1180,
+   556
+  ],
+  "panel": "Fig. 4B",
+  "credit": "Penas S, et al. (2022) BMC Ophthalmol 22:363",
+  "article_url": "https://doi.org/10.1186/s12886-022-02566-w",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "d0d3597958591e3849c4f20bb1bab7826f8264fc7ab5feb6be9331b2cae648ed",
+  "modifications": "Fig. 4B 영역 (596, 0, 1180, 556)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "icga_widefield.jpg",
+  "provider_file": "provider_figures/fmed-09-983548-g004.jpg",
+  "provider_sha256": "b62642c24e043b19fc79b9723389425ef3c3d3ea626762392ea46ca7714432ef",
+  "download_url": "https://www.frontiersin.org/files/Articles/983548/fmed-09-983548-HTML/image_m/fmed-09-983548-g004.jpg",
+  "crop_box": [
+   1000,
+   1110,
+   1812,
+   1932
+  ],
+  "panel": "Fig. 4 ICGA early (OD)",
+  "credit": "Zhou Y, et al. (2022) Front Med 9:983548",
+  "article_url": "https://doi.org/10.3389/fmed.2022.983548",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "b55ba31fdded1e27aa198ace7ae204a92980f540796d9383c5d5a3e38583dfb1",
+  "modifications": "Fig. 4 ICGA early (OD) 영역 (1000, 1110, 1812, 1932)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ },
+ {
+  "file": "oct_enface.jpg",
+  "provider_file": "provider_figures/12886_2022_2566_Fig5_HTML.png",
+  "provider_sha256": "4fec0e3dc44190be291f22004277c53e0653b63b9d03d60c6130cbd9907b1a5d",
+  "download_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12886-022-02566-w/MediaObjects/12886_2022_2566_Fig5_HTML.png",
+  "crop_box": [
+   657,
+   0,
+   1290,
+   627
+  ],
+  "panel": "Fig. 5B",
+  "credit": "Penas S, et al. (2022) BMC Ophthalmol 22:363",
+  "article_url": "https://doi.org/10.1186/s12886-022-02566-w",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "sha256": "9c17c6ad6975a8856afc55d7382a46c5e4f816de7f2d16b424720fb4ef749c72",
+  "modifications": "Fig. 5B 영역 (657, 0, 1290, 627)를 잘라 최대 900 px로 축소; 패널 글자·저자 표시는 원본 그대로"
+ }
+]

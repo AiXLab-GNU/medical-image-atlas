@@ -1,0 +1,50 @@
+{% extends 'base.html' %}{% from '_macros.html' import item_card with context %}{% from '_breast_schematic.html' import breast with context %}
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>해부학 지도</span></div>
+<header class="map-hero">
+  <div>
+    <h1>해부학 지도</h1>
+    <p class="lead">같은 유방을 <strong>두미 방향(CC)</strong>과 <strong>내외사위(MLO)</strong>에서 봅니다. 모식도의 구역을 누르면 해당 구조로 이동합니다.</p>
+  </div>
+  <form class="map-search" method="get" action="/anatomy/" role="search">
+    <label class="visually-hidden" for="anatomy-q">구조 이름으로 찾기</label>
+    <input id="anatomy-q" type="search" name="q" value="{{ query }}" placeholder="구조 이름으로 찾기">{% if modality %}<input type="hidden" name="img" value="{{ modality }}">{% endif %}
+  </form>
+</header>
+
+<nav class="axis-tabs" aria-label="지도 갈래">
+  {% for a in axes %}<a href="#axis-{{ a.key }}"><span class="axis-num">{{ loop.index }}</span>{{ a.label }}<small>{{ a.members|length }}</small></a>{% endfor %}
+  <span class="tab-spacer"></span>
+  <span class="filter-label">영상으로 거르기</span>
+  {% for key,label in modalities %}<a class="mod{% if modality == key %} on{% endif %}" href="/anatomy/?img={{ key }}">{{ label }}</a>{% endfor %}
+</nav>
+{% if filtered %}<div class="filter-result"><p>{{ total }}개 표시</p><a class="button secondary" href="/anatomy/">필터 지우기</a></div>{% endif %}
+
+{% if not filtered %}
+<section class="map-section">
+  <div class="map-split">
+    <div class="map-figure">{{ breast('', links=True) }}</div>
+    <div class="region-cards">
+      <article class="region-card"><a class="rc-title" href="{{ item_path(items['zone_quadrants']) }}">위치는 두 영상을 합쳐 정합니다</a>
+        <p>CC는 안쪽·바깥쪽을, MLO는 위쪽·아래쪽을 보여 줍니다. 두 영상에서 같은 병변을 찾아 사분면과 시계 방향을 정하고, 유두에서의 거리와 깊이(앞·가운데·뒤 1/3)를 함께 적습니다.</p>
+        <div class="pills">{% for id in ['ana_upper_outer_quadrant','ana_upper_inner_quadrant','ana_lower_outer_quadrant','ana_lower_inner_quadrant','ana_subareolar_region','ana_central_region','ana_axillary_tail'] %}<a class="pill" href="{{ item_path(items[id]) }}">{{ items[id].name }}{% if items[id].abbr %}<small>{{ items[id].abbr }}</small>{% endif %}</a>{% endfor %}</div></article>
+      <article class="region-card"><a class="rc-title" href="{{ item_path(items['ana_pectoralis_major']) }}">MLO의 대흉근과 후유두선</a>
+        <p>대흉근이 유두 높이까지 보이고, 유두에서 대흉근까지의 후유두선 길이가 CC와 1 cm 안에서 같으면 뒤쪽 조직까지 충분히 찍힌 것으로 봅니다.</p>
+        <div class="pills">{% for id in ['ana_pectoralis_major','ref_pectoral_edge','ref_posterior_nipple_line','ref_nipple','ana_inframammary_fold'] %}<a class="pill" href="{{ item_path(items[id]) }}">{{ items[id].name }}</a>{% endfor %}</div></article>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% for a in axes %}{% if a.members %}
+<section class="map-section" id="axis-{{ a.key }}">
+  <header class="map-section-head"><span class="axis-num big">{{ loop.index }}</span><div><h2>{{ a.label }}</h2><p>{{ a.note }}</p></div><span class="count-badge">{{ a.members|length }}</span></header>
+  {% if a.key == 'tissue' and not filtered %}
+  <ol class="tissue-order">{% for i in a.members|sort(attribute='order') %}<li><span class="to-num">{{ loop.index }}</span><div><a href="{{ item_path(i) }}">{{ i.name }}{% if i.abbr %} <span class="abbr">{{ i.abbr }}</span>{% endif %}</a><p>{{ i.definition }}</p></div></li>{% endfor %}</ol>
+  <p class="muted small">피부(1)에서 흉벽(마지막) 쪽으로 차례로 놓았습니다.</p>
+  {% else %}
+  <div class="item-grid">{% for i in a.members %}{{ item_card(i) }}{% endfor %}</div>
+  {% endif %}
+</section>
+{% endif %}{% else %}<p class="empty">조건에 맞는 구조가 없습니다.</p>{% endfor %}
+{% endblock %}

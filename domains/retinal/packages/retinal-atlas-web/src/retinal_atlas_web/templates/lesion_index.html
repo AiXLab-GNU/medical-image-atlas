@@ -1,0 +1,33 @@
+{% extends 'base.html' %}{% from '_macros.html' import obs_chips with context %}
+{% macro lesion_card(item) -%}
+<a class="lesion-card" href="{{ item_path(item) }}">
+  <span class="lc-top"><span class="item-name">{{ item.name }}</span>{% if item.abbr %}<span class="abbr">{{ item.abbr }}</span>{% endif %}</span>
+  <span class="item-en">{{ item.name_en }}</span>
+  <span class="item-def">{{ item.definition }}</span>
+  <span class="lc-foot">{% if item.location and item.location != '—' %}<span class="depth-tag">{{ item.location }}</span>{% endif %}{{ obs_chips(item.obs, True) }}</span>
+</a>
+{%- endmacro %}
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>병변 목록</span></div>
+<header class="map-hero">
+  <div><h1>병변 목록</h1><p class="lead">영상에서 관찰되는 소견을 큰 묶음으로 정리했습니다. 카드에는 <strong>생기는 깊이</strong>와 <strong>볼 수 있는 영상</strong>을 표시합니다.</p></div>
+  <form class="map-search" method="get" action="/lesions/" role="search"><label class="visually-hidden" for="lesion-q">병변 이름으로 찾기</label><input id="lesion-q" type="search" name="q" value="{{ query }}" placeholder="병변 이름으로 찾기">{% if modality %}<input type="hidden" name="img" value="{{ modality }}">{% endif %}</form>
+</header>
+<nav class="axis-tabs" aria-label="소견 묶음">
+  <a class="cat{% if not category %} on{% endif %}" href="/lesions/{% if modality %}?img={{ modality }}{% endif %}">전체<small>{{ counts.values()|sum }}</small></a>
+  {% for key,label,note,groups in category_defs %}<a class="cat{% if category == key %} on{% endif %}" href="/lesions/?cat={{ key }}{% if modality %}&amp;img={{ modality }}{% endif %}">{{ label }}<small>{{ counts[key] }}</small></a>{% endfor %}
+  <span class="tab-spacer"></span>
+  <span class="filter-label">영상으로 거르기</span>
+  {% for key,label in modalities %}<a class="mod{% if modality == key %} on{% endif %}" href="/lesions/?img={{ key }}{% if category %}&amp;cat={{ category }}{% endif %}">{{ label }}</a>{% endfor %}
+</nav>
+{% if filtered %}<div class="filter-result"><p>{{ total }}개 표시</p><a class="button secondary" href="/lesions/">필터 지우기</a></div>{% endif %}
+{% for c in categories %}
+<section class="map-section" id="cat-{{ c.key }}">
+  <header class="map-section-head"><span class="axis-num big">{{ loop.index }}</span><div><h2>{{ c.label }}</h2><p>{{ c.note }}</p></div><span class="count-badge">{{ c.count }}</span></header>
+  {% for label, key, members in c.groups %}
+    {% if c.groups|length > 1 %}<h3 class="mini">{{ label }} <span>{{ members|length }}</span></h3>{% endif %}
+    <div class="lesion-grid">{% for item in members %}{{ lesion_card(item) }}{% endfor %}</div>
+  {% endfor %}
+</section>
+{% else %}<p class="empty">조건에 맞는 병변이 없습니다.</p>{% endfor %}
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}{% from '_modality_schematic.html' import fov_panel, depth_panel %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><a href="/imaging/">영상 종류</a><span>/</span><span>{{ record.name }}</span></div>
+
+<header class="ip-hero mv-hero">
+  <div class="ip-title">
+    <div class="tags"><span class="tag">영상 종류</span><span class="tag">{{ view.short }}</span></div>
+    <h1>{{ record.name }}</h1>
+    <p class="ip-en">{{ record.name_en }}</p>
+    <p class="ip-def">{{ view.summary }}</p>
+  </div>
+  <dl class="ip-facts">
+    <div><dt>잘 보이는 것</dt><dd>{{ record.shows }}</dd></div>
+    <div><dt>한계</dt><dd>{{ record.limits }}</dd></div>
+    <div><dt>직접 보이는 항목</dt><dd><a href="#mv-items">{{ seen[('anatomy','direct')]|length + seen[('lesions','direct')]|length }}개</a></dd></div>
+    <div><dt>이 영상으로 재는 측정</dt><dd><a href="#mv-measures">{{ measures|length }}개</a></dd></div>
+  </dl>
+</header>
+
+<nav class="axis-tabs ip-tabs" aria-label="영상 종류">{% for k, label in modalities %}<a href="/imaging/{{ k }}/"{% if k == view.key %} aria-current="page" class="on"{% endif %}>{{ label }}</a>{% endfor %}</nav>
+
+<section class="section" id="mv-area">
+  <h2 class="ip-h2">보이는 영역</h2>
+  <div class="mv-grid">
+    <figure class="mv-card">
+      <figcaption><strong>정면에서 찍히는 범위</strong><span>중심와 기준 각도(1 mm ≈ 3.4°). 대표 촬영 설정이며 장비마다 다릅니다.</span></figcaption>
+      {{ fov_panel(view) }}
+      <ol class="mv-legend">{% for f in view.fov %}<li class="n{{ loop.index }} k-{{ f.kind }}"><span class="mv-key">{{ loop.index }}</span>{{ f.label }}</li>{% endfor %}</ol>
+    </figure>
+    <figure class="mv-card">
+      <figcaption><strong>신호가 오는 깊이</strong><span>{{ view.depth_note }}</span></figcaption>
+      {{ depth_panel(view, bands) }}
+      <ul class="mv-depth-legend"><li class="l-main">주 신호</li><li class="l-part">일부·조건부</li><li class="l-block">가리거나 어둡게 함</li></ul>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="mv-real">
+  <h2 class="ip-h2">실제 영상</h2>
+  {% if figures %}
+  <div class="mv-photos">{% for fig in figures %}
+    <figure class="mv-photo">
+      <img src="{{ '/modality-figures/' if fig.served == 'modality' else '/figures/' }}{{ fig.file }}" alt="{{ fig.caption }}" width="{{ fig.width }}" height="{{ fig.height }}" loading="lazy">
+      <figcaption>{{ fig.caption }}</figcaption>
+      <p class="figure-credit">{{ fig.credit }}{% if fig.panel %} {{ fig.panel }}{% endif %} · <a href="{{ fig.url }}" target="_blank" rel="noopener">출처</a> · <a href="{{ fig.license_url }}" target="_blank" rel="noopener">{{ fig.license }}</a> · {{ fig.transform }}</p>
+    </figure>{% endfor %}
+  </div>
+  <p class="muted small">공개 논문·데이터셋의 환자 영상입니다. 정상 기준 영상이 아니며 패널 글자와 화살표는 원 저자의 표시입니다.</p>
+  {% else %}<div class="figure-empty"><p><strong>실제 영상 준비 중</strong></p></div>{% endif %}
+</section>
+
+{% if children %}
+<section class="section">
+  <h2 class="ip-h2">영상 표현 방식</h2>
+  <div class="look-grid">{% for c in children %}
+    <article class="look-card"><span class="look-img">{{ c.name }}</span><p class="look-signal">{{ c.shows }}</p>{% if c.limits %}<p class="look-cond"><span>한계</span>{{ c.limits }}</p>{% endif %}</article>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="mv-items">
+  <h2 class="ip-h2">이 영상에서 보이는 구조와 병변</h2>
+  {% for section, label in [('anatomy', '해부 구조'), ('lesions', '병변')] %}
+    {% if seen[(section,'direct')] %}<h3 class="mini">{{ label }} <span>직접 관찰 {{ seen[(section,'direct')]|length }}개</span></h3>
+    <div class="link-chips">{% for i in seen[(section,'direct')] %}<a href="{{ item_path(i) }}">{{ i.name }}</a>{% endfor %}</div>{% endif %}
+    {% if seen[(section,'limited')] %}<details class="common-box"><summary>{{ label }} · 제한적으로 보이는 항목 {{ seen[(section,'limited')]|length }}개</summary>
+    <div class="link-chips">{% for i in seen[(section,'limited')] %}<a href="{{ item_path(i) }}">{{ i.name }}</a>{% endfor %}</div></details>{% endif %}
+  {% endfor %}
+</section>
+
+<section class="section" id="mv-measures">
+  <h2 class="ip-h2">이 영상으로 재는 측정</h2>
+  {% if groups or loose %}
+  <div class="mv-measures">{% for item, fs in groups %}
+    <div class="mv-mrow"><a class="mv-mtarget" href="{{ item_path(item) }}#sec-features">{{ item.name }}</a>
+      <span class="mv-mlist">{% for f in fs %}<span class="mv-m{% if f.impl.level != 'none' %} has-impl{% endif %}">{{ f.name }}</span>{% endfor %}</span></div>{% endfor %}
+    {% if loose %}<div class="mv-mrow"><span class="mv-mtarget">공통·영상 신호</span><span class="mv-mlist">{% for f in loose %}<span class="mv-m{% if f.impl.level != 'none' %} has-impl{% endif %}">{{ f.name }}</span>{% endfor %}</span></div>{% endif %}
+  </div>
+  <p class="muted small">진하게 표시된 측정은 계산 구현이나 측정 함수가 있습니다. 자세한 상태는 <a href="/measurements/">측정 목록</a>에서 봅니다.</p>
+  {% else %}<p class="muted">정리된 측정이 없습니다.</p>{% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% macro review_badge(status) -%}
+<span class="status status-{{ status }}">{{ review_label.get(status, status) }}</span>
+{%- endmacro %}
+
+{% macro obs_chips(obs, compact=False) -%}
+<ul class="obs-chips{% if compact %} compact{% endif %}" aria-label="영상별 관찰 가능성">
+{%- for key,label in modalities %}{% if obs[key] != 'none' %}<li class="obs-{{ obs[key] }}" title="{{ label }}: {{ obs_label[obs[key]] }}">{{ label }}{% if obs[key] == 'limited' %}<span class="visually-hidden"> (제한적)</span>{% endif %}</li>{% endif %}{% endfor -%}
+</ul>
+{%- endmacro %}
+
+{% macro item_card(item) -%}
+<a class="item-card" href="{{ item_path(item) }}">
+  <span class="item-name">{{ item.name }}{% if item.abbr %} <span class="abbr">{{ item.abbr }}</span>{% endif %}</span>
+  <span class="item-en">{{ item.name_en }}</span>
+  <span class="item-def">{{ item.definition }}</span>
+  {{ obs_chips(item.obs, True) }}
+</a>
+{%- endmacro %}
+
+{% macro masked_figure(fig, uid) -%}
+<figure class="masked-figure">
+  <div class="mask-pair{% if fig.width > 2.2 * fig.height %} mask-pair-stack{% endif %}">
+    <a class="mask-panel" href="/figures/{{ fig.base }}" target="_blank" rel="noopener">
+      <span class="mask-tag">표시 전 · 원 영상</span>
+      <img src="/figures/{{ fig.base }}" alt="{{ fig.caption }}" width="{{ fig.width }}" height="{{ fig.height }}" loading="lazy">
+      {% if fig.context %}<span class="mask-context"><img src="/figures/{{ fig.context }}" alt="전체 영상에서 확대한 범위(노란 상자)" loading="lazy"><span>전체 중 확대 범위</span></span>{% endif %}
+    </a>
+    <a class="mask-panel" href="/figures/{{ fig.base }}" target="_blank" rel="noopener">
+      <span class="mask-tag mask-tag-on">표시 후</span>
+      <span class="masked-stage">
+        <img src="/figures/{{ fig.base }}" alt="" width="{{ fig.width }}" height="{{ fig.height }}" loading="lazy">
+        <img class="mask-layer" src="/figures/{{ fig.overlay }}" alt="" width="{{ fig.width }}" height="{{ fig.height }}" loading="lazy">
+      </span>
+    </a>
+  </div>
+  <div class="mask-bar"><span class="mask-what"><span class="mask-dot"></span>{{ fig.mask_label }}</span>{% if fig.legend %}<span class="mask-legend">{% for l in fig.legend %}<span class="ml-{{ l.cls }}">{{ l.label }}</span>{% endfor %}</span>{% endif %}<span class="muted small">실제 영상 · 누르면 원 크기</span></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+  <p class="figure-credit">{{ fig.credit }} · <a href="{{ fig.url }}" target="_blank" rel="noopener">출처</a> · <a href="{{ fig.license_url }}" target="_blank" rel="noopener">{{ fig.license }}</a> · 원 파일 {{ fig.source_file.split('/')[-1] }} · {{ fig.transform }}</p>
+</figure>
+{%- endmacro %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}{% from '_macros.html' import item_card with context %}{% from '_breast_schematic.html' import breast with context %}{% block content %}
+<section class="home-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">MAMMOGRAPHY IMAGE ATLAS</p>
+    <h1>유방촬영에서<br>무엇을 보고, 무엇을 재는가</h1>
+    <p class="lead">유방의 구조와 병변이 CC·MLO 영상에서 어디에 어떻게 보이는지, 어떤 특징을 측정하며 BI-RADS 판정과 어떤 질병 판단에 쓰이는지 한곳에서 따라갑니다.</p>
+    <form class="hero-search" action="/search/" method="get" role="search">
+      <label class="visually-hidden" for="hero-q">구조·병변 검색</label>
+      <input id="hero-q" name="q" type="search" placeholder="침상형 종괴, 석회화, 구조왜곡, 대흉근…">
+      <button type="submit">검색</button>
+    </form>
+    <p class="hero-hint">자주 찾는 항목 · {% for id in ['les_mass_spiculated','les_calc_fine_linear_branching','les_architectural_distortion','ana_fibroglandular_tissue','ref_posterior_nipple_line'] %}<a href="{{ item_path(items[id]) }}">{{ items[id].name }}</a>{% endfor %}</p>
+  </div>
+  <div class="hero-visuals"><a class="hero-card" href="/anatomy/"><span class="hero-card-label">CC · MLO 모식도</span>{{ breast('ana_fibroglandular_tissue') }}</a></div>
+</section>
+
+<section class="flow" aria-label="지도 구성">
+  <a class="flow-step" href="/anatomy/"><span class="flow-num">1</span><h2>해부학 지도</h2><p>사분면·유륜하·액와와 피부에서 대흉근까지의 층</p><span class="flow-count">{{ counts.anatomy }}개 구조</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/lesions/"><span class="flow-num">2</span><h2>병변 목록</h2><p>종괴·석회화·구조왜곡·비대칭과 동반 소견</p><span class="flow-count">{{ counts.lesions }}개 소견</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/measurements/"><span class="flow-num">3</span><h2>측정 목록</h2><p>밀도·종괴 모양·석회화 군집·위치를 어떤 영상으로 재는지</p><span class="flow-count">{{ counts.measures }}개 측정</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/diseases/"><span class="flow-num">4</span><h2>질병 목록</h2><p>BI-RADS 범주·유방 구성·병기와 질병별 대표 소견</p><span class="flow-count">{{ counts.diseases }}개 주요 질환</span></a>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>먼저 보면 좋은 항목</h2><a class="more" href="/lesions/">병변 목록 전체 →</a></div>
+  <div class="item-grid">{% for id in ['ana_fibroglandular_tissue','ana_pectoralis_major','ref_posterior_nipple_line','les_mass','les_mass_spiculated','les_calcification','les_calc_fine_pleomorphic','les_architectural_distortion'] %}{{ item_card(items[id]) }}{% endfor %}</div>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>영상 종류별로 보기</h2><a class="more" href="/imaging/">영상 종류 전체 →</a></div>
+  <div class="link-chips">{% for k, label in modalities %}<a href="/imaging/{{ k }}/">{{ label }}</a>{% endfor %}</div>
+</section>
+
+<section class="section home-images">
+  <div class="section-heading"><h2>실제 영상으로 보기</h2><a class="more" href="/measurements/#examples">측정 표시 예시 →</a></div>
+  <div class="image-strip">{% for f in figures %}<a href="{{ item_path(items[f['items'][0]]) }}"><img src="/figures/{{ f.base }}" alt="" width="{{ f.width }}" height="{{ f.height }}" loading="lazy"><span>{{ items[f['items'][0]].name }}</span></a>{% endfor %}</div>
+  <p class="muted small">DMID(Oza 외, CC BY 4.0) 공개 유방촬영 영상입니다.</p>
+</section>
+<p class="draft-note">이 지도는 BI-RADS 용어와 공개 문헌을 바탕으로 정리한 초안입니다. 항목마다 근거와 검토 상태를 함께 표시하며, 진단 도구가 아닙니다.</p>
+{% endblock %}

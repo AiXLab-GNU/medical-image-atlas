@@ -1,0 +1,137 @@
+{% extends 'base.html' %}{% from '_macros.html' import review_badge, obs_chips, figure, masked_figure with context %}{% from '_schematic.html' import fundus %}{% from '_oct_schematic.html' import oct %}{% from '_vessel_schematic.html' import vessel_face, vessel_depth %}{% block content %}
+{% set section_label = '해부학 지도' if item.section == 'anatomy' else '병변 목록' %}
+{% set own_quant = item.features|selectattr('type','equalto','quantitative')|rejectattr('common')|list %}
+{% set common_quant = item.features|selectattr('type','equalto','quantitative')|selectattr('common')|list %}
+{% set qual = item.features|selectattr('type','equalto','qualitative')|list %}
+{# visuals: masked real photos first, then schematics, then published figures #}
+{% set vis = [] %}
+{# real photos first so the lesion's true shape and colour are seen before the schematic #}
+{% for fig in masked %}{% set _ = vis.append({'kind': 'masked', 'fig': fig, 'label': '실제 사진' ~ (' ' ~ loop.index if masked|length > 1 else '')}) %}{% endfor %}
+{% set depth_first = item.id in ['ana_radial_peripapillary_capillaries', 'ana_superficial_capillary_plexus', 'ana_intermediate_capillary_plexus', 'ana_deep_capillary_plexus'] %}
+{% if depth_first %}{% set _ = vis.append({'kind': 'vdepth', 'label': '모식도 · 혈관 깊이'}) %}{% endif %}
+{% if item.id in vessel_items %}{% set _ = vis.append({'kind': 'vface', 'label': '모식도 · 혈관 정면'}) %}{% elif item.id in schematic_items %}{% set _ = vis.append({'kind': 'fundus', 'label': '모식도 · 정면'}) %}{% endif %}
+{% if item.id in vessel_depth_items and not depth_first %}{% set _ = vis.append({'kind': 'vdepth', 'label': '모식도 · 혈관 깊이'}) %}{% endif %}
+{% if item.id in oct_items %}{% set _ = vis.append({'kind': 'oct', 'label': '모식도 · OCT 단면'}) %}{% endif %}
+{% for sc in schematics %}{% set _ = vis.append({'kind': 'svgfile', 'sc': sc, 'label': sc.label}) %}{% endfor %}
+{% for f in figures %}{% set _ = vis.append({'kind': 'figure', 'fig': f, 'label': '논문 그림' ~ (' ' ~ loop.index if figures|length > 1 else '')}) %}{% endfor %}
+
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><a href="/{{ item.section }}/">{{ section_label }}</a><span>/</span>
+  {% if item.section == 'anatomy' and item.parent and items.get(item.parent) %}<a href="{{ item_path(items[item.parent]) }}">{{ items[item.parent].name }}</a><span>/</span>{% endif %}
+  <span>{{ item.name }}</span></div>
+
+<header class="ip-hero">
+  <div class="ip-title">
+    <div class="tags"><span class="tag">{{ item.group_label }}</span>{% if item.secondary %}<span class="tag">2차 범위</span>{% endif %}{% if item.aggregate %}<span class="tag">기존 측정의 통합 대상</span>{% endif %}{{ review_badge(item.review) }}</div>
+    <h1>{{ item.name }}{% if item.abbr %} <span class="abbr big">{{ item.abbr }}</span>{% endif %}</h1>
+    <p class="ip-en">{{ item.name_en }}</p>
+    <p class="ip-def">{{ item.definition }}</p>
+  </div>
+  <dl class="ip-facts">
+    <div><dt>{{ '위치' if item.section == 'anatomy' else '생기는 깊이' }}</dt><dd>{{ item.location if item.location and item.location != '—' else '—' }}</dd></div>
+    <div><dt>볼 수 있는 영상</dt><dd>{{ obs_chips(item.obs) }}</dd></div>
+    <div><dt>측정 속성</dt><dd><a href="#sec-features">{{ own_quant|length + common_quant|length }}개</a></dd></div>
+    <div><dt>관련 질병</dt><dd>{% if disease_groups %}<a href="#sec-diseases">{{ disease_groups|length }}개</a>{% else %}—{% endif %}</dd></div>
+  </dl>
+</header>
+
+<nav class="axis-tabs ip-tabs" aria-label="이 페이지의 구성">
+  <a href="#sec-visual">영상</a>
+  {% if item.observations %}<a href="#sec-look">영상별 모습</a>{% endif %}
+  <a href="#sec-features">특징·측정</a>
+  {% if (item.section == 'anatomy' and item.related_lesions) or (item.section == 'lesions' and item.structures) %}<a href="#sec-related">연결 항목</a>{% endif %}
+  {% if disease_groups %}<a href="#sec-diseases">관련 질병</a>{% endif %}
+  <a href="#sec-sources">출처</a>
+</nav>
+
+<div class="ip-layout">
+  <div class="ip-main">
+    <section id="sec-visual" class="ip-visual">
+      {% if vis %}
+      <div class="viz{% if vis|length == 1 %} single{% endif %}">
+        {% for v in vis %}<input type="radio" name="viz" id="viz-{{ loop.index }}" class="viz-radio"{% if loop.first %} checked{% endif %}>{% endfor %}
+        <div class="viz-tabs" role="tablist">{% for v in vis %}<label for="viz-{{ loop.index }}">{{ v.label }}</label>{% endfor %}</div>
+        <div class="viz-panels">
+          {% for v in vis %}<div class="viz-panel p{{ loop.index }}">
+            {% if v.kind == 'fundus' %}{{ fundus(item.id, kids=item.children) }}
+            {% elif v.kind == 'vface' %}{{ vessel_face(item.id, kids=item.children) }}
+            {% elif v.kind == 'vdepth' %}{{ vessel_depth(item.id, kids=item.children) }}
+            {% elif v.kind == 'oct' %}{{ oct(item.id, kids=item.children) }}
+            {% elif v.kind == 'svgfile' %}<figure class="schematic schematic-file"><img src="/static/{{ v.sc.file }}" alt="{{ item.name }} {{ v.sc.label }}" width="{{ v.sc.width }}" height="{{ v.sc.height }}" loading="lazy"><figcaption>{{ v.sc.caption }}</figcaption></figure>
+            {% elif v.kind == 'masked' %}{{ masked_figure(v.fig, loop.index) }}
+            {% else %}{{ figure(v.fig) }}{% endif %}
+          </div>{% endfor %}
+        </div>
+      </div>
+      {% if not masked and not figures %}<p class="muted small real-pending">실제 영상은 준비 중입니다. 위 그림은 설명용 모식도입니다.</p>{% endif %}
+      {% else %}
+      <div class="figure-empty"><p><strong>실제 영상 준비 중</strong></p><p class="muted small">이 항목의 대표 영상은 아직 수집하지 않았습니다. 아래의 영상별 모습을 참고하세요.</p></div>
+      {% endif %}
+    </section>
+
+    {% if item.observations %}
+    <section class="section" id="sec-look">
+      <h2 class="ip-h2">영상별로 보이는 모습</h2>
+      <div class="look-grid">{% for o in item.observations %}
+        <article class="look-card">
+          <span class="look-img">{{ atlas.imaging[o.imaging].name }}</span>
+          <p class="look-signal">{{ o.signal }}</p>
+          {% if o.condition and o.condition != '—' %}<p class="look-cond"><span>해석할 때</span>{{ o.condition }}</p>{% endif %}
+        </article>{% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="section" id="sec-features">
+      <h2 class="ip-h2">관찰 특징과 측정할 수 있는 속성</h2>
+      {% if qual %}<h3 class="mini">관찰 특징 <span>눈으로 판단하는 정성 특징</span></h3>
+      <div class="qual-grid">{% for f in qual %}<div class="qual-chip"><strong>{{ f.name }}{% if f.common %} <span class="common">공통</span>{% endif %}</strong><span>{{ f.definition }}</span></div>{% endfor %}</div>{% endif %}
+      <h3 class="mini">측정할 수 있는 속성 <span>정량 측정</span></h3>
+      {% if own_quant or common_quant %}
+      <div class="measure-rows">
+        {% for f in own_quant %}{% include '_measure_row.html' %}{% endfor %}
+        {% if not own_quant %}{% for f in common_quant %}{% include '_measure_row.html' %}{% endfor %}{% endif %}
+      </div>
+      {% if own_quant and common_quant %}<details class="common-box"><summary>여러 병변·구조에 공통으로 쓰는 측정 {{ common_quant|length }}개</summary><div class="measure-rows">{% for f in common_quant %}{% include '_measure_row.html' %}{% endfor %}</div></details>{% endif %}
+      {% else %}<p class="muted">{{ '측정 대상이 아닌 위치 기준입니다' if item.feature_status == 'not_applicable' else '정리된 측정 속성 없음' }}</p>{% endif %}
+    </section>
+
+    {% if item.section == 'anatomy' and item.related_lesions %}
+    <section class="section" id="sec-related"><h2 class="ip-h2">이 구조에 생기는 병변</h2>
+      <div class="link-chips">{% for lid in item.related_lesions %}{% if items.get(lid) %}<a href="{{ item_path(items[lid]) }}">{{ items[lid].name }}</a>{% endif %}{% endfor %}</div></section>
+    {% elif item.section == 'lesions' and item.structures %}
+    <section class="section" id="sec-related"><h2 class="ip-h2">생기는 구조</h2>
+      <div class="link-chips">{% for sid in item.structures %}{% if items.get(sid) %}<a href="{{ item_path(items[sid]) }}">{{ items[sid].name }}</a>{% endif %}{% endfor %}</div></section>
+    {% endif %}
+
+    {% if disease_groups %}
+    <section class="section" id="sec-diseases"><h2 class="ip-h2">관련 질병</h2>
+      <p class="muted small">판정 규칙은 참고용입니다. 분류 체계와 조건을 함께 확인하세요.</p>
+      <div class="dz-grid">{% for did, links in disease_groups.items() %}{% set dz = atlas.diseases[did] %}
+        <article class="dz-card">
+          <a class="dz-name" href="/diseases/{{ dz.slug }}/">{{ dz.name }}{% if dz.abbr %} <span class="abbr">{{ dz.abbr }}</span>{% endif %}</a>
+          {% for d in links %}<div class="dz-rel"><span class="role-chip">{{ relation_label[d.type] }}</span>{% if d.version and d.version != '—' %}<span class="tag">{{ d.version }}</span>{% endif %}{% if d.review == 'needs_source' %}<span class="status status-needs_source">근거 필요</span>{% endif %}{% if d.condition %}<p>{{ d.condition }}</p>{% endif %}</div>{% endfor %}
+        </article>{% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="section ip-sources" id="sec-sources">
+      <h2 class="ip-h2">출처와 검토 상태</h2>
+      <p>정의 검토 상태 {{ review_badge(item.review) }}{% if item.existing_measures %} · 기존 계산 측정 {{ item.existing_measures }}건과 연결(규칙 기반 후보){% endif %}</p>
+      {% if item.sources %}<ul>{% for sid in item.sources %}{% set s = atlas.sources.get(sid) %}{% if s %}<li>{% if s.url and not s.url.startswith('../') %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %} <span class="muted">— {{ s.citation }}</span></li>{% endif %}{% endfor %}</ul>
+      {% else %}<p class="muted">연결된 출처가 없습니다(서비스 정리안).</p>{% endif %}
+    </section>
+  </div>
+
+  <aside class="ip-aside">
+    <div class="aside-card">
+      <h2 class="visually-hidden">요약</h2>
+      {% if item.section == 'lesions' and item.differentials and item.differentials != '—' %}<dl><dt>구별할 소견</dt><dd>{{ item.differentials }}</dd></dl>{% endif %}
+      {% if item.section == 'anatomy' and item.parent and items.get(item.parent) %}<dl><dt>상위 구조</dt><dd><a href="{{ item_path(items[item.parent]) }}">{{ items[item.parent].name }}</a></dd></dl>{% endif %}
+      {% if item.section == 'anatomy' and item.children %}<dl><dt>세부 구조</dt><dd class="aside-links">{% for cid in item.children %}<a href="{{ item_path(items[cid]) }}">{{ items[cid].name }}</a>{% endfor %}</dd></dl>{% endif %}
+      <dl><dt>영상별 관찰</dt><dd><ul class="obs-table">{% for key,label in modalities %}<li class="o-{{ item.obs[key] }}"><a href="/imaging/{{ key }}/">{{ label }}</a><b>{{ obs_label[item.obs[key]] }}</b></li>{% endfor %}</ul></dd></dl>
+    </div>
+    {% if siblings %}<div class="aside-card"><h2 class="aside-h">같은 묶음 · {{ item.group_label }}</h2><div class="aside-links">{% for s in siblings %}<a href="{{ item_path(s) }}">{{ s.name }}</a>{% endfor %}</div></div>{% endif %}
+  </aside>
+</div>
+{% endblock %}

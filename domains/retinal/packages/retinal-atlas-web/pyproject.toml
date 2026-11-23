@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retinal-atlas-web"
+version = "0.1.0"
+description = "A standalone multipage atlas of retinal image measurement concepts"
+requires-python = ">=3.11"
+dependencies = ["Flask>=3.1,<4", "waitress>=3,<4"]
+
+[project.scripts]
+retinal-atlas-web = "retinal_atlas_web.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+retinal_atlas_web = ["templates/*.html", "static/*.css", "static/*.js", "data/*.json"]

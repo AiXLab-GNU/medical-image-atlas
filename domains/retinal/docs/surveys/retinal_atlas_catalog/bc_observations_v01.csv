@@ -1,0 +1,132 @@
+observation_id,target_id,imaging_id,observed_signal_ko,interpretation_condition_ko,source_ids,review_status
+obs_np_fa,les_nonperfusion,img_fa,모세혈관 충만이 없는 저형광 영역,조영 시기·차단 형광(출혈)과 구분,src_cvos_1993,source_linked
+obs_np_octa,les_nonperfusion,img_octa_scp,표층 slab의 flow 신호 결손 영역,신호 감쇠·projection·threshold로 생긴 결손을 배제해야 무관류로 해석(신호 결손 ≠ 무관류),src_octa_guide_2020,source_linked
+obs_np_octa_dcp,les_nonperfusion,img_octa_dcp,심층 slab의 flow 신호 결손,표층 혈관 projection 제거 여부 확인,src_octa_guide_2020,source_linked
+obs_np_octa_wf,les_nonperfusion,img_octa_widefield,광각 flow 신호 결손,가장자리 신호 저하 배제,src_octa_guide_2020,source_linked
+obs_faz_octa,ana_foveal_avascular_zone,img_octa_scp,중심와의 flow 신호 없는 구역 경계,slab(표층·전층)과 배율 보정에 따라 면적이 다름,src_octa_guide_2020,source_linked
+obs_faz_fa,ana_foveal_avascular_zone,img_fa,중심와 무형광 구역,초기 단계 영상에서 판독,,draft
+obs_scp_octa,ana_superficial_capillary_plexus,img_octa_scp,표층 모세혈관 flow 신호 망,밀도는 flow 신호 점유이지 해부학적 혈관 내강 부피가 아님,src_octa_guide_2020,source_linked
+obs_dcp_octa,ana_deep_capillary_plexus,img_octa_dcp,심층 모세혈관 flow 신호 망,표층 projection artifact 제거 필요,src_octa_guide_2020,source_linked
+obs_rpc_octa,ana_radial_peripapillary_capillaries,img_octa_scp,유두주위 RNFL 안 방사상 flow 신호,큰 혈관 포함 여부에 따라 밀도 달라짐,src_octa_guide_2020,source_linked
+obs_cc_octa,ana_choriocapillaris,img_octa_cc,맥락막모세혈관 slab의 flow 신호와 결손,RPE·드루젠 아래 신호 감쇠를 보정해야 flow deficit로 해석,src_octa_guide_2020,source_linked
+obs_mnv_octa,les_macular_neovascularization,img_octa_outer,정상 무혈관인 외망막 slab의 혈관망 flow 신호,분할 오류·projection으로 가짜 신호 가능; 활동성(누출)은 보이지 않음,src_conan_2020;src_octa_guide_2020,source_linked
+obs_mnv_oct,les_macular_neovascularization,img_oct_bscan,PED·SHRM·액체 등 간접 구조 징후,혈관망 자체는 OCT 구조 영상에서 직접 보이지 않음,src_conan_2020,source_linked
+obs_mnv_fa,les_macular_neovascularization,img_fa,시간에 따라 번지는 누출 형광,형태(classic/occult)와 CONAN 유형은 다른 분류,src_conan_2020,source_linked
+obs_nv_fa,les_nv_elsewhere,img_fa,후기 누출을 보이는 망막 표면 혈관,IRMA는 누출이 적음(구분 근거),src_etdrs10_1991,source_linked
+obs_nv_octa,les_nv_elsewhere,img_octa_widefield,ILM 위 flow 신호 혈관,유리체 slab 분할 필요,src_octa_guide_2020,source_linked
+obs_nv_cfp,les_nv_elsewhere,img_cfp_45,망막 표면 위 가는 혈관망,IRMA와의 구분은 표면 위 성장·누출로 판단,src_etdrs10_1991,source_linked
+obs_irma_cfp,les_irma,img_cfp_45,무관류 부근 망막 안 비틀린 미세혈관,망막 표면 위로 자라지 않음(NVE와 구분),src_etdrs10_1991,source_linked
+obs_ma_cfp,les_microaneurysm,img_cfp_45,작고 경계 분명한 적색 점,점 출혈과 크기·경계로 구분; 해상도 한계,src_etdrs10_1991,source_linked
+obs_ma_fa,les_microaneurysm,img_fa,점 모양 과형광,안저 사진보다 많이 보일 수 있음,,draft
+obs_hem_cfp,les_hemorrhage_dot_blot,img_cfp_45,둥근 적색 반점,깊이는 모양으로 추정(화염상은 표층); 사진만으로 층위 확정 불가,src_etdrs10_1991,source_linked
+obs_he_cfp,les_hard_exudate,img_cfp_45,노랗고 경계 분명한 침착물,드루젠과 색·분포로 구분,src_etdrs10_1991,source_linked
+obs_he_oct,les_hard_exudate,img_oct_bscan,외망상층 부근 고반사 점·덩어리,HRF와 크기 기준으로 구분 필요,,draft
+obs_cws_cfp,les_cotton_wool_spot,img_cfp_45,희고 경계 흐린 반점,유수신경섬유와 구분,src_etdrs10_1991,source_linked
+obs_cws_oct,les_cotton_wool_spot,img_oct_bscan,RNFL의 고반사 두꺼워짐,—,,draft
+obs_drusen_cfp,les_drusen_large,img_cfp_45,노란 RPE 아래 침착물,크기는 기준 원(정맥 폭 약 125 µm) 또는 배율 보정으로 판정,src_beckman_2013,source_linked
+obs_drusen_oct,les_drusen_large,img_oct_bscan,RPE와 BM 사이 융기,부피는 volume 분할 필요,,draft
+obs_sdd_nir,les_subretinal_drusenoid_deposit,img_nir,망상 배열의 저반사 점,여러 영상으로 확인 권장,src_conan_2020,source_linked
+obs_sdd_oct,les_subretinal_drusenoid_deposit,img_oct_bscan,RPE 위 고반사 침착물,드루젠(RPE 아래)과 위치로 구분,src_conan_2020,source_linked
+obs_irf_bscan,les_intraretinal_fluid,img_oct_bscan,망막 안 저반사 공간의 단면,단면 면적은 3D 부피를 대표하지 않음,src_conan_2020,source_linked
+obs_irf_volume,les_intraretinal_fluid,img_oct_volume,연속 B-scan의 저반사 공간,부피는 B-scan 간격과 분할에 의존,src_apostel2_2021,source_linked
+obs_srf_bscan,les_subretinal_fluid,img_oct_bscan,신경망막과 RPE 사이 저반사 공간,—,src_conan_2020,source_linked
+obs_ped_bscan,les_ped_serous,img_oct_bscan,RPE의 돔 모양 융기와 내부 저반사,섬유혈관성 PED는 내부 반사가 불균일,src_conan_2020,source_linked
+obs_ez_bscan,ana_ellipsoid_zone,img_oct_bscan,ELM 아래 두 번째 고반사 띠,그림자·신호 저하로 생긴 가짜 단절 배제,src_inoct_2014,source_linked
+obs_ez_enface,les_ez_disruption,img_oct_enface,EZ 깊이 범위 en-face의 소실 영역,깊이 범위 정의에 결과가 의존,,draft
+obs_hypertd_enface,les_hypertransmission,img_oct_enface,맥락막 쪽 slab의 밝은 영역,cRORA 폭 기준은 B-scan에서 확인,src_cam3_2018,source_linked
+obs_hypertd_bscan,les_hypertransmission,img_oct_bscan,RPE 아래로 밝아진 신호 띠,폭 250 µm 이상 여부가 cRORA 기준,src_cam3_2018,source_linked
+obs_ga_faf,les_geographic_atrophy,img_faf,경계 분명한 저자가형광 영역,황반 색소에 의한 중심부 저형광과 구분,src_beckman_2013,source_linked
+obs_ga_cfp,les_geographic_atrophy,img_cfp_45,맥락막 혈관이 비치는 경계 분명한 탈색 영역,—,src_beckman_2013,source_linked
+obs_rnfl_circle,ana_rnfl,img_oct_circle_onh,유두주위 원형 단면의 RNFL 두께 윤곽,원 지름·중심 위치에 따라 값이 달라짐,src_apostel2_2021,source_linked
+obs_rnfl_cfp,ana_rnfl,img_cfp_45,섬유 줄무늬(특히 무적색),두께를 직접 측정할 수 없음,,draft
+obs_gcipl_volume,ana_gcipl,img_oct_volume,GCL·IPL 경계 사이 두께 지도,분할 알고리즘 명시,src_apostel2_2021,source_linked
+obs_choroid_edi,ana_choroid,img_oct_edi_ss,BM과 CSJ 사이 맥락막 단면,CSJ 가시성과 일중 변동,src_asrs_mmi_2024,source_linked
+obs_vessel_cfp,ana_retinal_vasculature,img_cfp_45,가시 혈관 기둥의 2D 투영,폭은 투영 폭이며 내강 직경·부피가 아님,src_siva_2012,source_linked
+obs_disc_cfp,ana_optic_disc,img_cfp_45,유두 경계·컵·색,2D 경계는 OCT BMO 기반 구조와 정의가 다름,,draft
+obs_vmt_bscan,les_vitreomacular_traction,img_oct_bscan,중심와에 붙은 후유리체막과 중심와 변형,부착 폭 1500 µm 기준으로 국소·광범위 구분,src_ivts_2013,definition_checked_abstract
+obs_lmh_bscan,les_macular_hole_lamellar,img_oct_bscan,불규칙 윤곽·가장자리 공동·조직 소실,세 필수 기준을 모두 확인해야 함,src_lmh_2020,definition_checked_abstract
+obs_crora_bscan,les_atrophy_complete,img_oct_bscan,과투과·RPE 약화/단절·광수용체 변성이 겹친 구간,각 폭 ≥250 µm와 RPE 찢김 부재를 B-scan에서 확인,src_cam3_2018,source_linked
+obs_irora_bscan,les_atrophy_incomplete,img_oct_bscan,과투과·RPE 약화/단절·광수용체 변성의 동반,cRORA 기준 미충족 구간; RPE 찢김이면 쓰지 않음,src_cam4_2020,definition_checked_abstract
+obs_csme_cfp,les_csme,img_cfp_45,중심 부근 두꺼워짐·경성삼출물,입체 안저 판독 정의(단안 사진에서는 두께 판단 제한); OCT 중심 침범 정의와 구분,src_etdrs1_1985,source_linked
+obs_dril_bscan,les_dril,img_oct_bscan,내층 경계가 구분되지 않는 구간,중심 1 mm 안 수평 범위; 신호 저하 구간 배제,src_dril_2014,source_linked
+obs_drusen_small_cfp,les_drusen_small,img_cfp_45,작은 노란 점,63 µm 이하(기준 원 또는 배율 보정),src_beckman_2013,source_linked
+obs_drusen_medium_cfp,les_drusen_medium,img_cfp_45,중간 크기 노란 침착물,63–125 µm(기준 원 또는 배율 보정),src_beckman_2013,source_linked
+obs_fibscar_cfp,les_fibrotic_scar,img_cfp_45,흰 섬유 조직,OCT에서 고반사 SHRM과 대응,src_conan_2020,source_linked
+obs_fvp_cfp,les_fibrovascular_proliferation,img_cfp_45,망막 표면 위 흰 막과 혈관,견인 방향은 OCT로 확인,src_etdrs10_1991,source_linked
+obs_prh_cfp,les_hemorrhage_preretinal,img_cfp_45,경계 분명한 적색 고임(수평면),유리체 출혈과 경계로 구분,src_etdrs10_1991,source_linked
+obs_srh_cfp,les_hemorrhage_subretinal,img_cfp_45,짙은 적색 융기,RPE 아래 출혈(더 어두움)과 OCT로 구분,src_conan_2020,source_linked
+obs_vh_cfp,les_hemorrhage_vitreous,img_cfp_45,안저를 가리는 흐린 적색,가림 정도만 기술 가능,src_etdrs10_1991,source_linked
+obs_hrf_bscan,les_hyperreflective_foci,img_oct_bscan,작은 점 모양 고반사,크기·반사·그림자 기준을 연구마다 명시,src_hrd_review_2022,source_linked
+obs_laser_cfp,les_laser_scar,img_cfp_45,색소 테두리를 가진 둥근 반흔,치료 이력 표시,,draft
+obs_thick_map,les_macular_thickening,img_oct_thickness_map,정상 기준 대비 두꺼운 구역,장비·성별 정상치와 비교; 하단 경계 정의,src_drcr_cidme_thresholds,source_linked
+obs_nvd_cfp,les_nv_disc,img_cfp_45,유두 위·1 DD 이내 가는 혈관망,범위를 DA로 기술; 측부혈관과 FA 누출로 구분,src_drs8_1981;src_etdrs10_1991,source_linked
+obs_nvd_fa,les_nv_disc,img_fa,유두 위 누출 형광,—,src_etdrs10_1991,source_linked
+obs_pachy_edi,les_pachychoroid_features,img_oct_edi_ss,두꺼운 맥락막과 확장된 대혈관,두께 기준은 연구마다 다름,src_cscr_2020,source_linked
+obs_fvped_octa,les_ped_fibrovascular,img_octa_outer,PED 아래 신생혈관 flow 신호,분할 오류 배제,src_conan_2020,source_linked
+obs_polyp_icga,les_polypoidal_lesion,img_icga,초기 결절 모양 과형광,ICGA가 기준 영상,src_pcv_apois_2021,source_linked
+obs_polyp_oct,les_polypoidal_lesion,img_oct_bscan,뾰족한 PED·RPE 아래 고리 모양 병변,OCT 주요 기준 조합으로 추정(ICGA 대체 아님),src_pcv_apois_2021,source_linked
+obs_ring_bscan,les_sub_rpe_ring_lesion,img_oct_bscan,RPE 아래 고반사 테·저반사 내부,—,src_pcv_apois_2021,source_linked
+obs_cre_enface,les_enface_complex_rpe_elevation,img_oct_enface,복잡한 RPE 융기 영역,en-face 깊이 범위 명시,src_pcv_apois_2021,source_linked
+obs_sppped_bscan,les_sharp_peaked_ped,img_oct_bscan,꼭대기가 뾰족한 PED,—,src_pcv_apois_2021,source_linked
+obs_trd_bscan,les_retinal_detachment_tractional,img_oct_bscan,증식막에 당겨 들린 망막,—,,draft
+obs_hyperpig_cfp,les_rpe_hyperpigmentation,img_cfp_45,진한 색소 반점,Beckman AMD 색소 이상(중심 2 DD 이내),src_beckman_2013,source_linked
+obs_hypopig_cfp,les_rpe_hypopigmentation,img_cfp_45,옅은 탈색 반점,GA와 경계·맥락막 혈관 노출로 구분,src_beckman_2013,source_linked
+obs_shrm_bscan,les_shrm,img_oct_bscan,망막하 고반사 물질,구성(혈액·섬유·삼출물)은 영상만으로 구분 제한,src_conan_2020,source_linked
+obs_artnarrow_cfp,les_arteriolar_narrowing,img_cfp_45,가늘어진 소동맥 기둥,배율·촬영 조건 차이와 구분; 정량은 CRAE,src_hrp_2004,source_linked
+obs_avnick_cfp,les_av_nicking,img_cfp_45,교차부에서 눌리거나 꺾인 정맥,—,src_hrp_2004,source_linked
+obs_cherry_cfp,les_cherry_red_spot,img_cfp_45,흰 망막 가운데 붉은 중심와,급성기 소견,src_aao_rao_ppp_2019,source_linked
+obs_hyperperm_icga,les_choroidal_hyperpermeability,img_icga,중기 맥락막의 흐린 과형광,—,src_cscr_2020,source_linked
+obs_collat_cfp,les_disc_collaterals,img_cfp_45,유두 위 굵은 측부 혈관,FA 누출이 없으면 NVD와 구분,src_aao_rvo_ppp_2019,source_linked
+obs_cup_cfp,les_disc_cupping,img_cfp_45,커진 컵과 얇아진 테,유두 크기에 따라 해석; 2D 경계 판독,src_aao_poag_ppp_2020,source_linked
+obs_cup_oct,les_disc_cupping,img_oct_circle_onh,BMO 기준 테 폭 감소,BMO-MRW는 장비 분할 의존,src_bmo_mrw_2013,source_linked
+obs_discedema_cfp,les_disc_edema,img_cfp_45,부어 흐려진 유두 경계,가성 유두부종(유두 드루젠)과 구분,src_hrp_2004,source_linked
+obs_discedema_oct,les_disc_edema,img_oct_circle_onh,유두주위 RNFL 두께 증가,—,src_apostel2_2021,source_linked
+obs_dh_cfp,les_disc_hemorrhage,img_cfp_45,유두 가장자리 작은 화염상 출혈,수주–수개월 내 소실될 수 있어 추적 사진에서 놓칠 수 있음,src_ohts_dh_2017,source_linked
+obs_erm_bscan,les_epiretinal_membrane,img_oct_bscan,망막 표면 고반사 선과 주름,이소성 내층으로 단계화,src_govetto_erm_2017,source_linked
+obs_ermfs_bscan,les_erm_foveoschisis,img_oct_bscan,ERM과 헨레섬유층 층간분리,두 필수 기준 확인,src_lmh_2020,source_linked
+obs_fuchs_cfp,les_fuchs_spot,img_cfp_45,황반의 진한 색소 반점,—,src_metapm_2015,source_linked
+obs_flame_cfp,les_hemorrhage_flame,img_cfp_45,신경섬유 방향의 깃털 모양 출혈,표층(RNFL) 출혈,src_hrp_2004,source_linked
+obs_lacquer_icga,les_lacquer_crack,img_icga,후기 선 모양 저형광,안저 사진에서는 노란 선으로 보일 수 있음,src_metapm_2015,source_linked
+obs_lattice_uwf,les_lattice_degeneration,img_uwf,주변부의 얇은 망막과 흰 격자 선,표준 화각 밖,src_aao_pvd_ppp_2019,source_linked
+obs_ftmh_bscan,les_macular_hole_full_thickness,img_oct_bscan,중심와 전층 결손,최소 직경으로 크기 범주,src_ivts_2013,source_linked
+obs_pseudo_bscan,les_macular_pseudohole,img_oct_bscan,중심와를 비켜 간 ERM·가팔라진 윤곽,조직 소실 없음,src_lmh_2020,source_linked
+obs_star_cfp,les_macular_star,img_cfp_45,중심와 주변 별 모양 삼출물,헨레섬유 방향,src_hrp_2004,source_linked
+obs_mcnv_bscan,les_myopic_cnv,img_oct_bscan,망막하 고반사 병변(2형),누출은 FA로 확인,src_metapm_2015;src_conan_2020,source_linked
+obs_mdiff_cfp,les_myopic_diffuse_atrophy,img_cfp_45,후극부 노랗고 경계 흐린 위축,META-PM 표준사진 대비,src_metapm_2015,source_linked
+obs_mmac_cfp,les_myopic_macular_atrophy,img_cfp_45,황반의 경계 분명한 원형 위축,META-PM 4범주,src_metapm_2015,source_linked
+obs_mpatch_cfp,les_myopic_patchy_atrophy,img_cfp_45,경계 분명한 회백색 반점,META-PM 3범주,src_metapm_2015,source_linked
+obs_mtm_bscan,les_myopic_traction_maculopathy,img_oct_bscan,층간분리·박리·원공,긴 안축으로 스캔 정렬 어려움,src_imi_pm_2021,source_linked
+obs_pamm_bscan,les_paracentral_amn,img_oct_bscan,INL 수준 띠 모양 고반사,급성기; 이후 INL 얇아짐,src_pamm_2013,source_linked
+obs_ppa_cfp,les_peripapillary_atrophy,img_cfp_45,유두 주변 위축 띠,구역(α·β·γ) 구분은 OCT로 보완,src_imi_pm_2021,source_linked
+obs_staph_edi,les_posterior_staphyloma,img_oct_edi_ss,국소적으로 뒤로 휘어진 공막 윤곽,넓은 스캔 필요,src_imi_pm_2021,source_linked
+obs_break_uwf,les_retinal_break,img_uwf,주변부 망막 결손(말굽·원형),표준 화각 밖; 압박 검사 보완,src_aao_pvd_ppp_2019,source_linked
+obs_rrd_uwf,les_retinal_detachment_rhegmatogenous,img_uwf,들뜬 회색 망막,황반 침범 여부 확인,src_aao_pvd_ppp_2019,source_linked
+obs_embolus_cfp,les_retinal_embolus,img_cfp_45,소동맥 분지부의 밝은 점,—,src_aao_rao_ppp_2019,source_linked
+obs_whitening_cfp,les_retinal_whitening,img_cfp_45,희게 부은 내망막,급성기,src_aao_rao_ppp_2019,source_linked
+obs_whitening_oct,les_retinal_whitening,img_oct_bscan,내망막 고반사·두꺼워짐,이후 내층 얇아짐,src_aao_rao_ppp_2019,source_linked
+obs_rnfldef_cfp,les_rnfl_defect,img_cfp_45,유두로 향하는 쐐기 모양 어두운 띠,무적색에서 더 잘 보임,src_aao_poag_ppp_2020,source_linked
+obs_rnfldef_oct,les_rnfl_defect,img_oct_circle_onh,구역별 RNFL 두께 감소,정상 데이터베이스 비교,src_aao_poag_ppp_2020,source_linked
+obs_rpeatt_bscan,les_rpe_attenuation_disruption,img_oct_bscan,얇아지거나 끊긴 RPE 띠,—,src_cam3_2018,source_linked
+obs_tract_faf,les_rpe_gravitational_tract,img_faf,아래로 이어진 자가형광 변화 띠,만성 CSCR,src_cscr_2020,source_linked
+obs_tess_cfp,les_tessellated_fundus,img_cfp_45,맥락막 큰 혈관이 비치는 안저,META-PM 1범주,src_metapm_2015,source_linked
+obs_tilt_cfp,les_tilted_disc,img_cfp_45,기울어진 타원형 유두,—,src_imi_pm_2021,source_linked
+obs_vdil_cfp,les_venous_dilation_tortuosity,img_cfp_45,굵고 구불구불한 정맥,—,src_aao_rvo_ppp_2019,source_linked
+obs_vma_bscan,les_vitreomacular_adhesion,img_oct_bscan,중심와에 남은 후유리체막 부착,중심와 형태는 정상,src_ivts_2013,source_linked
+obs_retinal_telangiectasia_fa,les_retinal_telangiectasia,img_fa,확장된 모세혈관의 초기 과형광과 후기 누출,측두 중심와 주위(MacTel 2) 또는 주변부(Coats),,draft
+obs_retinal_telangiectasia_octa_dcp,les_retinal_telangiectasia,img_octa_dcp,심층 모세혈관망의 확장·불규칙한 혈관,투영 잡음과 구분,,draft
+obs_arterial_macroaneurysm_cfp_45,les_arterial_macroaneurysm,img_cfp_45,세동맥 위 붉은 둥근 확장과 주위 출혈·고리 모양 삼출물,여러 층(망막앞·망막내·망막하) 출혈이 함께 보일 수 있음,,draft
+obs_arterial_macroaneurysm_fa,les_arterial_macroaneurysm,img_fa,동맥기에 채워지는 둥근 과형광,출혈이 가리면 ICGA가 도움,,draft
+obs_flecks_faf,les_flecks,img_faf,반점의 과자가형광(오래되면 저자가형광),시기에 따라 신호가 바뀜,,draft
+obs_flecks_cfp_45,les_flecks,img_cfp_45,노랗고 흰 물고기 꼬리 모양 반점,,,draft
+obs_vitelliform_lesion_oct_bscan,les_vitelliform_lesion,img_oct_bscan,EZ와 RPE 사이 고반사 망막하 물질,흩어지는 시기에는 저반사 공간과 섞임,,draft
+obs_vitelliform_lesion_faf,les_vitelliform_lesion,img_faf,병변의 강한 과자가형광,,,draft
+obs_bulls_eye_maculopathy_faf,les_bulls_eye_maculopathy,img_faf,중심와를 둘러싼 고리 모양 저·과자가형광,,,draft
+obs_bulls_eye_maculopathy_oct_bscan,les_bulls_eye_maculopathy,img_oct_bscan,중심와 주위 EZ·외핵층 소실과 중심와 보존(“비행접시” 모양),하이드록시클로로퀸 독성에서 특징적,,draft
+obs_white_dots_faf,les_white_dots,img_faf,점의 과자가형광,급성기에 뚜렷하고 회복기에 사라짐,,draft
+obs_white_dots_icga,les_white_dots,img_icga,후기 저형광 점,,,draft
+obs_angioid_streaks_nir,les_angioid_streaks,img_nir,유두 주위에서 뻗는 어두운 띠,안저 사진보다 잘 보임,,draft
+obs_angioid_streaks_faf,les_angioid_streaks,img_faf,띠를 따른 저자가형광,,,draft
+obs_choroidal_hemangioma_icga,les_choroidal_hemangioma,img_icga,초기의 빠른 과형광과 후기 씻겨나감(wash-out),,,draft
+obs_choroidal_hemangioma_oct_edi_ss,les_choroidal_hemangioma,img_oct_edi_ss,맥락막의 돔 모양 융기와 내부 큰 혈관 공간,망막하액 동반 여부,,draft
+obs_chrpe_faf,les_chrpe,img_faf,병변 전체의 저자가형광,,,draft
+obs_chrpe_cfp_45,les_chrpe,img_cfp_45,"경계가 분명한 평평한 흑색 반, 내부 탈색 공간",,,draft

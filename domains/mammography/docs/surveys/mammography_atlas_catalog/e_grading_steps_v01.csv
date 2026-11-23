@@ -1,0 +1,45 @@
+step_id,scheme_id,step_order,grade_ko,logic,criteria_ko,finding_ids,note_ko
+st_birads_assessment_1,gs_birads_assessment,1,범주 6 · 조직검사로 확진된 악성,single,치료 전 조직검사로 악성이 확인된 병변,,수술 전 범위 평가에 씀
+st_birads_assessment_2,gs_birads_assessment,2,범주 5 · 악성 가능성 매우 높음(95% 이상),any,침상형 불규칙 종괴 | 미세 선형·분지형 석회화의 선형·분절 분포 | 위 두 소견의 동반,les_mass_spiculated;ft_mass_shape;les_calc_fine_linear_branching;ft_calc_distribution,조직검사 권고
+st_birads_assessment_3,gs_birads_assessment,3,범주 4 · 의심(2–95%),any,불규칙 또는 경계 불분명 종괴 | 의심 형태 석회화(무정형 · 거친 불균질 · 미세 다형성) | 수술 이력 없는 구조왜곡 | 새로 생긴 비대칭,ft_mass_margin;les_mass_indistinct;les_calc_amorphous;les_calc_coarse_heterogeneous;les_calc_fine_pleomorphic;les_architectural_distortion;les_developing_asymmetry,조직검사 권고 · 4A·4B·4C
+st_birads_assessment_4,gs_birads_assessment,4,범주 3 · 양성 가능성 높음(2% 이하),any,기준선 검사의 경계 분명 비석회화 종괴 | 국소 비대칭 | 둥근·점상 석회화의 단일 군집,les_mass_circumscribed;les_focal_asymmetry;les_calc_round_punctate,단기 추적(6개월) · 추가 영상으로 확인한 뒤 판정
+st_birads_assessment_5,gs_birads_assessment,5,범주 2 · 양성,any,지방 함유 종괴(기름 낭종 · 지방종 · 과오종) | 전형적 양성 석회화 | 유방 내 림프절 | 보형물 · 수술 흉터,les_fat_containing_mass;les_calc_coarse_popcorn;les_calc_vascular;les_calc_large_rodlike;les_calc_rim;les_calc_milk_of_calcium;les_intramammary_lymph_node;les_breast_implant;les_postsurgical_scar,정기 검진
+st_birads_assessment_6,gs_birads_assessment,6,범주 1 · 음성,single,적을 소견 없음,,정기 검진
+st_birads_assessment_7,gs_birads_assessment,7,범주 0 · 추가 영상 필요,any,국소 압박·확대 촬영·초음파 등으로 확인이 필요함 | 이전 검사와 비교가 필요함,,선별 검사에서 주로 씀
+st_birads_composition_1,gs_birads_composition,1,d · 매우 치밀,single,섬유선 조직이 매우 많아 유방촬영의 민감도가 낮음,ft_breast_composition;ft_percent_density,
+st_birads_composition_2,gs_birads_composition,2,c · 불균질하게 치밀,single,치밀한 부분이 작은 종괴를 가릴 수 있음,ft_breast_composition;ft_percent_density,
+st_birads_composition_3,gs_birads_composition,3,b · 흩어진 섬유선 조직,single,섬유선 조직이 흩어져 있음,ft_breast_composition;ft_percent_density,
+st_birads_composition_4,gs_birads_composition,4,a · 거의 지방,single,유방 대부분이 지방,ft_breast_composition;ft_percent_density,
+st_calc_morphology_1,gs_calc_morphology,1,미세 선형·분지형,single,가늘고 불규칙한 선·가지 모양(양성예측도 약 70%),les_calc_fine_linear_branching,
+st_calc_morphology_2,gs_calc_morphology,2,미세 다형성,single,0.5 mm 미만의 모양·크기가 다른 석회화(약 29%),les_calc_fine_pleomorphic;ft_calc_size_variation,
+st_calc_morphology_3,gs_calc_morphology,3,무정형,single,형태를 알 수 없이 작고 흐림(약 21%),les_calc_amorphous,
+st_calc_morphology_4,gs_calc_morphology,4,거친 불균질,single,0.5–1 mm 불규칙하고 뚜렷함(약 13%),les_calc_coarse_heterogeneous,
+st_calc_morphology_5,gs_calc_morphology,5,전형적 양성,any,피부 | 혈관 | 팝콘 | 큰 막대 | 둥근 | 테두리 | 이영양성 | 유즙 석회 | 봉합사,les_calc_skin;les_calc_vascular;les_calc_coarse_popcorn;les_calc_large_rodlike;les_calc_round_punctate;les_calc_rim;les_calc_dystrophic;les_calc_milk_of_calcium;les_calc_suture,대개 범주 2
+st_calc_distribution_1,gs_calc_distribution,1,분절성,single,한 유관 가지를 따라 삼각형으로 퍼짐,ft_calc_distribution;ft_calc_linearity,
+st_calc_distribution_2,gs_calc_distribution,2,선형,single,한 줄로 늘어섬(유관 안),ft_calc_distribution;ft_calc_linearity,
+st_calc_distribution_3,gs_calc_distribution,3,군집,single,1 cm 안팎의 작은 범위(가장 긴 길이 2 cm 이하)에 모임,ft_calc_distribution;ft_calc_extent;ft_calc_count,
+st_calc_distribution_4,gs_calc_distribution,4,구역성,single,2 cm보다 넓은 범위에 퍼짐(유관 분포를 따르지 않음),ft_calc_distribution;ft_calc_extent,
+st_calc_distribution_5,gs_calc_distribution,5,미만성,single,양쪽 유방 전체에 흩어짐(대개 양성),ft_calc_distribution,
+st_ajcc_t_1,gs_ajcc_t,1,T4 · 흉벽·피부 침범,any,흉벽 침범(T4a) | 피부 궤양·위성 결절·부종(T4b) | T4a와 T4b 동반(T4c) | 염증성 유방암(T4d),les_skin_thickening;les_skin_retraction,크기와 관계없음
+st_ajcc_t_2,gs_ajcc_t,2,T3,single,최대 지름 50 mm 초과,ft_mass_size,
+st_ajcc_t_3,gs_ajcc_t,3,T2,single,최대 지름 20 mm 초과 50 mm 이하,ft_mass_size,
+st_ajcc_t_4,gs_ajcc_t,4,T1c,single,최대 지름 10 mm 초과 20 mm 이하,ft_mass_size,
+st_ajcc_t_5,gs_ajcc_t,5,T1b,single,최대 지름 5 mm 초과 10 mm 이하,ft_mass_size,
+st_ajcc_t_6,gs_ajcc_t,6,T1a,single,최대 지름 1 mm 초과 5 mm 이하,ft_mass_size,
+st_ajcc_t_7,gs_ajcc_t,7,T1mi,single,최대 지름 1 mm 이하의 미세 침윤,ft_mass_size,영상으로는 대개 판단 불가
+st_ajcc_t_8,gs_ajcc_t,8,Tis,single,상피내암(DCIS) 또는 유두 파제트병,les_calc_fine_pleomorphic;les_calc_fine_linear_branching,
+st_asymmetry_types_1,gs_asymmetry_types,1,새로 생긴 비대칭,single,이전 검사보다 새로 생기거나 커지거나 뚜렷해짐,les_developing_asymmetry;ft_lesion_generic_change,악성 가능성이 가장 높은 유형
+st_asymmetry_types_2,gs_asymmetry_types,2,국소 비대칭,single,두 방향에서 보이나 한 사분면보다 작고 볼록한 경계가 없음,les_focal_asymmetry;ft_lesion_two_view;ft_asym_area,
+st_asymmetry_types_3,gs_asymmetry_types,3,전반적 비대칭,single,한 사분면 이상 넓은 범위에서 반대쪽보다 조직이 많음,les_global_asymmetry;ft_asym_bilateral_difference,촉지되지 않으면 대개 정상 변이
+st_asymmetry_types_4,gs_asymmetry_types,4,비대칭,single,한 방향 영상에서만 보임,les_asymmetry;ft_lesion_two_view,대부분 겹침 음영
+st_cem_bpe_1,gs_cem_bpe,1,고도(marked),single,정상 실질 대부분이 강하게 증강,ft_bpe_level,
+st_cem_bpe_2,gs_cem_bpe,2,중등도(moderate),single,정상 실질의 상당 부분이 증강,ft_bpe_level,
+st_cem_bpe_3,gs_cem_bpe,3,경도(mild),single,정상 실질 일부가 약하게 증강,ft_bpe_level,
+st_cem_bpe_4,gs_cem_bpe,4,최소(minimal),single,증강이 거의 없음,ft_bpe_level,
+st_fat_necrosis_rep_1,gs_fat_necrosis_rep,1,초기,any,경계 불분명 종괴 | 침상형 종괴(암과 헷갈림),les_mass_indistinct;les_mass_spiculated,
+st_fat_necrosis_rep_2,gs_fat_necrosis_rep,2,기름 낭종,single,얇은 벽의 지방 함유 종괴,les_fat_containing_mass,
+st_fat_necrosis_rep_3,gs_fat_necrosis_rep,3,후기,any,테두리 석회화 | 이영양성 석회화,les_calc_rim;les_calc_dystrophic,
+st_fibroadenoma_rep_1,gs_fibroadenoma_rep,1,전형,all,경계 분명 | 타원형,les_mass_circumscribed;ft_mass_shape,
+st_fibroadenoma_rep_2,gs_fibroadenoma_rep,2,퇴행,single,거친 팝콘 석회화,les_calc_coarse_popcorn,
+st_lymph_node_rep_1,gs_lymph_node_rep,1,의심,any,지방문 소실 | 커지고 둥글어짐 | 밀도 증가,ft_ln_fatty_hilum;ft_ln_long_axis;ft_ln_density;les_axillary_adenopathy,
+st_lymph_node_rep_2,gs_lymph_node_rep,2,정상,single,가운데 지방문이 있는 콩 모양,ft_ln_fatty_hilum,

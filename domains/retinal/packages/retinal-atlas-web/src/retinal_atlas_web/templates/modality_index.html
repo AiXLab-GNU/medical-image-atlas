@@ -1,0 +1,20 @@
+{% extends 'base.html' %}{% from '_modality_schematic.html' import fov_panel, depth_panel %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>영상 종류</span></div>
+<header class="map-hero"><div><h1>영상 종류</h1><p class="lead">영상마다 <strong>정면에서 어디까지 찍히는지</strong>와 <strong>어느 깊이의 신호를 보는지</strong>가 다릅니다. 영상을 고르면 촬영 범위·신호 깊이 모식도와 실제 영상, 그 영상으로 보는 구조·병변과 측정을 함께 봅니다.</p></div></header>
+
+<div class="mv-index">{% for c in cards %}{% set first = c.figures[0] if c.figures else none %}
+  <a class="mv-tile" href="/imaging/{{ c.view.key }}/">
+    <div class="mv-tile-visual">
+      {% if first %}<img src="{{ '/modality-figures/' if first.served == 'modality' else '/figures/' }}{{ first.file }}" alt="" width="{{ first.width }}" height="{{ first.height }}" loading="lazy">{% endif %}
+      <div class="mv-tile-schem">{{ fov_panel(c.view, mini=True) }}{{ depth_panel(c.view, bands, mini=True) }}</div>
+    </div>
+    <div class="mv-tile-copy">
+      <span class="category">{{ c.view.short }}</span>
+      <h2>{{ c.record.name }}</h2>
+      <p>{{ c.view.summary }}</p>
+      <span class="muted small">직접 보이는 항목 {{ c.seen[('anatomy','direct')]|length + c.seen[('lesions','direct')]|length }} · 측정 {{ c.measures|length }} · 실제 영상 {{ c.figures|length }}</span>
+    </div>
+  </a>{% endfor %}
+</div>
+{% if others %}<p class="draft-note">그 밖의 영상({% for o in others %}{{ o.name }}{% if not loop.last %}, {% endif %}{% endfor %})은 2차 범위로 목록에만 있습니다.</p>{% endif %}
+{% endblock %}

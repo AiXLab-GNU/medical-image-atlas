@@ -1,0 +1,22 @@
+disease_id,parent_id,name_ko,name_en,abbreviation,scope,classification_source_ids,note_ko,status
+dis_breast_cancer,,유방암,Breast cancer,,primary,src_birads_2013;src_ajcc8_breast_2017,유방촬영에서는 BI-RADS 최종 판정 범주로 의심 정도를 적고 조직검사로 확진함,stage1_drafted
+dis_idc,dis_breast_cancer,침윤성 유방암(비특수형),Invasive carcinoma of no special type (ductal),IDC,primary,src_birads_2013;src_sickles_1986,가장 흔한 유형 · 불규칙 침상형 종괴가 전형,stage1_drafted
+dis_ilc,dis_breast_cancer,침윤성 소엽암,Invasive lobular carcinoma,ILC,primary,src_birads_2013,종괴 없이 구조왜곡·비대칭으로 보이거나 한 방향에서만 보이는 경우가 많음,stage1_drafted
+dis_dcis,dis_breast_cancer,관상피내암,Ductal carcinoma in situ,DCIS,primary,src_birads_2013;src_burnside_2007,대부분 의심 석회화(미세 다형성·미세 선형·분지형)로 발견됨,stage1_drafted
+dis_mucinous_carcinoma,dis_breast_cancer,점액암,Mucinous carcinoma,,representative,src_birads_2013,경계가 분명한 종괴로 보여 양성 종괴와 헷갈릴 수 있음,stage1_drafted
+dis_inflammatory_breast_cancer,dis_breast_cancer,염증성 유방암,Inflammatory breast cancer,IBC,representative,src_ajcc8_breast_2017,피부 비후·소주 비후·전반적 밀도 증가(임상 진단 T4d),stage1_drafted
+dis_paget_nipple,dis_breast_cancer,유두 파제트병,Paget disease of the nipple,,representative,src_birads_2013,유두·유륜 변화와 유륜하 석회화·종괴가 동반될 수 있음,stage1_drafted
+dis_fibroadenoma,,섬유선종,Fibroadenoma,FA,primary,src_birads_2013,젊은 여성의 가장 흔한 양성 종괴 · 퇴행하면 팝콘 석회화,stage1_drafted
+dis_breast_cyst,,유방 낭종,Breast cyst,,primary,src_birads_2013,경계가 분명한 둥근·타원형 종괴 · 초음파로 확인,stage1_drafted
+dis_fibrocystic_change,,섬유낭성 변화,Fibrocystic change,,representative,src_birads_2013,낭종·유즙 석회·치밀 실질 등 여러 양성 변화의 묶음,stage1_drafted
+dis_phyllodes_tumor,,엽상 종양,Phyllodes tumor,,representative,src_birads_2013,빠르게 커지는 큰 분엽형 종괴,stage1_drafted
+dis_intraductal_papilloma,,유관 내 유두종,Intraductal papilloma,,representative,src_birads_2013,유륜하 작은 종괴 또는 단일 확장 유관,stage1_drafted
+dis_radial_scar,,방사상 흉터(복합 경화성 병변),Radial scar (complex sclerosing lesion),,representative,src_birads_2013,가운데가 투명한 긴 침상선의 구조왜곡 · 암과 구분하려 조직검사,stage1_drafted
+dis_fat_necrosis,,지방괴사,Fat necrosis,,primary,src_taboada_2009,외상·수술 뒤 기름 낭종·테두리 석회화부터 침상형 종괴까지 다양함,stage1_drafted
+dis_lipoma,,지방종,Lipoma,,representative,src_birads_2013,얇은 피막의 지방 밀도 종괴,stage1_drafted
+dis_hamartoma,,과오종,Hamartoma (fibroadenolipoma),,representative,src_birads_2013,지방과 실질이 섞인 피막 종괴(유방 안의 유방),stage1_drafted
+dis_mastitis_abscess,,유방염·농양,Mastitis and abscess,,representative,src_birads_2013,피부 비후·소주 비후 · 농양은 경계 불분명 종괴,stage1_drafted
+dis_duct_ectasia,,유관 확장증(분비성 질환),Duct ectasia (secretory disease),,representative,src_birads_2013,유관을 따라 큰 막대 모양 석회화,stage1_drafted
+dis_axillary_lymphadenopathy,,액와 림프절병증,Axillary lymphadenopathy,,primary,src_birads_2013,전이·림프종·반응성 비대 · 지방문 소실이 중요,stage1_drafted
+dis_breast_arterial_calcification,,유방 동맥 석회화,Breast arterial calcification,BAC,representative,src_birads_2013,유방암과 무관한 혈관 석회화 · 심혈관 위험과의 관련이 연구됨,stage1_drafted
+dis_post_treatment_change,,수술·치료 후 변화,Post-treatment change,,representative,src_birads_2013;src_taboada_2009,흉터·구조왜곡·이영양성 석회화 · 재발과 구분,stage1_drafted

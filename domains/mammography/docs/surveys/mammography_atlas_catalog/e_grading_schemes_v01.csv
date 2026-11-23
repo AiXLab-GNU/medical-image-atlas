@@ -1,0 +1,11 @@
+scheme_id,disease_id,name_ko,kind,imaging_ids,read_rule_ko,source_ids,review_status,note_ko
+gs_birads_assessment,dis_breast_cancer,BI-RADS 최종 판정 범주,diagnostic,img_ffdm_cc;img_ffdm_mlo;img_dbt_slice,위 범주부터 차례로 확인해 가장 의심스러운 소견이 맞는 첫 범주로 판정합니다(범주 0은 추가 영상이 필요할 때).,src_birads_2013;src_liberman_1998,source_linked,악성 가능성 범위는 BI-RADS 5판 기준. 범주 4는 4A(2–10%) · 4B(10–50%) · 4C(50–95%)로 나눔
+gs_birads_composition,dis_breast_cancer,유방 구성 범주(BI-RADS 밀도),typing,img_ffdm_cc;img_ffdm_mlo,양쪽 유방 전체를 보고 섬유선 조직이 병변을 가릴 수 있는 정도로 한 범주를 고릅니다.,src_birads_2013;src_boyd_2007,source_linked,5판부터 백분율 구간 대신 가림 정도로 판단. c·d를 치밀 유방이라 함
+gs_calc_morphology,dis_breast_cancer,석회화 형태의 의심 단계,typing,img_magnification;img_ffdm_cc;img_ffdm_mlo,가장 의심스러운 형태를 고릅니다. 위로 갈수록 악성 가능성이 높습니다.,src_birads_2013;src_burnside_2007,source_linked,양성예측도는 BI-RADS 5판에 실린 근사값(연구마다 다름)
+gs_calc_distribution,dis_breast_cancer,석회화 분포,typing,img_magnification;img_ffdm_cc;img_ffdm_mlo;img_dbt_slab,석회화가 퍼진 모양을 고릅니다. 위로 갈수록 유관을 따른 병변을 시사합니다.,src_birads_2013;src_burnside_2007,source_linked,분포는 형태와 함께 판단
+gs_ajcc_t,dis_breast_cancer,AJCC 8판 원발 종양(T) 병기,staging,img_ffdm_cc;img_ffdm_mlo;img_dbt_slice,위 단계부터 확인해 처음 맞는 단계로 정합니다(흉벽·피부 침범이 있으면 크기와 관계없이 T4).,src_ajcc8_breast_2017,source_linked,병리 크기가 기준이며 영상 크기는 임상 병기에 씀
+gs_asymmetry_types,dis_breast_cancer,비대칭 유형과 의미,typing,img_ffdm_cc;img_ffdm_mlo,보이는 방향 수 · 범위 · 이전 검사와의 변화로 유형을 고릅니다. 위로 갈수록 추가 검사가 더 필요합니다.,src_birads_2013;src_youk_2009;src_sickles_asym_2007,source_linked,새로 생긴 비대칭은 추가 검사 후에도 남으면 조직검사를 고려
+gs_cem_bpe,dis_breast_cancer,CEM 배경 실질 증강 수준,typing,img_cem_recombined,정상 실질이 증강된 정도로 한 단계를 고릅니다.,src_cem_lexicon_2025;src_jochelson_2021,source_linked,MRI BI-RADS와 같은 네 단계
+gs_fat_necrosis_rep,dis_fat_necrosis,지방괴사의 대표 소견,representative,img_ffdm_cc;img_ffdm_mlo,공인 분류는 없고 시기에 따라 다른 모습을 보입니다.,src_taboada_2009,source_linked,외상·수술 병력과 함께 해석
+gs_fibroadenoma_rep,dis_fibroadenoma,섬유선종의 대표 소견,representative,img_ffdm_cc;img_ffdm_mlo,공인 분류는 없고 전형적 모습과 퇴행 모습으로 나눕니다.,src_birads_2013,source_linked,처음 발견한 경계 분명 종괴는 대개 범주 3으로 추적
+gs_lymph_node_rep,dis_axillary_lymphadenopathy,액와 림프절의 대표 소견,representative,img_ffdm_mlo,공인 크기 기준은 없고 지방문과 밀도를 먼저 봅니다.,src_birads_2013,source_linked,초음파가 더 정확함

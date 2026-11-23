@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retinal-measures"
+version = "0.1.0"
+description = "Reference implementations of retinal image measurements (fundus, OCT, OCTA, FAF) mapped to the retinal atlas"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0", "scipy>=1.14", "scikit-image>=0.25"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["retinal_measures*"]

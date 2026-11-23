@@ -1,0 +1,9 @@
+target_id,feature_id,applicability,note_ko
+les_generic,,not_applicable,공통 측정을 묶는 서비스 내부 대상
+ana_tdlu,,not_applicable,영상에서 따로 보이지 않는 미세 구조
+ana_chest_wall,,not_applicable,위치 경계(측정 대상 아님)
+les_breast_implant,ft_lesion_generic_size,not_applicable,보형물 크기는 판독 항목이 아님
+les_skin_lesion,ft_lesion_generic_change,not_applicable,피부 표지로 확인하는 겹침 소견
+les_calc_skin,ft_lesion_two_view,not_applicable,피부 석회화는 접선 영상으로 확인
+les_enhancing_mass,ft_lesion_view_half,common_applied,CEM 저에너지 영상과 같은 위치 체계
+les_non_mass_enhancement,ft_lesion_view_half,common_applied,CEM 저에너지 영상과 같은 위치 체계

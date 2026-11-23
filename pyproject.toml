@@ -1,0 +1,26 @@
+[project]
+name = "medical-image-atlas"
+version = "0.1.0"
+description = "Multi-domain medical image atlas: what is seen, what is measured and on which images (retinal, mammography)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-image>=0.22",
+    "pillow>=10.0",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+    "retinal-measures",
+    "ophthalmic-quantification",
+    "amd-oct-quant",
+    "mammography-measures",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+retinal-measures = { path = "domains/retinal/packages/retinal-measures", editable = true }
+ophthalmic-quantification = { path = "domains/retinal/packages/ophthalmic-quantification", editable = true }
+mammography-measures = { path = "domains/mammography/packages/mammography-measures", editable = true }
+amd-oct-quant = { path = "domains/retinal/packages/amd-oct-quant", editable = true }   # copy of oculophenome-xai P002, needed by ophthalmic-quantification OCT metrics

@@ -1,0 +1,63 @@
+scheme_id,disease_id,name_ko,kind,imaging_ids,read_rule_ko,source_ids,review_status,note_ko
+gs_dr_icdr,dis_dr,국제 DR 중증도 척도(ICDR),staging,img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다(가장 심한 소견이 단계를 정함).,src_icdr_2003,source_linked,안저 검사·사진 기준. 광각 영상에서는 주변부 병변이 단계를 높일 수 있음
+gs_pdr_drs_hrc,dis_pdr,고위험 PDR 특징(DRS),staging,img_cfp_45;img_fa,PDR로 판정된 눈에서 고위험 특징 중 하나라도 있으면 고위험 PDR입니다.,src_drs8_1981,source_linked,DRS 표준사진 10A(유두 신생혈관 1/4–1/3 DA) 기준
+gs_dme_icdr,dis_dme,국제 DME 중증도 척도(ICDR),staging,img_cfp_45,후극부의 망막 두꺼워짐·경성삼출물이 중심에서 얼마나 가까운지로 나눕니다.,src_icdr_2003,source_linked,입체 안저 판독 기준. OCT 기준 판정은 아래 CI-DME 표를 봅니다
+gs_dme_csme,dis_dme,임상적으로 유의한 황반부종(ETDRS CSME),diagnostic,img_cfp_45,다음 중 하나라도 있으면 CSME입니다.,src_etdrs1_1985,source_linked,치료 적응을 정하던 전통 기준(입체 안저)
+gs_dme_oct,dis_dme,OCT 중심 침범 DME(DRCR),staging,img_oct_thickness_map;img_oct_volume,OCT 중심 1 mm 구역 두께(CST)를 장비·성별 기준과 비교합니다.,src_drcr_cidme_thresholds,source_linked,기준값은 장비마다 다름
+gs_amd_beckman,dis_amd,AMD 임상 분류(Beckman),staging,img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. 드루젠 크기는 유두 가장자리 큰 정맥 폭(약 125 µm)과 비교합니다.,src_beckman_2013,source_linked,AMD 색소 이상: 중간 이상 드루젠과 함께 있는 과색소·저색소
+gs_namd_conan,dis_namd,황반 신생혈관 유형(CONAN),typing,img_oct_bscan;img_octa_outer;img_fa;img_icga,OCT에서 신생혈관 조직이 어느 층에 있는지로 나눕니다(OCTA·FA·ICGA로 보조).,src_conan_2020,source_linked,결절맥락막혈관병증은 1형의 아형(동맥류형 1형)으로 분류
+gs_namd_activity,dis_namd,신생혈관 활동성 판정,diagnostic,img_oct_bscan;img_oct_volume,치료 중 방문마다 OCT로 확인합니다. 하나라도 있으면 활동성입니다.,,needs_source,진료에서 널리 쓰는 기준(치료 프로토콜마다 세부가 다름)
+gs_ga_cam,dis_ga,위축 정의(CAM),staging,img_oct_bscan;img_faf,OCT B-scan에서 다음 소견이 함께 있는지와 폭(250 µm)을 봅니다. FAF 저자가형광은 범위 확인에 씁니다.,src_cam3_2018;src_cam4_2020,source_linked,지도모양위축 = 신생혈관 없는 눈의 cRORA
+gs_pm_metapm,dis_pathologic_myopia,근시성 황반병증 분류(META-PM),staging,img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. 범주 2 이상이거나 plus 병변·후포도종이 있으면 병적 근시입니다.,src_metapm_2015;src_imi_pm_2021,source_linked,
+gs_pm_plus,dis_pathologic_myopia,META-PM plus 병변,diagnostic,img_cfp_45;img_oct_bscan;img_fa,범주와 별도로 기록합니다. 하나라도 있으면 plus 병변 동반입니다.,src_metapm_2015,source_linked,
+gs_mtm_shimada,dis_myopic_traction_maculopathy,근시성 황반분리 범위(Shimada),staging,img_oct_volume,OCT volume에서 황반분리가 차지하는 범위로 나눕니다.,,needs_source,Shimada 2013 체계를 따름(원문 대조 전). 진행형 분류(MSS)는 별도
+gs_dsm,dis_dome_shaped_macula,돔 모양 황반 진단,diagnostic,img_oct_bscan,수평·수직 OCT B-scan에서 RPE 선이 황반에서 안쪽으로 볼록한지 봅니다.,,needs_source,돌출 높이 기준(흔히 50 µm 이상)은 연구마다 다름
+gs_erm_govetto,dis_erm,망막전막 OCT 단계(Govetto),staging,img_oct_bscan,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. 중심와를 지나는 B-scan에서 중심와 함요와 이소성 내층(EIFL)을 봅니다.,src_govetto_erm_2017,source_linked,
+gs_erm_schisis,dis_erm_foveoschisis,망막전막 황반분리 진단(국제 합의),diagnostic,img_oct_bscan,필수 소견을 모두 만족해야 합니다.,src_lmh_2020,source_linked,
+gs_mh_ivts,dis_macular_hole,전층 황반원공 크기(IVTS),staging,img_oct_bscan,"원공의 최소 선형 직경(가장 좁은 폭, ILM에 평행하게)을 잽니다. 유리체황반 견인 동반 여부를 함께 기록합니다.",src_ivts_2013,source_linked,
+gs_lmh,dis_lamellar_mh,층판 황반원공 진단(국제 합의),diagnostic,img_oct_bscan,"필수 소견을 모두 만족해야 하며, 선택 소견은 함께 기록합니다.",src_lmh_2020,source_linked,
+gs_vmt_ivts,dis_vmt,유리체황반 부착·견인(IVTS),staging,img_oct_bscan,"후유리체막이 중심와 3 mm 안에 붙어 있는지, 망막 변형이 있는지, 부착 폭(1500 µm)을 봅니다.",src_ivts_2013,source_linked,
+gs_rrd_macula,dis_rrd,황반 침범 여부,staging,img_uwf;img_oct_bscan,박리가 중심와까지 미쳤는지 봅니다(수술 시급성·예후에 영향).,src_aao_pvd_ppp_2019,source_linked,
+gs_rrd_pvr,dis_rrd,증식유리체망막병증 등급(Machemer),staging,img_cfp_45;img_uwf,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,src_pvr_1991,source_linked,등급 C는 고정 주름의 위치(후방 P·전방 A)와 시계 시간 수를 함께 기록
+gs_crvo_cvos,dis_crvo,허혈·비허혈 구분(CVOS),staging,img_fa;img_uwf,FA에서 모세혈관 무관류 면적을 디스크 면적(DA)으로 셉니다.,src_cvos_1993,source_linked,"출혈이 많아 판정할 수 없으면 ""판정 불가""로 두고 재검"
+gs_brvo,dis_brvo,BRVO 진단·위험 소견,diagnostic,img_cfp_45;img_fa,정맥 한 가지가 배액하는 구역에 국한된 소견을 봅니다.,src_aao_rvo_ppp_2019,source_linked,
+gs_hrvo,dis_hrvo,HRVO 진단 소견,diagnostic,img_cfp_45;img_fa,위 또는 아래 절반 망막에 소견이 국한되는지 봅니다.,src_aao_rvo_ppp_2019,source_linked,
+gs_crao,dis_crao,CRAO 진단 소견,diagnostic,img_cfp_45;img_oct_bscan;img_fa,급성기 안저와 OCT 소견을 봅니다.,src_aao_rao_ppp_2019,source_linked,섬모체망막동맥이 있으면 그 영역은 보존될 수 있음
+gs_brao,dis_brao,BRAO 진단 소견,diagnostic,img_cfp_45;img_oct_bscan;img_fa,한 동맥 가지가 공급하는 구역을 봅니다.,src_aao_rao_ppp_2019,source_linked,
+gs_clrao,dis_cilioretinal_ao,섬모체망막동맥폐쇄 진단 소견,diagnostic,img_cfp_45;img_oct_bscan;img_fa,유두 이측에서 황반 쪽으로 가는 섬모체망막동맥 영역을 봅니다.,src_aao_rao_ppp_2019,source_linked,
+gs_ois,dis_ois,안허혈 증후군 영상 소견,diagnostic,img_cfp_45;img_fa,하나만으로 진단하지 않고 경동맥 검사와 함께 판단합니다.,,needs_source,
+gs_purtscher,dis_purtscher,퍼처 망막병증 진단 기준(Miguel),diagnostic,img_cfp_45;img_oct_bscan,다음 다섯 가지 중 세 가지 이상이면 진단합니다.,,needs_source,Miguel 2013 기준을 따름(원문 대조 전)
+gs_htr,dis_hypertensive_retinopathy,고혈압성 망막병증 분류(Wong–Mitchell),staging,img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,src_hrp_2004,source_linked,
+gs_sickle,dis_sickle_retinopathy,증식성 겸상적혈구 망막병증 병기(Goldberg),staging,img_uwf;img_fa,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. 광각 FA로 주변부를 봅니다.,,needs_source,Goldberg 1971 병기(원문 대조 전)
+gs_coats,dis_coats,코츠병 병기(Shields),staging,img_uwf;img_fa;img_oct_bscan,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,,needs_source,Shields 2000 병기(원문 대조 전)
+gs_mactel,dis_mactel2,MacTel 2 병기(Gass–Blodi),staging,img_fa;img_oct_bscan;img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. OCT 소견(EZ 소실·내망막 공간)은 병기와 별도로 기록합니다.,,needs_source,Gass–Blodi 1993 병기(원문 대조 전)
+gs_radiation,dis_radiation_retinopathy,방사선 망막병증 병기(Finger),staging,img_cfp_45;img_fa;img_oct_bscan,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,,needs_source,Finger 2005 체계를 따름(원문 대조 전)
+gs_ram,dis_ram,동맥 대동맥류 진단 소견,diagnostic,img_cfp_45;img_fa;img_icga,세동맥(대개 셋째 분지 이내)의 국소 확장을 찾습니다.,,needs_source,
+gs_cscr_chhablani,dis_cscr,CSCR 다중영상 분류(Chhablani),staging,img_faf;img_oct_bscan;img_icga,"FAF·OCT로 RPE 이상 범위를 보고, 경과(첫 발생·재발·지속·소실)를 함께 기록합니다.",src_cscr_2020,source_linked,"추가 기록: 중심와 침범, 황반 위축, 신생혈관 동반 여부"
+gs_pachy,dis_pachychoroid_spectrum,맥락막 비후 소견,diagnostic,img_oct_edi_ss;img_icga,맥락막 두께만으로 정하지 않고 대혈관 확장과 그 위 층의 얇아짐을 함께 봅니다.,,needs_source,두께 기준(예: 300 µm)은 연구마다 다름
+gs_ppe,dis_ppe,PPE 진단 소견,diagnostic,img_oct_edi_ss;img_faf,맥락막 비후 위의 RPE 변화가 있고 망막하액이 없습니다.,,needs_source,
+gs_pnv,dis_pnv,PNV 진단 소견,diagnostic,img_oct_edi_ss;img_octa_outer;img_icga,맥락막 비후 위의 1형 신생혈관을 확인합니다.,,needs_source,
+gs_pcv_apois,dis_pcv,PCV OCT 진단 기준(APOIS),diagnostic,img_oct_bscan;img_oct_volume,ICGA 없이 OCT로 판정할 때 쓰는 기준입니다.,src_pcv_apois_2021,source_linked,
+gs_pcv_everest,dis_pcv,PCV ICGA 진단 기준(EVEREST),diagnostic,img_icga,ICGA 초기 국소 과형광이 있고 다음 중 하나 이상을 동반하면 PCV입니다.,,needs_source,EVEREST 기준(원문 대조 전)
+gs_as,dis_angioid_streaks,혈관양선조 진단 소견,diagnostic,img_nir;img_faf;img_cfp_45,유두 둘레에서 방사상으로 뻗는 띠를 찾습니다.,,needs_source,
+gs_hcq,dis_hcq_retinopathy,하이드록시클로로퀸 망막병증 중증도(AAO 2016),staging,img_oct_volume;img_faf,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다. 아시아인은 중심와 주위보다 바깥(혈관궁 근처)부터 손상될 수 있어 넓은 OCT 스캔을 봅니다.,,needs_source,Marmor 2016 AAO 권고(원문 대조 전)
+gs_pentosan,dis_pentosan_maculopathy,펜토산 황반병증 영상 소견,diagnostic,img_nir;img_faf;img_oct_bscan,복용력과 함께 봅니다.,,needs_source,
+gs_stargardt,dis_stargardt,스타가르트병 병기(Fishman),staging,img_faf;img_cfp_45,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,,needs_source,Fishman 1976 병기를 요약(원문 대조 전); FAF 위축 면적으로 진행 관찰
+gs_best,dis_best,베스트병 병기(Gass),staging,img_cfp_45;img_oct_bscan;img_faf,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,,needs_source,Gass 병기(원문 대조 전)
+gs_aofvd,dis_aofvd,AOFVD 진단 소견,diagnostic,img_oct_bscan;img_faf,성인에서 작은 중심와 난황모양 병변을 확인합니다.,,needs_source,
+gs_rp,dis_retinitis_pigmentosa,망막색소변성 영상 소견,diagnostic,img_uwf;img_oct_bscan;img_faf,전기생리 검사와 함께 진단합니다. OCT EZ 폭과 FAF 고리는 진행 관찰에 씁니다.,,needs_source,
+gs_crd,dis_cone_rod_dystrophy,원뿔막대세포 이영양증 영상 소견,representative,img_oct_bscan;img_faf,공인 영상 병기가 없어 대표 소견만 정리했습니다(전기생리로 진단).,,needs_source,
+gs_chm,dis_choroideremia,맥락막결손 영상 소견,representative,img_uwf;img_faf;img_oct_bscan,공인 영상 병기가 없어 대표 소견만 정리했습니다(유전 검사로 진단).,,needs_source,
+gs_uveitis_sun,dis_uveitis_retinal,포도막염 해부학적 분류(SUN),typing,img_cfp_45;img_fa;img_oct_bscan,염증의 주된 위치로 나눕니다.,,needs_source,SUN 2005(원문 대조 전)
+gs_vkh,dis_vkh,VKH 영상 소견(개정 진단 기준),diagnostic,img_oct_bscan;img_fa;img_icga;img_oct_edi_ss,안과 소견을 전신 소견과 함께 판단합니다. 급성기와 후기 소견을 구분합니다.,,needs_source,2001 개정 국제 기준(원문 대조 전)
+gs_mewds,dis_mewds,MEWDS 영상 소견,diagnostic,img_faf;img_oct_bscan;img_icga,급성기에 보이고 수 주 안에 사라지는 소견입니다.,,needs_source,
+gs_serpiginous,dis_serpiginous,사행성 맥락막염 영상 소견,diagnostic,img_faf;img_icga;img_oct_bscan,활동 가장자리를 찾아 경과를 봅니다.,,needs_source,
+gs_glaucoma,dis_glaucoma,녹내장성 구조 소견,diagnostic,img_cfp_45;img_oct_circle_onh,구조 소견은 시야 검사와 함께 판단합니다. 하나라도 있으면 녹내장성 손상을 의심합니다.,src_aao_poag_ppp_2020,source_linked,
+gs_frisen,dis_papilledema,유두부종 등급(Frisén),staging,img_cfp_45;img_oct_circle_onh,위 단계부터 차례로 확인해 처음 맞는 단계로 판정합니다.,,needs_source,Frisén 1982 등급(원문 대조 전). OCT 유두주위 RNFL 두께로 경과 관찰
+gs_naion,dis_naion,NAION 영상 소견,diagnostic,img_cfp_45;img_oct_circle_onh,급성기와 수 주 뒤 소견이 다릅니다.,,needs_source,
+gs_optic_atrophy,dis_optic_atrophy,시신경 위축 영상 소견,diagnostic,img_cfp_45;img_oct_circle_onh,원인 질환에 따라 창백 양상(전반·이측·분절)이 다릅니다.,,needs_source,
+gs_pcme,dis_pseudophakic_cme,백내장 수술 후 CME 진단 소견,diagnostic,img_oct_bscan;img_fa,수술 후 수 주–수 개월에 생긴 낭포 부종을 확인합니다.,,needs_source,
+gs_amn,dis_amn,AMN 영상 소견,diagnostic,img_oct_bscan;img_nir,OCT와 근적외선 영상을 함께 봅니다.,,needs_source,
+gs_moles,dis_choroidal_tumor,맥락막 색소 병변 위험 점수(MOLES),staging,img_cfp_45;img_oct_edi_ss;img_faf;img_us,"다섯 항목(M 버섯 모양, O 주황 색소, L 큰 크기, E 커짐, S 망막하액)을 각 0–2점으로 매겨 합산합니다.",,needs_source,Roelofs 2020 MOLES(원문 대조 전). 확진은 전문의 판단
+gs_cch,dis_choroidal_hemangioma,맥락막 혈관종 영상 소견,diagnostic,img_cfp_45;img_icga;img_oct_edi_ss;img_us,여러 영상 소견을 함께 봅니다.,,needs_source,
+gs_chrpe,dis_chrpe,CHRPE 영상 소견,diagnostic,img_cfp_45;img_faf;img_oct_bscan,양성 병변의 특징을 확인합니다.,,needs_source,

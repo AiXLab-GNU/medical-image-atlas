@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><a href="/measurements/">측정 목록</a><span>/</span><span>{{ feature.name }}</span></div>
+<header class="map-hero"><div>
+  <h1>{{ feature.name }} <span class="lv lv-{{ feature.impl.level }}">{{ impl_label[feature.impl.level] }}</span></h1>
+  <p class="lead">{{ feature.definition }}</p>
+  <p class="muted small">{% if target %}대상 <a href="{{ item_path(target) }}">{{ target.name }}</a> · {% endif %}<a href="/measurements/#{{ feature.id }}">측정 목록에서 보기</a>{% if example %} · <a href="/measurements/#{{ example.id }}">영상 표시 예시({{ example.title }})</a>{% endif %}</p>
+</div></header>
+
+{% set ds = measure_diseases.get(feature.id, []) %}
+<section class="panel code-panel">
+  <h2>이 측정을 쓰는 질병</h2>
+  {% if ds %}<ul class="dz-links">{% for d in ds %}<li><a href="/diseases/{{ d.slug }}/">{{ d.name }}</a> <span class="muted small">— {% if d.via %}{{ d.via }}의 관련 질병{% else %}질병 기준이 이 측정을 직접 사용{% endif %}{% if relation_label.get(d.type) %} · {{ relation_label[d.type] }}{% endif %}</span></li>{% endfor %}</ul>
+  {% else %}<p class="muted">특정 질병에 묶이지 않는 공통 지표입니다(여러 병변·영상에 같은 방식으로 씀).</p>{% endif %}
+  {% if ds %}<p class="muted small">판정 기준·임계값은 각 질병 페이지에서 봅니다.</p>{% endif %}
+</section>
+
+{% set pkg = feature.impl.package %}
+{% if fn %}
+<section class="panel code-panel">
+  <h2>이 측정을 계산하는 함수</h2>
+  <p><code class="code-fn">{{ links.function }}</code></p>
+  <ul class="code-meta">
+    <li><b>입력</b> {{ pkg.input_label }} <span class="muted">({{ pkg.input }})</span></li>
+    <li><b>방법</b> {{ pkg.method }}{% if pkg.reference %} · {{ pkg.reference }}{% endif %}</li>
+    <li><b>위치</b> mammography-measures {{ versions['mammography-measures'] }} · <code>{{ fn.file }}</code> {{ fn.start }}–{{ fn.end }}행</li>
+  </ul>
+  <div class="code-actions">
+    <a class="button" href="/code/mammography-measures/{{ fn.file }}?download=1">이 함수가 든 파일(.py)</a>
+    <a class="button secondary" href="/code/mammography-measures/{{ fn.file }}" target="_blank" rel="noopener">파일 전체 보기</a>
+    <a class="button secondary" href="/code/mammography-measures.zip">패키지 전체(.zip)</a>
+  </div>
+  <pre class="code-block"><code>{% for line in fn.source.split('\n') %}<span class="ln">{{ fn.start + loop.index0 }}</span>{{ line }}
+{% endfor %}</code></pre>
+  <h3>사용 예</h3>
+  {% set mod = links.function.split('.')[1] %}{% set func = links.function.split('.')[-1] %}
+  <pre class="code-block"><code>pip install ./mammography-measures-{{ versions['mammography-measures'] }}.zip   # numpy · scipy · scikit-image 필요
+
+from mammography_measures import {{ mod }}
+m = {{ mod }}.{{ func }}(...)   # 입력: {{ pkg.input_label }}
+m.value, m.unit, m.status       # status: ok / not_observed / not_evaluable</code></pre>
+  <p class="muted small">함수는 분할 결과(mask·경계면·점)를 받아 값을 계산합니다. 분할 자체와 임상 판정 기준은 포함하지 않습니다. 화소 크기(<code>pixel_mm</code>)를 주면 mm 단위로 돌려줍니다.</p>
+</section>
+{% endif %}
+
+{% if not fn and not links.project %}
+<section class="panel"><p>이 측정을 계산하는 공개 코드는 아직 없습니다. {% if feature.impl.sources %}구현 출처: {{ feature.impl.sources|join(', ') }}(배포하지 않는 실험 산출물).{% endif %}</p></section>
+{% endif %}
+<p class="draft-note">코드는 프로젝트 저장소의 패키지 원본을 그대로 내려줍니다. 값의 임상 정확도는 검증되지 않았으며, 입력 분할의 품질에 따라 결과가 달라집니다.</p>
+{% endblock %}

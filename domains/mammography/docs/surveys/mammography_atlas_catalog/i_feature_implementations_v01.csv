@@ -1,0 +1,63 @@
+feature_id,target_id,role,level,function,input,method,reference
+ft_ad_convergence_index,les_architectural_distortion,measurement,mask,mammography_measures.distortion.convergence_index,lesion_mask,share of annulus ridges pointing to the centre,Karssemeijer 1996
+ft_ad_extent,les_architectural_distortion,measurement,mask,mammography_measures.distortion.distortion_extent,lesion_mask,maximum Feret diameter of the marked region,
+ft_ad_presence,les_architectural_distortion,measurement,reading,,,,
+ft_asym_area,les_focal_asymmetry,measurement,mask,mammography_measures.distortion.asymmetry_area,lesion_mask,pixel area × calibration,
+ft_asym_bilateral_difference,les_asymmetry,measurement,pair,mammography_measures.distortion.bilateral_difference,image_pair,left − right percent dense area,Youk 2009
+ft_asym_type,les_asymmetry,measurement,reading,,,,
+ft_birads_assessment,les_generic,classification,reading,,,,
+ft_bpe_level,ana_fibroglandular_tissue,measurement,reading,,,,
+ft_breast_area,ana_breast,measurement,auto,mammography_measures.breast.breast_area,image,"Otsu threshold, largest component, pectoral muscle removed",
+ft_breast_composition,ana_breast,measurement,reading,,,,
+ft_calc_branching,les_calcification,measurement,mask,mammography_measures.calcification.branching,lesion_mask,share of spots whose skeleton has a branch point,Shen 1994
+ft_calc_contrast,les_calcification,measurement,mask,mammography_measures.calcification.spot_contrast,lesion_mask,mean top-hat ÷ MAD of the spots,
+ft_calc_count,les_calcification,measurement,mask,mammography_measures.calcification.count,lesion_mask,white top-hat spots above median + 4·MAD,Shen 1994
+ft_calc_density,les_calcification,measurement,mask,mammography_measures.calcification.density,lesion_mask,spots per search-region area,
+ft_calc_distribution,les_calcification,measurement,reading,,,,
+ft_calc_elongation,les_calcification,measurement,mask,mammography_measures.calcification.elongation,lesion_mask,share of spots with eccentricity > 0.9,Shen 1994
+ft_calc_extent,les_calcification,measurement,mask,mammography_measures.calcification.extent,lesion_mask,largest centre-to-centre distance,
+ft_calc_linearity,les_calcification,measurement,mask,mammography_measures.calcification.linearity,lesion_mask,1 − λmin/λmax of spot-centre covariance,
+ft_calc_morphology,les_calcification,measurement,reading,,,,
+ft_calc_nn_distance,les_calcification,measurement,mask,mammography_measures.calcification.nn_distance,lesion_mask,mean nearest-neighbour distance of spot centres,
+ft_calc_size,les_calcification,measurement,mask,mammography_measures.calcification.spot_size,lesion_mask,mean and maximum spot area,Shen 1994
+ft_calc_size_variation,les_calcification,measurement,mask,mammography_measures.calcification.size_variation,lesion_mask,coefficient of variation of spot area,Shen 1994
+ft_dense_area,ana_fibroglandular_tissue,measurement,auto,mammography_measures.breast.dense_area,image,Otsu threshold inside the eroded breast mask,Keller 2012
+ft_enh_intensity_ratio,les_enhancing_mass,measurement,mask,mammography_measures.enhancement.intensity_ratio,lesion_mask,lesion mean ÷ surrounding ring mean on the recombined image,Jochelson 2021
+ft_enh_pattern,les_enhancing_mass,measurement,reading,,,,
+ft_imf_visible,ana_inframammary_fold,measurement,reading,,,,
+ft_img_positioning_quality,img_ffdm,measurement,reading,,,,
+ft_lesion_clock_position,les_generic,measurement,pair,mammography_measures.location.clock_position,matched_views,"angle of (CC offset, MLO offset) → clock hour",
+ft_lesion_conspicuity,les_enhancing_mass,measurement,reading,,,,
+ft_lesion_depth_third,les_generic,measurement,mask,mammography_measures.location.depth_third,lesion_landmark,"projection on the posterior nipple line, split in thirds",
+ft_lesion_distance_nipple,les_generic,measurement,mask,mammography_measures.location.distance_from_nipple,lesion_landmark,Euclidean distance from the nipple point,
+ft_lesion_generic_change,les_generic,measurement,none,,,,
+ft_lesion_generic_count,les_generic,measurement,mask,mammography_measures.distortion.lesion_count,lesion_mask,connected components,
+ft_lesion_generic_presence,les_generic,measurement,mask,mammography_measures.distortion.presence,lesion_mask,any marked pixel,
+ft_lesion_generic_size,les_generic,measurement,mask,mammography_measures.distortion.lesion_size,lesion_mask,maximum Feret diameter,
+ft_lesion_quadrant,les_generic,measurement,pair,mammography_measures.location.quadrant,matched_views,CC half × MLO half,
+ft_lesion_two_view,les_generic,measurement,reading,,,,
+ft_lesion_view_half,les_generic,measurement,mask,mammography_measures.location.view_half,lesion_landmark,"side of the nipple–chest line (CC lateral/medial, MLO upper/lower)",
+ft_ln_density,ana_axillary_lymph_nodes,measurement,reading,,,,
+ft_ln_fatty_hilum,ana_axillary_lymph_nodes,measurement,reading,,,,
+ft_ln_long_axis,ana_axillary_lymph_nodes,measurement,none,,,,
+ft_mass_area,les_mass,measurement,mask,mammography_measures.mass.mass_area,lesion_mask,pixel area × calibration,
+ft_mass_circularity,les_mass,measurement,mask,mammography_measures.mass.circularity,lesion_mask,4π·area/perimeter²,Rangayyan 1997
+ft_mass_contrast,les_mass,measurement,mask,mammography_measures.mass.contrast,lesion_mask,(inside − outer band) ÷ outer band SD,
+ft_mass_density,les_mass,measurement,reading,,,,
+ft_mass_margin,les_mass,measurement,reading,,,,
+ft_mass_margin_sharpness,les_mass,measurement,mask,mammography_measures.mass.margin_sharpness,lesion_mask,edge gradient ÷ inside–outside difference,Rangayyan 1997
+ft_mass_radial_sd,les_mass,measurement,mask,mammography_measures.mass.radial_sd,lesion_mask,SD of the normalised radial profile (+ Fourier high-frequency share),Rangayyan 1997
+ft_mass_shape,les_mass,measurement,reading,,,,
+ft_mass_size,les_mass,measurement,mask,mammography_measures.mass.size,lesion_mask,maximum Feret diameter,
+ft_mass_solidity,les_mass,measurement,mask,mammography_measures.mass.solidity,lesion_mask,area ÷ convex hull area,Rangayyan 1997
+ft_mass_spiculation_index,les_mass,measurement,mask,mammography_measures.mass.spiculation_index,lesion_mask,share of outer-band ridges pointing to the centre,Karssemeijer 1996
+ft_nipple_in_profile,ana_nipple_areola,measurement,reading,,,,
+ft_nme_distribution,les_non_mass_enhancement,measurement,reading,,,,
+ft_nme_extent,les_non_mass_enhancement,measurement,mask,mammography_measures.enhancement.nme_extent,lesion_mask,maximum Feret diameter of the enhancing region,
+ft_pectoral_angle,ana_pectoralis_major,measurement,auto,mammography_measures.breast.pectoral_angle,image,angle of the fitted pectoral edge to the image vertical,Kwok 2004
+ft_pectoral_area,ana_pectoralis_major,measurement,auto,mammography_measures.breast.pectoral_area,image,straight-line anterior pectoral edge (RANSAC on gradient minima),Kwok 2004
+ft_pectoral_reaches_pnl,ana_pectoralis_major,measurement,auto,mammography_measures.breast.pectoral_reaches_pnl,image,pectoral edge reaches the nipple level,Eklund 1992
+ft_percent_density,ana_breast,measurement,auto,mammography_measures.breast.percent_density,image,Otsu threshold of breast intensities (dense ÷ breast),Byng 1994; Keller 2012
+ft_pnl_cc_mlo_difference,ref_posterior_nipple_line,measurement,pair,mammography_measures.breast.pnl_cc_mlo_difference,image_pair,|PNL(CC) − PNL(MLO)|,Eklund 1992
+ft_pnl_length,ref_posterior_nipple_line,measurement,auto,mammography_measures.breast.pnl_length,image,nipple → perpendicular foot on the pectoral edge (MLO) or chest edge (CC),Eklund 1992
+ft_skin_thickness,ana_skin,measurement,none,,,,

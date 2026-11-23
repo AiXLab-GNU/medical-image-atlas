@@ -1,0 +1,3896 @@
+{
+ "generated_by": "code/build_atlas_masked_figures.py",
+ "figures": [
+  {
+   "id": "fundus_optic_disc",
+   "items": [
+    "ana_optic_disc",
+    "ana_peripapillary_region"
+   ],
+   "source": "idrid_seg",
+   "source_file": "A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg",
+   "mask_label": "시신경유두(전문가 분할)",
+   "caption": "컬러 안저 사진에서 시신경유두 경계를 표시했습니다.",
+   "transform": "원본 4288×2848을 가로 1200 px로 축소; mask를 같은 비율로 축소해 반투명 겹침",
+   "base": "fundus_optic_disc.jpg",
+   "overlay": "fundus_optic_disc_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "0c6ccdbf603840a232dbde2397a7e20d010d8b5957738843186d3accc757b8a1",
+   "overlay_sha256": "f5a614111ef482a74dc0bb3464757b698bbf1d8ea8075c6153a15c4aa3068574",
+   "name": "IDRiD (Segmentation)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_seg"
+  },
+  {
+   "id": "fundus_ma",
+   "items": [
+    "les_microaneurysm",
+    "les_red_lesion_pooled"
+   ],
+   "source": "idrid_seg",
+   "source_file": "A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg",
+   "mask_label": "미세동맥류(전문가 분할)",
+   "caption": "컬러 안저 사진의 일부를 확대해 미세동맥류 위치를 표시했습니다.",
+   "transform": "원본에서 (544,480)–(1944,1410) 영역을 잘라 가로 1200 px로 확대·축소; mask 외곽선과 반투명 채움",
+   "base": "fundus_ma.jpg",
+   "overlay": "fundus_ma_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "2eb576a37ac5314aae2b249a417d109922b7e1c0102baccdf906419bc2e2d7ae",
+   "overlay_sha256": "53540cb6850f32ba63c167228e716821d0b11d013a35b88314667458032825fb",
+   "context": "fundus_ma_context.jpg",
+   "context_sha256": "a323e04b0db6f77365b5cc0bb10b60306124f3e3b5d391c25022eb47745c6715",
+   "name": "IDRiD (Segmentation)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_seg"
+  },
+  {
+   "id": "fundus_he",
+   "items": [
+    "les_hemorrhage_pooled",
+    "les_hemorrhage_dot_blot"
+   ],
+   "source": "idrid_seg",
+   "source_file": "A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg",
+   "mask_label": "출혈(층위 미구분)(전문가 분할)",
+   "caption": "컬러 안저 사진의 일부를 확대해 출혈(층위 미구분) 위치를 표시했습니다.",
+   "transform": "원본에서 (608,1888)–(2008,2818) 영역을 잘라 가로 1200 px로 확대·축소; mask 외곽선과 반투명 채움",
+   "base": "fundus_he.jpg",
+   "overlay": "fundus_he_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "ca157756a32195f6af2998ada4b18230494a7c539a0bb649ceafdb714d07e763",
+   "overlay_sha256": "895604a25865fd965a9e845f98a8e5fbdcee5ba343d81f4118fdcfb1415314dd",
+   "context": "fundus_he_context.jpg",
+   "context_sha256": "1363d0127f50fc9b426355f3f5164502578642408ff9a291439460ca5dabc445",
+   "name": "IDRiD (Segmentation)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_seg"
+  },
+  {
+   "id": "fundus_ex",
+   "items": [
+    "les_hard_exudate"
+   ],
+   "source": "idrid_seg",
+   "source_file": "A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg",
+   "mask_label": "경성삼출물(전문가 분할)",
+   "caption": "컬러 안저 사진의 일부를 확대해 경성삼출물 위치를 표시했습니다.",
+   "transform": "원본에서 (544,576)–(1944,1506) 영역을 잘라 가로 1200 px로 확대·축소; mask 외곽선과 반투명 채움",
+   "base": "fundus_ex.jpg",
+   "overlay": "fundus_ex_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "afb454cd9a4bf6b4fbe8139da3ff30475760801be51f8d4b1afb134a9cf13861",
+   "overlay_sha256": "cd845f3d96c3dd63d2df0540d6d6f17dd9a7af51514893df34107d564676f727",
+   "context": "fundus_ex_context.jpg",
+   "context_sha256": "ce4b855416dc222e441795fc4768b0be687d17eb5345a80dc339e06d11a83730",
+   "name": "IDRiD (Segmentation)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_seg"
+  },
+  {
+   "id": "fundus_se",
+   "items": [
+    "les_cotton_wool_spot"
+   ],
+   "source": "idrid_seg",
+   "source_file": "A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg",
+   "mask_label": "면화반(연성삼출물)(전문가 분할)",
+   "caption": "컬러 안저 사진의 일부를 확대해 면화반(연성삼출물) 위치를 표시했습니다.",
+   "transform": "원본에서 (0,0)–(1400,930) 영역을 잘라 가로 1200 px로 확대·축소; mask 외곽선과 반투명 채움",
+   "base": "fundus_se.jpg",
+   "overlay": "fundus_se_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "77df5c998c2de3920e06f83ab0932cc6691a5a0a5a4a8a894dafd569ea1c7605",
+   "overlay_sha256": "630587fc95fb344c4a8bef5abc87890094ad6dba6c05aa49b62649d0596c9156",
+   "context": "fundus_se_context.jpg",
+   "context_sha256": "b047bff9924c1a07155d4cfac65636f5031c22c2cceeb16682ce7b1d03d647ab",
+   "name": "IDRiD (Segmentation)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_seg"
+  },
+  {
+   "id": "fundus_vessels",
+   "items": [
+    "ana_retinal_vasculature",
+    "ana_vascular_tree",
+    "ana_vascular_arcades"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_17.jpg",
+   "mask_label": "망막 혈관(전문가 정제 분할; 동정맥 미구분)",
+   "caption": "같은 눈의 안저 사진에서 망막 혈관을 표시했습니다.",
+   "transform": "공급자 1024×1024 영상과 혈관 mask를 그대로 사용(가는 선 강조)",
+   "base": "fundus_vessels.jpg",
+   "overlay": "fundus_vessels_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "bacd842f56a9d278e211c16a8c63374151e18be31f7426bc237114cda0a6d134",
+   "overlay_sha256": "178c1849904c2bcedb87edaf72f6523da14814fac7378777020f6e4172e2180e",
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_fovea_landmarks",
+   "items": [
+    "ref_fovea_center",
+    "ref_disc_center",
+    "ref_disc_diameter",
+    "ana_fovea",
+    "ana_macula",
+    "ana_posterior_pole"
+   ],
+   "source": "idrid_loc",
+   "source_file": "C. Localization/1. Original Images/a. Training Set/IDRiD_001.jpg",
+   "mask_label": "중심와 중심(노랑)·유두 중심(하늘) 좌표와 파생 원",
+   "caption": "전문가가 표시한 중심와·유두 중심 좌표입니다. 노란 원 두 개는 좌표에서 계산한 대략적 범위(유두–중심와 거리 ≈ 2.5 DD 가정)이며 분할이 아닙니다.",
+   "transform": "원본을 가로 1200 px로 축소; 좌표 점·연결선·파생 원(반지름 0.75·1.5 DD)을 겹침",
+   "base": "fundus_fovea_landmarks.jpg",
+   "overlay": "fundus_fovea_landmarks_mask.png",
+   "width": 1200,
+   "height": 797,
+   "base_sha256": "0c7e90ff4eae568e3a79269dc3cf5128ca4a53032b58dd890a193d1d0455b89c",
+   "overlay_sha256": "177a8b02e4bec1d121f34a402adc8c6e5174fbf25f11cd317af91ccfa6b3626f",
+   "name": "IDRiD (Localization)",
+   "credit": "Porwal P, Pachade S, Kokare M. IDRiD",
+   "url": "https://doi.org/10.21227/H25W98",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "idrid_loc"
+  },
+  {
+   "id": "oct_irf",
+   "items": [
+    "les_intraretinal_fluid",
+    "les_cystoid_macular_edema"
+   ],
+   "source": "amd_sd",
+   "source_file": "images/122/122_30.png",
+   "mask_label": "망막내액(공급자 분할)",
+   "caption": "OCT B-scan에서 망막내액을(를) 표시했습니다. 공급자 mask 중 해당 병변 면적이 가장 큰 단면입니다.",
+   "transform": "공급자 결합 영상의 왼쪽 OCT 절반(570×380)을 원 크기로 사용; 오른쪽 색 mask에서 해당 색만 추출해 겹침",
+   "base": "oct_irf.jpg",
+   "overlay": "oct_irf_mask.png",
+   "width": 570,
+   "height": 380,
+   "base_sha256": "9430d9d4841a033fd63736f28d1ed04faa6333fba3f75d29a9ac2a34d850f2ac",
+   "overlay_sha256": "e405f5f0c336b3288fc7ce68fff9bc4185155446fb7ccbd5483677b16863f897",
+   "name": "AMD-SD",
+   "credit": "Li G et al. AMD-SD OCT dataset (figshare 25513435)",
+   "url": "https://doi.org/10.6084/m9.figshare.25513435",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "amd_sd"
+  },
+  {
+   "id": "oct_srf",
+   "items": [
+    "les_subretinal_fluid",
+    "les_serous_retinal_detachment"
+   ],
+   "source": "amd_sd",
+   "source_file": "images/148/148_24.png",
+   "mask_label": "망막하액(공급자 분할)",
+   "caption": "OCT B-scan에서 망막하액을(를) 표시했습니다. 공급자 mask 중 해당 병변 면적이 가장 큰 단면입니다.",
+   "transform": "공급자 결합 영상의 왼쪽 OCT 절반(570×380)을 원 크기로 사용; 오른쪽 색 mask에서 해당 색만 추출해 겹침",
+   "base": "oct_srf.jpg",
+   "overlay": "oct_srf_mask.png",
+   "width": 570,
+   "height": 380,
+   "base_sha256": "848357cd2b0a9562c09fcc151433b2a592764d8f199fdfb9fbfa565321b20861",
+   "overlay_sha256": "87907047c1b363bd482c154ce978e1d6cb84b1a06a0093c0ce6b455c9f88e428",
+   "name": "AMD-SD",
+   "credit": "Li G et al. AMD-SD OCT dataset (figshare 25513435)",
+   "url": "https://doi.org/10.6084/m9.figshare.25513435",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "amd_sd"
+  },
+  {
+   "id": "oct_ped",
+   "items": [
+    "les_ped_unspecified",
+    "les_ped_fibrovascular"
+   ],
+   "source": "amd_sd",
+   "source_file": "images/37/37_19.png",
+   "mask_label": "색소상피박리(공급자 분할)",
+   "caption": "OCT B-scan에서 색소상피박리을(를) 표시했습니다. 공급자 mask 중 해당 병변 면적이 가장 큰 단면입니다.",
+   "transform": "공급자 결합 영상의 왼쪽 OCT 절반(570×380)을 원 크기로 사용; 오른쪽 색 mask에서 해당 색만 추출해 겹침",
+   "base": "oct_ped.jpg",
+   "overlay": "oct_ped_mask.png",
+   "width": 570,
+   "height": 380,
+   "base_sha256": "e0d0773e9a777474cdaf814d7988a70be1f6e3835560aa3d7c99cdcc42de9742",
+   "overlay_sha256": "ed44df337c0f4ea6cfc9a2dafa28147cd30d65d8d4648eeff529e78127ea32f9",
+   "name": "AMD-SD",
+   "credit": "Li G et al. AMD-SD OCT dataset (figshare 25513435)",
+   "url": "https://doi.org/10.6084/m9.figshare.25513435",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "amd_sd"
+  },
+  {
+   "id": "oct_shrm",
+   "items": [
+    "les_shrm"
+   ],
+   "source": "amd_sd",
+   "source_file": "images/120/120_21.png",
+   "mask_label": "망막하 고반사 물질(공급자 분할)",
+   "caption": "OCT B-scan에서 망막하 고반사 물질을(를) 표시했습니다. 공급자 mask 중 해당 병변 면적이 가장 큰 단면입니다.",
+   "transform": "공급자 결합 영상의 왼쪽 OCT 절반(570×380)을 원 크기로 사용; 오른쪽 색 mask에서 해당 색만 추출해 겹침",
+   "base": "oct_shrm.jpg",
+   "overlay": "oct_shrm_mask.png",
+   "width": 570,
+   "height": 380,
+   "base_sha256": "b25c990e01a77db76f1d728807b503948f481f6136cd52f62c07437756264911",
+   "overlay_sha256": "0fd25f845f2d978d1c5cfe11e932622ee00fb333e22b2ca60ace9b8cac83f40c",
+   "name": "AMD-SD",
+   "credit": "Li G et al. AMD-SD OCT dataset (figshare 25513435)",
+   "url": "https://doi.org/10.6084/m9.figshare.25513435",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "amd_sd"
+  },
+  {
+   "id": "oct_is_os",
+   "items": [
+    "ana_ellipsoid_zone",
+    "les_ez_disruption",
+    "ana_photoreceptors"
+   ],
+   "source": "amd_sd",
+   "source_file": "images/54/54_13.png",
+   "mask_label": "IS/OS(EZ에 해당) 띠(공급자 분할)",
+   "caption": "OCT B-scan에서 IS/OS(EZ에 해당) 띠을(를) 표시했습니다. 공급자 mask 중 해당 병변 면적이 가장 큰 단면입니다.",
+   "transform": "공급자 결합 영상의 왼쪽 OCT 절반(570×380)을 원 크기로 사용; 오른쪽 색 mask에서 해당 색만 추출해 겹침",
+   "base": "oct_is_os.jpg",
+   "overlay": "oct_is_os_mask.png",
+   "width": 570,
+   "height": 380,
+   "base_sha256": "84a2f178e473f415e2de53d24d0471a203406ce7bfc810b81b689b3a13f0f789",
+   "overlay_sha256": "f1b46b5fcf561022b7181d21d1d742ef579aebb5226a98c637376715b127ea6e",
+   "name": "AMD-SD",
+   "credit": "Li G et al. AMD-SD OCT dataset (figshare 25513435)",
+   "url": "https://doi.org/10.6084/m9.figshare.25513435",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "amd_sd"
+  },
+  {
+   "id": "fundus_arteries",
+   "items": [
+    "ana_retinal_arterioles"
+   ],
+   "mask_label": "망막 동맥(전문가 분할)",
+   "caption": "정상 눈의 안저 사진에서 동맥만 빨간색으로 표시했습니다. 정맥보다 가늘고 밝은 붉은색입니다.",
+   "legend": [
+    {
+     "label": "동맥",
+     "cls": "artery"
+    }
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "transform": "공급자 1024×1024 영상과 7분류 mask(동맥 24·정맥 12·교차 20·유두 32)를 그대로 사용",
+   "base": "fundus_arteries.jpg",
+   "overlay": "fundus_arteries_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "1d506c10f86bbd654ebfc19a3aeb0558a77efee04d38fa696d4bc75b5c22b133",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_veins",
+   "items": [
+    "ana_retinal_venules"
+   ],
+   "mask_label": "망막 정맥(전문가 분할)",
+   "caption": "같은 눈에서 정맥만 파란색으로 표시했습니다. 동맥보다 굵고 어두운 붉은색입니다.",
+   "legend": [
+    {
+     "label": "정맥",
+     "cls": "vein"
+    }
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "transform": "공급자 1024×1024 영상과 7분류 mask(동맥 24·정맥 12·교차 20·유두 32)를 그대로 사용",
+   "base": "fundus_veins.jpg",
+   "overlay": "fundus_veins_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "4daf638c4024232a47e97f887bf8b4e03a6eaf00f1c1a2bca28f66ed0f02f68b",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_av",
+   "items": [
+    "ana_retinal_vasculature",
+    "ana_vascular_tree",
+    "ana_vascular_arcades"
+   ],
+   "mask_label": "동맥·정맥(전문가 분할)",
+   "legend": [
+    {
+     "label": "동맥",
+     "cls": "artery"
+    },
+    {
+     "label": "정맥",
+     "cls": "vein"
+    }
+   ],
+   "caption": "동맥(빨강)과 정맥(파랑)을 함께 표시했습니다. 유두에서 나온 이측 큰 가지가 황반을 위·아래로 둘러싸며 혈관 아케이드를 이룹니다.",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "transform": "공급자 1024×1024 영상과 7분류 mask(동맥 24·정맥 12·교차 20·유두 32)를 그대로 사용",
+   "base": "fundus_av.jpg",
+   "overlay": "fundus_av_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "1e72adaa7221a187033703186ffffd5f9c64a6dea43c8490028aa765055df13a",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_av_disc",
+   "items": [
+    "ana_central_retinal_artery",
+    "ana_central_retinal_vein"
+   ],
+   "mask_label": "유두의 동맥·정맥(전문가 분할)",
+   "legend": [
+    {
+     "label": "동맥",
+     "cls": "artery"
+    },
+    {
+     "label": "정맥",
+     "cls": "vein"
+    },
+    {
+     "label": "시신경유두 경계",
+     "cls": "disc"
+    }
+   ],
+   "caption": "시신경유두를 확대했습니다. 중심망막동·정맥은 유두 중앙에서 나와 위·아래 가지로 갈라집니다(줄기 자체는 시신경 안에 있어 안저에서는 유두 위의 시작 부분만 보입니다).",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "transform": "공급자 1024×1024 영상과 7분류 mask(동맥 24·정맥 12·교차 20·유두 32)를 그대로 사용; 유두 주변 (452, 268, 918, 734) 영역을 잘라 확대",
+   "base": "fundus_av_disc.jpg",
+   "overlay": "fundus_av_disc_mask.png",
+   "width": 466,
+   "height": 466,
+   "base_sha256": "f9bef2f7a9a0d74e2911c9ba5905a3d6106c9ca6ed21876d2374a236becdaf42",
+   "overlay_sha256": "edfdc39d7743a6974a865791f2be2ed1389796013ef4b252528a9196e343950e",
+   "context": "fundus_av_disc_context.jpg",
+   "context_sha256": "e5b27ffe73b7fcd307b36463973e876db66b4d6e5c8098057e01e333cd474349",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_av_crossing",
+   "items": [
+    "ana_av_crossing"
+   ],
+   "mask_label": "동정맥 교차 31곳(전문가 표시)",
+   "legend": [
+    {
+     "label": "동정맥 교차",
+     "cls": "crossing"
+    }
+   ],
+   "caption": "동맥과 정맥이 겹쳐 지나가는 지점을 노란 원으로 표시했습니다. 고혈압성 변화에서 교차부 정맥이 눌려 보이는 소견(AV nicking)을 보는 자리입니다.",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "transform": "공급자 1024×1024 영상과 7분류 mask(동맥 24·정맥 12·교차 20·유두 32)를 그대로 사용; 동맥·정맥 모두에 닿는 교차 성분 중심에 반지름 14 px 원",
+   "base": "fundus_av_crossing.jpg",
+   "overlay": "fundus_av_crossing_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "c972ecd6cc461b3172d7f9002df026e5820300b7190edc26ec1bca11190a2b16",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "octa_scp_flow",
+   "items": [
+    "ana_superficial_capillary_plexus",
+    "zone_octa_slab"
+   ],
+   "source": "feng2024",
+   "source_file": "retinal_atlas_modality_figures/octa_scp.jpg",
+   "mask_label": "표층 모세혈관망 혈류 신호(자동 이진화)",
+   "legend": [
+    {
+     "label": "표층 혈류",
+     "cls": "octa_scp_flow"
+    }
+   ],
+   "caption": "OCTA 표층 모세혈관망 슬랩에서 혈류 신호를 색으로 표시했습니다. 표시는 국소 임계값으로 자동 이진화한 것이며 전문가 분할이 아닙니다.",
+   "transform": "논문 패널을 국소 임계값(block 25, offset -4)으로 이진화",
+   "base": "octa_scp_flow.jpg",
+   "overlay": "octa_scp_flow_mask.png",
+   "width": 288,
+   "height": 286,
+   "base_sha256": "775595d003f104d958a2c14f14d99fda710e43c77d293f56fcbfb5a4aee693fe",
+   "overlay_sha256": "db4e9f937c7e794877072b052ba77765bde61b5ecee27ad9cbb51c54e0bd54b5",
+   "name": "Feng et al. 2024",
+   "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20, Fig. 1",
+   "url": "https://doi.org/10.1186/s12886-024-03283-2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "feng2024"
+  },
+  {
+   "id": "octa_icp_flow",
+   "items": [
+    "ana_intermediate_capillary_plexus",
+    "zone_octa_slab"
+   ],
+   "source": "feng2024",
+   "source_file": "retinal_atlas_modality_figures/octa_icp.jpg",
+   "mask_label": "중간 모세혈관망 혈류 신호(자동 이진화)",
+   "legend": [
+    {
+     "label": "중간 혈류",
+     "cls": "octa_icp_flow"
+    }
+   ],
+   "caption": "OCTA 중간 모세혈관망 슬랩에서 혈류 신호를 색으로 표시했습니다. 표시는 국소 임계값으로 자동 이진화한 것이며 전문가 분할이 아닙니다.",
+   "transform": "논문 패널을 국소 임계값(block 25, offset -4)으로 이진화",
+   "base": "octa_icp_flow.jpg",
+   "overlay": "octa_icp_flow_mask.png",
+   "width": 283,
+   "height": 286,
+   "base_sha256": "688e3318b1cbce3622e10e5fbca464c3052f5cf0790f8a787013005fafbc4e46",
+   "overlay_sha256": "67bbbeb8cb044628704235fde796ad49b3dadc9f56be5c1c934afd2c7bcf08aa",
+   "name": "Feng et al. 2024",
+   "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20, Fig. 1",
+   "url": "https://doi.org/10.1186/s12886-024-03283-2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "feng2024"
+  },
+  {
+   "id": "octa_dcp_flow",
+   "items": [
+    "ana_deep_capillary_plexus",
+    "zone_octa_slab"
+   ],
+   "source": "feng2024",
+   "source_file": "retinal_atlas_modality_figures/octa_dcp.jpg",
+   "mask_label": "심층 모세혈관망 혈류 신호(자동 이진화)",
+   "legend": [
+    {
+     "label": "심층 혈류",
+     "cls": "octa_dcp_flow"
+    }
+   ],
+   "caption": "OCTA 심층 모세혈관망 슬랩에서 혈류 신호를 색으로 표시했습니다. 표시는 국소 임계값으로 자동 이진화한 것이며 전문가 분할이 아닙니다.",
+   "transform": "논문 패널을 국소 임계값(block 15, offset -2)으로 이진화",
+   "base": "octa_dcp_flow.jpg",
+   "overlay": "octa_dcp_flow_mask.png",
+   "width": 287,
+   "height": 286,
+   "base_sha256": "e78ac200b1f1e05dab4f27624cd9385696ff5fe60a7dd9956283c21b32329b19",
+   "overlay_sha256": "e7fe595794c1c5626bff08e643ef22feb48f7ffc19f5e0d9db77956be992221f",
+   "name": "Feng et al. 2024",
+   "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20, Fig. 1",
+   "url": "https://doi.org/10.1186/s12886-024-03283-2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "feng2024"
+  },
+  {
+   "id": "octa_faz",
+   "items": [
+    "ana_foveal_avascular_zone"
+   ],
+   "source": "feng2024",
+   "source_file": "retinal_atlas_modality_figures/octa_scp.jpg",
+   "mask_label": "중심와 무혈관 구역(자동 추정)",
+   "legend": [
+    {
+     "label": "무혈관 구역",
+     "cls": "faz"
+    }
+   ],
+   "caption": "OCTA 표층 슬랩 가운데 혈관이 없는 어두운 부분을 노란색으로 표시했습니다. 자동 영역 추정이라 경계는 대략적입니다.",
+   "transform": "중심 80 px 창의 가장 어두운 점에서 하위 25 백분위 영역을 확장·평활",
+   "base": "octa_faz.jpg",
+   "overlay": "octa_faz_mask.png",
+   "width": 288,
+   "height": 286,
+   "base_sha256": "775595d003f104d958a2c14f14d99fda710e43c77d293f56fcbfb5a4aee693fe",
+   "overlay_sha256": "d5e755833638d137dd92e2566cf99c2bc6216af396e14f298dba83c36e55de21",
+   "name": "Feng et al. 2024",
+   "credit": "Feng Y, et al. (2024) BMC Ophthalmol 24:20, Fig. 1",
+   "url": "https://doi.org/10.1186/s12886-024-03283-2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "feng2024"
+  },
+  {
+   "id": "cilioretinal_territory",
+   "items": [
+    "ana_cilioretinal_artery"
+   ],
+   "source": "bhatt2023",
+   "source_file": "provider_figures/cureus-0015-00000048157-i01.jpg",
+   "mask_label": "섬모체망막동맥 관류 영역(자동 추정)",
+   "legend": [
+    {
+     "label": "섬모체망막동맥 영역",
+     "cls": "cilio"
+    }
+   ],
+   "caption": "중심망막동맥폐쇄로 망막이 하얗게 된 눈(무적색광 사진)에서, 섬모체망막동맥이 살려 둔 유두–황반 사이 혀 모양 영역이 어둡게 남아 있습니다. 그 영역을 주황색으로 표시했습니다.",
+   "transform": "Figure 1b 패널을 잘라 씨앗점 영역 확장(허용 오차 10)으로 대략 표시",
+   "base": "cilioretinal_territory.jpg",
+   "overlay": "cilioretinal_territory_mask.png",
+   "width": 360,
+   "height": 268,
+   "base_sha256": "24aa47412ebe0c66c00ca27ab4a9781ff855ad301a147c6cfb74754df795cc19",
+   "overlay_sha256": "ff868d8bd89afd4dfc3b6fa03b2a68b40a26aa74964247a5ab8e7240479f4783",
+   "name": "Bhatt et al. 2023",
+   "credit": "Bhatt V, et al. (2023) Cureus 15:e48157, Figure 1b",
+   "url": "https://doi.org/10.7759/cureus.48157",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bhatt2023"
+  },
+  {
+   "id": "octid_ped_serous",
+   "items": [
+    "les_ped_serous",
+    "les_ped_unspecified"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD37.jpeg",
+   "mask_label": "색소상피박리 내부 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "AMD 눈의 OCT에서 RPE가 크게 돔 모양으로 들린 색소상피박리입니다. 속이 어둡고 고른 부분을 표시했습니다.",
+   "transform": "씨앗점(500, 235) 영역 확장(허용 오차 22)",
+   "legend": [
+    {
+     "label": "색소상피박리 내부",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_ped_serous.jpg",
+   "overlay": "octid_ped_serous_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "78457765682d614d545e3d326ca0a463a043b3432813c595ea9e7215d071526e",
+   "overlay_sha256": "64eaf41346db1ad3ff0d72834c9fec4e7d0dd8f879f1e7086ee393a5c8044a9c",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_cme",
+   "items": [
+    "les_cystoid_macular_edema"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD12.jpeg",
+   "mask_label": "낭포 공간 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "망막 안에 생긴 크고 작은 낭포(어두운 둥근 공간)를 표시했습니다.",
+   "transform": "열마다 내경계막(ILM) 아래에서 Otsu 임계보다 어두운 60 px 이상 성분",
+   "legend": [
+    {
+     "label": "낭포 공간",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_cme.jpg",
+   "overlay": "octid_cme_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "03f5890a441ad5298e3b6efe177241d567de9707fab093de36b1a3695a792581",
+   "overlay_sha256": "2b7b1c80895ec7d8d8823f63e808aac57c2bc3d3a9727b5a5d28cfaac61a40d1",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_drusen",
+   "items": [
+    "les_drusen_unspecified"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD15.jpeg",
+   "mask_label": "RPE 아래 드루젠 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "RPE가 작은 언덕처럼 솟은 드루젠(RPE 아래 침착물)을 표시했습니다.",
+   "transform": "B-scan 열마다 RPE(가장 밝은 점)를 찾고, 이동 최대값 기준선보다 솟은 부분을 채움",
+   "legend": [
+    {
+     "label": "RPE 아래 드루젠",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_drusen.jpg",
+   "overlay": "octid_drusen_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "4b699bb534f10a3f924ccfd8f799adaf6ecd1a6241facde70b2da815cd6c4c3d",
+   "overlay_sha256": "a1b3746c4358ebbd31c3952f4a6f377a8d2f680520ff1eeb14f6cb6deb53186e",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_ped_drusenoid",
+   "items": [
+    "les_ped_drusenoid"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD7.jpeg",
+   "mask_label": "중심와 아래 돔 모양 융기 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "중심와 아래 중간 반사의 돔 모양 융기로, 드루젠양 색소상피박리로 보이는 병변입니다.",
+   "transform": "씨앗점(365, 255) 영역 확장(허용 오차 30)",
+   "legend": [
+    {
+     "label": "중심와 아래 돔 모양 융기",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_ped_drusenoid.jpg",
+   "overlay": "octid_ped_drusenoid_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "d25533969dc4f6e458ca4f43aab234282e402b8eca05c211acd678f678ab3053",
+   "overlay_sha256": "ed3fa3bb9aae68dcd477c4b22d895192fe7e09deb02113d023b3f2311abe3da2",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_ort",
+   "items": [
+    "les_outer_retinal_tubulation"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD42.jpeg",
+   "mask_label": "고리 모양 구조 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "외망막 안의 밝은 테두리를 가진 둥근 고리(외망막 관상 구조)를 표시했습니다.",
+   "transform": "어두운 중심 씨앗점(435, 212) 확장 후 6 px 팽창",
+   "legend": [
+    {
+     "label": "고리 모양 구조",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_ort.jpg",
+   "overlay": "octid_ort_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "63c4c8ccb69203b82e717d61aa03788f782883448426bcad20b27a0744793b32",
+   "overlay_sha256": "b1c1584d91c84712e3d69f3dd07d817b2a391976fb73c91a05c2c14d1f345e6a",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_hypertd",
+   "items": [
+    "les_hypertransmission"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD27.jpeg",
+   "mask_label": "맥락막 쪽 과투과 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "RPE가 손상된 곳 아래로 신호가 깊이 들어가 맥락막에 생긴 밝은 세로 기둥(과투과)을 표시했습니다.",
+   "transform": "맥락막 띠(깊이 215–330 px)의 열 평균 밝기가 병변 밖 기준보다 6 이상 높은 열",
+   "legend": [
+    {
+     "label": "맥락막 쪽 과투과",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_hypertd.jpg",
+   "overlay": "octid_hypertd_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "e4dd3ef4d59fdd5da4662442f2446e3fce792b3b74d9dc43c832b28dc7854b0b",
+   "overlay_sha256": "3a961d5c9229ac8003c86fb7b449ec8beca7eccd9f5119705fc5bf2773fb6dc4",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_vmt",
+   "items": [
+    "les_vitreomacular_traction"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD25.jpeg",
+   "mask_label": "후유리체막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "비스듬히 내려온 후유리체막이 중심와에 붙어 망막을 끌어당기고 있습니다(그 아래 망막하액).",
+   "transform": "열마다 망막 위 유리체에서 가장 밝은 점을 이어 선으로 표시",
+   "legend": [
+    {
+     "label": "후유리체막",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_vmt.jpg",
+   "overlay": "octid_vmt_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "de34f20f858a58de44d509b16c24ad395a60ef1f305a2038b9fa9b22f00f1dc5",
+   "overlay_sha256": "f254f38acc6d068d79669f1cd485a478e776fd780655ce1caf530cad8b5b9c18",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_vma",
+   "items": [
+    "les_vitreomacular_adhesion"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD48.jpeg",
+   "mask_label": "후유리체막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "후유리체막이 황반 표면을 따라 붙어 있는 모습을 표시했습니다(아래 망막하 반흔과 별개).",
+   "transform": "열마다 망막 위 유리체에서 가장 밝은 점을 이어 선으로 표시",
+   "legend": [
+    {
+     "label": "후유리체막",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_vma.jpg",
+   "overlay": "octid_vma_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "6834e78a5a28ea540104d4654652b0eecfd9022dc3530e9bc8c2ae1ac6904780",
+   "overlay_sha256": "2dfda112365590de7ebea4ee38190d723172f5794caa80277580e263386e5ba6",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "octid_fibrotic",
+   "items": [
+    "les_fibrotic_scar"
+   ],
+   "source": "octid",
+   "source_file": "images/AMRD48.jpeg",
+   "mask_label": "망막하 고반사 반흔 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "망막 아래의 밝고 두꺼운 물질로, 신생혈관 뒤 생긴 섬유성 반흔으로 보이는 병변입니다.",
+   "transform": "씨앗점(340, 225) 영역 확장(허용 오차 40)",
+   "legend": [
+    {
+     "label": "망막하 고반사 반흔",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_fibrotic.jpg",
+   "overlay": "octid_fibrotic_mask.png",
+   "width": 879,
+   "height": 586,
+   "base_sha256": "6834e78a5a28ea540104d4654652b0eecfd9022dc3530e9bc8c2ae1ac6904780",
+   "overlay_sha256": "1bc2c8a6c2dd0a0e415dfc49ff9bcb4d93d890f193890880a74f8fb994ff446c",
+   "name": "OCTID",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database (Borealis)",
+   "url": "https://doi.org/10.5683/SP/YEM3RA",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid"
+  },
+  {
+   "id": "fundus_drusen_large",
+   "items": [
+    "les_drusen_large"
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/061_A.png",
+   "mask_label": "노란 드루젠(대형) — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "AMD 눈의 안저 사진에서 노란 드루젠을 표시했습니다. 유두 직경(약 1,500 µm)과 비교한 크기는 대형 드루젠에 해당합니다.",
+   "transform": "녹색 채널 top-hat 상위 2.5 %, 유두 주변·혈관 제외",
+   "legend": [
+    {
+     "label": "노란 드루젠(대형)",
+     "cls": "service"
+    }
+   ],
+   "base": "fundus_drusen_large.jpg",
+   "overlay": "fundus_drusen_large_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "049c781efc5b225894165389bf4bbcafb05329b3effe77f6806be2c70ac0342a",
+   "overlay_sha256": "750fa96e16f61d1ef7a103ba489326d89f7f8f7f58398aac4a6bbf22af54323e",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_drusen_medium",
+   "items": [
+    "les_drusen_medium"
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/063_A.png",
+   "mask_label": "노란 드루젠(중형) — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "AMD 눈의 안저 사진에서 노란 드루젠을 표시했습니다. 유두 직경(약 1,500 µm)과 비교한 크기는 중형 드루젠에 해당합니다.",
+   "transform": "녹색 채널 top-hat 상위 2.5 %, 유두 주변·혈관 제외",
+   "legend": [
+    {
+     "label": "노란 드루젠(중형)",
+     "cls": "service"
+    }
+   ],
+   "base": "fundus_drusen_medium.jpg",
+   "overlay": "fundus_drusen_medium_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "efcaf4ab86e6eda4e1125f3690211cba64e8a75448905cb839ebe137079d10d1",
+   "overlay_sha256": "4417f266eefe522d67670c195af8121a4ea172405b4463bab4c8dfed4f942cac",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_cupping",
+   "items": [
+    "les_disc_cupping"
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/083_G.png",
+   "mask_label": "함몰(밝은 부분) — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "legend": [
+    {
+     "label": "함몰",
+     "cls": "service"
+    },
+    {
+     "label": "유두 경계(전문가 분할)",
+     "cls": "disc"
+    }
+   ],
+   "caption": "녹내장 눈의 유두입니다. 유두 경계(흰 선)는 데이터셋의 전문가 분할이고, 함몰로 보이는 밝은 부분은 자동 추정입니다.",
+   "transform": "유두 mask 안 녹색 채널 상위 50 % 밝기",
+   "base": "fundus_cupping.jpg",
+   "overlay": "fundus_cupping_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "23a4355ed18f77ead750133fb30f52340d7f04126f2e99eb8275fdb7ff05326d",
+   "overlay_sha256": "6795a268e07bf9be5e241b036f446291395ead73f6bd4566e67003fa13777a24",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_ppa",
+   "items": [
+    "les_peripapillary_atrophy"
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/068_A.png",
+   "mask_label": "유두주위 위축 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "유두 바로 바깥의 창백한 띠(유두주위 위축)를 표시했습니다.",
+   "transform": "유두 경계에서 0.9 반지름 안, 주변보다 밝은 부분(혈관 제외)",
+   "legend": [
+    {
+     "label": "유두주위 위축",
+     "cls": "service"
+    }
+   ],
+   "base": "fundus_ppa.jpg",
+   "overlay": "fundus_ppa_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "39b1cf7230bd9afb67a4343595c5c8385f83d312b54d966debade909ba8a3331",
+   "overlay_sha256": "5d51363e3ad6e315a0b3fc620b8c298f822efd6940fa72e6dec7a8ea60eed590",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "fundus_tessellated",
+   "items": [
+    "les_tessellated_fundus"
+   ],
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/056_A.png",
+   "mask_label": "비쳐 보이는 맥락막 혈관 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "아래쪽 망막을 통해 맥락막 혈관이 줄무늬처럼 비쳐 보이는 호피 모양 안저입니다. 아래쪽 구역의 맥락막 혈관을 표시했습니다.",
+   "transform": "아래쪽 45 % 구역의 적색 채널 국소 임계 위, 망막 혈관·유두 제외",
+   "legend": [
+    {
+     "label": "비쳐 보이는 맥락막 혈관",
+     "cls": "service"
+    }
+   ],
+   "base": "fundus_tessellated.jpg",
+   "overlay": "fundus_tessellated_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "3823e217ca8f0c21fafd0b7d6f037523015957ce189ee8c9de3d28b92c42124b",
+   "overlay_sha256": "b761ac80c2dfba48a026ee2a481f1c150919c9cf0201ceedff5642114750f3f0",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "uwf_preretinal",
+   "items": [
+    "les_hemorrhage_preretinal"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "PDR512/5_142_2021-11-14_1_R.png",
+   "mask_label": "큰 출혈 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "증식 당뇨망막병증 눈의 광각 영상에서 황반 근처의 큰 검붉은 출혈(망막앞 출혈로 보임)을 표시했습니다.",
+   "transform": "씨앗점(240, 290) 영역 확장(허용 오차 16)",
+   "legend": [
+    {
+     "label": "큰 출혈",
+     "cls": "service"
+    }
+   ],
+   "base": "uwf_preretinal.jpg",
+   "overlay": "uwf_preretinal_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "ad2d65eab193bd760b85a93340464b1b425c6569dfc4a1983760ead9e27c5ddc",
+   "overlay_sha256": "463d2803383e5cf67c27587db1cbadb200f3187949b652c5c224f74cca9009fa",
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "uwf_fvp",
+   "items": [
+    "les_fibrovascular_proliferation"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "PDR512/5_118_2022-04-21_3_R.png",
+   "mask_label": "섬유혈관 증식막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "증식 당뇨망막병증 눈의 광각 영상에서 혈관궁을 따라 자란 섬유혈관 증식막(노랗고 흰 막)을 표시했습니다.",
+   "transform": "상자 안 노랗고 밝은 화소(녹색 > 95, 적색 > 125)",
+   "legend": [
+    {
+     "label": "섬유혈관 증식막",
+     "cls": "service"
+    }
+   ],
+   "base": "uwf_fvp.jpg",
+   "overlay": "uwf_fvp_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "ddbc30d485d3215707087fdeffdf96418be7494cfddb746bb694838327692325",
+   "overlay_sha256": "87cd223ae19a23b33d4a3492bd813628108ed966984a3573dd0d50643d238475",
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "octid_mh_full",
+   "items": [
+    "les_macular_hole_full_thickness"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH7.jpeg",
+   "mask_label": "전층 결손 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "망막 전층이 끊겨 RPE까지 뚫린 황반원공입니다. 양쪽 가장자리는 낭포로 부풀어 있습니다. 구멍 부분을 표시했습니다.",
+   "transform": "씨앗점(365, 185) 영역 확장(허용 오차 20), 원공 가장자리 위쪽 선까지로 제한",
+   "legend": [
+    {
+     "label": "전층 결손",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_mh_full.jpg",
+   "overlay": "octid_mh_full_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "46b2c2e776b3ebdaf0a1f96579e6845b3af00fe72ce74efaeff821bda41b2a18",
+   "overlay_sha256": "27fd9eae90f65e7ce99530a58d46fff68f2c5cab15b15c144c1789a6605a9952",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "octid_mh_lamellar",
+   "items": [
+    "les_macular_hole_lamellar"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH97.jpeg",
+   "mask_label": "안쪽 망막 결손 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "중심와의 안쪽 망막이 넓게 패였지만 바닥의 바깥 망막은 남아 있습니다. 층판 황반원공으로 보이는 결손 부분을 표시했습니다.",
+   "transform": "씨앗점(375, 122) 영역 확장(허용 오차 16), 결손 가장자리 위쪽 선까지로 제한",
+   "legend": [
+    {
+     "label": "안쪽 망막 결손",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_mh_lamellar.jpg",
+   "overlay": "octid_mh_lamellar_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "4c7f77aa17c04c573f31112a505af9e5a23981c983477e3635339601786f1bb6",
+   "overlay_sha256": "74419a1259a39daa4da9aecd0dd55c2c88eafe6bface0cbfcc071edf5e908233",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "octid_erm",
+   "items": [
+    "les_epiretinal_membrane"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH30.jpeg",
+   "mask_label": "표면의 밝은 막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "원공 옆 망막 표면을 덮은 밝고 주름진 막으로, 망막전막으로 보입니다. 막이 당기는 곳마다 표면이 뾰족하게 솟아 있습니다.",
+   "transform": "열마다 망막 표면의 첫 밝은 점에서 4 px 두께의 선",
+   "legend": [
+    {
+     "label": "표면의 밝은 막",
+     "cls": "membrane"
+    }
+   ],
+   "base": "octid_erm.jpg",
+   "overlay": "octid_erm_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "5555fdfca742312144cb17733f0ba27c85428f6aa2097f591348ee741e97e89a",
+   "overlay_sha256": "febe3849e966ecaaf3363bfe08994b183633b562ca425a949fdc7f0b84d95ad0",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "octid_erm_schisis",
+   "items": [
+    "les_erm_foveoschisis"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH17.jpeg",
+   "mask_label": "층간분리 공간 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "표면 막 아래 망막 안쪽이 세로 기둥 모양으로 갈라진 층간분리로 보입니다(같은 단면에 황반원공 동반). 갈라진 공간과 표면 막을 표시했습니다.",
+   "transform": "열마다 망막 표면과 RPE 사이에서 유리체 밝기 +14 이하인 80 px 이상 성분; 막은 표면 첫 밝은 점에서 3 px",
+   "legend": [
+    {
+     "label": "층간분리 공간",
+     "cls": "service"
+    },
+    {
+     "label": "표면의 막",
+     "cls": "membrane"
+    }
+   ],
+   "base": "octid_erm_schisis.jpg",
+   "overlay": "octid_erm_schisis_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "ab70dc1016b3bd554aa7f5dc42ca6011c7810254151f412ee0943f77bcc3d005",
+   "overlay_sha256": "71dd72db2bdcb24252c48fee0fc7eac5d264f4ab5f0387615af991e1c1397da4",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "octid_hyaloid",
+   "items": [
+    "ana_posterior_hyaloid",
+    "ana_vitreous"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH25.jpeg",
+   "mask_label": "후유리체막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "망막에서 떨어져 들린 후유리체막이 원공 가장자리에만 붙어 있습니다. 막 위쪽이 유리체 젤, 막과 망막 사이의 어두운 공간은 막이 떨어져 생긴 공간입니다.",
+   "transform": "열마다 망막 위 띠(깊이 40–186 px)에서 가장 밝은 점을 이은 선; 그 위쪽을 유리체 쪽으로 옅게 칠함",
+   "legend": [
+    {
+     "label": "후유리체막",
+     "cls": "service"
+    },
+    {
+     "label": "유리체 젤 쪽",
+     "cls": "vitreous"
+    }
+   ],
+   "base": "octid_hyaloid.jpg",
+   "overlay": "octid_hyaloid_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "a1ae8fc923f7b5fc1b40a8e00d3942eac01f9db662a93ba87c1b9da2a434f4a1",
+   "overlay_sha256": "60272bfec8c45f333aa4c7ac72e837362d27ecff856f0bf8f4f8a2b057385ea3",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "palm_macular_atrophy",
+   "items": [
+    "les_myopic_macular_atrophy"
+   ],
+   "source": "palm",
+   "source_file": "Images/P0004.jpg",
+   "mask_label": "중심와를 덮는 위축(공급자 전문가 분할)",
+   "caption": "병적 근시 눈에서 중심와를 덮는 경계가 뚜렷한 둥근 위축입니다. 가장자리에 색소가 모여 있습니다. 공급자 위축 mask 중 중심와 좌표를 포함한 조각만 표시했습니다.",
+   "transform": "공급자 위축 mask의 연결 성분 중 공급자 중심와 좌표를 포함한 성분; 유두 경계는 공급자 유두 mask",
+   "legend": [
+    {
+     "label": "위축(전문가 분할)",
+     "cls": "service"
+    },
+    {
+     "label": "유두 경계",
+     "cls": "disc"
+    }
+   ],
+   "base": "palm_macular_atrophy.jpg",
+   "overlay": "palm_macular_atrophy_mask.png",
+   "width": 1200,
+   "height": 1162,
+   "base_sha256": "ab7b637325b86b7452b3773fa47c89f4de04c8a7132b3dd0b70cfe778c287182",
+   "overlay_sha256": "6994903c25e3115f3e62819f959f9454ffd6ed603fd8f6d9f0322b4aaf02dedf",
+   "name": "PALM",
+   "credit": "Fang H, et al. PALM: Open fundus photograph dataset with pathologic myopia recognition and anatomical structure annotation. Sci Data 2024;11:99 (figshare 21299148)",
+   "url": "https://doi.org/10.6084/m9.figshare.21299148",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "palm"
+  },
+  {
+   "id": "palm_patchy_atrophy",
+   "items": [
+    "les_myopic_patchy_atrophy"
+   ],
+   "source": "palm",
+   "source_file": "Images/P0031.jpg",
+   "mask_label": "따로 떨어진 위축 조각(공급자 전문가 분할)",
+   "caption": "병적 근시 눈의 후극부에 흩어진, 경계가 뚜렷한 회백색 위축 조각들입니다. 유두에 붙은 유두주위 위축은 빼고 따로 떨어진 조각만 표시했습니다.",
+   "transform": "공급자 위축 mask의 연결 성분 중 유두 mask(40 px 팽창)와 닿지 않는 성분",
+   "legend": [
+    {
+     "label": "반점형 위축(전문가 분할)",
+     "cls": "service"
+    },
+    {
+     "label": "유두 경계",
+     "cls": "disc"
+    }
+   ],
+   "base": "palm_patchy_atrophy.jpg",
+   "overlay": "palm_patchy_atrophy_mask.png",
+   "width": 1200,
+   "height": 1162,
+   "base_sha256": "96924ccb7239c0d30dbf8908f4fb83599163042c2d8e409b5bc8b0550be958c8",
+   "overlay_sha256": "e0ded940abfa44a8903105656339275e19e0e87f97bfcfd430ea45e37a61153e",
+   "name": "PALM",
+   "credit": "Fang H, et al. PALM: Open fundus photograph dataset with pathologic myopia recognition and anatomical structure annotation. Sci Data 2024;11:99 (figshare 21299148)",
+   "url": "https://doi.org/10.6084/m9.figshare.21299148",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "palm"
+  },
+  {
+   "id": "palm_tilted_disc",
+   "items": [
+    "les_tilted_disc"
+   ],
+   "source": "palm",
+   "source_file": "Images/P0054.jpg",
+   "mask_label": "유두(공급자 전문가 분할)",
+   "caption": "병적 근시 눈의 기울어진 유두입니다. 유두 mask에 맞춘 타원의 짧은 지름/긴 지름 비는 0.45이고, 유두 옆에 넓은 유두주위 위축(흰 선)이 붙어 있습니다.",
+   "transform": "공급자 유두 mask를 옅게 칠하고 타원 근사(regionprops)로 짧은/긴 지름 비 계산; 흰 선은 유두 근처 공급자 위축 mask 경계",
+   "legend": [
+    {
+     "label": "유두(전문가 분할)",
+     "cls": "service"
+    },
+    {
+     "label": "유두주위 위축 경계",
+     "cls": "disc"
+    }
+   ],
+   "base": "palm_tilted_disc.jpg",
+   "overlay": "palm_tilted_disc_mask.png",
+   "width": 1200,
+   "height": 1162,
+   "base_sha256": "2e64b27d7bff007852ccdac04425f3d3e4d9d44da9cbcccba6df4627d56929e0",
+   "overlay_sha256": "a8dd955774e620b43fcd65f36eebde02c1bbfc293f02c2569e30baaa9fdcf45c",
+   "name": "PALM",
+   "credit": "Fang H, et al. PALM: Open fundus photograph dataset with pathologic myopia recognition and anatomical structure annotation. Sci Data 2024;11:99 (figshare 21299148)",
+   "url": "https://doi.org/10.6084/m9.figshare.21299148",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "palm"
+  },
+  {
+   "id": "palm_detachment",
+   "items": [
+    "les_retinal_detachment_rhegmatogenous"
+   ],
+   "source": "palm",
+   "source_file": "Images/P0058.jpg",
+   "mask_label": "망막박리 범위(공급자 전문가 분할)",
+   "caption": "병적 근시 눈에서 후극부 망막이 넓게 들뜬 망막박리입니다(공급자 표시). 이 영상만으로 열공이 원인인지는 확인할 수 없습니다.",
+   "transform": "공급자 망막박리 mask",
+   "legend": [
+    {
+     "label": "망막박리(전문가 분할)",
+     "cls": "vitreous"
+    }
+   ],
+   "base": "palm_detachment.jpg",
+   "overlay": "palm_detachment_mask.png",
+   "width": 1200,
+   "height": 1162,
+   "base_sha256": "e953282a13ef524dabd83d9ad8f01eb88b3690c116a609e2cfb385db543ee26e",
+   "overlay_sha256": "2819635ac70ecd866540cb0ecdf3be7b4e2e699988c7e8c20da19af3e0cefa87",
+   "name": "PALM",
+   "credit": "Fang H, et al. PALM: Open fundus photograph dataset with pathologic myopia recognition and anatomical structure annotation. Sci Data 2024;11:99 (figshare 21299148)",
+   "url": "https://doi.org/10.6084/m9.figshare.21299148",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "palm"
+  },
+  {
+   "id": "octid_staphyloma",
+   "items": [
+    "les_posterior_staphyloma"
+   ],
+   "source": "octid_mh",
+   "source_file": "images/MH28.jpeg",
+   "mask_label": "눈 뒤벽 굴곡(RPE 선) — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "눈 뒤벽(RPE 선)이 중심와 쪽으로 깊게 오목해진 고도근시 단면으로, 후포도종으로 보이는 굴곡입니다(같은 단면에 황반원공 동반). 후포도종의 확정에는 넓은 범위 영상이 필요합니다.",
+   "transform": "열마다 깊이 60–440 px에서 가장 밝은 행(가우시안 σ 3), 열 방향 중앙값 필터(25)",
+   "legend": [
+    {
+     "label": "RPE 선",
+     "cls": "service"
+    }
+   ],
+   "base": "octid_staphyloma.jpg",
+   "overlay": "octid_staphyloma_mask.png",
+   "width": 750,
+   "height": 500,
+   "base_sha256": "66673c51651f599e93b475a7d3ad8e2236c26f87632ce369e1a3c09ee18291eb",
+   "overlay_sha256": "92357497fe91caf735fccd8cb62e3569a0964fd0dc15f981468c07124c73bb09",
+   "name": "OCTID (Macular Hole)",
+   "credit": "Gholami P, et al. OCTID: Optical coherence tomography image database — Macular Hole Retinal OCT images (Borealis)",
+   "url": "https://doi.org/10.5683/SP/MBMQGD",
+   "license": "CC0 1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source_key": "octid_mh"
+  },
+  {
+   "id": "paper_myopic_traction",
+   "items": [
+    "les_myopic_traction_maculopathy"
+   ],
+   "source": "lai2016",
+   "source_file": "provider_figures/12886_2016_195_Fig1_HTML.gif",
+   "mask_label": "망막층간분리 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "고도근시 눈의 OCT입니다. 바깥 망막이 기둥을 남기며 넓게 갈라졌고(층간분리), 중심와 아래에는 망막이 RPE에서 들뜬 주머니(중심와 박리)가 있습니다. 근시성 견인 황반병증의 전형적 소견입니다(저자 설명).",
+   "transform": "원 그림 전체(358×184); 층간분리: 씨앗점(140, 125) 영역 확장(허용 오차 16); 박리: 씨앗점(185, 146) 영역 확장(허용 오차 18)",
+   "legend": [
+    {
+     "label": "망막층간분리",
+     "cls": "service"
+    },
+    {
+     "label": "중심와 박리",
+     "cls": "vitreous"
+    }
+   ],
+   "base": "paper_myopic_traction.jpg",
+   "overlay": "paper_myopic_traction_mask.png",
+   "width": 358,
+   "height": 184,
+   "base_sha256": "59bea2ff66fc266b4640f8509dcc7846714985ebeb9785c944fab19b197fc0f2",
+   "overlay_sha256": "76dc11ae45c46064de516039a788b889aa63ffb61ce4c174303543a3e57a4659",
+   "name": "Lai et al. 2016",
+   "credit": "Lai T, et al. (2016) BMC Ophthalmol 16:18, Fig. 1",
+   "url": "https://doi.org/10.1186/s12886-016-0195-3",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "lai2016"
+  },
+  {
+   "id": "paper_lacquer_crack",
+   "items": [
+    "les_lacquer_crack"
+   ],
+   "source": "jonas2021",
+   "source_file": "provider_figures/12886_2021_2216_Fig1_HTML.png",
+   "mask_label": "래커 균열 부위 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "고도근시(−20 D) 눈의 2001년 안저 사진입니다. 검은 화살표가 가리키는 가는 노란 선이 래커 균열이며(저자 표시), 노란 원으로 그 부위를 둘렀습니다. 이 균열은 5년 뒤 사진에서는 보이지 않았습니다.",
+   "transform": "패널 a(0, 0, 643, 484) 잘라냄; 저자 화살표가 가리키는 부위에 타원(중심 292, 302)",
+   "legend": [
+    {
+     "label": "래커 균열 부위",
+     "cls": "service"
+    }
+   ],
+   "base": "paper_lacquer_crack.jpg",
+   "overlay": "paper_lacquer_crack_mask.png",
+   "width": 643,
+   "height": 484,
+   "base_sha256": "f508c920d866e2f41dd31fe3c305c5600bf1ef0345191b531102734916fec0fe",
+   "overlay_sha256": "551ce829ab5e24f4c8cc0862396c4875fcb964b4dbd5c337e70cb601c91ff40d",
+   "name": "Jonas et al. 2021",
+   "credit": "Jonas RA, Wei CC, Jonas JB (2021) BMC Ophthalmol 21:443, Fig. 1a",
+   "url": "https://doi.org/10.1186/s12886-021-02216-7",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "jonas2021"
+  },
+  {
+   "id": "paper_dome_macula",
+   "items": [
+    "les_dome_shaped_macula"
+   ],
+   "source": "lee2020",
+   "source_file": "provider_figures/12886_2020_1473_Fig1_HTML.png",
+   "mask_label": "RPE 선(돔 윤곽) — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "고도근시 눈의 세로 OCT입니다. 뒤로 오목해야 할 RPE 선이 중심와 아래에서 안쪽으로 볼록하게 솟아 있습니다(돔 높이 85 µm, 저자 측정). 검은 선은 저자의 높이·지름 측정선, 흰 삼각형은 공막 바깥 경계입니다.",
+   "transform": "패널 A(0, 0, 1418, 370) 잘라냄; 밝은 RPE–공막 띠(가우시안 σ 3, 밝기 > 175)의 최대 연결 성분 윗경계, 열 방향 중앙값 필터(31)",
+   "legend": [
+    {
+     "label": "RPE 선(돔 윤곽)",
+     "cls": "service"
+    }
+   ],
+   "base": "paper_dome_macula.jpg",
+   "overlay": "paper_dome_macula_mask.png",
+   "width": 1200,
+   "height": 313,
+   "base_sha256": "4e930c114ae8941856050cf0ed7461b4b42d1f0495999afae7e3bf0195536303",
+   "overlay_sha256": "dd5c445caba2bc095d2624e0d2ca4071c6a4e06760f98a2f1c50651abc3a8b70",
+   "name": "Lee et al. 2020",
+   "credit": "Lee GW, et al. (2020) BMC Ophthalmol 20:202, Fig. 1a",
+   "url": "https://doi.org/10.1186/s12886-020-01473-2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "lee2020"
+  },
+  {
+   "id": "paper_myopic_cnv",
+   "items": [
+    "les_myopic_cnv"
+   ],
+   "source": "wang2021",
+   "source_file": "provider_figures/fmed-08-657772-g002.jpg",
+   "mask_label": "신생혈관막 — 서비스 표시(자동 추정, 전문가 검토 전)",
+   "caption": "고도근시(−14.75 D) 눈의 활동성 근시성 맥락막 신생혈관입니다. 위 OCT(A)에서 RPE 위로 솟은 고반사 병변(2형 CNV), 아래 OCTA(B)에서 어두운 테두리로 둘러싸인 그물 모양 신생혈관막이 보입니다(저자 설명). 노란 원은 두 영상의 병변 위치입니다.",
+   "transform": "왼쪽 열 패널 A–B(0, 0, 268, 478) 잘라냄; 저자 화살표·화살촉 부위에 타원 두 개",
+   "legend": [
+    {
+     "label": "신생혈관막",
+     "cls": "service"
+    }
+   ],
+   "base": "paper_myopic_cnv.jpg",
+   "overlay": "paper_myopic_cnv_mask.png",
+   "width": 268,
+   "height": 478,
+   "base_sha256": "75712de59aec9ce1420fe0bf0c9c6a75f3da38d8cefa683f09998e69f7ae1e9c",
+   "overlay_sha256": "f26f9efc026320ea41160dc07ad9f2c54d75effa7bbca652ab5042b0808f3fc2",
+   "name": "Wang et al. 2021",
+   "credit": "Wang Y, et al. (2021) Front Med 8:657772, Fig. 2A–B",
+   "url": "https://doi.org/10.3389/fmed.2021.657772",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "wang2021"
+  },
+  {
+   "id": "fundus_irma",
+   "items": [
+    "les_irma"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_08.jpg",
+   "mask_label": "망막내 미세혈관 이상(IRMA)(공급자 전문가 mask)",
+   "caption": "컬러 안저 사진에서 망막내 미세혈관 이상(IRMA)을(를) 표시했습니다. 굵은 혈관 사이에서 가늘고 구불구불하게 갈라진 이상 혈관입니다.",
+   "transform": "공급자 1024×1024 영상과 통합 mask(IRMA 96·NV 166·VH 4)를 그대로 사용; (96,128)–(816,608) 영역을 잘라 확대",
+   "base": "fundus_irma.jpg",
+   "overlay": "fundus_irma_mask.png",
+   "width": 720,
+   "height": 480,
+   "base_sha256": "7937b2d1826f600b9811ae8fdbf7aca05006af1193ea1097da839f7febc95177",
+   "overlay_sha256": "494f3fda09559022ec3f75ea8afbce81fc5ddc6935ca30f3cd4aba35460447a0",
+   "context": "fundus_irma_context.jpg",
+   "context_sha256": "30642c8a1c3ef850b53e96209558718fba8083c01cd3a9b0b4d4571181fcc435",
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_nv",
+   "items": [
+    "les_neovascularization_pooled"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_27.png",
+   "mask_label": "신생혈관(NV)(공급자 전문가 mask)",
+   "caption": "컬러 안저 사진에서 신생혈관(NV)을(를) 표시했습니다. 공급자 mask는 유두 신생혈관(NVD)과 망막 신생혈관(NVE)을 나누지 않습니다. 이 눈의 표시는 유두 경계에서 약 1 유두지름 안팎의 큰 혈관을 따라 있습니다.",
+   "transform": "공급자 1024×1024 영상과 통합 mask(IRMA 96·NV 166·VH 4)를 그대로 사용",
+   "base": "fundus_nv.jpg",
+   "overlay": "fundus_nv_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "3f3d19b77f5fca88e64afc4a2925a8c5f58e56b8229ce536ef464423b0a3a51d",
+   "overlay_sha256": "53e6871878296f6d793166ef3d28764ef067a8eed3293ea79d430a1617ffcdbe",
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_vh",
+   "items": [
+    "les_hemorrhage_vitreous"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_17.jpg",
+   "mask_label": "유리체 출혈(공급자 전문가 mask)",
+   "caption": "컬러 안저 사진에서 유리체 출혈을(를) 표시했습니다. 아래쪽에 고인 넓은 출혈이 망막 혈관을 가리고 있습니다.",
+   "transform": "공급자 1024×1024 영상과 통합 mask(IRMA 96·NV 166·VH 4)를 그대로 사용",
+   "base": "fundus_vh.jpg",
+   "overlay": "fundus_vh_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "bacd842f56a9d278e211c16a8c63374151e18be31f7426bc237114cda0a6d134",
+   "overlay_sha256": "24447eebca72995eeed3834a5861cce44818538ea2a9c948547bec73264191f7",
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "zone_foveola",
+   "items": [
+    "ana_foveola"
+   ],
+   "mask_label": "중심소와(지름 0.35 mm)(해부학적 정의로 그린 구역)",
+   "caption": "정상 눈 안저 사진에서 중심소와(지름 0.35 mm)을(를) 표시했습니다. 중심와 바닥의 가장 얇은 가운데 부분입니다. 중심은 전문가가 표시한 중심와이고, 크기는 평균 눈 크기로 환산한 근사입니다.",
+   "transform": "유두 중심–중심와 거리를 4.5 mm로 가정해 1 mm ≈ 77 px로 환산; 전문가 중심와 mask의 중심에서 반지름 0–0.175 mm 영역",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_foveola.jpg",
+   "overlay": "zone_foveola_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "79396c65f1cd7435f3ec674c94f5dde54e50b80f1d9951b8b81793ddc4ba7cf7",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "zone_parafovea",
+   "items": [
+    "ana_parafovea"
+   ],
+   "mask_label": "부중심와(중심에서 0.75–1.25 mm 띠)(해부학적 정의로 그린 구역)",
+   "caption": "정상 눈 안저 사진에서 부중심와(중심에서 0.75–1.25 mm 띠)을(를) 표시했습니다. 중심와(지름 1.5 mm)를 둘러싼 0.5 mm 폭의 띠로, 신경절세포층이 가장 두꺼운 곳입니다. 중심은 전문가가 표시한 중심와이고, 크기는 평균 눈 크기로 환산한 근사입니다.",
+   "transform": "유두 중심–중심와 거리를 4.5 mm로 가정해 1 mm ≈ 77 px로 환산; 전문가 중심와 mask의 중심에서 반지름 0.75–1.25 mm 영역",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_parafovea.jpg",
+   "overlay": "zone_parafovea_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "1df8a12a83d2dd2513364e46e1422d38598866dc68822b8c4c3260cb003c7986",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "zone_perifovea",
+   "items": [
+    "ana_perifovea"
+   ],
+   "mask_label": "주변황반(중심에서 1.25–2.75 mm 띠)(해부학적 정의로 그린 구역)",
+   "caption": "정상 눈 안저 사진에서 주변황반(중심에서 1.25–2.75 mm 띠)을(를) 표시했습니다. 부중심와 바깥 1.5 mm 폭의 띠로, 황반의 가장 바깥 부분입니다. 중심은 전문가가 표시한 중심와이고, 크기는 평균 눈 크기로 환산한 근사입니다.",
+   "transform": "유두 중심–중심와 거리를 4.5 mm로 가정해 1 mm ≈ 77 px로 환산; 전문가 중심와 mask의 중심에서 반지름 1.25–2.75 mm 영역",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_perifovea.jpg",
+   "overlay": "zone_perifovea_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "723a56dd4c7854c0365cbe3900fc05b2d1d1f504de1b19538820eee681d46137",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "zone_etdrs_grid",
+   "items": [
+    "zone_etdrs_grid"
+   ],
+   "mask_label": "ETDRS 격자(1·3·6 mm 원, 9구역)",
+   "caption": "정상 눈 안저 사진에 ETDRS 격자를 겹쳤습니다. 중심 1 mm 원, 3 mm·6 mm 고리를 위·아래·코쪽·귀쪽 네 구역으로 나눠 모두 9구역이며, OCT 두께 지도는 이 구역별 평균으로 보고합니다.",
+   "transform": "유두 중심–중심와 거리를 4.5 mm로 가정해 1 mm ≈ 77 px로 환산; 전문가 중심와 mask의 중심에 격자를 그림",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_etdrs_grid.jpg",
+   "overlay": "zone_etdrs_grid_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "a769d6beacd6f3e8ac6878babaaf4baf25455cd58b5a9b1ac60a33d09f1ee7a8",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "zone_peripapillary",
+   "items": [
+    "zone_peripapillary"
+   ],
+   "mask_label": "유두주위 구역(유두 경계–지름 3.46 mm 원)",
+   "legend": [
+    {
+     "label": "유두주위 구역",
+     "cls": "service"
+    },
+    {
+     "label": "시신경유두 경계(전문가)",
+     "cls": "disc"
+    }
+   ],
+   "caption": "시신경유두(흰 선, 전문가 분할) 바깥에서 OCT 유두주위 신경섬유층 원형 스캔 자리(지름 3.46 mm)까지를 표시했습니다.",
+   "transform": "유두 중심–중심와 거리를 4.5 mm로 가정해 1 mm ≈ 77 px로 환산; 전문가 유두 mask(유두 위 혈관 자리를 볼록 껍질로 메움) 중심에서 반지름 1.73 mm 원 안, 유두 바깥; (489, 301, 888, 700) 영역을 잘라 확대",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_peripapillary.jpg",
+   "overlay": "zone_peripapillary_mask.png",
+   "width": 399,
+   "height": 399,
+   "base_sha256": "f00f5aaed576a1cee78d99f36f011e62abd6cd2fb63924a9c6a87ecfbd03b6a6",
+   "overlay_sha256": "60b84fbaa1c7ad66710ad523f5d9e72ac49f85085dbfe1ed2ac030f9447cdf40",
+   "context": "zone_peripapillary_context.jpg",
+   "context_sha256": "0654149d32eaa44f096f88ea85d6d106369214cb6422ec5e92b8e0b76ea13dcb",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "zone_fundus_quadrant",
+   "items": [
+    "zone_fundus_quadrant"
+   ],
+   "mask_label": "안저 사분면(S 위·I 아래·N 코쪽·T 귀쪽)",
+   "caption": "중심와를 지나는 두 선으로 안저를 위·아래·코쪽·귀쪽 사분면으로 나눴습니다. 가로선은 유두와 중심와를 잇는 선입니다. 사분면의 기준점(중심와 또는 유두)은 쓰임새마다 다를 수 있습니다.",
+   "transform": "전문가 중심와·유두 mask 중심을 지나는 선과 그 수직선",
+   "source": "fundus_avseg_7c",
+   "source_file": "OrginalImages/Org/005_N.png",
+   "base": "zone_fundus_quadrant.jpg",
+   "overlay": "zone_fundus_quadrant_mask.png",
+   "width": 1024,
+   "height": 1024,
+   "base_sha256": "4f54b479ee2f68624dedc5dc58bc61e94895be4c0298de22b50034fa6a40a08e",
+   "overlay_sha256": "5f19782863ddd3fcb4150e21eab6360b02bad3f6c03945126da3b8161cecea96",
+   "name": "Fundus-AVSeg-7C",
+   "credit": "Intajag S, Bhurayanontachai P. Fundus-AVSeg-7C (Zenodo 23277451; 원 자료 Fundus-AVSeg, Deng Z et al. Sci Data 2025)",
+   "url": "https://doi.org/10.5281/zenodo.23277451",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fundus_avseg_7c"
+  },
+  {
+   "id": "crao_cherry_red_spot",
+   "items": [
+    "les_cherry_red_spot"
+   ],
+   "mask_label": "체리 적색 반점 위치(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "중심망막동맥폐쇄 눈의 컬러 안저 사진입니다. 주변 망막이 허혈로 뿌옇게 하얘져서, 망막이 가장 얇은 중심와는 맥락막 색이 비쳐 상대적으로 붉고 어둡게 보입니다(노란 원).",
+   "transform": "Figure 1a 컬러 패널(0,0)–(372,268)을 잘라 확대; 평활 영상에서 황반 부근 가장 어두운 점에 원",
+   "source": "bhatt2023",
+   "source_file": "provider_figures/cureus-0015-00000048157-i01.jpg",
+   "base": "crao_cherry_red_spot.jpg",
+   "overlay": "crao_cherry_red_spot_mask.png",
+   "width": 372,
+   "height": 268,
+   "base_sha256": "48018fb1a8cc4bd239eb5a09712b41e8899f09e2960c7ef1dfae4e44064fbd53",
+   "overlay_sha256": "a915009a30622fe31a2dec4fd294afaa4f2107a1b524cd2a3bb507b980169c48",
+   "name": "Bhatt et al. 2023",
+   "credit": "Bhatt V, et al. (2023) Cureus 15:e48157, Figure 1b",
+   "url": "https://doi.org/10.7759/cureus.48157",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bhatt2023"
+  },
+  {
+   "id": "crao_retinal_whitening",
+   "items": [
+    "les_retinal_whitening"
+   ],
+   "mask_label": "허혈성 백색 부종 범위(대략, 서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "같은 눈에서 허혈로 하얗고 불투명해진 후극부 망막을 대략 표시했습니다. 유두와 중심와 사이의 어두운 혀 모양 부분은 섬모체망막동맥이 살려 둔 곳이라 표시에서 빠져 있습니다. 경계는 밝기 기준의 자동 추정입니다.",
+   "transform": "Figure 1a 컬러 패널(0,0)–(372,268)을 잘라 확대; 중심와에서 반지름 120 px 안, 밝기 상위 65% 영역을 열기·닫기 후 가장 큰 덩어리",
+   "source": "bhatt2023",
+   "source_file": "provider_figures/cureus-0015-00000048157-i01.jpg",
+   "base": "crao_retinal_whitening.jpg",
+   "overlay": "crao_retinal_whitening_mask.png",
+   "width": 372,
+   "height": 268,
+   "base_sha256": "48018fb1a8cc4bd239eb5a09712b41e8899f09e2960c7ef1dfae4e44064fbd53",
+   "overlay_sha256": "2df090fe4b688d0c9281bbbaa0096ebe39cb14ce853f8395d87f2c8ad6bc0bc7",
+   "name": "Bhatt et al. 2023",
+   "credit": "Bhatt V, et al. (2023) Cureus 15:e48157, Figure 1b",
+   "url": "https://doi.org/10.7759/cureus.48157",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bhatt2023"
+  },
+  {
+   "id": "olives_ilm",
+   "items": [
+    "ana_ilm"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "내경계막(망막 안쪽 표면)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 내경계막(망막 안쪽 표면)을(를) 표시했습니다. 유리체와 망막이 만나는 맨 위 밝은 경계입니다. 위쪽의 가는 선은 떨어진 후유리체막입니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_ilm.jpg",
+   "overlay": "olives_ilm_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "5a55d8bff22dc59ab50f3f96291a6abeaca067ea90d5dade8f81490c7553a6ad",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_total_retina",
+   "items": [
+    "ana_total_retina"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "전체 망막(내경계막–브루크막)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 전체 망막(내경계막–브루크막)을(를) 표시했습니다. OCT 두께 지도가 재는 전체 망막 구간입니다. 중심와에서 가장 얇습니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_total_retina.jpg",
+   "overlay": "olives_total_retina_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "fba60bc9d2515e7ce23096ab93f54b48e9e3a9191a673e04d24e00139ad89c27",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_neurosensory_retina",
+   "items": [
+    "ana_neurosensory_retina"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "신경감각망막(내경계막–RPE 위)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 신경감각망막(내경계막–RPE 위)을(를) 표시했습니다. 빛을 받아 신호를 만드는 망막 본체로, 아래의 RPE와는 따로 셉니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_neurosensory_retina.jpg",
+   "overlay": "olives_neurosensory_retina_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "ae6351a41a8d3907e52f6499885bcd4d61607be53c8a3315693c9550598a2ffc",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_inner_retina",
+   "items": [
+    "ana_inner_retina"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "내망막(내경계막–바깥망상층)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 내망막(내경계막–바깥망상층)을(를) 표시했습니다. 신경섬유층·신경절세포층·속망상층·속핵층을 포함하는 안쪽 구간입니다. 중심와에서는 옆으로 비켜나 거의 없습니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_inner_retina.jpg",
+   "overlay": "olives_inner_retina_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "5a9feb663d0a4f2c93b9907356b72f4492445619daf9f81604c92230bd663343",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_outer_retina",
+   "items": [
+    "ana_outer_retina"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "외망막(바깥망상층–브루크막)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 외망막(바깥망상층–브루크막)을(를) 표시했습니다. 외핵층·광수용체·RPE를 포함하는 바깥 구간으로, 중심와에서 오히려 두꺼워집니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_outer_retina.jpg",
+   "overlay": "olives_outer_retina_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "c33846580ac2d6b78844e491d3c593648f4f1d65d730802f9174f38edba9625a",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_onl",
+   "items": [
+    "ana_onl"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "외핵층(어두운 두꺼운 띠)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 외핵층(어두운 두꺼운 띠)을(를) 표시했습니다. 광수용체 세포체가 모인 어두운 띠입니다. 중심와 아래에서 가장 두껍습니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_onl.jpg",
+   "overlay": "olives_onl_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "f357b6a9a98e7b822899276c0f98a98c5fc87a09bfa3c6d317371bafbc3db000",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_bruch",
+   "items": [
+    "ana_bruch_membrane"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000024.tif",
+   "mask_label": "브루크막 위치(RPE 띠 아래 경계)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT B-scan에서 브루크막 위치(RPE 띠 아래 경계)을(를) 표시했습니다. 정상 눈에서는 RPE와 붙어 있어 따로 보이지 않으므로, RPE 밝은 띠의 아래 경계를 브루크막 위치로 표시했습니다. 공급자 바이오마커 16종이 모두 0(이상 없음)인 중심와 단면입니다. 경계는 열마다 밝기 변화로 자동 추적한 것이라 실제 층 경계와 몇 화소 어긋날 수 있습니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_bruch.jpg",
+   "overlay": "olives_bruch_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "4a1f6c06abb80d6a8c0a0820cf8046279d8112af67f0d4ed87d4323321c9fd04",
+   "overlay_sha256": "51967ef1cdc47a25586d95868dc49200aab8e814ef54255bc15682975575c840",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_macular_thickening",
+   "items": [
+    "les_macular_thickening"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/GILA/0204GOS/V21/OS/TREX_DME_000025.tif",
+   "mask_label": "두꺼워진 망막 전체 구간(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨황반부종 눈의 OCT B-scan입니다. 공급자 라벨은 망막 두꺼워짐·황반부종(DRT/ME)과 망막내액입니다. 망막 안에 어두운 낭 모양 공간이 생기며 전체 두께가 늘었고, 정상 중심와의 오목함이 사라졌습니다. 표시는 내경계막–브루크막 구간의 자동 추적입니다.",
+   "transform": "원 B-scan 504×496에서 40–340행을 잘라 사용; 열별 밝기 경계 자동 추적",
+   "base": "olives_macular_thickening.jpg",
+   "overlay": "olives_macular_thickening_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "ee03a6b7768b40478ab700be016e2cc83d7b607e0e90d1c4a6faa15b3a0b8bde",
+   "overlay_sha256": "2b96511a05d172d927b21721d6cda76416a9c324dd82bf1d3bac2e4d9af1c861",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_rpe_disruption",
+   "items": [
+    "les_rpe_attenuation_disruption"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/TREX/0242TOS/V12/OS/TREXO_000019.tif",
+   "mask_label": "RPE 단절 위치(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨황반부종 눈의 OCT B-scan입니다. 공급자 라벨에 RPE 단절이 있는 단면이며, 노란 원 자리에서 RPE 띠가 끊기고 그 위 고반사 물질 아래로 세로 그림자가 집니다. 단면 단위 라벨이라 원의 위치는 그림자 열을 찾아 자동으로 정했습니다.",
+   "transform": "원 B-scan에서 40–340행을 잘라 사용; RPE 아래 25–120행 평균이 가장 어두운 열(195)에 원",
+   "base": "olives_rpe_disruption.jpg",
+   "overlay": "olives_rpe_disruption_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "19035e40cd48969b43250978d1082e798b9c4b47f2afe05c2382b8d89c7031c1",
+   "overlay_sha256": "2d16cfa540d807c5e0db0ef0af01bffa155328b22ee213b827ee12016383c254",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "olives_hrf",
+   "items": [
+    "les_hyperreflective_foci"
+   ],
+   "source": "olives",
+   "source_file": "TREX DME/Monthly/0222MOS/V26/OS/TREX_DME_000025.tif",
+   "mask_label": "고반사 점 후보 9곳(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨황반부종 치료 중인 눈의 OCT B-scan입니다. 공급자 라벨은 망막내 고반사 점(IR HRF) 하나뿐입니다. 망막 안의 작고 밝은 점들을 노란 원으로 표시했습니다. 위치는 밝기 기준의 자동 후보라 일부는 혈관 단면 등 다른 밝은 점일 수 있습니다.",
+   "transform": "원 B-scan에서 40–340행을 잘라 사용; 내경계막+8–타원체대−8 구간의 top-hat 상위 0.3% 국소 최댓값",
+   "base": "olives_hrf.jpg",
+   "overlay": "olives_hrf_mask.png",
+   "width": 504,
+   "height": 300,
+   "base_sha256": "0197901ebe835edfd9d1e1c296abd998306e5842249d92faf0a69f3f83d68dac",
+   "overlay_sha256": "1007b8dd92996410acfb9d0ce4e228c8cb75ac231bde8e71142e3851410db160",
+   "name": "OLIVES",
+   "credit": "Prabhushankar M, Kokilepersaud K, et al. OLIVES Dataset: Ophthalmic Labels for Investigating Visual Eye Semantics. NeurIPS 2022 Datasets and Benchmarks (Zenodo 7105232)",
+   "url": "https://doi.org/10.5281/zenodo.7105232",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "olives"
+  },
+  {
+   "id": "paper_macroaneurysm",
+   "items": [
+    "les_arterial_macroaneurysm"
+   ],
+   "source": "lin2019",
+   "source_file": "provider_figures/12886_2019_1035_Fig3_HTML.png",
+   "mask_label": "망막 동맥 대동맥류 위치(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "형광안저혈관조영 초기 사진입니다. 아래쪽 귀쪽 동맥 가지 위에서 둥글게 부풀어 형광이 차오르는 대동맥류(노란 원, 저자 화살표 자리)가 보입니다.",
+   "transform": "패널 (0, 0, 588, 510) 잘라 사용; 저자 화살표가 가리키는 과형광 결절 중심에 원",
+   "base": "paper_macroaneurysm.jpg",
+   "overlay": "paper_macroaneurysm_mask.png",
+   "width": 588,
+   "height": 510,
+   "base_sha256": "a26e50251f59f0f5c22ac9a4a7ea3febf3bcb9b07cf6661974204f5cda38dbbe",
+   "overlay_sha256": "e364965564d45040ad944d41f386ff0b769796a35beec48980ea3b24f867f74d",
+   "name": "Lin et al. 2019",
+   "credit": "Lin Z, et al. (2019) BMC Ophthalmol 19:18, Figs. 2a·3a",
+   "url": "https://doi.org/10.1186/s12886-019-1035-z",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "lin2019"
+  },
+  {
+   "id": "paper_macular_star",
+   "items": [
+    "les_macular_star"
+   ],
+   "source": "lin2019",
+   "source_file": "provider_figures/12886_2019_1035_Fig2_HTML.png",
+   "mask_label": "별 모양 삼출물(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "망막 동맥 대동맥류 눈의 컬러 안저 사진입니다. 중심와를 중심으로 노란 경성삼출물이 바큇살처럼 뻗어 별 모양을 이룹니다. 표시는 주변보다 밝은 노란 점을 자동으로 고른 것입니다.",
+   "transform": "패널 (0, 0, 486, 410) 잘라 사용; 중심와 둘레 반지름 54 px 안에서 국소 배경보다 밝은 노란 화소",
+   "base": "paper_macular_star.jpg",
+   "overlay": "paper_macular_star_mask.png",
+   "width": 486,
+   "height": 410,
+   "base_sha256": "c3a81ea99dd31139b59b220cfd5cb3419ba81ee0b2720dd223e2956c0dbd9b48",
+   "overlay_sha256": "f1322b27a24c16d062227a5a92f053f93da1eba0b91c3faac4870de4b21846de",
+   "name": "Lin et al. 2019",
+   "credit": "Lin Z, et al. (2019) BMC Ophthalmol 19:18, Figs. 2a·3a",
+   "url": "https://doi.org/10.1186/s12886-019-1035-z",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "lin2019"
+  },
+  {
+   "id": "paper_vessel_sheathing",
+   "items": [
+    "les_vessel_sheathing"
+   ],
+   "source": "garbrecht2024",
+   "source_file": "provider_figures/12886_2024_3373_Fig1_HTML.png",
+   "mask_label": "혈관을 감싼 흰 피막(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "서리 낀 나뭇가지 혈관염 눈의 광각 안저 사진입니다. 아래쪽 혈관들이 희고 두꺼운 껍질에 싸여 서리 낀 가지처럼 보입니다. 표시는 주변보다 희고 노르스름한 혈관 띠를 자동으로 고른 것입니다.",
+   "transform": "패널 (0, 562, 732, 1106) 잘라 사용; 아래쪽 영역에서 녹색 채널이 국소 배경보다 밝은 화소",
+   "base": "paper_vessel_sheathing.jpg",
+   "overlay": "paper_vessel_sheathing_mask.png",
+   "width": 732,
+   "height": 544,
+   "base_sha256": "cfa05ef2e34ea7c6dba9e477386fb5a4cef4b227a493b4605852e94c6bbf6317",
+   "overlay_sha256": "09f73d4ce9a4c1352fae67f92a4b9f006e39f238297976166ff0dd20cacb1679",
+   "legend": [
+    {
+     "label": "혈관 피막",
+     "cls": "vitreous"
+    }
+   ],
+   "name": "Garbrecht et al. 2024",
+   "credit": "Garbrecht JL, et al. (2024) BMC Ophthalmol 24:106, Fig. 1C",
+   "url": "https://doi.org/10.1186/s12886-024-03373-1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "garbrecht2024"
+  },
+  {
+   "id": "paper_vasculitis",
+   "items": [
+    "les_retinal_vasculitis_signs"
+   ],
+   "source": "garbrecht2024",
+   "source_file": "provider_figures/12886_2024_3373_Fig1_HTML.png",
+   "mask_label": "혈관 피막·출혈(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "같은 눈입니다. 혈관염의 흔적으로 혈관 피막(하늘색)과 막힌 혈관 주변 망막 출혈(노랑)이 함께 보입니다. 출혈 표시는 주변보다 붉은빛이 크게 줄어든 덩어리를 자동으로 고른 것이라 일부만 잡혔습니다.",
+   "transform": "패널 (0, 562, 732, 1106) 잘라 사용; 혈관 피막은 녹색 채널 국소 대비, 출혈은 빨강 채널이 주변 중앙값의 72% 미만인 덩어리",
+   "base": "paper_vasculitis.jpg",
+   "overlay": "paper_vasculitis_mask.png",
+   "width": 732,
+   "height": 544,
+   "base_sha256": "cfa05ef2e34ea7c6dba9e477386fb5a4cef4b227a493b4605852e94c6bbf6317",
+   "overlay_sha256": "ebb2d9902ec9b30e49127f473c07c8ff4c59dd1147499718acbc1f0c2c790ca1",
+   "legend": [
+    {
+     "label": "혈관 피막",
+     "cls": "vitreous"
+    },
+    {
+     "label": "출혈",
+     "cls": "service"
+    }
+   ],
+   "name": "Garbrecht et al. 2024",
+   "credit": "Garbrecht JL, et al. (2024) BMC Ophthalmol 24:106, Fig. 1C",
+   "url": "https://doi.org/10.1186/s12886-024-03373-1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "garbrecht2024"
+  },
+  {
+   "id": "paper_telangiectasia",
+   "items": [
+    "les_retinal_telangiectasia"
+   ],
+   "source": "adriono2022",
+   "source_file": "provider_figures/13256_2022_3474_Fig1_HTML.jpg",
+   "mask_label": "모세혈관확장 위치(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "Coats병 눈의 형광안저혈관조영 사진입니다. 저자 화살촉이 가리키는 곳 주변에서 가늘게 늘어나 구불거리는 확장 혈관과 그 위쪽의 넓은 형광 누출이 보입니다.",
+   "transform": "패널 (825, 0, 1592, 659) 잘라 사용; 저자 화살촉 옆 확장 혈관 부위에 원",
+   "base": "paper_telangiectasia.jpg",
+   "overlay": "paper_telangiectasia_mask.png",
+   "width": 767,
+   "height": 659,
+   "base_sha256": "14fac286ac319035caa1de0b7a4d05a88623f0ff8a03043416a94cf0f21e0857",
+   "overlay_sha256": "89e5846dbee1b9d94d8a84c35c556288b7614b553e65a5a1d65f1e46d92c6533",
+   "name": "Adriono et al. 2022",
+   "credit": "Adriono GA, et al. (2022) J Med Case Rep 16:287, Fig. 1b",
+   "url": "https://doi.org/10.1186/s13256-022-03474-9",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "adriono2022"
+  },
+  {
+   "id": "paper_disc_edema",
+   "items": [
+    "les_disc_edema"
+   ],
+   "source": "gabison2026",
+   "source_file": "provider_figures/12886_2026_4791_Fig1_HTML.png",
+   "mask_label": "부은 시신경유두(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "고혈압성 망막병증 소아의 광각 안저 사진(가색)입니다. 유두 경계가 흐려지고 부어 혈관이 유두 가장자리에서 묻혀 보입니다. 양옆의 노란 부종과 황반 별 모양 삼출물이 함께 있습니다. 가색 영상이라 실제 색과 다릅니다.",
+   "transform": "패널 (0, 0, 973, 778) 잘라 사용; 혈관이 모이는 유두 중심에 원",
+   "base": "paper_disc_edema.jpg",
+   "overlay": "paper_disc_edema_mask.png",
+   "width": 973,
+   "height": 778,
+   "base_sha256": "b9ab6f2459986031ef13f248ebc4b7f956828e2da6783959982532c4cc7c883d",
+   "overlay_sha256": "228c6b83f86b634b3192487c2d514f4bd8f990fd47e9967de1a77f02f0a9aae6",
+   "name": "Gabison et al. 2026",
+   "credit": "Gabison S, et al. (2026) BMC Ophthalmol 26:236, Fig. 1A",
+   "url": "https://doi.org/10.1186/s12886-026-04791-z",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "gabison2026"
+  },
+  {
+   "id": "paper_av_nicking",
+   "items": [
+    "les_av_nicking"
+   ],
+   "source": "khan2026",
+   "source_file": "provider_figures/cureus-0018-00000117184-i01.webp",
+   "mask_label": "동정맥 교차 부위(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "광각 안저 사진(가색)의 시신경유두 주변입니다. 유두 위·아래 귀쪽에서 동맥이 정맥 위를 지나는 자리(노란 원, 저자 화살촉 자리)에서 정맥이 눌려 가늘어지고 끊겨 보입니다. 가색 영상이라 실제 색과 다릅니다.",
+   "transform": "패널 (600, 130, 1100, 620) 잘라 사용; 저자 화살촉이 가리키는 두 교차점에 원",
+   "base": "paper_av_nicking.jpg",
+   "overlay": "paper_av_nicking_mask.png",
+   "width": 500,
+   "height": 490,
+   "base_sha256": "9de60a77102b0a281c7585823cc6ff9566f2cc554a82ea23e93f8eac46e89f6f",
+   "overlay_sha256": "65e490802ac218c0e1f2744bb1ee53ca8a0dd33b4866adb3d8fad90f7fab808e",
+   "context": "paper_av_nicking_context.jpg",
+   "context_sha256": "b099666adaeb6fb07499add97e1f8d5f2f4f37cf1af91aadcdd9aff6205b41ba",
+   "name": "Khan et al. 2026",
+   "credit": "Khan A, et al. (2026) Cureus 18:e117184, Figure 1",
+   "url": "https://doi.org/10.7759/cureus.117184",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "khan2026"
+  },
+  {
+   "id": "paper_choroidal_nevus",
+   "items": [
+    "les_choroidal_nevus"
+   ],
+   "source": "li2024",
+   "source_file": "provider_figures/cureus-0016-00000075056-i01.jpg",
+   "mask_label": "회색 맥락막 병변(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "시신경유두 위쪽의 편평한 회갈색 맥락막 병변(노랑)입니다. 망막 혈관이 병변 위를 그대로 지나고, 병변 위에 주황 색소(저자 흰 화살표)가 있습니다. 이 증례는 이후 흑색종으로 바뀌었으므로, 주황 색소는 모반이 커질 위험 신호의 예이기도 합니다.",
+   "transform": "패널 (0, 0, 750, 519) 잘라 사용; 빨강/녹색 비(가우시안 σ 6)가 하위 12%인 회색 화소 중 저자 화살표 자리 연결 성분, 구멍 채움",
+   "base": "paper_choroidal_nevus.jpg",
+   "overlay": "paper_choroidal_nevus_mask.png",
+   "width": 750,
+   "height": 519,
+   "base_sha256": "496d80d4ba63261d226c881997991bb0db618ac9a12603f0842314f961bb0470",
+   "overlay_sha256": "98d7ca5b7aa47c5986ca2073c168fc4cf72d39762133d4fddab4bfef4051bbbb",
+   "name": "Li et al. 2024",
+   "credit": "Li L, et al. (2024) Cureus 16:e75056, Figure 1",
+   "url": "https://doi.org/10.7759/cureus.75056",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "li2024"
+  },
+  {
+   "id": "paper_nonperfusion",
+   "items": [
+    "les_nonperfusion"
+   ],
+   "source": "chi2026",
+   "source_file": "provider_figures/medi-105-e50535-g001.webp",
+   "mask_label": "어둡게 비어 보이는 무관류 영역(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "루푸스 혈관폐쇄 망막병증 눈의 형광안저혈관조영 사진입니다. 유두 주변에는 혈관과 모세혈관 그물이 밝게 차오르지만, 귀쪽·아래쪽(노랑, 저자 별표 자리)은 모세혈관이 차오르지 않아 어둡고 평평하게 비어 보입니다.",
+   "transform": "패널 (220, 872, 432, 1085) 잘라 사용; 굵은 혈관을 지운 뒤(회색 열림 7) 흐린 밝기(σ 4)가 시야 안 하위 30%인 영역; 표시용 3배 확대",
+   "base": "paper_nonperfusion.jpg",
+   "overlay": "paper_nonperfusion_mask.png",
+   "width": 636,
+   "height": 639,
+   "base_sha256": "820645f98948b76b3162729888d88d31fc5cca1270247021cf1b09255715f6af",
+   "overlay_sha256": "eec435c076cfbde05e29e681a44c72aca0369d502f84f7970c4bbe16cb51a39f",
+   "name": "Chi et al. 2026",
+   "credit": "Chi K, et al. (2026) Medicine (Baltimore) 105:e50535, Figure 1D1·E2",
+   "url": "https://doi.org/10.1097/MD.0000000000050535",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chi2026"
+  },
+  {
+   "id": "paper_laser_scar",
+   "items": [
+    "les_laser_scar"
+   ],
+   "source": "chi2026",
+   "source_file": "provider_figures/medi-105-e50535-g001.webp",
+   "mask_label": "범망막 광응고 반흔(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "범망막 광응고 치료 뒤의 컬러 안저 사진입니다. 황반(저자 보라 원) 바깥으로 둥근 연노랑 레이저 반흔이 줄지어 찍혀 있습니다. 표시는 주변보다 밝은 둥근 점을 자동으로 고른 것이라 흐린 반흔 일부는 빠졌습니다.",
+   "transform": "패널 (1345, 1075, 1600, 1305) 잘라 사용; 녹색 채널 백색 톱햇(11)이 14 초과인 둥근 작은 점, 유두·저자 원 제외; 표시용 3배 확대",
+   "base": "paper_laser_scar.jpg",
+   "overlay": "paper_laser_scar_mask.png",
+   "width": 765,
+   "height": 690,
+   "base_sha256": "863dfbfe7010f6d9da3b9f3da48c531a5469e67391fb9ec40af8a71130cd6d7e",
+   "overlay_sha256": "4163087ed35a5594db1a305cb2e11ea5534a0a32a9f64153a669ca5de3bb0a0b",
+   "name": "Chi et al. 2026",
+   "credit": "Chi K, et al. (2026) Medicine (Baltimore) 105:e50535, Figure 1D1·E2",
+   "url": "https://doi.org/10.1097/MD.0000000000050535",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chi2026"
+  },
+  {
+   "id": "paper_subretinal_hemorrhage",
+   "items": [
+    "les_hemorrhage_subretinal"
+   ],
+   "source": "kaganovski2025",
+   "source_file": "provider_figures/cureus-0017-00000099652-i03.jpg",
+   "mask_label": "황반 아래 큰 출혈(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "유리체강 주사 뒤 생긴 큰 황반하 출혈의 광각 안저 사진(가색)입니다. 위·아래 혈관궁 사이 황반 전체를 덮는 둥근 출혈 덩어리(노랑)가 보입니다. 이 장비의 가색 영상에서는 피가 짙은 녹색으로 나타나므로 실제 색(검붉은색)과 다릅니다.",
+   "transform": "패널 (0, 0, 750, 572) 잘라 사용; 녹색이 빨강보다 강하고 빨강이 낮은 화소(가우시안 σ 2), 열림 3회 뒤 황반 주변 최대 성분, 구멍 채움",
+   "base": "paper_subretinal_hemorrhage.jpg",
+   "overlay": "paper_subretinal_hemorrhage_mask.png",
+   "width": 750,
+   "height": 572,
+   "base_sha256": "6fce933cf07d09cb737b035f94e52b8d94049fb3778fb782d465c19548701211",
+   "overlay_sha256": "e0868b90a555894260f1c87e33ca776edfd00d8f69c325a1e941966205c746fa",
+   "name": "Kaganovski et al. 2025",
+   "credit": "Kaganovski A, et al. (2025) Cureus 17:e99652, Figure 3",
+   "url": "https://doi.org/10.7759/cureus.99652",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "kaganovski2025"
+  },
+  {
+   "id": "paper_pamm",
+   "items": [
+    "les_paracentral_amn"
+   ],
+   "source": "mehta2025",
+   "source_file": "provider_figures/cureus-0017-00000100159-i01.jpg",
+   "mask_label": "회백색 병변과 OCT 띠(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "위는 컬러 안저 사진으로, 중심와 위 귀쪽에 흐린 회백색 병변(노란 원, 저자 화살표 자리)이 있습니다. 아래 OCT 단면에서는 같은 자리 망막 가운데층(내핵층·내망상층)이 띠 모양으로 하얗게 밝아져 있습니다(노란 원).",
+   "transform": "패널 (0, 0, 362, 677) 잘라 사용; 저자 화살표가 가리키는 안저 병변과 OCT 고반사 띠에 원",
+   "base": "paper_pamm.jpg",
+   "overlay": "paper_pamm_mask.png",
+   "width": 362,
+   "height": 677,
+   "base_sha256": "21e184ff0ba2bf7bf232bc61ccc09bd08adb0fe73c0f63c35b2596274264ef7b",
+   "overlay_sha256": "e214815ce0d1668b27e5287948bd7a02f7ef763eaffb1d2fdd25475ebf35265a",
+   "name": "Mehta et al. 2025",
+   "credit": "Mehta S, et al. (2025) Cureus 17:e100159, Figure 1A·B",
+   "url": "https://doi.org/10.7759/cureus.100159",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "mehta2025"
+  },
+  {
+   "id": "paper_white_dots",
+   "items": [
+    "les_white_dots"
+   ],
+   "source": "shahid2026",
+   "source_file": "provider_figures/cureus-0018-00000104405-i01.jpg",
+   "mask_label": "과자가형광 점(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "다발성 일과성 흰점 증후군(MEWDS) 눈의 광각 자가형광 사진입니다. 후극부와 중간 주변부에 작고 밝은 점(노랑)이 흩어져 있습니다. 컬러 사진에서는 흐린 흰 점으로 보이는 병변이 자가형광에서 더 뚜렷합니다.",
+   "transform": "패널 (505, 5, 750, 212) 잘라 사용; 흰색 톱햇(13)이 22 초과인 작은 점, 유두 제외; 표시용 3배 확대",
+   "base": "paper_white_dots.jpg",
+   "overlay": "paper_white_dots_mask.png",
+   "width": 735,
+   "height": 621,
+   "base_sha256": "feb06a75974b2f29b27749a3a15f7a2cf98ff03d45d9fd64d14f1c9e135df027",
+   "overlay_sha256": "67bc4a72fec6bbc761b3d2c55784aac5f0e1abf9933032505364398471e9e700",
+   "name": "Shahid et al. 2026",
+   "credit": "Shahid MM, et al. (2026) Cureus 18:e104405, Figure 1C",
+   "url": "https://doi.org/10.7759/cureus.104405",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "shahid2026"
+  },
+  {
+   "id": "paper_bone_spicule",
+   "items": [
+    "les_bone_spicule_pigment"
+   ],
+   "source": "bivona2026",
+   "source_file": "provider_figures/cureus-0018-00000107568-i05.jpg",
+   "mask_label": "골소체 모양 색소(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "망막색소변성 눈의 컬러 안저 사진입니다. 중간 주변부에 뼈 조각처럼 가지 친 검은 색소 덩어리(노랑)가 흩어져 있고, 유두는 창백하며 혈관이 가늘어져 있습니다.",
+   "transform": "패널 (8, 684, 373, 981) 잘라 사용; 밝기가 국소 중앙값(31)보다 14 이상 어두운 회흑색 화소; 표시용 2배 확대",
+   "base": "paper_bone_spicule.jpg",
+   "overlay": "paper_bone_spicule_mask.png",
+   "width": 730,
+   "height": 594,
+   "base_sha256": "8636e534fe51ffc22d5a8aec88b721d647f45ebf633166146a76c9745c5c44d9",
+   "overlay_sha256": "35852bb2277883c76217b909f87bf41c20a817d6ffac10ccb314f4c346a94ecc",
+   "name": "Bivona et al. 2026",
+   "credit": "Bivona L, et al. (2026) Cureus 18:e107568, Figure 5E",
+   "url": "https://doi.org/10.7759/cureus.107568",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bivona2026"
+  },
+  {
+   "id": "paper_flame_hemorrhage",
+   "items": [
+    "les_hemorrhage_flame"
+   ],
+   "source": "jain2026",
+   "source_file": "provider_figures/cureus-0018-00000108935-i01.jpg",
+   "mask_label": "신경섬유층을 따라 퍼진 출혈(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "중심망막정맥폐쇄 눈의 컬러 안저 사진입니다. 유두에서 바큇살처럼 뻗는 신경섬유 방향을 따라 붓으로 그은 듯한 화염 모양 출혈(노랑)이 넓게 퍼져 있고, 정맥은 굵고 구불거립니다. 표시는 붉은빛이 가장 강한 영역을 고른 것이라 굵은 정맥 일부가 섞여 있습니다.",
+   "transform": "패널 (0, 0, 372, 279) 잘라 사용; 빨강/녹색 비(σ 1.5)가 시야 안 상위 25%인 영역, 유두 제외; 표시용 2배 확대",
+   "base": "paper_flame_hemorrhage.jpg",
+   "overlay": "paper_flame_hemorrhage_mask.png",
+   "width": 744,
+   "height": 558,
+   "base_sha256": "f02f13616851fcc6d1f68f4fac26ac09c8c8cd0b6baeeb96fb06e563aa0e18b1",
+   "overlay_sha256": "f0be2d61c5995cd525d03e4fb0829ab8e7a348c0c47d2383984e10806d21d7df",
+   "name": "Jain et al. 2026",
+   "credit": "Jain P, et al. (2026) Cureus 18:e108935, Figure 1a",
+   "url": "https://doi.org/10.7759/cureus.108935",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "jain2026"
+  },
+  {
+   "id": "paper_retinal_break",
+   "items": [
+    "les_retinal_break"
+   ],
+   "source": "mohdamin2026",
+   "source_file": "provider_figures/cureus-0018-00000109005-i04.jpg",
+   "mask_label": "말굽 모양 열공(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "세극등 검사 렌즈로 본 주변부 망막입니다. 6시 방향에 끝이 날카로운 말굽 모양 열공(노란 원, 저자 화살표 자리)이 있고, 그 아래로 붉은 맥락막 바탕이 비쳐 보입니다.",
+   "transform": "패널 (0, 0, 750, 778) 잘라 사용; 저자 화살표가 가리키는 열공에 원",
+   "base": "paper_retinal_break.jpg",
+   "overlay": "paper_retinal_break_mask.png",
+   "width": 750,
+   "height": 778,
+   "base_sha256": "a7e747f8f480f3596e087fd1862109d7f0936c8f9631e44fb9a9dedbdeeed00d",
+   "overlay_sha256": "b9195876d863663cfa33820cca224f46a50f26d0797fff603d33a1afd2ed92e3",
+   "name": "Mohd Amin et al. 2026",
+   "credit": "Mohd Amin MHA, et al. (2026) Cureus 18:e109005, Figure 4",
+   "url": "https://doi.org/10.7759/cureus.109005",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "mohdamin2026"
+  },
+  {
+   "id": "paper_chrpe",
+   "items": [
+    "les_chrpe"
+   ],
+   "source": "braga2021",
+   "source_file": "provider_figures/RomJOphthalmol-65-275-g001.jpg",
+   "mask_label": "경계가 분명한 검은 색소 병변(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "귀쪽 주변부의 둥글고 경계가 분명한 편평한 검은 병변(노랑)입니다. 가장자리에 옅은 테가 있고 위로 지나는 혈관은 변하지 않습니다. 선천 망막색소상피 비대의 전형적인 모습입니다.",
+   "transform": "패널 (305, 0, 602, 247) 잘라 사용; 밝기(σ 1.5)가 중앙값의 80% 미만인 화소 중 저자 병변 자리 최대 성분, 구멍 채움; 표시용 2배 확대",
+   "base": "paper_chrpe.jpg",
+   "overlay": "paper_chrpe_mask.png",
+   "width": 594,
+   "height": 494,
+   "base_sha256": "889b2acbd84b5ae3328d8ff7faf58f3c11abffe9229be501ee421062f84a14f5",
+   "overlay_sha256": "c718d29c5cdb26c4730e036f77e0ad3c0e313e16c64ca4285ab0082549c8c7a0",
+   "name": "Braga et al. 2021",
+   "credit": "Braga CS, et al. (2021) Rom J Ophthalmol 65:275, Fig. 1B",
+   "url": "https://doi.org/10.22336/rjo.2021.55",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "braga2021"
+  },
+  {
+   "id": "paper_flecks",
+   "items": [
+    "les_flecks"
+   ],
+   "source": "maheshwari2022",
+   "source_file": "provider_figures/cureus-0014-00000030859-i03.jpg",
+   "mask_label": "황백색 반점(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "스타가르트병 눈의 컬러 안저 사진입니다. 위축된 황반 둘레에 물고기 꼬리 모양의 작은 황백색 반점(노랑, 저자 화살표 자리)이 흩어져 있습니다. 표시는 주변보다 밝은 작은 점을 자동으로 고른 것입니다.",
+   "transform": "패널 (20, 10, 735, 560) 잘라 사용; 녹색 채널 흰색 톱햇(9)이 9 초과인 작은 점, 황반 주변 반지름 190 px, 유두 제외",
+   "base": "paper_flecks.jpg",
+   "overlay": "paper_flecks_mask.png",
+   "width": 715,
+   "height": 550,
+   "base_sha256": "a566de1882a4a8f4419c3e96700d1304f17c3ab93b38404c8d505e6b93f2834e",
+   "overlay_sha256": "e8cb597febcfa91a90ef915f6eba9319ff87700bcf76766171f616b707037229",
+   "name": "Maheshwari et al. 2022",
+   "credit": "Maheshwari SY, et al. (2022) Cureus 14:e30859, Figure 3a·b",
+   "url": "https://doi.org/10.7759/cureus.30859",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "maheshwari2022"
+  },
+  {
+   "id": "paper_bulls_eye",
+   "items": [
+    "les_bulls_eye_maculopathy"
+   ],
+   "source": "maheshwari2022",
+   "source_file": "provider_figures/cureus-0014-00000030859-i03.jpg",
+   "mask_label": "어두운 고리와 가운데 남은 부분(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "스타가르트병 눈의 자가형광 사진입니다. 황반에 타원형으로 어두운(저자가형광) 위축 고리(노랑)가 있고, 그 가운데에 덜 어두운 부분이 남아 과녁처럼 보입니다. 저자들은 이를 과녁 모양 황반병증으로 기술했습니다.",
+   "transform": "패널 (18, 578, 737, 1120) 잘라 사용; 밝기(σ 2)가 중앙값의 45% 미만인 황반 성분(구멍은 채우지 않아 가운데 남은 부분이 드러남)",
+   "base": "paper_bulls_eye.jpg",
+   "overlay": "paper_bulls_eye_mask.png",
+   "width": 719,
+   "height": 542,
+   "base_sha256": "a57889a4b505dc0dbf81a3f203dceb12aab0d147c779418fbb0d6608f8d2b529",
+   "overlay_sha256": "9c4ea2a9c1ef6f08731e71e7eb1e44c6aa1bb2d086926b432ee36b495ea4b489",
+   "name": "Maheshwari et al. 2022",
+   "credit": "Maheshwari SY, et al. (2022) Cureus 14:e30859, Figure 3a·b",
+   "url": "https://doi.org/10.7759/cureus.30859",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "maheshwari2022"
+  },
+  {
+   "id": "paper_polypoidal",
+   "items": [
+    "les_polypoidal_lesion"
+   ],
+   "source": "carta2023",
+   "source_file": "provider_figures/cureus-0015-00000047942-i02.jpg",
+   "mask_label": "결절 모양 과형광(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "인도시아닌그린 혈관조영 사진입니다. 어두운 병변 안에 둥글게 빛나는 결절(노란 원, 저자 화살표 자리)이 있어 결절성 맥락막혈관병증의 폴립으로 보입니다.",
+   "transform": "패널 (190, 183, 375, 365) 잘라 사용; 저자 화살표 위 과형광 결절에 원; 표시용 3배 확대",
+   "base": "paper_polypoidal.jpg",
+   "overlay": "paper_polypoidal_mask.png",
+   "width": 555,
+   "height": 546,
+   "base_sha256": "eacff6279c4f2ab2c9b797a57bef98a8f1e07b0a74db63189dcc41b36f4dcffa",
+   "overlay_sha256": "aeb9916d9aa21d7ded8614ae3b399a1b73ee59bf6cef13ca45f5fd94a8dff0bc",
+   "name": "Carta et al. 2023",
+   "credit": "Carta V, et al. (2023) Cureus 15:e47942, Figures 2D·3B",
+   "url": "https://doi.org/10.7759/cureus.47942",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "carta2023"
+  },
+  {
+   "id": "paper_sharp_ped",
+   "items": [
+    "les_sharp_peaked_ped"
+   ],
+   "source": "carta2023",
+   "source_file": "provider_figures/cureus-0015-00000047942-i03.jpg",
+   "mask_label": "뾰족하게 솟은 색소상피박리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "결절성 맥락막혈관병증 눈의 OCT 단면입니다. 망막색소상피가 꼭대기가 뾰족한 둥근 지붕처럼 솟아(노란 원, 저자 화살촉 자리) 그 안에 폴립의 내강이 비칩니다. 왼쪽 망막 안에는 밝은 경성삼출물 점들이 있습니다.",
+   "transform": "패널 (522, 0, 750, 138) 잘라 사용; 저자 화살촉 아래 솟은 RPE 꼭대기에 원; 표시용 3배 확대",
+   "base": "paper_sharp_ped.jpg",
+   "overlay": "paper_sharp_ped_mask.png",
+   "width": 684,
+   "height": 414,
+   "base_sha256": "f5e8c15584f3e2b257e653143ebab1fb2200251163950d1545d2d0dfea9270f1",
+   "overlay_sha256": "f68fd8cd56a1f1584b06fef22327953f46f45712e8e0900d4c2e03eb2d26e277",
+   "name": "Carta et al. 2023",
+   "credit": "Carta V, et al. (2023) Cureus 15:e47942, Figures 2D·3B",
+   "url": "https://doi.org/10.7759/cureus.47942",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "carta2023"
+  },
+  {
+   "id": "paper_vitelliform",
+   "items": [
+    "les_vitelliform_lesion"
+   ],
+   "source": "spanos2024",
+   "source_file": "provider_figures/cureus-0016-00000068214-i01.jpg",
+   "mask_label": "중심와의 노란 난황 모양 병변(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "성인형 난황모양 황반이영양증 눈의 중심와를 확대한 컬러 안저 사진입니다. 중심와에 작고 둥근 노란 병변(노랑)이 달걀노른자처럼 자리합니다.",
+   "transform": "패널 (110, 80, 260, 210) 잘라 사용; 중심와 반지름 16 px 안에서 국소 중앙값보다 밝은 노란 화소; 표시용 3배 확대",
+   "base": "paper_vitelliform.jpg",
+   "overlay": "paper_vitelliform_mask.png",
+   "width": 450,
+   "height": 390,
+   "base_sha256": "cfe1ff7841c7967e25383255fa68ee8e855bfe99b46eb1816c78f09f09c8837b",
+   "overlay_sha256": "173e162f0391d7ef9ec2b2bf9a796cc20302d861c74143fc0c583eeaaeb649fe",
+   "context": "paper_vitelliform_context.jpg",
+   "context_sha256": "5266c1346ec642fc4689e72eb0baf17b4b8d29ed914e3544235be66a3b231f5a",
+   "name": "Spanos et al. 2024",
+   "credit": "Spanos E, et al. (2024) Cureus 16:e68214, Figure 1 (환자 1 오른눈)",
+   "url": "https://doi.org/10.7759/cureus.68214",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "spanos2024"
+  },
+  {
+   "id": "paper_disc_hemorrhage",
+   "items": [
+    "les_disc_hemorrhage"
+   ],
+   "source": "tsuda2022",
+   "source_file": "provider_figures/13256_2022_3690_Fig1_HTML.jpg",
+   "mask_label": "유두와 그 둘레의 출혈(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "백신 접종 뒤 생긴 시신경유두 출혈의 컬러 안저 사진입니다. 유두 위와 둘레를 덮는 짙은 붉은 출혈(노랑)이 유두 경계를 가립니다. 녹내장에서 흔한 유두 가장자리의 작은 선 모양 출혈보다 범위가 넓은 예입니다.",
+   "transform": "패널 (395, 0, 784, 385) 잘라 사용; 빨강이 녹색의 2.4배를 넘는 화소, 열림·닫힘 뒤 유두 주변 최대 성분, 구멍 채움",
+   "base": "paper_disc_hemorrhage.jpg",
+   "overlay": "paper_disc_hemorrhage_mask.png",
+   "width": 389,
+   "height": 385,
+   "base_sha256": "c72a6f7fe03c697cfd2bebd92a89864a8c10660c95104e8c011d0c2cde9b277e",
+   "overlay_sha256": "f30f30c71d7b18908bacbe41fba916804741d9416a3fa29e4064dfe6d14f820b",
+   "name": "Tsuda et al. 2022",
+   "credit": "Tsuda K, et al. (2022) J Med Case Rep 16:462, Fig. 1B",
+   "url": "https://doi.org/10.1186/s13256-022-03690-3",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "tsuda2022"
+  },
+  {
+   "id": "paper_venous_dilation",
+   "items": [
+    "les_venous_dilation_tortuosity"
+   ],
+   "source": "riaziesfahani2023",
+   "source_file": "provider_figures/13256_2023_4100_Fig1_HTML.jpg",
+   "mask_label": "굵고 구불거리는 정맥(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "중심망막정맥폐쇄 눈의 컬러 안저 사진입니다. 유두에서 나오는 정맥이 굵게 부풀고 구불거리며(노란 원), 그 둘레와 황반 위로 망막내 출혈이 흩어져 있습니다(저자 설명: 충혈되고 구불거리는 정맥).",
+   "transform": "패널 (275, 0, 515, 245) 잘라 사용; 유두 위·아래의 굵고 구불거리는 정맥 가지에 원; 표시용 2배 확대",
+   "base": "paper_venous_dilation.jpg",
+   "overlay": "paper_venous_dilation_mask.png",
+   "width": 480,
+   "height": 490,
+   "base_sha256": "42556bd1232b24a263d3806980fafde59d2055709d3025e0b982b206c1eafc33",
+   "overlay_sha256": "aae0e028ddb1a526da11411674da1a192aae6e70f9b471083a3f6a09a2b4ce4b",
+   "name": "Riazi-Esfahani et al. 2023",
+   "credit": "Riazi-Esfahani H, et al. (2023) J Med Case Rep 17:355, Fig. 1B",
+   "url": "https://doi.org/10.1186/s13256-023-04100-y",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "riaziesfahani2023"
+  },
+  {
+   "id": "paper_arteriolar_narrowing",
+   "items": [
+    "les_arteriolar_narrowing"
+   ],
+   "source": "chen2026",
+   "source_file": "provider_figures/medi-105-e48683-g001.jpg",
+   "mask_label": "가는 동맥과 굵은 정맥(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "반복된 중심망막동맥폐쇄 뒤의 컬러 안저 사진입니다. 혈류는 돌아왔지만 밝은 붉은색 동맥이 옆의 검붉은 정맥보다 눈에 띄게 가늘어져 있습니다(노란 원 안에서 두 혈관의 굵기를 비교, 저자 설명: 동맥이 좁아짐).",
+   "transform": "패널 (0, 0, 397, 300) 잘라 사용; 유두 위·아래 귀쪽에서 동맥과 정맥이 나란히 지나는 자리에 원; 표시용 2배 확대",
+   "base": "paper_arteriolar_narrowing.jpg",
+   "overlay": "paper_arteriolar_narrowing_mask.png",
+   "width": 794,
+   "height": 600,
+   "base_sha256": "f53d607bb9d7429eacf4c56691dc09e5e8c22308dd0f53d7dc40dfd52a7c713a",
+   "overlay_sha256": "9d2ec270fc1573e41a9e89024f6bbde58f0b3f4d18d8487d4f1b6372c71eab44",
+   "name": "Chen et al. 2026",
+   "credit": "Chen M, et al. (2026) Medicine (Baltimore) 105:e48683, Figure 1A",
+   "url": "https://doi.org/10.1097/MD.0000000000048683",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chen2026"
+  },
+  {
+   "id": "paper_angioid_streaks",
+   "items": [
+    "les_angioid_streaks"
+   ],
+   "source": "takeuchi2023",
+   "source_file": "provider_figures/cureus-0015-00000045983-i01.jpg",
+   "mask_label": "유두에서 뻗는 적갈색 선(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "탄력섬유가성황색종 환자의 컬러 안저 사진입니다. 시신경유두 둘레에서 바깥으로 뻗는 불규칙한 적갈색 선(노란 원, 저자 화살표 자리)이 혈관양선조입니다. 망막 혈관보다 깊고 폭이 고르지 않습니다.",
+   "transform": "패널 (0, 0, 375, 280) 잘라 사용; 저자 화살표 끝의 선조 위치에 원; 표시용 2배 확대",
+   "base": "paper_angioid_streaks.jpg",
+   "overlay": "paper_angioid_streaks_mask.png",
+   "width": 750,
+   "height": 560,
+   "base_sha256": "e11076d221044b1de78de973c17eb26e0a697f0ae53de6907abcde00a6cfa886",
+   "overlay_sha256": "67945bf680d8df10442db7154dac7883e0e00fbe3ea88876cf39a6c259d73846",
+   "name": "Takeuchi et al. 2023",
+   "credit": "Takeuchi T, et al. (2023) Cureus 15:e45983, Figure 1A",
+   "url": "https://doi.org/10.7759/cureus.45983",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "takeuchi2023"
+  },
+  {
+   "id": "paper_choroidal_hyperpermeability",
+   "items": [
+    "les_choroidal_hyperpermeability"
+   ],
+   "source": "demirel2022",
+   "source_file": "provider_figures/diagnostics-12-01368-g002.jpg",
+   "mask_label": "후기 ICGA의 밝은 맥락막 구역(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "인도시아닌그린 혈관조영 후기 사진입니다. 황반 둘레에 경계가 흐린 밝은 구역(노란 원)이 남아 있는데, 저자들은 이를 형광안저혈관조영의 누출 자리와 같은 국소 맥락막 과투과로 기술했습니다.",
+   "transform": "패널 (555, 0, 728, 185) 잘라 사용; 저자 설명의 과형광 구역에 원; 표시용 3배 확대",
+   "base": "paper_choroidal_hyperpermeability.jpg",
+   "overlay": "paper_choroidal_hyperpermeability_mask.png",
+   "width": 519,
+   "height": 555,
+   "base_sha256": "1d387223b2f50a7e0550fe0f4a1db2f53a50e05c1b323514eaa3fe608d74ab35",
+   "overlay_sha256": "027d5661c100f0ee85ddfeed7514fc6836e638554a5f4f9cc86f2ce8e709c9b7",
+   "name": "Demirel et al. 2022",
+   "credit": "Demirel S, et al. (2022) Diagnostics 12:1368, Figure 2D",
+   "url": "https://doi.org/10.3390/diagnostics12061368",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "demirel2022"
+  },
+  {
+   "id": "paper_pachychoroid",
+   "items": [
+    "les_pachychoroid_features"
+   ],
+   "source": "haddani2026",
+   "source_file": "provider_figures/cureus-0018-00000115772-i03.webp",
+   "mask_label": "두꺼워진 맥락막(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "만성 중심장액맥락망막병증 눈의 OCT 단면입니다. 망막하액 아래 RPE 밑의 맥락막(노랑)이 두껍고, 큰 맥락막 혈관이 어둡게 넓어져 있습니다(저자 노란 양방향 화살표 자리). RPE는 울퉁불퉁하고 드루젠이 동반되어 있습니다.",
+   "transform": "패널 (0, 0, 810, 494) 잘라 사용; 열마다 깊이 160–215 px에서 가장 밝은 행을 RPE로(중앙값 21), 그 아래 8–108 px 띠, 저자 화살표 둘레 x 250–560",
+   "base": "paper_pachychoroid.jpg",
+   "overlay": "paper_pachychoroid_mask.png",
+   "width": 810,
+   "height": 494,
+   "base_sha256": "bc1f083126544a1105c07c03764d0fbf36601ab8563eb9b10cc2aeb2b99ab95b",
+   "overlay_sha256": "35d487813ad864811a1d7c1be16bf7890503ecc7e91d1ce09c525aeef6436d2e",
+   "name": "Haddani et al. 2026",
+   "credit": "Haddani O, et al. (2026) Cureus 18:e115772, Figure 3a",
+   "url": "https://doi.org/10.7759/cureus.115772",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "haddani2026"
+  },
+  {
+   "id": "paper_rpe_hypopigmentation",
+   "items": [
+    "les_rpe_hypopigmentation"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "색소가 옅어 맥락막 혈관이 비침(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "눈피부 백색증 환자의 안저 사진입니다. 망막색소상피의 색소가 전반적으로 옅어서 그 아래 큰 맥락막 혈관이 주황색 줄무늬로 그대로 비쳐 보입니다(노란 테 안).",
+   "transform": "패널 (115, 725, 265, 895) 잘라 사용; 안저 사진 후극부에 타원; 표시용 3배 확대",
+   "base": "paper_rpe_hypopigmentation.jpg",
+   "overlay": "paper_rpe_hypopigmentation_mask.png",
+   "width": 450,
+   "height": 510,
+   "base_sha256": "97d7e84b632b2ff0e6878898bf4c0418d151449d740ecbc39ecfa627e5f3ad24",
+   "overlay_sha256": "579a11ea6a40617f35c5b0225d6758a503d3eb59e85fccc907348945c00f9deb",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "paper_irora",
+   "items": [
+    "les_atrophy_incomplete"
+   ],
+   "source": "corradetti2026",
+   "source_file": "provider_figures/iovs-67-8-46-f001.jpg",
+   "mask_label": "RPE·외망막 불완전 위축 자리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT 단면에서 RPE가 부분적으로 끊기고 그 아래로 빛이 비쳐 내려가며(과투과), 위쪽 외망막 층이 얇아진 좁은 구역입니다(노란 테, 저자 표시 자리). 폭이 250 µm 미만이라 불완전 위축(iRORA)으로 분류됩니다.",
+   "transform": "패널 (120, 48, 364, 168) 잘라 사용; 저자 노란 타원 자리에 더 큰 타원; 표시용 3배 확대",
+   "base": "paper_irora.jpg",
+   "overlay": "paper_irora_mask.png",
+   "width": 732,
+   "height": 360,
+   "base_sha256": "5beae490d4b07999e628593bfa127c447e24b7bc96b4623fb7cc7cabd4be321e",
+   "overlay_sha256": "27f6da5eb778114c1071775209344df542b959111fcc7af159d1597968769b72",
+   "name": "Corradetti et al. 2026",
+   "credit": "Corradetti G, et al. (2026) Invest Ophthalmol Vis Sci 67:46, Figure 1",
+   "url": "https://doi.org/10.1167/iovs.67.8.46",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "corradetti2026"
+  },
+  {
+   "id": "paper_chorioretinal_scar",
+   "items": [
+    "les_chorioretinal_scar"
+   ],
+   "source": "priya2026",
+   "source_file": "provider_figures/cureus-0018-00000110402-i03.jpg",
+   "mask_label": "경계가 분명한 맥락망막 흉터(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "눈 톡소포자충 망막맥락막염이 아문 6개월 뒤 영상입니다. 위는 광각 가색 사진으로 경계가 뚜렷하고 가장자리에 색소가 모인 흉터(노란 원), 아래는 같은 자리의 자가형광으로 어두운 테와 밝은 가운데가 보입니다.",
+   "transform": "패널 (505, 10, 720, 380) 잘라 사용; 저자 화살표가 가리키는 병변에 원; 표시용 2배 확대",
+   "base": "paper_chorioretinal_scar.jpg",
+   "overlay": "paper_chorioretinal_scar_mask.png",
+   "width": 430,
+   "height": 740,
+   "base_sha256": "15470efba5979c6fd7975aed18d46379bacf7959e4cd3f107deb80bcce35ac9c",
+   "overlay_sha256": "5e2f69671dd4078fe49cf6dd02c1e05af78f9e210f7ae001642e963842f1faa7",
+   "name": "Priya et al. 2026",
+   "credit": "Priya M, et al. (2026) Cureus 18:e110402, Figure 3c·f",
+   "url": "https://doi.org/10.7759/cureus.110402",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "priya2026"
+  },
+  {
+   "id": "paper_cuticular_drusen",
+   "items": [
+    "les_drusen_cuticular"
+   ],
+   "source": "hosoda2022",
+   "source_file": "provider_figures/medi-101-e32032-g001.jpg",
+   "mask_label": "밤하늘 별 같은 과형광 점(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "소용돌이형(cuticular) 드루젠 눈의 형광안저혈관조영 중기 사진입니다. 황반 둘레에 아주 작고 고른 과형광 점이 무수히 흩어져 \"밤하늘의 별\" 모양을 이룹니다(노랑). 표시는 혈관을 뺀 작은 밝은 점을 자동으로 고른 것입니다.",
+   "transform": "패널 (0, 915, 400, 1165) 잘라 사용; 흰색 톱햇(5) > 18인 2–12 화소 점, 굵은 혈관 근처 제외; 표시용 2배 확대",
+   "base": "paper_cuticular_drusen.jpg",
+   "overlay": "paper_cuticular_drusen_mask.png",
+   "width": 800,
+   "height": 500,
+   "base_sha256": "feab1a947631a5ce75200a034a9f5f844913848b36ecfc80dfc82e47957020ab",
+   "overlay_sha256": "78d79540fc37588920dea0158ab7019ce628ae31feaa0e27094aff66353f25e8",
+   "name": "Hosoda et al. 2022",
+   "credit": "Hosoda S, et al. (2022) Medicine (Baltimore) 101:e32032, Figure 1B",
+   "url": "https://doi.org/10.1097/MD.0000000000032032",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "hosoda2022"
+  },
+  {
+   "id": "paper_sdd",
+   "items": [
+    "les_subretinal_drusenoid_deposit"
+   ],
+   "source": "kominami2025",
+   "source_file": "provider_figures/cureus-0017-00000093258-i01.jpg",
+   "mask_label": "그물 모양 밝은 점(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "근적외선 반사 영상입니다. 황반 둘레에 작은 밝은 점과 고리가 그물처럼 이어진 망막하 드루젠양 침착물(가성드루젠, 노랑)이 넓게 퍼져 있습니다. 표시는 저자 측정선(녹색)을 뺀 작은 밝은 점을 자동으로 고른 것입니다.",
+   "transform": "패널 (0, 595, 375, 985) 잘라 사용; 흰색 톱햇(9) > 22인 3–60 화소 점, 녹색 측정선 제외, 황반 반지름 150 px",
+   "base": "paper_sdd.jpg",
+   "overlay": "paper_sdd_mask.png",
+   "width": 375,
+   "height": 390,
+   "base_sha256": "e31c6e956286f4e3fddefe9c463e9aa35875e47eb3e5f0f2aacc770cbd2bd58b",
+   "overlay_sha256": "ec212665e8c5632d95fcfa4f9e65ffcb5cf29e11779115bf604db1892b957b60",
+   "name": "Kominami et al. 2025",
+   "credit": "Kominami T, et al. (2025) Cureus 17:e93258, Figure 1E",
+   "url": "https://doi.org/10.7759/cureus.93258",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "kominami2025"
+  },
+  {
+   "id": "paper_mnv",
+   "items": [
+    "les_macular_neovascularization"
+   ],
+   "source": "bai2026",
+   "source_file": "provider_figures/medi-105-e47893-g004.jpg",
+   "mask_label": "중심와 출혈을 동반한 신생혈관 자리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "점상 내맥락막병증 뒤 생긴 맥락막 신생혈관(황반 신생혈관) 눈의 광각 가색 사진입니다. 중심와에 신생혈관에서 나온 출혈(노란 원, 저자 화살표 자리)이 있고, 유두 둘레에는 노란 점상 병변이 모여 있습니다. 가색이라 실제 색과 다릅니다.",
+   "transform": "패널 (0, 0, 400, 310) 잘라 사용; 저자 화살표 끝의 중심와 병변에 원; 표시용 2배 확대",
+   "base": "paper_mnv.jpg",
+   "overlay": "paper_mnv_mask.png",
+   "width": 800,
+   "height": 620,
+   "base_sha256": "aea3452f6c86e1d47fd1cd59adf6aa94b1a8bf50e57a96b1e4dc3898870eb0fb",
+   "overlay_sha256": "cbf20ad558b2c1a37b0fb9f477ec0582d1d979a699760d150ee92e5fec06f968",
+   "name": "Bai et al. 2026",
+   "credit": "Bai J, et al. (2026) Medicine (Baltimore) 105:e47893, Figure 4A",
+   "url": "https://doi.org/10.1097/MD.0000000000047893",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bai2026"
+  },
+  {
+   "id": "paper_pvr",
+   "items": [
+    "les_pvr"
+   ],
+   "source": "chujo2024",
+   "source_file": "provider_figures/medi-103-e38150-g004.jpg",
+   "mask_label": "유두로 모이는 별 모양 망막 주름(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "급성 망막괴사 뒤 증식유리체망막병증으로 망막 전체가 박리된 눈의 광각 가색 사진입니다. 망막 앞면의 증식막이 수축해 시신경유두 쪽으로 모이는 별 모양 고정 주름(노랑)이 생겼습니다. 가색 영상입니다.",
+   "transform": "패널 (0, 0, 372, 300) 잘라 사용; 밝기 흰색 톱햇(9) > 9인 선, 유두 반지름 125 px 안; 표시용 2배 확대",
+   "base": "paper_pvr.jpg",
+   "overlay": "paper_pvr_mask.png",
+   "width": 744,
+   "height": 600,
+   "base_sha256": "2e02c26087782e449fc2e48b16f2d1b4d0a909e20c7759cce51bd241d6c8b37c",
+   "overlay_sha256": "48d6857702d12100aa99901dabd53ad1989922aa8d964e2b51d5cc42da4dedd2",
+   "name": "Chujo et al. 2024",
+   "credit": "Chujo S, et al. (2024) Medicine (Baltimore) 103:e38150, Figure 4A",
+   "url": "https://doi.org/10.1097/MD.0000000000038150",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chujo2024"
+  },
+  {
+   "id": "paper_pseudohole",
+   "items": [
+    "les_macular_pseudohole"
+   ],
+   "source": "zhiouabraham2018",
+   "source_file": "provider_figures/12886_2018_755_Fig3_HTML.jpg",
+   "mask_label": "가파른 벽의 가성원공(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "OCT 단면입니다. 망막앞막이 중심와 둘레를 당겨 중심와 벽이 가파르게 솟고 좁은 오목이 생겼지만, 망막 조직은 빠지지 않았습니다(노란 원). 겉으로는 원공처럼 보이는 황반 가성원공입니다.",
+   "transform": "패널 (189, 195, 567, 369) 잘라 사용; 중심와 오목에 원; 표시용 2배 확대",
+   "base": "paper_pseudohole.jpg",
+   "overlay": "paper_pseudohole_mask.png",
+   "width": 756,
+   "height": 348,
+   "base_sha256": "fe395adf45246ecd9d4c971c178bcaf46abac189505dab82585cc5063d893226",
+   "overlay_sha256": "7b4c39c15fe3f749c55deb7824de66e2b98b2a7e44a433eeb83492e67aee0e5a",
+   "name": "Zhioua Braham et al. 2018",
+   "credit": "Zhioua Braham I, et al. (2018) BMC Ophthalmol 18:89, Fig. 3d",
+   "url": "https://doi.org/10.1186/s12886-018-0755-9",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "zhiouabraham2018"
+  },
+  {
+   "id": "plos_gcipl",
+   "items": [
+    "ana_gcipl"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "신경절세포층 + 내망상층(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "저자가 층 이름을 붙인 OCT 단면입니다. 밝은 신경섬유층 바로 아래의 회색 신경절세포층과 그 아래 내망상층을 합친 띠(노랑)가 신경절세포·내망상층 복합(GCIPL)입니다.",
+   "transform": "패널 (30, 598, 328, 718) 잘라 사용; 저자 층 이름표의 지시선 높이에 맞춘 수평 띠(패널 행 13–36); 표시용 3배 확대",
+   "base": "plos_gcipl.jpg",
+   "overlay": "plos_gcipl_mask.png",
+   "width": 894,
+   "height": 360,
+   "base_sha256": "5fba8670c0bcac332a9b72035d0d287bcd150bfd413b374c3ed03fe4cf63bd50",
+   "overlay_sha256": "9b326d267904166321e06d876cbc0b2b768e0cfb59818d1b82b18965a0cfc7a0",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "plos_hfl",
+   "items": [
+    "ana_hfl"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "헨레섬유층(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "저자가 층 이름을 붙인 OCT 단면입니다. 외망상층 바로 아래, 어두운 외핵층 위쪽의 얇은 띠(노랑)가 저자가 헨레섬유층으로 표지한 자리입니다. 헨레섬유는 비스듬히 달려서 보통 OCT에서는 외핵층과 잘 구분되지 않습니다.",
+   "transform": "패널 (30, 598, 328, 718) 잘라 사용; 저자 층 이름표의 지시선 높이에 맞춘 수평 띠(패널 행 52–62); 표시용 3배 확대",
+   "base": "plos_hfl.jpg",
+   "overlay": "plos_hfl_mask.png",
+   "width": 894,
+   "height": 360,
+   "base_sha256": "5fba8670c0bcac332a9b72035d0d287bcd150bfd413b374c3ed03fe4cf63bd50",
+   "overlay_sha256": "f25a9511c3af4b1f3d9d4659d0cd52a208d2fc4bb06f05835e01b2929059343d",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "plos_myoid",
+   "items": [
+    "ana_myoid_zone"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "근양대(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "저자가 층 이름을 붙인 OCT 단면입니다. 외경계막(ELM)과 타원체대(EZ) 사이의 얇고 조금 어두운 띠(노랑)가 광수용체 내절의 근양대입니다.",
+   "transform": "패널 (37, 140, 328, 300) 잘라 사용; 바깥쪽 두 밝은 띠 중 위쪽(EZ)을 x 320에서 시작해 열마다 ±1 px로 따라간 뒤, EZ 기준 -7–-2 px 띠 (ELM은 EZ 약 8 px 위, RPE는 약 14 px 아래); 자동 추적이라 1–2 px 오차가 있을 수 있음; 표시용 3배 확대",
+   "base": "plos_myoid.jpg",
+   "overlay": "plos_myoid_mask.png",
+   "width": 873,
+   "height": 480,
+   "base_sha256": "4c101038c28f5af102a60ef4a4dc1dc5b73e156575d6a697cdc5a9b384739a21",
+   "overlay_sha256": "3186f5a8cf0ef39068a949d503d81b62ee4aef67cc88932ca920e1545f51b3e8",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "plos_photoreceptor_os",
+   "items": [
+    "ana_photoreceptor_os"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "광수용체 외절(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "저자가 층 이름을 붙인 OCT 단면입니다. 밝은 타원체대(EZ) 아래부터 맞물림대(IZ) 위까지의 띠(노랑)가 광수용체 외절입니다.",
+   "transform": "패널 (37, 140, 328, 300) 잘라 사용; 바깥쪽 두 밝은 띠 중 위쪽(EZ)을 x 320에서 시작해 열마다 ±1 px로 따라간 뒤, EZ 기준 3–8 px 띠 (ELM은 EZ 약 8 px 위, RPE는 약 14 px 아래); 자동 추적이라 1–2 px 오차가 있을 수 있음; 표시용 3배 확대",
+   "base": "plos_photoreceptor_os.jpg",
+   "overlay": "plos_photoreceptor_os_mask.png",
+   "width": 873,
+   "height": 480,
+   "base_sha256": "4c101038c28f5af102a60ef4a4dc1dc5b73e156575d6a697cdc5a9b384739a21",
+   "overlay_sha256": "a10823516feac55dd1422de64086cab7bcbbcd78130ce77b1eb96bcb6cc599d8",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "plos_iz",
+   "items": [
+    "ana_interdigitation_zone"
+   ],
+   "source": "bringmann2022",
+   "source_file": "provider_figures/pone.0266968.g002.jpg",
+   "mask_label": "맞물림대(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "저자가 층 이름을 붙인 OCT 단면입니다. 타원체대와 RPE 사이의 가는 밝은 선(노랑)이 RPE 돌기와 원뿔세포 외절 끝이 맞물리는 맞물림대(IZ)입니다.",
+   "transform": "패널 (37, 140, 328, 300) 잘라 사용; 바깥쪽 두 밝은 띠 중 위쪽(EZ)을 x 320에서 시작해 열마다 ±1 px로 따라간 뒤, EZ 기준 8–11 px 띠 (ELM은 EZ 약 8 px 위, RPE는 약 14 px 아래); 자동 추적이라 1–2 px 오차가 있을 수 있음; 표시용 3배 확대",
+   "base": "plos_iz.jpg",
+   "overlay": "plos_iz_mask.png",
+   "width": 873,
+   "height": 480,
+   "base_sha256": "4c101038c28f5af102a60ef4a4dc1dc5b73e156575d6a697cdc5a9b384739a21",
+   "overlay_sha256": "22d0fa11920700a7d7d64c7ccaa3c0563043a3c63f39edb8c7d5b4d5cfb1f7e3",
+   "name": "Bringmann et al. 2022",
+   "credit": "Bringmann A, et al. (2022) PLoS One 17:e0266968, Fig 2A·C",
+   "url": "https://doi.org/10.1371/journal.pone.0266968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "bringmann2022"
+  },
+  {
+   "id": "paper_elm_disruption",
+   "items": [
+    "les_elm_disruption"
+   ],
+   "source": "hoffmann2021",
+   "source_file": "provider_figures/fmed-08-706084-g0001.jpg",
+   "mask_label": "ELM 끊긴 자리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨황반부종 눈의 OCT 단면입니다. 왼쪽에서는 가는 밝은 외경계막(ELM)과 그 아래 IS/OS 선이 이어지다가, 중심와 쪽에서 끊겨 있습니다(노란 테, 저자 녹색 (a) 구간).",
+   "transform": "패널 (350, 50, 705, 400) 잘라 사용; 저자 (a) 구간에 타원; 표시용 2배 확대",
+   "base": "paper_elm_disruption.jpg",
+   "overlay": "paper_elm_disruption_mask.png",
+   "width": 710,
+   "height": 700,
+   "base_sha256": "f30522b09aa660000612c7b3a9b345717bb5d2fa0b5bcb8da20bcb736fe019ea",
+   "overlay_sha256": "0ced442b87e5cbdab518c11b667deb7f76736b227708566a9e0a32814bf2bbe6",
+   "name": "Hoffmann et al. 2021",
+   "credit": "Hoffmann L, et al. (2021) Front Med 8:706084, Figure 1",
+   "url": "https://doi.org/10.3389/fmed.2021.706084",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "hoffmann2021"
+  },
+  {
+   "id": "paper_bmo",
+   "items": [
+    "ana_bmo"
+   ],
+   "source": "oyur2026",
+   "source_file": "provider_figures/12886_2026_5473_Fig1_HTML.webp",
+   "mask_label": "브루크막 개구부 양끝(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "시신경유두를 지나는 OCT 단면입니다. 브루크막이 유두 가장자리에서 끝나는 두 점(노란 원, 저자 녹색 BMO 선의 양끝)이 브루크막 개구부입니다. 두 점을 이은 선이 유두 함몰과 사상판 깊이를 재는 기준선입니다.",
+   "transform": "패널 (560, 600, 1180, 1150) 잘라 사용; 저자 BMO 기준선의 양 끝점에 원",
+   "base": "paper_bmo.jpg",
+   "overlay": "paper_bmo_mask.png",
+   "width": 620,
+   "height": 550,
+   "base_sha256": "d158402d79d97a0a0d187de2efdddc47da033e04c145849c54bdb1f10efa8075",
+   "overlay_sha256": "e69b7c18e90ffd24a6a61adc92c0d4cdc2cf96cc35e02690aae46cd5c1245abf",
+   "name": "Oyur et al. 2026",
+   "credit": "Oyur G, et al. (2026) BMC Ophthalmol 26:755, Fig. 1C",
+   "url": "https://doi.org/10.1186/s12886-026-05473-6",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "oyur2026"
+  },
+  {
+   "id": "paper_lamina_cribrosa",
+   "items": [
+    "ana_lamina_cribrosa"
+   ],
+   "source": "oyur2026",
+   "source_file": "provider_figures/12886_2026_5473_Fig1_HTML.webp",
+   "mask_label": "사상판(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "시신경유두를 지나는 OCT 단면입니다. 유두 함몰 바닥 아래의 밝고 성긴 반사 조직(노란 테)이 시신경섬유가 눈 밖으로 나가는 체 모양의 사상판입니다(저자 LCD·LCCW 측정 자리).",
+   "transform": "패널 (560, 600, 1180, 1150) 잘라 사용; 저자 사상판 측정선 둘레에 타원",
+   "base": "paper_lamina_cribrosa.jpg",
+   "overlay": "paper_lamina_cribrosa_mask.png",
+   "width": 620,
+   "height": 550,
+   "base_sha256": "d158402d79d97a0a0d187de2efdddc47da033e04c145849c54bdb1f10efa8075",
+   "overlay_sha256": "dd54a3409d532e8d1f3db8ae4ea403ea8bc380c51a75746eb6b5434a49d98b79",
+   "name": "Oyur et al. 2026",
+   "credit": "Oyur G, et al. (2026) BMC Ophthalmol 26:755, Fig. 1C",
+   "url": "https://doi.org/10.1186/s12886-026-05473-6",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "oyur2026"
+  },
+  {
+   "id": "paper_vortex_vein",
+   "items": [
+    "ana_vortex_vein"
+   ],
+   "source": "regenold2026",
+   "source_file": "provider_figures/jcm-15-03614-g001.jpg",
+   "mask_label": "와정맥 팽대부(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "적도부 근처를 확대한 안저 사진입니다. 망막 아래로 비치는 맥락막 정맥들이 한곳으로 모여 주머니처럼 부푼 자리(노란 원)가 와정맥 팽대부입니다. 이 증례에서는 팽대부가 정맥류처럼 커져 있습니다.",
+   "transform": "패널 (0, 0, 784, 520) 잘라 사용; 맥락막 정맥이 모이는 팽대부에 원",
+   "base": "paper_vortex_vein.jpg",
+   "overlay": "paper_vortex_vein_mask.png",
+   "width": 784,
+   "height": 520,
+   "base_sha256": "81f00a4d3cf63e3c14ada5ff7c764fdba2ed18c6550576fd9b37b824f76510ec",
+   "overlay_sha256": "a125bb5d378ef5fca8d7071dd77163d4ed6c9a46441d2efdb7afe15149baf30a",
+   "name": "Regenold et al. 2026",
+   "credit": "Regenold JT, et al. (2026) J Clin Med 15:3614, Figure 1",
+   "url": "https://doi.org/10.3390/jcm15103614",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "regenold2026"
+  },
+  {
+   "id": "paper_faz_enlargement",
+   "items": [
+    "les_faz_enlargement"
+   ],
+   "source": "hoshiyama2022",
+   "source_file": "provider_figures/medicina-58-01797-g002.jpg",
+   "mask_label": "넓어진 중심와 무혈관 구역(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨황반허혈 눈의 OCTA 표층 사진입니다. 가운데 혈관이 없는 어두운 구역(노랑)이 넓고 경계가 울퉁불퉁합니다. 저자 측정값은 0.558 mm²로, 정상(대개 0.2–0.4 mm²)보다 큽니다.",
+   "transform": "패널 (12, 42, 248, 278) 잘라 사용; 혈관 화소(밝기 > 110) 비율(σ 5)이 0.08 미만인 중앙 성분, 구멍 채움; 표시용 3배 확대",
+   "base": "paper_faz_enlargement.jpg",
+   "overlay": "paper_faz_enlargement_mask.png",
+   "width": 708,
+   "height": 708,
+   "base_sha256": "5a2d81f7fbebe073ef4fa5b5fe1d9543b69c77047122ae9694698e933b79d0cb",
+   "overlay_sha256": "5340e481d44739e612cd511ab4698e59a7b8c0bf6e5a43801b35e728ef5c5ab5",
+   "name": "Hoshiyama et al. 2022",
+   "credit": "Hoshiyama K, et al. (2022) Medicina 58:1797, Figure 2A",
+   "url": "https://doi.org/10.3390/medicina58121797",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "hoshiyama2022"
+  },
+  {
+   "id": "chaksu_optic_cup",
+   "items": [
+    "ana_optic_cup"
+   ],
+   "source": "chaksu",
+   "source_file": "Test/1.0_Original_Fundus_Images/Remidio/IMG_4198.JPG",
+   "mask_label": "유두 함몰(컵)(전문가 5명 합의 경계)",
+   "caption": "정상 눈의 시신경유두입니다. 유두 가운데 혈관이 꺾여 들어가는 하얗게 오목한 부분(노랑)이 유두 함몰(컵)입니다. 테두리는 안과 전문의 5명의 컵 경계를 통계적으로 합친 합의 경계입니다.",
+   "transform": "유두 중심 둘레 (123, 727, 1707, 2311) 잘라 사용; STAPLE 합의 mask(Disc·Cup) 사용",
+   "base": "chaksu_optic_cup.jpg",
+   "overlay": "chaksu_optic_cup_mask.png",
+   "width": 1200,
+   "height": 1200,
+   "base_sha256": "b19aba8b7542075c1e601407a8aea3ba968702120b7524526f59056694acba8f",
+   "overlay_sha256": "928d101d8a2f431d0a66cff071324101f1ed36cfaa742a8e520b3ffbf3322ff9",
+   "context": "chaksu_optic_cup_context.jpg",
+   "context_sha256": "3eaa51bedd84fd9ca08fcfc15b03054a796e8661bdb296c03c129a350bf3e089",
+   "name": "Chákṣu",
+   "credit": "Kumar JRH, et al. Chákṣu: A glaucoma specific fundus image database. Sci Data 2023;10:70 (figshare 20123135, Test split)",
+   "url": "https://doi.org/10.6084/m9.figshare.20123135",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chaksu"
+  },
+  {
+   "id": "chaksu_neuroretinal_rim",
+   "items": [
+    "ana_neuroretinal_rim"
+   ],
+   "source": "chaksu",
+   "source_file": "Test/1.0_Original_Fundus_Images/Remidio/IMG_4198.JPG",
+   "mask_label": "신경망막 테(전문가 5명 합의 경계)",
+   "caption": "정상 눈의 시신경유두입니다. 유두 경계와 컵 경계 사이의 분홍빛 고리(노랑)가 신경섬유가 모여 지나는 신경망막 테입니다. 정상에서는 아래·위·코·귀 순서로 두껍습니다(ISNT).",
+   "transform": "유두 중심 둘레 (123, 727, 1707, 2311) 잘라 사용; STAPLE 합의 mask(Disc·Cup) 사용",
+   "base": "chaksu_neuroretinal_rim.jpg",
+   "overlay": "chaksu_neuroretinal_rim_mask.png",
+   "width": 1200,
+   "height": 1200,
+   "base_sha256": "b19aba8b7542075c1e601407a8aea3ba968702120b7524526f59056694acba8f",
+   "overlay_sha256": "35fd3d57428af5c230773b85e013d7bf0f567f093dde3bbf3625ca2dd6e11b88",
+   "context": "chaksu_neuroretinal_rim_context.jpg",
+   "context_sha256": "3eaa51bedd84fd9ca08fcfc15b03054a796e8661bdb296c03c129a350bf3e089",
+   "name": "Chákṣu",
+   "credit": "Kumar JRH, et al. Chákṣu: A glaucoma specific fundus image database. Sci Data 2023;10:70 (figshare 20123135, Test split)",
+   "url": "https://doi.org/10.6084/m9.figshare.20123135",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "chaksu"
+  },
+  {
+   "id": "fundus_nvd",
+   "items": [
+    "les_nv_disc"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_27.png",
+   "mask_label": "유두 신생혈관(NVD)(공급자 전문가 NV mask, 위치 규칙으로 나눔)",
+   "caption": "증식 당뇨망막병증 눈의 컬러 안저 사진입니다. 공급자 전문가 신생혈관 mask 중 유두 위 또는 유두 경계에서 1 유두지름 안쪽(하늘색 선 안)에 있는 신생혈관만 남긴 것입니다. 노란 부분이 가늘고 엉킨 새 혈관입니다.",
+   "transform": "통합 mask NV(166)의 연결 성분을 유두 mask(32) 경계와의 최소 거리로 나눔(1 유두지름 = 153 px 기준); (288,352)–(928,832) 확대",
+   "base": "fundus_nvd.jpg",
+   "overlay": "fundus_nvd_mask.png",
+   "width": 640,
+   "height": 480,
+   "base_sha256": "049b6a0513851f444f925daaa4745021976894b54b373a8a0b7c73a9de207bff",
+   "overlay_sha256": "13320839da8f9a109af02e54fbb843b2a247a0ca31dd74b3b7ae5af8fc7a989f",
+   "context": "fundus_nvd_context.jpg",
+   "context_sha256": "dc9739daeb30c0befe467c9362ed00f96778c1e216a32c269fe6f90f93731165",
+   "legend": [
+    {
+     "label": "유두 경계 + 1 유두지름",
+     "cls": "vitreous"
+    }
+   ],
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_nve",
+   "items": [
+    "les_nv_elsewhere"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_27.png",
+   "mask_label": "망막 신생혈관(NVE)(공급자 전문가 NV mask, 위치 규칙으로 나눔)",
+   "caption": "증식 당뇨망막병증 눈의 컬러 안저 사진입니다. 공급자 전문가 신생혈관 mask 중 유두 경계에서 1 유두지름보다 멀리(하늘색 선 밖) 있는 신생혈관만 남긴 것입니다. 노란 부분이 가늘고 엉킨 새 혈관입니다.",
+   "transform": "통합 mask NV(166)의 연결 성분을 유두 mask(32) 경계와의 최소 거리로 나눔(1 유두지름 = 153 px 기준); (0,0)–(640,480) 확대",
+   "base": "fundus_nve.jpg",
+   "overlay": "fundus_nve_mask.png",
+   "width": 640,
+   "height": 480,
+   "base_sha256": "6284cd7b0457d3eaf24b1f1201c7ca6d5c68871e79a3cea3acb844925cffff9b",
+   "overlay_sha256": "83ec1e3ffc1e25fed286d3e8371f7d275d89329ba8ca93505d31bdef1865cb5d",
+   "context": "fundus_nve_context.jpg",
+   "context_sha256": "70d4967c5115d4e64009079057744a0135ee5aa5ecd446b069b21ecd0f1f724e",
+   "legend": [
+    {
+     "label": "유두 경계 + 1 유두지름",
+     "cls": "vitreous"
+    }
+   ],
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_csme_zone",
+   "items": [
+    "les_csme"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_09.jpg",
+   "mask_label": "중심와 500 µm 안 경성삼출물(공급자 EX mask)",
+   "caption": "당뇨망막병증 눈의 황반입니다. 하늘색 원은 중심와 중심에서 500 µm, 노랑은 그 안에 들어온 경성삼출물(흰 테는 원 밖)입니다. 중심와 500 µm 안의 경성삼출물에 인접한 망막 두꺼워짐이 있으면 임상적으로 유의한 황반부종(CSME)입니다. 두꺼워짐은 사진만으로 확인할 수 없으므로 이 그림은 판정 구역과 삼출물 위치만 보여줍니다.",
+   "transform": "통합 mask 중심와(16)·유두(32) 중심 거리 439 px를 4.5 mm로 보고 500 µm = 49 px; EX(63) 사용",
+   "base": "fundus_csme_zone.jpg",
+   "overlay": "fundus_csme_zone_mask.png",
+   "width": 966,
+   "height": 966,
+   "base_sha256": "b31b2e172a2d9f51fd8b9429ed40c9a1c043dc539ab53b3e161359780d52cdd5",
+   "overlay_sha256": "80c1ab6b7b1098bb49d608fd9fee9ed26de8c49055b4c089b16da1f3a0d8ddc9",
+   "context": "fundus_csme_zone_context.jpg",
+   "context_sha256": "755f005b0417386cdd6030bc792211a7e5954eb2a0d500be98f991440c74a8ed",
+   "legend": [
+    {
+     "label": "중심와 500 µm",
+     "cls": "vitreous"
+    }
+   ],
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "fundus_circinate",
+   "items": [
+    "les_circinate_exudate"
+   ],
+   "source": "refined_idrid",
+   "source_file": "Train/Images/IDRiD_32.jpg",
+   "mask_label": "고리 모양 경성삼출물(공급자 EX mask)",
+   "caption": "당뇨망막병증 눈에서 황반 귀쪽의 경성삼출물(노랑)이 가운데 빈 곳을 둘러 고리를 이룹니다. 고리 가운데의 새는 미세혈관(미세동맥류)에서 나온 지질이 둘레에 쌓인 환상 삼출물입니다.",
+   "transform": "EX(63)를 반지름 12 원판으로 닫았을 때 생기는 가장 큰 빈 곳의 중심 150 px 안 EX; (448,224)–(928,584) 확대",
+   "base": "fundus_circinate.jpg",
+   "overlay": "fundus_circinate_mask.png",
+   "width": 480,
+   "height": 360,
+   "base_sha256": "b4ed9744c51756ce9b8c41644aa87df52fcb4c3d741ff75465cc843e1e75acf9",
+   "overlay_sha256": "083e67140e07893282c0ae616909cf73b5162df9dea8d05ffafb2bd4f43e2892",
+   "context": "fundus_circinate_context.jpg",
+   "context_sha256": "d9eaa8d5355f5069d8c989559e028db35fb6b727c5503d9faf28bc83477de44b",
+   "name": "Refined IDRiD",
+   "credit": "Refined IDRiD annotations (Zenodo 18676805)",
+   "url": "https://doi.org/10.5281/zenodo.18676805",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "refined_idrid"
+  },
+  {
+   "id": "uwf_etdrs_7field",
+   "items": [
+    "zone_etdrs_7field"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "Normal512/1_105_2020-04-14_2_R.png",
+   "mask_label": "ETDRS 7 표준 촬영 범위(해부학적 정의로 그린 근사 구역)",
+   "caption": "정상 눈의 초광각 영상 위에 ETDRS 7 표준 촬영 범위(30° 원 7개)를 근사로 그렸습니다. 1은 유두, 2는 황반 중심, 3은 황반 귀쪽, 4–7은 유두를 기준으로 위·아래 귀쪽과 코쪽입니다. 초광각 영상은 이 범위 바깥의 넓은 주변부까지 담습니다.",
+   "transform": "유두 중심 (np.int64(250), np.int64(227))·중심와 (np.int64(196), np.int64(226)) 육안 지정, 거리 54 px = 4.5 mm 가정; 30° 원 반지름 = 0.95 × 유두–중심와 거리, 4–7번은 유두 중심을 지나는 가로·세로선에 접하도록 배치",
+   "base": "uwf_etdrs_7field.jpg",
+   "overlay": "uwf_etdrs_7field_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "21786cae4ac37ca994fa6b94611b96964f56fd9857623805ef287f4c014160f5",
+   "overlay_sha256": "43e917da0573d4da798d8b65b4f6602ef6193959a8c4382a2c733d31282fcc71",
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "uwf_mid_periphery",
+   "items": [
+    "ana_mid_periphery"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "Normal512/1_105_2020-04-14_2_R.png",
+   "mask_label": "중간 주변부(해부학적 정의로 그린 근사 구역)",
+   "caption": "정상 눈의 초광각 영상에서 후극부(ETDRS 7 범위) 바깥부터 적도(와정맥 팽대부 부근)까지를 중간 주변부로 표시했습니다.",
+   "transform": "유두 중심 (np.int64(250), np.int64(227))·중심와 (np.int64(196), np.int64(226)) 육안 지정, 거리 54 px = 4.5 mm 가정; 7 범위 합집합 밖, 유두–중심와 중점에서 189 px(3.5 × 거리, 적도 근사) 안의 망막",
+   "base": "uwf_mid_periphery.jpg",
+   "overlay": "uwf_mid_periphery_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "21786cae4ac37ca994fa6b94611b96964f56fd9857623805ef287f4c014160f5",
+   "overlay_sha256": "b300dd77824d5a99c9573d8451c3a47c75595492f710c5e703b9481b6af89efe",
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "uwf_far_periphery",
+   "items": [
+    "ana_far_periphery"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "Normal512/1_105_2020-04-14_2_R.png",
+   "mask_label": "원주변부(해부학적 정의로 그린 근사 구역)",
+   "caption": "정상 눈의 초광각 영상에서 적도 바깥부터 영상이 닿는 끝까지를 원주변부로 표시했습니다. 실제 원주변부는 거상연까지 이어지지만 초광각 영상도 위·아래 끝은 눈꺼풀에 가려 다 담지 못합니다.",
+   "transform": "유두 중심 (np.int64(250), np.int64(227))·중심와 (np.int64(196), np.int64(226)) 육안 지정, 거리 54 px = 4.5 mm 가정; 유두–중심와 중점에서 189 px 밖의 망막, 눈꺼풀·속눈썹 반사 제외",
+   "base": "uwf_far_periphery.jpg",
+   "overlay": "uwf_far_periphery_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "21786cae4ac37ca994fa6b94611b96964f56fd9857623805ef287f4c014160f5",
+   "overlay_sha256": "77e9af86d63fb92c99cb5ee967f236dbc93b2b55ba06897ff305af8147ac8f4f",
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "uwf_retinal_periphery",
+   "items": [
+    "zone_retinal_periphery"
+   ],
+   "source": "uwf_dr_2026",
+   "source_file": "Normal512/1_105_2020-04-14_2_R.png",
+   "mask_label": "망막 주변부(중간 + 원주변부)(해부학적 정의로 그린 근사 구역)",
+   "caption": "후극부 바깥의 망막 주변부를 중간 주변부(하늘색)와 원주변부(노랑)로 나누어 표시했습니다.",
+   "transform": "유두 중심 (np.int64(250), np.int64(227))·중심와 (np.int64(196), np.int64(226)) 육안 지정, 거리 54 px = 4.5 mm 가정; 중간 주변부 = 7 범위 밖·적도 안, 원주변부 = 적도 밖",
+   "base": "uwf_retinal_periphery.jpg",
+   "overlay": "uwf_retinal_periphery_mask.png",
+   "width": 512,
+   "height": 512,
+   "base_sha256": "21786cae4ac37ca994fa6b94611b96964f56fd9857623805ef287f4c014160f5",
+   "overlay_sha256": "93ea98758af86e8ea67946d3fadaea28ba94e7d2796fbe3ab0deafa3371f2889",
+   "legend": [
+    {
+     "label": "중간 주변부",
+     "cls": "vitreous"
+    },
+    {
+     "label": "원주변부",
+     "cls": "service"
+    }
+   ],
+   "name": "UWF-DR 2026",
+   "credit": "Ultra-wide-field (SLO) fundus image dataset for intelligent DR system (figshare 31259494)",
+   "url": "https://doi.org/10.6084/m9.figshare.31259494",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "uwf_dr_2026"
+  },
+  {
+   "id": "paper_retinal_embolus",
+   "items": [
+    "les_retinal_embolus"
+   ],
+   "source": "rousseau2013",
+   "source_file": "provider_figures/CRIM.OPHMED2013-421352.001.jpg",
+   "mask_label": "혈관 가지점의 반짝이는 색전(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "콜레스테롤 결정 색전증 환자의 안저 사진에서 저자가 확대한 부분입니다. 망막 동맥이 갈라지는 자리에 노랗고 반짝이는 작은 덩어리(노란 원, 저자 화살표 자리)가 걸려 있습니다(Hollenhorst 판).",
+   "transform": "패널 (330, 20, 578, 220) 잘라 사용; 저자 화살표 끝의 색전에 원; 표시용 2배 확대",
+   "base": "paper_retinal_embolus.jpg",
+   "overlay": "paper_retinal_embolus_mask.png",
+   "width": 496,
+   "height": 400,
+   "base_sha256": "f0327b5efeba6bdb6c9f41480d04050812e49feeb43d5328fca007710bb52d77",
+   "overlay_sha256": "3f5c2796126b63241b19e88de3f4e5e4404e3ac22990cd8e9a826ef35701a9ac",
+   "context": "paper_retinal_embolus_context.jpg",
+   "context_sha256": "ffa63c4e875e154aa19210cad7639e376aaf9f41719b26bd0f43d4c355c9e4a0",
+   "name": "Rousseau et al. 2013",
+   "credit": "Rousseau A, et al. (2013) Case Rep Ophthalmol Med 2013:421352, Figure 1",
+   "url": "https://doi.org/10.1155/2013/421352",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "rousseau2013"
+  },
+  {
+   "id": "paper_macular_pigment",
+   "items": [
+    "ana_macular_pigment"
+   ],
+   "source": "raming2026",
+   "source_file": "provider_figures/gr1.webp",
+   "mask_label": "황반 중심의 색소 밀집(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "건강한 눈의 두 파장 자가형광으로 구한 황반 색소 광학밀도(MPOD) 지도입니다. 황반 색소(루테인·제아잔틴)가 중심와에 가장 짙게 모여 가운데가 밝고(노란 원), 바깥으로 갈수록 옅어집니다. 회색 격자는 저자 측정 격자입니다.",
+   "transform": "패널 (45, 305, 555, 815) 잘라 사용; 중심와 MPOD 최고점 둘레에 원",
+   "base": "paper_macular_pigment.jpg",
+   "overlay": "paper_macular_pigment_mask.png",
+   "width": 510,
+   "height": 510,
+   "base_sha256": "0fda033d8d9a866556c561c14dfa1e52fcffcbe0cc08b8a8bb3ba1560160df3f",
+   "overlay_sha256": "0f67ccca7986e898255caa8e4a8c380cfea449a72368a36f2d3e74c7f7c5f741",
+   "name": "Raming et al. 2026",
+   "credit": "Raming K, et al. (2026) Ophthalmol Sci 6:101326, Figure 1 A2",
+   "url": "https://doi.org/10.1016/j.xops.2026.101326",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "raming2026"
+  },
+  {
+   "id": "paper_choroidal_hemangioma",
+   "items": [
+    "les_choroidal_hemangioma"
+   ],
+   "source": "alahmadi2026",
+   "source_file": "provider_figures/rc9-138-4141-g001.webp",
+   "mask_label": "주황색 융기와 조기 과형광(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "국한성 맥락막 혈관종 눈입니다. 왼쪽 광각 컬러 사진에서 유두 옆의 주황빛으로 솟은 맥락막 병변, 가운데 형광안저혈관조영과 오른쪽 인도시아닌그린 혈관조영에서 같은 자리가 일찍 밝게 차오릅니다(노란 원).",
+   "transform": "패널 (0, 0, 1500, 310) 잘라 사용; 저자 설명의 유두 코쪽 병변 자리에 원(세 영상 각각)",
+   "base": "paper_choroidal_hemangioma.jpg",
+   "overlay": "paper_choroidal_hemangioma_mask.png",
+   "width": 1200,
+   "height": 248,
+   "base_sha256": "914b92712ba24b76b01c719c10877f98a9236c43e7a77d76c6b5c139fa713d9a",
+   "overlay_sha256": "c2ddcb64c3256068df4b286e69fe74d2ea68022a2360bbf19030d00c337488e1",
+   "name": "Alahmadi et al. 2026",
+   "credit": "Alahmadi B, et al. (2026) Int J Surg Case Rep 138:4141, Figure 1A–C",
+   "url": "https://doi.org/10.1097/RC9.0000000000000907",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "alahmadi2026"
+  },
+  {
+   "id": "paper_myopic_diffuse_atrophy",
+   "items": [
+    "les_myopic_diffuse_atrophy"
+   ],
+   "source": "park2022",
+   "source_file": "provider_figures/41598_2022_7172_Fig1_HTML.jpg",
+   "mask_label": "경계가 흐린 황백색 위축(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "고도근시 눈의 광각 가색 사진입니다. 유두 둘레와 황반 쪽으로 경계가 흐릿한 황백색 구역(노란 테)이 퍼져 있는데, 이것이 미만성 맥락망막 위축입니다. 경계가 뚜렷한 흰 반점형 위축과 구분됩니다.",
+   "transform": "패널 (0, 0, 170, 102) 잘라 사용; 유두 둘레 황백색 구역에 타원; 표시용 4배 확대",
+   "base": "paper_myopic_diffuse_atrophy.jpg",
+   "overlay": "paper_myopic_diffuse_atrophy_mask.png",
+   "width": 680,
+   "height": 408,
+   "base_sha256": "02ea1f280d3175e8e4c347b06413df5acb413ac057697fe298e44b906465d34d",
+   "overlay_sha256": "4d7472330d7c786b43cb2e309a99401db35550e85f14bf0cdb087424c71ad4f3",
+   "name": "Park et al. 2022",
+   "credit": "Park UC, et al. (2022) Sci Rep 12:3099, Fig. 1a",
+   "url": "https://doi.org/10.1038/s41598-022-07172-w",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "park2022"
+  },
+  {
+   "id": "paper_rnfl_defect",
+   "items": [
+    "les_rnfl_defect"
+   ],
+   "source": "zhang2023",
+   "source_file": "provider_figures/12886_2023_2887_Fig4_HTML.jpg",
+   "mask_label": "쐐기 모양 신경섬유층 결손(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "녹내장 눈의 무적색(red-free) 사진입니다. 유두에서 뻗는 밝은 신경섬유 줄무늬 사이에 어둡게 빠진 쐐기 모양 띠(노란 원, 저자 화살표 자리)가 위·아래 귀쪽에 있습니다.",
+   "transform": "패널 (297, 0, 595, 299) 잘라 사용; 저자 화살표 끝의 결손 띠에 원; 표시용 2배 확대",
+   "base": "paper_rnfl_defect.jpg",
+   "overlay": "paper_rnfl_defect_mask.png",
+   "width": 596,
+   "height": 598,
+   "base_sha256": "9f906769b700c09bb8cff28461c8468082468b2a2fa7dc503b546dc4b098fa7a",
+   "overlay_sha256": "4ef9373e522a7703ca9c44527364af650762d2c3c3bccc1d497362f6683e843b",
+   "name": "Zhang et al. 2023",
+   "credit": "Zhang W, et al. (2023) BMC Ophthalmol 23:134, Fig. 4B",
+   "url": "https://doi.org/10.1186/s12886-023-02887-4",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "zhang2023"
+  },
+  {
+   "id": "paper_disc_pallor",
+   "items": [
+    "les_disc_pallor"
+   ],
+   "source": "jung2023",
+   "source_file": "provider_figures/12886_2023_3104_Fig1_HTML.jpg",
+   "mask_label": "창백해진 유두(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "시신경병증 3개월 뒤의 유두 사진입니다. 유두 전체가 분홍빛을 잃고 하얗게 창백해졌습니다(노란 테). 정상 유두의 신경망막 테는 분홍색이어야 합니다.",
+   "transform": "패널 (0, 0, 677, 632) 잘라 사용; 밝기(σ 4) Otsu 임계 위 영역 중 유두 자리 최대 성분, 구멍 채움",
+   "base": "paper_disc_pallor.jpg",
+   "overlay": "paper_disc_pallor_mask.png",
+   "width": 677,
+   "height": 632,
+   "base_sha256": "7b7a1730dbfd577d29b3d7bbb5613a234ad120430b14fa9dec94cc9e7afaee64",
+   "overlay_sha256": "c6f519d069c3aff51d0892668fe705b15550574ba8339535cb688d9375b5ab6c",
+   "name": "Jung et al. 2023",
+   "credit": "Jung EH, et al. (2023) BMC Ophthalmol 23:375, Fig. 3A",
+   "url": "https://doi.org/10.1186/s12886-023-03104-y",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "jung2023"
+  },
+  {
+   "id": "paper_gravitational_tract",
+   "items": [
+    "les_rpe_gravitational_tract"
+   ],
+   "source": "inada2024",
+   "source_file": "provider_figures/cureus-0016-00000063557-i01.jpg",
+   "mask_label": "아래로 흘러내린 궤적(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "만성 중심장액맥락망막병증 눈의 광각 자가형광 사진입니다. 황반 아래에서 아래쪽으로 길게 흘러내린 밝고 어두운 띠(노란 테)가 망막하액이 중력 방향으로 흘러 RPE를 상하게 한 궤적입니다(저자: 하행 궤적).",
+   "transform": "패널 (375, 550, 750, 790) 잘라 사용; 저자 설명의 하행 궤적에 타원; 표시용 2배 확대",
+   "base": "paper_gravitational_tract.jpg",
+   "overlay": "paper_gravitational_tract_mask.png",
+   "width": 750,
+   "height": 480,
+   "base_sha256": "584d3a83fd27a8845c2f11dc3dedf10236a1185ec36ed0f03edf933f300355eb",
+   "overlay_sha256": "93247eafdd21dea1b4f536dee2798c3b62e4b3bcbab89835abac6cfe3b10f9db",
+   "name": "Inada et al. 2024",
+   "credit": "Inada Y, et al. (2024) Cureus 16:e63557, Figure 1C",
+   "url": "https://doi.org/10.7759/cureus.63557",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "inada2024"
+  },
+  {
+   "id": "paper_fuchs_spot",
+   "items": [
+    "les_fuchs_spot"
+   ],
+   "source": "perente2025",
+   "source_file": "provider_figures/cureus-0017-00000086567-i01.jpg",
+   "mask_label": "황반의 검은 색소 반점(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "고도근시 눈의 컬러 안저 사진입니다. 유두 둘레의 흰 위축 옆, 황반에 둥글고 검은 색소 반점(노란 원, 저자 검은 화살표 자리)이 있습니다. 근시성 맥락막 신생혈관이 흉터로 남아 색소가 모인 푹스 반점입니다.",
+   "transform": "패널 (0, 0, 750, 691) 잘라 사용; 저자 검은 화살표 끝의 반점에 원",
+   "base": "paper_fuchs_spot.jpg",
+   "overlay": "paper_fuchs_spot_mask.png",
+   "width": 750,
+   "height": 691,
+   "base_sha256": "6d92e81f39f094dfe83917ac6a6d3b4291012aca8497f01dc8b5fc077682f2f4",
+   "overlay_sha256": "6b97e31d2edf203c6906e6b25b6555d74468dd7dc73144a17710d25d66ed9196",
+   "name": "Perente et al. 2025",
+   "credit": "Perente A, et al. (2025) Cureus 17:e86567, Figure 1",
+   "url": "https://doi.org/10.7759/cureus.86567",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "perente2025"
+  },
+  {
+   "id": "paper_rpc",
+   "items": [
+    "ana_radial_peripapillary_capillaries"
+   ],
+   "source": "hassanpour2022",
+   "source_file": "provider_figures/jovr-17-140-g001.jpg",
+   "mask_label": "유두주위 방사상 모세혈관(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "건강한 눈의 유두 OCTA 중 내경계막–신경섬유층 슬랩입니다. 큰 혈관(표시 없음) 사이를 촘촘히 채운 가는 그물 신호(옅은 노랑)가 신경섬유층 안을 유두 쪽으로 달리는 유두주위 방사상 모세혈관입니다. 이 해상도에서는 개별 모세혈관보다 그물의 밀도로 보입니다.",
+   "transform": "패널 (243, 440, 382, 575) 잘라 사용; 흰색 톱햇(7) > 32인 큰 혈관과 저자 측정선을 뺀 슬랩 영역; 표시용 3배 확대",
+   "base": "paper_rpc.jpg",
+   "overlay": "paper_rpc_mask.png",
+   "width": 417,
+   "height": 405,
+   "base_sha256": "e8b5cd7ac0ed9c9fbc7c9af2e8e0960eeeff502431da85c43c0157f37b700893",
+   "overlay_sha256": "272a3ecd2ba2039512309dad3f42fe7e7e8864eed66d44163816e4a2bbe49e54",
+   "name": "Hassanpour et al. 2022",
+   "credit": "Hassanpour K, et al. (2022) J Ophthalmic Vis Res 17:140, Figure 1 (대조군 오른눈)",
+   "url": "https://doi.org/10.18502/jovr.v17i1.10180",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "hassanpour2022"
+  },
+  {
+   "id": "paper_sub_rpe_ring",
+   "items": [
+    "les_sub_rpe_ring_lesion"
+   ],
+   "source": "carta2023",
+   "source_file": "provider_figures/cureus-0015-00000047942-i03.jpg",
+   "mask_label": "RPE 아래 고리 모양 병변(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "결절성 맥락막혈관병증 눈의 OCT 단면입니다. 뾰족하게 솟은 색소상피박리 안쪽, RPE 바로 아래에 가장자리가 밝고 가운데가 어두운 고리 모양 구조(노란 원)가 보이는데, 이것이 폴립의 내강입니다(저자 설명).",
+   "transform": "패널 (522, 0, 750, 138) 잘라 사용; 저자 화살촉 아래 PED 안 저반사 내강에 원; 표시용 3배 확대",
+   "base": "paper_sub_rpe_ring.jpg",
+   "overlay": "paper_sub_rpe_ring_mask.png",
+   "width": 684,
+   "height": 414,
+   "base_sha256": "f5e8c15584f3e2b257e653143ebab1fb2200251163950d1545d2d0dfea9270f1",
+   "overlay_sha256": "77a8f167616baee73cf1386766fef7839c145807feebdafb99412a39cac56694",
+   "name": "Carta et al. 2023",
+   "credit": "Carta V, et al. (2023) Cureus 15:e47942, Figures 2D·3B",
+   "url": "https://doi.org/10.7759/cureus.47942",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "carta2023"
+  },
+  {
+   "id": "paper_premacular_bursa",
+   "items": [
+    "ana_premacular_bursa"
+   ],
+   "source": "carpineto2020",
+   "source_file": "provider_figures/BMRI2020-7627128.001.jpg",
+   "mask_label": "황반 앞 액화 주머니(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "건강한 눈의 광각 SS-OCT 단면입니다. 중심와 바로 앞 유리체에 배 모양으로 어둡게 비어 있는 공간(노란 테)이 황반앞 유리체 주머니입니다. 위쪽 경계는 얇은 유리체 피질 막이며, 붉은 선은 저자의 폭·두께 측정선입니다.",
+   "transform": "패널 (0, 0, 591, 271) 잘라 사용; 저자 폭(W)·중심 두께(CT) 측정선 둘레의 저반사 공간에 타원",
+   "base": "paper_premacular_bursa.jpg",
+   "overlay": "paper_premacular_bursa_mask.png",
+   "width": 591,
+   "height": 271,
+   "base_sha256": "550029ec2f361258f8542ac33d6dd1ce4d2e8bdc9a4c5811675f5571601a34f8",
+   "overlay_sha256": "134ff9e03f3289b209042aa4b632a4efac14a7b5c98b9ee87ce86e78acaa7389",
+   "name": "Carpineto et al. 2020",
+   "credit": "Carpineto P, et al. (2020) Biomed Res Int 2020:7627128, Figure 1",
+   "url": "https://doi.org/10.1155/2020/7627128",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "carpineto2020"
+  },
+  {
+   "id": "paper_sclera",
+   "items": [
+    "ana_sclera"
+   ],
+   "source": "li2022",
+   "source_file": "provider_figures/diagnostics-12-01418-g001.jpg",
+   "mask_label": "드러난 공막(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "고도근시 눈의 SS-OCT 단면입니다. 반점형 위축 자리(저자 화살표)에서 RPE·브루크막·맥락막이 없어져, 그 아래의 두껍고 균일하게 밝은 공막(노란 테)이 망막 바로 밑에 드러나 보입니다.",
+   "transform": "패널 (300, 100, 794, 330) 잘라 사용; 저자 화살표 아래 공막 띠에 타원; 표시용 2배 확대",
+   "base": "paper_sclera.jpg",
+   "overlay": "paper_sclera_mask.png",
+   "width": 988,
+   "height": 460,
+   "base_sha256": "36940e2ec82c7a718131ecfa497794dda19b851d5568ee3fede594c0452e449d",
+   "overlay_sha256": "9badf36ed2ec060b18fafe14f2358876f3e7d9a3565534564ddff409aa76c980",
+   "name": "Li et al. 2022",
+   "credit": "Li Y, et al. (2022) Diagnostics 12:1418, Figure 1a",
+   "url": "https://doi.org/10.3390/diagnostics12061418",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "li2022"
+  },
+  {
+   "id": "paper_intraretinal_pigment",
+   "items": [
+    "les_intraretinal_hyperreflective_pigment"
+   ],
+   "source": "beuran2026",
+   "source_file": "provider_figures/jcm-15-01327-g002.jpg",
+   "mask_label": "망막 안의 고반사 색소 덩어리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "2형 황반모세혈관확장증 눈의 OCT 단면입니다. 중심와 옆 외망막 안으로 RPE에서 떨어져 나온 색소 덩어리가 짙은 고반사(노란 원, 저자 파란 별·화살표 자리)로 올라와 있고, 그 아래로 빛이 가려 그림자가 집니다.",
+   "transform": "패널 (299, 1160, 746, 1455) 잘라 사용; 저자 파란 별·화살표가 가리키는 고반사 덩어리에 원; 표시용 2배 확대",
+   "base": "paper_intraretinal_pigment.jpg",
+   "overlay": "paper_intraretinal_pigment_mask.png",
+   "width": 894,
+   "height": 590,
+   "base_sha256": "5f1bb4eef6bbf376216214da2cc9d810de0d063c3db261dcce6e89ac03dea36e",
+   "overlay_sha256": "85f0d8472d135d60ac0ed5bd347c093877521854a0a9cd571b0fdc0d35eb32af",
+   "name": "Beuran et al. 2026",
+   "credit": "Beuran DI, et al. (2026) J Clin Med 15:1327, Figure 2E",
+   "url": "https://doi.org/10.3390/jcm15041327",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "beuran2026"
+  },
+  {
+   "id": "paper_sub_rpe_hemorrhage",
+   "items": [
+    "les_hemorrhage_sub_rpe"
+   ],
+   "source": "tao2026",
+   "source_file": "provider_figures/10.1177_24741264261442930-fig1.jpg",
+   "mask_label": "RPE 아래에 고인 출혈(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "결절성 맥락막혈관병증 눈에 생긴 큰 RPE 아래 출혈의 OCT 단면입니다. 밝은 RPE 선(노랑·초록 색입힘)이 크게 들려 있고, 그 아래 공간(노란 테)이 출혈로 어둡게 차 있습니다(저자 설명: 거대한 RPE 아래 출혈로 생긴 RPE 박리).",
+   "transform": "패널 (0, 0, 250, 155) 잘라 사용; 들린 RPE 선 아래 공간에 타원; 표시용 3배 확대",
+   "base": "paper_sub_rpe_hemorrhage.jpg",
+   "overlay": "paper_sub_rpe_hemorrhage_mask.png",
+   "width": 750,
+   "height": 465,
+   "base_sha256": "a57adae3315af9fdd49b492b083800f33f2021525fb7af1ab75a885e9af49b09",
+   "overlay_sha256": "1465a13e97263dc9e17731caf98be56cf936f49c7713efa883d725909c15e1d4",
+   "name": "Tao et al. 2026",
+   "credit": "Tao BK, et al. (2026) J Vitreoretin Dis, Figure 1A",
+   "url": "https://doi.org/10.1177/24741264261442930",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "tao2026"
+  },
+  {
+   "id": "paper_disc_collaterals",
+   "items": [
+    "les_disc_collaterals"
+   ],
+   "source": "fakhrurazi2026",
+   "source_file": "provider_figures/cureus-0018-00000112968-i03.webp",
+   "mask_label": "유두 위 측부혈관(시신경섬모체 단락)(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "중심망막정맥폐쇄 눈의 시신경유두를 확대한 사진입니다. 충혈된 유두 위에 막힌 정맥 대신 맥락막 쪽으로 피를 돌리는 구불구불한 단락 혈관이 생겼습니다(노란 원 안, 저자 설명: 시신경섬모체 단락). 주변에는 화염 모양 출혈이 퍼져 있습니다.",
+   "transform": "패널 (440, 570, 840, 970) 잘라 사용; 저자 설명의 단락 혈관이 있는 유두에 원",
+   "base": "paper_disc_collaterals.jpg",
+   "overlay": "paper_disc_collaterals_mask.png",
+   "width": 400,
+   "height": 400,
+   "base_sha256": "5181f2b997c07918c03f91ff49ef2e289696856121d4419e872f0aa5764c2d69",
+   "overlay_sha256": "7680d3f837cd9a63cf07cf004c5c5e83b2958cf1b86cbd94586a706db7dd6432",
+   "context": "paper_disc_collaterals_context.jpg",
+   "context_sha256": "61cb51e9636d729e081f325955f30eb6801418de955c8cccad0da04809a84eb5",
+   "name": "Fakhrurazi et al. 2026",
+   "credit": "Fakhrurazi SF, et al. (2026) Cureus 18:e112968, Figure 3",
+   "url": "https://doi.org/10.7759/cureus.112968",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "fakhrurazi2026"
+  },
+  {
+   "id": "paper_lattice_degeneration",
+   "items": [
+    "les_lattice_degeneration"
+   ],
+   "source": "zhu2026",
+   "source_file": "provider_figures/fmed-13-1929247-g001.webp",
+   "mask_label": "주변부 격자변성(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "근시 눈의 주변부 광각 가색 사진입니다. 망막 주변부에 가장자리를 따라 색소가 모인 가늘고 긴 얇아진 구역(노란 테, 저자 빨간 화살표 자리)이 격자변성입니다. 가색 영상이라 실제 색과 다릅니다.",
+   "transform": "패널 (538, 0, 1037, 384) 잘라 사용; 저자 빨간 화살표 끝 병변에 타원",
+   "base": "paper_lattice_degeneration.jpg",
+   "overlay": "paper_lattice_degeneration_mask.png",
+   "width": 499,
+   "height": 384,
+   "base_sha256": "fb9910dc5da9c1026f51a8e4bc428e0639987327577c63d6394d7f04b6a5e019",
+   "overlay_sha256": "31e408faf6dfa73dba77d78a264b16bbe90c62d42ab08ccfdaf8d8197b84ec86",
+   "name": "Zhu et al. 2026",
+   "credit": "Zhu Z, et al. (2026) Front Med 13:1929247, Figure 1B",
+   "url": "https://doi.org/10.3389/fmed.2026.1929247",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "zhu2026"
+  },
+  {
+   "id": "paper_subretinal_lipid",
+   "items": [
+    "les_lipid_subretinal"
+   ],
+   "source": "khadka2021",
+   "source_file": "provider_figures/13256_2021_3221_Fig3_HTML.jpg",
+   "mask_label": "망막 아래 지질 침착(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "Coats병 눈의 OCT 단면(색입힘)입니다. 떠 있는 망막 아래쪽 망막하 공간에 밝은 점 모양 지질 삼출물(노란 테)이 쌓여 있고, 그 아래로 망막하액과 망막박리가 있습니다(저자 설명).",
+   "transform": "패널 (740, 90, 1592, 560) 잘라 사용; 망막하 공간의 고반사 점 무리에 타원",
+   "base": "paper_subretinal_lipid.jpg",
+   "overlay": "paper_subretinal_lipid_mask.png",
+   "width": 852,
+   "height": 470,
+   "base_sha256": "b7eeaadeb6ffaa673f25d869b39fc8e17b4f8525b512ca8c36a00c93a587a038",
+   "overlay_sha256": "b64aca26af323b654c0d8d9332156745b8bb4666bfe85480e4f39e4052c38282",
+   "name": "Khadka et al. 2021",
+   "credit": "Khadka S, et al. (2021) J Med Case Rep 15:631, Fig. 3",
+   "url": "https://doi.org/10.1186/s13256-021-03221-6",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "khadka2021"
+  },
+  {
+   "id": "paper_rpe_hyperpigmentation",
+   "items": [
+    "les_rpe_hyperpigmentation"
+   ],
+   "source": "sasaki2022",
+   "source_file": "provider_figures/jcm-11-06274-g007.jpg",
+   "mask_label": "황반의 작은 과색소 병변(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "맥락막비후 색소상피병증 눈의 컬러 안저 사진입니다. 황반에 RPE가 진하게 착색된 작은 색소 병변과 드루젠 같은 병변(노란 원, 저자 화살촉 자리)이 있습니다.",
+   "transform": "패널 (0, 0, 160, 150) 잘라 사용; 저자 화살촉 아래 병변에 원; 표시용 4배 확대",
+   "base": "paper_rpe_hyperpigmentation.jpg",
+   "overlay": "paper_rpe_hyperpigmentation_mask.png",
+   "width": 640,
+   "height": 600,
+   "base_sha256": "237b2a0f0a3eda4660eb6085a6252dbd576f99aa6290d5c80e375d485eee3871",
+   "overlay_sha256": "2e5fa7aa21e037a0a26182312097b4f8dc5ed213256eea2a29d2342d6b1767e9",
+   "name": "Sasaki et al. 2022",
+   "credit": "Sasaki M, et al. (2022) J Clin Med 11:6274, Figure 7A",
+   "url": "https://doi.org/10.3390/jcm11216274",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "sasaki2022"
+  },
+  {
+   "id": "paper_venous_beading",
+   "items": [
+    "les_venous_beading"
+   ],
+   "source": "haydinger2023",
+   "source_file": "provider_figures/antioxidants-12-01649-g001.jpg",
+   "mask_label": "구슬처럼 굵기가 바뀌는 정맥(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨망막병증 눈의 광각 가색 사진입니다. 저자 2번 화살표가 가리키는 정맥 가지(노란 원)가 구슬을 꿴 것처럼 굵어졌다 가늘어지기를 되풀이합니다. 정맥 구슬모양 변화는 중증 비증식 당뇨망막병증의 기준 소견입니다.",
+   "transform": "패널 (41, 286, 653, 676) 잘라 사용; 저자 2번 화살표 아래 정맥 가지에 원; 표시용 2배 확대",
+   "base": "paper_venous_beading.jpg",
+   "overlay": "paper_venous_beading_mask.png",
+   "width": 1200,
+   "height": 765,
+   "base_sha256": "1c29014123d4f3220ba5aab10b476eb17ed463cf5da6408e6c46a8ade0d63a27",
+   "overlay_sha256": "2929dd8dda2caa8753f3501ba604f06a1efc32a95a749ba9b29903acc3db7687",
+   "context": "paper_venous_beading_context.jpg",
+   "context_sha256": "3ec606826001b64548700666ad5b74540bfe8d1de3d8092e2606c6dfea619386",
+   "name": "Haydinger et al. 2023",
+   "credit": "Haydinger CD, et al. (2023) Antioxidants 12:1649, Figure 1D",
+   "url": "https://doi.org/10.3390/antiox12081649",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "haydinger2023"
+  },
+  {
+   "id": "paper_venous_loop",
+   "items": [
+    "les_venous_loop_reduplication"
+   ],
+   "source": "haydinger2023",
+   "source_file": "provider_figures/antioxidants-12-01649-g001.jpg",
+   "mask_label": "정맥 고리(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "당뇨망막병증 눈의 광각 가색 사진입니다. 저자 5번 화살표 끝(노란 원)에서 정맥 가지가 작은 고리를 만들며 되돌아갑니다. 정맥 고리는 막힌 곳을 우회하는 혈류 변화로 생기며 진행된 당뇨망막병증에서 보입니다.",
+   "transform": "패널 (41, 286, 653, 676) 잘라 사용; 저자 5번 화살표 끝의 정맥 고리에 원; 표시용 2배 확대",
+   "base": "paper_venous_loop.jpg",
+   "overlay": "paper_venous_loop_mask.png",
+   "width": 1200,
+   "height": 765,
+   "base_sha256": "1c29014123d4f3220ba5aab10b476eb17ed463cf5da6408e6c46a8ade0d63a27",
+   "overlay_sha256": "097f34c8b2309f493ef6dd3a164b121fedeb6f6c2ae93a04ef730dc1bd08ac89",
+   "context": "paper_venous_loop_context.jpg",
+   "context_sha256": "3ec606826001b64548700666ad5b74540bfe8d1de3d8092e2606c6dfea619386",
+   "name": "Haydinger et al. 2023",
+   "credit": "Haydinger CD, et al. (2023) Antioxidants 12:1649, Figure 1D",
+   "url": "https://doi.org/10.3390/antiox12081649",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "haydinger2023"
+  },
+  {
+   "id": "paper_small_drusen",
+   "items": [
+    "les_drusen_small"
+   ],
+   "source": "wagner2025",
+   "source_file": "provider_figures/AOS-103-e318-g008.jpg",
+   "mask_label": "RPE 아래 작은 드루젠(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "초기 나이관련황반변성 눈의 OCT 단면입니다. RPE 선이 아주 작게 솟아오른 자리(노란 원, 저자 빨간 화살표 자리)가 소형 드루젠이며, 저자 측정 넓이는 약 1,700 µm²입니다. 오른쪽 위 작은 그림은 저자의 확대 영상입니다.",
+   "transform": "패널 (0, 0, 245, 245) 잘라 사용; 저자 빨간 화살표 끝의 RPE 돌출에 원; 표시용 2배 확대",
+   "base": "paper_small_drusen.jpg",
+   "overlay": "paper_small_drusen_mask.png",
+   "width": 490,
+   "height": 490,
+   "base_sha256": "79eb8b650c7a160b3ac66c5b73ef33d80076be690ea26410f6fb52704f95733c",
+   "overlay_sha256": "c6add6ffdbcb9bff1347bbdc359ce4fb8b3ef4e9588c4e77491d3c886b1fae9f",
+   "name": "Wagner et al. 2025",
+   "credit": "Wagner M, et al. (2025) Acta Ophthalmol 103:e318, Figure 3",
+   "url": "https://doi.org/10.1111/aos.17479",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "wagner2025"
+  },
+  {
+   "id": "paper_enface_rpe_elevation",
+   "items": [
+    "les_enface_complex_rpe_elevation"
+   ],
+   "source": "ranetti2025",
+   "source_file": "provider_figures/diagnostics-15-01688-g014.jpg",
+   "mask_label": "en-face의 불규칙한 RPE 융기(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "신생혈관 나이관련황반변성 눈입니다. 왼쪽 en-face OCT에서 녹색 십자선 교차부의 불규칙한 융기 영역(노란 원)이, 오른쪽 B-scan에서는 여러 덩어리가 섞인 불규칙한 색소상피박리(노란 원, 저자 흰 화살표 자리)로 보입니다.",
+   "transform": "패널 (0, 258, 768, 512) 잘라 사용; 저자 십자선 교차부(en-face)와 흰 화살표(B-scan)에 원",
+   "base": "paper_enface_rpe_elevation.jpg",
+   "overlay": "paper_enface_rpe_elevation_mask.png",
+   "width": 768,
+   "height": 254,
+   "base_sha256": "50e0f4082675194b643419a4c3f74f4a0878eb48e9502740cbe59798d6851e89",
+   "overlay_sha256": "574f9cc8c48b03d418a21cf362e2b93d09f1af5d250ab37ef028db2778e495da",
+   "name": "Ranetti et al. 2025",
+   "credit": "Ranetti AE, et al. (2025) Diagnostics 15:1688, Figure 14D–E",
+   "url": "https://doi.org/10.3390/diagnostics15131688",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "ranetti2025"
+  },
+  {
+   "id": "paper_ora_serrata",
+   "items": [
+    "ana_ora_serrata"
+   ],
+   "source": "otsubo2026",
+   "source_file": "provider_figures/12886_2026_5068_Fig1_HTML.webp",
+   "mask_label": "거상연(서비스 표시(자동 추정, 전문가 검토 전))",
+   "caption": "유리체절제술 중 내시경으로 본 주변부 망막입니다. 아래쪽 망막(별표)이 끝나고 위쪽 섬모체 평면부로 바뀌는 톱니 모양 경계(노란 테, 저자 흰 화살촉 자리)가 거상연입니다. 위쪽의 흰 기구는 유리체 절제기입니다.",
+   "transform": "패널 (512, 381, 993, 734) 잘라 사용; 저자 흰 화살촉이 가리키는 경계선 둘레에 타원",
+   "base": "paper_ora_serrata.jpg",
+   "overlay": "paper_ora_serrata_mask.png",
+   "width": 481,
+   "height": 353,
+   "base_sha256": "0e804bdcd02b726e582e1ca6faee43f34e025289555619c31d5e7182e85182a9",
+   "overlay_sha256": "ecd388166f7269ef399e1bf24ba2cbb0ba0273718d5d47943971c3480453adbb",
+   "name": "Otsubo et al. 2026",
+   "credit": "Otsubo M, et al. (2026) BMC Ophthalmol 26:552, Fig. 1E",
+   "url": "https://doi.org/10.1186/s12886-026-05068-1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "source_key": "otsubo2026"
+  }
+ ]
+}

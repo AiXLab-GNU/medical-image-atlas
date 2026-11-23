@@ -1,0 +1,53 @@
+scope,class_id,feature_id,note_ko
+lesion,focal,ft_lesion_generic_presence,
+lesion,focal,ft_lesion_generic_count,임상 개수로 정의(분할 성분 수와 구분)
+lesion,focal,ft_lesion_generic_area,
+lesion,focal,ft_lesion_size_distribution,
+lesion,focal,ft_lesion_generic_shape,
+lesion,focal,ft_lesion_generic_extent,
+lesion,focal,ft_lesion_generic_position,
+lesion,focal,ft_lesion_fovea_distance,
+lesion,focal,ft_lesion_regional_fraction,
+lesion,focal,ft_lesion_spatial_dispersion,
+lesion,focal,ft_lesion_generic_distribution,
+lesion,focal,ft_lesion_generic_change,
+lesion,area,ft_lesion_generic_presence,
+lesion,area,ft_lesion_generic_area,
+lesion,area,ft_lesion_generic_extent,
+lesion,area,ft_lesion_fovea_distance,
+lesion,area,ft_lesion_regional_fraction,
+lesion,area,ft_lesion_generic_distribution,
+lesion,area,ft_lesion_generic_change,
+lesion,volumetric,ft_lesion_generic_presence,
+lesion,volumetric,ft_lesion_generic_area,단면 면적과 en-face 면적을 구분
+lesion,volumetric,ft_lesion_generic_volume,
+lesion,volumetric,ft_lesion_generic_height,
+lesion,volumetric,ft_lesion_generic_extent,
+lesion,volumetric,ft_lesion_fovea_distance,
+lesion,volumetric,ft_lesion_regional_fraction,
+lesion,volumetric,ft_lesion_generic_change,
+lesion,band,ft_lesion_generic_presence,
+lesion,band,ft_lesion_generic_extent,수평 단절·소실 폭
+lesion,band,ft_lesion_generic_area,en-face 소실 면적
+lesion,band,ft_lesion_generic_change,
+lesion,vascular_change,ft_lesion_generic_presence,
+lesion,vascular_change,ft_lesion_generic_grade,
+lesion,vascular_change,ft_vascular_change_extent,
+lesion,vascular_change,ft_lesion_generic_change,
+lesion,diffuse,ft_lesion_generic_presence,
+lesion,diffuse,ft_lesion_generic_grade,
+lesion,diffuse,ft_lesion_generic_distribution,
+lesion,deformation,ft_lesion_generic_presence,
+lesion,deformation,ft_lesion_generic_extent,
+lesion,deformation,ft_lesion_generic_height,깊이·높이
+anatomy,layer,ft_layer_thickness_generic,상·하 경계 명시
+anatomy,layer,ft_layer_continuity_generic,
+anatomy,layer,ft_layer_reflectivity_generic,영상 신호(조직 성분 아님)
+anatomy,band,ft_layer_continuity_generic,
+anatomy,band,ft_layer_reflectivity_generic,영상 신호(조직 성분 아님)
+lesion,focal,ft_lesion_vessel_relation,
+lesion,focal,ft_lesion_radial_position,
+lesion,area,ft_lesion_generic_count,다초점 영역의 초점 수
+lesion,area,ft_lesion_size_distribution,
+lesion,volumetric,ft_lesion_generic_count,낭·액체 공간 수
+lesion,volumetric,ft_lesion_size_distribution,

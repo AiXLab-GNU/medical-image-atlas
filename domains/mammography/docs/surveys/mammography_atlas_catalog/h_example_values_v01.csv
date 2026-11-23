@@ -1,0 +1,111 @@
+example_id,layer_key,feature_id,status,value
+ex_ffdm_mlo,breast,ft_breast_area,ok,"6,617,024 px²"
+ex_ffdm_mlo,pectoral,ft_pectoral_area,ok,"2,030,368 px²"
+ex_ffdm_mlo,pectoral,ft_pectoral_angle,ok,14.4 °
+ex_ffdm_mlo,pnl,ft_pnl_length,ok,"2,008 px"
+ex_ffdm_mlo,pnl,ft_pectoral_reaches_pnl,ok,있음
+ex_ffdm_mlo,dense,ft_dense_area,ok,"2,019,030 px²"
+ex_ffdm_mlo,dense,ft_percent_density,ok,30.5 %
+ex_ffdm_mlo,composition,ft_breast_composition,reading,b (공급자 보고서 ACR B)
+ex_ffdm_mlo,location,ft_lesion_distance_nipple,ok,"1,444 px"
+ex_ffdm_mlo,location,ft_lesion_depth_third,ok,가운데 1/3
+ex_ffdm_mlo,location,ft_lesion_view_half,ok,위쪽
+ex_ffdm_cc,breast,ft_breast_area,ok,"5,441,296 px²"
+ex_ffdm_cc,pnl,ft_pnl_length,ok,"1,922 px"
+ex_ffdm_cc,dense,ft_dense_area,ok,"1,816,738 px²"
+ex_ffdm_cc,dense,ft_percent_density,ok,33.4 %
+ex_ffdm_cc,composition,ft_breast_composition,reading,b (공급자 보고서 ACR B)
+ex_ffdm_cc,location,ft_lesion_distance_nipple,ok,"1,346 px"
+ex_ffdm_cc,location,ft_lesion_depth_third,ok,뒤 1/3
+ex_ffdm_cc,location,ft_lesion_view_half,ok,바깥쪽
+ex_ffdm_pair,match,ft_lesion_two_view,reading,있음 (CC·MLO 모두 표시)
+ex_ffdm_pair,quadrant,ft_lesion_quadrant,ok,외상사분면
+ex_ffdm_pair,quadrant,ft_lesion_clock_position,ok,11:00
+ex_ffdm_pair,pnl,ft_pnl_cc_mlo_difference,ok,86.4 px
+ex_ffdm_mass_circumscribed,outline,ft_mass_size,ok,462.3 px
+ex_ffdm_mass_circumscribed,outline,ft_mass_area,ok,"129,018 px²"
+ex_ffdm_mass_circumscribed,outline,ft_lesion_generic_presence,ok,있음
+ex_ffdm_mass_circumscribed,shape,ft_mass_circularity,ok,0.843
+ex_ffdm_mass_circumscribed,shape,ft_mass_solidity,ok,0.985
+ex_ffdm_mass_circumscribed,shape,ft_mass_radial_sd,ok,0.089
+ex_ffdm_mass_circumscribed,spicule,ft_mass_spiculation_index,ok,0.122
+ex_ffdm_mass_circumscribed,margin,ft_mass_margin_sharpness,ok,0.129
+ex_ffdm_mass_circumscribed,margin,ft_mass_contrast,ok,1.23
+ex_ffdm_mass_circumscribed,margin_read,ft_mass_margin,reading,경계 분명 (DMID CIRC)
+ex_ffdm_mass_spiculated,outline,ft_mass_size,ok,443.1 px
+ex_ffdm_mass_spiculated,outline,ft_mass_area,ok,"122,305 px²"
+ex_ffdm_mass_spiculated,outline,ft_lesion_generic_presence,ok,있음
+ex_ffdm_mass_spiculated,shape,ft_mass_circularity,ok,0.698
+ex_ffdm_mass_spiculated,shape,ft_mass_solidity,ok,0.94
+ex_ffdm_mass_spiculated,shape,ft_mass_radial_sd,ok,0.067
+ex_ffdm_mass_spiculated,spicule,ft_mass_spiculation_index,ok,0.444
+ex_ffdm_mass_spiculated,margin,ft_mass_margin_sharpness,ok,0.115
+ex_ffdm_mass_spiculated,margin,ft_mass_contrast,ok,1.79
+ex_ffdm_mass_spiculated,margin_read,ft_mass_margin,reading,침상 (DMID SPIC)
+ex_ffdm_mass_indistinct,outline,ft_mass_size,ok,556.5 px
+ex_ffdm_mass_indistinct,outline,ft_mass_area,ok,"204,204 px²"
+ex_ffdm_mass_indistinct,outline,ft_lesion_generic_presence,ok,있음
+ex_ffdm_mass_indistinct,shape,ft_mass_circularity,ok,0.877
+ex_ffdm_mass_indistinct,shape,ft_mass_solidity,ok,0.995
+ex_ffdm_mass_indistinct,shape,ft_mass_radial_sd,ok,0.052
+ex_ffdm_mass_indistinct,spicule,ft_mass_spiculation_index,ok,0.345
+ex_ffdm_mass_indistinct,margin,ft_mass_margin_sharpness,ok,0.752
+ex_ffdm_mass_indistinct,margin,ft_mass_contrast,ok,0.72
+ex_ffdm_mass_indistinct,margin_read,ft_mass_margin,reading,불분명 (DMID MISC · 기타 경계)
+ex_ffdm_calc_cluster,spots,ft_calc_count,ok,22 개
+ex_ffdm_calc_cluster,spots,ft_calc_size,ok,44.2 px²
+ex_ffdm_calc_cluster,spots,ft_calc_contrast,ok,5.6
+ex_ffdm_calc_cluster,extent,ft_calc_extent,ok,279.5 px
+ex_ffdm_calc_cluster,extent,ft_calc_density,ok,2.77 count/10^4 px2
+ex_ffdm_calc_cluster,arrangement,ft_calc_linearity,ok,0.71
+ex_ffdm_calc_cluster,arrangement,ft_calc_nn_distance,ok,24.4 px
+ex_ffdm_calc_cluster,shape,ft_calc_size_variation,ok,1.48
+ex_ffdm_calc_cluster,shape,ft_calc_elongation,ok,0.182
+ex_ffdm_calc_cluster,shape,ft_calc_branching,ok,0.286
+ex_ffdm_calc_rodlike,spots,ft_calc_count,ok,118 개
+ex_ffdm_calc_rodlike,spots,ft_calc_size,ok,58.7 px²
+ex_ffdm_calc_rodlike,spots,ft_calc_contrast,ok,5.5
+ex_ffdm_calc_rodlike,extent,ft_calc_extent,ok,777.1 px
+ex_ffdm_calc_rodlike,extent,ft_calc_density,ok,8.22 count/10^4 px2
+ex_ffdm_calc_rodlike,arrangement,ft_calc_linearity,ok,0.942
+ex_ffdm_calc_rodlike,arrangement,ft_calc_nn_distance,ok,18.5 px
+ex_ffdm_calc_rodlike,shape,ft_calc_size_variation,ok,1.61
+ex_ffdm_calc_rodlike,shape,ft_calc_elongation,ok,0.441
+ex_ffdm_calc_rodlike,shape,ft_calc_branching,ok,0.176
+ex_ffdm_calc_rodlike,morph_read,ft_calc_morphology,reading,큰 막대 모양 (서비스 판독)
+ex_ffdm_distortion,converge,ft_ad_convergence_index,ok,0.512
+ex_ffdm_distortion,extent,ft_ad_extent,ok,408.4 px
+ex_ffdm_distortion,extent,ft_lesion_generic_count,ok,1 개
+ex_dbt_mass,outline,ft_mass_size,ok,24.6 px
+ex_dbt_mass,outline,ft_mass_area,ok,357.0 px²
+ex_dbt_mass,outline,ft_lesion_generic_presence,ok,있음
+ex_dbt_mass,outline,ft_lesion_generic_size,ok,24.6 px
+ex_dbt_mass,shape,ft_mass_circularity,ok,0.83
+ex_dbt_mass,shape,ft_mass_solidity,ok,0.913
+ex_dbt_mass,shape,ft_mass_radial_sd,ok,0.081
+ex_dbt_mass,spicule,ft_mass_spiculation_index,ok,0.468
+ex_dbt_mass,read,ft_mass_margin,reading,침상 · 분엽 윤곽 (저자 서술)
+ex_dbt_mass,read,ft_mass_shape,reading,불규칙 (저자: 분엽형 윤곽)
+ex_dbt_mass,read,ft_breast_composition,reading,d (저자: ACR Type D)
+ex_dbt_distortion,converge,ft_ad_convergence_index,ok,0.244 · 9점 중앙값 · 범위 0.16–0.28
+ex_dbt_distortion,extent,ft_ad_extent,ok,76.0 px
+ex_dbt_distortion,read,ft_ad_presence,reading,있음 (저자 서술 · 방사상 흉터)
+ex_dbt_distortion,read,ft_breast_composition,reading,c (저자: ACR Type C)
+ex_dbt_calc,spots,ft_calc_count,ok,10 개
+ex_dbt_calc,spots,ft_calc_size,ok,14.7 px²
+ex_dbt_calc,extent,ft_calc_extent,ok,193.5 px
+ex_cem_mass,enh,ft_enh_intensity_ratio,ok,1.45
+ex_cem_mass,outline,ft_lesion_generic_presence,ok,있음
+ex_cem_mass,outline,ft_lesion_generic_size,ok,49.1 px
+ex_cem_mass,read,ft_lesion_conspicuity,reading,높음 (저자 서술)
+ex_cem_rim,enh,ft_enh_intensity_ratio,ok,1.94
+ex_cem_rim,outline,ft_lesion_generic_presence,ok,있음
+ex_cem_rim,outline,ft_lesion_generic_size,ok,75.0 px
+ex_cem_rim,read,ft_lesion_conspicuity,reading,높음 (저자 서술)
+ex_cem_rim,read,ft_enh_pattern,reading,테두리 증강 (저자 서술)
+ex_cem_nme,enh,ft_enh_intensity_ratio,ok,1.23
+ex_cem_nme,outline,ft_lesion_generic_presence,ok,있음
+ex_cem_nme,outline,ft_nme_extent,ok,30.2 px
+ex_cem_nme,read,ft_lesion_conspicuity,reading,중간 (저자 서술)
+ex_cem_nme,read,ft_nme_distribution,reading,국소(focal) (저자 서술)
+ex_cem_bpe,bpe,ft_bpe_level,reading,A 중등도 → B 최소 (저자 판독)

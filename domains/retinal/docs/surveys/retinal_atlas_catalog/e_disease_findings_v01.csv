@@ -1,0 +1,301 @@
+relation_id,disease_id,finding_id,relation_type,classification_source_id,classification_version,condition_ko,status,evidence_source_ids,review_status
+rel_dr_mild_ma,dis_npdr,les_microaneurysm,severity_classification,src_icdr_2003,ICDR 2003,미세동맥류만 있으면 경도 NPDR,stage1_drafted,src_icdr_2003,source_linked
+rel_dr_moderate_any,dis_npdr,les_hemorrhage_dot_blot,severity_classification,src_icdr_2003,ICDR 2003,미세동맥류 이상의 소견이 있으나 중증 기준 미만이면 중등도 NPDR(출혈·경성삼출물·면화반 등이 해당),stage1_drafted,src_icdr_2003,source_linked
+rel_dr_moderate_he,dis_npdr,les_hard_exudate,severity_classification,src_icdr_2003,ICDR 2003,중등도 NPDR을 구성할 수 있는 소견(단독 판정자 아님),stage1_drafted,src_icdr_2003,source_linked
+rel_dr_moderate_cws,dis_npdr,les_cotton_wool_spot,severity_classification,src_icdr_2003,ICDR 2003,중등도 NPDR을 구성할 수 있는 소견(단독 판정자 아님),stage1_drafted,src_icdr_2003,source_linked
+rel_dr_severe_hem,dis_npdr,ft_hem_count_quadrant,severity_classification,src_icdr_2003,ICDR 2003 (4-2-1),4개 사분면 각각에 망막내 출혈 20개 초과 → 중증 NPDR(4-2-1 중 하나 충족 + PDR 징후 없음),stage1_drafted,src_icdr_2003,source_linked
+rel_dr_severe_vb,dis_npdr,ft_vb_quadrants,severity_classification,src_icdr_2003,ICDR 2003 (4-2-1),2개 이상 사분면에 확실한 정맥 구슬모양 변화 → 중증 NPDR,stage1_drafted,src_icdr_2003,source_linked
+rel_dr_severe_irma,dis_npdr,ft_irma_quadrants,severity_classification,src_icdr_2003,ICDR 2003 (4-2-1),1개 이상 사분면에 뚜렷한 IRMA → 중증 NPDR,stage1_drafted,src_icdr_2003,source_linked
+rel_dr_etdrs_scale,dis_dr,ft_hem_severity_standard_photo,severity_classification,src_etdrs10_1991,ETDRS report 10 (1991),ETDRS 세부 중증도 척도는 7표준영역·표준사진 대비 판독을 사용,stage1_drafted,src_etdrs10_1991,source_linked
+rel_pdr_nvd,dis_pdr,les_nv_disc,diagnostic_criterion,src_icdr_2003,ICDR 2003,신생혈관이 있으면 PDR,stage1_drafted,src_icdr_2003,source_linked
+rel_pdr_nve,dis_pdr,les_nv_elsewhere,diagnostic_criterion,src_icdr_2003,ICDR 2003,신생혈관이 있으면 PDR,stage1_drafted,src_icdr_2003,source_linked
+rel_pdr_vh,dis_pdr,les_hemorrhage_vitreous,diagnostic_criterion,src_icdr_2003,ICDR 2003,유리체 출혈이 있으면 PDR,stage1_drafted,src_icdr_2003,source_linked
+rel_pdr_prh,dis_pdr,les_hemorrhage_preretinal,diagnostic_criterion,src_icdr_2003,ICDR 2003,망막앞 출혈이 있으면 PDR,stage1_drafted,src_icdr_2003,source_linked
+rel_pdr_highrisk_nvd_area,dis_pdr,ft_nvd_area,prognostic,src_drs8_1981,DRS Report 8 (1981),고위험 특징: 신생혈관 + 망막앞·유리체 출혈 또는 유두(1 DD 이내) 신생혈관이 1/4–1/3 DA 이상(출혈 없어도),stage1_drafted,src_drs8_1981,definition_checked_abstract
+rel_pdr_fvp,dis_pdr,les_fibrovascular_proliferation,severity_classification,src_etdrs10_1991,ETDRS report 10 (1991),섬유 증식은 ETDRS 판독 항목,stage1_drafted,src_etdrs10_1991,source_linked
+rel_pdr_trd,dis_pdr,les_retinal_detachment_tractional,characteristic_nonspecific,,—,진행된 PDR의 합병증,stage1_drafted,,needs_source
+rel_pdr_laser,dis_pdr,les_laser_scar,activity_monitoring,,—,범망막 광응고 치료 흔적(치료 이력 표시),stage1_drafted,,needs_source
+rel_dr_nonperfusion,dis_dr,les_nonperfusion,prognostic,,—,광각 FA 무관류는 DR 중증도·주변부 병변과 연관(횡단면); 주변부 병변 범위는 4년 진행 위험 증가와 연관,stage1_drafted,src_silva_np_2015;src_silva_ppl_2015,source_linked
+rel_dr_dcp,dis_dr,ft_octa_vessel_density_dcp,characteristic_nonspecific,,—,당뇨에서 OCTA 관류 감소(메타분석)·심층 밀도는 DR 중증도와 함께 감소한다는 보고(연구 지표; slab·장비 의존),stage1_drafted,src_octa_dr_meta_2024;src_octa_dcp_severity_2018,source_linked
+rel_dme_icdr_thickening,dis_dme,les_macular_thickening,severity_classification,src_icdr_2003,ICDR 2003 DME scale,후극부 두꺼워짐·경성삼출물이 중심에서 먼지(경도)·가까운지(중등도)·중심을 침범하는지(중증),stage1_drafted,src_icdr_2003,source_linked
+rel_dme_icdr_he,dis_dme,ft_he_distance_fovea,severity_classification,src_icdr_2003,ICDR 2003 DME scale,경성삼출물의 중심 근접도가 DME 등급을 정함,stage1_drafted,src_icdr_2003,source_linked
+rel_dme_csme,dis_dme,les_csme,diagnostic_criterion,src_etdrs10_1991,ETDRS (입체 안저),ETDRS 정의 CSME(중심와 근처 두꺼워짐·삼출물 조합),stage1_drafted,src_etdrs10_1991,source_linked
+rel_dme_ci_oct,dis_dme,ft_central_subfield_thickness,diagnostic_criterion,src_drcr_cidme_thresholds,DRCR 성별·장비별 CST 기준,OCT 중심 구역 두께가 성별·장비별 기준 이상이면 중심 침범 DME(Spectralis 남 320/여 305 µm·Cirrus 남 305/여 290 µm),stage1_drafted,src_drcr_cidme_thresholds,source_linked
+rel_dme_cst,dis_dme,ft_central_subfield_thickness,activity_monitoring,,—,치료 반응 관찰의 주 지표,stage1_drafted,src_drcr_cidme_thresholds,source_linked
+rel_dme_irf,dis_dme,les_intraretinal_fluid,activity_monitoring,,—,액체 존재·부피 변화로 활동성 관찰,stage1_drafted,,needs_source
+rel_dme_srf,dis_dme,les_subretinal_fluid,characteristic_nonspecific,,—,일부 DME에서 동반,stage1_drafted,,needs_source
+rel_dme_hrf,dis_dme,les_hyperreflective_foci,prognostic,,—,HRF 수와 치료 후 시력의 관계는 연구 간 상반되어 예측력이 불확실(체계적 고찰),stage1_drafted,src_hrd_review_2022;src_dme_biomarker_2025,source_linked
+rel_dme_dril,dis_dme,les_dril,prognostic,,—,중심 1 mm 내 DRIL 범위가 기저 시력과 연관되고 DRIL 변화가 이후 시력 변화를 예측(원 연구),stage1_drafted,src_dril_2014,source_linked
+rel_dme_ez,dis_dme,les_ez_disruption,prognostic,,—,기저 EZ 단절이 6개월 시력 저하와 연관(근거 확실성 낮음; 체계적 고찰),stage1_drafted,src_dme_biomarker_2025,source_linked
+rel_amd_normal_aging,dis_amd,les_drusen_small,severity_classification,src_beckman_2013,Beckman 2013,소형 드루젠(≤63 µm)만 있으면 정상 노화 변화,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_early,dis_amd,les_drusen_medium,severity_classification,src_beckman_2013,Beckman 2013,중형 드루젠(63–125 µm)·색소 이상 없음 → 조기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_intermediate_drusen,dis_amd,les_drusen_large,severity_classification,src_beckman_2013,Beckman 2013,대형 드루젠(>125 µm) → 중기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_intermediate_hyper,dis_amd,les_rpe_hyperpigmentation,severity_classification,src_beckman_2013,Beckman 2013,AMD 색소 이상 → 중기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_intermediate_hypo,dis_amd,les_rpe_hypopigmentation,severity_classification,src_beckman_2013,Beckman 2013,AMD 색소 이상 → 중기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_drusen_size_feature,dis_amd,ft_drusen_max_size,severity_classification,src_beckman_2013,Beckman 2013,중심와 2 DD 이내 최대 드루젠 크기가 등급의 입력,stage1_drafted,src_beckman_2013,source_linked
+rel_amd_late_mnv,dis_namd,les_macular_neovascularization,diagnostic_criterion,src_beckman_2013,Beckman 2013,신생혈관성 AMD → 후기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_namd_mnv_type,dis_namd,ft_mnv_type,severity_classification,src_conan_2020,CONAN 2020,MNV 1·2·3형으로 하위 분류,stage1_drafted,src_conan_2020,source_linked
+rel_namd_irf,dis_namd,les_intraretinal_fluid,activity_monitoring,,CONAN 2020,삼출 징후(활동성),stage1_drafted,src_conan_2020,source_linked
+rel_namd_srf,dis_namd,les_subretinal_fluid,activity_monitoring,,CONAN 2020,삼출 징후(활동성),stage1_drafted,src_conan_2020,source_linked
+rel_namd_sub_rpe_fluid,dis_namd,les_ped_fibrovascular,activity_monitoring,,CONAN 2020,RPE 아래 액체·PED 변화,stage1_drafted,src_conan_2020,source_linked
+rel_namd_hem,dis_namd,les_hemorrhage_subretinal,activity_monitoring,,CONAN 2020,새 출혈은 활동성 징후,stage1_drafted,src_conan_2020,source_linked
+rel_namd_shrm,dis_namd,les_shrm,prognostic,,CONAN 2020,SHRM은 섬유화·예후와 연관,stage1_drafted,src_conan_2020,source_linked
+rel_namd_scar,dis_namd,les_fibrotic_scar,characteristic_nonspecific,,CONAN 2020,말기 결과,stage1_drafted,src_conan_2020,source_linked
+rel_amd_sdd,dis_amd,les_subretinal_drusenoid_deposit,prognostic,,—,SDD는 후기 AMD(3형 MNV·GA·외망막 위축)의 주요 위험 인자(Beckman 등급 항목은 아님),stage1_drafted,src_sdd_review_2022,source_linked
+rel_ga_late,dis_ga,les_geographic_atrophy,diagnostic_criterion,src_beckman_2013,Beckman 2013,중심와 침범과 무관하게 GA가 있으면 후기 AMD,stage1_drafted,src_beckman_2013,source_linked
+rel_ga_crora,dis_ga,les_atrophy_complete,diagnostic_criterion,src_cam3_2018,CAM Report 3 (2018),과투과 ≥250 µm + RPE 약화·단절 ≥250 µm + 위쪽 광수용체 변성 + RPE 찢김 없음 → cRORA,stage1_drafted,src_cam3_2018,source_linked
+rel_ga_irora,dis_ga,les_atrophy_incomplete,severity_classification,src_cam4_2020,CAM Report 4 (2020),과투과·대응 RPE 약화/단절·위쪽 광수용체 변성이 함께 있으나 cRORA 기준 미충족(RPE 찢김 제외),stage1_drafted,src_cam4_2020,definition_checked_abstract
+rel_ga_hypertd,dis_ga,ft_hypertd_width,diagnostic_criterion,src_cam3_2018,CAM Report 3 (2018),과투과 폭이 cRORA 판정의 입력,stage1_drafted,src_cam3_2018,source_linked
+rel_ga_area,dis_ga,ft_atrophy_area,activity_monitoring,,—,위축 면적·확장률로 진행 관찰,stage1_drafted,src_fleckenstein_2018,source_linked
+rel_ga_growth,dis_ga,ft_atrophy_growth_rate,activity_monitoring,,—,위축 확장률(면적 또는 제곱근 변환)은 진행 관찰·임상시험 지표; 기저 크기 정규화 방식에 따라 해석이 다름,stage1_drafted,src_fleckenstein_2018;src_holz_fam_2007,source_linked
+rel_ga_faf_pattern,dis_ga,ft_faf_junctional_pattern,prognostic,,—,띠·미만형 FAF 양상의 확장률(중앙값 약 1.8 mm²/년)이 이상 없음(0.38)·국소형(0.81)보다 높음(FAM 연구),stage1_drafted,src_holz_fam_2007,source_linked
+rel_pcv_polyp,dis_pcv,les_polypoidal_lesion,diagnostic_criterion,src_conan_2020,CONAN 2020 (ICGA 기준),ICGA 결절 확인이 진단 기준,stage1_drafted,src_conan_2020,source_linked
+rel_pcv_ped,dis_pcv,les_sharp_peaked_ped,diagnostic_criterion,src_pcv_apois_2021,APOIS PCV 2021,세 OCT 주요 기준(뾰족한 PED·RPE 아래 고리 모양 병변·en-face 복합 RPE 융기)을 모두 충족하면 PCV로 판단(ICGA 대체 아님; 미충족이 PCV 배제는 아님),stage1_drafted,src_pcv_apois_2021,source_linked
+rel_pcv_pachy,dis_pcv,les_pachychoroid_features,characteristic_nonspecific,,—,맥락막 비후 스펙트럼 소견,stage1_drafted,src_cscr_2020,source_linked
+rel_crvo_flame,dis_crvo,les_hemorrhage_flame,characteristic_nonspecific,,—,네 사분면 전반의 화염상·점상 출혈,stage1_drafted,src_cvos_1993,source_linked
+rel_crvo_venous,dis_crvo,les_venous_dilation_tortuosity,characteristic_nonspecific,,—,정맥 확장·구불거림,stage1_drafted,src_cvos_1993,source_linked
+rel_crvo_cws,dis_crvo,les_cotton_wool_spot,characteristic_nonspecific,,—,면화반 동반,stage1_drafted,src_cvos_1993,source_linked
+rel_crvo_edema,dis_crvo,les_macular_thickening,activity_monitoring,,—,황반부종 관찰·치료 반응,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_crvo_ischemic,dis_crvo,ft_nonperfusion_area,severity_classification,src_cvos_1993,CVOS 1993,FA 무관류 10 DA 이상을 허혈형으로 정의(원문 확인 권장),stage1_drafted,src_cvos_1993,source_linked
+rel_crvo_nvi_risk,dis_crvo,les_nonperfusion,prognostic,,CVOS 1997,무관류 범위가 홍채 신생혈관 위험의 주요 예측 인자,stage1_drafted,src_cvos_1997,source_linked
+rel_crvo_disc_edema,dis_crvo,les_disc_edema,characteristic_nonspecific,,—,유두 부종 동반,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_crvo_collaterals,dis_crvo,les_disc_collaterals,characteristic_nonspecific,,—,만성기 측부혈관,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_brvo_sectoral_hem,dis_brvo,les_hemorrhage_flame,characteristic_nonspecific,,—,폐쇄 분지 구역에 국한된 출혈,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_brvo_av,dis_brvo,ana_av_crossing,characteristic_nonspecific,,—,동정맥 교차부에서 주로 발생,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_brvo_nv,dis_brvo,les_nv_elsewhere,prognostic,,—,무관류 범위가 넓으면 신생혈관 위험,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_crao_whitening,dis_crao,les_retinal_whitening,characteristic_nonspecific,,—,급성 내망막 백색 부종,stage1_drafted,src_aao_rao_ppp_2019,source_linked
+rel_crao_cherry,dis_crao,les_cherry_red_spot,characteristic_nonspecific,,—,체리 적색 반점,stage1_drafted,src_aao_rao_ppp_2019,source_linked
+rel_crao_embolus,dis_crao,les_retinal_embolus,characteristic_nonspecific,,—,색전이 보일 수 있음,stage1_drafted,src_aao_rao_ppp_2019,source_linked
+rel_crao_pamm,dis_crao,les_paracentral_amn,characteristic_nonspecific,,—,INL 수준의 띠 모양 고반사(모세혈관 허혈 관련; 이후 INL 얇아짐),stage1_drafted,src_pamm_2013,source_linked
+rel_brao_whitening,dis_brao,les_retinal_whitening,characteristic_nonspecific,,—,폐쇄 분지 구역 백색 부종,stage1_drafted,src_aao_rao_ppp_2019,source_linked
+rel_cscr_srf,dis_cscr,les_subretinal_fluid,diagnostic_criterion,src_cscr_2020,Chhablani 2020,망막하액이 핵심 소견(다중영상 분류의 전제),stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_ped,dis_cscr,les_ped_serous,characteristic_nonspecific,,—,작은 장액성 PED 동반,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_rpe_area,dis_cscr,les_rpe_attenuation_disruption,severity_classification,src_cscr_2020,Chhablani 2020,FAF RPE 변화 면적 ≤2 DA 단순형·초과 복합형(원 문헌 확인 권장),stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_pachy,dis_cscr,les_pachychoroid_features,characteristic_nonspecific,,—,두꺼운 맥락막·pachyvessel,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_choroid_thickness,dis_cscr,ft_choroid_thickness_subfoveal,characteristic_nonspecific,,—,중심와 하 맥락막 두께 증가,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_hyperperm,dis_cscr,les_choroidal_hyperpermeability,characteristic_nonspecific,,—,ICGA 맥락막 과투과,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_tract,dis_cscr,les_rpe_gravitational_tract,characteristic_nonspecific,,—,만성 CSCR의 중력 궤적,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_srf_height,dis_cscr,ft_srf_height,activity_monitoring,,—,액체 높이·부피 변화로 경과 관찰,stage1_drafted,src_cscr_2020,source_linked
+rel_pm_tessellation,dis_pathologic_myopia,les_tessellated_fundus,severity_classification,src_metapm_2015,META-PM 2015,1범주(병적 근시 기준 미만),stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_diffuse,dis_pathologic_myopia,les_myopic_diffuse_atrophy,diagnostic_criterion,src_metapm_2015,META-PM 2015,2범주 이상이면 병적 근시,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_patchy,dis_pathologic_myopia,les_myopic_patchy_atrophy,diagnostic_criterion,src_metapm_2015,META-PM 2015,3범주,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_macular_atrophy,dis_pathologic_myopia,les_myopic_macular_atrophy,diagnostic_criterion,src_metapm_2015,META-PM 2015,4범주,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_lacquer,dis_pathologic_myopia,les_lacquer_crack,diagnostic_criterion,src_metapm_2015,META-PM 2015,plus 병변,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_mcnv,dis_pathologic_myopia,les_myopic_cnv,diagnostic_criterion,src_metapm_2015,META-PM 2015,plus 병변,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_fuchs,dis_pathologic_myopia,les_fuchs_spot,diagnostic_criterion,src_metapm_2015,META-PM 2015,plus 병변,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_staphyloma,dis_pathologic_myopia,les_posterior_staphyloma,diagnostic_criterion,src_metapm_2015,META-PM 2015,후포도종이 있으면 병적 근시,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_category,dis_pathologic_myopia,ft_metapm_category,severity_classification,src_metapm_2015,META-PM 2015,0–4 범주와 plus 병변,stage1_drafted,src_metapm_2015,definition_checked_abstract
+rel_pm_mtm,dis_pathologic_myopia,les_myopic_traction_maculopathy,characteristic_nonspecific,,—,근시성 견인 황반병증,stage1_drafted,src_imi_pm_2021,source_linked
+rel_pm_ppa,dis_pathologic_myopia,les_peripapillary_atrophy,characteristic_nonspecific,,—,유두주위 위축(γ 구역),stage1_drafted,src_imi_pm_2021,source_linked
+rel_pm_tilted,dis_pathologic_myopia,les_tilted_disc,characteristic_nonspecific,,—,경사 유두,stage1_drafted,src_imi_pm_2021,source_linked
+rel_erm_membrane,dis_erm,les_epiretinal_membrane,diagnostic_criterion,src_ivts_2013,IVTS 2013,OCT 망막 표면 막,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_erm_traction,dis_erm,ft_erm_traction_signs,severity_classification,src_govetto_erm_2017,Govetto 2017 (4단계),중심와 함요 유지(1)·소실(2)·연속 이소성 내층(3)·두껍고 층 붕괴(4)로 단계화하며 단계가 높을수록 시력 저하,stage1_drafted,src_govetto_erm_2017,source_linked
+rel_erm_cst,dis_erm,ft_central_subfield_thickness,activity_monitoring,,—,중심 두께 변화,stage1_drafted,,needs_source
+rel_vmt_traction,dis_vmt,les_vitreomacular_traction,diagnostic_criterion,src_ivts_2013,IVTS 2013,부착 유리체가 중심와 형태를 변형시키면 VMT,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_vmt_width,dis_vmt,ft_vmt_attachment_width,severity_classification,src_ivts_2013,IVTS 2013,부착 ≤1500 µm 국소·>1500 µm 광범위,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_vma_finding,dis_vmt,les_vitreomacular_adhesion,characteristic_nonspecific,,IVTS 2013,VMA는 질병이 아닌 소견(중심와 형태 정상),stage1_drafted,src_ivts_2013,source_linked
+rel_mh_ftmh,dis_macular_hole,les_macular_hole_full_thickness,diagnostic_criterion,src_ivts_2013,IVTS 2013,전층 결손이면 FTMH,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_mh_size,dis_macular_hole,ft_mh_min_diameter,severity_classification,src_ivts_2013,IVTS 2013,최소 직경 ≤250 소형·250–400 중형·>400 µm 대형,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_mh_vmt,dis_macular_hole,ft_mh_vmt_status,severity_classification,src_ivts_2013,IVTS 2013,VMT 동반 여부로 하위 분류,stage1_drafted,src_ivts_2013,definition_checked_abstract
+rel_mh_lamellar,dis_macular_hole,les_macular_hole_lamellar,diagnostic_criterion,src_lmh_2020,Hubschman 2020,불규칙한 중심와 윤곽 + 파고든 가장자리의 공동 + 중심와 조직 소실(세 필수 기준),stage1_drafted,src_lmh_2020,definition_checked_abstract
+rel_rrd_break,dis_rrd,les_retinal_break,diagnostic_criterion,,—,열공을 통해 박리가 생김,stage1_drafted,src_aao_pvd_ppp_2019,source_linked
+rel_rrd_detachment,dis_rrd,les_retinal_detachment_rhegmatogenous,diagnostic_criterion,,—,신경망막이 RPE에서 떨어짐,stage1_drafted,src_aao_pvd_ppp_2019,source_linked
+rel_rrd_macula,dis_rrd,ft_rd_macula_status,prognostic,,—,황반 침범 여부가 시력 예후를 좌우,stage1_drafted,,needs_source
+rel_rrd_pvr,dis_rrd,ft_pvr_grade,severity_classification,src_pvr_1991,Machemer 1991,PVR A·B·C 등급,stage1_drafted,src_pvr_1991,source_linked
+rel_rrd_lattice,dis_rrd,les_lattice_degeneration,prognostic,,—,격자변성은 인구의 6–8%에 있으며 망막박리 위험을 높임(진료지침),stage1_drafted,src_aao_pvd_ppp_2019,source_linked
+rel_gl_cupping,dis_glaucoma,les_disc_cupping,characteristic_nonspecific,,—,컵 확대·노치(진단은 시야 등과 종합),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_cdr,dis_glaucoma,ft_cdr_vertical,characteristic_nonspecific,,—,수직 컵/유두비(유두 크기에 따라 해석),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_rnfl,dis_glaucoma,les_rnfl_defect,characteristic_nonspecific,,—,RNFL 결손,stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_rnfl_thickness,dis_glaucoma,ft_rnfl_thickness_peripapillary,activity_monitoring,,—,유두주위 RNFL 두께 추적,stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_bmo,dis_glaucoma,ft_bmo_mrw,characteristic_nonspecific,,—,BMO 최소 테 폭은 초기 녹내장 검출에서 RNFL 두께·다른 BMO 지표보다 민감도가 높았음(원 연구),stage1_drafted,src_bmo_mrw_2013,source_linked
+rel_gl_gcipl,dis_glaucoma,ft_gcipl_thickness,characteristic_nonspecific,,—,황반 GCIPL 감소,stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_dh,dis_glaucoma,les_disc_hemorrhage,prognostic,,—,유두 출혈은 고안압증에서 녹내장 발생 위험 증가와 연관되나 다수는 녹내장으로 진행하지 않음(OHTS),stage1_drafted,src_ohts_dh_2017,source_linked
+rel_gl_ppa,dis_glaucoma,les_peripapillary_atrophy,characteristic_nonspecific,,—,β 구역 PPA,stage1_drafted,,needs_source
+rel_gl_rpc,dis_glaucoma,ft_rpc_density,characteristic_nonspecific,,—,유두주위 모세혈관 밀도 감소(연구 지표),stage1_drafted,,needs_source
+rel_htr_mild_narrow,dis_hypertensive_retinopathy,les_arteriolar_narrowing,severity_classification,src_hrp_2004,Wong–Mitchell 2004,경도: 전반·국소 소동맥 협착,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_mild_avn,dis_hypertensive_retinopathy,les_av_nicking,severity_classification,src_hrp_2004,Wong–Mitchell 2004,경도: 동정맥 교차 현상,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_mod_hem,dis_hypertensive_retinopathy,les_hemorrhage_flame,severity_classification,src_hrp_2004,Wong–Mitchell 2004,중등도: 출혈(화염상·점·얼룩),stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_mod_ma,dis_hypertensive_retinopathy,les_microaneurysm,severity_classification,src_hrp_2004,Wong–Mitchell 2004,중등도: 미세동맥류,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_mod_cws,dis_hypertensive_retinopathy,les_cotton_wool_spot,severity_classification,src_hrp_2004,Wong–Mitchell 2004,중등도: 면화반,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_mod_he,dis_hypertensive_retinopathy,les_hard_exudate,severity_classification,src_hrp_2004,Wong–Mitchell 2004,중등도: 경성삼출물,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_malignant,dis_hypertensive_retinopathy,les_disc_edema,severity_classification,src_hrp_2004,Wong–Mitchell 2004,악성: 중등도 소견 + 유두 부종,stage1_drafted,src_hrp_2004,definition_checked_abstract
+rel_htr_crae,dis_hypertensive_retinopathy,ft_crae,prognostic,,—,CRAE 감소가 혈압·심혈관 위험과 연관(연구 지표),stage1_drafted,src_hrp_2004,source_linked
+rel_htr_star,dis_hypertensive_retinopathy,les_macular_star,characteristic_nonspecific,,—,황반 별모양 삼출물,stage1_drafted,src_hrp_2004,source_linked
+rel_rp_bone,dis_retinitis_pigmentosa,les_bone_spicule_pigment,characteristic_nonspecific,,—,주변부 골소체 색소(2차),stage2_secondary,,needs_source
+rel_rp_ez,dis_retinitis_pigmentosa,ft_ez_preserved_area,activity_monitoring,,—,EZ 보존 면적 추적(2차),stage2_secondary,,needs_source
+rel_rp_cme,dis_retinitis_pigmentosa,les_cystoid_macular_edema,characteristic_nonspecific,,—,낭포황반부종 동반(2차),stage2_secondary,,needs_source
+rel_uv_vasculitis,dis_uveitis_retinal,les_retinal_vasculitis_signs,characteristic_nonspecific,,—,혈관염 소견(2차),stage2_secondary,,needs_source
+rel_uv_cme,dis_uveitis_retinal,les_cystoid_macular_edema,activity_monitoring,,—,황반부종(2차),stage2_secondary,,needs_source
+rel_tumor_nevus,dis_choroidal_tumor,les_choroidal_nevus,characteristic_nonspecific,,—,모반(2차),stage2_secondary,,needs_source
+rel_pape_edema,dis_papilledema,les_disc_edema,characteristic_nonspecific,,—,양안 유두 부종(2차),stage2_secondary,,needs_source
+rel_pape_rnfl,dis_papilledema,ft_disc_edema_rnfl,activity_monitoring,,—,RNFL 두께 추적(2차),stage2_secondary,,needs_source
+rel_erm_foveoschisis,dis_erm,les_erm_foveoschisis,diagnostic_criterion,src_lmh_2020,Hubschman 2020,ERM + 헨레섬유층 층간분리,stage1_drafted,src_lmh_2020,definition_checked_abstract
+rel_erm_pseudohole,dis_erm,les_macular_pseudohole,diagnostic_criterion,src_lmh_2020,Hubschman 2020,중심와 비켜 간 ERM + 가팔라진 중심와 윤곽 + 중심 두께 증가,stage1_drafted,src_lmh_2020,definition_checked_abstract
+rel_pcv_ring,dis_pcv,les_sub_rpe_ring_lesion,diagnostic_criterion,src_pcv_apois_2021,APOIS PCV 2021,OCT 주요 기준 중 하나(세 기준 조합),stage1_drafted,src_pcv_apois_2021,source_linked
+rel_pcv_enface_rpe,dis_pcv,les_enface_complex_rpe_elevation,diagnostic_criterion,src_pcv_apois_2021,APOIS PCV 2021,OCT 주요 기준 중 하나(세 기준 조합),stage1_drafted,src_pcv_apois_2021,source_linked
+rel_pcv_fvped,dis_pcv,les_ped_fibrovascular,characteristic_nonspecific,,—,섬유혈관성 PED가 흔히 동반(비특이),stage1_drafted,,needs_source
+rel_amd_early_drusen_medium,dis_amd_early,les_drusen_medium,severity_classification,src_beckman_2013,Beckman 2013,중간 크기 드루젠(63–125 µm)만 있고 색소 이상이 없으면 초기 AMD,stage2_expanded,src_beckman_2013,source_linked
+rel_amd_intermediate_drusen_large,dis_amd_intermediate,les_drusen_large,severity_classification,src_beckman_2013,Beckman 2013,큰 드루젠(>125 µm)이 있으면 중간 AMD,stage2_expanded,src_beckman_2013,source_linked
+rel_amd_intermediate_rpe_hyperpigmentation,dis_amd_intermediate,les_rpe_hyperpigmentation,severity_classification,src_beckman_2013,Beckman 2013,중간 드루젠과 AMD 색소 이상이 함께 있으면 중간 AMD,stage2_expanded,src_beckman_2013,source_linked
+rel_amd_intermediate_rpe_hypopigmentation,dis_amd_intermediate,les_rpe_hypopigmentation,severity_classification,src_beckman_2013,Beckman 2013,중간 드루젠과 AMD 색소 이상이 함께 있으면 중간 AMD,stage2_expanded,src_beckman_2013,source_linked
+rel_amd_intermediate_subretinal_drusenoid_deposit,dis_amd_intermediate,les_subretinal_drusenoid_deposit,prognostic,,—,망막하 드루젠양 침착물은 후기 AMD 진행 위험과 관련,stage2_expanded,,needs_source
+rel_mnv_type3_macular_neovascularization,dis_mnv_type3,les_macular_neovascularization,diagnostic_criterion,src_conan_2020,CONAN 2020,망막 안(심층 모세혈관망)에서 시작해 외망막으로 자라는 신생혈관,stage2_expanded,src_conan_2020,source_linked
+rel_mnv_type3_intraretinal_fluid,dis_mnv_type3,les_intraretinal_fluid,characteristic_nonspecific,,—,병변 주위 망막내액,stage2_expanded,,needs_source
+rel_mnv_type3_subretinal_drusenoid_deposit,dis_mnv_type3,les_subretinal_drusenoid_deposit,characteristic_nonspecific,,—,망막하 드루젠양 침착물이 자주 동반,stage2_expanded,,needs_source
+rel_mnv_type3_intraretinal_hyperreflective_pigment,dis_mnv_type3,les_intraretinal_hyperreflective_pigment,characteristic_nonspecific,,—,병변 부위 망막 내 고반사 초점,stage2_expanded,,needs_source
+rel_myopic_cnv_myopic_cnv,dis_myopic_cnv,les_myopic_cnv,diagnostic_criterion,src_imi_pm_2021,IMI 2021,고도근시 눈의 황반 신생혈관(plus 병변),stage2_expanded,src_imi_pm_2021,source_linked
+rel_myopic_cnv_fuchs_spot,dis_myopic_cnv,les_fuchs_spot,characteristic_nonspecific,,—,반흔기의 색소 반점,stage2_expanded,,needs_source
+rel_myopic_cnv_lacquer_crack,dis_myopic_cnv,les_lacquer_crack,prognostic,,—,칠흑 균열은 신생혈관 발생 위험과 관련,stage2_expanded,,needs_source
+rel_myopic_cnv_subretinal_fluid,dis_myopic_cnv,les_subretinal_fluid,activity_monitoring,,—,활동성: 망막하액·출혈 증가,stage2_expanded,,needs_source
+rel_myopic_traction_maculopathy_myopic_traction_maculopathy,dis_myopic_traction_maculopathy,les_myopic_traction_maculopathy,diagnostic_criterion,src_imi_pm_2021,IMI 2021,고도근시 눈의 황반분리·박리·원공,stage2_expanded,src_imi_pm_2021,source_linked
+rel_myopic_traction_maculopathy_retinal_schisis,dis_myopic_traction_maculopathy,les_retinal_schisis,characteristic_nonspecific,,—,망막층간분리(외층·내층),stage2_expanded,,needs_source
+rel_myopic_traction_maculopathy_posterior_staphyloma,dis_myopic_traction_maculopathy,les_posterior_staphyloma,characteristic_nonspecific,,—,후포도종이 견인의 배경,stage2_expanded,,needs_source
+rel_myopic_traction_maculopathy_macular_hole_lamellar,dis_myopic_traction_maculopathy,les_macular_hole_lamellar,prognostic,,—,층판·전층 원공으로 진행할 수 있음,stage2_expanded,,needs_source
+rel_dome_shaped_macula_dome_shaped_macula,dis_dome_shaped_macula,les_dome_shaped_macula,diagnostic_criterion,src_imi_pm_2021,IMI 2021,후포도종 안에서 황반이 안쪽으로 돌출,stage2_expanded,src_imi_pm_2021,source_linked
+rel_dome_shaped_macula_subretinal_fluid,dis_dome_shaped_macula,les_subretinal_fluid,characteristic_nonspecific,,—,돔 정점의 망막하액이 동반될 수 있음,stage2_expanded,,needs_source
+rel_dome_shaped_macula_posterior_staphyloma,dis_dome_shaped_macula,les_posterior_staphyloma,characteristic_nonspecific,,—,고도근시·후포도종과 함께 나타남,stage2_expanded,,needs_source
+rel_pnv_pachychoroid_features,dis_pnv,les_pachychoroid_features,diagnostic_criterion,,—,맥락막 비후·대혈관 확장 위에 생긴 신생혈관,stage2_expanded,,needs_source
+rel_pnv_macular_neovascularization,dis_pnv,les_macular_neovascularization,diagnostic_criterion,,—,RPE 아래 1형 신생혈관,stage2_expanded,,needs_source
+rel_pnv_sub_rpe_ring_lesion,dis_pnv,les_sub_rpe_ring_lesion,characteristic_nonspecific,,—,평평하고 불규칙한 색소상피박리,stage2_expanded,,needs_source
+rel_pnv_polypoidal_lesion,dis_pnv,les_polypoidal_lesion,prognostic,,—,결절(폴립)로 진행하면 결절맥락막혈관병증,stage2_expanded,,needs_source
+rel_ppe_pachychoroid_features,dis_ppe,les_pachychoroid_features,diagnostic_criterion,,—,"맥락막 비후와 RPE 변화, 망막하액은 없음",stage2_expanded,,needs_source
+rel_ppe_rpe_attenuation_disruption,dis_ppe,les_rpe_attenuation_disruption,characteristic_nonspecific,,—,대혈관 위 RPE 이상,stage2_expanded,,needs_source
+rel_ppe_ped_serous,dis_ppe,les_ped_serous,characteristic_nonspecific,,—,작은 색소상피박리,stage2_expanded,,needs_source
+rel_crvo_ischemic_nonperfusion,dis_crvo_ischemic,les_nonperfusion,diagnostic_criterion,src_cvos_1993,CVOS,FA 무관류 10 디스크 면적 이상,stage2_expanded,src_cvos_1993,source_linked
+rel_crvo_ischemic_cotton_wool_spot,dis_crvo_ischemic,les_cotton_wool_spot,characteristic_nonspecific,,—,여러 개의 면화반,stage2_expanded,,needs_source
+rel_crvo_ischemic_nv_iris,dis_crvo_ischemic,les_nv_iris,prognostic,src_cvos_1997,CVOS,홍채 신생혈관(신생혈관 녹내장) 위험,stage2_expanded,src_cvos_1997,source_linked
+rel_crvo_nonischemic_nonperfusion,dis_crvo_nonischemic,les_nonperfusion,diagnostic_criterion,src_cvos_1993,CVOS,FA 무관류 10 디스크 면적 미만,stage2_expanded,src_cvos_1993,source_linked
+rel_crvo_nonischemic_cystoid_macular_edema,dis_crvo_nonischemic,les_cystoid_macular_edema,activity_monitoring,src_aao_rvo_ppp_2019,AAO PPP 2019,황반부종 경과 관찰,stage2_expanded,src_aao_rvo_ppp_2019,source_linked
+rel_hrvo_hemorrhage_flame,dis_hrvo,les_hemorrhage_flame,diagnostic_criterion,src_aao_rvo_ppp_2019,AAO PPP 2019,위 또는 아래 절반 망막에 국한된 출혈·정맥 확장,stage2_expanded,src_aao_rvo_ppp_2019,source_linked
+rel_hrvo_venous_dilation_tortuosity,dis_hrvo,les_venous_dilation_tortuosity,characteristic_nonspecific,,—,침범된 절반의 정맥 확장·구불거림,stage2_expanded,,needs_source
+rel_hrvo_nonperfusion,dis_hrvo,les_nonperfusion,prognostic,,—,무관류 범위가 신생혈관 위험과 관련,stage2_expanded,,needs_source
+rel_hrvo_cystoid_macular_edema,dis_hrvo,les_cystoid_macular_edema,activity_monitoring,src_aao_rvo_ppp_2019,AAO PPP 2019,황반부종 경과 관찰,stage2_expanded,src_aao_rvo_ppp_2019,source_linked
+rel_cilioretinal_ao_retinal_whitening,dis_cilioretinal_ao,les_retinal_whitening,diagnostic_criterion,src_aao_rao_ppp_2019,AAO PPP 2019,유두에서 황반 쪽 섬모체망막동맥 영역의 망막 하얘짐,stage2_expanded,src_aao_rao_ppp_2019,source_linked
+rel_cilioretinal_ao_paracentral_amn,dis_cilioretinal_ao,les_paracentral_amn,characteristic_nonspecific,,—,OCT에서 내망막·중간층 고반사,stage2_expanded,,needs_source
+rel_cidme_central_subfield_thickness,dis_cidme,ft_central_subfield_thickness,diagnostic_criterion,src_drcr_cidme_thresholds,DRCR,OCT 중심 1 mm 두께가 장비·성별 기준 이상,stage2_expanded,src_drcr_cidme_thresholds,source_linked
+rel_cidme_intraretinal_fluid,dis_cidme,les_intraretinal_fluid,characteristic_nonspecific,,—,중심 구역 망막내액,stage2_expanded,,needs_source
+rel_non_cidme_macular_thickening,dis_non_cidme,les_macular_thickening,diagnostic_criterion,src_drcr_cidme_thresholds,DRCR,중심 1 mm 밖의 황반 두께 증가,stage2_expanded,src_drcr_cidme_thresholds,source_linked
+rel_non_cidme_hard_exudate,dis_non_cidme,les_hard_exudate,characteristic_nonspecific,,—,부종 가장자리 경성삼출물,stage2_expanded,,needs_source
+rel_lamellar_mh_macular_hole_lamellar,dis_lamellar_mh,les_macular_hole_lamellar,diagnostic_criterion,src_lmh_2020,Hubschman 2020,"불규칙한 중심와 윤곽, 내층 결손과 층간 분리, 외층 보존",stage2_expanded,src_lmh_2020,source_linked
+rel_lamellar_mh_epiretinal_membrane,dis_lamellar_mh,les_epiretinal_membrane,characteristic_nonspecific,,—,망막전막·망막앞 증식이 동반될 수 있음,stage2_expanded,,needs_source
+rel_lamellar_mh_ez_disruption,dis_lamellar_mh,les_ez_disruption,prognostic,,—,EZ 단절은 시력 예후와 관련,stage2_expanded,,needs_source
+rel_erm_foveoschisis_erm_foveoschisis,dis_erm_foveoschisis,les_erm_foveoschisis,diagnostic_criterion,src_lmh_2020,Hubschman 2020,망막전막과 Henle 섬유층의 층간 분리,stage2_expanded,src_lmh_2020,source_linked
+rel_erm_foveoschisis_epiretinal_membrane,dis_erm_foveoschisis,les_epiretinal_membrane,diagnostic_criterion,src_lmh_2020,Hubschman 2020,수축하는 망막전막 동반,stage2_expanded,src_lmh_2020,source_linked
+rel_pseudophakic_cme_cystoid_macular_edema,dis_pseudophakic_cme,les_cystoid_macular_edema,diagnostic_criterion,,—,백내장 수술 후 낭포황반부종; FA에서 꽃잎 모양 누출,stage2_expanded,,needs_source
+rel_pseudophakic_cme_central_subfield_thickness,dis_pseudophakic_cme,ft_central_subfield_thickness,activity_monitoring,,—,중심 두께로 경과 관찰,stage2_expanded,,needs_source
+rel_amn_ez_disruption,dis_amn,les_ez_disruption,diagnostic_criterion,,—,OPL·ONL 고반사 띠와 EZ·IZ 단절; NIR에서 중심와 주위 어두운 꽃잎 모양 병변,stage2_expanded,,needs_source
+rel_amn_paracentral_amn,dis_amn,les_paracentral_amn,characteristic_nonspecific,,—,중간층 허혈 병변(PAMM)과 구분 또는 동반,stage2_expanded,,needs_source
+rel_hcq_retinopathy_bulls_eye_maculopathy,dis_hcq_retinopathy,les_bulls_eye_maculopathy,diagnostic_criterion,,—,진행기: 중심와 주위 고리 모양 손상,stage2_expanded,,needs_source
+rel_hcq_retinopathy_ez_disruption,dis_hcq_retinopathy,les_ez_disruption,diagnostic_criterion,,—,초기: 중심와 주위(아시아인은 혈관궁 주변) EZ 소실; 중심와 보존,stage2_expanded,,needs_source
+rel_hcq_retinopathy_outer_retinal_tubulation,dis_hcq_retinopathy,les_outer_retinal_tubulation,characteristic_nonspecific,,—,외망막 손상 부위,stage2_expanded,,needs_source
+rel_hcq_retinopathy_ez_preserved_area,dis_hcq_retinopathy,ft_ez_preserved_area,activity_monitoring,,—,EZ 보존 면적으로 진행 관찰,stage2_expanded,,needs_source
+rel_pentosan_maculopathy_rpe_hyperpigmentation,dis_pentosan_maculopathy,les_rpe_hyperpigmentation,diagnostic_criterion,,—,황반의 작은 색소 반점; NIR·FAF에서 뚜렷,stage2_expanded,,needs_source
+rel_pentosan_maculopathy_rpe_hypopigmentation,dis_pentosan_maculopathy,les_rpe_hypopigmentation,characteristic_nonspecific,,—,색소 반점 사이 탈색,stage2_expanded,,needs_source
+rel_pentosan_maculopathy_atrophy_complete,dis_pentosan_maculopathy,les_atrophy_complete,prognostic,,—,진행하면 RPE 위축,stage2_expanded,,needs_source
+rel_mactel2_retinal_telangiectasia,dis_mactel2,les_retinal_telangiectasia,diagnostic_criterion,,—,측두 중심와 주위 모세혈관확장과 FA 후기 누출,stage2_expanded,,needs_source
+rel_mactel2_ez_disruption,dis_mactel2,les_ez_disruption,characteristic_nonspecific,,—,측두 중심와 주위 EZ 소실(en-face 면적),stage2_expanded,,needs_source
+rel_mactel2_intraretinal_hyperreflective_pigment,dis_mactel2,les_intraretinal_hyperreflective_pigment,characteristic_nonspecific,,—,망막 내 색소 침착(진행기),stage2_expanded,,needs_source
+rel_mactel2_macular_neovascularization,dis_mactel2,les_macular_neovascularization,prognostic,,—,망막하 신생혈관으로 진행할 수 있음,stage2_expanded,,needs_source
+rel_ois_hemorrhage_dot_blot,dis_ois,les_hemorrhage_dot_blot,characteristic_nonspecific,,—,중간 주변부 점·얼룩 출혈,stage2_expanded,,needs_source
+rel_ois_venous_dilation_tortuosity,dis_ois,les_venous_dilation_tortuosity,characteristic_nonspecific,,—,정맥 확장(구불거림은 적음),stage2_expanded,,needs_source
+rel_ois_nv_iris,dis_ois,les_nv_iris,prognostic,,—,홍채 신생혈관,stage2_expanded,,needs_source
+rel_ois_nonperfusion,dis_ois,les_nonperfusion,characteristic_nonspecific,,—,FA 맥락막·동정맥 충만 지연과 무관류,stage2_expanded,,needs_source
+rel_sickle_retinopathy_nonperfusion,dis_sickle_retinopathy,les_nonperfusion,diagnostic_criterion,,—,주변부 무관류(Goldberg 병기),stage2_expanded,,needs_source
+rel_sickle_retinopathy_nv_elsewhere,dis_sickle_retinopathy,les_nv_elsewhere,severity_classification,,—,바다부채 모양 주변부 신생혈관(증식기),stage2_expanded,,needs_source
+rel_sickle_retinopathy_hemorrhage_vitreous,dis_sickle_retinopathy,les_hemorrhage_vitreous,prognostic,,—,유리체출혈,stage2_expanded,,needs_source
+rel_sickle_retinopathy_retinal_detachment_tractional,dis_sickle_retinopathy,les_retinal_detachment_tractional,prognostic,,—,견인 망막박리,stage2_expanded,,needs_source
+rel_radiation_retinopathy_microaneurysm,dis_radiation_retinopathy,les_microaneurysm,characteristic_nonspecific,,—,미세동맥류·모세혈관확장,stage2_expanded,,needs_source
+rel_radiation_retinopathy_cotton_wool_spot,dis_radiation_retinopathy,les_cotton_wool_spot,characteristic_nonspecific,,—,면화반,stage2_expanded,,needs_source
+rel_radiation_retinopathy_nonperfusion,dis_radiation_retinopathy,les_nonperfusion,severity_classification,,—,무관류 범위·황반 침범으로 중증도 판단,stage2_expanded,,needs_source
+rel_radiation_retinopathy_cystoid_macular_edema,dis_radiation_retinopathy,les_cystoid_macular_edema,activity_monitoring,,—,방사선 황반병증의 부종,stage2_expanded,,needs_source
+rel_coats_retinal_telangiectasia,dis_coats,les_retinal_telangiectasia,diagnostic_criterion,,—,주변부 망막 모세혈관확장·전구 모양 혈관 확장,stage2_expanded,,needs_source
+rel_coats_lipid_subretinal,dis_coats,les_lipid_subretinal,diagnostic_criterion,,—,망막내·망막하 대량 지질 삼출,stage2_expanded,,needs_source
+rel_coats_serous_retinal_detachment,dis_coats,les_serous_retinal_detachment,severity_classification,,—,삼출성 망막박리 범위로 병기,stage2_expanded,,needs_source
+rel_coats_hard_exudate,dis_coats,les_hard_exudate,characteristic_nonspecific,,—,황반의 경성삼출물,stage2_expanded,,needs_source
+rel_ram_arterial_macroaneurysm,dis_ram,les_arterial_macroaneurysm,diagnostic_criterion,,—,세동맥의 둥근 국소 확장,stage2_expanded,,needs_source
+rel_ram_hemorrhage_preretinal,dis_ram,les_hemorrhage_preretinal,characteristic_nonspecific,,—,망막앞·망막내·망막하 여러 층 출혈,stage2_expanded,,needs_source
+rel_ram_circinate_exudate,dis_ram,les_circinate_exudate,characteristic_nonspecific,,—,대동맥류를 둘러싼 고리 모양 삼출물,stage2_expanded,,needs_source
+rel_ram_macular_thickening,dis_ram,les_macular_thickening,activity_monitoring,,—,황반 부종·삼출 경과,stage2_expanded,,needs_source
+rel_stargardt_flecks,dis_stargardt,les_flecks,diagnostic_criterion,,—,후극부의 황백색 반점(FAF 과자가형광),stage2_expanded,,needs_source
+rel_stargardt_atrophy_complete,dis_stargardt,les_atrophy_complete,severity_classification,,—,황반 위축의 면적으로 진행 평가,stage2_expanded,,needs_source
+rel_stargardt_ez_disruption,dis_stargardt,les_ez_disruption,characteristic_nonspecific,,—,중심와 EZ 소실,stage2_expanded,,needs_source
+rel_stargardt_atrophy_area,dis_stargardt,ft_atrophy_area,activity_monitoring,,—,FAF 위축(감소 자가형광) 면적 확대 관찰,stage2_expanded,,needs_source
+rel_best_vitelliform_lesion,dis_best,les_vitelliform_lesion,diagnostic_criterion,,—,중심와 난황모양 병변(병기: 난황·흩어짐·위축),stage2_expanded,,needs_source
+rel_best_subretinal_fluid,dis_best,les_subretinal_fluid,characteristic_nonspecific,,—,흩어지는 시기의 망막하 공간,stage2_expanded,,needs_source
+rel_best_macular_neovascularization,dis_best,les_macular_neovascularization,prognostic,,—,신생혈관 합병,stage2_expanded,,needs_source
+rel_aofvd_vitelliform_lesion,dis_aofvd,les_vitelliform_lesion,diagnostic_criterion,,—,성인의 작은(대개 1/3 DD 이하) 중심와 난황모양 병변,stage2_expanded,,needs_source
+rel_aofvd_drusen_large,dis_aofvd,les_drusen_large,characteristic_nonspecific,,—,AMD와 구분이 필요함,stage2_expanded,,needs_source
+rel_aofvd_atrophy_complete,dis_aofvd,les_atrophy_complete,prognostic,,—,위축으로 진행,stage2_expanded,,needs_source
+rel_cone_rod_dystrophy_bulls_eye_maculopathy,dis_cone_rod_dystrophy,les_bulls_eye_maculopathy,characteristic_nonspecific,,—,과녁 모양 황반병증,stage2_expanded,,needs_source
+rel_cone_rod_dystrophy_ez_disruption,dis_cone_rod_dystrophy,les_ez_disruption,diagnostic_criterion,,—,황반 EZ 소실(전기생리 검사와 함께 진단),stage2_expanded,,needs_source
+rel_cone_rod_dystrophy_disc_pallor,dis_cone_rod_dystrophy,les_disc_pallor,characteristic_nonspecific,,—,시신경유두 창백(측두부),stage2_expanded,,needs_source
+rel_choroideremia_atrophy_complete,dis_choroideremia,les_atrophy_complete,diagnostic_criterion,,—,"주변부에서 중심으로 진행하는 맥락망막 위축, 중심 섬 보존",stage2_expanded,,needs_source
+rel_choroideremia_ez_preserved_area,dis_choroideremia,ft_ez_preserved_area,activity_monitoring,,—,EZ·자가형광 보존 섬 면적 감소 관찰,stage2_expanded,,needs_source
+rel_vkh_serous_retinal_detachment,dis_vkh,les_serous_retinal_detachment,diagnostic_criterion,,—,급성기 다발성 장액 망막박리(OCT 격막),stage2_expanded,,needs_source
+rel_vkh_disc_edema,dis_vkh,les_disc_edema,characteristic_nonspecific,,—,시신경유두 부종,stage2_expanded,,needs_source
+rel_vkh_pachychoroid_features,dis_vkh,les_pachychoroid_features,activity_monitoring,,—,맥락막 두께 증가(활동성 지표),stage2_expanded,,needs_source
+rel_vkh_white_dots,dis_vkh,les_white_dots,characteristic_nonspecific,,—,ICGA 저형광 점(맥락막 육아종),stage2_expanded,,needs_source
+rel_mewds_white_dots,dis_mewds,les_white_dots,diagnostic_criterion,,—,후극부·중간 주변부 일과성 흰 점(FAF 과자가형광),stage2_expanded,,needs_source
+rel_mewds_ez_disruption,dis_mewds,les_ez_disruption,characteristic_nonspecific,,—,"점에 대응하는 EZ 단절, 회복기에 복원",stage2_expanded,,needs_source
+rel_serpiginous_atrophy_complete,dis_serpiginous,les_atrophy_complete,diagnostic_criterion,,—,유두 주위에서 뱀 모양으로 번지는 맥락망막 위축,stage2_expanded,,needs_source
+rel_serpiginous_chorioretinal_scar,dis_serpiginous,les_chorioretinal_scar,characteristic_nonspecific,,—,맥락망막 반흔,stage2_expanded,,needs_source
+rel_serpiginous_macular_neovascularization,dis_serpiginous,les_macular_neovascularization,prognostic,,—,신생혈관 합병,stage2_expanded,,needs_source
+rel_naion_disc_edema,dis_naion,les_disc_edema,diagnostic_criterion,,—,급성기 시신경유두 부종(분절성 가능),stage2_expanded,,needs_source
+rel_naion_disc_hemorrhage,dis_naion,les_disc_hemorrhage,characteristic_nonspecific,,—,유두 주위 선상 출혈,stage2_expanded,,needs_source
+rel_naion_gcipl_thickness,dis_naion,ft_gcipl_thickness,prognostic,,—,수 주 후 GCIPL·RNFL 얇아짐,stage2_expanded,,needs_source
+rel_optic_atrophy_disc_pallor,dis_optic_atrophy,les_disc_pallor,diagnostic_criterion,,—,시신경유두 창백,stage2_expanded,,needs_source
+rel_optic_atrophy_rnfl_thickness_peripapillary,dis_optic_atrophy,ft_rnfl_thickness_peripapillary,diagnostic_criterion,,—,유두주위 RNFL 얇아짐,stage2_expanded,,needs_source
+rel_optic_atrophy_gcipl_thickness,dis_optic_atrophy,ft_gcipl_thickness,characteristic_nonspecific,,—,황반 GCIPL 얇아짐,stage2_expanded,,needs_source
+rel_angioid_streaks_angioid_streaks,dis_angioid_streaks,les_angioid_streaks,diagnostic_criterion,,—,유두 주위 방사상 띠(NIR·FAF에서 뚜렷),stage2_expanded,,needs_source
+rel_angioid_streaks_macular_neovascularization,dis_angioid_streaks,les_macular_neovascularization,prognostic,,—,맥락막 신생혈관 합병,stage2_expanded,,needs_source
+rel_choroidal_hemangioma_choroidal_hemangioma,dis_choroidal_hemangioma,les_choroidal_hemangioma,diagnostic_criterion,,—,"ICGA 초기 과형광·후기 씻겨나감, OCT 돔 모양 맥락막 융기",stage2_expanded,,needs_source
+rel_choroidal_hemangioma_subretinal_fluid,dis_choroidal_hemangioma,les_subretinal_fluid,activity_monitoring,,—,망막하액이 치료 대상,stage2_expanded,,needs_source
+rel_chrpe_chrpe,dis_chrpe,les_chrpe,diagnostic_criterion,,—,경계가 분명한 평평한 흑색 반과 내부 탈색 공간,stage2_expanded,,needs_source
+rel_chrpe_choroidal_nevus,dis_chrpe,les_choroidal_nevus,characteristic_nonspecific,,—,맥락막 모반·흑색종과 구분,stage2_expanded,,needs_source
+rel_purtscher_cotton_wool_spot,dis_purtscher,les_cotton_wool_spot,diagnostic_criterion,,—,유두 주위 다수의 면화반과 퍼처 반점(망막 하얘짐),stage2_expanded,,needs_source
+rel_purtscher_retinal_whitening,dis_purtscher,les_retinal_whitening,characteristic_nonspecific,,—,혈관 사이 다각형 하얘짐,stage2_expanded,,needs_source
+rel_purtscher_paracentral_amn,dis_purtscher,les_paracentral_amn,characteristic_nonspecific,,—,중간층 허혈 병변,stage2_expanded,,needs_source
+rel_gl_cup_area,dis_glaucoma,ft_cup_area,characteristic_nonspecific,,—,컵 크기(유두 크기와 함께 해석),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_rim_area,dis_glaucoma,ft_rim_area,characteristic_nonspecific,,—,신경망막 테 면적 감소,stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_disc_area,dis_glaucoma,ft_disc_area,characteristic_nonspecific,,—,유두 크기(컵/유두비를 해석하는 기준),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_disc_diameter,dis_glaucoma,ft_disc_diameter,characteristic_nonspecific,,—,유두 지름(유두 크기 보정),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_rnfl_striation,dis_glaucoma,ft_rnfl_striation,characteristic_nonspecific,,—,신경섬유층 줄무늬 소실(RNFL 결손),stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_gl_macular_rnfl,dis_glaucoma,ft_rnfl_thickness_macular,activity_monitoring,,—,황반 내층(RNFL) 두께 추적,stage1_drafted,src_aao_poag_ppp_2020,source_linked
+rel_pm_disc_shape,dis_pathologic_myopia,ft_disc_shape,characteristic_nonspecific,,—,기울어진·타원형 유두,stage1_drafted,src_imi_pm_2021,source_linked
+rel_pm_disc_fovea_distance,dis_pathologic_myopia,ft_disc_fovea_distance,characteristic_nonspecific,,—,안축장이 길수록 유두–중심와 거리 증가,stage1_drafted,src_imi_pm_2021,source_linked
+rel_pm_disc_fovea_angle,dis_pathologic_myopia,ft_disc_fovea_angle,characteristic_nonspecific,,—,근시 유두 기울기·회전과 함께 봄,stage1_drafted,src_imi_pm_2021,source_linked
+rel_oa_disc_color,dis_optic_atrophy,ft_disc_color,characteristic_nonspecific,,—,유두 창백,stage1_drafted,src_hpo_eye_2019,source_linked
+rel_dr_faz_area,dis_dr,ft_faz_area,characteristic_nonspecific,,—,FAZ 면적 증가(OCTA),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_faz_circularity,dis_dr,ft_faz_circularity,characteristic_nonspecific,,—,FAZ 원형도 감소,stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_faz_enlargement,dis_dr,ft_faz_enlargement,activity_monitoring,,—,추적 중 FAZ 확대,stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_vd_scp,dis_dr,ft_octa_vessel_density_scp,severity_classification,,—,표층 혈관 밀도 감소(중증도와 연관),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_vessel_area_density,dis_dr,ft_vessel_area_density,characteristic_nonspecific,,—,혈관 면적 밀도 감소(OCTA),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_vessel_length_density,dis_dr,ft_vessel_length_density,characteristic_nonspecific,,—,혈관 길이(골격) 밀도 감소(OCTA),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_vessel_regional_density,dis_dr,ft_vessel_regional_density,characteristic_nonspecific,,—,구역별 혈관 밀도 감소(OCTA),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_dr_fractal_dimension,dis_dr,ft_fractal_dimension,characteristic_nonspecific,,—,혈관 프랙탈 차원 감소(OCTA),stage1_drafted,src_octa_dr_meta_2024,source_linked
+rel_hrp_fractal_dimension,dis_hypertensive_retinopathy,ft_fractal_dimension,characteristic_nonspecific,,—,"혈관 복잡도 변화(SIVA, 연구 지표)",stage1_drafted,src_siva_2012,source_linked
+rel_hrp_crve,dis_hypertensive_retinopathy,ft_crve,characteristic_nonspecific,,—,정맥 지름(CRVE) 변화(연구 지표),stage1_drafted,src_hrp_2004,source_linked
+rel_hrp_branching_angle,dis_hypertensive_retinopathy,ft_branching_angle,characteristic_nonspecific,,—,"분지각 변화(SIVA, 연구 지표)",stage1_drafted,src_siva_2012,source_linked
+rel_hrp_tortuosity,dis_hypertensive_retinopathy,ft_vessel_tortuosity,characteristic_nonspecific,,—,"혈관 구불거림(SIVA, 연구 지표)",stage1_drafted,src_siva_2012,source_linked
+rel_hrp_caliber,dis_hypertensive_retinopathy,ft_vessel_caliber,characteristic_nonspecific,,—,"국소 혈관 폭 변화(SIVA, 연구 지표)",stage1_drafted,src_siva_2012,source_linked
+rel_hrp_caliber_var,dis_hypertensive_retinopathy,ft_vessel_caliber_variability,characteristic_nonspecific,,—,혈관 폭 불균일(국소 협착),stage1_drafted,src_hrp_2004,source_linked
+rel_crvo_crve,dis_crvo,ft_crve,characteristic_nonspecific,,—,정맥 확장,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_crvo_tortuosity,dis_crvo,ft_vessel_tortuosity,characteristic_nonspecific,,—,정맥 확장·구불거림,stage1_drafted,src_aao_rvo_ppp_2019,source_linked
+rel_cscr_choroid_thickness_map,dis_cscr,ft_choroid_thickness_map,characteristic_nonspecific,,—,맥락막 비후(두께 지도),stage1_drafted,src_cscr_2020,source_linked
+rel_pachy_choroid_thickness_map,dis_pachychoroid_spectrum,ft_choroid_thickness_map,diagnostic_criterion,,—,맥락막 비후,stage1_drafted,src_cscr_2020,source_linked
+rel_cscr_cvi,dis_cscr,ft_choroidal_vascularity_index,characteristic_nonspecific,,—,맥락막 혈관성 지수 증가,stage1_drafted,src_agrawal_cvi_2016,source_linked
+rel_cscr_os_length,dis_cscr,ft_os_length,characteristic_nonspecific,,—,장액 박리 아래 광수용체 외절 연장,stage1_drafted,src_matsumoto_os_2008,source_linked
+rel_amd_cc_fd,dis_amd,ft_cc_flow_deficit,prognostic,,—,맥락막모세혈관 혈류 결손 증가가 진행 위험과 연관,stage1_drafted,src_corvi_ccfd_2021,source_linked
+rel_iamd_rpe_bm,dis_amd_intermediate,ft_rpe_bm_thickness,characteristic_nonspecific,,—,RPE–드루젠 복합체 두께 증가,stage1_drafted,src_farsiu_rpedc_2014,source_linked
+rel_iamd_rpe_contour,dis_amd_intermediate,ft_rpe_contour,characteristic_nonspecific,,—,드루젠에 의한 RPE 융기·불규칙,stage1_drafted,src_farsiu_rpedc_2014,source_linked
+rel_ga_faf_overall_pattern,dis_ga,ft_faf_pattern,prognostic,,—,위축 둘레 자가형광 양상에 따라 확장 속도가 다름(FAM),stage1_drafted,src_holz_fam_2007,source_linked
+rel_ga_ez_continuity,dis_ga,ft_ez_continuity,characteristic_nonspecific,,—,위축 부위 EZ 소실(광수용체 변성),stage1_drafted,src_cam3_2018,source_linked
+rel_ga_elm_continuity,dis_ga,ft_elm_continuity,characteristic_nonspecific,,—,위축 부위 ELM 소실(광수용체 변성),stage1_drafted,src_cam3_2018,source_linked
+rel_ga_onl_thickness,dis_ga,ft_onl_thickness,characteristic_nonspecific,,—,위축 위 외핵층 얇아짐(광수용체 변성),stage1_drafted,src_cam3_2018,source_linked
+rel_dme_ez_continuity,dis_dme,ft_ez_continuity,prognostic,,—,EZ 손상이 시력 예후와 연관,stage1_drafted,src_dme_biomarker_2025,source_linked
+rel_dme_elm_continuity,dis_dme,ft_elm_continuity,prognostic,,—,ELM 손상이 시력 예후와 연관,stage1_drafted,src_dme_biomarker_2025,source_linked
+rel_dme_layer_order,dis_dme,ft_layer_order,prognostic,,—,내층 배열 소실(DRIL)이 시력 예후와 연관,stage1_drafted,src_dril_2014,source_linked
+rel_dme_macular_volume,dis_dme,ft_macular_volume,activity_monitoring,,—,황반 두께·부피로 부종 추적,stage1_drafted,src_drcr_cidme_thresholds,source_linked
+rel_rp_ez_fraction,dis_retinitis_pigmentosa,ft_ez_preserved_fraction,activity_monitoring,,—,남은 EZ 범위가 해마다 줄어듦,stage1_drafted,src_cai_ez_rp_2014,source_linked
+rel_rp_ez_continuity,dis_retinitis_pigmentosa,ft_ez_continuity,characteristic_nonspecific,,—,주변부부터 EZ 소실,stage1_drafted,src_cai_ez_rp_2014,source_linked
+rel_hcq_ez_continuity,dis_hcq_retinopathy,ft_ez_continuity,diagnostic_criterion,,—,황반 주위(또는 혈관궁 근처) EZ 소실,stage1_drafted,src_marmor_hcq_2016,source_linked

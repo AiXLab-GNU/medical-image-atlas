@@ -1,0 +1,380 @@
+target_id,feature_id,applicability,basis,note_ko
+ana_breast,ft_breast_area,direct,d_target,
+ana_breast,ft_breast_composition,direct,d_target,
+ana_breast,ft_percent_density,direct,d_target,
+ana_fibroglandular_tissue,ft_dense_area,direct,d_target,
+ana_fibroglandular_tissue,ft_bpe_level,direct,d_target,
+ana_skin,ft_skin_thickness,direct,d_target,
+ana_nipple_areola,ft_nipple_in_profile,direct,d_target,
+ana_pectoralis_major,ft_pectoral_area,direct,d_target,
+ana_pectoralis_major,ft_pectoral_angle,direct,d_target,
+ana_pectoralis_major,ft_pectoral_reaches_pnl,direct,d_target,
+ref_posterior_nipple_line,ft_pnl_length,direct,d_target,
+ref_posterior_nipple_line,ft_pnl_cc_mlo_difference,direct,d_target,
+ana_inframammary_fold,ft_imf_visible,direct,d_target,
+ana_axillary_lymph_nodes,ft_ln_long_axis,direct,d_target,
+ana_axillary_lymph_nodes,ft_ln_fatty_hilum,direct,d_target,
+ana_axillary_lymph_nodes,ft_ln_density,direct,d_target,
+les_mass,ft_mass_shape,direct,d_target,
+les_mass,ft_mass_margin,direct,d_target,
+les_mass,ft_mass_density,direct,d_target,
+les_mass,ft_mass_size,direct,d_target,
+les_mass,ft_mass_area,direct,d_target,
+les_mass,ft_mass_circularity,direct,d_target,
+les_mass,ft_mass_solidity,direct,d_target,
+les_mass,ft_mass_radial_sd,direct,d_target,
+les_mass,ft_mass_spiculation_index,direct,d_target,
+les_mass,ft_mass_margin_sharpness,direct,d_target,
+les_mass,ft_mass_contrast,direct,d_target,
+les_calcification,ft_calc_morphology,direct,d_target,
+les_calcification,ft_calc_distribution,direct,d_target,
+les_calcification,ft_calc_count,direct,d_target,
+les_calcification,ft_calc_extent,direct,d_target,
+les_calcification,ft_calc_density,direct,d_target,
+les_calcification,ft_calc_size,direct,d_target,
+les_calcification,ft_calc_size_variation,direct,d_target,
+les_calcification,ft_calc_elongation,direct,d_target,
+les_calcification,ft_calc_branching,direct,d_target,
+les_calcification,ft_calc_linearity,direct,d_target,
+les_calcification,ft_calc_nn_distance,direct,d_target,
+les_calcification,ft_calc_contrast,direct,d_target,
+les_architectural_distortion,ft_ad_presence,direct,d_target,
+les_architectural_distortion,ft_ad_convergence_index,direct,d_target,
+les_architectural_distortion,ft_ad_extent,direct,d_target,
+les_asymmetry,ft_asym_type,direct,d_target,
+les_asymmetry,ft_asym_bilateral_difference,direct,d_target,
+les_focal_asymmetry,ft_asym_area,direct,d_target,
+les_enhancing_mass,ft_enh_intensity_ratio,direct,d_target,
+les_enhancing_mass,ft_enh_pattern,direct,d_target,
+les_enhancing_mass,ft_lesion_conspicuity,direct,d_target,
+les_non_mass_enhancement,ft_nme_distribution,direct,d_target,
+les_non_mass_enhancement,ft_nme_extent,direct,d_target,
+les_generic,ft_lesion_generic_presence,direct,d_target,
+les_generic,ft_lesion_generic_count,direct,d_target,
+les_generic,ft_lesion_generic_size,direct,d_target,
+les_generic,ft_lesion_distance_nipple,direct,d_target,
+les_generic,ft_lesion_depth_third,direct,d_target,
+les_generic,ft_lesion_view_half,direct,d_target,
+les_generic,ft_lesion_quadrant,direct,d_target,
+les_generic,ft_lesion_clock_position,direct,d_target,
+les_generic,ft_lesion_two_view,direct,d_target,
+les_generic,ft_lesion_generic_change,direct,d_target,
+img_ffdm,ft_img_positioning_quality,direct,d_target,
+les_generic,ft_birads_assessment,direct,d_target,
+les_generic,,not_applicable,override,공통 측정을 묶는 서비스 내부 대상
+ana_tdlu,,not_applicable,override,영상에서 따로 보이지 않는 미세 구조
+ana_chest_wall,,not_applicable,override,위치 경계(측정 대상 아님)
+les_breast_implant,ft_lesion_generic_size,not_applicable,override,보형물 크기는 판독 항목이 아님
+les_skin_lesion,ft_lesion_generic_change,not_applicable,override,피부 표지로 확인하는 겹침 소견
+les_calc_skin,ft_lesion_two_view,not_applicable,override,피부 석회화는 접선 영상으로 확인
+les_enhancing_mass,ft_lesion_view_half,common_applied,override,CEM 저에너지 영상과 같은 위치 체계
+les_non_mass_enhancement,ft_lesion_view_half,common_applied,override,CEM 저에너지 영상과 같은 위치 체계
+les_mass,ft_lesion_generic_presence,common_applied,class:focal,
+les_mass,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_mass,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_mass,ft_lesion_distance_nipple,common_applied,class:focal,
+les_mass,ft_lesion_depth_third,common_applied,class:focal,
+les_mass,ft_lesion_view_half,common_applied,class:focal,
+les_mass,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass,ft_lesion_two_view,common_applied,class:focal,
+les_mass,ft_lesion_generic_change,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_generic_presence,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_mass_circumscribed,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_mass_circumscribed,ft_lesion_distance_nipple,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_depth_third,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_view_half,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_circumscribed,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_circumscribed,ft_lesion_two_view,common_applied,class:focal,
+les_mass_circumscribed,ft_lesion_generic_change,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_generic_presence,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_mass_indistinct,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_mass_indistinct,ft_lesion_distance_nipple,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_depth_third,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_view_half,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_indistinct,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_indistinct,ft_lesion_two_view,common_applied,class:focal,
+les_mass_indistinct,ft_lesion_generic_change,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_generic_presence,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_mass_spiculated,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_mass_spiculated,ft_lesion_distance_nipple,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_depth_third,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_view_half,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_spiculated,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_mass_spiculated,ft_lesion_two_view,common_applied,class:focal,
+les_mass_spiculated,ft_lesion_generic_change,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_generic_presence,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_fat_containing_mass,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_fat_containing_mass,ft_lesion_distance_nipple,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_depth_third,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_view_half,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_fat_containing_mass,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_fat_containing_mass,ft_lesion_two_view,common_applied,class:focal,
+les_fat_containing_mass,ft_lesion_generic_change,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_generic_presence,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_intramammary_lymph_node,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_intramammary_lymph_node,ft_lesion_distance_nipple,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_depth_third,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_view_half,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_intramammary_lymph_node,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_intramammary_lymph_node,ft_lesion_two_view,common_applied,class:focal,
+les_intramammary_lymph_node,ft_lesion_generic_change,common_applied,class:focal,
+les_skin_lesion,ft_lesion_generic_presence,common_applied,class:focal,
+les_skin_lesion,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_skin_lesion,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_skin_lesion,ft_lesion_distance_nipple,common_applied,class:focal,
+les_skin_lesion,ft_lesion_depth_third,common_applied,class:focal,
+les_skin_lesion,ft_lesion_view_half,common_applied,class:focal,
+les_skin_lesion,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_skin_lesion,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_skin_lesion,ft_lesion_two_view,common_applied,class:focal,
+les_solitary_dilated_duct,ft_lesion_generic_presence,common_applied,class:linear,
+les_solitary_dilated_duct,ft_lesion_generic_size,common_applied,class:linear,군집·구역은 퍼진 범위의 최대 길이
+les_solitary_dilated_duct,ft_lesion_distance_nipple,common_applied,class:linear,
+les_solitary_dilated_duct,ft_lesion_view_half,common_applied,class:linear,
+les_solitary_dilated_duct,ft_lesion_quadrant,common_applied,class:linear,CC·MLO 짝짓기 필요
+les_asymmetry,ft_lesion_generic_presence,common_applied,class:region,
+les_asymmetry,ft_lesion_generic_size,common_applied,class:region,군집·구역은 퍼진 범위의 최대 길이
+les_asymmetry,ft_lesion_distance_nipple,common_applied,class:region,
+les_asymmetry,ft_lesion_depth_third,common_applied,class:region,
+les_asymmetry,ft_lesion_view_half,common_applied,class:region,
+les_asymmetry,ft_lesion_quadrant,common_applied,class:region,CC·MLO 짝짓기 필요
+les_asymmetry,ft_lesion_two_view,common_applied,class:region,
+les_asymmetry,ft_lesion_generic_change,common_applied,class:region,
+les_global_asymmetry,ft_lesion_generic_presence,common_applied,class:region,
+les_global_asymmetry,ft_lesion_generic_size,common_applied,class:region,군집·구역은 퍼진 범위의 최대 길이
+les_global_asymmetry,ft_lesion_distance_nipple,common_applied,class:region,
+les_global_asymmetry,ft_lesion_depth_third,common_applied,class:region,
+les_global_asymmetry,ft_lesion_view_half,common_applied,class:region,
+les_global_asymmetry,ft_lesion_quadrant,common_applied,class:region,CC·MLO 짝짓기 필요
+les_global_asymmetry,ft_lesion_two_view,common_applied,class:region,
+les_global_asymmetry,ft_lesion_generic_change,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_generic_presence,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_generic_size,common_applied,class:region,군집·구역은 퍼진 범위의 최대 길이
+les_focal_asymmetry,ft_lesion_distance_nipple,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_depth_third,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_view_half,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_quadrant,common_applied,class:region,CC·MLO 짝짓기 필요
+les_focal_asymmetry,ft_lesion_two_view,common_applied,class:region,
+les_focal_asymmetry,ft_lesion_generic_change,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_generic_presence,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_generic_size,common_applied,class:region,군집·구역은 퍼진 범위의 최대 길이
+les_developing_asymmetry,ft_lesion_distance_nipple,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_depth_third,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_view_half,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_quadrant,common_applied,class:region,CC·MLO 짝짓기 필요
+les_developing_asymmetry,ft_lesion_two_view,common_applied,class:region,
+les_developing_asymmetry,ft_lesion_generic_change,common_applied,class:region,
+les_architectural_distortion,ft_lesion_generic_presence,common_applied,class:convergence,
+les_architectural_distortion,ft_lesion_generic_size,common_applied,class:convergence,군집·구역은 퍼진 범위의 최대 길이
+les_architectural_distortion,ft_lesion_distance_nipple,common_applied,class:convergence,
+les_architectural_distortion,ft_lesion_depth_third,common_applied,class:convergence,
+les_architectural_distortion,ft_lesion_view_half,common_applied,class:convergence,
+les_architectural_distortion,ft_lesion_quadrant,common_applied,class:convergence,CC·MLO 짝짓기 필요
+les_architectural_distortion,ft_lesion_clock_position,common_applied,class:convergence,CC·MLO 짝짓기 필요
+les_architectural_distortion,ft_lesion_two_view,common_applied,class:convergence,
+les_architectural_distortion,ft_lesion_generic_change,common_applied,class:convergence,
+les_calcification,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calcification,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calcification,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calcification,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calcification,ft_lesion_depth_third,common_applied,class:cluster,
+les_calcification,ft_lesion_view_half,common_applied,class:cluster,
+les_calcification,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calcification,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calcification,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_skin,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_skin,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_skin,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_skin,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_skin,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_skin,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_skin,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_skin,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_skin,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_vascular,ft_lesion_generic_presence,common_applied,class:linear,
+les_calc_vascular,ft_lesion_generic_size,common_applied,class:linear,군집·구역은 퍼진 범위의 최대 길이
+les_calc_vascular,ft_lesion_distance_nipple,common_applied,class:linear,
+les_calc_vascular,ft_lesion_view_half,common_applied,class:linear,
+les_calc_vascular,ft_lesion_quadrant,common_applied,class:linear,CC·MLO 짝짓기 필요
+les_calc_coarse_popcorn,ft_lesion_generic_presence,common_applied,class:focal,
+les_calc_coarse_popcorn,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_coarse_popcorn,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_calc_coarse_popcorn,ft_lesion_distance_nipple,common_applied,class:focal,
+les_calc_coarse_popcorn,ft_lesion_depth_third,common_applied,class:focal,
+les_calc_coarse_popcorn,ft_lesion_view_half,common_applied,class:focal,
+les_calc_coarse_popcorn,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_coarse_popcorn,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_coarse_popcorn,ft_lesion_two_view,common_applied,class:focal,
+les_calc_coarse_popcorn,ft_lesion_generic_change,common_applied,class:focal,
+les_calc_large_rodlike,ft_lesion_generic_presence,common_applied,class:linear,
+les_calc_large_rodlike,ft_lesion_generic_size,common_applied,class:linear,군집·구역은 퍼진 범위의 최대 길이
+les_calc_large_rodlike,ft_lesion_distance_nipple,common_applied,class:linear,
+les_calc_large_rodlike,ft_lesion_view_half,common_applied,class:linear,
+les_calc_large_rodlike,ft_lesion_quadrant,common_applied,class:linear,CC·MLO 짝짓기 필요
+les_calc_round_punctate,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_round_punctate,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_round_punctate,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_round_punctate,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_round_punctate,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_round_punctate,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_round_punctate,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_round_punctate,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_round_punctate,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_rim,ft_lesion_generic_presence,common_applied,class:focal,
+les_calc_rim,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_rim,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_calc_rim,ft_lesion_distance_nipple,common_applied,class:focal,
+les_calc_rim,ft_lesion_depth_third,common_applied,class:focal,
+les_calc_rim,ft_lesion_view_half,common_applied,class:focal,
+les_calc_rim,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_rim,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_rim,ft_lesion_two_view,common_applied,class:focal,
+les_calc_rim,ft_lesion_generic_change,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_generic_presence,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_dystrophic,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_calc_dystrophic,ft_lesion_distance_nipple,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_depth_third,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_view_half,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_dystrophic,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_calc_dystrophic,ft_lesion_two_view,common_applied,class:focal,
+les_calc_dystrophic,ft_lesion_generic_change,common_applied,class:focal,
+les_calc_milk_of_calcium,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_milk_of_calcium,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_milk_of_calcium,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_milk_of_calcium,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_milk_of_calcium,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_milk_of_calcium,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_milk_of_calcium,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_milk_of_calcium,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_milk_of_calcium,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_suture,ft_lesion_generic_presence,common_applied,class:linear,
+les_calc_suture,ft_lesion_generic_size,common_applied,class:linear,군집·구역은 퍼진 범위의 최대 길이
+les_calc_suture,ft_lesion_distance_nipple,common_applied,class:linear,
+les_calc_suture,ft_lesion_view_half,common_applied,class:linear,
+les_calc_suture,ft_lesion_quadrant,common_applied,class:linear,CC·MLO 짝짓기 필요
+les_calc_amorphous,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_amorphous,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_amorphous,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_amorphous,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_amorphous,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_amorphous,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_amorphous,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_amorphous,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_amorphous,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_coarse_heterogeneous,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_coarse_heterogeneous,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_coarse_heterogeneous,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_coarse_heterogeneous,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_coarse_heterogeneous,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_coarse_heterogeneous,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_coarse_heterogeneous,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_coarse_heterogeneous,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_coarse_heterogeneous,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_fine_pleomorphic,ft_lesion_generic_presence,common_applied,class:cluster,
+les_calc_fine_pleomorphic,ft_lesion_generic_count,common_applied,class:cluster,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_calc_fine_pleomorphic,ft_lesion_generic_size,common_applied,class:cluster,군집·구역은 퍼진 범위의 최대 길이
+les_calc_fine_pleomorphic,ft_lesion_distance_nipple,common_applied,class:cluster,
+les_calc_fine_pleomorphic,ft_lesion_depth_third,common_applied,class:cluster,
+les_calc_fine_pleomorphic,ft_lesion_view_half,common_applied,class:cluster,
+les_calc_fine_pleomorphic,ft_lesion_quadrant,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_fine_pleomorphic,ft_lesion_clock_position,common_applied,class:cluster,CC·MLO 짝짓기 필요
+les_calc_fine_pleomorphic,ft_lesion_generic_change,common_applied,class:cluster,
+les_calc_fine_linear_branching,ft_lesion_generic_presence,common_applied,class:linear,
+les_calc_fine_linear_branching,ft_lesion_generic_size,common_applied,class:linear,군집·구역은 퍼진 범위의 최대 길이
+les_calc_fine_linear_branching,ft_lesion_distance_nipple,common_applied,class:linear,
+les_calc_fine_linear_branching,ft_lesion_view_half,common_applied,class:linear,
+les_calc_fine_linear_branching,ft_lesion_quadrant,common_applied,class:linear,CC·MLO 짝짓기 필요
+les_skin_retraction,ft_lesion_generic_presence,common_applied,class:focal,
+les_skin_retraction,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_skin_retraction,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_skin_retraction,ft_lesion_distance_nipple,common_applied,class:focal,
+les_skin_retraction,ft_lesion_depth_third,common_applied,class:focal,
+les_skin_retraction,ft_lesion_view_half,common_applied,class:focal,
+les_skin_retraction,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_skin_retraction,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_skin_retraction,ft_lesion_two_view,common_applied,class:focal,
+les_skin_retraction,ft_lesion_generic_change,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_generic_presence,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_nipple_retraction,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_nipple_retraction,ft_lesion_distance_nipple,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_depth_third,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_view_half,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_nipple_retraction,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_nipple_retraction,ft_lesion_two_view,common_applied,class:focal,
+les_nipple_retraction,ft_lesion_generic_change,common_applied,class:focal,
+les_skin_thickening,ft_lesion_generic_presence,common_applied,class:diffuse,
+les_trabecular_thickening,ft_lesion_generic_presence,common_applied,class:diffuse,
+les_axillary_adenopathy,ft_lesion_generic_presence,common_applied,class:focal,
+les_axillary_adenopathy,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_axillary_adenopathy,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_axillary_adenopathy,ft_lesion_distance_nipple,common_applied,class:focal,
+les_axillary_adenopathy,ft_lesion_depth_third,common_applied,class:focal,
+les_axillary_adenopathy,ft_lesion_view_half,common_applied,class:focal,
+les_axillary_adenopathy,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_axillary_adenopathy,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_axillary_adenopathy,ft_lesion_two_view,common_applied,class:focal,
+les_axillary_adenopathy,ft_lesion_generic_change,common_applied,class:focal,
+les_postsurgical_scar,ft_lesion_generic_presence,common_applied,class:convergence,
+les_postsurgical_scar,ft_lesion_generic_size,common_applied,class:convergence,군집·구역은 퍼진 범위의 최대 길이
+les_postsurgical_scar,ft_lesion_distance_nipple,common_applied,class:convergence,
+les_postsurgical_scar,ft_lesion_depth_third,common_applied,class:convergence,
+les_postsurgical_scar,ft_lesion_view_half,common_applied,class:convergence,
+les_postsurgical_scar,ft_lesion_quadrant,common_applied,class:convergence,CC·MLO 짝짓기 필요
+les_postsurgical_scar,ft_lesion_clock_position,common_applied,class:convergence,CC·MLO 짝짓기 필요
+les_postsurgical_scar,ft_lesion_two_view,common_applied,class:convergence,
+les_postsurgical_scar,ft_lesion_generic_change,common_applied,class:convergence,
+les_biopsy_marker,ft_lesion_generic_presence,common_applied,class:device,
+les_biopsy_marker,ft_lesion_distance_nipple,common_applied,class:device,
+les_biopsy_marker,ft_lesion_quadrant,common_applied,class:device,CC·MLO 짝짓기 필요
+les_breast_implant,ft_lesion_generic_presence,common_applied,class:device,
+les_breast_implant,ft_lesion_distance_nipple,common_applied,class:device,
+les_breast_implant,ft_lesion_quadrant,common_applied,class:device,CC·MLO 짝짓기 필요
+les_enhancing_mass,ft_lesion_generic_presence,common_applied,class:focal,
+les_enhancing_mass,ft_lesion_generic_count,common_applied,class:focal,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+les_enhancing_mass,ft_lesion_generic_size,common_applied,class:focal,군집·구역은 퍼진 범위의 최대 길이
+les_enhancing_mass,ft_lesion_distance_nipple,common_applied,class:focal,
+les_enhancing_mass,ft_lesion_depth_third,common_applied,class:focal,
+les_enhancing_mass,ft_lesion_quadrant,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_enhancing_mass,ft_lesion_clock_position,common_applied,class:focal,CC·MLO 짝짓기 필요
+les_enhancing_mass,ft_lesion_two_view,common_applied,class:focal,
+les_enhancing_mass,ft_lesion_generic_change,common_applied,class:focal,
+les_non_mass_enhancement,ft_lesion_generic_presence,common_applied,class:region,
+les_non_mass_enhancement,ft_lesion_generic_size,common_applied,class:region,군집·구역은 퍼진 범위의 최대 길이
+les_non_mass_enhancement,ft_lesion_distance_nipple,common_applied,class:region,
+les_non_mass_enhancement,ft_lesion_depth_third,common_applied,class:region,
+les_non_mass_enhancement,ft_lesion_quadrant,common_applied,class:region,CC·MLO 짝짓기 필요
+les_non_mass_enhancement,ft_lesion_two_view,common_applied,class:region,
+les_non_mass_enhancement,ft_lesion_generic_change,common_applied,class:region,
+ana_upper_outer_quadrant,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_upper_inner_quadrant,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_lower_outer_quadrant,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_lower_inner_quadrant,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_subareolar_region,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_central_region,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ref_nipple,,not_applicable,class:reference,위치 기준·구역·경계(자체 측정 대상 아님)
+ref_pectoral_edge,,not_applicable,class:boundary,위치 기준·구역·경계(자체 측정 대상 아님)
+zone_quadrants,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+zone_clock_face,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+zone_depth_thirds,,not_applicable,class:zone,위치 기준·구역·경계(자체 측정 대상 아님)
+ana_axillary_tail,,not_investigated,uncovered,특징 연결 미조사
+ana_axilla,,not_investigated,uncovered,특징 연결 미조사
+ana_subcutaneous_fat,,not_investigated,uncovered,특징 연결 미조사
+ana_cooper_ligaments,,not_investigated,uncovered,특징 연결 미조사
+ana_ducts,,not_investigated,uncovered,특징 연결 미조사
+ana_breast_vessels,,not_investigated,uncovered,특징 연결 미조사
+ana_retromammary_fat,,not_investigated,uncovered,특징 연결 미조사

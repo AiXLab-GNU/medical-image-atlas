@@ -1,0 +1,1466 @@
+{
+ "generated_by": "domains/mammography/code/build_mammography_figures.py",
+ "note": "values computed by mammography-measures on DMID and CC BY 4.0 paper figures; pixels, not calibrated",
+ "examples": [
+  {
+   "id": "ex_ffdm_mlo",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "MLO 전체",
+   "title": "2D 유방촬영 · MLO 전체 영상",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG014.tif",
+   "caption": "오른쪽 유방 MLO 영상입니다. 유방 경계·대흉근·유두를 자동으로 찾고 mammography-measures 함수를 실행했습니다. 병변 위치는 공급자 ROI를 씁니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "whole_view_example",
+   "base": "ex_ffdm_mlo.jpg",
+   "width": 446,
+   "height": 900,
+   "layers": [
+    {
+     "key": "breast",
+     "label": "유방 경계·면적",
+     "tone": "blue",
+     "function": "breast.breast_area",
+     "how": "Otsu 경계값으로 배경과 유방을 가르고 가장 큰 덩어리의 구멍을 채움 · 대흉근 제외",
+     "features": [
+      {
+       "id": "ft_breast_area",
+       "value": "6,617,024 px²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mlo_breast.png"
+    },
+    {
+     "key": "pectoral",
+     "label": "대흉근 면적·각도",
+     "tone": "cyan",
+     "function": "breast.pectoral_area",
+     "how": "위쪽 행마다 흉벽 쪽 첫 강한 어두워짐을 찾고 RANSAC 직선으로 앞 경계를 맞춤",
+     "features": [
+      {
+       "id": "ft_pectoral_area",
+       "value": "2,030,368 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pectoral_angle",
+       "value": "14.4 °",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mlo_pectoral.png"
+    },
+    {
+     "key": "pnl",
+     "label": "유두·후유두선",
+     "tone": "green",
+     "function": "breast.pnl_length",
+     "how": "윤곽의 국소 돌출부를 찾고 원영상의 어두운 유두 끝까지 보정한 뒤 대흉근 앞 경계(자동 추정·검토 전)에 수직으로 내린 선",
+     "features": [
+      {
+       "id": "ft_pnl_length",
+       "value": "2,008 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pectoral_reaches_pnl",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mlo_pnl.png"
+    },
+    {
+     "key": "dense",
+     "label": "치밀 조직·밀도 백분율",
+     "tone": "yellow",
+     "function": "breast.percent_density",
+     "how": "피부 가장자리를 뺀 유방 안 밝기의 Otsu 경계값보다 밝은 화소(영상 처리 방식에 따라 달라짐)",
+     "features": [
+      {
+       "id": "ft_dense_area",
+       "value": "2,019,030 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_percent_density",
+       "value": "30.5 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mlo_dense.png"
+    },
+    {
+     "key": "composition",
+     "label": "유방 구성 범주(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 판독 보고서의 ACR 범주",
+     "features": [
+      {
+       "id": "ft_breast_composition",
+       "value": "b (공급자 보고서 ACR B)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_mlo_composition.png"
+    },
+    {
+     "key": "location",
+     "label": "병변 위치(유두 기준)",
+     "tone": "red",
+     "function": "location.distance_from_nipple",
+     "how": "병변 ROI 중심을 후유두선에 투영해 앞·가운데·뒤 1/3과 유두 거리 · 유두선 위아래로 절반 위치",
+     "features": [
+      {
+       "id": "ft_lesion_distance_nipple",
+       "value": "1,444 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_depth_third",
+       "value": "가운데 1/3",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_view_half",
+       "value": "위쪽",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mlo_location.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_cc",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "CC 전체",
+   "title": "2D 유방촬영 · CC 전체 영상",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG015.tif",
+   "caption": "오른쪽 유방 CC 영상입니다. 유방 경계·유두를 자동으로 찾고 mammography-measures 함수를 실행했습니다. 병변 위치는 공급자 ROI를 씁니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다. CC는 표준 표시 방향(바깥쪽이 위)을 가정했습니다.",
+   "builder": "whole_view_example",
+   "base": "ex_ffdm_cc.jpg",
+   "width": 439,
+   "height": 900,
+   "layers": [
+    {
+     "key": "breast",
+     "label": "유방 경계·면적",
+     "tone": "blue",
+     "function": "breast.breast_area",
+     "how": "Otsu 경계값으로 배경과 유방을 가르고 가장 큰 덩어리의 구멍을 채움",
+     "features": [
+      {
+       "id": "ft_breast_area",
+       "value": "5,441,296 px²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_cc_breast.png"
+    },
+    {
+     "key": "pnl",
+     "label": "유두·후유두선",
+     "tone": "green",
+     "function": "breast.pnl_length",
+     "how": "윤곽의 국소 돌출부를 찾고 원영상의 어두운 유두 끝까지 보정한 뒤 영상 뒤 끝까지 수평선",
+     "features": [
+      {
+       "id": "ft_pnl_length",
+       "value": "1,922 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_cc_pnl.png"
+    },
+    {
+     "key": "dense",
+     "label": "치밀 조직·밀도 백분율",
+     "tone": "yellow",
+     "function": "breast.percent_density",
+     "how": "피부 가장자리를 뺀 유방 안 밝기의 Otsu 경계값보다 밝은 화소(영상 처리 방식에 따라 달라짐)",
+     "features": [
+      {
+       "id": "ft_dense_area",
+       "value": "1,816,738 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_percent_density",
+       "value": "33.4 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_cc_dense.png"
+    },
+    {
+     "key": "composition",
+     "label": "유방 구성 범주(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 판독 보고서의 ACR 범주",
+     "features": [
+      {
+       "id": "ft_breast_composition",
+       "value": "b (공급자 보고서 ACR B)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_cc_composition.png"
+    },
+    {
+     "key": "location",
+     "label": "병변 위치(유두 기준)",
+     "tone": "red",
+     "function": "location.distance_from_nipple",
+     "how": "병변 ROI 중심을 후유두선에 투영해 앞·가운데·뒤 1/3과 유두 거리 · 유두선 위아래로 절반 위치",
+     "features": [
+      {
+       "id": "ft_lesion_distance_nipple",
+       "value": "1,346 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_depth_third",
+       "value": "뒤 1/3",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_view_half",
+       "value": "바깥쪽",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_cc_location.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_pair",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "CC·MLO 짝",
+   "title": "2D 유방촬영 · CC·MLO 두 영상",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG015.tif; TIFF Images/IMG014.tif",
+   "caption": "두 방향 영상을 짝지어야 계산되는 측정입니다. DMID는 환자 번호를 주지 않아 연속 번호의 같은 쪽 CC·MLO(IMG015·IMG014)를 같은 유방으로 가정했습니다. 같은 침상형 종괴(악성)가 두 영상에 표시되어 있습니다. CC는 표준 표시 방향(바깥쪽이 위)을 가정했습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "pair_example",
+   "base": "ex_ffdm_pair.jpg",
+   "width": 901,
+   "height": 900,
+   "layers": [
+    {
+     "key": "match",
+     "label": "두 방향에서 보임",
+     "tone": "red",
+     "function": "",
+     "how": "두 영상의 공급자 ROI가 같은 병변을 표시함(짝짓기는 가정)",
+     "features": [
+      {
+       "id": "ft_lesion_two_view",
+       "value": "있음 (CC·MLO 모두 표시)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_pair_match.png"
+    },
+    {
+     "key": "quadrant",
+     "label": "사분면·시계 방향",
+     "tone": "cyan",
+     "function": "location.quadrant",
+     "how": "CC의 위·아래(바깥·안) 절반과 MLO의 위·아래 절반을 합치고, 유두선에서 벗어난 거리로 시계 방향을 계산",
+     "features": [
+      {
+       "id": "ft_lesion_quadrant",
+       "value": "외상사분면",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_clock_position",
+       "value": "11:00",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_pair_quadrant.png"
+    },
+    {
+     "key": "pnl",
+     "label": "CC·MLO 후유두선 길이 차이",
+     "tone": "green",
+     "function": "breast.pnl_cc_mlo_difference",
+     "how": "두 영상의 후유두선 길이 차이(1 cm 이내면 CC가 뒤쪽까지 충분히 포함). 화소 간격이 없어 두 영상 배율이 같다고 가정",
+     "features": [
+      {
+       "id": "ft_pnl_cc_mlo_difference",
+       "value": "86.4 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_pair_pnl.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_mass_circumscribed",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "경계 분명 종괴",
+   "title": "2D 유방촬영 · 경계가 분명한 종괴",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG008.tif",
+   "caption": "DMID IMG008(CC · 공급자 분류 CIRC · 양성)의 종괴 부위입니다. 공급자 전문가 ROI를 종괴 경계로 써서 mammography-measures 함수를 실행했습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "mass_example",
+   "base": "ex_ffdm_mass_circumscribed.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "outline",
+     "label": "종괴 경계·크기",
+     "tone": "red",
+     "function": "mass.size",
+     "how": "전문가 ROI의 최대 지름(Feret)과 화소 면적",
+     "features": [
+      {
+       "id": "ft_mass_size",
+       "value": "462.3 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_area",
+       "value": "129,018 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_circumscribed_outline.png"
+    },
+    {
+     "key": "shape",
+     "label": "모양(원형도·볼록도·반지름 변동)",
+     "tone": "orange",
+     "function": "mass.circularity",
+     "how": "4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)",
+     "features": [
+      {
+       "id": "ft_mass_circularity",
+       "value": "0.843",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_solidity",
+       "value": "0.985",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_radial_sd",
+       "value": "0.089",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_circumscribed_shape.png"
+    },
+    {
+     "key": "spicule",
+     "label": "침상 지수",
+     "tone": "magenta",
+     "function": "mass.spiculation_index",
+     "how": "경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)",
+     "features": [
+      {
+       "id": "ft_mass_spiculation_index",
+       "value": "0.122",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_circumscribed_spicule.png"
+    },
+    {
+     "key": "margin",
+     "label": "경계 선명도·대비",
+     "tone": "cyan",
+     "function": "mass.margin_sharpness",
+     "how": "경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이",
+     "features": [
+      {
+       "id": "ft_mass_margin_sharpness",
+       "value": "0.129",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_contrast",
+       "value": "1.23",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_circumscribed_margin.png"
+    },
+    {
+     "key": "margin_read",
+     "label": "종괴 경계 서술(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김",
+     "features": [
+      {
+       "id": "ft_mass_margin",
+       "value": "경계 분명 (DMID CIRC)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_mass_circumscribed_margin_read.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_mass_spiculated",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "침상형 종괴",
+   "title": "2D 유방촬영 · 침상형 종괴",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG063.tif",
+   "caption": "DMID IMG063(CC · 공급자 분류 SPIC · 악성)의 종괴 부위입니다. 공급자 전문가 ROI를 종괴 경계로 써서 mammography-measures 함수를 실행했습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "mass_example",
+   "base": "ex_ffdm_mass_spiculated.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "outline",
+     "label": "종괴 경계·크기",
+     "tone": "red",
+     "function": "mass.size",
+     "how": "전문가 ROI의 최대 지름(Feret)과 화소 면적",
+     "features": [
+      {
+       "id": "ft_mass_size",
+       "value": "443.1 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_area",
+       "value": "122,305 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_spiculated_outline.png"
+    },
+    {
+     "key": "shape",
+     "label": "모양(원형도·볼록도·반지름 변동)",
+     "tone": "orange",
+     "function": "mass.circularity",
+     "how": "4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)",
+     "features": [
+      {
+       "id": "ft_mass_circularity",
+       "value": "0.698",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_solidity",
+       "value": "0.94",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_radial_sd",
+       "value": "0.067",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_spiculated_shape.png"
+    },
+    {
+     "key": "spicule",
+     "label": "침상 지수",
+     "tone": "magenta",
+     "function": "mass.spiculation_index",
+     "how": "경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)",
+     "features": [
+      {
+       "id": "ft_mass_spiculation_index",
+       "value": "0.444",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_spiculated_spicule.png"
+    },
+    {
+     "key": "margin",
+     "label": "경계 선명도·대비",
+     "tone": "cyan",
+     "function": "mass.margin_sharpness",
+     "how": "경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이",
+     "features": [
+      {
+       "id": "ft_mass_margin_sharpness",
+       "value": "0.115",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_contrast",
+       "value": "1.79",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_spiculated_margin.png"
+    },
+    {
+     "key": "margin_read",
+     "label": "종괴 경계 서술(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김",
+     "features": [
+      {
+       "id": "ft_mass_margin",
+       "value": "침상 (DMID SPIC)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_mass_spiculated_margin_read.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_mass_indistinct",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "경계 불분명 종괴",
+   "title": "2D 유방촬영 · 경계가 불분명한 종괴",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG104.tif",
+   "caption": "DMID IMG104(MLO · 공급자 분류 MISC · 양성)의 종괴 부위입니다. 공급자 전문가 ROI를 종괴 경계로 써서 mammography-measures 함수를 실행했습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "mass_example",
+   "base": "ex_ffdm_mass_indistinct.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "outline",
+     "label": "종괴 경계·크기",
+     "tone": "red",
+     "function": "mass.size",
+     "how": "전문가 ROI의 최대 지름(Feret)과 화소 면적",
+     "features": [
+      {
+       "id": "ft_mass_size",
+       "value": "556.5 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_area",
+       "value": "204,204 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_indistinct_outline.png"
+    },
+    {
+     "key": "shape",
+     "label": "모양(원형도·볼록도·반지름 변동)",
+     "tone": "orange",
+     "function": "mass.circularity",
+     "how": "4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)",
+     "features": [
+      {
+       "id": "ft_mass_circularity",
+       "value": "0.877",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_solidity",
+       "value": "0.995",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_radial_sd",
+       "value": "0.052",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_indistinct_shape.png"
+    },
+    {
+     "key": "spicule",
+     "label": "침상 지수",
+     "tone": "magenta",
+     "function": "mass.spiculation_index",
+     "how": "경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)",
+     "features": [
+      {
+       "id": "ft_mass_spiculation_index",
+       "value": "0.345",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_indistinct_spicule.png"
+    },
+    {
+     "key": "margin",
+     "label": "경계 선명도·대비",
+     "tone": "cyan",
+     "function": "mass.margin_sharpness",
+     "how": "경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이",
+     "features": [
+      {
+       "id": "ft_mass_margin_sharpness",
+       "value": "0.752",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_contrast",
+       "value": "0.72",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_mass_indistinct_margin.png"
+    },
+    {
+     "key": "margin_read",
+     "label": "종괴 경계 서술(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김",
+     "features": [
+      {
+       "id": "ft_mass_margin",
+       "value": "불분명 (DMID MISC · 기타 경계)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_mass_indistinct_margin_read.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_calc_cluster",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "석회화 군집",
+   "title": "2D 유방촬영 · 작은 석회화 군집",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG029.tif",
+   "caption": "DMID IMG029(CC · 공급자 분류 CALC · 양성)의 석회화 부위입니다. 전문가 ROI 안에서 top-hat 변환으로 석회화 점을 찾고 mammography-measures 함수를 실행했습니다. 화소 간격이 없어 top-hat 반경은 7 px로 두었습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "calc_example",
+   "base": "ex_ffdm_calc_cluster.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "spots",
+     "label": "석회화 검출·개수",
+     "tone": "yellow",
+     "function": "calcification.count",
+     "how": "ROI(점선) 안 white top-hat이 중앙값 + 4·MAD를 넘는 점",
+     "features": [
+      {
+       "id": "ft_calc_count",
+       "value": "22 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_size",
+       "value": "44.2 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_contrast",
+       "value": "5.6",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_cluster_spots.png"
+    },
+    {
+     "key": "extent",
+     "label": "범위·밀집도",
+     "tone": "cyan",
+     "function": "calcification.extent",
+     "how": "가장 먼 두 석회화 중심 사이 거리 · 탐색 범위 면적당 개수",
+     "features": [
+      {
+       "id": "ft_calc_extent",
+       "value": "279.5 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_density",
+       "value": "2.77 count/10^4 px2",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_cluster_extent.png"
+    },
+    {
+     "key": "arrangement",
+     "label": "배열(선형성·최근접 거리)",
+     "tone": "green",
+     "function": "calcification.linearity",
+     "how": "석회화 중심 분산의 방향 치우침 · 가장 가까운 석회화까지 거리(선)",
+     "features": [
+      {
+       "id": "ft_calc_linearity",
+       "value": "0.71",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_nn_distance",
+       "value": "24.4 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_cluster_arrangement.png"
+    },
+    {
+     "key": "shape",
+     "label": "크기 다양성·길쭉함·분지",
+     "tone": "orange",
+     "function": "calcification.size_variation",
+     "how": "석회화 면적의 변동계수 · 이심률 0.9 초과 비율(주황=길쭉한 점) · 골격 갈림점 비율",
+     "features": [
+      {
+       "id": "ft_calc_size_variation",
+       "value": "1.48",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_elongation",
+       "value": "0.182",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_branching",
+       "value": "0.286",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_cluster_shape.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_calc_rodlike",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "막대 모양 석회화",
+   "title": "2D 유방촬영 · 큰 막대 모양 석회화",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG024.tif",
+   "caption": "DMID IMG024(CC · 공급자 분류 CALC · 양성)의 석회화 부위입니다. 전문가 ROI 안에서 top-hat 변환으로 석회화 점을 찾고 mammography-measures 함수를 실행했습니다. 화소 간격이 없어 top-hat 반경은 7 px로 두었습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "calc_example",
+   "base": "ex_ffdm_calc_rodlike.jpg",
+   "width": 504,
+   "height": 760,
+   "layers": [
+    {
+     "key": "spots",
+     "label": "석회화 검출·개수",
+     "tone": "yellow",
+     "function": "calcification.count",
+     "how": "ROI(점선) 안 white top-hat이 중앙값 + 4·MAD를 넘는 점",
+     "features": [
+      {
+       "id": "ft_calc_count",
+       "value": "118 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_size",
+       "value": "58.7 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_contrast",
+       "value": "5.5",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_rodlike_spots.png"
+    },
+    {
+     "key": "extent",
+     "label": "범위·밀집도",
+     "tone": "cyan",
+     "function": "calcification.extent",
+     "how": "가장 먼 두 석회화 중심 사이 거리 · 탐색 범위 면적당 개수",
+     "features": [
+      {
+       "id": "ft_calc_extent",
+       "value": "777.1 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_density",
+       "value": "8.22 count/10^4 px2",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_rodlike_extent.png"
+    },
+    {
+     "key": "arrangement",
+     "label": "배열(선형성·최근접 거리)",
+     "tone": "green",
+     "function": "calcification.linearity",
+     "how": "석회화 중심 분산의 방향 치우침 · 가장 가까운 석회화까지 거리(선)",
+     "features": [
+      {
+       "id": "ft_calc_linearity",
+       "value": "0.942",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_nn_distance",
+       "value": "18.5 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_rodlike_arrangement.png"
+    },
+    {
+     "key": "shape",
+     "label": "크기 다양성·길쭉함·분지",
+     "tone": "orange",
+     "function": "calcification.size_variation",
+     "how": "석회화 면적의 변동계수 · 이심률 0.9 초과 비율(주황=길쭉한 점) · 골격 갈림점 비율",
+     "features": [
+      {
+       "id": "ft_calc_size_variation",
+       "value": "1.61",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_elongation",
+       "value": "0.441",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_branching",
+       "value": "0.176",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_calc_rodlike_shape.png"
+    },
+    {
+     "key": "morph_read",
+     "label": "석회화 형태(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "서비스 판독(공급자는 형태를 분류하지 않음)",
+     "features": [
+      {
+       "id": "ft_calc_morphology",
+       "value": "큰 막대 모양 (서비스 판독)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ffdm_calc_rodlike_morph_read.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ffdm_distortion",
+   "modality": "ffdm",
+   "modality_label": "2D 유방촬영",
+   "region": "구조왜곡 확대",
+   "title": "2D 유방촬영 · 구조왜곡 부위",
+   "source": "dmid",
+   "source_file": "TIFF Images/IMG024.tif",
+   "caption": "DMID IMG024(CC · 공급자 분류 SPIC+ARCH · 악성)의 부위입니다. 전문가 ROI 중심을 기준으로 둘레 띠의 선 구조가 중심으로 모이는 정도를 계산했습니다. DMID 영상에는 화소 간격 정보가 없어 길이·면적은 화소 단위입니다.",
+   "builder": "distortion_example",
+   "base": "ex_ffdm_distortion.jpg",
+   "width": 609,
+   "height": 760,
+   "layers": [
+    {
+     "key": "converge",
+     "label": "침상선 수렴 지수",
+     "tone": "magenta",
+     "function": "distortion.convergence_index",
+     "how": "중심 둘레 띠(보라)에서 선 구조 중 중심을 향하는 것의 비율(무작위 배열이면 약 0.25)",
+     "features": [
+      {
+       "id": "ft_ad_convergence_index",
+       "value": "0.512",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_distortion_converge.png"
+    },
+    {
+     "key": "extent",
+     "label": "범위",
+     "tone": "red",
+     "function": "distortion.distortion_extent",
+     "how": "전문가 ROI의 최대 지름",
+     "features": [
+      {
+       "id": "ft_ad_extent",
+       "value": "408.4 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_count",
+       "value": "1 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ffdm_distortion_extent.png"
+    }
+   ],
+   "credit": "Oza P, Oza R, Oza U, et al. DMID (figshare 2023)",
+   "url": "https://doi.org/10.6084/m9.figshare.24522883.v2",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_dbt_mass",
+   "modality": "dbt",
+   "modality_label": "DBT",
+   "region": "침상형 종괴",
+   "title": "DBT · DBT 단면의 침상형 종괴",
+   "source": "eren2026",
+   "source_file": "diagnostics-16-02321-g004.jpg",
+   "caption": "DBT 단면에서 2D 영상에 가려졌던 종괴의 침상·분엽 경계가 드러난 예입니다(저자: 삼중음성 유방암, ACR D). 종괴 경계는 저자 화살표 끝의 밝은 영역을 서비스가 추정한 것입니다. 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_dbt_mass.jpg",
+   "width": 492,
+   "height": 1092,
+   "layers": [
+    {
+     "key": "outline",
+     "label": "종괴 경계·크기(추정)",
+     "tone": "red",
+     "function": "mass.size",
+     "how": "화살표 끝 반경 16 px 안에서 밝은 영역(상위 45%)을 잇고 구멍을 채운 서비스 추정 경계",
+     "features": [
+      {
+       "id": "ft_mass_size",
+       "value": "24.6 px",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_area",
+       "value": "357.0 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_size",
+       "value": "24.6 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_mass_outline.png"
+    },
+    {
+     "key": "shape",
+     "label": "모양(원형도·볼록도·반지름 변동)",
+     "tone": "orange",
+     "function": "mass.circularity",
+     "how": "추정 경계의 4π·면적/둘레², 볼록도, 반지름 변동",
+     "features": [
+      {
+       "id": "ft_mass_circularity",
+       "value": "0.83",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_solidity",
+       "value": "0.913",
+       "status": "ok"
+      },
+      {
+       "id": "ft_mass_radial_sd",
+       "value": "0.081",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_mass_shape.png"
+    },
+    {
+     "key": "spicule",
+     "label": "침상 지수",
+     "tone": "magenta",
+     "function": "mass.spiculation_index",
+     "how": "경계 바깥 띠의 선 구조 중 종괴 중심을 향하는 것의 비율",
+     "features": [
+      {
+       "id": "ft_mass_spiculation_index",
+       "value": "0.468",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_mass_spicule.png"
+    },
+    {
+     "key": "read",
+     "label": "모양·경계·구성(저자 판독)",
+     "tone": "white",
+     "function": "",
+     "how": "원 논문 그림 설명의 서술",
+     "features": [
+      {
+       "id": "ft_mass_margin",
+       "value": "침상 · 분엽 윤곽 (저자 서술)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_mass_shape",
+       "value": "불규칙 (저자: 분엽형 윤곽)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_breast_composition",
+       "value": "d (저자: ACR Type D)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_dbt_mass_read.png"
+    }
+   ],
+   "credit": "Eren A, Karatay E, Ozden F. (2026) Diagnostics 16:2321, Fig. 4B",
+   "url": "https://doi.org/10.3390/diagnostics16152321",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_dbt_distortion",
+   "modality": "dbt",
+   "modality_label": "DBT",
+   "region": "구조왜곡",
+   "title": "DBT · DBT 단면의 구조왜곡",
+   "source": "eren2026",
+   "source_file": "diagnostics-16-02321-g005.jpg",
+   "caption": "DBT 단면에서 드러난 구조왜곡입니다(저자: 방사상 흉터, ACR C). 저자 화살표 끝 주변에서 둘레 띠의 선 구조가 중심으로 모이는 정도를 계산했습니다. 이 그림의 해상도에서는 값이 무작위 수준(약 0.25)과 비슷해, 이 간이 지수로는 저자가 본 구조왜곡이 드러나지 않습니다(한계를 보여 주는 예). 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_dbt_distortion.jpg",
+   "width": 469,
+   "height": 785,
+   "layers": [
+    {
+     "key": "converge",
+     "label": "침상선 수렴 지수",
+     "tone": "magenta",
+     "function": "distortion.convergence_index",
+     "how": "중심 둘레 띠(보라)에서 선 구조 중 중심을 향하는 것의 비율. 중심 위치에 민감해 화살표 끝 주변 9개 중심의 중앙값을 씀",
+     "features": [
+      {
+       "id": "ft_ad_convergence_index",
+       "value": "0.244 · 9점 중앙값 · 범위 0.16–0.28",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_distortion_converge.png"
+    },
+    {
+     "key": "extent",
+     "label": "범위",
+     "tone": "red",
+     "function": "distortion.distortion_extent",
+     "how": "중심을 향하는 선 구조 점들을 이은 범위의 최대 지름",
+     "features": [
+      {
+       "id": "ft_ad_extent",
+       "value": "76.0 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_distortion_extent.png"
+    },
+    {
+     "key": "read",
+     "label": "구조왜곡 유무·구성(저자 판독)",
+     "tone": "white",
+     "function": "",
+     "how": "원 논문 그림 설명의 서술",
+     "features": [
+      {
+       "id": "ft_ad_presence",
+       "value": "있음 (저자 서술 · 방사상 흉터)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_breast_composition",
+       "value": "c (저자: ACR Type C)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_dbt_distortion_read.png"
+    }
+   ],
+   "credit": "Eren A, Karatay E, Ozden F. (2026) Diagnostics 16:2321, Fig. 5B",
+   "url": "https://doi.org/10.3390/diagnostics16152321",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_dbt_calc",
+   "modality": "dbt",
+   "modality_label": "DBT",
+   "region": "석회화",
+   "title": "DBT · DBT 단면의 석회화",
+   "source": "favati2022",
+   "source_file": "diagnostics-12-00771-g001.jpg",
+   "caption": "BI-RADS 4 석회화의 DBT 단면입니다. 빨간 영역은 원 저자의 ROI이고, 그 안에서 top-hat으로 석회화 점을 찾았습니다. 석회화 군집은 여러 단면에 흩어지므로 한 단면의 개수는 전체보다 적을 수 있습니다. 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_dbt_calc.jpg",
+   "width": 759,
+   "height": 674,
+   "layers": [
+    {
+     "key": "spots",
+     "label": "석회화 검출·개수",
+     "tone": "yellow",
+     "function": "calcification.count",
+     "how": "저자 ROI(빨강 틴트를 녹색 채널 비율로 되돌림) 안 white top-hat(반경 3 px)이 중앙값 + 16·MAD를 넘고 5 px 이상인 점. 그림 JPEG 잡음을 피하려 경계값을 높임",
+     "features": [
+      {
+       "id": "ft_calc_count",
+       "value": "10 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_calc_size",
+       "value": "14.7 px²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_calc_spots.png"
+    },
+    {
+     "key": "extent",
+     "label": "범위",
+     "tone": "cyan",
+     "function": "calcification.extent",
+     "how": "가장 먼 두 석회화 중심 사이 거리",
+     "features": [
+      {
+       "id": "ft_calc_extent",
+       "value": "193.5 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_dbt_calc_extent.png"
+    }
+   ],
+   "credit": "Favati B, et al. (2022) Diagnostics 12:771, Fig. 1",
+   "url": "https://doi.org/10.3390/diagnostics12040771",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_cem_mass",
+   "modality": "cem",
+   "modality_label": "CEM",
+   "region": "증강 종괴",
+   "title": "CEM · 뚜렷하게 증강되는 종괴",
+   "source": "amir2026",
+   "source_file": "330_2026_12660_Fig5_HTML.webp",
+   "caption": "CEM 재조합 MLO 영상에서 뚜렷하게 증강되는 종괴입니다(저자: 침윤성 유방암, 저에너지 영상에도 대응 소견). 증강 범위는 저자 원 안의 밝은 영역을 서비스가 추정한 것입니다. 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_cem_mass.jpg",
+   "width": 476,
+   "height": 752,
+   "layers": [
+    {
+     "key": "enh",
+     "label": "증강 강도 비",
+     "tone": "cyan",
+     "function": "enhancement.intensity_ratio",
+     "how": "추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기",
+     "features": [
+      {
+       "id": "ft_enh_intensity_ratio",
+       "value": "1.45",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_mass_enh.png"
+    },
+    {
+     "key": "outline",
+     "label": "증강 범위·크기(추정)",
+     "tone": "red",
+     "function": "distortion.lesion_size",
+     "how": "저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_size",
+       "value": "49.1 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_mass_outline.png"
+    },
+    {
+     "key": "read",
+     "label": "뚜렷함·양상(저자 판독)",
+     "tone": "white",
+     "function": "",
+     "how": "원 논문 그림 설명의 서술",
+     "features": [
+      {
+       "id": "ft_lesion_conspicuity",
+       "value": "높음 (저자 서술)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_cem_mass_read.png"
+    }
+   ],
+   "credit": "Amir T, Lee CH, Hogan MP, et al. (2026) Eur Radiol 36:7864–7873, Fig. 5a",
+   "url": "https://doi.org/10.1007/s00330-026-12660-y",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_cem_rim",
+   "modality": "cem",
+   "modality_label": "CEM",
+   "region": "테두리 증강",
+   "title": "CEM · 테두리가 증강되는 종괴",
+   "source": "amir2026",
+   "source_file": "330_2026_12660_Fig6_HTML.webp",
+   "caption": "CEM 재조합 영상에서 테두리가 증강되는 종괴입니다(저자: 종괴 절제 부위의 지방괴사, MRI에서 가운데 지방 확인). 증강 범위는 저자 원 안의 밝은 영역을 서비스가 추정한 것입니다. 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_cem_rim.jpg",
+   "width": 400,
+   "height": 928,
+   "layers": [
+    {
+     "key": "enh",
+     "label": "증강 강도 비",
+     "tone": "cyan",
+     "function": "enhancement.intensity_ratio",
+     "how": "추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기",
+     "features": [
+      {
+       "id": "ft_enh_intensity_ratio",
+       "value": "1.94",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_rim_enh.png"
+    },
+    {
+     "key": "outline",
+     "label": "증강 범위·크기(추정)",
+     "tone": "red",
+     "function": "distortion.lesion_size",
+     "how": "저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_size",
+       "value": "75.0 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_rim_outline.png"
+    },
+    {
+     "key": "read",
+     "label": "뚜렷함·양상(저자 판독)",
+     "tone": "white",
+     "function": "",
+     "how": "원 논문 그림 설명의 서술",
+     "features": [
+      {
+       "id": "ft_lesion_conspicuity",
+       "value": "높음 (저자 서술)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_enh_pattern",
+       "value": "테두리 증강 (저자 서술)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_cem_rim_read.png"
+    }
+   ],
+   "credit": "Amir T, Lee CH, Hogan MP, et al. (2026) Eur Radiol 36:7864–7873, Fig. 6b",
+   "url": "https://doi.org/10.1007/s00330-026-12660-y",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_cem_nme",
+   "modality": "cem",
+   "modality_label": "CEM",
+   "region": "비종괴 증강",
+   "title": "CEM · 국소 비종괴 증강",
+   "source": "amir2026",
+   "source_file": "330_2026_12660_Fig4_HTML.webp",
+   "caption": "CEM 재조합 CC 영상의 국소 비종괴 증강입니다(저자: 중간 뚜렷함, 침윤성 유방암, 저에너지 영상에는 대응 소견 없음). 증강 범위는 저자 원 안의 밝은 영역을 서비스가 추정한 것입니다. 논문 그림은 화소 간격을 알 수 없어 길이·면적은 화소 단위입니다.",
+   "builder": "paper_examples",
+   "base": "ex_cem_nme.jpg",
+   "width": 542,
+   "height": 928,
+   "layers": [
+    {
+     "key": "enh",
+     "label": "증강 강도 비",
+     "tone": "cyan",
+     "function": "enhancement.intensity_ratio",
+     "how": "추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기",
+     "features": [
+      {
+       "id": "ft_enh_intensity_ratio",
+       "value": "1.23",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_nme_enh.png"
+    },
+    {
+     "key": "outline",
+     "label": "증강 범위·크기(추정)",
+     "tone": "red",
+     "function": "enhancement.nme_extent",
+     "how": "저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_nme_extent",
+       "value": "30.2 px",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_cem_nme_outline.png"
+    },
+    {
+     "key": "read",
+     "label": "뚜렷함·양상(저자 판독)",
+     "tone": "white",
+     "function": "",
+     "how": "원 논문 그림 설명의 서술",
+     "features": [
+      {
+       "id": "ft_lesion_conspicuity",
+       "value": "중간 (저자 서술)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_nme_distribution",
+       "value": "국소(focal) (저자 서술)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_cem_nme_read.png"
+    }
+   ],
+   "credit": "Amir T, Lee CH, Hogan MP, et al. (2026) Eur Radiol 36:7864–7873, Fig. 4a",
+   "url": "https://doi.org/10.1007/s00330-026-12660-y",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_cem_bpe",
+   "modality": "cem",
+   "modality_label": "CEM",
+   "region": "배경 실질 증강",
+   "title": "CEM · 배경 실질 증강(BPE) 비교",
+   "source": "hoon2026",
+   "source_file": "cureus-0018-00000107590-i03.jpg",
+   "caption": "같은 유방의 CEM 재조합 영상입니다. 치료 전(A) 중등도 BPE가 선행 항암 치료 뒤(B) 최소 BPE로 줄었습니다(저자 판독). 두 영상의 유방 안 평균 밝기를 함께 보였습니다(같은 그림 안 비교용 참고값).",
+   "builder": "paper_examples",
+   "base": "ex_cem_bpe.jpg",
+   "width": 675,
+   "height": 666,
+   "layers": [
+    {
+     "key": "bpe",
+     "label": "배경 실질 증강 정도(저자 판독)",
+     "tone": "yellow",
+     "function": "",
+     "how": "원 논문 그림 설명의 판독(최소·경도·중등도·고도)",
+     "features": [
+      {
+       "id": "ft_bpe_level",
+       "value": "A 중등도 → B 최소 (저자 판독)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_cem_bpe_bpe.png"
+    }
+   ],
+   "credit": "Hoon OH, Leung SY, Ko TY, et al. (2026) Cureus 18:e107590, Fig. 3",
+   "url": "https://doi.org/10.7759/cureus.107590",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+ ]
+}

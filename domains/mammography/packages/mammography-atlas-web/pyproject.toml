@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mammography-atlas-web"
+version = "0.1.0"
+description = "A standalone multipage atlas of 2D mammography, DBT and CEM: anatomy, lesions, measurements and diseases"
+requires-python = ">=3.11"
+dependencies = ["Flask>=3.1,<4", "waitress>=3,<4"]
+
+[project.scripts]
+mammography-atlas-web = "mammography_atlas_web.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mammography_atlas_web = ["templates/*.html", "static/*.css", "static/*.js", "data/*.json"]

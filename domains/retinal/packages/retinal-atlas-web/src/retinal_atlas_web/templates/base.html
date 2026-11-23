@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }}{% if active != 'home' %} · 망막 영상 지도{% endif %}</title>
+<meta name="description" content="망막 영상의 해부 구조와 병변, 관찰·측정할 수 있는 특징과 관련 질병을 실제 영상과 모식도로 살펴봅니다.">
+<link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">{% block head %}{% endblock %}</head>
+<body class="page-{{ active or 'other' }}">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top"><div class="top-inner">
+  <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#c4562e"/><circle cx="21" cy="15" r="4.2" fill="#fbe3b5"/><circle cx="12" cy="17" r="3" fill="#7a2c14"/><path d="M19 12 C14 6 8 7 4 11 M19 18 C14 25 8 24 4 21" stroke="#7b1610" stroke-width="1.6" fill="none"/></svg><span>망막 영상 지도</span></a>
+  <nav aria-label="주 메뉴">{% for path,label,key in nav %}<a href="{{ path }}"{% if active == key %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}</nav>
+  <form class="top-search" action="/search/" method="get" role="search">
+    <label class="visually-hidden" for="top-q">구조·병변 검색</label>
+    <input id="top-q" name="q" type="search" value="{{ query }}" placeholder="검색 (예: 출혈, RNFL)">
+  </form>
+</div></header>
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="footer"><div class="footer-inner">
+  <div><strong>망막 영상 지도</strong><span>해부 구조 {{ items.values()|selectattr('section','equalto','anatomy')|list|length }} · 병변 {{ items.values()|selectattr('section','equalto','lesions')|list|length }} · 질병 {{ atlas.diseases|length }} · 목록 초안</span></div>
+  <nav aria-label="보조 메뉴"><a href="/images/">영상 읽기</a><a href="/sources/"{% if active == 'sources' %} aria-current="page"{% endif %}>출처와 라이선스</a></nav>
+</div></footer>
+{% block scripts %}{% endblock %}</body></html>

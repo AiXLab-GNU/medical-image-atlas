@@ -1,0 +1,46 @@
+scope,class_id,feature_id,note_ko
+lesion,focal,ft_lesion_generic_presence,
+lesion,focal,ft_lesion_generic_count,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+lesion,focal,ft_lesion_generic_size,군집·구역은 퍼진 범위의 최대 길이
+lesion,focal,ft_lesion_distance_nipple,
+lesion,focal,ft_lesion_depth_third,
+lesion,focal,ft_lesion_view_half,
+lesion,focal,ft_lesion_quadrant,CC·MLO 짝짓기 필요
+lesion,focal,ft_lesion_clock_position,CC·MLO 짝짓기 필요
+lesion,focal,ft_lesion_two_view,
+lesion,focal,ft_lesion_generic_change,
+lesion,cluster,ft_lesion_generic_presence,
+lesion,cluster,ft_lesion_generic_count,한 유방에서 같은 소견의 개수(군집은 하나로 셈)
+lesion,cluster,ft_lesion_generic_size,군집·구역은 퍼진 범위의 최대 길이
+lesion,cluster,ft_lesion_distance_nipple,
+lesion,cluster,ft_lesion_depth_third,
+lesion,cluster,ft_lesion_view_half,
+lesion,cluster,ft_lesion_quadrant,CC·MLO 짝짓기 필요
+lesion,cluster,ft_lesion_clock_position,CC·MLO 짝짓기 필요
+lesion,cluster,ft_lesion_generic_change,
+lesion,region,ft_lesion_generic_presence,
+lesion,region,ft_lesion_generic_size,군집·구역은 퍼진 범위의 최대 길이
+lesion,region,ft_lesion_distance_nipple,
+lesion,region,ft_lesion_depth_third,
+lesion,region,ft_lesion_view_half,
+lesion,region,ft_lesion_quadrant,CC·MLO 짝짓기 필요
+lesion,region,ft_lesion_two_view,
+lesion,region,ft_lesion_generic_change,
+lesion,linear,ft_lesion_generic_presence,
+lesion,linear,ft_lesion_generic_size,군집·구역은 퍼진 범위의 최대 길이
+lesion,linear,ft_lesion_distance_nipple,
+lesion,linear,ft_lesion_view_half,
+lesion,linear,ft_lesion_quadrant,CC·MLO 짝짓기 필요
+lesion,convergence,ft_lesion_generic_presence,
+lesion,convergence,ft_lesion_generic_size,군집·구역은 퍼진 범위의 최대 길이
+lesion,convergence,ft_lesion_distance_nipple,
+lesion,convergence,ft_lesion_depth_third,
+lesion,convergence,ft_lesion_view_half,
+lesion,convergence,ft_lesion_quadrant,CC·MLO 짝짓기 필요
+lesion,convergence,ft_lesion_clock_position,CC·MLO 짝짓기 필요
+lesion,convergence,ft_lesion_two_view,
+lesion,convergence,ft_lesion_generic_change,
+lesion,diffuse,ft_lesion_generic_presence,
+lesion,device,ft_lesion_generic_presence,
+lesion,device,ft_lesion_distance_nipple,
+lesion,device,ft_lesion_quadrant,CC·MLO 짝짓기 필요

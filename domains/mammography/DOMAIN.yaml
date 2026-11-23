@@ -1,0 +1,12 @@
+domain_id: mammography
+name_ko: 유방촬영 영상 지도
+status: ACTIVE_V01_DMID_FFDM_EXAMPLES_DBT_CEM_IMAGES_PENDING_EXPERT_REVIEW_PENDING
+origin: new domain built 2026-11-23 in the same frame as domains/retinal (measurement code adapted from mammography-xai E124)
+web_package: packages/mammography-atlas-web
+web_port: 8879
+catalog_tables: docs/surveys/mammography_atlas_catalog/README.md
+data_schema: docs/protocols/40_mammography_atlas_data_schema_v01_ko.md
+rebuild_runbook: docs/protocols/50_mammography_atlas_rebuild_runbook_v01_ko.md
+measure_package: packages/mammography-measures
+image_sources:
+  - dmid (CC BY 4.0, resources/datasets/public_mammography/dmid)

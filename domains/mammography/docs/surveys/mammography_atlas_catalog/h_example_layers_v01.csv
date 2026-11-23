@@ -1,0 +1,60 @@
+example_id,layer_key,label,tone,function,file,how
+ex_ffdm_mlo,breast,유방 경계·면적,blue,breast.breast_area,ex_ffdm_mlo_breast.png,Otsu 경계값으로 배경과 유방을 가르고 가장 큰 덩어리의 구멍을 채움 · 대흉근 제외
+ex_ffdm_mlo,pectoral,대흉근 면적·각도,cyan,breast.pectoral_area,ex_ffdm_mlo_pectoral.png,위쪽 행마다 흉벽 쪽 첫 강한 어두워짐을 찾고 RANSAC 직선으로 앞 경계를 맞춤
+ex_ffdm_mlo,pnl,유두·후유두선,green,breast.pnl_length,ex_ffdm_mlo_pnl.png,윤곽의 국소 돌출부를 찾고 원영상의 어두운 유두 끝까지 보정한 뒤 대흉근 앞 경계(자동 추정·검토 전)에 수직으로 내린 선
+ex_ffdm_mlo,dense,치밀 조직·밀도 백분율,yellow,breast.percent_density,ex_ffdm_mlo_dense.png,피부 가장자리를 뺀 유방 안 밝기의 Otsu 경계값보다 밝은 화소(영상 처리 방식에 따라 달라짐)
+ex_ffdm_mlo,composition,유방 구성 범주(판독),white,,ex_ffdm_mlo_composition.png,공급자 판독 보고서의 ACR 범주
+ex_ffdm_mlo,location,병변 위치(유두 기준),red,location.distance_from_nipple,ex_ffdm_mlo_location.png,병변 ROI 중심을 후유두선에 투영해 앞·가운데·뒤 1/3과 유두 거리 · 유두선 위아래로 절반 위치
+ex_ffdm_cc,breast,유방 경계·면적,blue,breast.breast_area,ex_ffdm_cc_breast.png,Otsu 경계값으로 배경과 유방을 가르고 가장 큰 덩어리의 구멍을 채움
+ex_ffdm_cc,pnl,유두·후유두선,green,breast.pnl_length,ex_ffdm_cc_pnl.png,윤곽의 국소 돌출부를 찾고 원영상의 어두운 유두 끝까지 보정한 뒤 영상 뒤 끝까지 수평선
+ex_ffdm_cc,dense,치밀 조직·밀도 백분율,yellow,breast.percent_density,ex_ffdm_cc_dense.png,피부 가장자리를 뺀 유방 안 밝기의 Otsu 경계값보다 밝은 화소(영상 처리 방식에 따라 달라짐)
+ex_ffdm_cc,composition,유방 구성 범주(판독),white,,ex_ffdm_cc_composition.png,공급자 판독 보고서의 ACR 범주
+ex_ffdm_cc,location,병변 위치(유두 기준),red,location.distance_from_nipple,ex_ffdm_cc_location.png,병변 ROI 중심을 후유두선에 투영해 앞·가운데·뒤 1/3과 유두 거리 · 유두선 위아래로 절반 위치
+ex_ffdm_pair,match,두 방향에서 보임,red,,ex_ffdm_pair_match.png,두 영상의 공급자 ROI가 같은 병변을 표시함(짝짓기는 가정)
+ex_ffdm_pair,quadrant,사분면·시계 방향,cyan,location.quadrant,ex_ffdm_pair_quadrant.png,"CC의 위·아래(바깥·안) 절반과 MLO의 위·아래 절반을 합치고, 유두선에서 벗어난 거리로 시계 방향을 계산"
+ex_ffdm_pair,pnl,CC·MLO 후유두선 길이 차이,green,breast.pnl_cc_mlo_difference,ex_ffdm_pair_pnl.png,두 영상의 후유두선 길이 차이(1 cm 이내면 CC가 뒤쪽까지 충분히 포함). 화소 간격이 없어 두 영상 배율이 같다고 가정
+ex_ffdm_mass_circumscribed,outline,종괴 경계·크기,red,mass.size,ex_ffdm_mass_circumscribed_outline.png,전문가 ROI의 최대 지름(Feret)과 화소 면적
+ex_ffdm_mass_circumscribed,shape,모양(원형도·볼록도·반지름 변동),orange,mass.circularity,ex_ffdm_mass_circumscribed_shape.png,"4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)"
+ex_ffdm_mass_circumscribed,spicule,침상 지수,magenta,mass.spiculation_index,ex_ffdm_mass_circumscribed_spicule.png,경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)
+ex_ffdm_mass_circumscribed,margin,경계 선명도·대비,cyan,mass.margin_sharpness,ex_ffdm_mass_circumscribed_margin.png,경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이
+ex_ffdm_mass_circumscribed,margin_read,종괴 경계 서술(판독),white,,ex_ffdm_mass_circumscribed_margin_read.png,공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김
+ex_ffdm_mass_spiculated,outline,종괴 경계·크기,red,mass.size,ex_ffdm_mass_spiculated_outline.png,전문가 ROI의 최대 지름(Feret)과 화소 면적
+ex_ffdm_mass_spiculated,shape,모양(원형도·볼록도·반지름 변동),orange,mass.circularity,ex_ffdm_mass_spiculated_shape.png,"4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)"
+ex_ffdm_mass_spiculated,spicule,침상 지수,magenta,mass.spiculation_index,ex_ffdm_mass_spiculated_spicule.png,경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)
+ex_ffdm_mass_spiculated,margin,경계 선명도·대비,cyan,mass.margin_sharpness,ex_ffdm_mass_spiculated_margin.png,경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이
+ex_ffdm_mass_spiculated,margin_read,종괴 경계 서술(판독),white,,ex_ffdm_mass_spiculated_margin_read.png,공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김
+ex_ffdm_mass_indistinct,outline,종괴 경계·크기,red,mass.size,ex_ffdm_mass_indistinct_outline.png,전문가 ROI의 최대 지름(Feret)과 화소 면적
+ex_ffdm_mass_indistinct,shape,모양(원형도·볼록도·반지름 변동),orange,mass.circularity,ex_ffdm_mass_indistinct_shape.png,"4π·면적/둘레², 면적/볼록 껍질 면적, 중심–경계 거리의 변동(점선=볼록 껍질)"
+ex_ffdm_mass_indistinct,spicule,침상 지수,magenta,mass.spiculation_index,ex_ffdm_mass_indistinct_spicule.png,경계 바깥 띠에서 선 구조(Sato 필터 상위 10%) 중 방향이 종괴 중심을 향하는 것의 비율(점=중심을 향한 선)
+ex_ffdm_mass_indistinct,margin,경계 선명도·대비,cyan,mass.margin_sharpness,ex_ffdm_mass_indistinct_margin.png,경계의 밝기 기울기를 안팎 밝기 차이로 나눔 · 안쪽(초록)과 바깥 띠(파랑) 밝기 차이
+ex_ffdm_mass_indistinct,margin_read,종괴 경계 서술(판독),white,,ex_ffdm_mass_indistinct_margin_read.png,공급자 분류(DMID 이상 유형)를 BI-RADS 경계 서술로 옮김
+ex_ffdm_calc_cluster,spots,석회화 검출·개수,yellow,calcification.count,ex_ffdm_calc_cluster_spots.png,ROI(점선) 안 white top-hat이 중앙값 + 4·MAD를 넘는 점
+ex_ffdm_calc_cluster,extent,범위·밀집도,cyan,calcification.extent,ex_ffdm_calc_cluster_extent.png,가장 먼 두 석회화 중심 사이 거리 · 탐색 범위 면적당 개수
+ex_ffdm_calc_cluster,arrangement,배열(선형성·최근접 거리),green,calcification.linearity,ex_ffdm_calc_cluster_arrangement.png,석회화 중심 분산의 방향 치우침 · 가장 가까운 석회화까지 거리(선)
+ex_ffdm_calc_cluster,shape,크기 다양성·길쭉함·분지,orange,calcification.size_variation,ex_ffdm_calc_cluster_shape.png,석회화 면적의 변동계수 · 이심률 0.9 초과 비율(주황=길쭉한 점) · 골격 갈림점 비율
+ex_ffdm_calc_rodlike,spots,석회화 검출·개수,yellow,calcification.count,ex_ffdm_calc_rodlike_spots.png,ROI(점선) 안 white top-hat이 중앙값 + 4·MAD를 넘는 점
+ex_ffdm_calc_rodlike,extent,범위·밀집도,cyan,calcification.extent,ex_ffdm_calc_rodlike_extent.png,가장 먼 두 석회화 중심 사이 거리 · 탐색 범위 면적당 개수
+ex_ffdm_calc_rodlike,arrangement,배열(선형성·최근접 거리),green,calcification.linearity,ex_ffdm_calc_rodlike_arrangement.png,석회화 중심 분산의 방향 치우침 · 가장 가까운 석회화까지 거리(선)
+ex_ffdm_calc_rodlike,shape,크기 다양성·길쭉함·분지,orange,calcification.size_variation,ex_ffdm_calc_rodlike_shape.png,석회화 면적의 변동계수 · 이심률 0.9 초과 비율(주황=길쭉한 점) · 골격 갈림점 비율
+ex_ffdm_calc_rodlike,morph_read,석회화 형태(판독),white,,ex_ffdm_calc_rodlike_morph_read.png,서비스 판독(공급자는 형태를 분류하지 않음)
+ex_ffdm_distortion,converge,침상선 수렴 지수,magenta,distortion.convergence_index,ex_ffdm_distortion_converge.png,중심 둘레 띠(보라)에서 선 구조 중 중심을 향하는 것의 비율(무작위 배열이면 약 0.25)
+ex_ffdm_distortion,extent,범위,red,distortion.distortion_extent,ex_ffdm_distortion_extent.png,전문가 ROI의 최대 지름
+ex_dbt_mass,outline,종괴 경계·크기(추정),red,mass.size,ex_dbt_mass_outline.png,화살표 끝 반경 16 px 안에서 밝은 영역(상위 45%)을 잇고 구멍을 채운 서비스 추정 경계
+ex_dbt_mass,shape,모양(원형도·볼록도·반지름 변동),orange,mass.circularity,ex_dbt_mass_shape.png,"추정 경계의 4π·면적/둘레², 볼록도, 반지름 변동"
+ex_dbt_mass,spicule,침상 지수,magenta,mass.spiculation_index,ex_dbt_mass_spicule.png,경계 바깥 띠의 선 구조 중 종괴 중심을 향하는 것의 비율
+ex_dbt_mass,read,모양·경계·구성(저자 판독),white,,ex_dbt_mass_read.png,원 논문 그림 설명의 서술
+ex_dbt_distortion,converge,침상선 수렴 지수,magenta,distortion.convergence_index,ex_dbt_distortion_converge.png,중심 둘레 띠(보라)에서 선 구조 중 중심을 향하는 것의 비율. 중심 위치에 민감해 화살표 끝 주변 9개 중심의 중앙값을 씀
+ex_dbt_distortion,extent,범위,red,distortion.distortion_extent,ex_dbt_distortion_extent.png,중심을 향하는 선 구조 점들을 이은 범위의 최대 지름
+ex_dbt_distortion,read,구조왜곡 유무·구성(저자 판독),white,,ex_dbt_distortion_read.png,원 논문 그림 설명의 서술
+ex_dbt_calc,spots,석회화 검출·개수,yellow,calcification.count,ex_dbt_calc_spots.png,저자 ROI(빨강 틴트를 녹색 채널 비율로 되돌림) 안 white top-hat(반경 3 px)이 중앙값 + 16·MAD를 넘고 5 px 이상인 점. 그림 JPEG 잡음을 피하려 경계값을 높임
+ex_dbt_calc,extent,범위,cyan,calcification.extent,ex_dbt_calc_extent.png,가장 먼 두 석회화 중심 사이 거리
+ex_cem_mass,enh,증강 강도 비,cyan,enhancement.intensity_ratio,ex_cem_mass_enh.png,추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기
+ex_cem_mass,outline,증강 범위·크기(추정),red,distortion.lesion_size,ex_cem_mass_outline.png,저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름
+ex_cem_mass,read,뚜렷함·양상(저자 판독),white,,ex_cem_mass_read.png,원 논문 그림 설명의 서술
+ex_cem_rim,enh,증강 강도 비,cyan,enhancement.intensity_ratio,ex_cem_rim_enh.png,추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기
+ex_cem_rim,outline,증강 범위·크기(추정),red,distortion.lesion_size,ex_cem_rim_outline.png,저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름
+ex_cem_rim,read,뚜렷함·양상(저자 판독),white,,ex_cem_rim_read.png,원 논문 그림 설명의 서술
+ex_cem_nme,enh,증강 강도 비,cyan,enhancement.intensity_ratio,ex_cem_nme_enh.png,추정 증강 범위(빨강)의 평균 밝기 ÷ 둘레 띠(파랑)의 평균 밝기
+ex_cem_nme,outline,증강 범위·크기(추정),red,enhancement.nme_extent,ex_cem_nme_outline.png,저자 원 안에서 밝은 영역을 잇고 구멍을 채운 서비스 추정 범위의 최대 지름
+ex_cem_nme,read,뚜렷함·양상(저자 판독),white,,ex_cem_nme_read.png,원 논문 그림 설명의 서술
+ex_cem_bpe,bpe,배경 실질 증강 정도(저자 판독),yellow,,ex_cem_bpe_bpe.png,원 논문 그림 설명의 판독(최소·경도·중등도·고도)

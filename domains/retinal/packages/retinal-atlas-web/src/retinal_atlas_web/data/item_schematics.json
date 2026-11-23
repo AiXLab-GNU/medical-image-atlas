@@ -1,0 +1,1498 @@
+{
+ "generated_by": "code/build_lesion_schematics.py",
+ "items": {
+  "ana_bmo": [
+   {
+    "file": "schematics/ana_bmo-onh.svg",
+    "label": "모식도 · 유두 OCT",
+    "caption": "시신경유두를 지나는 OCT 단면 모식도. 노란 선이 해당 구조를 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "ana_far_periphery": [
+   {
+    "file": "schematics/ana_far_periphery-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "ana_lamina_cribrosa": [
+   {
+    "file": "schematics/ana_lamina_cribrosa-onh.svg",
+    "label": "모식도 · 유두 OCT",
+    "caption": "시신경유두를 지나는 OCT 단면 모식도. 노란 선이 해당 구조를 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "ana_macular_pigment": [
+   {
+    "file": "schematics/ana_macular_pigment-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "ana_ora_serrata": [
+   {
+    "file": "schematics/ana_ora_serrata-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "ana_premacular_bursa": [
+   {
+    "file": "schematics/ana_premacular_bursa-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "ana_vortex_vein": [
+   {
+    "file": "schematics/ana_vortex_vein-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_angioid_streaks": [
+   {
+    "file": "schematics/les_angioid_streaks-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_arterial_macroaneurysm": [
+   {
+    "file": "schematics/les_arterial_macroaneurysm-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_arteriolar_narrowing": [
+   {
+    "file": "schematics/les_arteriolar_narrowing-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_atrophy_complete": [
+   {
+    "file": "schematics/les_atrophy_complete-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_atrophy_complete-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_atrophy_incomplete": [
+   {
+    "file": "schematics/les_atrophy_incomplete-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_av_nicking": [
+   {
+    "file": "schematics/les_av_nicking-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_bone_spicule_pigment": [
+   {
+    "file": "schematics/les_bone_spicule_pigment-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_bulls_eye_maculopathy": [
+   {
+    "file": "schematics/les_bulls_eye_maculopathy-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_bulls_eye_maculopathy-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_cherry_red_spot": [
+   {
+    "file": "schematics/les_cherry_red_spot-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_chorioretinal_scar": [
+   {
+    "file": "schematics/les_chorioretinal_scar-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_choroidal_hemangioma": [
+   {
+    "file": "schematics/les_choroidal_hemangioma-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_choroidal_hemangioma-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_choroidal_hyperpermeability": [
+   {
+    "file": "schematics/les_choroidal_hyperpermeability-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_choroidal_hyperpermeability-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_choroidal_nevus": [
+   {
+    "file": "schematics/les_choroidal_nevus-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_choroidal_nevus-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_chrpe": [
+   {
+    "file": "schematics/les_chrpe-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_circinate_exudate": [
+   {
+    "file": "schematics/les_circinate_exudate-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_cotton_wool_spot": [
+   {
+    "file": "schematics/les_cotton_wool_spot-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_cotton_wool_spot-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_csme": [
+   {
+    "file": "schematics/les_csme-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_csme-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_cystoid_macular_edema": [
+   {
+    "file": "schematics/les_cystoid_macular_edema-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_cystoid_macular_edema-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_disc_collaterals": [
+   {
+    "file": "schematics/les_disc_collaterals-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_disc_cupping": [
+   {
+    "file": "schematics/les_disc_cupping-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_disc_cupping-onh.svg",
+    "label": "모식도 · 유두 OCT",
+    "caption": "시신경유두를 지나는 OCT 단면 모식도. 노란 선이 해당 구조를 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_disc_edema": [
+   {
+    "file": "schematics/les_disc_edema-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_disc_hemorrhage": [
+   {
+    "file": "schematics/les_disc_hemorrhage-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_disc_pallor": [
+   {
+    "file": "schematics/les_disc_pallor-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_dome_shaped_macula": [
+   {
+    "file": "schematics/les_dome_shaped_macula-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_dril": [
+   {
+    "file": "schematics/les_dril-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_drusen_cuticular": [
+   {
+    "file": "schematics/les_drusen_cuticular-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_drusen_cuticular-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_drusen_large": [
+   {
+    "file": "schematics/les_drusen_large-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_drusen_large-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_drusen_medium": [
+   {
+    "file": "schematics/les_drusen_medium-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_drusen_medium-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_drusen_small": [
+   {
+    "file": "schematics/les_drusen_small-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_drusen_small-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_drusen_unspecified": [
+   {
+    "file": "schematics/les_drusen_unspecified-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_drusen_unspecified-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_elm_disruption": [
+   {
+    "file": "schematics/les_elm_disruption-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_enface_complex_rpe_elevation": [
+   {
+    "file": "schematics/les_enface_complex_rpe_elevation-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_epiretinal_membrane": [
+   {
+    "file": "schematics/les_epiretinal_membrane-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_epiretinal_membrane-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_erm_foveoschisis": [
+   {
+    "file": "schematics/les_erm_foveoschisis-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_ez_disruption": [
+   {
+    "file": "schematics/les_ez_disruption-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_faz_enlargement": [
+   {
+    "file": "schematics/les_faz_enlargement-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_fibrotic_scar": [
+   {
+    "file": "schematics/les_fibrotic_scar-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_fibrovascular_proliferation": [
+   {
+    "file": "schematics/les_fibrovascular_proliferation-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_flecks": [
+   {
+    "file": "schematics/les_flecks-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_fuchs_spot": [
+   {
+    "file": "schematics/les_fuchs_spot-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_geographic_atrophy": [
+   {
+    "file": "schematics/les_geographic_atrophy-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_geographic_atrophy-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hard_exudate": [
+   {
+    "file": "schematics/les_hard_exudate-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_hard_exudate-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hemorrhage_dot_blot": [
+   {
+    "file": "schematics/les_hemorrhage_dot_blot-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_hemorrhage_flame": [
+   {
+    "file": "schematics/les_hemorrhage_flame-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_hemorrhage_pooled": [
+   {
+    "file": "schematics/les_hemorrhage_pooled-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_hemorrhage_preretinal": [
+   {
+    "file": "schematics/les_hemorrhage_preretinal-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_hemorrhage_preretinal-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hemorrhage_sub_rpe": [
+   {
+    "file": "schematics/les_hemorrhage_sub_rpe-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_hemorrhage_sub_rpe-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hemorrhage_subretinal": [
+   {
+    "file": "schematics/les_hemorrhage_subretinal-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_hemorrhage_subretinal-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hemorrhage_vitreous": [
+   {
+    "file": "schematics/les_hemorrhage_vitreous-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_hyperreflective_foci": [
+   {
+    "file": "schematics/les_hyperreflective_foci-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_hypertransmission": [
+   {
+    "file": "schematics/les_hypertransmission-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_intraretinal_fluid": [
+   {
+    "file": "schematics/les_intraretinal_fluid-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_intraretinal_fluid-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_intraretinal_hyperreflective_pigment": [
+   {
+    "file": "schematics/les_intraretinal_hyperreflective_pigment-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_intraretinal_hyperreflective_pigment-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_irma": [
+   {
+    "file": "schematics/les_irma-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_lacquer_crack": [
+   {
+    "file": "schematics/les_lacquer_crack-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_laser_scar": [
+   {
+    "file": "schematics/les_laser_scar-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_lattice_degeneration": [
+   {
+    "file": "schematics/les_lattice_degeneration-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_lipid_subretinal": [
+   {
+    "file": "schematics/les_lipid_subretinal-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_macular_hole_full_thickness": [
+   {
+    "file": "schematics/les_macular_hole_full_thickness-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_macular_hole_full_thickness-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_macular_hole_lamellar": [
+   {
+    "file": "schematics/les_macular_hole_lamellar-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_macular_hole_lamellar-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_macular_neovascularization": [
+   {
+    "file": "schematics/les_macular_neovascularization-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_macular_neovascularization-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_macular_pseudohole": [
+   {
+    "file": "schematics/les_macular_pseudohole-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_macular_pseudohole-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_macular_star": [
+   {
+    "file": "schematics/les_macular_star-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_macular_thickening": [
+   {
+    "file": "schematics/les_macular_thickening-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_macular_thickening-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_microaneurysm": [
+   {
+    "file": "schematics/les_microaneurysm-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_microaneurysm-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_myopic_cnv": [
+   {
+    "file": "schematics/les_myopic_cnv-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_myopic_cnv-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_myopic_diffuse_atrophy": [
+   {
+    "file": "schematics/les_myopic_diffuse_atrophy-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_myopic_macular_atrophy": [
+   {
+    "file": "schematics/les_myopic_macular_atrophy-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_myopic_patchy_atrophy": [
+   {
+    "file": "schematics/les_myopic_patchy_atrophy-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_myopic_traction_maculopathy": [
+   {
+    "file": "schematics/les_myopic_traction_maculopathy-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_neovascularization_pooled": [
+   {
+    "file": "schematics/les_neovascularization_pooled-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_nonperfusion": [
+   {
+    "file": "schematics/les_nonperfusion-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_nonperfusion-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_nv_disc": [
+   {
+    "file": "schematics/les_nv_disc-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_nv_elsewhere": [
+   {
+    "file": "schematics/les_nv_elsewhere-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_nv_elsewhere-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_outer_retinal_tubulation": [
+   {
+    "file": "schematics/les_outer_retinal_tubulation-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_pachychoroid_features": [
+   {
+    "file": "schematics/les_pachychoroid_features-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_pachychoroid_features-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_paracentral_amn": [
+   {
+    "file": "schematics/les_paracentral_amn-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_paracentral_amn-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_ped_drusenoid": [
+   {
+    "file": "schematics/les_ped_drusenoid-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_ped_drusenoid-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_ped_fibrovascular": [
+   {
+    "file": "schematics/les_ped_fibrovascular-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_ped_fibrovascular-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_ped_serous": [
+   {
+    "file": "schematics/les_ped_serous-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_ped_serous-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_ped_unspecified": [
+   {
+    "file": "schematics/les_ped_unspecified-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_ped_unspecified-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_peripapillary_atrophy": [
+   {
+    "file": "schematics/les_peripapillary_atrophy-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_polypoidal_lesion": [
+   {
+    "file": "schematics/les_polypoidal_lesion-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_polypoidal_lesion-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_posterior_staphyloma": [
+   {
+    "file": "schematics/les_posterior_staphyloma-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_posterior_staphyloma-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_pvr": [
+   {
+    "file": "schematics/les_pvr-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_red_lesion_pooled": [
+   {
+    "file": "schematics/les_red_lesion_pooled-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_retinal_break": [
+   {
+    "file": "schematics/les_retinal_break-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_retinal_detachment_rhegmatogenous": [
+   {
+    "file": "schematics/les_retinal_detachment_rhegmatogenous-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_retinal_detachment_rhegmatogenous-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_retinal_detachment_tractional": [
+   {
+    "file": "schematics/les_retinal_detachment_tractional-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_retinal_detachment_tractional-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_retinal_embolus": [
+   {
+    "file": "schematics/les_retinal_embolus-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_retinal_schisis": [
+   {
+    "file": "schematics/les_retinal_schisis-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_retinal_telangiectasia": [
+   {
+    "file": "schematics/les_retinal_telangiectasia-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_retinal_vasculitis_signs": [
+   {
+    "file": "schematics/les_retinal_vasculitis_signs-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_retinal_whitening": [
+   {
+    "file": "schematics/les_retinal_whitening-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_retinal_whitening-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_rnfl_defect": [
+   {
+    "file": "schematics/les_rnfl_defect-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_rpe_attenuation_disruption": [
+   {
+    "file": "schematics/les_rpe_attenuation_disruption-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_rpe_gravitational_tract": [
+   {
+    "file": "schematics/les_rpe_gravitational_tract-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_rpe_hyperpigmentation": [
+   {
+    "file": "schematics/les_rpe_hyperpigmentation-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_rpe_hyperpigmentation-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_rpe_hypopigmentation": [
+   {
+    "file": "schematics/les_rpe_hypopigmentation-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_serous_retinal_detachment": [
+   {
+    "file": "schematics/les_serous_retinal_detachment-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_serous_retinal_detachment-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_sharp_peaked_ped": [
+   {
+    "file": "schematics/les_sharp_peaked_ped-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_sharp_peaked_ped-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_shrm": [
+   {
+    "file": "schematics/les_shrm-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_sub_rpe_ring_lesion": [
+   {
+    "file": "schematics/les_sub_rpe_ring_lesion-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_sub_rpe_ring_lesion-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_subretinal_drusenoid_deposit": [
+   {
+    "file": "schematics/les_subretinal_drusenoid_deposit-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_subretinal_drusenoid_deposit-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_subretinal_fluid": [
+   {
+    "file": "schematics/les_subretinal_fluid-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   },
+   {
+    "file": "schematics/les_subretinal_fluid-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_tessellated_fundus": [
+   {
+    "file": "schematics/les_tessellated_fundus-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_tilted_disc": [
+   {
+    "file": "schematics/les_tilted_disc-disc.svg",
+    "label": "모식도 · 시신경유두",
+    "caption": "시신경유두 확대 모식도. 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_venous_beading": [
+   {
+    "file": "schematics/les_venous_beading-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_venous_dilation_tortuosity": [
+   {
+    "file": "schematics/les_venous_dilation_tortuosity-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_venous_loop_reduplication": [
+   {
+    "file": "schematics/les_venous_loop_reduplication-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_vessel_sheathing": [
+   {
+    "file": "schematics/les_vessel_sheathing-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "les_vitelliform_lesion": [
+   {
+    "file": "schematics/les_vitelliform_lesion-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_vitelliform_lesion-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_vitreomacular_adhesion": [
+   {
+    "file": "schematics/les_vitreomacular_adhesion-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_vitreomacular_traction": [
+   {
+    "file": "schematics/les_vitreomacular_traction-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "les_white_dots": [
+   {
+    "file": "schematics/les_white_dots-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   },
+   {
+    "file": "schematics/les_white_dots-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "zone_etdrs_7field": [
+   {
+    "file": "schematics/zone_etdrs_7field-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "zone_fundus_quadrant": [
+   {
+    "file": "schematics/zone_fundus_quadrant-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "zone_octa_slab": [
+   {
+    "file": "schematics/zone_octa_slab-oct.svg",
+    "label": "모식도 · OCT",
+    "caption": "중심와를 지나는 OCT B-scan 모식도(위: 유리체, 아래: 맥락막). 노란 선이 해당 소견을 가리킵니다.",
+    "width": 400,
+    "height": 230
+   }
+  ],
+  "zone_peripapillary": [
+   {
+    "file": "schematics/zone_peripapillary-face.svg",
+    "label": "모식도 · 안저",
+    "caption": "오른눈 후극부 정면 모식도. 노란 선이 해당 소견을 가리킵니다. 크기·위치는 설명용입니다.",
+    "width": 400,
+    "height": 300
+   }
+  ],
+  "zone_retinal_periphery": [
+   {
+    "file": "schematics/zone_retinal_periphery-wide.svg",
+    "label": "모식도 · 광각",
+    "caption": "광각 안저 모식도(점선: 적도부, 톱니 선: 거상연). 노란 선이 해당 부위를 가리킵니다.",
+    "width": 400,
+    "height": 300
+   }
+  ]
+ }
+}

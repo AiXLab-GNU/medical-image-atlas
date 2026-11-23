@@ -1,0 +1,164 @@
+feature_id,target_id,feature_type,axis,name_ko,definition_ko,imaging_ids,region_spec,unit,requirements,detail_stage,status,output_type,definition_source_ids,review_status,feature_role
+ft_disc_area,ana_optic_disc,quantitative,area_volume,유두 면적,유두 경계 안쪽 면적,img_cfp_45;img_oct_circle_onh,유두 경계(안저 경계 또는 BMO),mm2 또는 px2,배율 보정(축장)·경계 정의 명시,2,stage1_drafted,area,,draft,measurement
+ft_disc_diameter,ana_optic_disc,quantitative,size_length,유두 수직·수평 직경,유두 경계의 수직·수평 길이,img_cfp_45,유두 경계,mm 또는 px,배율 보정,2,stage1_drafted,length,,draft,measurement
+ft_disc_margin,ana_optic_disc,qualitative,morphology_boundary,유두 경계 선명도,유두 경계가 분명한지 흐린지,img_cfp_45,유두,category,—,1,stage1_drafted,category,,draft,measurement
+ft_disc_color,ana_optic_disc,qualitative,color_signal,유두 색,분홍·창백 등 색조,img_cfp_45,유두,category,촬영 색 보정,1,stage1_drafted,category,,draft,measurement
+ft_cdr_vertical,ana_optic_cup,quantitative,shape,수직 컵/유두비,컵 수직 직경 / 유두 수직 직경,img_cfp_45;img_oct_circle_onh,유두,ratio,안저 2D 경계와 OCT 3D 정의를 구분,2,stage1_drafted,ratio,src_aao_poag_ppp_2020,source_linked,measurement
+ft_cup_area,ana_optic_cup,quantitative,area_volume,컵 면적·부피,컵 경계 안 면적 또는 OCT 컵 부피,img_cfp_45;img_oct_circle_onh,유두,mm2·mm3,기준 평면 정의(OCT),2,stage1_drafted,volume,,draft,measurement
+ft_rim_area,ana_neuroretinal_rim,quantitative,area_volume,테 면적,유두 면적 − 컵 면적,img_cfp_45;img_oct_circle_onh,유두,mm2,—,2,stage1_drafted,area,,draft,measurement
+ft_bmo_mrw,ana_neuroretinal_rim,quantitative,size_length,BMO 최소 테 폭,BMO에서 ILM까지 최단 거리,img_oct_circle_onh,유두 섹터별,um,ONH volume 스캔,2,stage1_drafted,length,src_bmo_mrw_2013;src_apostel2_2021,source_linked,measurement
+ft_isnt_pattern,ana_neuroretinal_rim,qualitative,distribution,테 두께 순서(ISNT),하·상·비·이측 테 두께 순서 유지 여부,img_cfp_45;img_oct_circle_onh,유두 4섹터,category,—,1,stage1_drafted,category,,draft,measurement
+ft_disc_fovea_distance,ana_posterior_pole,quantitative,distance_angle,유두–중심와 거리,유두 중심과 중심와 중심 사이 거리,img_cfp_45;img_nir;img_faf;img_fa,후극부,DD·mm,두 landmark 검출,2,stage1_drafted,length,,draft,measurement
+ft_central_subfield_thickness,ana_total_retina,quantitative,size_length,중심 구역 두께,ETDRS 중심 1 mm 구역 평균 망막 두께,img_oct_thickness_map,zone_etdrs_grid 중심,um,하단 경계(RPE/BM) 명시·장비 간 비교 주의,2,stage1_drafted,length,src_apostel2_2021;src_etdrs10_1991;src_drcr_cidme_thresholds,source_linked,measurement
+ft_etdrs_subfield_thickness,ana_total_retina,quantitative,size_length,ETDRS 구역별 두께,9구역 각각의 평균 두께,img_oct_thickness_map,zone_etdrs_grid,um,—,2,stage1_drafted,length,src_apostel2_2021;src_etdrs10_1991,source_linked,measurement
+ft_macular_volume,ana_total_retina,quantitative,area_volume,황반 부피,6 mm 원 안 망막 부피,img_oct_volume,zone_etdrs_grid 전체,mm3,B-scan 간격,2,stage1_drafted,volume,src_apostel2_2021,source_linked,measurement
+ft_foveal_pit_shape,ana_fovea,quantitative,shape,중심와 함요 깊이·폭·경사,중심와 윤곽의 깊이·폭·경사,img_oct_bscan;img_oct_volume,중심와,um·deg,중심 B-scan 정렬,2,stage1_drafted,index,,draft,measurement
+ft_foveal_contour,ana_fovea,qualitative,morphology_boundary,중심와 윤곽,함요 유지·소실·융기 여부,img_oct_bscan,중심와,category,—,1,stage1_drafted,category,,draft,measurement
+ft_foveal_reflex,ana_fovea,qualitative,color_signal,중심와 반사,안저 사진의 중심와 빛 반사 유무,img_cfp_45,중심와,presence,—,1,stage1_drafted,presence,,draft,measurement
+ft_rnfl_thickness_peripapillary,ana_rnfl,quantitative,size_length,유두주위 RNFL 두께,원형 스캔의 평균·사분면·시계 방향 RNFL 두께,img_oct_circle_onh,zone_peripapillary,um,원 지름·중심 위치 명시,2,stage1_drafted,length,src_apostel2_2021,source_linked,measurement
+ft_rnfl_thickness_macular,ana_rnfl,quantitative,size_length,황반 RNFL 두께,황반 구역별 RNFL 두께,img_oct_volume,zone_etdrs_grid,um,—,2,stage1_drafted,length,,draft,measurement
+ft_rnfl_striation,ana_rnfl,qualitative,color_signal,신경섬유 줄무늬,안저(특히 무적색)에서 섬유 줄무늬가 보이는지,img_cfp_45,유두주위,presence,무적색 필터·대비,1,stage1_drafted,presence,,draft,measurement
+ft_gcipl_thickness,ana_gcipl,quantitative,size_length,GCIPL 두께,GCL+IPL 두께(타원 또는 섹터 평균),img_oct_volume,황반 섹터,um,분할 알고리즘 명시,2,stage1_drafted,length,src_apostel2_2021,source_linked,measurement
+ft_layer_thickness_generic,ana_generic_layer,quantitative,size_length,층 두께(공통),적용된 층·측정 구간의 구역 평균 두께(상·하 경계를 명시),img_oct_volume,zone_etdrs_grid,um,층 경계 분할,2,stage1_drafted,length,,draft,measurement
+ft_layer_order,ana_neurosensory_retina,qualitative,arrangement_continuity,층 배열 보존,층 순서와 경계가 정상적으로 구분되는지,img_oct_bscan,황반,category,—,1,stage1_drafted,category,,draft,measurement
+ft_onl_thickness,ana_onl,quantitative,size_length,외핵층 두께,ONL(HFL 포함 여부 명시) 두께,img_oct_volume,zone_etdrs_grid,um,HFL 포함 정의,2,stage1_drafted,length,,draft,measurement
+ft_ez_continuity,ana_ellipsoid_zone,qualitative,arrangement_continuity,EZ 연속성,EZ 띠가 연속·약화·단절·소실 중 어느 상태인지,img_oct_bscan,중심와 중심 구역,category,—,1,stage1_drafted,category,,draft,measurement
+ft_ez_preserved_area,ana_ellipsoid_zone,quantitative,area_volume,EZ 보존 면적,EZ가 남아 있는 en-face 면적,img_oct_volume;img_oct_enface,황반,mm2,volume 분할,2,stage1_drafted,area,,draft,measurement
+ft_elm_continuity,ana_elm,qualitative,arrangement_continuity,ELM 연속성,ELM 선의 연속 여부,img_oct_bscan,중심와,category,—,1,stage1_drafted,category,,draft,measurement
+ft_os_length,ana_photoreceptor_os,quantitative,size_length,외절 길이,EZ에서 IZ 또는 RPE까지 거리,img_oct_bscan,중심와,um,band 경계 정의,2,stage1_drafted,length,,draft,measurement
+ft_rpe_contour,ana_rpe,qualitative,morphology_boundary,RPE 윤곽,평탄·물결·융기·불규칙 여부,img_oct_bscan,황반,category,—,1,stage1_drafted,category,,draft,measurement
+ft_rpe_bm_thickness,ana_rpe_bruch_complex,quantitative,size_length,RPE–BM 두께,RPE 상단과 BM 사이 거리,img_oct_volume,황반,um,—,2,stage1_drafted,length,,draft,measurement
+ft_faf_pattern,ana_rpe,qualitative,color_signal,자가형광 양상,정상·저·과자가형광 패턴,img_faf,황반,category,FAF 장비 파장,1,stage1_drafted,category,src_qaf_2011,source_linked,measurement
+ft_choroid_thickness_subfoveal,ana_choroid,quantitative,size_length,중심와 하 맥락막 두께,중심와 아래 BM에서 CSJ까지 거리,img_oct_edi_ss,중심와 하,um,CSJ 가시성·측정 시각(일중 변동),2,stage1_drafted,length,src_cscr_2020;src_asrs_mmi_2024,source_linked,measurement
+ft_choroid_thickness_map,ana_choroid,quantitative,size_length,맥락막 두께 지도,구역별 맥락막 두께,img_oct_edi_ss,zone_etdrs_grid,um,3D 분할,2,stage1_drafted,length,,draft,measurement
+ft_choroidal_vascularity_index,ana_choroid,quantitative,area_volume,맥락막 혈관성 영역 비율,구조 OCT에서 이진화한 혈관 영역 / 전체 맥락막 영역,img_oct_edi_ss,정의 구역,ratio,이진화 방법 명시·OCTA flow와 구분,2,stage1_drafted,ratio,,draft,measurement
+ft_haller_vessel_diameter,ana_haller_layer,quantitative,size_length,대혈관 직경,Haller층 혈관 단면 직경,img_oct_edi_ss;img_icga,중심와 하,um,—,2,stage1_drafted,length,,draft,measurement
+ft_cc_flow_deficit,ana_choriocapillaris,quantitative,area_volume,맥락막모세혈관 flow deficit,flow 신호 결손 면적 비율·개수·평균 크기,img_octa_cc,정의 구역(대형 혈관 그림자 제외),ratio·count·um2,신호 보정·threshold 명시,2,stage1_drafted,ratio,src_octa_guide_2020,source_linked,measurement
+ft_vessel_caliber,ana_retinal_vasculature,quantitative,size_length,혈관 국소 폭,혈관 단면의 국소 폭,img_cfp_45,정의 구역,um 또는 px,배율 보정·폭 정의,2,stage1_drafted,length,,draft,measurement
+ft_crae,ana_retinal_arterioles,quantitative,size_length,CRAE,정해진 유두주위 띠의 큰 소동맥 폭을 결합한 등가 직경,img_cfp_45,유두 0.5–1.0 DD 띠 등(방법별),um 또는 px,동맥 판별·결합 산식(Knudtson 등),2,stage1_drafted,length,src_siva_2012,source_linked,measurement
+ft_crve,ana_retinal_venules,quantitative,size_length,CRVE,같은 방식의 소정맥 등가 직경,img_cfp_45,유두주위 띠,um 또는 px,정맥 판별·결합 산식,2,stage1_drafted,length,src_siva_2012,source_linked,measurement
+ft_avr,ana_retinal_vasculature,quantitative,shape,동정맥 비(AVR),CRAE / CRVE,img_cfp_45,유두주위 띠,ratio,—,2,stage1_drafted,ratio,src_siva_2012,source_linked,measurement
+ft_vessel_tortuosity,ana_retinal_vasculature,quantitative,shape,혈관 구불거림,경로 길이 / 현 길이 또는 곡률 기반 지수,img_cfp_45;img_octa;img_fa,정의 구역,ratio,분절 정의·집계 가중,2,stage1_drafted,ratio,src_siva_2012,source_linked,measurement
+ft_branching_angle,ana_retinal_vasculature,quantitative,distance_angle,분지각,모혈관과 딸혈관 사이 각도,img_cfp_45;img_fa,정의 구역,deg,분지점 검출,2,stage1_drafted,angle,src_siva_2012,source_linked,measurement
+ft_fractal_dimension,ana_vascular_tree,quantitative,connectivity_complexity,프랙탈 차원,혈관 패턴의 공간 복잡도,img_cfp_45;img_octa;img_fa,정의 구역,dimensionless,box counting 등 방법·척도 범위,2,stage1_drafted,index,src_siva_2012,source_linked,measurement
+ft_vessel_area_density,ana_vascular_tree,quantitative,area_volume,혈관 면적 점유율,혈관 mask 면적 / 유효 ROI 면적,img_cfp_45;img_octa;img_fa,FOV 또는 정의 ROI,ratio,가시 혈관 mask·분모 명시,2,stage1_drafted,ratio,,draft,measurement
+ft_vessel_length_density,ana_vascular_tree,quantitative,area_volume,혈관 길이 밀도,중심선 길이 / 유효 ROI 면적,img_cfp_45;img_octa;img_fa,정의 ROI,mm/mm2 또는 px/px2,골격 픽셀 수와 실제 길이 구분,2,stage1_drafted,length_per_area,,draft,measurement
+ft_octa_vessel_density_scp,ana_superficial_capillary_plexus,quantitative,area_volume,표층 혈관 밀도,표층 slab의 flow 신호 면적 또는 길이 밀도,img_octa_scp,zone_etdrs_grid 또는 정의 구역,ratio,slab·threshold·장비 명시,2,stage1_drafted,ratio,src_octa_guide_2020,source_linked,measurement
+ft_octa_vessel_density_dcp,ana_deep_capillary_plexus,quantitative,area_volume,심층 혈관 밀도,심층 slab의 flow 신호 밀도,img_octa_dcp,정의 구역,ratio,projection artifact 제거,2,stage1_drafted,ratio,src_octa_guide_2020,source_linked,measurement
+ft_rpc_density,ana_radial_peripapillary_capillaries,quantitative,area_volume,유두주위 모세혈관 밀도,유두주위 RPC slab의 flow 신호 밀도,img_octa_scp,zone_peripapillary,ratio,큰 혈관 제외 여부,2,stage1_drafted,ratio,src_octa_guide_2020,source_linked,measurement
+ft_faz_area,ana_foveal_avascular_zone,quantitative,area_volume,FAZ 면적,FAZ 경계 안 면적,img_octa_scp;img_fa,중심와,mm2,배율 보정·slab(표층/전층),2,stage1_drafted,area,src_octa_guide_2020,source_linked,measurement
+ft_faz_circularity,ana_foveal_avascular_zone,quantitative,shape,FAZ 원형도·둘레,4π·면적/둘레² 및 둘레,img_octa_scp;img_fa,중심와,ratio·mm,—,2,stage1_drafted,index,,draft,measurement
+ft_ma_presence,les_microaneurysm,qualitative,presence_type,미세동맥류 존재,있음·없음·평가 불가,img_cfp_45;img_fa;img_octa,판독 영역,presence,판독 가능성,1,stage1_drafted,presence,src_etdrs10_1991;src_icdr_2003,source_linked,measurement
+ft_ma_count,les_microaneurysm,quantitative,count,미세동맥류 개수,판독 영역 또는 구역별 임상 병변 수,img_cfp_45;img_fa;img_octa,FOV·ETDRS 구역·사분면,count,분할 연결성분 수와 구분,1,stage1_drafted,count,,draft,measurement
+ft_ma_turnover,les_microaneurysm,quantitative,change,미세동맥류 생성·소실률,추적 영상 간 새로 생긴·사라진 개수,img_cfp_45;img_fa,같은 영역(정합),count/year,영상 정합,2,stage1_drafted,rate,,draft,measurement
+ft_ma_distance_fovea,les_microaneurysm,quantitative,distance_angle,중심와까지 거리,각 병변과 중심와 중심 사이 거리,img_cfp_45;img_fa,후극부,DD·um,중심와 검출,2,stage1_drafted,length,,draft,measurement
+ft_hem_count_quadrant,les_hemorrhage_dot_blot,quantitative,count,사분면별 출혈 개수,각 안저 사분면의 임상 출혈 수,img_cfp_45;img_uwf,zone_fundus_quadrant,count,분할 연결성분 수·FOV 정규화 값과 구분,1,stage1_drafted,count,src_icdr_2003,source_linked,measurement
+ft_hem_severity_standard_photo,les_hemorrhage_dot_blot,qualitative,distribution,표준사진 대비 출혈 정도,ETDRS 표준사진 2A 대비 이상·미만,img_cfp_45,zone_etdrs_7field,category,표준사진 판독,1,stage1_drafted,category,src_etdrs10_1991,source_linked,classification
+ft_hem_area,les_hemorrhage_dot_blot,quantitative,area_volume,출혈 면적,출혈 투영 면적 합,img_cfp_45;img_uwf,FOV 또는 구역,mm2 또는 px2,분할 정의,2,stage1_drafted,area,,draft,measurement
+ft_hem_depth,les_hemorrhage_dot_blot,qualitative,location_depth,출혈 깊이,표층(화염상)·내망막(점·얼룩)·망막앞·유리체 구분,img_cfp_45;img_oct_bscan,병변 위치,category,—,1,stage1_drafted,category,,draft,measurement
+ft_flame_hem_count,les_hemorrhage_flame,quantitative,count,화염상 출혈 개수,화염상 출혈 수,img_cfp_45,FOV,count,—,1,stage1_drafted,count,,draft,measurement
+ft_prh_area,les_hemorrhage_preretinal,quantitative,area_volume,망막앞 출혈 면적,투영 면적,img_cfp_45;img_uwf,FOV,mm2 또는 DA,—,2,stage1_drafted,area,src_etdrs10_1991,source_linked,measurement
+ft_vh_obscuration,les_hemorrhage_vitreous,qualitative,distribution,유리체 출혈 가림 정도,안저가 가려진 범위,img_cfp_45;img_uwf,FOV,category,—,1,stage1_drafted,category,src_etdrs10_1991,source_linked,measurement
+ft_vb_quadrants,les_venous_beading,quantitative,count,정맥 구슬모양 침범 사분면 수,확실한 정맥 구슬모양 변화가 있는 사분면 수,img_cfp_45;img_uwf;img_fa,zone_fundus_quadrant,count(0–4),정맥 판별,1,stage1_drafted,count,src_icdr_2003,source_linked,measurement
+ft_vb_caliber_variation,les_venous_beading,quantitative,shape,정맥 구경 변동,정맥 분절의 폭 변동 지표,img_cfp_45;img_fa,정맥 분절,ratio,정맥 판별·폭 측정,2,stage1_drafted,ratio,,draft,measurement
+ft_irma_quadrants,les_irma,quantitative,count,IRMA 침범 사분면 수,IRMA가 있는 사분면 수,img_cfp_45;img_uwf;img_fa,zone_fundus_quadrant,count(0–4),IRMA 판별(NVE와 구분),1,stage1_drafted,count,src_icdr_2003,source_linked,measurement
+ft_irma_presence,les_irma,qualitative,presence_type,IRMA 존재,있음·없음·평가 불가,img_cfp_45;img_octa;img_fa,판독 영역,presence,NVE와 구분,1,stage1_drafted,presence,,draft,measurement
+ft_nvd_presence,les_nv_disc,qualitative,presence_type,NVD 존재,있음·없음·평가 불가,img_cfp_45;img_fa;img_octa,유두와 1 DD 이내,presence,—,1,stage1_drafted,presence,src_etdrs10_1991;src_drs8_1981,source_linked,measurement
+ft_nvd_area,les_nv_disc,quantitative,area_volume,NVD 범위,유두 위·주변 신생혈관이 차지하는 범위,img_cfp_45;img_fa;img_octa,유두,DA·mm2,유두 면적 기준 환산,1,stage1_drafted,area,src_etdrs10_1991,source_linked,measurement
+ft_nve_presence,les_nv_elsewhere,qualitative,presence_type,NVE 존재,있음·없음·평가 불가,img_cfp_45;img_uwf;img_octa_widefield,유두 밖 망막,presence,—,1,stage1_drafted,presence,src_etdrs10_1991;src_drs8_1981,source_linked,measurement
+ft_nve_area,les_nv_elsewhere,quantitative,area_volume,NVE 범위,NVE 면적(유두 면적 단위 포함),img_cfp_45;img_uwf;img_fa;img_octa_widefield,FOV,DA·mm2,—,2,stage1_drafted,area,src_drs8_1981,source_linked,measurement
+ft_nv_leakage,les_nv_elsewhere,qualitative,color_signal,신생혈관 누출,FA에서 시간에 따라 형광이 번지는지,img_fa,병변 위치,presence,—,1,stage1_drafted,presence,src_etdrs10_1991,source_linked,measurement
+ft_nonperfusion_area,les_nonperfusion,quantitative,area_volume,무관류 면적,무관류 영역의 면적(유두 면적 단위 포함),img_fa;img_octa_widefield,FOV 또는 광각 전체,DA·mm2,광각 투영 보정,1,stage1_drafted,area,src_cvos_1993;src_silva_np_2015,source_linked,measurement
+ft_ischemic_index,les_nonperfusion,quantitative,area_volume,허혈 지수,무관류 면적 / 관측 가능한 전체 망막 면적,img_fa;img_uwf,광각 전체,ratio,분모(관측 영역) 명시,2,stage1_drafted,ratio,,draft,measurement
+ft_faz_enlargement,les_faz_enlargement,quantitative,change,FAZ 확대,기준 대비 FAZ 면적 증가,img_octa_scp;img_fa,중심와,mm2,정상 개인차,2,stage1_drafted,rate,,draft,measurement
+ft_he_area,les_hard_exudate,quantitative,area_volume,경성삼출물 면적,투영 면적 합,img_cfp_45,FOV 또는 황반 구역,mm2 또는 px2,—,2,stage1_drafted,area,,draft,measurement
+ft_he_distance_fovea,les_hard_exudate,quantitative,distance_angle,중심와까지 최소 거리,가장 가까운 경성삼출물과 중심와 사이 거리,img_cfp_45,황반,um·DD,중심와 검출,1,stage1_drafted,length,src_etdrs1_1985;src_icdr_2003,source_linked,measurement
+ft_he_pattern,les_hard_exudate,qualitative,distribution,삼출물 배열,산재·환상·별모양,img_cfp_45,황반,category,—,1,stage1_drafted,category,,draft,measurement
+ft_cws_count,les_cotton_wool_spot,quantitative,count,면화반 개수,임상 병변 수,img_cfp_45,FOV,count,—,1,stage1_drafted,count,,draft,measurement
+ft_cws_area,les_cotton_wool_spot,quantitative,area_volume,면화반 면적,투영 면적,img_cfp_45,FOV,mm2 또는 px2,—,2,stage1_drafted,area,,draft,measurement
+ft_drusen_max_size,les_drusen_large,quantitative,size_length,최대 드루젠 크기,가장 큰 드루젠의 직경,img_cfp_45;img_oct_bscan,중심와 2 DD 이내,um,기준 원(정맥 폭 등) 또는 배율 보정,1,stage1_drafted,length,src_beckman_2013,source_linked,measurement
+ft_drusen_area,les_drusen_large,quantitative,area_volume,드루젠 면적,드루젠 투영 면적,img_cfp_45;img_oct_enface,정의 원,mm2,—,2,stage1_drafted,area,,draft,measurement
+ft_drusen_volume,les_drusen_large,quantitative,area_volume,드루젠 부피,RPE와 BM 사이 융기 부피,img_oct_volume,중심 3·5 mm 원 등,mm3,RPE·BM 분할,2,stage1_drafted,volume,,draft,measurement
+ft_drusen_height,les_drusen_large,quantitative,size_length,드루젠 높이,BM에서 RPE 상단까지 최대 높이,img_oct_bscan,병변,um,—,2,stage1_drafted,length,,draft,measurement
+ft_drusen_reflectivity,les_drusen_large,qualitative,color_signal,드루젠 내부 반사,균일·저반사 중심·고반사 점 동반,img_oct_bscan,병변,category,—,1,stage1_drafted,category,,draft,measurement
+ft_sdd_extent,les_subretinal_drusenoid_deposit,quantitative,area_volume,SDD 침범 범위,SDD가 있는 면적 또는 구역 수,img_nir;img_faf;img_oct_volume,황반·후극부,mm2·count,여러 영상 확인,2,stage1_drafted,area,,draft,measurement
+ft_sdd_stage,les_subretinal_drusenoid_deposit,qualitative,morphology_boundary,SDD 단계,OCT에서의 형태 단계(물결–원뿔–소실),img_oct_bscan,병변,category,—,1,stage1_drafted,category,src_sdd_review_2022,source_linked,measurement
+ft_irf_presence,les_intraretinal_fluid,qualitative,presence_type,망막내액 존재,있음·없음·평가 불가,img_oct_bscan;img_oct_volume,황반,presence,—,1,stage1_drafted,presence,src_conan_2020,source_linked,measurement
+ft_irf_volume,les_intraretinal_fluid,quantitative,area_volume,망막내액 부피,volume 분할로 계산한 액체 부피,img_oct_volume,zone_etdrs_grid,nL·mm3,B-scan 간격·분할,2,stage1_drafted,volume,,draft,measurement
+ft_irf_bscan_area,les_intraretinal_fluid,quantitative,area_volume,망막내액 단면 면적,한 B-scan의 액체 단면 면적,img_oct_bscan,해당 B-scan,mm2 또는 px2,부피와 구분,2,stage1_drafted,area,,draft,measurement
+ft_irf_layer,les_intraretinal_fluid,qualitative,location_depth,액체 층 위치,INL·OPL·HFL 등 어느 층에 있는지,img_oct_bscan,병변,category,—,1,stage1_drafted,category,,draft,measurement
+ft_irf_center_involvement,les_intraretinal_fluid,qualitative,location_depth,중심 침범,중심 1 mm 구역 침범 여부,img_oct_volume,zone_etdrs_grid 중심,presence,—,1,stage1_drafted,presence,src_icdr_2003;src_drcr_cidme_thresholds,source_linked,measurement
+ft_srf_height,les_subretinal_fluid,quantitative,size_length,망막하액 최대 높이,RPE에서 광수용체 바깥 경계까지 최대 거리,img_oct_bscan,병변,um,—,2,stage1_drafted,length,src_cscr_2020,source_linked,measurement
+ft_srf_volume,les_subretinal_fluid,quantitative,area_volume,망막하액 부피,volume 분할로 계산한 부피,img_oct_volume,zone_etdrs_grid,nL·mm3,—,2,stage1_drafted,volume,,draft,measurement
+ft_srf_presence,les_subretinal_fluid,qualitative,presence_type,망막하액 존재,있음·없음·평가 불가,img_oct_bscan,황반,presence,—,1,stage1_drafted,presence,src_conan_2020,source_linked,measurement
+ft_ped_height,les_ped_serous,quantitative,size_length,PED 높이,BM에서 RPE 꼭대기까지 최대 높이,img_oct_bscan,병변,um,PED 유형 구분,2,stage1_drafted,length,,draft,measurement
+ft_ped_diameter,les_ped_serous,quantitative,size_length,PED 최대 기저 직경,PED 바닥의 최대 직경,img_oct_bscan;img_oct_volume,병변,um,—,2,stage1_drafted,length,,draft,measurement
+ft_ped_volume,les_ped_serous,quantitative,area_volume,PED 부피,RPE와 BM 사이 부피,img_oct_volume,병변,mm3,—,2,stage1_drafted,volume,,draft,measurement
+ft_ped_internal_reflectivity,les_ped_fibrovascular,qualitative,color_signal,PED 내부 반사,저반사(장액성)·불균일(섬유혈관성)·중간(드루젠양),img_oct_bscan,병변,category,PED 유형 판별,1,stage1_drafted,category,src_conan_2020,source_linked,measurement
+ft_mnv_type,les_macular_neovascularization,qualitative,presence_type,MNV 유형,1·2·3형(위치 기준),img_oct_bscan;img_octa_outer;img_fa;img_icga,병변,category,CONAN 정의,1,stage1_drafted,category,src_conan_2020,source_linked,measurement
+ft_mnv_lesion_area,les_macular_neovascularization,quantitative,area_volume,MNV 병변·혈관망 면적,OCTA 혈관망 면적 또는 FA 병변 면적,img_octa_outer;img_fa;img_icga,병변,mm2,영상별 정의 구분,2,stage1_drafted,area,src_conan_2020,source_linked,measurement
+ft_mnv_activity,les_macular_neovascularization,qualitative,temporal,MNV 활동성 징후,새 출혈·액체·누출 증가 여부,img_oct_bscan;img_fa,병변,category,추적 비교,1,stage1_drafted,category,src_conan_2020,source_linked,measurement
+ft_polyp_count,les_polypoidal_lesion,quantitative,count,결절 개수,ICGA에서 확인된 결절 수,img_icga;img_oct_bscan,병변,count,—,2,stage1_drafted,count,src_pcv_apois_2021,source_linked,measurement
+ft_hrf_count,les_hyperreflective_foci,quantitative,count,고반사 점 개수,층·구역별 HRF 수,img_oct_bscan;img_oct_volume,중심 구역·층,count,크기·반사 기준 명시,2,stage1_drafted,count,src_hrd_review_2022,source_linked,measurement
+ft_shrm_thickness,les_shrm,quantitative,size_length,SHRM 두께,SHRM 최대 두께,img_oct_bscan,병변,um,—,2,stage1_drafted,length,,draft,measurement
+ft_dril_extent,les_dril,quantitative,size_length,DRIL 수평 범위,중심 1 mm 내 DRIL 수평 길이,img_oct_bscan,중심 1 mm,um,층 경계 판독,2,stage1_drafted,length,src_dril_2014,source_linked,measurement
+ft_ez_disruption_width,les_ez_disruption,quantitative,size_length,EZ 단절 폭,EZ가 끊긴 수평 길이,img_oct_bscan,중심와 B-scan,um,—,2,stage1_drafted,length,,draft,measurement
+ft_ez_loss_area,les_ez_disruption,quantitative,area_volume,EZ 소실 면적,EZ가 없는 en-face 면적,img_oct_volume;img_oct_enface,황반,mm2,—,2,stage1_drafted,area,,draft,measurement
+ft_hypertd_width,les_hypertransmission,quantitative,size_length,과투과 폭,연속 과투과 띠의 수평 폭,img_oct_bscan;img_oct_enface,병변,um,—,1,stage1_drafted,length,src_cam3_2018,source_linked,measurement
+ft_atrophy_area,les_geographic_atrophy,quantitative,area_volume,위축 면적,위축 영역 면적 합,img_faf;img_oct_enface;img_cfp_45;img_nir,황반,mm2,영상별 경계 정의,1,stage1_drafted,area,src_cam3_2018,source_linked,measurement
+ft_atrophy_growth_rate,les_geographic_atrophy,quantitative,change,위축 확장률,단위 시간당 면적 증가(제곱근 변환 포함),img_faf;img_oct_enface,황반,mm2/year·mm/year,정합된 추적 영상,2,stage1_drafted,rate,src_fleckenstein_2018;src_holz_fam_2007,source_linked,measurement
+ft_atrophy_foveal_involvement,les_geographic_atrophy,qualitative,location_depth,중심와 침범,위축이 중심와를 포함하는지,img_faf;img_oct_bscan;img_nir,중심와,presence,—,1,stage1_drafted,presence,src_fleckenstein_2018,source_linked,measurement
+ft_atrophy_focality,les_geographic_atrophy,qualitative,distribution,위축 초점 수,단일·다초점,img_faf;img_oct_enface;img_nir,황반,category,—,1,stage1_drafted,category,src_fleckenstein_2018,source_linked,measurement
+ft_faf_junctional_pattern,les_geographic_atrophy,qualitative,color_signal,위축 가장자리 자가형광 양상,경계부 과자가형광 패턴(띠·반점·미만 등),img_faf,병변 경계,category,—,1,stage1_drafted,category,src_holz_fam_2007,source_linked,measurement
+ft_erm_extent,les_epiretinal_membrane,quantitative,area_volume,망막전막 범위,막이 덮은 면적,img_oct_volume;img_oct_enface;img_nir,황반,mm2,—,2,stage1_drafted,area,src_govetto_erm_2017,source_linked,measurement
+ft_erm_traction_signs,les_epiretinal_membrane,qualitative,morphology_boundary,망막전막 견인 징후,표면 주름·중심와 소실·이소성 내층,img_oct_bscan,황반,category,—,1,stage1_drafted,category,src_govetto_erm_2017,source_linked,measurement
+ft_vmt_attachment_width,les_vitreomacular_traction,quantitative,size_length,유리체 부착 직경,유리체가 황반에 붙어 있는 수평 길이,img_oct_bscan,중심와,um,—,1,stage1_drafted,length,src_ivts_2013,definition_checked_abstract,measurement
+ft_mh_min_diameter,les_macular_hole_full_thickness,quantitative,size_length,원공 최소 직경,원공의 가장 좁은 수평 폭,img_oct_bscan,중심와,um,중심 B-scan에서 측정,1,stage1_drafted,length,src_ivts_2013,definition_checked_abstract,measurement
+ft_mh_base_diameter,les_macular_hole_full_thickness,quantitative,size_length,원공 기저 직경,RPE 수준의 원공 폭,img_oct_bscan,중심와,um,—,2,stage1_drafted,length,,draft,measurement
+ft_mh_vmt_status,les_macular_hole_full_thickness,qualitative,presence_type,원공의 견인 동반,VMT 동반 여부,img_oct_bscan,중심와,presence,—,1,stage1_drafted,presence,src_ivts_2013,source_linked,measurement
+ft_rd_extent,les_retinal_detachment_rhegmatogenous,quantitative,distribution,박리 범위,박리 시계 시간·사분면 수,img_uwf,광각 전체,clock hours·count,—,1,stage1_drafted,ratio,src_aao_pvd_ppp_2019,source_linked,measurement
+ft_rd_macula_status,les_retinal_detachment_rhegmatogenous,qualitative,location_depth,황반 침범,황반 박리 여부(macula on/off),img_uwf;img_oct_bscan;img_cfp_45,황반,presence,—,1,stage1_drafted,presence,,draft,measurement
+ft_pvr_grade,les_pvr,qualitative,presence_type,PVR 등급,Machemer 분류의 A·B·C 등급,img_uwf,광각 전체,category,—,1,stage1_drafted,category,src_pvr_1991,source_linked,classification
+ft_cupping_notch,les_disc_cupping,qualitative,morphology_boundary,테 노치,국소적 테 얇아짐 위치,img_cfp_45;img_oct_circle_onh,유두 섹터,category,—,1,stage1_drafted,category,src_aao_poag_ppp_2020,source_linked,measurement
+ft_rnfl_defect_angle,les_rnfl_defect,quantitative,distance_angle,RNFL 결손 각도·폭,쐐기 결손의 각 폭과 위치,img_cfp_45;img_oct_circle_onh;img_nir,유두주위,deg,—,2,stage1_drafted,angle,src_aao_poag_ppp_2020,source_linked,measurement
+ft_disc_hem_location,les_disc_hemorrhage,qualitative,location_depth,유두 출혈 위치,유두 가장자리 시계 방향 위치,img_cfp_45,유두,clock hour,—,1,stage1_drafted,category,src_ohts_dh_2017,source_linked,measurement
+ft_ppa_area,les_peripapillary_atrophy,quantitative,area_volume,유두주위 위축 면적,β·γ 구역 면적,img_cfp_45;img_oct_circle_onh;img_faf;img_nir,유두주위,mm2,구역 정의,2,stage1_drafted,area,src_imi_pm_2021,source_linked,measurement
+ft_disc_edema_rnfl,les_disc_edema,quantitative,size_length,부종 RNFL 두께,유두주위 RNFL 두께 증가,img_oct_circle_onh,zone_peripapillary,um,—,2,stage1_drafted,length,,draft,measurement
+ft_disc_tilt_ratio,les_tilted_disc,quantitative,shape,유두 장단축비·회전,유두 타원의 장단축비와 회전각,img_cfp_45,유두,ratio·deg,—,2,stage1_drafted,index,src_imi_pm_2021,source_linked,measurement
+ft_laser_scar_extent,les_laser_scar,quantitative,count,레이저 반흔 범위,반흔 개수·범위(범망막·국소),img_cfp_45;img_uwf;img_faf,FOV,count·category,—,2,stage1_drafted,count,,draft,measurement
+ft_metapm_category,les_myopic_diffuse_atrophy,qualitative,presence_type,META-PM 범주,0–4 범주와 plus 병변 유무,img_cfp_45,후극부,category,META-PM 표준사진,1,stage1_drafted,category,src_metapm_2015,definition_checked_abstract,classification
+ft_staphyloma_depth,les_posterior_staphyloma,quantitative,size_length,후포도종 깊이,기준선에서 가장 깊은 곳까지 거리,img_oct_edi_ss;img_us,후극부,um,넓은 스캔,2,stage1_drafted,length,src_imi_pm_2021;src_metapm_2015,source_linked,measurement
+ft_lesion_generic_count,les_generic,quantitative,count,병변 개수(공통),대상 병변의 임상 개수(분할 연결성분 수와 구분),img_cfp_45;img_oct_volume;img_faf;img_nir;img_fa;img_icga,정의 구역,count,—,1,stage1_drafted,count,,draft,measurement
+ft_lesion_generic_area,les_generic,quantitative,area_volume,병변 면적(공통),대상 병변의 투영 또는 en-face 면적,img_cfp_45;img_oct_enface;img_faf;img_nir;img_fa;img_icga,정의 구역,mm2 또는 px2,2D 투영과 OCT 단면 면적 구분,1,stage1_drafted,area,,draft,measurement
+ft_lesion_generic_shape,les_generic,quantitative,shape,병변 형태(공통),원형도·편심도·경계 불규칙성,img_cfp_45;img_faf;img_nir;img_fa;img_icga,병변,ratio,—,2,stage1_drafted,index,,draft,measurement
+ft_lesion_generic_distribution,les_generic,qualitative,distribution,병변 분포(공통),산재·군집·환상·구역 편중,img_cfp_45;img_faf;img_nir;img_fa;img_icga,FOV,category,—,1,stage1_drafted,category,,draft,measurement
+ft_lesion_generic_change,les_generic,quantitative,change,병변 변화량(공통),추적 영상 간 개수·면적·부피 변화,img_cfp_45;img_oct_volume;img_faf;img_nir;img_fa;img_icga,정합된 구역,defined_by_parent,영상 정합·시간 간격,2,stage1_drafted,rate,,draft,measurement
+ft_image_color_stats,img_cfp,quantitative,signal_statistics,영상 색·밝기 통계,채널별 평균·분포·대비(해부·병변 측정이 아님),img_cfp_45,FOV,intensity,촬영 조건·색 보정,2,stage1_drafted,intensity,,draft,measurement
+ft_image_texture,img_cfp,quantitative,signal_statistics,영상 질감,GLCM·LBP·주파수 등 질감 지표(해부·병변 측정이 아님),img_cfp_45;img_faf;img_nir;img_oct_bscan,FOV 또는 ROI,dimensionless,척도·방법 명시,2,stage1_drafted,index,,draft,measurement
+ft_image_quality,img_cfp,quantitative,signal_statistics,영상 품질,선명도·조명·FOV 유효 영역(QC),img_cfp_45,FOV,score,—,2,stage1_drafted,score,,draft,measurement
+ft_oct_signal_strength,img_oct,quantitative,signal_statistics,OCT 신호 강도,장비 품질 지표·반사 통계(QC),img_oct_bscan,스캔 전체,score,—,2,stage1_drafted,score,,draft,measurement
+ft_vessel_topology,ana_vascular_tree,quantitative,connectivity_complexity,혈관 분지점·끝점 밀도,단위 면적당 분지점·끝점·연결성분 수,img_cfp_45;img_octa,정의 ROI,count/area,골격화·graph 생성 방법,2,stage1_drafted,count_per_area,,draft,measurement
+ft_vessel_orientation,ana_vascular_tree,quantitative,distance_angle,혈관 방향 분포,혈관 중심선 방향의 엔트로피·우세도(영상 기울기 방향과 구분),img_cfp_45,정의 ROI,dimensionless,중심선 접선 기준,2,stage1_drafted,index,,draft,measurement
+ft_vessel_regional_density,ana_vascular_tree,quantitative,distribution,구역별 혈관 점유율,내·외측·상하·좌우·사분면 구역의 혈관 점유율과 그 비·차이,img_cfp_45;img_octa,FOV 구역,ratio,구역 원점 정의,2,stage1_drafted,ratio,,draft,measurement
+ft_lesion_vessel_relation,les_generic,quantitative,distance_angle,병변–혈관 거리 관계,병변과 혈관 사이 거리·혈관 근접 비율,img_cfp_45;img_fa,FOV,DD·ratio,혈관 mask,2,stage1_drafted,length,,draft,measurement
+ft_lesion_size_distribution,les_generic,quantitative,size_length,병변 크기 분포,성분별 면적의 평균·중앙값·분위수·최대·변동계수,img_cfp_45;img_faf;img_nir;img_fa;img_icga,FOV,DD2,성분 분할,2,stage1_drafted,area,,draft,measurement
+ft_vessel_pixel_count,ana_vascular_tree,quantitative,count,혈관·골격 원시 픽셀 수,정규화하지 않은 혈관 mask 또는 골격의 픽셀 수,img_cfp_45;img_octa,FOV,px,해상도에 의존(면적·길이 속성 아님),2,stage1_drafted,count,,draft,measurement
+ft_vessel_caliber_variability,ana_retinal_vasculature,quantitative,shape,혈관 폭 변동,혈관 폭 분포의 변동계수,img_cfp_45,정의 구역,ratio,폭 측정 방법,2,stage1_drafted,ratio,,draft,measurement
+ft_vessel_connectivity,ana_vascular_tree,quantitative,connectivity_complexity,혈관 연결성 비율,분지점/끝점 비·최대 연결성분 면적 비율 등,img_cfp_45;img_octa,정의 ROI,ratio,graph 생성 방법,2,stage1_drafted,ratio,,draft,measurement
+ft_vessel_path_length,ana_vascular_tree,quantitative,size_length,혈관 경로 길이,적격 혈관 분절의 경로 길이 요약(평균 등),img_cfp_45;img_octa,정의 ROI,px 또는 mm,분절 정의(길이 밀도와 다름),2,stage1_drafted,length,,draft,measurement
+ft_disc_fovea_angle,ana_posterior_pole,quantitative,distance_angle,유두–중심와 각도,유두 중심과 중심와를 잇는 선의 수평선 대비 각도,img_cfp_45;img_nir;img_faf;img_fa,후극부,deg,두 landmark 검출,2,stage1_drafted,angle,,draft,measurement
+ft_disc_shape,ana_optic_disc,quantitative,shape,유두 형태,유두 경계의 원형도·편심도·장단축비·방향,img_cfp_45,유두,ratio·deg,경계 정의,2,stage1_drafted,index,,draft,measurement
+ft_ez_preserved_fraction,ana_ellipsoid_zone,quantitative,area_volume,EZ 보존 비율,스캔 또는 구역에서 EZ가 남아 있는 비율,img_oct_bscan;img_oct_volume,중심 구역 또는 스캔 전체,ratio,EZ 분할,2,stage1_drafted,ratio,,draft,measurement
+ft_lesion_generic_presence,les_generic,qualitative,presence_type,병변 존재(공통),있음·없음·평가 불가,img_cfp_45;img_oct_bscan;img_faf;img_nir;img_fa;img_icga,판독 영역,presence,판독 가능성,1,stage1_drafted,presence,,draft,measurement
+ft_lesion_generic_extent,les_generic,quantitative,size_length,병변 범위 길이(공통),병변의 최대 직경·둘레·외접 상자 폭 등 길이 범위,img_cfp_45;img_oct_bscan;img_faf;img_nir;img_fa;img_icga,병변,um 또는 px,배율 보정,2,stage1_drafted,length,,draft,measurement
+ft_lesion_generic_position,les_generic,quantitative,distance_angle,병변 위치 좌표(공통),병변 중심의 영상 좌표 또는 기준점 대비 반경 위치,img_cfp_45;img_faf;img_nir;img_fa;img_icga,FOV,ratio·DD,좌표계 명시,2,stage1_drafted,ratio,,draft,measurement
+ft_lesion_regional_fraction,les_generic,quantitative,distribution,구역별 병변 비율(공통),특정 구역(황반 1·2 DD·유두주위·사분면) 안에 있는 병변 비율,img_cfp_45;img_faf;img_nir;img_fa;img_icga,정의 구역,ratio,구역 원점,2,stage1_drafted,ratio,,draft,measurement
+ft_lesion_spatial_dispersion,les_generic,quantitative,distribution,병변 공간 분산(공통),사분면 부담의 엔트로피·변동계수,img_cfp_45;img_faf;img_nir;img_fa;img_icga,사분면,dimensionless,사분면 정의,2,stage1_drafted,index,,draft,measurement
+ft_lesion_fovea_distance,les_generic,quantitative,distance_angle,중심와까지 거리(공통),병변과 중심와 중심 사이 최소·중앙 거리,img_cfp_45;img_oct_volume;img_faf;img_nir;img_fa;img_icga,후극부,DD·um,중심와 검출,1,stage1_drafted,length,,draft,measurement
+ft_lesion_generic_volume,les_generic,quantitative,area_volume,병변 부피(공통),OCT volume 분할로 계산한 병변 부피,img_oct_volume,정의 구역,mm3·nL,B-scan 간격,2,stage1_drafted,volume,,draft,measurement
+ft_lesion_generic_height,les_generic,quantitative,size_length,병변 높이·두께(공통),기준 경계에서 병변 상단까지 최대 거리,img_oct_bscan,병변,um,기준 경계 명시,2,stage1_drafted,length,,draft,measurement
+ft_lesion_generic_grade,les_generic,qualitative,presence_type,소견 정도(공통),없음·의심·뚜렷함 등 정도 범주,img_cfp_45,판독 영역,category,판독 기준 사진·정의,1,stage1_drafted,category,,draft,measurement
+ft_vascular_change_extent,les_generic,quantitative,count,혈관 변화 범위(공통),혈관 변화가 있는 분절 수 또는 사분면 수,img_cfp_45;img_uwf;img_fa,zone_fundus_quadrant,count,혈관 판별,1,stage1_drafted,count,,draft,measurement
+ft_layer_continuity_generic,ana_generic_layer,qualitative,arrangement_continuity,층 연속성(공통),적용된 층·band가 연속·약화·단절·소실 중 어느 상태인지,img_oct_bscan,정의 구역,category,—,1,stage1_drafted,category,,draft,measurement
+ft_layer_reflectivity_generic,ana_generic_layer,quantitative,signal_statistics,층 반사 신호(공통),적용된 층의 OCT 반사 강도 통계(조직 성분 측정 아님),img_oct_bscan,정의 구역,intensity,장비·신호 정규화,2,stage1_drafted,intensity,,draft,measurement
+ft_lesion_radial_position,les_generic,quantitative,distance_angle,병변 반경 위치(공통),기준점(영상 중심 또는 landmark)에서 병변 중심까지의 평균 반경 거리,img_cfp_45;img_faf;img_nir;img_fa;img_icga,FOV,DD,기준점 명시,2,stage1_drafted,length,,draft,measurement

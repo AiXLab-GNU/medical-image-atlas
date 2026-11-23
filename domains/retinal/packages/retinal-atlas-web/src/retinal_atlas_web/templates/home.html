@@ -1,0 +1,45 @@
+{% extends 'base.html' %}{% from '_macros.html' import item_card with context %}{% from '_schematic.html' import fundus %}{% from '_oct_schematic.html' import oct %}{% block content %}
+<section class="home-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">RETINAL IMAGE ATLAS</p>
+    <h1>망막 영상에서<br>무엇을 보고, 무엇을 재는가</h1>
+    <p class="lead">구조와 병변이 어디에 있고 어떻게 보이는지, 어떤 특징을 측정하며 어떤 질병 판단에 쓰이는지 한곳에서 따라갑니다.</p>
+    <form class="hero-search" action="/search/" method="get" role="search">
+      <label class="visually-hidden" for="hero-q">구조·병변 검색</label>
+      <input id="hero-q" name="q" type="search" placeholder="미세동맥류, 망막내액, RNFL, drusen…">
+      <button type="submit">검색</button>
+    </form>
+    <p class="hero-hint">자주 찾는 항목 · {% for id in ['ana_macula','ana_ellipsoid_zone','les_microaneurysm','les_intraretinal_fluid','les_geographic_atrophy'] %}<a href="{{ item_path(items[id]) }}">{{ items[id].name }}</a>{% endfor %}</p>
+  </div>
+  <div class="hero-visuals">
+    <a class="hero-card" href="/anatomy/#axis-face"><span class="hero-card-label">정면 · 안저</span>{{ fundus('', labels=False, kids=['ana_macula','ana_optic_disc']) }}</a>
+    <a class="hero-card" href="/anatomy/#axis-depth"><span class="hero-card-label">단면 · OCT</span>{{ oct('', kids=['ana_retina']) }}</a>
+  </div>
+</section>
+
+<section class="flow" aria-label="지도 구성">
+  <a class="flow-step" href="/anatomy/"><span class="flow-num">1</span><h2>해부학 지도</h2><p>후극부·황반·유두에서 망막층·혈관까지 위치와 모습</p><span class="flow-count">{{ counts.anatomy }}개 구조</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/lesions/"><span class="flow-num">2</span><h2>병변 목록</h2><p>출혈·삼출물·액체 공간 등 소견과 생기는 깊이</p><span class="flow-count">{{ counts.lesions }}개 소견</span></a>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <div class="flow-step static"><span class="flow-num">3</span><h2>측정</h2><p>개수·면적·두께·부피 등 무엇을 어떤 영상과 구역으로 재는지</p><span class="flow-count">항목 페이지에서</span></div>
+  <span class="flow-arrow" aria-hidden="true">→</span>
+  <a class="flow-step" href="/diseases/"><span class="flow-num">4</span><h2>질병 목록</h2><p>진단·중증도·경과 관찰에 쓰는 소견과 판정 조건</p><span class="flow-count">{{ counts.diseases }}개 주요 질환</span></a>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>먼저 보면 좋은 항목</h2><a class="more" href="/anatomy/">해부학 지도 전체 →</a></div>
+  <div class="item-grid">{% for id in ['ana_macula','ana_optic_disc','ana_rnfl','ana_ellipsoid_zone','les_microaneurysm','les_intraretinal_fluid','les_drusen_large','les_geographic_atrophy'] %}{{ item_card(items[id]) }}{% endfor %}</div>
+</section>
+
+<section class="section">
+  <div class="section-heading"><h2>영상 종류별로 보기</h2><a class="more" href="/imaging/">영상 종류 전체 →</a></div>
+  <div class="link-chips">{% for k, label in modalities %}<a href="/imaging/{{ k }}/">{{ label }}</a>{% endfor %}</div>
+</section>
+
+<section class="section home-images">
+  <div class="section-heading"><h2>실제 영상으로 읽기</h2><a class="more" href="/images/">영상 읽기 전체 →</a></div>
+  <div class="image-strip">{% for s in samples.values() %}<a href="{{ s.path }}"><img src="{{ url_for('sample_image', alias=s.image) }}" alt="" width="{{ s.width }}" height="{{ s.height }}" loading="lazy"><span>{{ s.label }}</span></a>{% endfor %}</div>
+</section>
+<p class="draft-note">이 지도는 그동안 모은 정의·측정 자료를 목록화한 초안입니다. 항목마다 근거와 검토 상태를 함께 표시합니다.</p>
+{% endblock %}

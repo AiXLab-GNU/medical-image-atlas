@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mammography-measures"
+version = "0.1.0"
+description = "Reference implementations of 2D mammography measurements (breast density, pectoral muscle, mass outline, calcification cluster, distortion, location) mapped to the mammography atlas"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scipy>=1.11", "scikit-image>=0.22"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mammography_measures*"]

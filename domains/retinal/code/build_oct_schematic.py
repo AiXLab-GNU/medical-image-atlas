@@ -1,0 +1,174 @@
+"""Generate the hand-made OCT B-scan schematic used by retinal-atlas-web.
+
+The drawing is a horizontal scan through the fovea of a right eye: temporal on the
+left, nasal (toward the disc) on the right. Layer thicknesses are illustrative, not
+normative values. Output: packages/retinal-atlas-web/src/retinal_atlas_web/templates/_oct_schematic.html
+"""
+from __future__ import annotations
+
+import json
+import math
+from pathlib import Path
+
+PROJECT = Path(__file__).resolve().parents[1]
+OUTPUT = PROJECT / 'packages/retinal-atlas-web/src/retinal_atlas_web/templates/_oct_schematic.html'
+LAYER_COLORS = PROJECT / 'packages/retinal-atlas-web/src/retinal_atlas_web/data/oct_layer_colors.json'
+
+X0, X1, FOVEA = 170, 900, 535
+XS = list(range(X0, X1 + 1, 5))
+
+
+def pit(x: float, width: float = 88.0) -> float:
+    """1 at the foveal centre, falling to 0 outside the pit."""
+    return math.exp(-((x - FOVEA) / width) ** 2)
+
+
+def nasal(x: float) -> float:
+    """0 temporally, 1 at the nasal edge (RNFL thickens toward the disc)."""
+    return (x - X0) / (X1 - X0)
+
+
+def interfaces() -> list[tuple[str, list[float]]]:
+    """Return named boundaries from inner to outer as y values over XS."""
+    rows = {name: [] for name in ('hyaloid', 'ilm', 'rnfl', 'gcl', 'ipl', 'inl', 'opl', 'hfl', 'elm',
+                                  'myoid', 'ez', 'os', 'iz', 'rpe', 'bm', 'cc', 'sattler', 'csj')}
+    for x in XS:
+        g = pit(x)
+        keep = 1 - g
+        ilm = 96 + 118 * g
+        rnfl = ilm + (6 + 26 * nasal(x)) * (1 - pit(x, 120))
+        gcl = rnfl + 34 * keep
+        ipl = gcl + 26 * keep
+        inl = ipl + 30 * keep
+        opl = inl + 16 * keep + 3
+        hfl = opl + 24 * math.exp(-((x - FOVEA) / 170) ** 2) * (1 - 0.6 * g) + 2
+        elm = 322 - 6 * g
+        myoid = elm + 8
+        ez = myoid + 6
+        os_ = ez + 15 + 6 * g
+        iz = os_ + 5
+        rpe = iz + 12
+        bm = rpe + 3
+        cc = bm + 7
+        sattler = cc + 30
+        csj = sattler + 58
+        for name, value in zip(rows, (78, ilm, rnfl, gcl,
+                                      ipl, inl, opl, hfl, elm, myoid, ez, os_, iz, rpe, bm, cc, sattler, csj)):
+            rows[name].append(round(value, 1))
+    return list(rows.items())
+
+
+def line(ys: list[float]) -> str:
+    return ' '.join(f'{x},{y}' for x, y in zip(XS, ys))
+
+
+def band(top: list[float], bottom: list[float]) -> str:
+    points = [f'{x},{y}' for x, y in zip(XS, top)] + [f'{x},{y}' for x, y in zip(reversed(XS), reversed(bottom))]
+    return 'M' + ' L'.join(points) + ' Z'
+
+
+def main() -> None:
+    b = dict(interfaces())
+    vitreous_top = [24] * len(XS)
+    sclera_bottom = [500] * len(XS)
+    # (item ids, top, bottom, fill, label)
+    bands = [
+        (['ana_vitreous'], vitreous_top, b['ilm'], '#0c0f13', '유리체'),
+        (['ana_rnfl'], b['ilm'], b['rnfl'], '#dedede', '신경섬유층'),
+        (['ana_gcl'], b['rnfl'], b['gcl'], '#8c8c8c', '신경절세포층'),
+        (['ana_ipl'], b['gcl'], b['ipl'], '#b9b9b9', '내망상층'),
+        (['ana_inl'], b['ipl'], b['inl'], '#474747', '내핵층'),
+        (['ana_opl'], b['inl'], b['opl'], '#ababab', '외망상층'),
+        (['ana_hfl'], b['opl'], b['hfl'], '#6f6f6f', '헨레섬유층'),
+        (['ana_onl'], b['hfl'], b['elm'], '#2c2c2c', '외핵층'),
+        (['ana_myoid_zone'], b['elm'], b['myoid'], '#323232', '근양대'),
+        (['ana_ellipsoid_zone'], b['myoid'], b['ez'], '#ececec', '타원체대'),
+        (['ana_photoreceptor_os'], b['ez'], b['os'], '#585858', '광수용체 외절'),
+        (['ana_interdigitation_zone'], b['os'], b['iz'], '#b3b3b3', '맞물림대'),
+        (['ana_rpe'], b['iz'], b['rpe'], '#f4f4f4', '망막색소상피'),
+        (['ana_bruch_membrane'], b['rpe'], b['bm'], '#ffffff', '브루크막'),
+        (['ana_choriocapillaris'], b['bm'], b['cc'], '#a2a2a2', '맥락막모세혈관층'),
+        (['ana_sattler_layer'], b['cc'], b['sattler'], '#727272', '중간혈관층'),
+        (['ana_haller_layer'], b['sattler'], b['csj'], '#5e5e5e', '대혈관층'),
+        (['ana_sclera'], b['csj'], sclera_bottom, '#868686', '공막'),
+    ]
+    # Composite regions drawn as outlines (highlight or child emphasis only).
+    groups = [
+        (['ana_retina', 'ana_total_retina'], b['ilm'], b['bm'], '망막 전체'),
+        (['ana_neurosensory_retina'], b['ilm'], b['iz'], '신경감각망막'),
+        (['ana_inner_retina'], b['ilm'], b['inl'], '내망막'),
+        (['ana_outer_retina'], b['inl'], b['rpe'], '외망막'),
+        (['ana_gcipl'], b['rnfl'], b['ipl'], 'GCL+IPL'),
+        (['ana_photoreceptors'], b['elm'], b['iz'], '광수용체'),
+        (['ana_rpe_bruch_complex'], b['iz'], b['bm'], 'RPE·브루크막 복합체'),
+        (['ana_choroid'], b['bm'], b['csj'], '맥락막'),
+    ]
+    lines = [
+        (['ana_posterior_hyaloid'], b['hyaloid'], '후유리체막'),
+        (['ana_ilm'], b['ilm'], '내경계막'),
+        (['ana_elm'], b['elm'], '외경계막'),
+        (['ana_choroid_sclera_junction'], b['csj'], '맥락막–공막 경계'),
+    ]
+    ids = lambda group: '[' + ', '.join(f"'{i}'" for i in group) + ']'  # noqa: E731
+    slug = lambda item_id: item_id.split('_', 1)[1].replace('_', '-')  # noqa: E731
+    out = ['{#- GENERATED by code/build_oct_schematic.py — do not edit by hand.',
+           '    Horizontal OCT B-scan through the fovea of a right eye (temporal left, nasal right).',
+           '    Thicknesses are illustrative. `hl` emphasises one item; `kids` outlines its sub-items. -#}',
+           "{% macro oct(hl='', kids=()) -%}",
+           "{%- macro rc(ids) -%}{% if hl in ids %} hl{% elif ids|select('in', kids)|list %} child{% endif %}{%- endmacro -%}",
+           '<figure class="schematic oct-schematic">',
+           '<svg viewBox="0 0 900 520" role="img" aria-labelledby="oct-title">',
+           '  <title id="oct-title">OCT 단면 모식도: 중심와를 지나는 수평 단면에서 유리체부터 공막까지의 층</title>',
+           '  <rect x="0" y="0" width="900" height="520" fill="#0b0d10"/>']
+    for group, top, bottom, fill, label in bands:
+        out.append(f'  <a href="/anatomy/{slug(group[0])}/" aria-label="{label}"><path class="layer{{{{ rc({ids(group)}) }}}}" '
+                   f'd="{band(top, bottom)}" fill="{fill}"><title>{label}</title></path></a>')
+    # dark vessel lumens inside Haller's layer
+    for i, x in enumerate(range(X0 + 30, X1, 70)):
+        k = XS.index(min(XS, key=lambda v: abs(v - x)))
+        y = (b['sattler'][k] + b['csj'][k]) / 2 + (6 if i % 2 else -4)
+        out.append(f'  <ellipse class="lumen" cx="{x}" cy="{round(y, 1)}" rx="{24 + (i % 3) * 5}" ry="{15 + (i % 2) * 4}" fill="#1d1d1d"/>')
+    for i, x in enumerate(range(X0 + 55, X1, 55)):
+        k = XS.index(min(XS, key=lambda v: abs(v - x)))
+        y = (b['cc'][k] + b['sattler'][k]) / 2
+        out.append(f'  <ellipse class="lumen" cx="{x}" cy="{round(y, 1)}" rx="9" ry="6" fill="#2a2a2a"/>')
+    for group, ys, label in lines:
+        out.append(f'  <a href="/anatomy/{slug(group[0])}/" aria-label="{label}"><polyline class="line-hit{{{{ rc({ids(group)}) }}}}" '
+                   f'points="{line(ys)}"><title>{label}</title></polyline></a>')
+    for group, top, bottom, label in groups:
+        out.append(f'  <a href="/anatomy/{slug(group[0])}/" aria-label="{label}"><path class="group-outline{{{{ rc({ids(group)}) }}}}" '
+                   f'd="{band(top, bottom)}"><title>{label}</title></path></a>')
+    pit_y = b['ilm'][XS.index(FOVEA)]
+    out += [
+        "  {% if hl in ('ana_fovea', 'ana_foveola', 'ana_parafovea', 'ana_perifovea', 'ref_fovea_center', 'ana_macula') %}",
+        '  <g class="extent-mark">',
+        "    {% set half = {'ana_foveola': 18, 'ana_fovea': 62, 'ref_fovea_center': 0, 'ana_parafovea': 155, 'ana_perifovea': 330, 'ana_macula': 330}[hl] %}",
+        f'    <line x1="{{{{ {FOVEA} - half }}}}" y1="{pit_y + 8}" x2="{{{{ {FOVEA} - half }}}}" y2="44"/>',
+        f'    <line x1="{{{{ {FOVEA} + half }}}}" y1="{pit_y + 8}" x2="{{{{ {FOVEA} + half }}}}" y2="44"/>',
+        f'    <line x1="{{{{ {FOVEA} - half }}}}" y1="44" x2="{{{{ {FOVEA} + half }}}}" y2="44"/>',
+        '  </g>',
+        '  {% endif %}',
+        '  <g class="labels" aria-hidden="true">',
+        f'    <text x="{FOVEA}" y="{pit_y - 14}" text-anchor="middle" class="small">중심와</text>',
+        '    <text x="178" y="58" class="small">유리체</text>',
+        '    <text x="12" y="210">망막</text>',
+        '    <text x="12" y="425">맥락막</text>',
+        '    <text x="12" y="492">공막</text>',
+        '    <text x="178" y="514" class="small">이측(귀 쪽)</text>',
+        '    <text x="890" y="514" text-anchor="end" class="small">비측(유두 쪽)</text>',
+        '  </g>',
+        '  <path class="axis-bracket" d="M80 96 L72 96 L72 375 L80 375 M80 380 L72 380 L72 465 L80 465"/>',
+        '</svg>',
+        '<figcaption>OCT 단면 모식도 · 중심와를 지나는 수평 단면(오른눈). 층을 누르면 해당 항목으로 이동합니다. '
+        '밝기와 두께는 이해를 돕기 위한 대략적인 표현이며 실제 영상이 아닙니다.</figcaption>',
+        '</figure>',
+        '{%- endmacro %}', '']
+    OUTPUT.write_text('\n'.join(out), encoding='utf-8')
+    swatches = {group[0]: fill for group, _, _, fill, _ in bands}
+    swatches.update({group[0]: '#d7dde3' for group, _, _ in lines})
+    LAYER_COLORS.write_text(json.dumps(swatches, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    print(f'wrote {OUTPUT.relative_to(PROJECT)}')
+
+
+if __name__ == '__main__':
+    main()

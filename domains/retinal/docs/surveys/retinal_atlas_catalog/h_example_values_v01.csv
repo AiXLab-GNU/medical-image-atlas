@@ -1,0 +1,332 @@
+example_id,layer_key,feature_id,status,value_text
+ex_fundus_disc,disc,ft_disc_area,ok,"162,236 px²"
+ex_fundus_disc,disc_diameter,ft_disc_diameter,ok,수직 496px · 수평 423px
+ex_fundus_disc,cup,ft_cup_area,ok,"58,809 px²"
+ex_fundus_disc,cdr,ft_cdr_vertical,ok,0.583
+ex_fundus_disc,rim,ft_rim_area,ok,"103,416 px²"
+ex_fundus_disc,isnt,ft_isnt_pattern,ok,ISNT 순서 따름 (위(S) 89.6 · 코(N) 89.2 · 아래(I) 106 · 귀(T) 75.5)
+ex_fundus_disc,shape,ft_disc_shape,ok,장단축비 1.18 · 긴축 각도 1.75 · 원형도 0.874 · 이심률 0.528
+ex_fundus_disc,notch,ft_cupping_notch,not_observed,관찰 안 됨
+ex_fundus_disc,color,ft_disc_color,reading,판독 항목(계산 코드 없음) · 테(자홍 윤곽)의 분홍빛을 보고 판정; 이 영상은 정상 분홍색으로 보임
+ex_fundus_disc,margin,ft_disc_margin,reading,판독 항목(계산 코드 없음) · 흰 고리 사이 띠에서 경계가 또렷한지 판정; 이 영상은 경계가 선명함
+ex_fundus_vessels,vessel,ft_vessel_area_density,ok,0.127
+ex_fundus_vessels,skeleton,ft_vessel_length_density,ok,0.0297 px/px²
+ex_fundus_vessels,skeleton,ft_vessel_tortuosity,ok,1.09
+ex_fundus_vessels,skeleton,ft_fractal_dimension,ok,1.58
+ex_fundus_vessels,topology,ft_vessel_topology,ok,분지점 2.84/10⁴px · 끝점 2.93/10⁴px
+ex_fundus_vessels,crae,ft_crae,ok,12.6 px
+ex_fundus_vessels,crae,ft_crve,ok,14.1 px
+ex_fundus_vessels,crae,ft_avr,ok,0.896
+ex_fundus_vessels,disc_fovea,ft_disc_fovea_distance,ok,2.66 DD
+ex_fundus_vessels,disc_fovea,ft_disc_fovea_angle,ok,-3.89 °
+ex_fundus_vessels,pixels,ft_vessel_pixel_count,ok,"혈관 92,873px · 중심선 18,369px"
+ex_fundus_vessels,regional,ft_vessel_regional_density,ok,위 0.0881 · 아래 0.089 · 왼쪽 0.0675 · 오른쪽 0.0993 · 안쪽 고리 0.118 · 가운데 고리 0.0964 · 바깥 고리 0.0301
+ex_fundus_vessels,connect,ft_vessel_connectivity,ok,최대 연결 비율 0.988 · 연결 성분 수 41 · 분지/끝점 비 0.967
+ex_fundus_vessels,orient,ft_vessel_orientation,ok,엔트로피 0.988 · 최빈 방향 비율 0.118
+ex_fundus_vessels,path,ft_vessel_path_length,ok,"평균 51px · 합계 19,037px · 분절 수 373"
+ex_fundus_vessels,branch,ft_branching_angle,ok,70.4 °
+ex_fundus_vessels,caliber,ft_vessel_caliber,ok,평균 3.98px · 중앙 3px · 90백분위 7.25px · 표준편차 2.53px
+ex_fundus_vessels,caliber,ft_vessel_caliber_variability,ok,0.635
+ex_fundus_vessels,image,ft_image_color_stats,ok,R 평균 177 · G 평균 141 · B 평균 115
+ex_fundus_vessels,image,ft_image_quality,ok,선명도 0.0015 · 대비 0.105 · 조명 변동 0.257 · 어두움 0.0% · 과노출 0.1%
+ex_fundus_vessels,image,ft_image_texture,ok,대비 0.54 · 균질도 0.869 · 에너지 0.329 · 상관 0.996 · LBP 엔트로피 2.27
+ex_fundus_vessels,reflex,ft_foveal_reflex,reading,판독 항목(계산 코드 없음) · 노란 원 안 작은 반짝임이 있는지 판정; 이 영상에서는 희미하게 보임
+ex_fundus_vessels,striation,ft_rnfl_striation,reading,판독 항목(계산 코드 없음) · 초록 고리 사이(유두 둘레)에서 밝은 줄무늬가 고르게 보이는지 판정
+ex_fundus_lesions,ma,ft_ma_count,ok,27 개
+ex_fundus_lesions,ma,ft_ma_distance_fovea,ok,최소 0.63DD · 중앙 2.74DD
+ex_fundus_lesions,hem,ft_hem_area,ok,"19,399 px²"
+ex_fundus_lesions,hem,ft_hem_count_quadrant,ok,위귀 4개 · 위코 18개 · 아래코 6개 · 아래귀 0개
+ex_fundus_lesions,ex,ft_he_area,ok,"4,404 px²"
+ex_fundus_lesions,ex,ft_he_distance_fovea,ok,최소 0.31DD · 중앙 1.75DD
+ex_fundus_lesions,cws,ft_cws_count,ok,11 개
+ex_fundus_lesions,cws,ft_cws_area,ok,"14,528 px²"
+ex_fundus_lesion_shape,presence,ft_lesion_generic_presence,ok,예
+ex_fundus_lesion_shape,presence,ft_ma_presence,ok,예
+ex_fundus_lesion_shape,presence,ft_lesion_generic_count,ok,28 개
+ex_fundus_lesion_shape,area,ft_lesion_generic_area,ok,"19,399 px²"
+ex_fundus_lesion_shape,sizes,ft_lesion_size_distribution,ok,"평균 693px² · 중앙 214px² · 90백분위 1,602px² · 최대 4,707px² · 변동계수 1.45"
+ex_fundus_lesion_shape,shape,ft_lesion_generic_shape,ok,원형도 0.445 · 이심률 0.813 · 충실도 0.801
+ex_fundus_lesion_shape,extent,ft_lesion_generic_extent,ok,124 px
+ex_fundus_lesion_shape,depth,ft_hem_depth,reading,"판독 항목(계산 코드 없음) · 둥근 점·얼룩 모양 = 깊은 층, 화염 모양 = 신경섬유층; 이 영상은 대부분 점·얼룩 출혈"
+ex_fundus_lesion_shape,he_pattern,ft_he_pattern,reading,판독 항목(계산 코드 없음) · 흩어짐/고리(윤상)/별 모양 배열을 판정; 이 영상은 황반 주위에 흩어진 무리
+ex_fundus_lesion_shape,grade,ft_lesion_generic_grade,reading,판독 항목(계산 코드 없음) · 표준 사진과 비교해 경도/중등도/고도로 판정
+ex_fundus_lesion_place,position,ft_lesion_generic_position,ok,세로 위치 0.364 · 가로 위치 0.415
+ex_fundus_lesion_place,radial,ft_lesion_radial_position,ok,2.78 DD
+ex_fundus_lesion_place,radial,ft_lesion_fovea_distance,ok,최소 1.05DD · 중앙 2.87DD
+ex_fundus_lesion_place,regional,ft_lesion_regional_fraction,ok,0.288
+ex_fundus_lesion_place,quadrant,ft_lesion_spatial_dispersion,ok,1.35 비트
+ex_fundus_lesion_place,quadrant,ft_vascular_change_extent,ok,3 개
+ex_fundus_lesion_place,distribution,ft_lesion_generic_distribution,ok,무작위 (Clark–Evans R 0.878)
+ex_fundus_lesion_place,vessel,ft_lesion_vessel_relation,ok,평균 거리 28.8px · 혈관 10px 이내 비율 0.156
+ex_fundus_atrophy,area,ft_atrophy_area,ok,"621,196 px²"
+ex_fundus_atrophy,focality,ft_atrophy_focality,ok,다초점 (초점 수 6)
+ex_fundus_atrophy,fovea,ft_atrophy_foveal_involvement,ok,예
+ex_fundus_myopic_disc,tilt,ft_disc_tilt_ratio,ok,2.23
+ex_fundus_myopic_disc,ppa,ft_ppa_area,ok,"350,200 px²"
+ex_fundus_drusen,area,ft_drusen_area,ok,"11,298 px²"
+ex_fundus_drusen,area,ft_drusen_max_size,ok,55.3 px
+ex_fundus_nv,nvd,ft_nvd_area,ok,"9,236 px²"
+ex_fundus_nv,nvd,ft_nvd_presence,ok,예
+ex_fundus_nv,nve,ft_nve_area,ok,"2,008 px²"
+ex_fundus_nv,nve,ft_nve_presence,ok,예
+ex_fundus_irma,irma,ft_irma_presence,ok,예
+ex_fundus_irma,irma,ft_irma_quadrants,ok,1 개
+ex_fundus_irma,vh,ft_vh_obscuration,reading,판독 항목(계산 코드 없음) · 출혈(빨강)이 혈관·유두를 얼마나 가리는지 판정; 공급자 mask는 촬영 시야의 19%
+ex_fundus_vb,caliber,ft_vb_caliber_variation,ok,최대/최소 폭 2.87 · 평균 변동계수 0.166
+ex_fundus_vb,quadrant,ft_vb_quadrants,ok,1 개
+ex_fundus_disc_hem,clock,ft_disc_hem_location,ok,12 시
+ex_fundus_flame,count,ft_flame_hem_count,ok,5 개
+ex_fundus_laser,scar,ft_laser_scar_extent,ok,64 개
+ex_fundus_laser,scar,ft_lesion_generic_area,ok,"면적 39,754 px²"
+ex_uwf_prh,prh,ft_prh_area,ok,"6,949 px²"
+ex_fundus_rd,extent,ft_rd_extent,ok,0.674
+ex_fundus_rd,macula,ft_rd_macula_status,ok,예
+ex_redfree_rnfl,defect,ft_rnfl_defect_angle,ok,32 °
+ex_cfp_ma_turnover,turnover,ft_ma_turnover,ok,새로 생김 12개 · 사라짐 6개
+ex_fa_widefield,np,ft_nonperfusion_area,ok,"94,374 px²"
+ex_fa_widefield,np,ft_ischemic_index,ok,0.301
+ex_fa_widefield,leak,ft_nv_leakage,reading,판독 항목(계산 코드 없음) · 노란 윤곽의 흐릿하게 번지는 과형광이 후기에 커지는지 판정
+ex_fa_mnv,area,ft_mnv_lesion_area,ok,"1,745 px²"
+ex_fa_mnv,activity,ft_mnv_activity,reading,판독 항목(계산 코드 없음) · 초기→후기 과형광이 커지고 흐려지면 누출(활동성); 이 영역 평균 밝기 초기 79 → 후기 110
+ex_faf_pattern,pattern,ft_faf_pattern,reading,판독 항목(계산 코드 없음) · 저하(검게) 영역(파랑 표시)과 주변 증가 반점을 보고 양상 분류; 저자 분류: 미만성 저하(DDAF)
+ex_faf_pattern,junction,ft_faf_junctional_pattern,reading,판독 항목(계산 코드 없음) · 위축 가장자리 띠(노랑)의 증가 자가형광 모양(없음/띠/반점/미만)을 판정
+ex_nir_change,growth,ft_atrophy_growth_rate,ok,5.9 px/년
+ex_nir_change,change,ft_lesion_generic_change,ok,302 px²
+ex_icga_polyp,polyp,ft_polyp_count,ok,2 개
+ex_nir_sdd,extent,ft_sdd_extent,ok,"2,638 px²"
+ex_nir_sdd,extent,ft_lesion_generic_area,ok,"점들을 감싸는 범위(흰 윤곽) 59,446 px²"
+ex_nir_sdd,stage,ft_sdd_stage,reading,판독 항목(계산 코드 없음) · 단계(1–4)는 OCT B-scan에서 침착물이 EZ를 넘는지로 판정; 이 근적외선 사진만으로는 판정 불가
+ex_oct_layers,retina,ft_layer_thickness_generic,ok,68 px
+ex_oct_layers,onl,ft_onl_thickness,ok,28.7 px
+ex_oct_layers,pit,ft_foveal_pit_shape,ok,깊이 37 · 폭 248 · 최대 경사 1
+ex_oct_layers,pit,ft_foveal_contour,ok,정상 함요 (깊이 37 · 폭 248 · 최대 경사 1)
+ex_oct_layers,ez,ft_ez_preserved_fraction,ok,1.000
+ex_oct_layers,ez,ft_ez_disruption_width,not_observed,관찰 안 됨
+ex_oct_layers,outer,ft_os_length,ok,7.15 px
+ex_oct_layers,outer,ft_rpe_bm_thickness,ok,5.43 px
+ex_oct_layers,continuity,ft_elm_continuity,ok,연속 (보존 비율 1 · 끊김 수 0 · 최대 끊김 0)
+ex_oct_layers,continuity,ft_ez_continuity,ok,연속 (보존 비율 1 · 끊김 수 0 · 최대 끊김 0)
+ex_oct_layers,continuity,ft_layer_continuity_generic,ok,연속 (보존 비율 1 · 끊김 수 0 · 최대 끊김 0)
+ex_oct_layers,reflect,ft_layer_reflectivity_generic,ok,평균 밝기 100 · 정규화 0.40
+ex_oct_layers,order,ft_layer_order,ok,보존 (순서 유지 비율 1)
+ex_oct_layers,rpe,ft_rpe_contour,ok,불규칙(RMS) 4.7 · 최대 융기 9.62
+ex_oct_layers,signal,ft_oct_signal_strength,ok,17.9 dB
+ex_oct_inner,rnfl,ft_rnfl_thickness_macular,ok,5.2 px
+ex_oct_inner,gcipl,ft_gcipl_thickness,ok,20.9 px
+ex_oct_lesions,irf,ft_irf_bscan_area,ok,"2,557 px²"
+ex_oct_lesions,irf,ft_lesion_generic_count,ok,1 개
+ex_oct_lesions,srf,ft_srf_height,ok,37 px
+ex_oct_lesions,ped,ft_ped_height,ok,50 px
+ex_oct_lesions,ped,ft_ped_diameter,ok,328 px
+ex_oct_lesions,presence,ft_irf_presence,ok,예
+ex_oct_lesions,presence,ft_srf_presence,ok,예
+ex_oct_lesions,mnv_type,ft_mnv_type,ok,RPE 아래(1형) (RPE 아래(1형) 0.997 · 망막하(2형) 0.000309 · 망막내(3형) 0.00309)
+ex_oct_lesions,reflect,ft_ped_internal_reflectivity,ok,혼합 반사 (평균 95.3 · RPE 대비 비 0.515)
+ex_oct_lesions,height,ft_lesion_generic_height,ok,53 px
+ex_oct_lesions,shrm,ft_shrm_thickness,ok,42 px
+ex_oct_lesions,hem_depth,ft_hem_depth,reading,판독 항목(계산 코드 없음) · 망막하 고반사 물질(빨간 윤곽)이 RPE(흰 선) 위·망막 아래에 있어 망막하 위치로 읽음
+ex_oct_lesions,macula,ft_rd_macula_status,ok,예
+ex_oct_lesions,activity,ft_mnv_activity,reading,판독 항목(계산 코드 없음) · 망막내액(초록)·망막하액(빨강)이 있으면 활동성 신생혈관으로 읽음; 이 단면은 액체 있음
+ex_oct_volume,etdrs,ft_etdrs_subfield_thickness,ok,C 99 · N1 120 · S1 116 · T1 117 · I1 105 · N2 106 · S2 105 · T2 114 · I2 120 (축 방향 px)
+ex_oct_volume,etdrs,ft_central_subfield_thickness,ok,98.9 px
+ex_oct_volume,etdrs,ft_macular_volume,not_evaluable,계산 불가 · 깊이(z) 화소 크기가 공개되지 않아 부피(mm³)를 낼 수 없음
+ex_oct_volume,irf,ft_irf_volume,ok,"84,205 복셀"
+ex_oct_volume,irf,ft_lesion_generic_volume,ok,"84,205 복셀"
+ex_oct_volume,irf,ft_irf_center_involvement,ok,예
+ex_oct_dme_bscan,irf_layer,ft_irf_layer,ok,ILM-OPL_ONL (ILM-OPL_ONL 0.716 · OPL_ONL-EZ 0.284 · EZ-RPE 0 · RPE-BM 0 · BM-CSI 0)
+ex_oct_dme_bscan,hrf,ft_hrf_count,ok,9 개
+ex_oct_dme_bscan,dril,ft_dril_extent,ok,81 px
+ex_oct_dme_bscan,choroid,ft_choroid_thickness_subfoveal,ok,106 px
+ex_oct_dme_bscan,choroid,ft_choroid_thickness_map,ok,97.1 px
+ex_oct_dme_bscan,choroid,ft_choroidal_vascularity_index,ok,0.582
+ex_oct_dme_bscan,haller,ft_haller_vessel_diameter,ok,8.25 px
+ex_oct_amd_volume,srf,ft_srf_volume,ok,"79,101 복셀"
+ex_oct_amd_volume,ped,ft_ped_volume,ok,"135,010 복셀"
+ex_oct_amd_volume,ez,ft_ez_preserved_area,ok,"11,142 px²"
+ex_oct_amd_volume,ez,ft_ez_loss_area,ok,"3,108 px²"
+ex_oct_mh,diam,ft_mh_min_diameter,ok,89 px
+ex_oct_mh,diam,ft_mh_base_diameter,ok,126 px
+ex_oct_mh,vmt,ft_mh_vmt_status,not_observed,관찰 안 됨
+ex_oct_vmt,attach,ft_vmt_attachment_width,ok,5 px
+ex_oct_erm,extent,ft_erm_extent,ok,368 px²
+ex_oct_erm,traction,ft_erm_traction_signs,reading,판독 항목(계산 코드 없음) · 막 아래 주름·내층 끌림·중심와 함요 소실을 판정; 이 영상은 표면 주름과 망막 두꺼워짐이 보임
+ex_oct_staphyloma,depth,ft_staphyloma_depth,ok,168 px
+ex_oct_hypertd,width,ft_hypertd_width,ok,48 px
+ex_oct_drusen,height,ft_drusen_height,ok,27 px
+ex_oct_drusen,reflect,ft_drusen_reflectivity,ok,고반사 (평균 126 · RPE 대비 비 0.68)
+ex_oct_drusen,volume,ft_drusen_volume,ok,"3,731 복셀"
+ex_oct_peripapillary,rnfl,ft_rnfl_thickness_peripapillary,ok,평균 137 µm · 위(S) 185 · 아래(I) 145 · 코(N) 108 · 귀(T) 112
+ex_oct_peripapillary,rnfl,ft_disc_edema_rnfl,ok,평균 137 µm · 위(S) 185 · 아래(I) 145 · 코(N) 108 · 귀(T) 112
+ex_oct_peripapillary,defect,ft_rnfl_defect_angle,ok,19 °
+ex_oct_bmo,mrw,ft_bmo_mrw,ok,46.1 px (눈금이 없어 화소; 함수 기본 표기는 µm)
+ex_octa_scp,vd,ft_octa_vessel_density_scp,ok,0.459
+ex_octa_scp,faz,ft_faz_area,ok,289 px²
+ex_octa_scp,faz,ft_faz_circularity,ok,0.475
+ex_octa_dcp,vd,ft_octa_vessel_density_dcp,ok,0.424
+ex_octa_cc,fd,ft_cc_flow_deficit,ok,0.440
+ex_octa_rpc,rpc,ft_rpc_density,ok,0.176
+ex_octa_faz_change,faz,ft_faz_enlargement,ok,"11,626 px²/년"
+ex_fa_macula,density,ft_vessel_area_density,ok,0.132
+ex_fa_macula,density,ft_vessel_length_density,ok,0.0316 px/px²
+ex_fa_macula,density,ft_vessel_pixel_count,ok,"혈관 42,799px · 중심선 8,692px"
+ex_fa_macula,fractal,ft_fractal_dimension,ok,1.49
+ex_fa_macula,tortuosity,ft_vessel_tortuosity,ok,1.11
+ex_fa_macula,branch,ft_branching_angle,ok,69.5 °
+ex_fa_macula,beading,ft_vb_caliber_variation,ok,최대/최소 폭 8.12 · 평균 변동계수 0.207
+ex_fa_macula,faz,ft_faz_area,ok,"7,337 px²"
+ex_fa_macula,faz,ft_faz_circularity,ok,0.642
+ex_fa_leak,presence,ft_lesion_generic_presence,ok,예
+ex_fa_leak,presence,ft_lesion_generic_count,ok,9 개
+ex_fa_leak,sizes,ft_lesion_generic_area,ok,"1,438 px²"
+ex_fa_leak,sizes,ft_lesion_size_distribution,ok,평균 160px² · 중앙 60px² · 90백분위 344px² · 최대 651px² · 변동계수 1.18
+ex_fa_leak,shape,ft_lesion_generic_shape,ok,원형도 0.662 · 이심률 0.849 · 충실도 0.871
+ex_fa_leak,shape,ft_lesion_generic_extent,ok,41.9 px
+ex_fa_leak,position,ft_lesion_generic_position,ok,세로 위치 0.442 · 가로 위치 0.852
+ex_fa_leak,radial,ft_lesion_radial_position,ok,246 px
+ex_fa_leak,radial,ft_lesion_fovea_distance,ok,최소 58.8px · 중앙 231px
+ex_fa_leak,distribution,ft_lesion_generic_distribution,ok,무작위 (Clark–Evans R 0.856)
+ex_fa_leak,vessel,ft_lesion_vessel_relation,ok,평균 거리 8.72px · 혈관 10px 이내 비율 0.646
+ex_fa_leak,regional,ft_lesion_regional_fraction,ok,0.035
+ex_fa_leak,change,ft_lesion_generic_change,ok,"1,384 px²"
+ex_fa_widefield_pdr,nvd,ft_nvd_presence,ok,예
+ex_fa_widefield_pdr,nvd,ft_nvd_area,ok,"1,955 px²"
+ex_fa_widefield_pdr,nve,ft_nve_presence,ok,예
+ex_fa_widefield_pdr,nve,ft_nve_area,ok,"2,203 px²"
+ex_fa_widefield_pdr,landmark,ft_disc_fovea_distance,ok,2.65 DD
+ex_fa_widefield_pdr,landmark,ft_disc_fovea_angle,ok,14.6 °
+ex_fa_widefield_pdr,position,ft_lesion_generic_position,ok,세로 위치 0.409 · 가로 위치 0.379
+ex_fa_widefield_pdr,quadrant,ft_lesion_spatial_dispersion,ok,1.54 비트
+ex_fa_widefield_pdr,quadrant,ft_vascular_change_extent,ok,4 개
+ex_fa_widefield_pdr,distribution,ft_lesion_generic_distribution,ok,모여 있음 (Clark–Evans R 0.635)
+ex_faf_dots,presence,ft_lesion_generic_presence,ok,예
+ex_faf_dots,presence,ft_lesion_generic_count,ok,60 개
+ex_faf_dots,sizes,ft_lesion_generic_area,ok,"27,271 px²"
+ex_faf_dots,sizes,ft_lesion_size_distribution,ok,"평균 455px² · 중앙 301px² · 90백분위 1,053px² · 최대 3,555px² · 변동계수 1.17"
+ex_faf_dots,shape,ft_lesion_generic_shape,ok,원형도 0.454 · 이심률 0.799 · 충실도 0.788
+ex_faf_dots,shape,ft_lesion_generic_extent,ok,145 px
+ex_faf_dots,position,ft_lesion_generic_position,ok,세로 위치 0.512 · 가로 위치 0.541
+ex_faf_dots,radial,ft_lesion_radial_position,ok,6.3 DD
+ex_faf_dots,radial,ft_lesion_fovea_distance,ok,최소 1.69DD · 중앙 6.25DD
+ex_faf_dots,regional,ft_lesion_regional_fraction,ok,0.009
+ex_faf_dots,quadrant,ft_lesion_spatial_dispersion,ok,1.82 비트
+ex_faf_dots,quadrant,ft_vascular_change_extent,ok,4 개
+ex_faf_dots,distribution,ft_lesion_generic_distribution,ok,무작위 (Clark–Evans R 1.01)
+ex_faf_dots,landmark,ft_disc_fovea_distance,ok,1.93 DD
+ex_faf_dots,landmark,ft_disc_fovea_angle,ok,8.75 °
+ex_faf_dots,texture,ft_image_texture,ok,대비 0.829 · 균질도 0.886 · 에너지 0.242 · 상관 0.989 · LBP 엔트로피 1.95
+ex_faf_atrophy,area,ft_atrophy_area,ok,"4,847 px²"
+ex_faf_atrophy,area,ft_atrophy_focality,ok,단일 초점 (초점 수 1)
+ex_faf_atrophy,fovea,ft_atrophy_foveal_involvement,ok,아니요
+ex_nir_widefield,presence,ft_lesion_generic_presence,ok,예
+ex_nir_widefield,presence,ft_lesion_generic_count,ok,130 개
+ex_nir_widefield,sizes,ft_lesion_generic_area,ok,"4,652 px²"
+ex_nir_widefield,sizes,ft_lesion_size_distribution,ok,평균 35.8px² · 중앙 32px² · 90백분위 64.2px² · 최대 140px² · 변동계수 0.688
+ex_nir_widefield,shape,ft_lesion_generic_shape,ok,원형도 0.947 · 이심률 0.635 · 충실도 0.956
+ex_nir_widefield,shape,ft_lesion_generic_extent,ok,23.5 px
+ex_nir_widefield,position,ft_lesion_generic_position,ok,세로 위치 0.422 · 가로 위치 0.538
+ex_nir_widefield,radial,ft_lesion_radial_position,ok,3.68 DD
+ex_nir_widefield,radial,ft_lesion_fovea_distance,ok,최소 0.907DD · 중앙 4.08DD
+ex_nir_widefield,regional,ft_lesion_regional_fraction,ok,0.159
+ex_nir_widefield,quadrant,ft_lesion_spatial_dispersion,ok,1.75 비트
+ex_nir_widefield,quadrant,ft_vascular_change_extent,ok,4 개
+ex_nir_widefield,distribution,ft_lesion_generic_distribution,ok,무작위 (Clark–Evans R 0.83)
+ex_nir_widefield,vessel,ft_lesion_vessel_relation,ok,평균 거리 43.5px · 혈관 10px 이내 비율 0.278
+ex_nir_widefield,landmark,ft_disc_fovea_distance,ok,2.65 DD
+ex_nir_widefield,landmark,ft_disc_fovea_angle,ok,0 °
+ex_nir_widefield,ppa,ft_ppa_area,ok,"4,197 px²"
+ex_nir_widefield,rnfl,ft_rnfl_defect_angle,ok,8 °
+ex_nir_widefield,texture,ft_image_texture,ok,대비 1.08 · 균질도 0.85 · 에너지 0.224 · 상관 0.986 · LBP 엔트로피 1.78
+ex_nir_atrophy,area,ft_atrophy_area,ok,"1,037 px²"
+ex_nir_atrophy,area,ft_atrophy_focality,ok,다초점 (초점 수 3)
+ex_nir_atrophy,fovea,ft_atrophy_foveal_involvement,ok,아니요
+ex_icga_spots,presence,ft_lesion_generic_presence,ok,예
+ex_icga_spots,presence,ft_lesion_generic_count,ok,11 개
+ex_icga_spots,sizes,ft_lesion_generic_area,ok,176 px²
+ex_icga_spots,sizes,ft_lesion_size_distribution,ok,평균 16px² · 중앙 14px² · 90백분위 38px² · 최대 49px² · 변동계수 0.859
+ex_icga_spots,shape,ft_lesion_generic_shape,ok,원형도 0.918 · 이심률 0.63 · 충실도 0.934
+ex_icga_spots,shape,ft_lesion_generic_extent,ok,13.2 px
+ex_icga_spots,position,ft_lesion_generic_position,ok,세로 위치 0.469 · 가로 위치 0.47
+ex_icga_spots,radial,ft_lesion_radial_position,ok,0.566 DD
+ex_icga_spots,radial,ft_lesion_fovea_distance,ok,최소 0.0118DD · 중앙 0.356DD
+ex_icga_spots,regional,ft_lesion_regional_fraction,ok,0.898
+ex_icga_spots,quadrant,ft_lesion_spatial_dispersion,ok,1.39 비트
+ex_icga_spots,quadrant,ft_vascular_change_extent,ok,3 개
+ex_icga_spots,distribution,ft_lesion_generic_distribution,ok,무작위 (Clark–Evans R 0.869)
+ex_icga_spots,vessel,ft_lesion_vessel_relation,ok,평균 거리 36.4px · 혈관 10px 이내 비율 0.216
+ex_icga_mnv,area,ft_mnv_lesion_area,ok,"4,241 px²"
+ex_octa_graph,density,ft_vessel_area_density,ok,0.297
+ex_octa_graph,density,ft_vessel_length_density,ok,0.206 px/px²
+ex_octa_graph,density,ft_vessel_pixel_count,ok,"혈관 22,701px · 중심선 11,392px"
+ex_octa_graph,fractal,ft_fractal_dimension,ok,1.67
+ex_octa_graph,tortuosity,ft_vessel_tortuosity,ok,1.06
+ex_octa_graph,topology,ft_vessel_topology,ok,분지점 97.2/10⁴px · 끝점 122/10⁴px
+ex_octa_graph,topology,ft_vessel_connectivity,ok,최대 연결 비율 0.873 · 연결 성분 수 108 · 분지/끝점 비 0.796
+ex_octa_graph,path,ft_vessel_path_length,ok,"평균 9.11px · 합계 3,508px · 분절 수 385"
+ex_octa_graph,regional,ft_vessel_regional_density,ok,위 0.299 · 아래 0.253 · 왼쪽 0.25 · 오른쪽 0.301 · 안쪽 고리 0.266 · 가운데 고리 0.28 · 바깥 고리 0.274
+ex_octa_np,np,ft_nonperfusion_area,ok,"5,117 px²"
+ex_uwf_hem,area,ft_hem_area,ok,726 px²
+ex_uwf_hem,quadrant,ft_hem_count_quadrant,ok,위귀 0개 · 위코 4개 · 아래코 17개 · 아래귀 5개
+ex_uwf_hem,quadrant,ft_vascular_change_extent,ok,3 개
+ex_uwf_nve,nve,ft_nve_presence,ok,예
+ex_uwf_nve,nve,ft_nve_area,ok,"16,736 px²"
+ex_uwf_nve,vh,ft_vh_obscuration,reading,판독 항목(계산 코드 없음) · 망막 시야(빨간 윤곽) 안에서 출혈·혼탁으로 혈관이 안 보이는 범위를 보고 가림 정도(없음/일부/대부분)를 판정
+ex_oct_rora,atrophy,ft_atrophy_area,ok,996 px²
+ex_oct_rora,atrophy,ft_atrophy_focality,ok,단일 초점 (초점 수 1)
+ex_oct_rora,atrophy,ft_atrophy_foveal_involvement,ok,아니요
+ex_oct_rora,growth,ft_atrophy_growth_rate,ok,8.41 px/년
+ex_oct_rora,lesion,ft_lesion_generic_presence,ok,예
+ex_oct_rora,lesion,ft_lesion_generic_area,ok,996 px²
+ex_oct_rora,lesion,ft_lesion_generic_extent,ok,46 px
+ex_oct_rora,lesion,ft_lesion_generic_change,ok,637 px²
+ex_oct_rora,distance,ft_lesion_fovea_distance,ok,최소 43.7px · 중앙 66.7px
+ex_oct_rora,texture,ft_image_texture,ok,대비 2.66 · 균질도 0.743 · 에너지 0.444 · 상관 0.976 · LBP 엔트로피 2.06
+ex_oct_polyp,count,ft_polyp_count,ok,1 개
+ex_oct_drusen_size,size,ft_drusen_area,ok,"3,731 px²"
+ex_oct_drusen_size,size,ft_drusen_max_size,ok,283 px
+ex_cfp_prh_change,area,ft_prh_area,ok,"3,400 px²"
+ex_cfp_prh_change,change,ft_lesion_generic_change,ok,-387 px²
+ex_octa_ma,ma,ft_ma_presence,ok,예
+ex_octa_ma,ma,ft_ma_count,ok,3 개
+ex_octa_nve,nve,ft_nve_presence,ok,예
+ex_octa_nve,nve,ft_nve_area,ok,56 px²
+ex_octa_nvd,nvd,ft_nvd_presence,ok,예
+ex_octa_nvd,nvd,ft_nvd_area,ok,181 px²
+ex_octa_irma,irma,ft_irma_presence,ok,예
+ex_octa_mnv,area,ft_mnv_lesion_area,ok,"4,097 px²"
+ex_octa_mnv,type,ft_mnv_type,ok,RPE 아래(1형) (RPE 아래(1형) 1 · 망막하(2형) 0 · 망막내(3형) 0)
+ex_fa_mnv_type,type,ft_mnv_type,ok,RPE 아래(1형) (RPE 아래(1형) 1 · 망막하(2형) 0 · 망막내(3형) 0)
+ex_icga_mnv_type,type,ft_mnv_type,ok,RPE 아래(1형) (RPE 아래(1형) 1 · 망막하(2형) 0 · 망막내(3형) 0)
+ex_fa_ma,ma,ft_ma_presence,ok,예
+ex_fa_ma,ma,ft_ma_count,ok,5 개
+ex_fa_ma,ma,ft_ma_distance_fovea,ok,최소 123px · 중앙 330px
+ex_icga_change,change,ft_lesion_generic_change,ok,"-5,212 px²"
+ex_icga_haller,haller,ft_haller_vessel_diameter,ok,16.1 px
+ex_uwf_laser,scar,ft_laser_scar_extent,ok,87 개
+ex_uwf_laser,scar,ft_lesion_generic_area,ok,"면적 3,719 px²"
+ex_uwf_irma,irma,ft_irma_quadrants,ok,3 개
+ex_uwf_ischemic,index,ft_ischemic_index,ok,0.301
+ex_faf_change,growth,ft_atrophy_growth_rate,ok,-2.59 px/년
+ex_faf_change,change,ft_lesion_generic_change,ok,-227 px²
+ex_faf_sdd,sdd,ft_sdd_extent,ok,228 px²
+ex_oct_sdd,sdd,ft_sdd_extent,ok,235 px²
+ex_oct_sdd,stage,ft_sdd_stage,reading,"판독 항목(계산 코드 없음) · 침착물이 RPE 위에 고여 있고 EZ를 넘지 않으면 낮은 단계, EZ를 뚫고 올라가면 높은 단계로 판정"
+ex_uwf_rd,extent,ft_rd_extent,ok,0.238
+ex_uwf_rd,macula,ft_rd_macula_status,ok,아니요
+ex_faf_laser,scar,ft_laser_scar_extent,ok,20 개
+ex_faf_laser,scar,ft_lesion_generic_area,ok,"면적 7,741 px²"
+ex_oct_bmo_area,disc,ft_disc_area,ok,"25,480 px²"
+ex_faf_ppa,ppa,ft_ppa_area,ok,901 px²
+ex_fa_irma,irma,ft_irma_presence,ok,예
+ex_fa_irma,irma,ft_irma_quadrants,ok,1 개
+ex_oct_cup,cup,ft_cup_area,ok,"14,964 px²"
+ex_oct_cup,cup,ft_rim_area,ok,"53,872 px²"
+ex_oct_cup,cup,ft_cdr_vertical,ok,0.47 (가로 단면 · BMO 지름 296 px · 컵 지름 138 px(가로 단면))
+ex_oct_ppa,ppa,ft_ppa_area,ok,"9,061 px²"
+ex_nir_erm,erm,ft_erm_extent,ok,"38,391 px²"
+ex_fa_vb,vb,ft_vb_quadrants,ok,3 개
+ex_uwf_vb,vb,ft_vb_quadrants,ok,3 개
+ex_fa_ma_change,turnover,ft_ma_turnover,ok,새로 생김 39개 · 사라짐 173개
+ex_fa_ma_change,faz,ft_faz_enlargement,ok,129 px²
+ex_oct_onh_report,isnt,ft_isnt_pattern,ok,"ISNT 순서 어긋남 (위(S) 98 · 코(N) 60 · 아래(I) 102 · 귀(T) 97, 확대 화소)"
+ex_oct_onh_report,notch,ft_cupping_notch,not_observed,관찰 안 됨
+ex_cfp_ma_retmarker,turnover,ft_ma_turnover,ok,새로 생김 7개 · 사라짐 7개

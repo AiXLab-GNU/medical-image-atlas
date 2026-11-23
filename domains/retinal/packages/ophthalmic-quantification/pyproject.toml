@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ophthalmic-quantification"
+version = "0.4.0"
+description = "Auditable fundus, OCT, mask and clinical quantitative metric engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "Pillow>=11",
+  "scipy>=1.14",
+  "scikit-image>=0.25",
+  "scikit-learn>=1.6",
+]
+
+[project.scripts]
+ophthalmic-quantification = "ophthalmic_quantification.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ophthalmic_quantification*"]

@@ -1,0 +1,48 @@
+{#- Modality coverage schematic: en-face field of view (left) and depth of the signal (right).
+    view: one entry of MODALITY_VIEWS; bands: DEPTH_BANDS; scale 2.6 px per degree, fovea at (150,150). -#}
+{% macro fov_panel(view, mini=False) -%}
+{% set s = 2.6 %}{% set fx = 150 %}{% set fy = 150 %}{% set dx = fx + 15 * s %}
+<svg class="mv-fov{% if mini %} mini{% endif %}" viewBox="0 0 340 300" role="img" aria-label="{{ view.short }} 정면 촬영 범위">
+  <defs><clipPath id="mv-clip-{{ view.key }}{{ '-m' if mini }}"><circle cx="{{ fx + 7.5 * s }}" cy="{{ fy }}" r="{{ 55 * s }}"/></clipPath></defs>
+  <circle class="mv-globe" cx="{{ fx + 7.5 * s }}" cy="{{ fy }}" r="{{ 55 * s }}"/>
+  <g clip-path="url(#mv-clip-{{ view.key }}{{ '-m' if mini }})">
+    <circle class="mv-pole" cx="{{ fx + 7.5 * s }}" cy="{{ fy }}" r="{{ 30 * s }}"/>
+    <circle class="mv-macula" cx="{{ fx }}" cy="{{ fy }}" r="{{ 9 * s }}"/>
+    <path class="mv-vessel" d="M{{ dx }},{{ fy - 4 }} C{{ dx - 14 }},{{ fy - 40 }} {{ fx - 20 }},{{ fy - 48 }} {{ fx - 55 }},{{ fy - 36 }} S{{ fx - 95 }},{{ fy - 10 }} {{ fx - 110 }},{{ fy - 4 }}"/>
+    <path class="mv-vessel" d="M{{ dx }},{{ fy + 4 }} C{{ dx - 14 }},{{ fy + 40 }} {{ fx - 20 }},{{ fy + 48 }} {{ fx - 55 }},{{ fy + 36 }} S{{ fx - 95 }},{{ fy + 10 }} {{ fx - 110 }},{{ fy + 4 }}"/>
+    <path class="mv-vessel thin" d="M{{ dx + 6 }},{{ fy - 6 }} C{{ dx + 30 }},{{ fy - 30 }} {{ dx + 60 }},{{ fy - 50 }} {{ dx + 95 }},{{ fy - 60 }}"/>
+    <path class="mv-vessel thin" d="M{{ dx + 6 }},{{ fy + 6 }} C{{ dx + 30 }},{{ fy + 30 }} {{ dx + 60 }},{{ fy + 50 }} {{ dx + 95 }},{{ fy + 60 }}"/>
+    <path class="mv-vessel thin" d="M{{ dx - 4 }},{{ fy - 2 }} C{{ fx + 20 }},{{ fy - 18 }} {{ fx + 6 }},{{ fy - 22 }} {{ fx - 8 }},{{ fy - 20 }}"/>
+    <path class="mv-vessel thin" d="M{{ dx - 4 }},{{ fy + 2 }} C{{ fx + 20 }},{{ fy + 18 }} {{ fx + 6 }},{{ fy + 22 }} {{ fx - 8 }},{{ fy + 20 }}"/>
+    <ellipse class="mv-disc" cx="{{ dx }}" cy="{{ fy }}" rx="{{ 2.8 * s }}" ry="{{ 3.3 * s }}"/>
+    <circle class="mv-fovea" cx="{{ fx }}" cy="{{ fy }}" r="2.5"/>
+    {% for f in view.fov %}{% set cls = 'mv-shape k-' ~ f.kind ~ ' n' ~ loop.index %}
+      {% if f.shape == 'circle' %}<circle class="{{ cls }}" cx="{{ fx + f.x * s }}" cy="{{ fy - f.y * s }}" r="{{ f.w / 2 * s }}"/>
+      {% elif f.shape == 'rect' %}<rect class="{{ cls }}" x="{{ fx + (f.x - f.w / 2) * s }}" y="{{ fy - (f.y + f.h / 2) * s }}" width="{{ f.w * s }}" height="{{ f.h * s }}" rx="2"/>
+      {% elif f.shape == 'line' %}<line class="{{ cls }}" x1="{{ fx + (f.x - f.w / 2) * s }}" y1="{{ fy - f.y * s }}" x2="{{ fx + (f.x + f.w / 2) * s }}" y2="{{ fy - f.y * s }}"/>{% endif %}
+    {% endfor %}
+  </g>
+  {% if not mini %}
+  {% for f in view.fov %}{% set bx = fx + (f.x - f.w / 2) * s if f.shape != 'circle' else fx + f.x * s - f.w / 2 * s * 0.71 %}{% set by = fy - ((f.y + f.h / 2) * s if f.shape == 'rect' else (f.w / 2 * s * 0.71 if f.shape == 'circle' else 0)) %}
+    <g class="mv-badge n{{ loop.index }}"><circle cx="{{ [[bx, 12]|max, 328]|min }}" cy="{{ [[by, 12]|max, 288]|min }}" r="8"/><text x="{{ [[bx, 12]|max, 328]|min }}" y="{{ [[by, 12]|max, 288]|min + 3.5 }}">{{ loop.index }}</text></g>
+  {% endfor %}
+  <text class="mv-lbl" x="{{ dx + 4 }}" y="{{ fy - 3.3 * s - 5 }}">유두</text>
+  <text class="mv-lbl" x="{{ fx }}" y="{{ fy + 9 * s + 12 }}">중심와</text>
+  <text class="mv-axis" x="8" y="296">← 이측</text><text class="mv-axis end" x="332" y="296">비측 →</text>
+  {% endif %}
+</svg>
+{%- endmacro %}
+
+{% macro depth_panel(view, bands, mini=False) -%}
+{% set h = 34 %}{% set top = 10 %}
+<svg class="mv-depth{% if mini %} mini{% endif %}" viewBox="0 0 320 {{ top * 2 + h * bands|length }}" role="img" aria-label="{{ view.short }} 신호가 오는 깊이">
+  {% for key, label, item in bands %}{% set y = top + (loop.index0) * h %}{% set st = view.depth.get(key) %}
+    <rect class="mv-band b-{{ key }}" x="34" y="{{ y }}" width="92" height="{{ h - 2 }}"/>
+    {% if st %}<rect class="mv-hit l-{{ st[0] }}" x="34" y="{{ y }}" width="92" height="{{ h - 2 }}"/>{% endif %}
+    {% if not mini %}<text class="mv-band-name{% if st %} on{% endif %}" x="136" y="{{ y + 13 }}">{{ label }}</text>
+    {% if st %}<text class="mv-band-note l-{{ st[0] }}" x="136" y="{{ y + 27 }}">{{ st[1] }}</text>{% endif %}{% endif %}
+  {% endfor %}
+  {% set deepest = namespace(i=-1) %}{% for key, label, item in bands %}{% if view.depth.get(key) and view.depth[key][0] == 'main' %}{% set deepest.i = loop.index0 %}{% endif %}{% endfor %}
+  {% if deepest.i >= 0 %}<line class="mv-beam" x1="18" y1="{{ top - 4 }}" x2="18" y2="{{ top + deepest.i * h + h / 2 }}"/><path class="mv-beam-head" d="M12,{{ top + deepest.i * h + h / 2 - 8 }} L18,{{ top + deepest.i * h + h / 2 + 2 }} L24,{{ top + deepest.i * h + h / 2 - 8 }}"/>{% endif %}
+</svg>
+{%- endmacro %}

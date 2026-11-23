@@ -1,0 +1,105 @@
+{% extends 'base.html' %}{% from '_macros.html' import item_card with context %}{% from '_schematic.html' import fundus %}{% from '_oct_schematic.html' import oct %}
+{% block head %}<script defer src="{{ url_for('static', filename='atlas-map.js') }}"></script>{% endblock %}
+
+{% macro pill(item, cls='') -%}
+<a class="pill{{ ' ' ~ cls if cls }}" href="{{ item_path(item) }}" data-sync="{{ item_path(item) }}">{{ item.name }}{% if item.abbr %}<small>{{ item.abbr }}</small>{% endif %}</a>
+{%- endmacro %}
+
+{% macro swatch(item) -%}
+{%- set line_ids = ['ana_ilm','ana_elm','ana_posterior_hyaloid','ana_choroid_sclera_junction'] -%}
+<svg class="sw" viewBox="0 0 30 12" aria-hidden="true"><rect x="0" y="0" width="30" height="12" rx="2" fill="#0b0d10"/>{% if item.id in line_ids %}<rect x="0" y="5" width="30" height="2" fill="#e6ecf1"/>{% else %}<rect x="0" y="2" width="30" height="8" fill="{{ layer_colors.get(item.id, '#888') }}"/>{% endif %}</svg>
+{%- endmacro %}
+
+{% macro layer_row(item, depth=0) -%}
+<li class="layer-row d{{ depth }}{% if item.children %} group{% endif %}"><a href="{{ item_path(item) }}" data-sync="{{ item_path(item) }}">{% if not item.children %}{{ swatch(item) }}{% endif %}<span class="lr-name">{{ item.name }}</span>{% if item.abbr %}<span class="lr-abbr">{{ item.abbr }}</span>{% endif %}</a>
+{% if item.children %}<ul>{% set ns = namespace(last='') %}{% for cid in item.children %}{% if items.get(cid) %}{% set child = items[cid] %}{% if child.subgroup and child.subgroup != ns.last %}{% set ns.last = child.subgroup %}<li class="subgroup">{{ '내망막' if child.subgroup == 'inner' else '외망막' }}<span>{{ 'ILM–INL' if child.subgroup == 'inner' else 'OPL–광수용체' }}</span><a href="/anatomy/{{ 'inner' if child.subgroup == 'inner' else 'outer' }}-retina/">두께 구간</a></li>{% endif %}{{ layer_row(child, depth + 1) }}{% endif %}{% endfor %}</ul>{% endif %}
+</li>
+{%- endmacro %}
+
+{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>해부학 지도</span></div>
+<header class="map-hero">
+  <div>
+    <h1>해부학 지도</h1>
+    <p class="lead">같은 망막을 <strong>정면(안저)</strong>과 <strong>단면(OCT)</strong>에서 봅니다. 그림의 영역이나 목록의 이름을 누르면 해당 구조로 이동합니다.</p>
+  </div>
+  <form class="map-search" method="get" action="/anatomy/" role="search">
+    <label class="visually-hidden" for="anatomy-q">구조 이름으로 찾기</label>
+    <input id="anatomy-q" type="search" name="q" value="{{ query }}" placeholder="구조 이름으로 찾기">{% if modality %}<input type="hidden" name="img" value="{{ modality }}">{% endif %}
+  </form>
+</header>
+
+<nav class="axis-tabs" aria-label="지도 갈래">
+  {% for a in axes %}<a href="{{ '/anatomy/' if filtered else '' }}#axis-{{ a.key }}"><span class="axis-num">{{ loop.index }}</span>{{ a.label }}<small>{{ a.count }}</small></a>{% endfor %}
+  <span class="tab-spacer"></span>
+  <span class="filter-label">영상으로 거르기</span>
+  {% for key,label in modalities %}<a class="mod{% if modality == key %} on{% endif %}" href="/anatomy/?img={{ key }}">{{ label }}</a>{% endfor %}
+</nav>
+
+{% if not filtered %}
+{% set face, depth, vessel, ref = axes[0], axes[1], axes[2], axes[3] %}
+<section class="map-section" id="axis-face">
+  <header class="map-section-head"><span class="axis-num big">1</span><div><h2>{{ face.label }}</h2><p>{{ face.note }}</p></div></header>
+  <div class="map-split">
+    <div class="map-figure">{{ fundus('', kids=['ana_macula','ana_optic_disc','ana_peripapillary_region','ana_vascular_arcades']) }}</div>
+    <div class="region-cards">
+      {% for root in face.roots if root.id == 'ana_posterior_pole' %}
+          {% for cid in root.children %}{% set c = items[cid] %}
+          <article class="region-card">
+            <a class="rc-title" href="{{ item_path(c) }}" data-sync="{{ item_path(c) }}">{{ c.name }}{% if c.abbr %}<small>{{ c.abbr }}</small>{% endif %}</a>
+            <p>{{ c.definition }}</p>
+            {% if c.children %}<div class="pills">{% for gid in c.children %}{% set g = items[gid] %}{{ pill(g) }}{% for hid in g.children %}{{ pill(items[hid], 'sub') }}{% endfor %}{% endfor %}</div>{% endif %}
+          </article>
+          {% endfor %}
+          <p class="region-parent">위 구조는 모두 <a href="{{ item_path(root) }}" data-sync="{{ item_path(root) }}">{{ root.name }}</a> 안에 있습니다.</p>
+      {% endfor %}
+      <div class="periphery">
+        <span class="periphery-label">후극부 바깥</span>
+        {% for root in face.roots if root.id != 'ana_posterior_pole' %}{{ pill(root) }}{% for cid in root.children %}{{ pill(items[cid], 'sub') }}{% endfor %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section" id="axis-depth">
+  <header class="map-section-head"><span class="axis-num big">2</span><div><h2>{{ depth.label }}</h2><p>{{ depth.note }}</p></div></header>
+  <div class="map-split">
+    <div class="map-figure">{{ oct('', kids=['ana_retina','ana_choroid']) }}<p class="small figure-link"><a href="/images/retinal-layers/">실제 OCT 단면에서 층 위치 보기 →</a></p></div>
+    <div class="layer-stack-wrap">
+      <ul class="layer-stack">{% for r in depth.roots %}{{ layer_row(r) }}{% endfor %}</ul>
+      <p class="muted small">색 견본은 모식도의 밝기입니다. 내망막·외망막 경계(OPL 포함 여부)는 문헌·장비마다 다릅니다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="map-pair">
+  <section class="map-section" id="axis-vessel">
+    <header class="map-section-head"><span class="axis-num big">3</span><div><h2>{{ vessel.label }}</h2><p>{{ vessel.note }}</p></div></header>
+    {% for root in vessel.roots %}
+      {% set capillaries = ['ana_superficial_capillary_plexus','ana_intermediate_capillary_plexus','ana_deep_capillary_plexus','ana_radial_peripapillary_capillaries'] %}
+      <p class="group-head"><a href="{{ item_path(root) }}" data-sync="{{ item_path(root) }}">{{ root.name }}</a></p>
+      <h3 class="mini">큰 혈관 <span>안저·FA</span></h3>
+      <div class="pills">{% for cid in root.children if cid not in capillaries %}{{ pill(items[cid]) }}{% endfor %}</div>
+      <h3 class="mini">모세혈관망 <span>OCTA</span></h3>
+      <div class="pills">{% for cid in capillaries %}{% if items.get(cid) %}{{ pill(items[cid]) }}{% endif %}{% endfor %}</div>
+    {% endfor %}
+    <p class="muted small">맥락막 혈관층은 2번 OCT 층에서 봅니다.</p>
+  </section>
+  <section class="map-section" id="axis-reference">
+    <header class="map-section-head"><span class="axis-num big">4</span><div><h2>{{ ref.label }}</h2><p>{{ ref.note }}</p></div></header>
+    <h3 class="mini">위치 기준점</h3>
+    <div class="pills">{% for r in ref.roots if r.id.startswith('ref_') %}{{ pill(r) }}{% endfor %}</div>
+    <h3 class="mini">구역 체계</h3>
+    <div class="pills">{% for r in ref.roots if r.id.startswith('zone_') %}{{ pill(r) }}{% endfor %}</div>
+    <h3 class="mini">두께 측정 구간 <span>OCT</span></h3>
+    <div class="pills">{% for r in ref.roots if r.id.startswith('ana_') %}{{ pill(r) }}{% for cid in r.children %}{{ pill(items[cid], 'sub') }}{% endfor %}{% endfor %}</div>
+  </section>
+</div>
+{% else %}
+<div class="filter-result"><p>{% if modality %}<strong>{{ (modalities|selectattr(0,'equalto',modality)|first)[1] }}</strong>에서 보이는 구조 {% endif %}{% if query %}‘{{ query }}’ 검색 {% endif %}{{ total }}개</p><a class="button secondary" href="/anatomy/">전체 지도로</a></div>
+{% for label,key,members in groups %}
+<section class="section"><div class="section-heading"><h2>{{ label }}</h2><span class="muted">{{ members|length }}</span></div>
+<div class="item-grid">{% for item in members %}{{ item_card(item) }}{% endfor %}</div></section>
+{% else %}<p class="empty">조건에 맞는 구조가 없습니다.</p>{% endfor %}
+{% endif %}
+{% endblock %}

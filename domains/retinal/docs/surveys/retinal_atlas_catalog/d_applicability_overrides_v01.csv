@@ -1,0 +1,55 @@
+target_id,feature_id,applicability,note_ko
+ana_macula,ft_macular_volume,common_applied,ETDRS 6 mm 원
+ana_macula,ft_etdrs_subfield_thickness,common_applied,
+ana_parafovea,ft_etdrs_subfield_thickness,common_applied,내측 고리
+ana_parafovea,ft_octa_vessel_density_scp,common_applied,부중심와 고리 밀도
+ana_perifovea,ft_etdrs_subfield_thickness,common_applied,외측 고리
+ana_perifovea,ft_octa_vessel_density_scp,common_applied,
+ana_foveola,ft_central_subfield_thickness,common_applied,중심점 두께는 별도 명세 필요
+ana_peripapillary_region,ft_rnfl_thickness_peripapillary,common_applied,
+ana_peripapillary_region,ft_rpc_density,common_applied,
+ana_bmo,ft_bmo_mrw,common_applied,BMO가 측정 기준점
+ana_photoreceptors,ft_os_length,common_applied,
+ana_photoreceptors,ft_ez_continuity,common_applied,
+ana_retina,ft_macular_volume,common_applied,
+ana_choroid_sclera_junction,,not_applicable,맥락막 두께의 하단 경계(자체 측정 없음)
+ana_myoid_zone,,not_investigated,OCT에서 독립 측정 정의 미조사
+ana_vitreous,,not_investigated,
+ana_posterior_hyaloid,,not_investigated,부착 범위는 유리체황반 견인 특징으로 기술
+ana_premacular_bursa,,not_investigated,
+ana_macular_pigment,,not_investigated,황반 색소 광학 밀도는 1차 영상 밖
+ana_mid_periphery,,not_investigated,
+ana_far_periphery,,not_investigated,
+ana_ora_serrata,,not_applicable,위치 기준
+ana_vortex_vein,,not_investigated,
+ana_lamina_cribrosa,,not_investigated,
+ana_sclera,,not_investigated,
+ana_central_retinal_artery,,not_investigated,
+ana_central_retinal_vein,,not_investigated,
+ana_vascular_arcades,,not_investigated,기존 측정은 형태 근사(proxy)만 있음
+ana_av_crossing,,not_investigated,교차 현상은 병변 특징으로 기술
+ana_cilioretinal_artery,,not_investigated,
+ana_intermediate_capillary_plexus,,not_investigated,분리 가능 장비 한정
+ana_choroid,ft_layer_thickness_generic,common_applied,BM–CSJ 구간
+les_nv_iris,,not_applicable,망막 영상 범위 밖
+les_generic,,not_applicable,공통 특징의 대상 자체
+les_venous_beading,ft_lesion_generic_presence,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_generic_count,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_generic_area,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_size_distribution,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_generic_shape,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_spatial_dispersion,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_radial_position,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_fovea_distance,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_vessel_relation,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_venous_beading,ft_lesion_regional_fraction,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_generic_presence,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_generic_count,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_generic_area,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_size_distribution,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_generic_shape,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_spatial_dispersion,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_radial_position,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_fovea_distance,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_vessel_relation,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
+les_neovascularization_pooled,ft_lesion_regional_fraction,common_applied,주석 mask에 공통 연산 적용(E046; 임상 정의 측정 아님)
