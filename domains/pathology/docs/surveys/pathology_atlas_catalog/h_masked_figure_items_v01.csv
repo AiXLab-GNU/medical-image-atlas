@@ -21,3 +21,17 @@ gp4,les_fused_glands
 cribriform,les_cribriform
 gp5,les_gleason_pattern_5
 gp5,les_solid_sheets
+ihc_basal,ana_basal_cell_layer
+ihc_basal,ana_benign_gland
+ihc_amacr,les_adenocarcinoma
+ihc_hgpin,les_hgpin
+ihc_idc,les_intraductal_carcinoma
+he_ihc_pair,les_adenocarcinoma
+he_ihc_pair,ana_basal_cell_layer
+slide_patterns,les_gleason_pattern_4
+slide_patterns,les_gleason_pattern_3
+par_gg0,ana_benign_gland
+par_gg2,les_adenocarcinoma
+par_gg3,les_adenocarcinoma
+par_gg4,les_adenocarcinoma
+par_gg5,les_adenocarcinoma

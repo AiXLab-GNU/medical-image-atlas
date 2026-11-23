@@ -20,7 +20,7 @@ from scipy import ndimage as ndi
 import pathology_atlas_registry as registry
 
 sys.path.insert(0, str(registry.MEASURES_SRC))
-from pathology_measures import glands, nuclei, texture, tissue  # noqa: E402
+from pathology_measures import glands, ihc, nuclei, texture, tissue  # noqa: E402
 
 warnings.filterwarnings('ignore')
 Image.MAX_IMAGE_PIXELS = None
@@ -77,7 +77,7 @@ def fmt(value, unit):
         return '있음' if value else '없음'
     u = {'px': 'px', 'px2': 'px²', 'mm': 'mm', 'mm2': 'mm²', 'um2': 'µm²', '%': '%', 'count': '개', 'index': '',
          'ratio': '', 'OD': 'OD', 'presence': '', 'count/mm2': '/mm²', 'count/10^4 px2': '/10⁴px²',
-         'count/10^6 px2': '/10⁶px²'}.get(unit, unit)
+         'count/10^6 px2': '/10⁶px²', 'category': ''}.get(unit, unit)
     if isinstance(value, float):
         text = f'{value:,.0f}' if abs(value) >= 1000 else (f'{value:,.1f}' if abs(value) >= 10 else f'{value:.3g}')
     else:
@@ -104,9 +104,10 @@ def save(im, directory, name, jpg=False):
 
 # ------------------------------------------------------------------ inputs
 
-def precise_window(image_name, cls, level=1, side=1400, rank=0):
+def precise_window(image_name, cls, level=1, side=1400, rank=0, kind='image'):
     """RGB, label map and µm/px of a window at ``level`` centred on the ``rank``-th largest component of ``cls``."""
-    coarse = registry.precise_level(image_name, 4, 'mask')
+    mask_kind = 'ihc_mask' if kind == 'ihc' else 'mask'
+    coarse = registry.precise_level(image_name, 4, mask_kind)
     labels, n = ndi.label(coarse == cls)
     if n == 0:
         raise ValueError(f'{image_name}: no class {cls}')
@@ -114,12 +115,12 @@ def precise_window(image_name, cls, level=1, side=1400, rank=0):
     k = int(np.argsort(sizes)[::-1][min(rank, n - 1)]) + 1
     cy, cx = ndi.center_of_mass(labels == k)
     f = 2 ** (4 - level)
-    H, W = registry.precise_level_shape(image_name, level)[:2]
+    H, W = registry.precise_level_shape(image_name, level, kind)[:2]
     r0 = int(min(max(cy * f - side / 2, 0), H - side))
     c0 = int(min(max(cx * f - side / 2, 0), W - side))
     win = (r0, r0 + side, c0, c0 + side)
-    rgb = registry.precise_level(image_name, level, 'image', win)[..., :3]
-    lab = registry.precise_level(image_name, level, 'mask', win)
+    rgb = registry.precise_level(image_name, level, kind, win)[..., :3]
+    lab = registry.precise_level(image_name, level, mask_kind, win)
     return rgb, lab, registry.precise_mpp(image_name) * (2 ** level), win
 
 
@@ -153,9 +154,10 @@ def masked(fid, items, label, caption, base_im, mask, tone, src, source_file, tr
                          source_file, transform, legend)
 
 
-def example_head(eid, region, title, caption, base_im, src, source_file, builder):
+def example_head(eid, region, title, caption, base_im, src, source_file, builder, modality='he'):
     name = save(base_im, registry.EXAMPLE_DIR, f'{eid}.jpg', jpg=True)
-    return {'id': eid, 'modality': 'he', 'modality_label': 'H&E', 'region': region, 'title': f'H&E · {title}',
+    label = {'he': 'H&E', 'ihc': 'IHC'}[modality]
+    return {'id': eid, 'modality': modality, 'modality_label': label, 'region': region, 'title': f'{label} · {title}',
             'source': src['_id'], 'source_file': source_file, 'caption': caption, 'builder': builder, 'base': name,
             'width': base_im.size[0], 'height': base_im.size[1], 'layers': [], 'credit': src['credit'],
             'url': src['url'], 'license': src['license'], 'license_url': src['license_url']}
@@ -323,6 +325,71 @@ def sicap_example(eid, column, region, title, items, fig_id, fig_label, fig_capt
     return ex, [fig]
 
 
+IHC_NOTE = ('HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준'
+            '(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다.')
+
+
+def ihc_example(eid, name, cls, region, title, items, fig_id, fig_label, fig_caption, reading_rows=()):
+    rgb, lab, mpp, win = precise_window(name, cls, 1, 1200, 0, kind='ihc')
+    base, size, s = display(rgb)
+    gs, isup, dx = meta(name)
+    ex = example_head(eid, region, title, f'PRECISE {name}(글리슨 {gs}) IHC 슬라이드의 {CLASS_KO[cls]} 부위입니다(같은 조직의 연속 절편 · 화소 {mpp:.2f} µm). '
+                      + fig_caption + ' ' + IHC_NOTE + ' 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.', base, SRC_P, f'{name}_hmwck-amacr.ome.tif', 'ihc_example', 'ihc')
+    g = lab == cls
+    g_d = resize_mask(g, size)
+    layer(ex, 'region', f'{CLASS_KO[cls]} 범위(주석)', CLASS_TONE[cls], 'tissue.lesion_area', 'IHC 슬라이드의 공급자 주석 면적',
+          [val(tissue.presence(g)), val(tissue.lesion_area(g, mpp))], overlay(size, outlines=[(g_d, CLASS_TONE[cls], 3)]))
+    cov = ihc.basal_coverage(rgb, g)
+    rim = cov.detail.pop('rim', np.zeros(g.shape, bool))
+    brown = ihc.brown_mask(rgb)
+    layer(ex, 'basal', '기저세포 둘레 비율', 'cyan', 'ihc.basal_coverage', '샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음',
+          [val(cov), val(ihc.basal_cell_presence(cov))],
+          overlay(size, fills=[(resize_mask(rim, size), 'white', 70), (resize_mask(brown & rim, size), 'yellow', 235)]))
+    fr = ihc.amacr_fraction(rgb, g)
+    layer(ex, 'amacr', 'AMACR 양성 면적', 'magenta', 'ihc.amacr_fraction', '주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성',
+          [val(fr), val(ihc.amacr_positivity(fr))], overlay(size, fills=[(resize_mask(ihc.red_mask(rgb) & g, size), 'green', 210)]))
+    if reading_rows:
+        layer(ex, 'read', '판독', 'white', '', '공급자 주석 class', [reading(f, t) for f, t in reading_rows],
+              overlay(size, texts=[((10, 10), ' · '.join(t for _, t in reading_rows), 'white')]))
+    fig = masked(fig_id, items, fig_label, fig_caption + f' PRECISE {name} IHC · 화소 {mpp:.2f} µm.', base,
+                 resize_mask(brown & ndi.binary_dilation(g, iterations=15), size) if cls in (2, 4, 5) else resize_mask(ihc.red_mask(rgb) & g, size),
+                 'cyan' if cls in (2, 4, 5) else 'green', SRC_P, f'{name}_hmwck-amacr.ome.tif', f'level 1 IHC 창({win[2]},{win[0]})–({win[3]},{win[1]}) 축소')
+    return ex, [fig]
+
+
+def he_ihc_pair():
+    name = 'sub-23_ses-01'
+    he = registry.precise_level(name, 4)[..., :3]
+    ih = registry.precise_level(name, 4, 'ihc')[..., :3]
+    he_m = registry.precise_level(name, 4, 'mask')
+    ih_m = registry.precise_level(name, 4, 'ihc_mask')
+    tiles, masks = [], []
+    for rgb, lab in ((he, he_m), (ih, ih_m)):
+        h, w = lab.shape
+        rgb = rgb[:h, :w]
+        t = tissue.tissue_mask(rgb, min_object_px=200)
+        rows, cols = np.nonzero(t | (lab > 0))
+        r0, r1, c0, c1 = rows.min(), rows.max(), cols.min(), cols.max()
+        tiles.append(Image.fromarray(rgb[r0:r1, c0:c1]))
+        masks.append(lab[r0:r1, c0:c1] == 1)
+    hgt = 640
+    ims = [im.resize((max(int(im.width * hgt / im.height), 1), hgt), Image.LANCZOS) for im in tiles]
+    gap = 14
+    canvas = Image.new('RGB', (ims[0].width + gap + ims[1].width, hgt), (255, 255, 255))
+    canvas.paste(ims[0], (0, 0))
+    canvas.paste(ims[1], (ims[0].width + gap, 0))
+    d = ImageDraw.Draw(canvas)
+    d.text((10, 8), 'H&E', fill=(40, 20, 60), font=_font(20))
+    d.text((ims[0].width + gap + 10, 8), 'HMWCK·AMACR', fill=(40, 20, 60), font=_font(20))
+    full = np.zeros((hgt, canvas.width), bool)
+    full[:, :ims[0].width] = resize_mask(masks[0], ims[0].size)
+    full[:, ims[0].width + gap:] = resize_mask(masks[1], ims[1].size)
+    return masked('he_ihc_pair', ['les_adenocarcinoma', 'ana_basal_cell_layer'], '종양(전문가 주석, 두 슬라이드 각각)',
+                  f'같은 생검의 연속 절편 H&E(왼쪽)와 HMWCK·AMACR IHC(오른쪽)입니다(PRECISE {name}, 글리슨 3+4). IHC에서 종양 샘은 분홍(AMACR)이고 '
+                  '양성 샘 둘레에는 갈색 기저세포가 남아 있습니다. 두 절편은 정합하지 않았습니다.', canvas, full, 'red', SRC_P,
+                  f'{name}_h-e.ome.tif; {name}_hmwck-amacr.ome.tif', '두 슬라이드의 1/16 축소 영상을 높이 640 px로 나란히 붙임', outline_only=True)
+
+
 def main() -> int:
     for d in (registry.MASKED_DIR, registry.EXAMPLE_DIR):
         d.mkdir(parents=True, exist_ok=True)
@@ -366,6 +433,28 @@ def main() -> int:
         ex, f = sicap_example(*args, **kw)
         examples.append(ex)
         figs += f
+    for args, kw in [
+        (('ex_ihc_benign', 'sub-23_ses-01', 2, '양성 샘', '양성 샘(IHC)', ['ana_basal_cell_layer', 'ana_benign_gland'], 'ihc_basal',
+          '기저세포(HMWCK 갈색)', '양성 샘 둘레의 갈색 기저세포입니다.'), {}),
+        (('ex_ihc_tumor', 'sub-23_ses-01', 1, '종양', '종양(IHC)', ['les_adenocarcinoma'], 'ihc_amacr', 'AMACR 양성 종양 샘(분홍)',
+          '기저세포 없이 AMACR(분홍)이 양성인 암 샘입니다.'), {}),
+        (('ex_ihc_hgpin', 'sub-01_ses-03', 4, 'HGPIN', '고등급 PIN(IHC)', ['les_hgpin'], 'ihc_hgpin', 'HGPIN 둘레 기저세포(갈색)',
+          'AMACR 양성이지만 둘레에 기저세포가 조각으로 남은 HGPIN입니다. 기저세포가 조각나 있어 이 간이 둘레 지수는 낮게(“없음”) 나옵니다 — '
+          '침윤암(0%)과 가르려면 판독의가 조각난 기저세포를 직접 확인해야 합니다.'), {'reading_rows': (('ft_lesion_generic_presence', 'HGPIN (공급자 주석)'),)}),
+        (('ex_ihc_idc', 'sub-02_ses-01', 5, '관내암', '관내암(IHC)', ['les_intraductal_carcinoma'], 'ihc_idc', '관내암 둘레 기저세포(갈색)',
+          '관을 채운 암세포 둘레에 기저세포가 남은 관내암입니다.'), {'reading_rows': (('ft_idc_presence', '있음 (공급자 주석)'),)}),
+    ]:
+        ex, f = ihc_example(*args, **kw)
+        examples.append(ex)
+        figs += f
+    figs.append(he_ihc_pair())
+    import build_pathology_grading as grading_build
+    helpers_s = (overlay, resize_mask, save, val, reading, example_head, layer, masked, SRC_S)
+    src_par = dict(registry.source_record('par'), _id='par')
+    helpers_p = (overlay, resize_mask, save, val, reading, example_head, layer, masked, src_par)
+    g_examples, g_figs, _ = grading_build.build(helpers_s, helpers_p)
+    examples += g_examples
+    figs += g_figs
     for fig in figs:
         fig['base_sha256'] = registry.sha256(registry.MASKED_DIR / fig['base'])
         fig['overlay_sha256'] = registry.sha256(registry.MASKED_DIR / fig['overlay'])

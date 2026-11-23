@@ -167,6 +167,26 @@
      ],
      "type": "diagnostic_criterion",
      "version": "—"
+    },
+    {
+     "condition": "HGPIN은 기저세포가 남아 있음(조각날 수 있음)",
+     "finding": "ft_basal_cell_coverage",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    },
+    {
+     "condition": "HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름)",
+     "finding": "ft_amacr_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
     }
    ],
    "scope": "primary",
@@ -205,7 +225,8 @@
         "les_intraductal_carcinoma",
         "les_comedonecrosis",
         "ft_basal_cell_presence",
-        "ft_idc_presence"
+        "ft_idc_presence",
+        "ft_basal_cell_coverage"
        ],
        "grade": "관내암",
        "logic": "any",
@@ -269,6 +290,16 @@
       "src_guo_2006"
      ],
      "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "관내암은 기저세포 둘레가 남아 있음",
+     "finding": "ft_basal_cell_coverage",
+     "review": "source_linked",
+     "sources": [
+      "src_guo_2006"
+     ],
+     "type": "diagnostic_criterion",
      "version": "—"
     }
    ],
@@ -519,7 +550,9 @@
         "ft_nucleolus_prominence",
         "les_perineural_invasion",
         "ft_gland_circularity",
-        "ft_amacr_positivity"
+        "ft_amacr_positivity",
+        "ft_basal_cell_coverage",
+        "ft_amacr_fraction"
        ],
        "grade": "침윤암을 지지",
        "logic": "any",
@@ -775,6 +808,26 @@
      ],
      "type": "characteristic_nonspecific",
      "version": "—"
+    },
+    {
+     "condition": "침윤암 샘은 기저세포 둘레가 거의 없음(IHC)",
+     "finding": "ft_basal_cell_coverage",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
+    },
+    {
+     "condition": "암 샘은 AMACR 적색 양성 면적이 넓음",
+     "finding": "ft_amacr_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
     }
    ],
    "scope": "primary",
@@ -809,6 +862,42 @@
   }
  },
  "features": {
+  "ft_amacr_fraction": {
+   "axis": "color_signal",
+   "definition": "영역 중 AMACR(적색) 양성 화소의 비율",
+   "id": "ft_amacr_fraction",
+   "imaging": [
+    "img_ihc_hmwck_amacr"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "ihc_region"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.ihc.amacr_fraction",
+     "input": "ihc_region",
+     "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
+     "method": "red-chromogen pixels ÷ region pixels",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "AMACR 양성 면적 비율",
+   "output": "ratio",
+   "region": "les_adenocarcinoma",
+   "requirements": "HMWCK·AMACR 이중 염색",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "les_adenocarcinoma",
+   "type": "quantitative",
+   "unit": "%"
+  },
   "ft_amacr_positivity": {
    "axis": "color_signal",
    "definition": "종양 의심 샘의 AMACR 과발현(적색) 여부",
@@ -817,13 +906,23 @@
     "img_ihc_hmwck_amacr"
    ],
    "impl": {
-    "count": 0,
+    "count": 1,
     "examples": [],
-    "inputs": [],
-    "level": "reading",
-    "package": null,
-    "sources": [],
-    "usable": 0
+    "inputs": [
+     "ihc_region"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.ihc.amacr_positivity",
+     "input": "ihc_region",
+     "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
+     "method": "AMACR fraction ≥ 5 % (service cut-off)",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
    },
    "name": "AMACR 양성",
    "output": "presence",
@@ -871,6 +970,42 @@
    "type": "quantitative",
    "unit": "%"
   },
+  "ft_basal_cell_coverage": {
+   "axis": "arrangement_continuity",
+   "definition": "샘 둘레 띠 중 HMWCK(갈색) 양성 화소의 비율(양성 샘은 높고 침윤암은 0에 가까움)",
+   "id": "ft_basal_cell_coverage",
+   "imaging": [
+    "img_ihc_hmwck_amacr"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "ihc_region"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.ihc.basal_coverage",
+     "input": "ihc_region",
+     "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
+     "method": "brown (DAB OD > 0.03) share of a 30-px gland rim, median over glands",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "기저세포 둘레 비율",
+   "output": "ratio",
+   "region": "ana_basal_cell_layer",
+   "requirements": "HMWCK·AMACR 이중 염색 · 샘 경계",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_basal_cell_layer",
+   "type": "quantitative",
+   "unit": "%"
+  },
   "ft_basal_cell_presence": {
    "axis": "presence_type",
    "definition": "샘 둘레에 기저세포가 있는지(없으면 침윤암)",
@@ -880,13 +1015,23 @@
     "img_he_hpf"
    ],
    "impl": {
-    "count": 0,
+    "count": 1,
     "examples": [],
-    "inputs": [],
-    "level": "reading",
-    "package": null,
-    "sources": [],
-    "usable": 0
+    "inputs": [
+     "ihc_region"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.ihc.basal_cell_presence",
+     "input": "ihc_region",
+     "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
+     "method": "basal coverage ≥ 5 % (service cut-off)",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
    },
    "name": "기저세포 유무",
    "output": "presence",
@@ -1143,13 +1288,23 @@
     "img_he_wsi"
    ],
    "impl": {
-    "count": 0,
+    "count": 1,
     "examples": [],
-    "inputs": [],
-    "level": "reading",
-    "package": null,
-    "sources": [],
-    "usable": 0
+    "inputs": [
+     "pattern_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.grading.gleason_from_areas",
+     "input": "pattern_mask",
+     "input_label": "글리슨 패턴 주석과 종양 범위",
+     "method": "ISUP 2014 biopsy rule from pattern areas",
+     "reference": "ISUP 2014"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
    },
    "name": "글리슨 점수",
    "output": "category",
@@ -1233,13 +1388,23 @@
     "img_he_wsi"
    ],
    "impl": {
-    "count": 0,
+    "count": 1,
     "examples": [],
-    "inputs": [],
-    "level": "reading",
-    "package": null,
-    "sources": [],
-    "usable": 0
+    "inputs": [
+     "pattern_mask"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.grading.grade_group",
+     "input": "pattern_mask",
+     "input_label": "글리슨 패턴 주석과 종양 범위",
+     "method": "Gleason score → grade group 1–5",
+     "reference": "Epstein 2016"
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
    },
    "name": "ISUP 등급군",
    "output": "category",
@@ -2108,6 +2273,21 @@
      "review": "source_linked",
      "type": "qualitative",
      "unit": "presence"
+    },
+    {
+     "axis": "arrangement_continuity",
+     "common": false,
+     "definition": "샘 둘레 띠 중 HMWCK(갈색) 양성 화소의 비율(양성 샘은 높고 침윤암은 0에 가까움)",
+     "id": "ft_basal_cell_coverage",
+     "imaging": [
+      "img_ihc_hmwck_amacr"
+     ],
+     "name": "기저세포 둘레 비율",
+     "region": "ana_basal_cell_layer",
+     "requirements": "HMWCK·AMACR 이중 염색 · 샘 경계",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
     }
    ],
    "group": "layer",
@@ -3067,6 +3247,28 @@
      ],
      "type": "characteristic_nonspecific",
      "version": "—"
+    },
+    {
+     "condition": "암 샘은 AMACR 적색 양성 면적이 넓음",
+     "disease": "dis_prostate_adenocarcinoma",
+     "finding": "ft_amacr_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
+    },
+    {
+     "condition": "HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름)",
+     "disease": "dis_hgpin",
+     "finding": "ft_amacr_fraction",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "characteristic_nonspecific",
+     "version": "—"
     }
    ],
    "existing_measures": 0,
@@ -3131,6 +3333,21 @@
      "review": "source_linked",
      "type": "qualitative",
      "unit": "presence"
+    },
+    {
+     "axis": "color_signal",
+     "common": false,
+     "definition": "영역 중 AMACR(적색) 양성 화소의 비율",
+     "id": "ft_amacr_fraction",
+     "imaging": [
+      "img_ihc_hmwck_amacr"
+     ],
+     "name": "AMACR 양성 면적 비율",
+     "region": "les_adenocarcinoma",
+     "requirements": "HMWCK·AMACR 이중 염색",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "%"
     },
     {
      "axis": "presence_type",
@@ -5692,6 +5909,12 @@
    "name": "부분 위축 함정(Oppenheimer 1998)",
    "url": "https://pubmed.ncbi.nlm.nih.gov/9537471/",
    "verification": "pmid_checked"
+  },
+  "src_par_2026": {
+   "citation": "Muhammad Ali P et al. The PAR dataset: Prostate biopsy whole slide images from an underrepresented Middle Eastern population. Sci Data 2026;13:1061",
+   "name": "PAR 데이터셋(Sci Data 2026)",
+   "url": "https://doi.org/10.1038/s41597-026-07798-9",
+   "verification": "doi_checked"
   },
   "src_precise_2026": {
    "citation": "Calapaquí Terán AK · González Bernad AA · Sánchez Magdaleno L et al. PRECISE — PRostate Expert-annotated Contiguous IHC–H&E Serial sEctions. Zenodo 2026",

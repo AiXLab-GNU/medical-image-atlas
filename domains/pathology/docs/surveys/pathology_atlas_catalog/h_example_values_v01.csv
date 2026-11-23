@@ -92,3 +92,36 @@ ex_he_gp5,patterns,ft_pattern5_percent,ok,100.0 %
 ex_he_gp5,nuclei,ft_nuclear_density,ok,34.2 /10⁴px²
 ex_he_gp5,nuclei,ft_nuclear_area,ok,29.3 px²
 ex_he_gp5,nuclei,ft_nuclear_area_variation,ok,0.771
+ex_ihc_benign,region,ft_lesion_generic_presence,ok,있음
+ex_ihc_benign,region,ft_lesion_generic_area,ok,0.204 mm²
+ex_ihc_benign,basal,ft_basal_cell_coverage,ok,24.2 %
+ex_ihc_benign,basal,ft_basal_cell_presence,ok,있음
+ex_ihc_benign,amacr,ft_amacr_fraction,ok,0 %
+ex_ihc_benign,amacr,ft_amacr_positivity,ok,없음
+ex_ihc_tumor,region,ft_lesion_generic_presence,ok,있음
+ex_ihc_tumor,region,ft_lesion_generic_area,ok,0.148 mm²
+ex_ihc_tumor,basal,ft_basal_cell_coverage,ok,0 %
+ex_ihc_tumor,basal,ft_basal_cell_presence,ok,없음
+ex_ihc_tumor,amacr,ft_amacr_fraction,ok,65.5 %
+ex_ihc_tumor,amacr,ft_amacr_positivity,ok,있음
+ex_ihc_hgpin,region,ft_lesion_generic_presence,ok,있음
+ex_ihc_hgpin,region,ft_lesion_generic_area,ok,0.159 mm²
+ex_ihc_hgpin,basal,ft_basal_cell_coverage,ok,2.2 %
+ex_ihc_hgpin,basal,ft_basal_cell_presence,ok,없음
+ex_ihc_hgpin,amacr,ft_amacr_fraction,ok,50.0 %
+ex_ihc_hgpin,amacr,ft_amacr_positivity,ok,있음
+ex_ihc_hgpin,read,ft_lesion_generic_presence,reading,HGPIN (공급자 주석)
+ex_ihc_idc,region,ft_lesion_generic_presence,ok,있음
+ex_ihc_idc,region,ft_lesion_generic_area,ok,0.118 mm²
+ex_ihc_idc,basal,ft_basal_cell_coverage,ok,54.1 %
+ex_ihc_idc,basal,ft_basal_cell_presence,ok,있음
+ex_ihc_idc,amacr,ft_amacr_fraction,ok,0.1 %
+ex_ihc_idc,amacr,ft_amacr_positivity,ok,없음
+ex_ihc_idc,read,ft_idc_presence,reading,있음 (공급자 주석)
+ex_he_slide_grading,patterns,ft_pattern3_percent,ok,10.1 %
+ex_he_slide_grading,patterns,ft_pattern4_percent,ok,88.3 %
+ex_he_slide_grading,patterns,ft_pattern5_percent,ok,1.6 %
+ex_he_slide_grading,grade,ft_gleason_score,ok,4+5
+ex_he_slide_grading,grade,ft_isup_grade_group,ok,5
+ex_he_slide_grading,provider,ft_gleason_score,reading,4+5 (공급자)
+ex_he_slide_grading,provider,ft_isup_grade_group,reading,5 (공급자)

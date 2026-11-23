@@ -5,7 +5,7 @@ import unittest
 
 import numpy as np
 
-from pathology_measures import REGISTRY, glands, nuclei, texture, tissue
+from pathology_measures import REGISTRY, glands, grading, ihc, nuclei, texture, tissue
 
 
 def disk(shape, centre, r):
@@ -58,6 +58,29 @@ class MeasuresTest(unittest.TestCase):
         self.assertGreater(len(n.props), 100)
         self.assertAlmostEqual(nuclei.mean_area(n).value, 29, delta=10)
         self.assertGreater(nuclei.hematoxylin_od(img, region).value, 0)
+
+    def test_grading(self):
+        self.assertEqual(grading.gleason_from_areas({3: 70, 4: 30}).value, '3+4')
+        self.assertEqual(grading.gleason_from_areas({4: 80, 3: 18, 5: 2}).value, '4+5')     # biopsy: highest remaining
+        self.assertEqual(grading.gleason_from_areas({4: 97, 3: 3}, specimen='prostatectomy').value, '4+4')
+        self.assertEqual(grading.gleason_from_areas({3: 100}).value, '3+3')
+        self.assertEqual(grading.gleason_from_areas({}).status, 'not_observed')
+        self.assertEqual([grading.grade_group(s).value for s in ('3+3', '3+4', '4+3', '4+4', '4+5')], [1, 2, 3, 4, 5])
+        cats = [0, 1, 2]
+        self.assertAlmostEqual(grading.kappa([0, 1, 2, 2], [0, 1, 2, 2], cats), 1.0)
+        self.assertLess(grading.kappa([0, 1, 2, 2], [2, 2, 0, 1], cats, 'quadratic'), 0)
+
+    def test_ihc(self):
+        img = np.full((120, 120, 3), 240, np.uint8)
+        gland = disk(img.shape[:2], (60, 60), 30)
+        rim = gland & ~disk(img.shape[:2], (60, 60), 26)
+        img[rim] = (120, 75, 40)                                   # brown basal rim
+        img[disk(img.shape[:2], (60, 60), 15)] = (225, 90, 160)   # pink-red AMACR centre
+        cov = ihc.basal_coverage(img, gland)
+        self.assertGreater(cov.value, 10)
+        self.assertEqual(ihc.basal_coverage(np.full((120, 120, 3), 240, np.uint8), gland).value, 0.0)
+        self.assertTrue(ihc.basal_cell_presence(cov).value)
+        self.assertTrue(ihc.amacr_positivity(ihc.amacr_fraction(img, gland)).value)
 
     def test_texture(self):
         flat = np.full((80, 80, 3), 128, np.uint8)

@@ -29,7 +29,7 @@ MODALITY_VIEWS = {
 }
 MODALITY_FIGURES = {
     'he': ['core_tumor', 'benign_glands', 'gp4', 'cribriform'],
-    'ihc': [],
+    'ihc': ['he_ihc_pair', 'ihc_basal', 'ihc_amacr', 'ihc_hgpin'],
 }
 OBS_LABEL = {'direct': '직접 관찰', 'limited': '제한적', 'none': '—'}
 REVIEW_LABEL = {'draft': '서비스 초안', 'needs_source': '근거 필요', 'source_linked': '출처 연결',
@@ -74,14 +74,14 @@ SCHEMATIC_ITEMS = {
     'les_solid_sheets', 'les_perineural_invasion', 'les_hgpin', 'les_intraductal_carcinoma', 'les_adenocarcinoma'}
 UNIT_TEXT = [('count/mm2', '개/mm²'), ('count/area', '개/면적'), ('mm2', 'mm²'), ('um2', 'µm²'), ('px2', 'px²'),
              ('category', '범주'), ('presence', '있음/없음'), ('ratio', '비율'), ('index', '지수'), ('count', '개')]
-IHC_REASON = 'PRECISE의 HMWCK·AMACR IHC 슬라이드(원 zip 52 GB 안)를 아직 받지 않아 IHC 예시가 없음'
+IHC_REASON = 'IHC에서 이 측정을 보여 줄 주석 예시를 아직 만들지 않음'
 PENDING_REASON = {
-    'ft_basal_cell_presence': 'H&E만으로는 기저세포를 확실히 볼 수 없음(IHC 필요)',
+    'ft_basal_cell_presence': 'H&E만으로는 기저세포를 확실히 볼 수 없음(IHC 탭 예시 참고)',
+    'ft_basal_cell_coverage': 'H&E만으로는 기저세포를 확실히 볼 수 없음(IHC 탭 예시 참고)',
     'ft_nucleolus_prominence': '40× 고배율 판독 항목 · 계산 함수가 아직 없음',
     'ft_pni_presence': '신경주위 침범 주석이 있는 공개 CC BY 영상이 없음',
     'ft_epe_presence': '근치 절제 표본(피막 포함)의 공개 CC BY 영상이 없음',
     'ft_gland_count': '샘 하나하나의 주석이 있는 영상이 양성 샘 예시뿐',
-    'ft_amacr_positivity': IHC_REASON,
 }
 
 
@@ -126,7 +126,7 @@ def pending_by_modality(features: dict, items: dict, examples: list[dict]) -> di
                 continue
             target = items.get(f.get('target') or '')
             impl = f.get('impl', {})
-            reason = IHC_REASON if mod == 'ihc' else PENDING_REASON.get(f['id'], '')
+            reason = PENDING_REASON.get(f['id']) or (IHC_REASON if mod == 'ihc' else '')
             groups.setdefault(target['name'] if target else '공통', []).append({
                 'feature': f, 'target': target, 'level': impl.get('level', 'none'),
                 'function': (impl.get('package') or {}).get('function', ''), 'elsewhere': anywhere.get(f['id']),
@@ -156,10 +156,13 @@ def load_content() -> dict:
     measure_files = {name for ex in examples for name in [ex['base']] + [la['file'] for la in ex['layers']]}
     by_slug = {(item['section'], item['slug']): item for item in items.values()}
     diseases = atlas['diseases']
+    grading_path = DATA / 'grading.json'
+    grading_data = json.loads(grading_path.read_text(encoding='utf-8')) if grading_path.is_file() else None
+    masked_by_id = {f['id']: f for f in masked}
     return {'atlas': atlas, 'items': items, 'masked': masked, 'masked_by_item': masked_by_item,
             'masked_files': masked_files, 'measure_examples': examples, 'measure_files': measure_files,
             'by_slug': by_slug, 'diseases': diseases, 'disease_by_slug': {d['slug']: d for d in diseases.values()},
-            'measure_diseases': measurement_diseases(atlas)}
+            'measure_diseases': measurement_diseases(atlas), 'grading': grading_data, 'masked_by_id': masked_by_id}
 
 
 def item_path(item: dict) -> str:
@@ -358,8 +361,13 @@ def create_app(config: dict | None = None) -> Flask:
                 ladders.append(dict(scheme, steps=steps, owner=node, inherited=node is not disease,
                                     imaging_names=[imaging_names.get(i, i) for i in scheme['imaging']]))
             node = content['diseases'].get(node['parent']) if node['parent'] else None
+        grading_view = None
+        if content['grading'] and disease['id'] == 'dis_prostate_adenocarcinoma':
+            g = content['grading']
+            grading_view = dict(g, gallery=[dict(e, fig=content['masked_by_id'][e['figure']]) for e in g['par_examples']
+                                            if e['figure'] in content['masked_by_id']])
         return render_template('disease.html', active='diseases', title=disease['name'], disease=disease,
-                               grouped=grouped, diseases=content['diseases'], ladders=ladders)
+                               grouped=grouped, diseases=content['diseases'], ladders=ladders, grading=grading_view)
 
     def modality_summary(key):
         view = dict(MODALITY_VIEWS[key], key=key)

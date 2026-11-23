@@ -69,6 +69,7 @@ SCHEMA = {
                                                                        'via_item_id': (ITEM, False, False)}),
     'i_example_coverage_v01.csv': (['feature_id', 'modality'], {'feature_id': (('feature',), False, True),
                                                                 'example_id': (('example',), False, False)}),
+    'i_grading_agreement_v01.csv': (['source_id', 'comparison'], {'source_id': (('image_source',), False, True)}),
 }
 
 

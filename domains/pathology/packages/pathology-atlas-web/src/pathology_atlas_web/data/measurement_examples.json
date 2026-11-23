@@ -1006,6 +1006,441 @@
    "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
    "license": "CC BY 4.0",
    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ihc_benign",
+   "modality": "ihc",
+   "modality_label": "IHC",
+   "region": "양성 샘",
+   "title": "IHC · 양성 샘(IHC)",
+   "source": "precise",
+   "source_file": "sub-23_ses-01_hmwck-amacr.ome.tif",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 양성 샘 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 양성 샘 둘레의 갈색 기저세포입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "builder": "ihc_example",
+   "base": "ex_ihc_benign.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "region",
+     "label": "양성 샘 범위(주석)",
+     "tone": "green",
+     "function": "tissue.lesion_area",
+     "how": "IHC 슬라이드의 공급자 주석 면적",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.204 mm²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_benign_region.png"
+    },
+    {
+     "key": "basal",
+     "label": "기저세포 둘레 비율",
+     "tone": "cyan",
+     "function": "ihc.basal_coverage",
+     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "features": [
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "24.2 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_benign_basal.png"
+    },
+    {
+     "key": "amacr",
+     "label": "AMACR 양성 면적",
+     "tone": "magenta",
+     "function": "ihc.amacr_fraction",
+     "how": "주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성",
+     "features": [
+      {
+       "id": "ft_amacr_fraction",
+       "value": "0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_amacr_positivity",
+       "value": "없음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_benign_amacr.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ihc_tumor",
+   "modality": "ihc",
+   "modality_label": "IHC",
+   "region": "종양",
+   "title": "IHC · 종양(IHC)",
+   "source": "precise",
+   "source_file": "sub-23_ses-01_hmwck-amacr.ome.tif",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 종양 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 기저세포 없이 AMACR(분홍)이 양성인 암 샘입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "builder": "ihc_example",
+   "base": "ex_ihc_tumor.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "region",
+     "label": "종양 범위(주석)",
+     "tone": "red",
+     "function": "tissue.lesion_area",
+     "how": "IHC 슬라이드의 공급자 주석 면적",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.148 mm²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_tumor_region.png"
+    },
+    {
+     "key": "basal",
+     "label": "기저세포 둘레 비율",
+     "tone": "cyan",
+     "function": "ihc.basal_coverage",
+     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "features": [
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "없음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_tumor_basal.png"
+    },
+    {
+     "key": "amacr",
+     "label": "AMACR 양성 면적",
+     "tone": "magenta",
+     "function": "ihc.amacr_fraction",
+     "how": "주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성",
+     "features": [
+      {
+       "id": "ft_amacr_fraction",
+       "value": "65.5 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_amacr_positivity",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_tumor_amacr.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ihc_hgpin",
+   "modality": "ihc",
+   "modality_label": "IHC",
+   "region": "HGPIN",
+   "title": "IHC · 고등급 PIN(IHC)",
+   "source": "precise",
+   "source_file": "sub-01_ses-03_hmwck-amacr.ome.tif",
+   "caption": "PRECISE sub-01_ses-03(글리슨 3+3=6) IHC 슬라이드의 HGPIN 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). AMACR 양성이지만 둘레에 기저세포가 조각으로 남은 HGPIN입니다. 기저세포가 조각나 있어 이 간이 둘레 지수는 낮게(“없음”) 나옵니다 — 침윤암(0%)과 가르려면 판독의가 조각난 기저세포를 직접 확인해야 합니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "builder": "ihc_example",
+   "base": "ex_ihc_hgpin.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "region",
+     "label": "HGPIN 범위(주석)",
+     "tone": "orange",
+     "function": "tissue.lesion_area",
+     "how": "IHC 슬라이드의 공급자 주석 면적",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.159 mm²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_hgpin_region.png"
+    },
+    {
+     "key": "basal",
+     "label": "기저세포 둘레 비율",
+     "tone": "cyan",
+     "function": "ihc.basal_coverage",
+     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "features": [
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "2.2 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "없음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_hgpin_basal.png"
+    },
+    {
+     "key": "amacr",
+     "label": "AMACR 양성 면적",
+     "tone": "magenta",
+     "function": "ihc.amacr_fraction",
+     "how": "주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성",
+     "features": [
+      {
+       "id": "ft_amacr_fraction",
+       "value": "50.0 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_amacr_positivity",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_hgpin_amacr.png"
+    },
+    {
+     "key": "read",
+     "label": "판독",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 주석 class",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "HGPIN (공급자 주석)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ihc_hgpin_read.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_ihc_idc",
+   "modality": "ihc",
+   "modality_label": "IHC",
+   "region": "관내암",
+   "title": "IHC · 관내암(IHC)",
+   "source": "precise",
+   "source_file": "sub-02_ses-01_hmwck-amacr.ome.tif",
+   "caption": "PRECISE sub-02_ses-01(글리슨 4+5=9) IHC 슬라이드의 관내암 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 관을 채운 암세포 둘레에 기저세포가 남은 관내암입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "builder": "ihc_example",
+   "base": "ex_ihc_idc.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "region",
+     "label": "관내암 범위(주석)",
+     "tone": "magenta",
+     "function": "tissue.lesion_area",
+     "how": "IHC 슬라이드의 공급자 주석 면적",
+     "features": [
+      {
+       "id": "ft_lesion_generic_presence",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.118 mm²",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_idc_region.png"
+    },
+    {
+     "key": "basal",
+     "label": "기저세포 둘레 비율",
+     "tone": "cyan",
+     "function": "ihc.basal_coverage",
+     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "features": [
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "54.1 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "있음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_idc_basal.png"
+    },
+    {
+     "key": "amacr",
+     "label": "AMACR 양성 면적",
+     "tone": "magenta",
+     "function": "ihc.amacr_fraction",
+     "how": "주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성",
+     "features": [
+      {
+       "id": "ft_amacr_fraction",
+       "value": "0.1 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_amacr_positivity",
+       "value": "없음",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_ihc_idc_amacr.png"
+    },
+    {
+     "key": "read",
+     "label": "판독",
+     "tone": "white",
+     "function": "",
+     "how": "공급자 주석 class",
+     "features": [
+      {
+       "id": "ft_idc_presence",
+       "value": "있음 (공급자 주석)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_ihc_idc_read.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_slide_grading",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "슬라이드 단위 판정",
+   "title": "H&E · 슬라이드 단위 글리슨 판정",
+   "source": "sicapv2",
+   "source_file": "images/18B0002975B_*.jpg",
+   "caption": "SICAPv2 슬라이드 18B0002975B의 패치 160장을 원래 위치에 다시 붙인 2.5× 영상입니다. 겹치는 패치의 주석은 다수결로 합쳤습니다. 패턴 면적으로 ISUP 2014 생검 규칙에 따라 글리슨 점수와 등급군을 계산해 공급자 판정과 비교했습니다. 화소 단위입니다.",
+   "builder": "sicap_slide_example",
+   "base": "ex_he_slide_grading.jpg",
+   "width": 820,
+   "height": 160,
+   "layers": [
+    {
+     "key": "patterns",
+     "label": "슬라이드 전체 패턴 비율",
+     "tone": "orange",
+     "function": "tissue.pattern_percent",
+     "how": "다시 붙인 주석에서 종양 면적 중 패턴별 비율",
+     "features": [
+      {
+       "id": "ft_pattern3_percent",
+       "value": "10.1 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern4_percent",
+       "value": "88.3 %",
+       "status": "ok"
+      },
+      {
+       "id": "ft_pattern5_percent",
+       "value": "1.6 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_slide_grading_patterns.png"
+    },
+    {
+     "key": "grade",
+     "label": "계산한 글리슨 점수·등급군",
+     "tone": "red",
+     "function": "grading.gleason_from_areas",
+     "how": "가장 많은 패턴 + 가장 높은 나머지 패턴(생검 규칙) → 등급군",
+     "features": [
+      {
+       "id": "ft_gleason_score",
+       "value": "4+5",
+       "status": "ok"
+      },
+      {
+       "id": "ft_isup_grade_group",
+       "value": "5",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_slide_grading_grade.png"
+    },
+    {
+     "key": "provider",
+     "label": "공급자 판정(판독)",
+     "tone": "white",
+     "function": "",
+     "how": "SICAPv2 wsi_labels의 primary·secondary",
+     "features": [
+      {
+       "id": "ft_gleason_score",
+       "value": "4+5 (공급자)",
+       "status": "reading"
+      },
+      {
+       "id": "ft_isup_grade_group",
+       "value": "5 (공급자)",
+       "status": "reading"
+      }
+     ],
+     "file": "ex_he_slide_grading_provider.png"
+    }
+   ],
+   "credit": "Silva-Rodríguez J, Colomer A, Sales MA, et al. SICAPv2 (Mendeley Data 2020)",
+   "url": "https://data.mendeley.com/datasets/9xxm58dvs3/1",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
   }
  ]
 }

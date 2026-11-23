@@ -33,3 +33,8 @@ rel_atrophy_partial,dis_atrophy_benign,les_partial_atrophy,characteristic_nonspe
 rel_adenosis_def,dis_adenosis,les_adenosis,diagnostic_criterion,src_who_2022,—,이행대의 작은 샘 결절 · 기저세포 조각,stage1_drafted,src_who_2022,source_linked
 rel_pca_density,dis_prostate_adenocarcinoma,ft_gland_density,characteristic_nonspecific,src_isup_2014,—,암 샘은 밀집해 침윤(연구 지표),stage1_drafted,src_isup_2014,source_linked
 rel_pca_lumina,dis_prostate_adenocarcinoma,ft_lumina_per_gland,characteristic_nonspecific,src_cribriform_2021,—,한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표),stage1_drafted,src_cribriform_2021,source_linked
+rel_pca_basal_cov,dis_prostate_adenocarcinoma,ft_basal_cell_coverage,diagnostic_criterion,src_who_2022,—,침윤암 샘은 기저세포 둘레가 거의 없음(IHC),stage1_drafted,src_who_2022,source_linked
+rel_pca_amacr_frac,dis_prostate_adenocarcinoma,ft_amacr_fraction,characteristic_nonspecific,src_who_2022,—,암 샘은 AMACR 적색 양성 면적이 넓음,stage1_drafted,src_who_2022,source_linked
+rel_idc_basal_cov,dis_idc_p,ft_basal_cell_coverage,diagnostic_criterion,src_guo_2006,—,관내암은 기저세포 둘레가 남아 있음,stage1_drafted,src_guo_2006,source_linked
+rel_hgpin_basal_cov,dis_hgpin,ft_basal_cell_coverage,diagnostic_criterion,src_who_2022,—,HGPIN은 기저세포가 남아 있음(조각날 수 있음),stage1_drafted,src_who_2022,source_linked
+rel_hgpin_amacr,dis_hgpin,ft_amacr_fraction,characteristic_nonspecific,src_who_2022,—,HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름),stage1_drafted,src_who_2022,source_linked

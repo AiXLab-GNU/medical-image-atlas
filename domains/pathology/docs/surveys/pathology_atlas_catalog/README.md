@@ -14,7 +14,7 @@
 | `b_anatomy_v01.csv` | B. 전립선 구역·샘과 간질·세포·측정 기준(조직 면적·화소 크기·HPF) | 직접 작성 |
 | `c_lesions_v01.csv` | C. 선암·글리슨 패턴 3·4·5·성장 양상·관내암·HGPIN·침범·암 모방 양성 병변·인공물 | 직접 작성 |
 | `bc_observations_v01.csv` | 관측: 대상 × 영상 표현 × 보이는 모습 × 해석 조건 × 근거 | 직접 작성 |
-| `d_features_v01.csv` | D. 측정 32 + 판정 분류 2(글리슨 점수·ISUP 등급군) | 직접 작성 |
+| `d_features_v01.csv` | D. 측정 34 + 판정 분류 2(글리슨 점수·ISUP 등급군) | 직접 작성 |
 | `d_common_feature_sets_v01.csv` | 병변 형태 분류(region·gland·focal)별 공통 특징 | 직접 작성 |
 | `d_applicability_overrides_v01.csv` | 대상별 적용·해당 없음 지정 | 직접 작성 |
 | `d_feature_applicability_v01.csv` | 대상 × 특징 적용 관계 | 생성 |
@@ -23,7 +23,7 @@
 | `e_grading_schemes_v01.csv` | E. 판정 체계(글리슨 패턴·ISUP 등급군·pT·관내암 기준·암과 모방 병변 가르기) | 직접 작성 |
 | `e_grading_steps_v01.csv` | E. 판정 단계 | 직접 작성 |
 | `sources_v01.csv` | 근거 문헌(Europe PMC로 PMID 확인) | 직접 작성 |
-| `g_image_sources_v01.csv` | 영상 출처: PRECISE·SICAPv2(모두 CC BY 4.0) | 직접 작성 |
+| `g_image_sources_v01.csv` | 영상 출처: PRECISE·SICAPv2·PAR(모두 CC BY 4.0) | 직접 작성 |
 | `g_provider_figures_v01.csv` | 논문 그림 파일(아직 없음 · IHC·신경주위 침범 그림을 넣을 자리) | 직접 작성 |
 | `h_masked_figures_v01.csv` | 항목 페이지 그림 | 생성 |
 | `h_masked_figure_items_v01.csv` | 그림 × 항목 | 생성 |
@@ -33,6 +33,7 @@
 | `i_feature_implementations_v01.csv` | 특징별 구현 수준과 pathology-measures 함수 | 생성 |
 | `i_measure_disease_links_v01.csv` | 측정 → 대상 질병 | 생성 |
 | `i_example_coverage_v01.csv` | 측정 × 영상 종류 × 예시 유무 | 생성 |
+| `i_grading_agreement_v01.csv` | 등급 판정 일치도: PAR 판독의 쌍별 · SICAPv2 공급자 판정 vs 주석 계산(kappa·일치율) | 생성 |
 
 ## 갱신 순서
 

@@ -46,6 +46,8 @@ TABLES = {
     'i_feature_implementations_v01.csv': ['feature_id', 'target_id', 'role', 'level', 'function', 'input', 'method', 'reference'],
     'i_measure_disease_links_v01.csv': ['feature_id', 'disease_id', 'relation_type', 'via_item_id'],
     'i_example_coverage_v01.csv': ['feature_id', 'modality', 'has_example', 'example_id'],
+    'i_grading_agreement_v01.csv': ['source_id', 'comparison', 'n', 'exact_percent', 'within_one_percent', 'kappa',
+                                    'kappa_quadratic', 'note_ko'],
 }
 
 
@@ -87,6 +89,19 @@ def build_tables():
             ex_id = shown.get((fid, mod), '')
             out['i_example_coverage_v01.csv'].append({'feature_id': fid, 'modality': mod,
                                                       'has_example': 'yes' if ex_id else 'no', 'example_id': ex_id})
+    grading_path = WEB / 'grading.json'
+    if grading_path.is_file():
+        g = json.loads(grading_path.read_text(encoding='utf-8'))
+        for name, v in g['par']['pairs'].items():
+            out['i_grading_agreement_v01.csv'].append({
+                'source_id': 'par', 'comparison': name, 'n': v['n'], 'exact_percent': v['exact'],
+                'within_one_percent': v['within_one'], 'kappa': v['kappa'], 'kappa_quadratic': v['kappa_quadratic'],
+                'note_ko': f"ISUP 등급군(0=양성) · 암 여부 일치 {v['cancer_agree']}%"})
+        s = g['sicap']
+        out['i_grading_agreement_v01.csv'].append({
+            'source_id': 'sicapv2', 'comparison': '공급자 판정–주석 계산', 'n': s['n'], 'exact_percent': s['exact_gg'],
+            'within_one_percent': s['within_one_gg'], 'kappa': s['kappa'], 'kappa_quadratic': s['kappa_quadratic'],
+            'note_ko': f"ISUP 2014 생검 규칙 · 글리슨 점수 일치 {s['exact_score']}%"})
     for fid, entries in sorted(_disease_links()(atlas).items()):
         if fid not in atlas['features']:
             continue

@@ -5,6 +5,8 @@ Input kinds
   label_map      H&E image with a provider annotation label map (classes per pixel)
   region_mask    H&E image with one region mask (lesion, gland or tumour annotation)
   pattern_mask   Gleason-pattern label map together with the tumour area
+  ihc_region     HMWCK–AMACR IHC image with a gland or region mask
+  reader_labels  slide grades from two or more readers
 """
 from __future__ import annotations
 
@@ -16,6 +18,8 @@ INPUT_LABELS = {
     'label_map': 'H&E 영상과 화소별 주석 지도',
     'region_mask': 'H&E 영상과 영역 mask(병변·샘·종양 주석)',
     'pattern_mask': '글리슨 패턴 주석과 종양 범위',
+    'ihc_region': 'HMWCK·AMACR IHC 영상과 샘·영역 mask',
+    'reader_labels': '판독의별 슬라이드 등급',
 }
 
 
@@ -54,6 +58,12 @@ _ROWS = [
     ('ft_nuclear_area_variation', 'nuclei.area_variation', 'region_mask', 'coefficient of variation of nucleus area'),
     ('ft_hematoxylin_od', 'nuclei.hematoxylin_od', 'region_mask', 'mean haematoxylin OD after HED separation', 'Ruifrok 2001'),
     ('ft_texture_contrast', 'texture.glcm_contrast', 'region_mask', 'normalised GLCM contrast, 32 levels, 4 directions'),
+    ('ft_basal_cell_coverage', 'ihc.basal_coverage', 'ihc_region', 'brown (DAB OD > 0.03) share of a 30-px gland rim, median over glands'),
+    ('ft_basal_cell_presence', 'ihc.basal_cell_presence', 'ihc_region', 'basal coverage ≥ 5 % (service cut-off)'),
+    ('ft_amacr_fraction', 'ihc.amacr_fraction', 'ihc_region', 'red-chromogen pixels ÷ region pixels'),
+    ('ft_amacr_positivity', 'ihc.amacr_positivity', 'ihc_region', 'AMACR fraction ≥ 5 % (service cut-off)'),
+    ('ft_gleason_score', 'grading.gleason_from_areas', 'pattern_mask', 'ISUP 2014 biopsy rule from pattern areas', 'ISUP 2014'),
+    ('ft_isup_grade_group', 'grading.grade_group', 'pattern_mask', 'Gleason score → grade group 1–5', 'Epstein 2016'),
     ('ft_lesion_generic_presence', 'tissue.presence', 'region_mask', 'any annotated pixel'),
     ('ft_lesion_generic_area', 'tissue.lesion_area', 'region_mask', 'pixel area × calibration'),
     ('ft_lesion_generic_fraction', 'tissue.lesion_fraction', 'region_mask', 'lesion pixels ÷ tissue pixels'),

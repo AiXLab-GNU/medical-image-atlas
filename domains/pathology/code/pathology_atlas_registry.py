@@ -56,8 +56,10 @@ def precise_participants() -> dict[str, dict[str, str]]:
 
 def precise_paths(image_name: str) -> dict[str, Path]:
     sub, ses = image_name.split('_')
-    base = PRECISE / 'extracted/data' / sub / ses / 'wsi_h-e'
-    return {'image': base / f'{image_name}_h-e.ome.tif', 'mask': base / f'{image_name}_h-e_mask.ome.tif'}
+    base = PRECISE / 'extracted/data' / sub / ses
+    return {'image': base / 'wsi_h-e' / f'{image_name}_h-e.ome.tif', 'mask': base / 'wsi_h-e' / f'{image_name}_h-e_mask.ome.tif',
+            'ihc': base / 'wsi_hmwck-amacr' / f'{image_name}_hmwck-amacr.ome.tif',
+            'ihc_mask': base / 'wsi_hmwck-amacr' / f'{image_name}_hmwck-amacr_mask.ome.tif'}
 
 
 def precise_mpp(image_name: str) -> float:

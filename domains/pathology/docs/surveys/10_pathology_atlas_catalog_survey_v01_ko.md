@@ -2,7 +2,7 @@
 
 `code/build_pathology_atlas_catalog.py`가 등록 표에서 만든 읽기용 문서다. 손으로 고치지 않는다.
 
-영상 종류 6 · 해부 21 · 병변 25 · 특징 34 · 질병 9 · 질병–소견 관계 34 · 판정 체계 5 · 근거 문헌 19
+영상 종류 6 · 해부 21 · 병변 25 · 특징 36 · 질병 9 · 질병–소견 관계 39 · 판정 체계 5 · 근거 문헌 20
 
 ## A. 영상 종류
 
@@ -109,6 +109,8 @@
 | `ft_lesion_generic_count` | 병변 공통 | 소견 개수(초점) | quantitative | count | img_he_wsi |
 | `ft_gleason_score` | 선방 선암(통합) | 글리슨 점수 | qualitative | category | img_he_wsi |
 | `ft_isup_grade_group` | 선방 선암(통합) | ISUP 등급군 | qualitative | category(1–5) | img_he_wsi |
+| `ft_basal_cell_coverage` | 기저세포층 | 기저세포 둘레 비율 | quantitative | % | img_ihc_hmwck_amacr |
+| `ft_amacr_fraction` | 선방 선암(통합) | AMACR 양성 면적 비율 | quantitative | % | img_ihc_hmwck_amacr |
 
 ## E. 질병과 판정 체계
 
@@ -136,6 +138,8 @@
 - 림프혈관 침범 — prognostic: 림프혈관 침범은 나쁜 예후 인자
 - 샘 밀도 — characteristic_nonspecific: 암 샘은 밀집해 침윤(연구 지표)
 - 샘당 내강 수 — characteristic_nonspecific: 한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표)
+- 기저세포 둘레 비율 — diagnostic_criterion: 침윤암 샘은 기저세포 둘레가 거의 없음(IHC)
+- AMACR 양성 면적 비율 — characteristic_nonspecific: 암 샘은 AMACR 적색 양성 면적이 넓음
 - 판정 체계 **글리슨 패턴(ISUP 2014)** (typing)
   1. 패턴 5 — 고형 판 · 끈 · 단일 세포 · 면포 괴사
   2. 패턴 4 — 잘 형성되지 않은 샘 · 융합 샘 · 사상 샘 · 사구체 모양 샘
@@ -161,6 +165,7 @@
 - 관내암 유무 — diagnostic_criterion: 관내암 유무를 보고
 - 기저세포 유무 — diagnostic_criterion: 기저세포가 남아 있어야 관내암(없으면 침윤 사상암)
 - 면포 괴사 — characteristic_nonspecific: 면포 괴사가 동반될 수 있음
+- 기저세포 둘레 비율 — diagnostic_criterion: 관내암은 기저세포 둘레가 남아 있음
 - 판정 체계 **관내암 진단 기준(Guo·Epstein)** (diagnostic)
   1. 관내암 — 고형 또는 조밀 사상 · 느슨한 사상·미세유두 + 핵이 정상의 6배 이상 · 면포 괴사
   2. 비정형 관내 증식 — 관내 비정형 증식이나 위 기준 미달
@@ -172,6 +177,8 @@
 
 - 고등급 전립선 상피내 종양 — diagnostic_criterion: 기존 샘 안 분비 세포의 이형과 뚜렷한 핵소체 · 기저세포 유지
 - 기저세포 유무 — diagnostic_criterion: 기저세포가 남아 있음
+- 기저세포 둘레 비율 — diagnostic_criterion: HGPIN은 기저세포가 남아 있음(조각날 수 있음)
+- AMACR 양성 면적 비율 — characteristic_nonspecific: HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름)
 
 ### 비정형 소선방 증식 (`dis_asap`)
 
@@ -196,5 +203,5 @@
 
 ## 적용 관계
 
-common_applied 68 · direct 34 · not_applicable 10 · not_investigated 5
+common_applied 68 · direct 36 · not_applicable 10 · not_investigated 5
 

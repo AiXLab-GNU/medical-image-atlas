@@ -66,5 +66,47 @@
   </div>
 </section>
 {% endfor %}
+
+{% if grading %}
+<section class="section" id="dz-reproducibility">
+  <h2>등급 판정의 재현성</h2>
+  <p class="muted small">같은 슬라이드에 매긴 등급이 판독의마다, 그리고 주석에서 규칙으로 계산한 값과 얼마나 같은지 공개 자료로 계산했습니다. 등급군 0은 양성입니다.</p>
+  <div class="gr-grid">
+    <article class="panel gr-card">
+      <h3>판독의 사이 일치도 <span class="muted small">PAR · 생검 {{ grading.par.n_slides }}장</span></h3>
+      <div class="table-wrap"><table><thead><tr><th>비교</th><th>슬라이드</th><th>등급군 일치</th><th>±1 이내</th><th>암 여부 일치</th><th>kappa</th><th>가중 kappa(이차)</th></tr></thead><tbody>
+      {% for name, v in grading.par.pairs.items() %}<tr><td>{{ name }}</td><td>{{ v.n }}</td><td>{{ v.exact }}%</td><td>{{ v.within_one }}%</td><td>{{ v.cancer_agree }}%</td><td>{{ v.kappa }}</td><td>{{ v.kappa_quadratic }}</td></tr>{% endfor %}
+      </tbody></table></div>
+      <h4 class="mini">판독의별 등급군 분포</h4>
+      <div class="table-wrap"><table class="gr-dist"><thead><tr><th></th>{% for c in grading.par.categories %}<th>{{ '양성' if c == 0 else c }}</th>{% endfor %}</tr></thead><tbody>
+      {% for name, counts in grading.par.counts.items() %}<tr><td>{{ name }}</td>{% for n in counts %}<td>{{ n }}</td>{% endfor %}</tr>{% endfor %}
+      </tbody></table></div>
+      {% set cm = grading.par.pairs['판독의 1–2'].confusion %}
+      <h4 class="mini">판독의 1(행) × 판독의 2(열)</h4>
+      <div class="table-wrap"><table class="gr-cm"><thead><tr><th></th>{% for c in grading.par.categories %}<th>{{ '양성' if c == 0 else c }}</th>{% endfor %}</tr></thead><tbody>
+      {% for row in cm %}{% set i = loop.index0 %}<tr><th>{{ '양성' if i == 0 else i }}</th>{% for n in row %}<td class="{{ 'gr-diag' if loop.index0 == i else ('gr-off' if n else '') }}">{{ n }}</td>{% endfor %}</tr>{% endfor %}
+      </tbody></table></div>
+      <p class="muted small">판독의 2는 양성과 등급군 5를 더 많이 매겼습니다. 판독의 3은 일부(59장)만 판독했습니다. 출처: Muhammad Ali P 외, Sci Data 2026(CC BY 4.0).</p>
+    </article>
+    <article class="panel gr-card">
+      <h3>주석으로 계산한 판정 vs 공급자 판정 <span class="muted small">SICAPv2 · 슬라이드 {{ grading.sicap.n }}장</span></h3>
+      <p>패치 주석을 슬라이드로 다시 붙여 패턴 면적을 재고, ISUP 2014 생검 규칙(가장 많은 패턴 + 가장 높은 나머지 패턴)으로 계산했습니다.</p>
+      <dl class="gr-stats"><div><dt>글리슨 점수 일치</dt><dd>{{ grading.sicap.exact_score }}%</dd></div><div><dt>등급군 일치</dt><dd>{{ grading.sicap.exact_gg }}%</dd></div>
+        <div><dt>±1 이내</dt><dd>{{ grading.sicap.within_one_gg }}%</dd></div><div><dt>가중 kappa</dt><dd>{{ grading.sicap.kappa_quadratic }}</dd></div></dl>
+      <h4 class="mini">공급자(행) × 계산(열) 등급군</h4>
+      <div class="table-wrap"><table class="gr-cm"><thead><tr><th></th>{% for c in grading.sicap.categories %}<th>{{ '양성' if c == 0 else c }}</th>{% endfor %}</tr></thead><tbody>
+      {% for row in grading.sicap.confusion %}{% set i = loop.index0 %}<tr><th>{{ '양성' if i == 0 else i }}</th>{% for n in row %}<td class="{{ 'gr-diag' if loop.index0 == i else ('gr-off' if n else '') }}">{{ n }}</td>{% endfor %}</tr>{% endfor %}
+      </tbody></table></div>
+      <p class="muted small">계산은 패치 주석의 다수결 면적만 씁니다. 소량의 고등급 패턴, 3차 패턴, 사상·관내 성분 같은 판독의의 종합 판단은 반영하지 않습니다. <a href="/measurements/#ex_he_slide_grading">한 슬라이드의 계산 과정 보기 →</a></p>
+    </article>
+  </div>
+  {% if grading.gallery %}
+  <h3 class="mini">판독의가 모두 같은 등급을 준 실제 생검 슬라이드 <span>PAR</span></h3>
+  <div class="gr-gallery">{% for e in grading.gallery %}<figure><a href="/figures/{{ e.fig.base }}" target="_blank" rel="noopener"><img src="/figures/{{ e.fig.base }}" alt="{{ e.fig.caption }}" width="{{ e.fig.width }}" height="{{ e.fig.height }}" loading="lazy"></a>
+    <figcaption><b>{{ '양성' if e.grade_group == 0 else '등급군 ' ~ e.grade_group }}</b> · 글리슨 {{ e.score }}</figcaption></figure>{% endfor %}</div>
+  <p class="figure-credit">{{ grading.gallery[0].fig.credit }} · <a href="{{ grading.gallery[0].fig.url }}" target="_blank" rel="noopener">출처</a> · <a href="{{ grading.gallery[0].fig.license_url }}" target="_blank" rel="noopener">{{ grading.gallery[0].fig.license }}</a> · 등급군 1은 모든 판독의가 일치한 슬라이드가 없어 싣지 않았습니다.</p>
+  {% endif %}
+</section>
+{% endif %}
 <p class="draft-note">판단 규칙은 분류 체계·판본에 따라 다르며, 이 페이지는 영상 소견과 측정의 연결을 보여주는 참고 자료입니다.</p>
 {% endblock %}

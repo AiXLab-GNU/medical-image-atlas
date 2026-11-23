@@ -1,8 +1,10 @@
 feature_id,modality,has_example,example_id
-ft_amacr_positivity,ihc,no,
+ft_amacr_fraction,ihc,yes,ex_ihc_benign
+ft_amacr_positivity,ihc,yes,ex_ihc_benign
 ft_artifact_fraction,he,yes,ex_he_core
+ft_basal_cell_coverage,ihc,yes,ex_ihc_benign
 ft_basal_cell_presence,he,no,
-ft_basal_cell_presence,ihc,no,
+ft_basal_cell_presence,ihc,yes,ex_ihc_benign
 ft_benign_gland_fraction,he,yes,ex_he_core
 ft_cribriform_presence,he,yes,ex_he_gp4
 ft_epe_presence,he,no,
@@ -12,7 +14,7 @@ ft_gland_count,he,yes,ex_he_benign
 ft_gland_density,he,yes,ex_he_benign
 ft_hematoxylin_od,he,yes,ex_he_benign
 ft_idc_presence,he,yes,ex_he_idc
-ft_idc_presence,ihc,no,
+ft_idc_presence,ihc,yes,ex_ihc_idc
 ft_lesion_generic_area,he,yes,ex_he_benign
 ft_lesion_generic_count,he,yes,ex_he_core
 ft_lesion_generic_fraction,he,yes,ex_he_benign

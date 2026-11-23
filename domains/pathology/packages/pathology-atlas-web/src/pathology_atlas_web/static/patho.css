@@ -42,3 +42,17 @@
 .breast-schem figure:has(.pg-stroma){background:#fff5f8}
 .breast-schem figure:has(.pg-stroma) figcaption{color:#5b3b6e}
 .mask-legend .ml-tumor::before{background:#f87171}.mask-legend .ml-benign::before{background:#4ade80}
+
+/* grading reproducibility */
+.gr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px}
+.gr-card h3{font-size:1rem}.gr-card table{font-size:.84rem}
+.gr-cm td,.gr-cm th,.gr-dist td,.gr-dist th{text-align:center;padding:4px 6px}
+.gr-cm .gr-diag{background:#dcfce7;font-weight:700}.gr-cm .gr-off{background:#fef3c7}
+.gr-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.gr-stats div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:8px}
+.gr-stats dt{font-size:.75rem;color:var(--muted)}.gr-stats dd{margin:0;font-weight:800;font-size:1.1rem}
+.gr-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gr-gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gr-gallery img{display:block;width:100%;height:150px;object-fit:contain;background:#fafafa}
+.gr-gallery figcaption{padding:6px 8px;font-size:.85rem}
+@media (max-width:700px){.gr-grid{grid-template-columns:1fr}.gr-stats{grid-template-columns:repeat(2,1fr)}}

@@ -33,3 +33,20 @@ ex_he_cribriform,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_cribrifo
 ex_he_cribriform,read,사상 패턴(판독),white,,ex_he_cribriform_read.png,SICAPv2 사상 패턴 표(G4C)
 ex_he_gp5,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp5_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
 ex_he_gp5,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp5_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
+ex_ihc_benign,region,양성 샘 범위(주석),green,tissue.lesion_area,ex_ihc_benign_region.png,IHC 슬라이드의 공급자 주석 면적
+ex_ihc_benign,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_benign_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_benign,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_benign_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
+ex_ihc_tumor,region,종양 범위(주석),red,tissue.lesion_area,ex_ihc_tumor_region.png,IHC 슬라이드의 공급자 주석 면적
+ex_ihc_tumor,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_tumor_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_tumor,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_tumor_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
+ex_ihc_hgpin,region,HGPIN 범위(주석),orange,tissue.lesion_area,ex_ihc_hgpin_region.png,IHC 슬라이드의 공급자 주석 면적
+ex_ihc_hgpin,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_hgpin_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_hgpin,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_hgpin_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
+ex_ihc_hgpin,read,판독,white,,ex_ihc_hgpin_read.png,공급자 주석 class
+ex_ihc_idc,region,관내암 범위(주석),magenta,tissue.lesion_area,ex_ihc_idc_region.png,IHC 슬라이드의 공급자 주석 면적
+ex_ihc_idc,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_idc_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_idc,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_idc_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
+ex_ihc_idc,read,판독,white,,ex_ihc_idc_read.png,공급자 주석 class
+ex_he_slide_grading,patterns,슬라이드 전체 패턴 비율,orange,tissue.pattern_percent,ex_he_slide_grading_patterns.png,다시 붙인 주석에서 종양 면적 중 패턴별 비율
+ex_he_slide_grading,grade,계산한 글리슨 점수·등급군,red,grading.gleason_from_areas,ex_he_slide_grading_grade.png,가장 많은 패턴 + 가장 높은 나머지 패턴(생검 규칙) → 등급군
+ex_he_slide_grading,provider,공급자 판정(판독),white,,ex_he_slide_grading_provider.png,SICAPv2 wsi_labels의 primary·secondary

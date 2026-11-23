@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | 망막(`domains/retinal/`) | 운영 v01 — 측정 160개, 영상 종류 8가지 모두 예시, 웹 8877 | [영역 README](domains/retinal/README.md) |
 | 유방촬영(`domains/mammography/`) | v01 — 측정 61개(함수 40), 예시 16장(FFDM·DBT·CEM), 웹 8879 | [영역 README](domains/mammography/README.md) |
-| 병리(`domains/pathology/`, 전립선) | v01 — 측정 32개(함수 25), PRECISE·SICAPv2 예시 10장, IHC 영상 준비 중, 웹 8881 | [영역 README](domains/pathology/README.md) |
+| 병리(`domains/pathology/`, 전립선) | v01 — 측정 34개(함수 31), H&E·IHC 예시 15장, 등급 판독 일치도(PAR·SICAPv2), 웹 8881 | [영역 README](domains/pathology/README.md) |
 
 ## 구조
 

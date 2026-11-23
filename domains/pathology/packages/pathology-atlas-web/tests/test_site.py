@@ -58,7 +58,8 @@ class SiteTest(unittest.TestCase):
         cards = set(re.findall(r'<article class="mx-card[^"]*" id="([^"]+)"', html))
         targets = set(re.findall(r'data-example="([^"]+)"', html))
         self.assertLessEqual(targets, cards)
-        self.assertIn('pending-ihc', cards)
+        self.assertTrue(any(c.startswith('ex_ihc') for c in cards))
+        self.assertIn('pending-he', cards)
         self.assertTrue(any(c.startswith('ex_he') for c in cards))
 
     def test_pending_rows_are_not_shown(self):

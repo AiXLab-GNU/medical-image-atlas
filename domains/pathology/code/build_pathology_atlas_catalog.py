@@ -51,7 +51,7 @@ ANATOMY_GROUP = {
     'reference': ('reference', '측정 기준'), 'zone': ('region', '구역'), 'region': ('region', '구역'),
     'structure': ('structure', '구조'), 'layer': ('layer', '상피층·간질'), 'boundary': ('structure', '구조'),
 }
-INPUT_LEVEL = {'image': 'auto', 'label_map': 'mask', 'region_mask': 'mask', 'pattern_mask': 'mask',
+INPUT_LEVEL = {'image': 'auto', 'label_map': 'mask', 'region_mask': 'mask', 'pattern_mask': 'mask', 'ihc_region': 'mask',
                'matched_views': 'pair'}
 
 
