@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>의료영상 지도</title>
+<meta name="description" content="안과(망막)·유방(유방촬영)·전립선(병리) 영상 지도로 들어가는 첫 페이지입니다.">
+<link rel="stylesheet" href="{{ url_for('static', filename='portal.css') }}"></head>
+<body>
+<header class="hub-top"><div class="hub-inner">
+  <a class="hub-brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0f172a"/><circle cx="10" cy="12" r="5" fill="#c4562e"/><circle cx="22" cy="12" r="5" fill="#7c3aed"/><circle cx="16" cy="22" r="5" fill="#9b7fc4"/></svg><span>의료영상 지도</span></a>
+  <span class="hub-tag">3개 영역 홈</span>
+</div></header>
+<main class="hub-inner">
+  <section class="hub-hero">
+    <h1>영상에서 무엇이 보이고, 무엇을 어떻게 재며, 어떤 질병의 근거가 되는가</h1>
+    <p>세 영역의 영상 지도를 한곳에서 고릅니다. 영역마다 해부 구조·병변·측정·질병을 실제 공개 영상(CC BY·CC0)과 모식도로 보여 주는 별도의 지도이며, 아래 카드에서 각 영역의 홈으로 들어갑니다.</p>
+    <dl class="hub-totals">
+      <div><dt>영역</dt><dd>{{ domains|length }}</dd></div>
+      <div><dt>해부 구조</dt><dd>{{ totals.anatomy }}</dd></div>
+      <div><dt>병변</dt><dd>{{ totals.lesions }}</dd></div>
+      <div><dt>측정·판정 항목</dt><dd>{{ totals.features }}</dd></div>
+      <div><dt>질병</dt><dd>{{ totals.diseases }}</dd></div>
+      <div><dt>실제 영상 그림</dt><dd>{{ totals.figures }}</dd></div>
+    </dl>
+  </section>
+  <section class="hub-cards" aria-label="영역">
+  {% for d in domains %}
+    <article class="hub-card" style="--accent: {{ d.accent }}">
+      <a class="hub-card-link" href="{{ d.url }}" aria-label="{{ d.area }} · {{ d.name }} 홈으로">
+        <div class="hub-previews n{{ d.previews|length }}">
+          {% for p in d.previews %}<figure><span class="hub-stage"><img src="/preview/{{ d.id }}/{{ p.base }}" alt="{{ p.label }}" width="{{ p.width }}" height="{{ p.height }}" loading="lazy">{% if p.overlay %}<img class="hub-ov" src="/preview/{{ d.id }}/{{ p.overlay }}" alt="" loading="lazy">{% endif %}</span><figcaption>{{ p.label }}</figcaption></figure>{% endfor %}
+        </div>
+        <div class="hub-card-body">
+          <p class="hub-area">{{ d.area }}</p>
+          <h2>{{ d.name }}</h2>
+          <p class="hub-mod">{{ d.modalities }}</p>
+          <p class="hub-lead">{{ d.lead }}</p>
+          <ul class="hub-counts">
+            <li><b>{{ d.counts.anatomy }}</b> 해부 구조</li><li><b>{{ d.counts.lesions }}</b> 병변</li>
+            <li><b>{{ d.counts.features }}</b> 측정·판정</li><li><b>{{ d.counts.diseases }}</b> 질병</li>
+            <li><b>{{ d.counts.figures }}</b> 영상 그림</li><li><b>{{ d.counts.examples }}</b> 측정 예시</li>
+          </ul>
+          <span class="hub-go">{{ d.name }} 홈으로 →</span>
+          {% if d.review_pending %}<p class="hub-note">목록 초안 · 전문가 검토 전</p>{% endif %}
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+  </section>
+  <section class="hub-about">
+    <h2>이 지도를 쓰는 법</h2>
+    <ul>
+      <li>각 영역은 독립된 지도입니다. 영역 안의 <b>홈</b>은 그 영역의 첫 페이지이고, 어느 영역에서든 맨 위 줄의 <b>의료영상 지도</b>를 누르면 이 페이지로 돌아옵니다.</li>
+      <li>그림 위의 색 영역은 공개 데이터셋 제공자의 전문가 주석이거나, 캡션에 밝힌 서비스 자동 추정입니다.</li>
+      <li>진단 도구가 아니며, 항목 정의와 관계는 전문가 검토 전 초안입니다.</li>
+    </ul>
+  </section>
+</main>
+<footer class="hub-foot"><div class="hub-inner"><span>의료영상 지도 · 안과 · 유방 · 전립선</span><span>그림의 출처와 라이선스는 각 영역의 「출처와 라이선스」 페이지에 있습니다.</span></div></footer>
+</body></html>

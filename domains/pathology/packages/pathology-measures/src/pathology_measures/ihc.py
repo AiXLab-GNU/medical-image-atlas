@@ -52,11 +52,53 @@ def basal_coverage(rgb, gland_mask, band_px=30, min_gland_px=200) -> Measurement
                        detail={'glands': len(per), 'rim': rim_all})
 
 
-def basal_cell_presence(coverage: Measurement, cutoff=5.0) -> Measurement:
-    if coverage.status != 'ok':
-        return Measurement('ft_basal_cell_presence', None, 'presence', coverage.status)
-    return Measurement('ft_basal_cell_presence', bool(coverage.value >= cutoff), 'presence',
-                       note=f'둘레의 {cutoff:.0f}% 이상이 갈색이면 기저세포 있음(서비스 기준)')
+def basal_fragments(rgb, gland_mask, mpp=None, band_um=7.5, min_fragment_um2=15.0, min_gland_px=200) -> Measurement:
+    """Separate brown (HMWCK) basal-cell fragments on the gland boundary per 100 µm of boundary.
+
+    Counting fragments rather than the covered share keeps glands whose basal layer is only patchy (HGPIN,
+    partial loss) apart from invasive glands with no basal cells at all.
+    """
+    from skimage import measure
+    g = np.asarray(gland_mask, bool)
+    labels = measure.label(g)
+    brown = brown_mask(rgb)
+    scale = mpp or 1.0
+    band = max(int(round(band_um / scale)), 2) if mpp else 15
+    min_px = (min_fragment_um2 / (scale * scale)) if mpp else 60
+    total, boundary, with_fragment, glands = 0, 0.0, 0, 0
+    frag_all = np.zeros(g.shape, bool)
+    for p in measure.regionprops(labels):
+        if p.area < min_gland_px:
+            continue
+        one = labels == p.label
+        rim = ndi.binary_dilation(one, iterations=band) & ~ndi.binary_erosion(one, iterations=band)
+        fl = measure.label(brown & rim)
+        keep = [q for q in measure.regionprops(fl) if q.area >= min_px]
+        for q in keep:
+            frag_all[fl == q.label] = True
+        total += len(keep)
+        boundary += p.perimeter * scale
+        glands += 1
+        with_fragment += bool(keep)
+    if not glands:
+        return Measurement('ft_basal_fragment_density', None, 'count/100um', 'not_observed', '샘 없음')
+    unit = 'count/100um' if mpp else 'count/100px'
+    return Measurement('ft_basal_fragment_density', round(100 * total / max(boundary, 1e-9), 2), unit,
+                       note='샘 경계 100 µm당 갈색 기저세포 조각 수',
+                       detail={'glands': glands, 'glands_with_fragment': with_fragment, 'fragments': total,
+                               'fragment_mask': frag_all})
+
+
+def basal_cell_presence(fragments: Measurement, cutoff=0.35) -> Measurement:
+    """Basal cells retained when fragments ≥ ``cutoff`` per 100 µm.
+
+    Cut-off chosen on the largest annotated region of each class in each PRECISE IHC slide (53 windows: invasive
+    tumour max 0.27, benign gland/HGPIN/IDC-P/AIP min 0.43, midpoint 0.35) and checked on the 2nd–4th largest regions
+    (150 windows, same slides): tumour read as absent 58/60, others present 88/90. IHC pixel size 0.177 µm/px."""
+    if fragments.status != 'ok':
+        return Measurement('ft_basal_cell_presence', None, 'presence', fragments.status)
+    return Measurement('ft_basal_cell_presence', bool(fragments.value >= cutoff), 'presence',
+                       note=f'경계 100 µm당 기저세포 조각 {cutoff} 이상이면 있음(서비스 기준)')
 
 
 def amacr_fraction(rgb, region) -> Measurement:

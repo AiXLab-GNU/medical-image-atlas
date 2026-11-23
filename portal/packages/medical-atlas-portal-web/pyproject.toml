@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medical-atlas-portal-web"
+version = "0.1.0"
+description = "Front page of the medical image atlas: entry to the retinal, mammography and prostate-pathology atlases"
+requires-python = ">=3.11"
+dependencies = ["Flask>=3.1,<4", "waitress>=3,<4"]
+
+[project.scripts]
+medical-atlas-portal-web = "medical_atlas_portal_web.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+medical_atlas_portal_web = ["templates/*.html", "static/*.css"]

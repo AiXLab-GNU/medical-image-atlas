@@ -1,0 +1,8 @@
+check_id,function,source_id,reference,split,cases,metric,value,decision,note_ko
+glands_pixel,glands.segment_glands,precise,"양성 샘 화소 주석(샘마다 따로, 내강 포함)",전체(조정 없음),75 창 · 25 슬라이드,화소 Dice,0.733,면적·분율 측정에 사용,슬라이드 평균 Dice 표준편차 0.094
+glands_object,glands.segment_glands,precise,양성 샘 화소 주석,전체(조정 없음),주석 샘 494 · 분할 1438,샘 단위 F1(IoU≥0.5),0.17,샘 개수·샘별 값은 참고용(주석이 있으면 주석 우선),재현율 0.332 · 정밀도 0.114 · 주석 샘 2개 이상을 한 덩어리로 묶은 분할 111개
+stain_macenko,stain.macenko_normalise,precise,양성 샘 화소 주석,전체,75 창,화소 Dice(정규화 후),0.707,채택 안 함,정규화 전 0.733 → 후 0.707 · 슬라이드 간 표준편차 0.094 → 0.104. 분할이 영상마다 Otsu로 기준을 다시 잡아 염색 차이를 이미 흡수함
+basal_cutoff,ihc.basal_cell_presence,precise,IHC 슬라이드 주석 class(침윤암 vs 양성 샘·HGPIN·관내암·비정형 관내 증식),조정(슬라이드별 가장 큰 영역),20+33 창,기준값(100 µm당 조각),0.35,기준값으로 채택,조정 창에서 침윤암 최대 0.27 · 나머지 최소 0.43의 중간값
+basal_heldout,ihc.basal_cell_presence,precise,IHC 슬라이드 주석 class,"검증(2–4번째 큰 영역, 같은 슬라이드)",52+80 창 · 27 슬라이드,AUC,0.995,기준 유지,침윤암 없음 판정 50/52 · 나머지 있음 판정 78/80. 같은 슬라이드의 다른 영역이라 외부 검증은 아님
+nucleoli,nuclei.nucleolus_prominence,precise,H&E 주석 class(종양 vs 양성 샘),전체(조정 없음),종양 39 · 양성 50 창,AUC(종양 > 양성),0.281,채택 안 함(핵소체 항목은 판독으로 둠),뚜렷한 핵소체 핵 비율 중앙값 종양 3.8% · 양성 10.4% · 같은 슬라이드 짝 18개 중 종양이 높음 6
+register_tissue,register.align,precise,H&E·IHC 조직 범위(연속 절편),전체,27 슬라이드,조직 조각 단위 정합 후 조직 Dice(중앙값),0.655,조직 Dice 0.7 이상 슬라이드에서 같은 부위 비교 그림에만 사용(샘 단위 대응 아님),정합 전 0.136 · 슬라이드 전체 강체 0.57 · 조각 단위 0.655 · 0.7 이상 12/27. 창 단위로 핵 지도를 다시 맞춰도 상관 0.09–0.15에 그쳐(sub-23) 샘 하나하나의 대응은 얻지 못함

@@ -90,13 +90,18 @@
     </article>
     <article class="panel gr-card">
       <h3>주석으로 계산한 판정 vs 공급자 판정 <span class="muted small">SICAPv2 · 슬라이드 {{ grading.sicap.n }}장</span></h3>
-      <p>패치 주석을 슬라이드로 다시 붙여 패턴 면적을 재고, ISUP 2014 생검 규칙(가장 많은 패턴 + 가장 높은 나머지 패턴)으로 계산했습니다.</p>
+      <p>패치 주석을 슬라이드로 다시 붙여 패턴 면적을 재고, ISUP 2014 생검 규칙(가장 많은 패턴 + 더 높은 패턴은 양과 무관, 더 낮은 패턴은 5% 이상일 때만)으로 계산했습니다. {{ grading.sicap.min_pattern_px }} 화소(2.5×) 미만의 패턴 조각은 주석 잡음으로 뺐습니다.</p>
       <dl class="gr-stats"><div><dt>글리슨 점수 일치</dt><dd>{{ grading.sicap.exact_score }}%</dd></div><div><dt>등급군 일치</dt><dd>{{ grading.sicap.exact_gg }}%</dd></div>
         <div><dt>±1 이내</dt><dd>{{ grading.sicap.within_one_gg }}%</dd></div><div><dt>가중 kappa</dt><dd>{{ grading.sicap.kappa_quadratic }}</dd></div></dl>
       <h4 class="mini">공급자(행) × 계산(열) 등급군</h4>
       <div class="table-wrap"><table class="gr-cm"><thead><tr><th></th>{% for c in grading.sicap.categories %}<th>{{ '양성' if c == 0 else c }}</th>{% endfor %}</tr></thead><tbody>
       {% for row in grading.sicap.confusion %}{% set i = loop.index0 %}<tr><th>{{ '양성' if i == 0 else i }}</th>{% for n in row %}<td class="{{ 'gr-diag' if loop.index0 == i else ('gr-off' if n else '') }}">{{ n }}</td>{% endfor %}</tr>{% endfor %}
       </tbody></table></div>
+      {% if grading.sicap.variants %}<h4 class="mini">규칙에 따른 차이(오류 분석)</h4>
+      <div class="table-wrap"><table><thead><tr><th>규칙</th><th>등급군 일치</th><th>±1 이내</th><th>kappa</th><th>가중 kappa</th><th>계산이 높음/낮음</th></tr></thead><tbody>
+      {% for v in grading.sicap.variants %}<tr{% if v.key == 'isup_biopsy_min' %} class="gr-adopted"{% endif %}><td>{{ v.label }}</td><td>{{ v.exact_gg }}%</td><td>{{ v.within_one_gg }}%</td><td>{{ v.kappa }}</td><td>{{ v.kappa_quadratic }}</td><td>{{ v.higher }} / {{ v.lower }}</td></tr>{% endfor %}
+      </tbody></table></div>
+      <p class="muted small">이전 계산은 더 낮은 소량 패턴까지 2차 패턴으로 넣어(예: 5+5를 5+4로) 등급을 낮췄습니다. 공급자 판정은 '가장 많은 두 패턴' 규칙과 가장 잘 맞아, 공급자가 생검 규칙의 '소량 고등급 포함'을 적용하지 않았을 수 있습니다. 화소 기준은 같은 자료로 정한 값입니다.</p>{% endif %}
       <p class="muted small">계산은 패치 주석의 다수결 면적만 씁니다. 소량의 고등급 패턴, 3차 패턴, 사상·관내 성분 같은 판독의의 종합 판단은 반영하지 않습니다. <a href="/measurements/#ex_he_slide_grading">한 슬라이드의 계산 과정 보기 →</a></p>
     </article>
   </div>

@@ -22,7 +22,7 @@ class SiteTest(unittest.TestCase):
 
     def test_main_pages(self):
         for url in ['/', '/anatomy/', '/lesions/', '/measurements/', '/diseases/', '/imaging/', '/sources/',
-                    '/search/?q=사상', '/measurements/?level=ready', '/measurements/?img=ihc']:
+                    '/search/?q=사상', '/measurements/?level=ready', '/measurements/?img=ihc', '/validation/']:
             self.get(url)
         self.get('/no-such-page/', 404)
 

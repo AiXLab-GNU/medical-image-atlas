@@ -56,3 +56,9 @@
 .gr-gallery img{display:block;width:100%;height:150px;object-fit:contain;background:#fafafa}
 .gr-gallery figcaption{padding:6px 8px;font-size:.85rem}
 @media (max-width:700px){.gr-grid{grid-template-columns:1fr}.gr-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* paper figures (CC BY panels, no overlay) */
+.paper-figure .paper-panel{max-width:760px;background:#fff}
+.paper-figure .original-caption{display:block;margin-top:.35rem;color:var(--muted,#667);font-size:.86em;font-style:italic}
+.gr-adopted td{font-weight:600;background:rgba(74,222,128,.10)}
+.val-table td:nth-child(5){white-space:nowrap}

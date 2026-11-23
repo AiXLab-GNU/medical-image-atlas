@@ -2,7 +2,7 @@
 
 `code/build_pathology_atlas_catalog.py`가 등록 표에서 만든 읽기용 문서다. 손으로 고치지 않는다.
 
-영상 종류 6 · 해부 21 · 병변 25 · 특징 36 · 질병 9 · 질병–소견 관계 39 · 판정 체계 5 · 근거 문헌 20
+영상 종류 6 · 해부 21 · 병변 25 · 특징 37 · 질병 9 · 질병–소견 관계 41 · 판정 체계 5 · 근거 문헌 20
 
 ## A. 영상 종류
 
@@ -111,6 +111,7 @@
 | `ft_isup_grade_group` | 선방 선암(통합) | ISUP 등급군 | qualitative | category(1–5) | img_he_wsi |
 | `ft_basal_cell_coverage` | 기저세포층 | 기저세포 둘레 비율 | quantitative | % | img_ihc_hmwck_amacr |
 | `ft_amacr_fraction` | 선방 선암(통합) | AMACR 양성 면적 비율 | quantitative | % | img_ihc_hmwck_amacr |
+| `ft_basal_fragment_density` | 기저세포층 | 기저세포 조각 밀도 | quantitative | 개/100 µm | img_ihc_hmwck_amacr |
 
 ## E. 질병과 판정 체계
 
@@ -140,6 +141,7 @@
 - 샘당 내강 수 — characteristic_nonspecific: 한 샘 안의 여러 내강은 사상 패턴을 시사(연구 지표)
 - 기저세포 둘레 비율 — diagnostic_criterion: 침윤암 샘은 기저세포 둘레가 거의 없음(IHC)
 - AMACR 양성 면적 비율 — characteristic_nonspecific: 암 샘은 AMACR 적색 양성 면적이 넓음
+- 기저세포 조각 밀도 — diagnostic_criterion: 침윤암 샘은 경계에 기저세포 조각이 거의 없음
 - 판정 체계 **글리슨 패턴(ISUP 2014)** (typing)
   1. 패턴 5 — 고형 판 · 끈 · 단일 세포 · 면포 괴사
   2. 패턴 4 — 잘 형성되지 않은 샘 · 융합 샘 · 사상 샘 · 사구체 모양 샘
@@ -179,6 +181,7 @@
 - 기저세포 유무 — diagnostic_criterion: 기저세포가 남아 있음
 - 기저세포 둘레 비율 — diagnostic_criterion: HGPIN은 기저세포가 남아 있음(조각날 수 있음)
 - AMACR 양성 면적 비율 — characteristic_nonspecific: HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름)
+- 기저세포 조각 밀도 — diagnostic_criterion: HGPIN은 기저세포가 조각으로라도 남음
 
 ### 비정형 소선방 증식 (`dis_asap`)
 
@@ -203,5 +206,5 @@
 
 ## 적용 관계
 
-common_applied 68 · direct 36 · not_applicable 10 · not_investigated 5
+common_applied 68 · direct 37 · not_applicable 10 · not_investigated 5
 

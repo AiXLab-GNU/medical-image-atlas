@@ -1,7 +1,7 @@
 """Gleason score and ISUP grade group from Gleason-pattern areas, and inter-reader agreement.
 
 Rules follow the ISUP 2014 consensus: on needle biopsy the score is the most extensive pattern plus the highest
-remaining pattern (any amount); on radical prostatectomy it is the most and the second most extensive pattern,
+remaining pattern — a higher-grade pattern in any amount, a lower-grade one only when it is at least 5 %; on radical prostatectomy it is the most and the second most extensive pattern,
 where a second pattern below 5 % is ignored unless it is of higher grade. Grade groups: ≤6 → 1, 3+4 → 2, 4+3 → 3,
 8 → 4, 9–10 → 5.
 """
@@ -24,7 +24,12 @@ def gleason_from_areas(areas: dict[int, float], specimen: str = 'biopsy', minor_
     if not rest:
         secondary = primary
     elif specimen == 'biopsy':
-        secondary = max(rest)                                   # highest remaining pattern, any amount
+        higher = [p for p in rest if p > primary]
+        if higher:
+            secondary = max(higher)                             # higher-grade pattern counts in any amount
+        else:
+            lower = [p for p in rest if present[p] / total >= minor_cutoff]
+            secondary = max(lower) if lower else primary        # lower-grade pattern below 5 % is ignored
     else:
         second = max(rest, key=lambda p: present[p])
         if present[second] / total < minor_cutoff and second < primary:
@@ -33,7 +38,7 @@ def gleason_from_areas(areas: dict[int, float], specimen: str = 'biopsy', minor_
             secondary = second
     shares = {p: round(100 * a / total, 1) for p, a in present.items()}
     return Measurement('ft_gleason_score', f'{primary}+{secondary}', 'category',
-                       note='생검 규칙(가장 많은 패턴 + 가장 높은 나머지 패턴)' if specimen == 'biopsy' else '절제 규칙',
+                       note='생검 규칙(가장 많은 패턴 + 더 높은 패턴은 양과 무관, 더 낮은 패턴은 5% 이상일 때만)' if specimen == 'biopsy' else '절제 규칙',
                        detail={'pattern_percent': shares, 'primary': primary, 'secondary': secondary})
 
 

@@ -83,7 +83,8 @@ def lumina_per_gland(rgb, gland_mask, min_px=50, mpp=None) -> Measurement:
         inside = np.unique(lum_labels[labels == p.label])
         counts.append(int((inside > 0).sum()))
     return Measurement('ft_lumina_per_gland', round(float(np.mean(counts)), 2), 'count',
-                       detail={'max': int(max(counts)), 'glands': len(props)})
+                       detail={'max': int(max(counts)), 'glands': len(props),
+                               'glands_3plus': int(sum(c >= 3 for c in counts))})
 
 
 def nearest_neighbour(gland_mask, mpp=None, min_px=50):
@@ -93,6 +94,33 @@ def nearest_neighbour(gland_mask, mpp=None, min_px=50):
     cen = np.array([p.centroid for p in props])
     d, _ = cKDTree(cen).query(cen, k=2)
     return float(d[:, 1].mean() * (mpp or 1))
+
+
+def segment_glands(rgb, region, mpp=None, sigma_um=6.0, min_gland_um2=150.0, reference=None):
+    """Service estimate of individual glands inside a region (for example a tumour annotation).
+
+    Epithelium is where haematoxylin density smoothed over ~6 µm is above its Otsu level over the whole tissue in the
+    image (``reference``, default: tissue mask), so stroma sets the level and a solid sheet stays one piece; enclosed lumina are
+    filled in, so each connected component is one gland (a cribriform gland stays one component with many lumina,
+    pattern-5 cords become small lumen-less pieces). Without a calibration ``sigma_um`` and ``min_gland_um2`` are
+    read as 6 px and 150 px.
+    """
+    from skimage import color, filters
+    region = np.asarray(region, bool)
+    sigma = (sigma_um / mpp) if mpp else sigma_um
+    min_px = (min_gland_um2 / (mpp * mpp)) if mpp else 150
+    h = filters.gaussian(np.clip(color.rgb2hed(rgb_u8(rgb))[..., 0], 0, None), sigma)
+    if region.sum() < 100:
+        return np.zeros(region.shape, bool)
+    if reference is None:
+        from .tissue import tissue_mask
+        reference = tissue_mask(rgb)
+    reference = np.asarray(reference, bool) if np.asarray(reference, bool).sum() > 100 else region
+    epi = ndi.binary_closing((h > filters.threshold_otsu(h[reference])) & region, iterations=2)
+    lum = lumen_mask(rgb, ndi.binary_dilation(region, iterations=3), min_px=20 if not mpp else None, mpp=mpp,
+                     min_um2=5.0)
+    g = ndi.binary_fill_holes(epi | lum) & (region | lum)
+    return morphology.remove_small_objects(ndi.binary_opening(g, iterations=2), max(int(min_px), 2))
 
 
 def fill_tumor_glands(rgb, region, close_px=3):

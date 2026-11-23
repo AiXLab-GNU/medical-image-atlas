@@ -19,9 +19,10 @@
 
 ```bash
 .venv/bin/python -B $P/code/build_pathology_atlas_catalog.py      # 1) 표 검사·적용 관계·읽기 문서·atlas.json
-.venv/bin/python -B $P/code/build_pathology_figures.py            # 2) 그림 28·예시 15·grading.json(약 1분 반, 등급은 build_pathology_grading.py)
-.venv/bin/python -B $P/code/export_pathology_atlas_registry.py    # 3) H·I 생성 표
-.venv/bin/python -B $P/code/check_pathology_atlas_registry.py     # 4) 24표 검사
+.venv/bin/python -B $P/code/build_pathology_figures.py            # 2) 그림 54(논문 패널 25)·예시 16(층 61)·grading.json(약 2분; 등급 build_pathology_grading.py, 논문 패널 build_pathology_paper_figures.py)
+.venv/bin/python -B $P/code/evaluate_pathology_measures.py       # 3) 측정 검증 validation.json(코어 다수로 수 분)
+.venv/bin/python -B $P/code/export_pathology_atlas_registry.py    # 4) H·I 생성 표
+.venv/bin/python -B $P/code/check_pathology_atlas_registry.py     # 5) 25표 검사
 .venv/bin/python -B -m unittest discover -s $P/code/tests
 (cd $P/packages/pathology-measures && ../../../../.venv/bin/python -B -m unittest discover -s tests)
 (cd $P/packages/pathology-atlas-web && .venv/bin/python -B -m unittest discover -s tests)

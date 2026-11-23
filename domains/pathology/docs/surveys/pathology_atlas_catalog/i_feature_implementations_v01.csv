@@ -3,13 +3,14 @@ ft_amacr_fraction,les_adenocarcinoma,measurement,mask,pathology_measures.ihc.ama
 ft_amacr_positivity,les_adenocarcinoma,measurement,mask,pathology_measures.ihc.amacr_positivity,ihc_region,AMACR fraction ≥ 5 % (service cut-off),
 ft_artifact_fraction,les_tissue_artifact,measurement,mask,pathology_measures.tissue.artifact_fraction,label_map,artifact pixels ÷ tissue pixels,
 ft_basal_cell_coverage,ana_basal_cell_layer,measurement,mask,pathology_measures.ihc.basal_coverage,ihc_region,"brown (DAB OD > 0.03) share of a 30-px gland rim, median over glands",
-ft_basal_cell_presence,ana_basal_cell_layer,measurement,mask,pathology_measures.ihc.basal_cell_presence,ihc_region,basal coverage ≥ 5 % (service cut-off),
+ft_basal_cell_presence,ana_basal_cell_layer,measurement,mask,pathology_measures.ihc.basal_cell_presence,ihc_region,basal fragments ≥ 0.35 per 100 µm (cut-off validated on held-out PRECISE IHC windows),
+ft_basal_fragment_density,ana_basal_cell_layer,measurement,mask,pathology_measures.ihc.basal_fragments,ihc_region,brown basal-cell fragments (≥15 µm²) per 100 µm of gland boundary,
 ft_benign_gland_fraction,ana_benign_gland,measurement,mask,pathology_measures.tissue.benign_gland_fraction,label_map,benign-gland pixels ÷ tissue pixels,
 ft_cribriform_presence,les_cribriform,measurement,reading,,,,
 ft_epe_presence,les_extraprostatic_extension,measurement,reading,,,,
 ft_gland_area,ana_benign_gland,measurement,mask,pathology_measures.glands.mean_area,region_mask,mean component area,
 ft_gland_circularity,ana_benign_gland,measurement,mask,pathology_measures.glands.circularity,region_mask,median 4π·area/perimeter² per gland,
-ft_gland_count,ana_benign_gland,measurement,mask,pathology_measures.glands.count,region_mask,connected components of the gland mask,
+ft_gland_count,ana_benign_gland,measurement,mask,pathology_measures.glands.count,region_mask,connected components of the gland mask (annotation or glands.segment_glands),
 ft_gland_density,ana_benign_gland,measurement,mask,pathology_measures.glands.gland_density,region_mask,glands per tissue area,
 ft_gleason_score,les_adenocarcinoma,classification,mask,pathology_measures.grading.gleason_from_areas,pattern_mask,ISUP 2014 biopsy rule from pattern areas,ISUP 2014
 ft_hematoxylin_od,ana_nucleus,measurement,mask,pathology_measures.nuclei.hematoxylin_od,region_mask,mean haematoxylin OD after HED separation,Ruifrok 2001

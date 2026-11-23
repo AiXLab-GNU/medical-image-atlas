@@ -302,6 +302,36 @@
      "file": "ex_he_tumor_lesion.png"
     },
     {
+     "key": "tumor_glands",
+     "label": "종양 샘 분할·크기·모양",
+     "tone": "green",
+     "function": "glands.segment_glands",
+     "how": "종양 주석 안에서 헤마톡실린 밀도(6 µm 평활, 창 전체 조직 기준 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔 — 고형 판은 큰 덩어리 하나로 나옴(서비스 추정)",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "2 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "37,405 µm²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.58",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "0.5 개",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_tumor_tumor_glands.png"
+    },
+    {
      "key": "nuclei",
      "label": "핵 밀도·크기·다양성",
      "tone": "magenta",
@@ -630,7 +660,7 @@
    "title": "H&E · 글리슨 패턴 3",
    "source": "sicapv2",
    "source_file": "images/16B0024177_Block_Region_0_8_14_xini_36647_yini_116833.jpg",
-   "caption": "SICAPv2 패치 16B0024177_Block_Region_0_8_14_xini_36647_yini_116833입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "caption": "SICAPv2 패치 16B0024177_Block_Region_0_8_14_xini_36647_yini_116833입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. 샘은 주석 영역 안에서 서비스가 나눈 추정입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
    "builder": "sicap_example",
    "base": "ex_he_gp3.jpg",
    "width": 640,
@@ -662,25 +692,45 @@
      "file": "ex_he_gp3_patterns.png"
     },
     {
+     "key": "glands",
+     "label": "샘 분할·개수·크기·모양",
+     "tone": "green",
+     "function": "glands.segment_glands",
+     "how": "헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "18 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "5,049 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.497",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp3_glands.png"
+    },
+    {
      "key": "lumen",
      "label": "샘당 내강 수·내강 비율",
      "tone": "cyan",
      "function": "glands.lumina_per_gland",
-     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "how": "나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음",
      "features": [
       {
        "id": "ft_lumina_per_gland",
-       "value": "10.5 개",
+       "value": "1.06 개 · 최대 5개 · 내강 3개 이상인 샘 2개",
        "status": "ok"
       },
       {
        "id": "ft_lumen_fraction",
-       "value": "4.7 %",
-       "status": "ok"
-      },
-      {
-       "id": "ft_gland_count",
-       "value": "2 개",
+       "value": "8.1 %",
        "status": "ok"
       }
      ],
@@ -725,7 +775,7 @@
    "title": "H&E · 글리슨 패턴 4",
    "source": "sicapv2",
    "source_file": "images/16B0003388_Block_Region_13_10_3_xini_10684_yini_63869.jpg",
-   "caption": "SICAPv2 패치 16B0003388_Block_Region_13_10_3_xini_10684_yini_63869입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "caption": "SICAPv2 패치 16B0003388_Block_Region_13_10_3_xini_10684_yini_63869입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. 샘은 주석 영역 안에서 서비스가 나눈 추정입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
    "builder": "sicap_example",
    "base": "ex_he_gp4.jpg",
    "width": 640,
@@ -757,25 +807,45 @@
      "file": "ex_he_gp4_patterns.png"
     },
     {
+     "key": "glands",
+     "label": "샘 분할·개수·크기·모양",
+     "tone": "green",
+     "function": "glands.segment_glands",
+     "how": "헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "11 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "9,473 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.304",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp4_glands.png"
+    },
+    {
      "key": "lumen",
      "label": "샘당 내강 수·내강 비율",
      "tone": "cyan",
      "function": "glands.lumina_per_gland",
-     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "how": "나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음",
      "features": [
       {
        "id": "ft_lumina_per_gland",
-       "value": "9 개",
+       "value": "0.73 개 · 최대 6개 · 내강 3개 이상인 샘 1개",
        "status": "ok"
       },
       {
        "id": "ft_lumen_fraction",
-       "value": "1.3 %",
-       "status": "ok"
-      },
-      {
-       "id": "ft_gland_count",
-       "value": "1 개",
+       "value": "2.3 %",
        "status": "ok"
       }
      ],
@@ -834,8 +904,8 @@
    "region": "사상 샘",
    "title": "H&E · 사상(체 모양) 샘",
    "source": "sicapv2",
-   "source_file": "images/16B0024177_Block_Region_0_2_2_xini_24359_yini_110689.jpg",
-   "caption": "SICAPv2 패치 16B0024177_Block_Region_0_2_2_xini_24359_yini_110689입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "source_file": "images/17B0017717_Block_Region_2_20_6_xini_12957_yini_65495.jpg",
+   "caption": "SICAPv2 패치 17B0017717_Block_Region_2_20_6_xini_12957_yini_65495입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. 사상 표(G4C)에 표시된 패치 중 형태가 뚜렷한 것을 눈으로 골랐습니다. 샘은 주석 영역 안에서 서비스가 나눈 추정입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
    "builder": "sicap_example",
    "base": "ex_he_cribriform.jpg",
    "width": 640,
@@ -850,12 +920,12 @@
      "features": [
       {
        "id": "ft_pattern3_percent",
-       "value": "0.9 %",
-       "status": "ok"
+       "value": "관찰 안 됨",
+       "status": "not_observed"
       },
       {
        "id": "ft_pattern4_percent",
-       "value": "99.1 %",
+       "value": "100.0 %",
        "status": "ok"
       },
       {
@@ -867,25 +937,45 @@
      "file": "ex_he_cribriform_patterns.png"
     },
     {
+     "key": "glands",
+     "label": "샘 분할·개수·크기·모양",
+     "tone": "green",
+     "function": "glands.segment_glands",
+     "how": "헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "6 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "38,931 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.646",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_cribriform_glands.png"
+    },
+    {
      "key": "lumen",
      "label": "샘당 내강 수·내강 비율",
      "tone": "cyan",
      "function": "glands.lumina_per_gland",
-     "how": "주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)",
+     "how": "나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음",
      "features": [
       {
        "id": "ft_lumina_per_gland",
-       "value": "24.0 개",
+       "value": "12.2 개 · 최대 71개 · 내강 3개 이상인 샘 1개",
        "status": "ok"
       },
       {
        "id": "ft_lumen_fraction",
-       "value": "1.3 %",
-       "status": "ok"
-      },
-      {
-       "id": "ft_gland_count",
-       "value": "1 개",
+       "value": "14.2 %",
        "status": "ok"
       }
      ],
@@ -900,17 +990,17 @@
      "features": [
       {
        "id": "ft_nuclear_density",
-       "value": "56.6 /10⁴px²",
+       "value": "72.4 /10⁴px²",
        "status": "ok"
       },
       {
        "id": "ft_nuclear_area",
-       "value": "27.0 px²",
+       "value": "33.2 px²",
        "status": "ok"
       },
       {
        "id": "ft_nuclear_area_variation",
-       "value": "0.645",
+       "value": "0.701",
        "status": "ok"
       }
      ],
@@ -945,7 +1035,7 @@
    "title": "H&E · 글리슨 패턴 5",
    "source": "sicapv2",
    "source_file": "images/16B0008067_Block_Region_0_10_5_xini_13931_yini_107209.jpg",
-   "caption": "SICAPv2 패치 16B0008067_Block_Region_0_10_5_xini_13931_yini_107209입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
+   "caption": "SICAPv2 패치 16B0008067_Block_Region_0_10_5_xini_13931_yini_107209입니다. 색 영역은 공급자 전문가의 글리슨 패턴 주석입니다. 샘은 주석 영역 안에서 서비스가 나눈 추정입니다. SICAPv2 패치에는 화소 간격이 없어 길이·면적은 화소 단위입니다(10× 패치).",
    "builder": "sicap_example",
    "base": "ex_he_gp5.jpg",
    "width": 640,
@@ -975,6 +1065,51 @@
       }
      ],
      "file": "ex_he_gp5_patterns.png"
+    },
+    {
+     "key": "glands",
+     "label": "샘 분할·개수·크기·모양",
+     "tone": "green",
+     "function": "glands.segment_glands",
+     "how": "헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도",
+     "features": [
+      {
+       "id": "ft_gland_count",
+       "value": "45 개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_area",
+       "value": "1,518 px²",
+       "status": "ok"
+      },
+      {
+       "id": "ft_gland_circularity",
+       "value": "0.615",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp5_glands.png"
+    },
+    {
+     "key": "lumen",
+     "label": "샘당 내강 수·내강 비율",
+     "tone": "cyan",
+     "function": "glands.lumina_per_gland",
+     "how": "나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음",
+     "features": [
+      {
+       "id": "ft_lumina_per_gland",
+       "value": "0.07 개 · 최대 1개 · 내강 3개 이상인 샘 0개",
+       "status": "ok"
+      },
+      {
+       "id": "ft_lumen_fraction",
+       "value": "0.2 %",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_gp5_lumen.png"
     },
     {
      "key": "nuclei",
@@ -1015,7 +1150,7 @@
    "title": "IHC · 양성 샘(IHC)",
    "source": "precise",
    "source_file": "sub-23_ses-01_hmwck-amacr.ome.tif",
-   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 양성 샘 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 양성 샘 둘레의 갈색 기저세포입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 양성 샘 부위입니다(같은 조직의 연속 절편 · 화소 0.35 µm). 양성 샘 둘레의 갈색 기저세포입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
    "builder": "ihc_example",
    "base": "ex_ihc_benign.jpg",
    "width": 760,
@@ -1035,7 +1170,7 @@
       },
       {
        "id": "ft_lesion_generic_area",
-       "value": "0.204 mm²",
+       "value": "0.107 mm²",
        "status": "ok"
       }
      ],
@@ -1043,19 +1178,24 @@
     },
     {
      "key": "basal",
-     "label": "기저세포 둘레 비율",
+     "label": "기저세포 조각·둘레 비율",
      "tone": "cyan",
-     "function": "ihc.basal_coverage",
-     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "function": "ihc.basal_fragments",
+     "how": "샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시",
      "features": [
       {
-       "id": "ft_basal_cell_coverage",
-       "value": "24.2 %",
+       "id": "ft_basal_fragment_density",
+       "value": "1.07 개/100 µm · 샘 4개 중 4개에 조각",
        "status": "ok"
       },
       {
        "id": "ft_basal_cell_presence",
        "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "24.2 %",
        "status": "ok"
       }
      ],
@@ -1095,7 +1235,7 @@
    "title": "IHC · 종양(IHC)",
    "source": "precise",
    "source_file": "sub-23_ses-01_hmwck-amacr.ome.tif",
-   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 종양 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 기저세포 없이 AMACR(분홍)이 양성인 암 샘입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) IHC 슬라이드의 종양 부위입니다(같은 조직의 연속 절편 · 화소 0.35 µm). 기저세포 없이 AMACR(분홍)이 양성인 암 샘입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
    "builder": "ihc_example",
    "base": "ex_ihc_tumor.jpg",
    "width": 760,
@@ -1115,7 +1255,7 @@
       },
       {
        "id": "ft_lesion_generic_area",
-       "value": "0.148 mm²",
+       "value": "0.0779 mm²",
        "status": "ok"
       }
      ],
@@ -1123,19 +1263,24 @@
     },
     {
      "key": "basal",
-     "label": "기저세포 둘레 비율",
+     "label": "기저세포 조각·둘레 비율",
      "tone": "cyan",
-     "function": "ihc.basal_coverage",
-     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "function": "ihc.basal_fragments",
+     "how": "샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시",
      "features": [
       {
-       "id": "ft_basal_cell_coverage",
-       "value": "0 %",
+       "id": "ft_basal_fragment_density",
+       "value": "0 개/100 µm · 샘 36개 중 0개에 조각",
        "status": "ok"
       },
       {
        "id": "ft_basal_cell_presence",
        "value": "없음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "0 %",
        "status": "ok"
       }
      ],
@@ -1175,7 +1320,7 @@
    "title": "IHC · 고등급 PIN(IHC)",
    "source": "precise",
    "source_file": "sub-01_ses-03_hmwck-amacr.ome.tif",
-   "caption": "PRECISE sub-01_ses-03(글리슨 3+3=6) IHC 슬라이드의 HGPIN 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). AMACR 양성이지만 둘레에 기저세포가 조각으로 남은 HGPIN입니다. 기저세포가 조각나 있어 이 간이 둘레 지수는 낮게(“없음”) 나옵니다 — 침윤암(0%)과 가르려면 판독의가 조각난 기저세포를 직접 확인해야 합니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "caption": "PRECISE sub-01_ses-03(글리슨 3+3=6) IHC 슬라이드의 HGPIN 부위입니다(같은 조직의 연속 절편 · 화소 0.35 µm). AMACR 양성이지만 둘레에 기저세포가 조각으로 남은 HGPIN입니다. 둘레 비율은 낮지만(약 2%) 기저세포 조각 수로 보면 침윤암(조각 없음)과 갈립니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
    "builder": "ihc_example",
    "base": "ex_ihc_hgpin.jpg",
    "width": 760,
@@ -1195,7 +1340,7 @@
       },
       {
        "id": "ft_lesion_generic_area",
-       "value": "0.159 mm²",
+       "value": "0.0837 mm²",
        "status": "ok"
       }
      ],
@@ -1203,19 +1348,24 @@
     },
     {
      "key": "basal",
-     "label": "기저세포 둘레 비율",
+     "label": "기저세포 조각·둘레 비율",
      "tone": "cyan",
-     "function": "ihc.basal_coverage",
-     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "function": "ihc.basal_fragments",
+     "how": "샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시",
      "features": [
       {
-       "id": "ft_basal_cell_coverage",
-       "value": "2.2 %",
+       "id": "ft_basal_fragment_density",
+       "value": "0.59 개/100 µm · 샘 4개 중 2개에 조각",
        "status": "ok"
       },
       {
        "id": "ft_basal_cell_presence",
-       "value": "없음",
+       "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "2.2 %",
        "status": "ok"
       }
      ],
@@ -1270,7 +1420,7 @@
    "title": "IHC · 관내암(IHC)",
    "source": "precise",
    "source_file": "sub-02_ses-01_hmwck-amacr.ome.tif",
-   "caption": "PRECISE sub-02_ses-01(글리슨 4+5=9) IHC 슬라이드의 관내암 부위입니다(같은 조직의 연속 절편 · 화소 0.49 µm). 관을 채운 암세포 둘레에 기저세포가 남은 관내암입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
+   "caption": "PRECISE sub-02_ses-01(글리슨 4+5=9) IHC 슬라이드의 관내암 부위입니다(같은 조직의 연속 절편 · 화소 0.35 µm). 관을 채운 암세포 둘레에 기저세포가 남은 관내암입니다. HMWCK·AMACR 이중 염색입니다. 갈색은 기저세포(HMWCK), 분홍·적색은 AMACR입니다. 색 분리는 서비스 기준(갈색 DAB 광학밀도 0.03 초과 · 적색은 R≫G이고 B>G)이며 염색 차이에 따라 달라집니다. 영역 윤곽은 IHC 슬라이드의 공급자 주석입니다.",
    "builder": "ihc_example",
    "base": "ex_ihc_idc.jpg",
    "width": 760,
@@ -1290,7 +1440,7 @@
       },
       {
        "id": "ft_lesion_generic_area",
-       "value": "0.118 mm²",
+       "value": "0.062 mm²",
        "status": "ok"
       }
      ],
@@ -1298,19 +1448,24 @@
     },
     {
      "key": "basal",
-     "label": "기저세포 둘레 비율",
+     "label": "기저세포 조각·둘레 비율",
      "tone": "cyan",
-     "function": "ihc.basal_coverage",
-     "how": "샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음",
+     "function": "ihc.basal_fragments",
+     "how": "샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시",
      "features": [
       {
-       "id": "ft_basal_cell_coverage",
-       "value": "54.1 %",
+       "id": "ft_basal_fragment_density",
+       "value": "0.47 개/100 µm · 샘 2개 중 2개에 조각",
        "status": "ok"
       },
       {
        "id": "ft_basal_cell_presence",
        "value": "있음",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_coverage",
+       "value": "54.1 %",
        "status": "ok"
       }
      ],
@@ -1350,6 +1505,90 @@
       }
      ],
      "file": "ex_ihc_idc_read.png"
+    }
+   ],
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ex_he_basal_registered",
+   "modality": "he",
+   "modality_label": "H&E",
+   "region": "양성 샘과 종양",
+   "title": "H&E · H&E 위의 기저세포(IHC 정합)",
+   "source": "precise",
+   "source_file": "sub-23_ses-01_h-e.ome.tif; sub-23_ses-01_hmwck-amacr.ome.tif",
+   "caption": "PRECISE sub-23_ses-01(글리슨 3+4=7) H&E 창과, 같은 생검의 연속 절편 HMWCK·AMACR IHC를 조직 조각 단위로 정합해 같은 자리로 옮긴 창입니다(이 조직 Dice 0.81). H&E만으로는 기저세포를 확실히 가를 수 없어 기저세포는 IHC에서 잽니다. 두 절편은 떨어져 있어 샘 하나하나가 겹치지는 않습니다 — 같은 부위의 종양·양성 샘을 비교하는 용도입니다.",
+   "builder": "registered_example",
+   "base": "ex_he_basal_registered.jpg",
+   "width": 760,
+   "height": 760,
+   "layers": [
+    {
+     "key": "lesion",
+     "label": "종양·양성 샘(H&E 주석)",
+     "tone": "red",
+     "function": "tissue.lesion_area",
+     "how": "H&E 슬라이드의 공급자 주석(빨강 종양 · 초록 양성 샘)",
+     "features": [
+      {
+       "id": "ft_lesion_generic_area",
+       "value": "0.0678 mm² · 종양(빨강)",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_basal_registered_lesion.png"
+    },
+    {
+     "key": "ihc",
+     "label": "정합한 IHC 절편",
+     "tone": "white",
+     "function": "register.align",
+     "how": "IHC 슬라이드(0.18 µm/px)를 H&E 배율로 바꾸고 조직 조각마다 회전·이동을 맞춤(조직 마스크 Dice 0.81) · 켜면 같은 부위의 IHC가 보임(샘 단위 대응 아님)",
+     "features": [],
+     "file": "ex_he_basal_registered_ihc.png"
+    },
+    {
+     "key": "basal_benign",
+     "label": "양성 샘의 기저세포(정합한 IHC)",
+     "tone": "yellow",
+     "function": "ihc.basal_cell_presence",
+     "how": "정합한 IHC에서 IHC 양성 샘 주석(윤곽) 안 샘 경계 100 µm당 갈색 기저세포 조각(노랑)을 셈 · 0.35 이상이면 있음 · 「정합한 IHC 절편」 층과 함께 보면 IHC 위, 끄면 H&E 위(같은 부위, 샘 단위 대응 아님)",
+     "features": [
+      {
+       "id": "ft_basal_fragment_density",
+       "value": "0.8 개/100 µm · IHC 양성 샘 주석",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "있음 · IHC 양성 샘 주석",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_basal_registered_basal_benign.png"
+    },
+    {
+     "key": "basal_tumour",
+     "label": "종양의 기저세포(정합한 IHC)",
+     "tone": "yellow",
+     "function": "ihc.basal_cell_presence",
+     "how": "정합한 IHC에서 IHC 종양 주석(윤곽) 안 샘 경계 100 µm당 갈색 기저세포 조각(노랑)을 셈 · 0.35 이상이면 있음 · 「정합한 IHC 절편」 층과 함께 보면 IHC 위, 끄면 H&E 위(같은 부위, 샘 단위 대응 아님)",
+     "features": [
+      {
+       "id": "ft_basal_fragment_density",
+       "value": "0.08 개/100 µm · IHC 종양 주석",
+       "status": "ok"
+      },
+      {
+       "id": "ft_basal_cell_presence",
+       "value": "없음 · IHC 종양 주석",
+       "status": "ok"
+      }
+     ],
+     "file": "ex_he_basal_registered_basal_tumour.png"
     }
    ],
    "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",

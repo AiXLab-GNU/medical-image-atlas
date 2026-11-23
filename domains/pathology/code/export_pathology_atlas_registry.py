@@ -36,7 +36,7 @@ def _modality_of(imaging_id):
 
 
 TABLES = {
-    'h_masked_figures_v01.csv': ['figure_id', 'source_id', 'source_file', 'mask_label', 'base_file', 'base_sha256',
+    'h_masked_figures_v01.csv': ['figure_id', 'kind', 'source_id', 'source_file', 'mask_label', 'base_file', 'base_sha256',
                                  'overlay_file', 'overlay_sha256', 'context_file', 'width', 'height', 'transform', 'caption'],
     'h_masked_figure_items_v01.csv': ['figure_id', 'item_id'],
     'h_measure_examples_v01.csv': ['example_id', 'modality', 'region', 'title', 'source_id', 'source_file', 'builder',
@@ -46,6 +46,8 @@ TABLES = {
     'i_feature_implementations_v01.csv': ['feature_id', 'target_id', 'role', 'level', 'function', 'input', 'method', 'reference'],
     'i_measure_disease_links_v01.csv': ['feature_id', 'disease_id', 'relation_type', 'via_item_id'],
     'i_example_coverage_v01.csv': ['feature_id', 'modality', 'has_example', 'example_id'],
+    'i_measure_validation_v01.csv': ['check_id', 'function', 'source_id', 'reference', 'split', 'cases', 'metric', 'value',
+                                     'decision', 'note_ko'],
     'i_grading_agreement_v01.csv': ['source_id', 'comparison', 'n', 'exact_percent', 'within_one_percent', 'kappa',
                                     'kappa_quadratic', 'note_ko'],
 }
@@ -58,7 +60,7 @@ def build_tables():
     out = {name: [] for name in TABLES}
     for f in figs:
         out['h_masked_figures_v01.csv'].append({
-            'figure_id': f['id'], 'source_id': f['source'], 'source_file': f['source_file'], 'mask_label': f['mask_label'],
+            'figure_id': f['id'], 'kind': f.get('kind', 'masked'), 'source_id': f['source'], 'source_file': f['source_file'], 'mask_label': f['mask_label'],
             'base_file': f['base'], 'base_sha256': f['base_sha256'], 'overlay_file': f['overlay'],
             'overlay_sha256': f['overlay_sha256'], 'context_file': f.get('context', ''), 'width': f['width'],
             'height': f['height'], 'transform': f['transform'], 'caption': f['caption']})
@@ -101,7 +103,16 @@ def build_tables():
         out['i_grading_agreement_v01.csv'].append({
             'source_id': 'sicapv2', 'comparison': '공급자 판정–주석 계산', 'n': s['n'], 'exact_percent': s['exact_gg'],
             'within_one_percent': s['within_one_gg'], 'kappa': s['kappa'], 'kappa_quadratic': s['kappa_quadratic'],
-            'note_ko': f"ISUP 2014 생검 규칙 · 글리슨 점수 일치 {s['exact_score']}%"})
+            'note_ko': f"ISUP 2014 생검 규칙, {s.get('min_pattern_px', 0)} 화소 미만 패턴 제외 · 글리슨 점수 일치 {s['exact_score']}%"})
+        for v in s.get('variants', []):
+            out['i_grading_agreement_v01.csv'].append({
+                'source_id': 'sicapv2', 'comparison': f"규칙 비교 · {v['key']}", 'n': v['n'], 'exact_percent': v['exact_gg'],
+                'within_one_percent': v['within_one_gg'], 'kappa': v['kappa'], 'kappa_quadratic': v['kappa_quadratic'],
+                'note_ko': f"{v['label']} · 계산이 더 높음 {v['higher']} · 더 낮음 {v['lower']}"})
+    validation_path = WEB / 'validation.json'
+    if validation_path.is_file():
+        for v in json.loads(validation_path.read_text(encoding='utf-8'))['checks']:
+            out['i_measure_validation_v01.csv'].append({k: v.get(k, '') for k in TABLES['i_measure_validation_v01.csv']})
     for fid, entries in sorted(_disease_links()(atlas).items()):
         if fid not in atlas['features']:
             continue

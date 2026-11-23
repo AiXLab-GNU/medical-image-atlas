@@ -17,7 +17,7 @@ from .code_links import PACKAGES, CodeIndex, default_packages_root
 from .disease_links import measurement_diseases
 
 DATA = Path(__file__).parent / 'data'
-NAV = [('/', '홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'), ('/lesions/', '병변 목록', 'lesions'),
+NAV = [('/', '전립선 홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'), ('/lesions/', '병변 목록', 'lesions'),
        ('/measurements/', '측정 목록', 'measurements'), ('/diseases/', '질병 목록', 'diseases'),
        ('/imaging/', '영상 종류', 'imaging')]
 MODALITIES = [('he', 'H&E'), ('ihc', 'IHC')]
@@ -76,13 +76,33 @@ UNIT_TEXT = [('count/mm2', '개/mm²'), ('count/area', '개/면적'), ('mm2', 'm
              ('category', '범주'), ('presence', '있음/없음'), ('ratio', '비율'), ('index', '지수'), ('count', '개')]
 IHC_REASON = 'IHC에서 이 측정을 보여 줄 주석 예시를 아직 만들지 않음'
 PENDING_REASON = {
-    'ft_basal_cell_presence': 'H&E만으로는 기저세포를 확실히 볼 수 없음(IHC 탭 예시 참고)',
+    'ft_basal_cell_presence': 'H&E만으로는 기저세포를 확실히 볼 수 없음 — 연속 절편 IHC를 정합한 예시(측정 표시 예시)와 IHC 탭 참고',
     'ft_basal_cell_coverage': 'H&E만으로는 기저세포를 확실히 볼 수 없음(IHC 탭 예시 참고)',
-    'ft_nucleolus_prominence': '40× 고배율 판독 항목 · 계산 함수가 아직 없음',
-    'ft_pni_presence': '신경주위 침범 주석이 있는 공개 CC BY 영상이 없음',
-    'ft_epe_presence': '근치 절제 표본(피막 포함)의 공개 CC BY 영상이 없음',
+    'ft_nucleolus_prominence': '40× 핵소체 검출을 시도했으나 종양과 양성 샘을 가르지 못해(검증 페이지) 판독 항목으로 둠',
+    'ft_pni_presence': '논문 그림(병변 탭)은 있으나 신경 주석이 있는 공개 영상이 없어 측정 예시 없음',
+    'ft_epe_presence': '논문 그림(병변 탭)은 있으나 피막 경계 주석이 있는 공개 영상이 없어 측정 예시 없음',
     'ft_gland_count': '샘 하나하나의 주석이 있는 영상이 양성 샘 예시뿐',
 }
+
+# ------------------------------------------------------------------ links between the three atlases
+# The portal (3개 영역 홈, port 8875) and the domain atlases run as separate services. Links reuse the host of the
+# current request with each service's port (works through an SSH tunnel that keeps port numbers);
+# MEDICAL_ATLAS_URL_<ID> overrides one of them.
+ATLAS_SITES = [('portal', '의료영상 지도', 8875), ('retinal', '안과', 8877), ('mammography', '유방', 8879),
+               ('pathology', '전립선', 8881)]
+
+
+def atlas_links(current: str) -> dict:
+    host = request.host
+    host = host.rsplit(':', 1)[0] if host.count(':') == 1 else (host.split(']')[0] + ']' if host.startswith('[') else host)
+    urls = {}
+    for sid, _, port in ATLAS_SITES:
+        env = os.environ.get(f'MEDICAL_ATLAS_URL_{sid.upper()}')
+        urls[sid] = env.rstrip('/') + '/' if env else f'{request.scheme}://{host}:{port}/'
+    return {'portal': urls['portal'],
+            'domains': [{'id': sid, 'label': label, 'url': urls[sid], 'current': sid == current}
+                        for sid, label, _ in ATLAS_SITES if sid != 'portal']}
+
 
 
 def unit_text(value: str) -> str:
@@ -158,11 +178,14 @@ def load_content() -> dict:
     diseases = atlas['diseases']
     grading_path = DATA / 'grading.json'
     grading_data = json.loads(grading_path.read_text(encoding='utf-8')) if grading_path.is_file() else None
+    validation_path = DATA / 'validation.json'
+    validation = json.loads(validation_path.read_text(encoding='utf-8')) if validation_path.is_file() else None
     masked_by_id = {f['id']: f for f in masked}
     return {'atlas': atlas, 'items': items, 'masked': masked, 'masked_by_item': masked_by_item,
             'masked_files': masked_files, 'measure_examples': examples, 'measure_files': measure_files,
             'by_slug': by_slug, 'diseases': diseases, 'disease_by_slug': {d['slug']: d for d in diseases.values()},
-            'measure_diseases': measurement_diseases(atlas), 'grading': grading_data, 'masked_by_id': masked_by_id}
+            'measure_diseases': measurement_diseases(atlas), 'grading': grading_data, 'masked_by_id': masked_by_id,
+            'validation': validation}
 
 
 def item_path(item: dict) -> str:
@@ -194,7 +217,7 @@ def create_app(config: dict | None = None) -> Flask:
 
     @app.context_processor
     def shared_context():
-        return {'nav': NAV, 'items': items, 'atlas': atlas, 'item_path': item_path, 'modalities': MODALITIES,
+        return {'nav': NAV, 'atlas_links': atlas_links('pathology'), 'items': items, 'atlas': atlas, 'item_path': item_path, 'modalities': MODALITIES,
                 'obs_label': OBS_LABEL, 'review_label': REVIEW_LABEL, 'relation_label': RELATION_LABEL,
                 'feature_status_label': FEATURE_STATUS_LABEL, 'query': request.args.get('q', '').strip(),
                 'schematic_items': SCHEMATIC_ITEMS, 'disease_by_id': content['diseases'],
@@ -506,9 +529,20 @@ def create_app(config: dict | None = None) -> Flask:
         headers = {'Content-Disposition': f'attachment; filename="{target.name}"'} if request.args.get('download') else {}
         return Response(target.read_text(encoding='utf-8'), mimetype='text/plain; charset=utf-8', headers=headers)
 
+    @app.get('/validation/')
+    def validation_page():
+        return render_template('validation.html', active='validation', title='측정 검증', validation=content['validation'])
+
     @app.get('/sources/')
     def sources():
-        image_sources = sorted({(f['name'], f['credit'], f['url'], f['license'], f['license_url']) for f in content['masked']})
+        seen = {}
+        for f in content['masked']:
+            row = seen.setdefault(f['source'], {'id': f['source'], 'kind': f.get('kind', 'masked'), 'name': f['name'],
+                                                'credit': f.get('source_credit', f['credit']), 'url': f['url'],
+                                                'license': f['license'], 'license_url': f['license_url'], 'panels': []})
+            if f.get('panel'):
+                row['panels'].append(f['panel'])
+        image_sources = sorted(seen.values(), key=lambda r: (r['kind'] == 'paper', r['name']))
         return render_template('sources.html', active='sources', title='출처와 라이선스', image_sources=image_sources)
 
     @app.get('/health')

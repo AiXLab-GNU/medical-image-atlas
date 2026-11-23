@@ -4,7 +4,9 @@
 {% set common_quant = item.features|selectattr('type','equalto','quantitative')|selectattr('common')|list %}
 {% set qual = item.features|selectattr('type','equalto','qualitative')|list %}
 {% set vis = [] %}
-{% for fig in masked %}{% set _ = vis.append({'kind': 'masked', 'fig': fig, 'label': '실제 영상' ~ (' ' ~ loop.index if masked|length > 1 else '')}) %}{% endfor %}
+{% set real = masked|rejectattr('kind', 'equalto', 'paper')|list %}{% set paper = masked|selectattr('kind', 'equalto', 'paper')|list %}
+{% for fig in real %}{% set _ = vis.append({'kind': 'masked', 'fig': fig, 'label': '실제 영상' ~ (' ' ~ loop.index if real|length > 1 else '')}) %}{% endfor %}
+{% for fig in paper %}{% set _ = vis.append({'kind': 'masked', 'fig': fig, 'label': '논문 그림' ~ (' ' ~ loop.index if paper|length > 1 else '')}) %}{% endfor %}
 {% if item.id in schematic_items %}{% set _ = vis.append({'kind': 'schematic', 'label': '모식도'}) %}{% endif %}
 
 <div class="breadcrumbs"><a href="/">홈</a><span>/</span><a href="/{{ item.section }}/">{{ section_label }}</a><span>/</span>

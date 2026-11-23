@@ -18,6 +18,15 @@
 {%- endmacro %}
 
 {% macro masked_figure(fig, uid) -%}
+{% if fig.kind == 'paper' %}<figure class="masked-figure paper-figure">
+  <a class="mask-panel paper-panel" href="/figures/{{ fig.base }}" target="_blank" rel="noopener">
+    <span class="mask-tag">논문 그림 · {{ fig.panel }}</span>
+    <img src="/figures/{{ fig.base }}" alt="{{ fig.caption }}" width="{{ fig.width }}" height="{{ fig.height }}" loading="lazy">
+  </a>
+  <div class="mask-bar"><span class="mask-what">{{ fig.mask_label }}</span><span class="muted small">표시를 더하지 않은 원 그림 · 누르면 원 크기</span></div>
+  <figcaption>{{ fig.caption }}<span class="original-caption">원 캡션: “{{ fig.original_caption }}”</span></figcaption>
+  <p class="figure-credit">{{ fig.credit }} · <a href="{{ fig.url }}" target="_blank" rel="noopener">논문</a> · <a href="{{ fig.license_url }}" target="_blank" rel="noopener">{{ fig.license }}</a> · 원 파일 {{ fig.source_file }} · {{ fig.transform }}</p>
+</figure>{% else %}
 <figure class="masked-figure">
   <div class="mask-pair{% if fig.width > 2.2 * fig.height %} mask-pair-stack{% endif %}">
     <a class="mask-panel" href="/figures/{{ fig.base }}" target="_blank" rel="noopener">
@@ -36,5 +45,5 @@
   <div class="mask-bar"><span class="mask-what"><span class="mask-dot"></span>{{ fig.mask_label }}</span>{% if fig.legend %}<span class="mask-legend">{% for l in fig.legend %}<span class="ml-{{ l.cls }}">{{ l.label }}</span>{% endfor %}</span>{% endif %}<span class="muted small">실제 영상 · 누르면 원 크기</span></div>
   <figcaption>{{ fig.caption }}</figcaption>
   <p class="figure-credit">{{ fig.credit }} · <a href="{{ fig.url }}" target="_blank" rel="noopener">출처</a> · <a href="{{ fig.license_url }}" target="_blank" rel="noopener">{{ fig.license }}</a> · 원 파일 {{ fig.source_file.split('/')[-1] }} · {{ fig.transform }}</p>
-</figure>
+</figure>{% endif %}
 {%- endmacro %}

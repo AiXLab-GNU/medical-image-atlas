@@ -23,7 +23,7 @@ IMAGE_FILES = {
     'oct_lesions.jpg': 'jcm-11-03266-g002-550.jpg',
     'atrophy.webp': 'fnins-18-1415575-g001.webp',
 }
-NAV = [('/', '홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'),
+NAV = [('/', '망막 홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'),
        ('/lesions/', '병변 목록', 'lesions'), ('/measurements/', '측정 목록', 'measurements'),
        ('/diseases/', '질병 목록', 'diseases'), ('/imaging/', '영상 종류', 'imaging'),
        ('/images/', '영상 읽기', 'images')]
@@ -81,6 +81,26 @@ UNIT_TEXT = [('defined_by_parent', '원 측정과 같음'), ('count/year', '개/
              ('px2', 'px²'), ('DD2', 'DD²'), ('um', 'µm'), ('count/area', '개/면적'), ('category', '범주'),
              ('presence', '있음/없음'), ('ratio', '비율'), ('intensity', '신호 강도'), ('dimensionless', '무차원'),
              ('score', '점수'), ('deg', '°')]
+
+# ------------------------------------------------------------------ links between the three atlases
+# The portal (3개 영역 홈, port 8875) and the domain atlases run as separate services. Links reuse the host of the
+# current request with each service's port (works through an SSH tunnel that keeps port numbers);
+# MEDICAL_ATLAS_URL_<ID> overrides one of them.
+ATLAS_SITES = [('portal', '의료영상 지도', 8875), ('retinal', '안과', 8877), ('mammography', '유방', 8879),
+               ('pathology', '전립선', 8881)]
+
+
+def atlas_links(current: str) -> dict:
+    host = request.host
+    host = host.rsplit(':', 1)[0] if host.count(':') == 1 else (host.split(']')[0] + ']' if host.startswith('[') else host)
+    urls = {}
+    for sid, _, port in ATLAS_SITES:
+        env = os.environ.get(f'MEDICAL_ATLAS_URL_{sid.upper()}')
+        urls[sid] = env.rstrip('/') + '/' if env else f'{request.scheme}://{host}:{port}/'
+    return {'portal': urls['portal'],
+            'domains': [{'id': sid, 'label': label, 'url': urls[sid], 'current': sid == current}
+                        for sid, label, _ in ATLAS_SITES if sid != 'portal']}
+
 
 
 def unit_text(value: str) -> str:
@@ -331,7 +351,7 @@ def create_app(config: dict | None = None) -> Flask:
 
     @app.context_processor
     def shared_context():
-        return {'nav': NAV, 'samples': samples, 'items': items, 'atlas': atlas, 'item_path': item_path,
+        return {'nav': NAV, 'atlas_links': atlas_links('retinal'), 'samples': samples, 'items': items, 'atlas': atlas, 'item_path': item_path,
                 'modalities': MODALITIES, 'obs_label': OBS_LABEL, 'review_label': REVIEW_LABEL,
                 'relation_label': RELATION_LABEL, 'feature_status_label': FEATURE_STATUS_LABEL,
                 'query': request.args.get('q', '').strip(), 'schematic_items': SCHEMATIC_ITEMS,

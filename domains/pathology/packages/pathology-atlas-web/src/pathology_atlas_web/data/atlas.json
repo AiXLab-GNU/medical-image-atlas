@@ -187,6 +187,16 @@
      ],
      "type": "characteristic_nonspecific",
      "version": "—"
+    },
+    {
+     "condition": "HGPIN은 기저세포가 조각으로라도 남음",
+     "finding": "ft_basal_fragment_density",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
     }
    ],
    "scope": "primary",
@@ -226,7 +236,8 @@
         "les_comedonecrosis",
         "ft_basal_cell_presence",
         "ft_idc_presence",
-        "ft_basal_cell_coverage"
+        "ft_basal_cell_coverage",
+        "ft_basal_fragment_density"
        ],
        "grade": "관내암",
        "logic": "any",
@@ -552,7 +563,8 @@
         "ft_gland_circularity",
         "ft_amacr_positivity",
         "ft_basal_cell_coverage",
-        "ft_amacr_fraction"
+        "ft_amacr_fraction",
+        "ft_basal_fragment_density"
        ],
        "grade": "침윤암을 지지",
        "logic": "any",
@@ -828,6 +840,16 @@
      ],
      "type": "characteristic_nonspecific",
      "version": "—"
+    },
+    {
+     "condition": "침윤암 샘은 경계에 기저세포 조각이 거의 없음",
+     "finding": "ft_basal_fragment_density",
+     "review": "source_linked",
+     "sources": [
+      "src_who_2022"
+     ],
+     "type": "diagnostic_criterion",
+     "version": "—"
     }
    ],
    "scope": "primary",
@@ -1025,7 +1047,7 @@
      "function": "pathology_measures.ihc.basal_cell_presence",
      "input": "ihc_region",
      "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
-     "method": "basal coverage ≥ 5 % (service cut-off)",
+     "method": "basal fragments ≥ 0.35 per 100 µm (cut-off validated on held-out PRECISE IHC windows)",
      "reference": ""
     },
     "sources": [
@@ -1042,6 +1064,42 @@
    "target": "ana_basal_cell_layer",
    "type": "qualitative",
    "unit": "presence"
+  },
+  "ft_basal_fragment_density": {
+   "axis": "arrangement_continuity",
+   "definition": "샘 경계 100 µm당 따로 떨어진 갈색(HMWCK) 기저세포 조각 수(조각으로 남은 HGPIN과 완전 소실된 침윤암을 가름)",
+   "id": "ft_basal_fragment_density",
+   "imaging": [
+    "img_ihc_hmwck_amacr"
+   ],
+   "impl": {
+    "count": 1,
+    "examples": [],
+    "inputs": [
+     "ihc_region"
+    ],
+    "level": "mask",
+    "package": {
+     "function": "pathology_measures.ihc.basal_fragments",
+     "input": "ihc_region",
+     "input_label": "HMWCK·AMACR IHC 영상과 샘·영역 mask",
+     "method": "brown basal-cell fragments (≥15 µm²) per 100 µm of gland boundary",
+     "reference": ""
+    },
+    "sources": [
+     "pathology-measures"
+    ],
+    "usable": 1
+   },
+   "name": "기저세포 조각 밀도",
+   "output": "count_per_area",
+   "region": "ana_basal_cell_layer",
+   "requirements": "HMWCK·AMACR 이중 염색 · 샘 경계 · 화소 크기",
+   "review": "source_linked",
+   "role": "measurement",
+   "target": "ana_basal_cell_layer",
+   "type": "quantitative",
+   "unit": "개/100 µm"
   },
   "ft_benign_gland_fraction": {
    "axis": "area_volume",
@@ -1225,7 +1283,7 @@
      "function": "pathology_measures.glands.count",
      "input": "region_mask",
      "input_label": "H&E 영상과 영역 mask(병변·샘·종양 주석)",
-     "method": "connected components of the gland mask",
+     "method": "connected components of the gland mask (annotation or glands.segment_glands)",
      "reference": ""
     },
     "sources": [
@@ -2288,6 +2346,21 @@
      "review": "source_linked",
      "type": "quantitative",
      "unit": "%"
+    },
+    {
+     "axis": "arrangement_continuity",
+     "common": false,
+     "definition": "샘 경계 100 µm당 따로 떨어진 갈색(HMWCK) 기저세포 조각 수(조각으로 남은 HGPIN과 완전 소실된 침윤암을 가름)",
+     "id": "ft_basal_fragment_density",
+     "imaging": [
+      "img_ihc_hmwck_amacr"
+     ],
+     "name": "기저세포 조각 밀도",
+     "region": "ana_basal_cell_layer",
+     "requirements": "HMWCK·AMACR 이중 염색 · 샘 경계 · 화소 크기",
+     "review": "source_linked",
+     "type": "quantitative",
+     "unit": "개/100 µm"
     }
    ],
    "group": "layer",

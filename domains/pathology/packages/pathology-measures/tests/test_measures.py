@@ -5,7 +5,7 @@ import unittest
 
 import numpy as np
 
-from pathology_measures import REGISTRY, glands, grading, ihc, nuclei, texture, tissue
+from pathology_measures import REGISTRY, glands, grading, ihc, nuclei, register, stain, texture, tissue
 
 
 def disk(shape, centre, r):
@@ -51,6 +51,16 @@ class MeasuresTest(unittest.TestCase):
         self.assertTrue(5 < glands.lumen_fraction(img, g).value < 30)
         self.assertAlmostEqual(glands.lumina_per_gland(img, g).value, 1.0, delta=0.01)
 
+    def test_segment_glands(self):
+        img = np.zeros((200, 260, 3), np.uint8)
+        img[:] = (235, 165, 200)                                    # stroma without nuclei
+        g = disk(img.shape[:2], (60, 60), 30) | disk(img.shape[:2], (140, 170), 35)
+        img[g] = (150, 90, 170)                                     # haematoxylin-rich epithelium
+        img[disk(img.shape[:2], (60, 60), 12) | disk(img.shape[:2], (140, 170), 14)] = (250, 250, 250)
+        seg = glands.segment_glands(img, np.ones(img.shape[:2], bool), sigma_um=3.0)
+        self.assertEqual(glands.count(seg).value, 2)
+        self.assertGreater((seg & g).sum() / g.sum(), 0.7)
+
     def test_nuclei(self):
         img, _ = he_patch()
         region = np.ones(img.shape[:2], bool)
@@ -64,6 +74,9 @@ class MeasuresTest(unittest.TestCase):
         self.assertEqual(grading.gleason_from_areas({4: 80, 3: 18, 5: 2}).value, '4+5')     # biopsy: highest remaining
         self.assertEqual(grading.gleason_from_areas({4: 97, 3: 3}, specimen='prostatectomy').value, '4+4')
         self.assertEqual(grading.gleason_from_areas({3: 100}).value, '3+3')
+        self.assertEqual(grading.gleason_from_areas({5: 99, 4: 1}).value, '5+5')                # lower minor < 5 %: ignored
+        self.assertEqual(grading.gleason_from_areas({5: 90, 4: 10}).value, '5+4')
+        self.assertEqual(grading.gleason_from_areas({4: 98, 5: 2}).value, '4+5')                # higher minor: any amount
         self.assertEqual(grading.gleason_from_areas({}).status, 'not_observed')
         self.assertEqual([grading.grade_group(s).value for s in ('3+3', '3+4', '4+3', '4+4', '4+5')], [1, 2, 3, 4, 5])
         cats = [0, 1, 2]
@@ -79,8 +92,41 @@ class MeasuresTest(unittest.TestCase):
         cov = ihc.basal_coverage(img, gland)
         self.assertGreater(cov.value, 10)
         self.assertEqual(ihc.basal_coverage(np.full((120, 120, 3), 240, np.uint8), gland).value, 0.0)
-        self.assertTrue(ihc.basal_cell_presence(cov).value)
+        frag = ihc.basal_fragments(img, gland, mpp=0.5)
+        self.assertGreater(frag.value, 0)
+        self.assertTrue(ihc.basal_cell_presence(frag).value)
+        broken = img.copy()
+        yy, xx = np.mgrid[:120, :120]
+        broken[rim & ((np.arctan2(yy - 60, xx - 60) * 4 / np.pi).astype(int) % 2 == 0)] = 240   # patchy rim
+        self.assertGreater(ihc.basal_fragments(broken, gland, mpp=0.5).value, frag.value)       # more, separate fragments
+        self.assertFalse(ihc.basal_cell_presence(ihc.basal_fragments(np.full((120, 120, 3), 240, np.uint8), gland, mpp=0.5)).value)
         self.assertTrue(ihc.amacr_positivity(ihc.amacr_fraction(img, gland)).value)
+
+    def test_stain(self):
+        img, _ = he_patch()
+        out = stain.macenko_normalise(img)
+        self.assertEqual(out.shape, img.shape)
+        self.assertGreater(out[:, 240:].mean(), 220)                             # glass stays bright
+        self.assertTrue((stain.macenko_normalise(np.full((50, 50, 3), 250, np.uint8)) == 250).all())   # nothing to fit
+
+    def test_register(self):
+        rng = np.random.default_rng(1)
+        he = np.full((400, 400, 3), 250, np.uint8)
+        yy, xx = np.mgrid[:400, :400]
+        core1 = (np.abs((yy - 120) - 0.3 * (xx - 200)) < 18) & (xx > 60) & (xx < 340)
+        core2 = disk((400, 400), (290, 150), 45) | disk((400, 400), (300, 250), 30)
+        he[core1 | core2] = (200, 120, 180)
+        ihc_img = np.full((400, 400, 3), 250, np.uint8)
+        moved = np.zeros((400, 400), bool)
+        A = register._matrix(12.0, False)
+        t = np.array([15.0, -10.0])
+        moved = register.warp_to(core1 | core2, (400, 400), np.linalg.inv(A), -np.linalg.inv(A) @ t)
+        ihc_img[moved] = (170, 190, 220)
+        res = register.align(he, 16.0, ihc_img, 16.0, grid_um=16.0, min_core_mm2=0.01)
+        self.assertGreater(res['dice_global'], 0.85)
+        self.assertGreater(res['dice_global'], res['dice_before'])
+        self.assertLess(abs(res['global']['angle'] - 12.0) % 360, 3.0)
+        del rng
 
     def test_texture(self):
         flat = np.full((80, 80, 3), 128, np.uint8)

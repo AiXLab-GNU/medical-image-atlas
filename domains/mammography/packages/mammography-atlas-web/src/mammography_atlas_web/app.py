@@ -16,7 +16,7 @@ from .code_links import PACKAGES, CodeIndex, default_packages_root
 from .disease_links import measurement_diseases
 
 DATA = Path(__file__).parent / 'data'
-NAV = [('/', '홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'), ('/lesions/', '병변 목록', 'lesions'),
+NAV = [('/', '유방 홈', 'home'), ('/anatomy/', '해부학 지도', 'anatomy'), ('/lesions/', '병변 목록', 'lesions'),
        ('/measurements/', '측정 목록', 'measurements'), ('/diseases/', '질병 목록', 'diseases'),
        ('/imaging/', '영상 종류', 'imaging')]
 MODALITIES = [('ffdm', '2D 유방촬영'), ('dbt', 'DBT'), ('cem', 'CEM')]
@@ -102,6 +102,26 @@ PENDING_REASON = {
     'ft_mass_shape': '공급자가 모양을 따로 분류하지 않음(경계 분류만 있음)', 'ft_mass_density': '공급자가 밀도를 분류하지 않음',
     'ft_calc_distribution': '공급자가 분포를 분류하지 않음', 'ft_ad_presence': '판독 항목 · 구조왜곡 예시의 수렴 지수 참고',
 }
+
+# ------------------------------------------------------------------ links between the three atlases
+# The portal (3개 영역 홈, port 8875) and the domain atlases run as separate services. Links reuse the host of the
+# current request with each service's port (works through an SSH tunnel that keeps port numbers);
+# MEDICAL_ATLAS_URL_<ID> overrides one of them.
+ATLAS_SITES = [('portal', '의료영상 지도', 8875), ('retinal', '안과', 8877), ('mammography', '유방', 8879),
+               ('pathology', '전립선', 8881)]
+
+
+def atlas_links(current: str) -> dict:
+    host = request.host
+    host = host.rsplit(':', 1)[0] if host.count(':') == 1 else (host.split(']')[0] + ']' if host.startswith('[') else host)
+    urls = {}
+    for sid, _, port in ATLAS_SITES:
+        env = os.environ.get(f'MEDICAL_ATLAS_URL_{sid.upper()}')
+        urls[sid] = env.rstrip('/') + '/' if env else f'{request.scheme}://{host}:{port}/'
+    return {'portal': urls['portal'],
+            'domains': [{'id': sid, 'label': label, 'url': urls[sid], 'current': sid == current}
+                        for sid, label, _ in ATLAS_SITES if sid != 'portal']}
+
 
 
 def unit_text(value: str) -> str:
@@ -213,7 +233,7 @@ def create_app(config: dict | None = None) -> Flask:
 
     @app.context_processor
     def shared_context():
-        return {'nav': NAV, 'items': items, 'atlas': atlas, 'item_path': item_path, 'modalities': MODALITIES,
+        return {'nav': NAV, 'atlas_links': atlas_links('mammography'), 'items': items, 'atlas': atlas, 'item_path': item_path, 'modalities': MODALITIES,
                 'obs_label': OBS_LABEL, 'review_label': REVIEW_LABEL, 'relation_label': RELATION_LABEL,
                 'feature_status_label': FEATURE_STATUS_LABEL, 'query': request.args.get('q', '').strip(),
                 'schematic_items': SCHEMATIC_ITEMS, 'disease_by_id': content['diseases'],

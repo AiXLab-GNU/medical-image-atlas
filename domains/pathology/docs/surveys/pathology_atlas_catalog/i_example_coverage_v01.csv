@@ -3,8 +3,9 @@ ft_amacr_fraction,ihc,yes,ex_ihc_benign
 ft_amacr_positivity,ihc,yes,ex_ihc_benign
 ft_artifact_fraction,he,yes,ex_he_core
 ft_basal_cell_coverage,ihc,yes,ex_ihc_benign
-ft_basal_cell_presence,he,no,
+ft_basal_cell_presence,he,yes,ex_he_basal_registered
 ft_basal_cell_presence,ihc,yes,ex_ihc_benign
+ft_basal_fragment_density,ihc,yes,ex_ihc_benign
 ft_benign_gland_fraction,he,yes,ex_he_core
 ft_cribriform_presence,he,yes,ex_he_gp4
 ft_epe_presence,he,no,

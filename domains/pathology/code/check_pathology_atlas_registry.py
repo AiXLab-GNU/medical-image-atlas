@@ -70,6 +70,7 @@ SCHEMA = {
     'i_example_coverage_v01.csv': (['feature_id', 'modality'], {'feature_id': (('feature',), False, True),
                                                                 'example_id': (('example',), False, False)}),
     'i_grading_agreement_v01.csv': (['source_id', 'comparison'], {'source_id': (('image_source',), False, True)}),
+    'i_measure_validation_v01.csv': (['check_id'], {'source_id': (('image_source',), False, True)}),
 }
 
 
@@ -110,6 +111,8 @@ def check():
             warnings.append(f"g_image_sources: {row['source_id']} local data missing at {row['resource_path']}")
     for row in tables.get('h_masked_figures_v01.csv', []):
         for col, sha in (('base_file', 'base_sha256'), ('overlay_file', 'overlay_sha256')):
+            if col == 'overlay_file' and row.get('kind') == 'paper' and not row[col]:
+                continue
             path = registry.MASKED_DIR / row[col]
             if not path.is_file():
                 errors.append(f"h_masked_figures: {row['figure_id']} missing {row[col]}")

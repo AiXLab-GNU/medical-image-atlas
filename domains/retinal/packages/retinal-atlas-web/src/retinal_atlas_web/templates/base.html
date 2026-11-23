@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">{% block head %}{% endblock %}</head>
 <body class="page-{{ active or 'other' }}">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="atlas-bar"><div class="atlas-bar-inner">
+  <a class="atlas-bar-home" href="{{ atlas_links.portal }}"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="10" cy="12" r="5" fill="#c4562e"/><circle cx="22" cy="12" r="5" fill="#7c3aed"/><circle cx="16" cy="22" r="5" fill="#9b7fc4"/></svg>의료영상 지도<span>3개 영역 홈</span></a>
+  <nav aria-label="영역 바꾸기">{% for a in atlas_links.domains %}<a href="{{ a.url }}"{% if a.current %} aria-current="true"{% endif %}>{{ a.label }}</a>{% endfor %}</nav>
+</div></div>
 <header class="top"><div class="top-inner">
   <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#c4562e"/><circle cx="21" cy="15" r="4.2" fill="#fbe3b5"/><circle cx="12" cy="17" r="3" fill="#7a2c14"/><path d="M19 12 C14 6 8 7 4 11 M19 18 C14 25 8 24 4 21" stroke="#7b1610" stroke-width="1.6" fill="none"/></svg><span>망막 영상 지도</span></a>
   <nav aria-label="주 메뉴">{% for path,label,key in nav %}<a href="{{ path }}"{% if active == key %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}</nav>

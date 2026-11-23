@@ -23,9 +23,9 @@
 | `e_grading_schemes_v01.csv` | E. 판정 체계(글리슨 패턴·ISUP 등급군·pT·관내암 기준·암과 모방 병변 가르기) | 직접 작성 |
 | `e_grading_steps_v01.csv` | E. 판정 단계 | 직접 작성 |
 | `sources_v01.csv` | 근거 문헌(Europe PMC로 PMID 확인) | 직접 작성 |
-| `g_image_sources_v01.csv` | 영상 출처: PRECISE·SICAPv2·PAR(모두 CC BY 4.0) | 직접 작성 |
-| `g_provider_figures_v01.csv` | 논문 그림 파일(아직 없음 · IHC·신경주위 침범 그림을 넣을 자리) | 직접 작성 |
-| `h_masked_figures_v01.csv` | 항목 페이지 그림 | 생성 |
+| `g_image_sources_v01.csv` | 영상 출처: PRECISE·SICAPv2·PAR 데이터셋과 CC BY 4.0 논문 9편(`kind=article`) | 직접 작성 |
+| `g_provider_figures_v01.csv` | 논문 그림 원본 12장(원 파일명·SHA-256·PMC OA 주소) | 직접 작성 |
+| `h_masked_figures_v01.csv` | 항목 페이지 그림(`kind`: `masked` 데이터셋 영상+표시 · `paper` 논문 패널, 표시 없음) | 생성 |
 | `h_masked_figure_items_v01.csv` | 그림 × 항목 | 생성 |
 | `h_measure_examples_v01.csv` | 측정 표시 예시 | 생성 |
 | `h_example_layers_v01.csv` | 예시의 표시 층 | 생성 |
@@ -33,14 +33,16 @@
 | `i_feature_implementations_v01.csv` | 특징별 구현 수준과 pathology-measures 함수 | 생성 |
 | `i_measure_disease_links_v01.csv` | 측정 → 대상 질병 | 생성 |
 | `i_example_coverage_v01.csv` | 측정 × 영상 종류 × 예시 유무 | 생성 |
-| `i_grading_agreement_v01.csv` | 등급 판정 일치도: PAR 판독의 쌍별 · SICAPv2 공급자 판정 vs 주석 계산(kappa·일치율) | 생성 |
+| `i_grading_agreement_v01.csv` | 등급 판정 일치도: PAR 판독의 쌍별 · SICAPv2 공급자 판정 vs 주석 계산(kappa·일치율)과 계산 규칙별 비교 | 생성 |
+| `i_measure_validation_v01.csv` | 측정 검증: 샘 분할·염색 정규화·기저세포 기준·핵소체·H&E–IHC 정합을 주석과 대조한 결과와 채택 여부 | 생성 |
 
 ## 갱신 순서
 
 ```bash
 P=domains/pathology
 .venv/bin/python -B $P/code/build_pathology_atlas_catalog.py      # 적용 관계·읽기 문서·atlas.json
-.venv/bin/python -B $P/code/build_pathology_figures.py            # 그림·측정 표시 예시(PRECISE·SICAPv2)
+.venv/bin/python -B $P/code/build_pathology_figures.py            # 그림·측정 표시 예시(PRECISE·SICAPv2·PAR·논문 패널)
+.venv/bin/python -B $P/code/evaluate_pathology_measures.py       # 측정 검증(validation.json, 수 분)
 .venv/bin/python -B $P/code/export_pathology_atlas_registry.py    # H·I 생성 표
 .venv/bin/python -B $P/code/check_pathology_atlas_registry.py     # 키·참조·파일·체크섬·라이선스 검사
 .venv/bin/python -B -m unittest discover -s $P/code/tests
@@ -51,7 +53,8 @@ P=domains/pathology
 - 관측 열은 `obs_he`·`obs_ihc`(값 `direct`·`limited`·`none`). 한 칸에 여러 값은 `;`로 구분한다.
 - PRECISE 주석 class: 1 종양 · 2 양성 샘 · 3 인공물 · 4 HGPIN · 5 관내암 · 6 비정형 관내 증식 · 7 간질(자동 보충 포함 가능).
 - SICAPv2 주석 값은 실제로 0·3·4·5(패턴 번호)다. 공급자 readme의 1·2·3 표기와 다르다.
-- PRECISE는 OME 메타데이터의 µm/px로 mm·µm² 단위를 쓰고, SICAPv2는 화소 단위다.
+- PRECISE는 OME 메타데이터의 µm/px로 mm·µm² 단위를 쓰고, SICAPv2는 화소 단위다. PRECISE H&E(대부분 0.243 µm/px)와 IHC(0.177 µm/px)는 화소 간격이 달라 슬라이드마다 따로 읽는다(`precise_mpp(name, kind)`).
 - 병변 색 영역은 공급자 주석, 조직·내강·핵은 서비스 자동 추정이다. 핵은 검증된 분할이 아닌 후보다.
 - 공개 영상은 CC BY 4.0·CC0 1.0만 쓴다. PANDA·LEOPARD·CHIMERA·PBGG(비영리)와 기관 자료는 쓰지 않는다.
+- 논문 그림은 고정 상자로 패널만 잘라 싣고 아무 표시도 더하지 않는다. 병변 이름은 저자 캡션을 따르고 원 캡션을 함께 보인다. 원본 SHA-256이 바뀌면 생성이 멈춘다.
 - `d_applicability_overrides`·`d_feature_applicability`에서 `feature_id`가 빈 행은 그 대상 전체에 대한 지정이다.

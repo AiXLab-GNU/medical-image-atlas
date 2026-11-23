@@ -38,3 +38,5 @@ rel_pca_amacr_frac,dis_prostate_adenocarcinoma,ft_amacr_fraction,characteristic_
 rel_idc_basal_cov,dis_idc_p,ft_basal_cell_coverage,diagnostic_criterion,src_guo_2006,—,관내암은 기저세포 둘레가 남아 있음,stage1_drafted,src_guo_2006,source_linked
 rel_hgpin_basal_cov,dis_hgpin,ft_basal_cell_coverage,diagnostic_criterion,src_who_2022,—,HGPIN은 기저세포가 남아 있음(조각날 수 있음),stage1_drafted,src_who_2022,source_linked
 rel_hgpin_amacr,dis_hgpin,ft_amacr_fraction,characteristic_nonspecific,src_who_2022,—,HGPIN도 AMACR 양성일 수 있음(기저세포로 침윤암과 가름),stage1_drafted,src_who_2022,source_linked
+rel_pca_basal_frag,dis_prostate_adenocarcinoma,ft_basal_fragment_density,diagnostic_criterion,src_who_2022,—,침윤암 샘은 경계에 기저세포 조각이 거의 없음,stage1_drafted,src_who_2022,source_linked
+rel_hgpin_basal_frag,dis_hgpin,ft_basal_fragment_density,diagnostic_criterion,src_who_2022,—,HGPIN은 기저세포가 조각으로라도 남음,stage1_drafted,src_who_2022,source_linked

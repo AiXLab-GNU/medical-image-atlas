@@ -35,6 +35,7 @@ les_adenocarcinoma,ft_gleason_score,direct,d_target,
 les_adenocarcinoma,ft_isup_grade_group,direct,d_target,
 ana_basal_cell_layer,ft_basal_cell_coverage,direct,d_target,
 les_adenocarcinoma,ft_amacr_fraction,direct,d_target,
+ana_basal_cell_layer,ft_basal_fragment_density,direct,d_target,
 les_generic,,not_applicable,override,공통 측정을 묶는 서비스 내부 대상
 ana_corpora_amylacea,,not_applicable,override,양성 표지(측정 대상 아님)
 ana_urethra,,not_applicable,override,위치 구조(측정 대상 아님)

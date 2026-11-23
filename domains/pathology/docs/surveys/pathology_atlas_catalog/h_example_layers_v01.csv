@@ -9,6 +9,7 @@ ex_he_benign,lumen,내강 비율·샘당 내강 수,cyan,glands.lumen_fraction,e
 ex_he_benign,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_benign_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
 ex_he_benign,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_benign_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
 ex_he_tumor,lesion,종양 범위,red,tissue.lesion_area,ex_he_tumor_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
+ex_he_tumor,tumor_glands,종양 샘 분할·크기·모양,green,glands.segment_glands,ex_he_tumor_tumor_glands.png,"종양 주석 안에서 헤마톡실린 밀도(6 µm 평활, 창 전체 조직 기준 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔 — 고형 판은 큰 덩어리 하나로 나옴(서비스 추정)"
 ex_he_tumor,nuclei,핵 밀도·크기·다양성,magenta,nuclei.density,ex_he_tumor_nuclei.png,헤마톡실린을 색 분리해 세 단계 Otsu의 가장 짙은 단계·거리 변환 분할로 찾은 핵 후보(12–180 µm²)
 ex_he_tumor,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_tumor_texture.png,GLCM 대비(32단계 · 거리 2px · 4방향 평균)
 ex_he_hgpin,lesion,HGPIN 범위,orange,tissue.lesion_area,ex_he_hgpin_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
@@ -21,32 +22,41 @@ ex_he_idc,texture,조직 질감 대비,orange,texture.glcm_contrast,ex_he_idc_te
 ex_he_idc,read,판독,white,,ex_he_idc_read.png,공급자 주석 class를 판독 값으로 옮김
 ex_he_aip,lesion,비정형 관내 증식 범위,yellow,tissue.lesion_area,ex_he_aip_lesion.png,공급자 주석 class의 면적과 창 안 조직 대비 비율
 ex_he_gp3,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp3_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
-ex_he_gp3,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp3_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_gp3,glands,샘 분할·개수·크기·모양,green,glands.segment_glands,ex_he_gp3_glands.png,"헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도"
+ex_he_gp3,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp3_lumen.png,"나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음"
 ex_he_gp3,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp3_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
 ex_he_gp4,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp4_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
-ex_he_gp4,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp4_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_gp4,glands,샘 분할·개수·크기·모양,green,glands.segment_glands,ex_he_gp4_glands.png,"헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도"
+ex_he_gp4,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp4_lumen.png,"나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음"
 ex_he_gp4,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp4_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
 ex_he_gp4,read,사상 패턴(판독),white,,ex_he_gp4_read.png,SICAPv2 사상 패턴 표(G4C)
 ex_he_cribriform,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_cribriform_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
-ex_he_cribriform,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_cribriform_lumen.png,주석 영역의 성분을 샘으로 보고 그 안의 닫힌 밝은 공간(30 px 이상) 수를 셈(사상 샘은 한 성분에 내강이 많음)
+ex_he_cribriform,glands,샘 분할·개수·크기·모양,green,glands.segment_glands,ex_he_cribriform_glands.png,"헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도"
+ex_he_cribriform,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_cribriform_lumen.png,"나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음"
 ex_he_cribriform,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_cribriform_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
 ex_he_cribriform,read,사상 패턴(판독),white,,ex_he_cribriform_read.png,SICAPv2 사상 패턴 표(G4C)
 ex_he_gp5,patterns,글리슨 패턴 비율,orange,tissue.pattern_percent,ex_he_gp5_patterns.png,종양(주석 값 3·4·5) 면적 중 패턴별 비율
+ex_he_gp5,glands,샘 분할·개수·크기·모양,green,glands.segment_glands,ex_he_gp5_glands.png,"헤마톡실린 밀도(6 px 평활, 조직 전체 Otsu)가 높은 상피와 그 안의 내강을 합쳐 샘 하나로 나눔(서비스 추정) · 샘 수·평균 크기·원형도"
+ex_he_gp5,lumen,샘당 내강 수·내강 비율,cyan,glands.lumina_per_gland,ex_he_gp5_lumen.png,"나눈 샘마다 그 안의 닫힌 밝은 공간(20 px 이상) 수를 셈 — 사상 샘은 한 샘에 내강이 많고, 패턴 5는 내강이 거의 없음"
 ex_he_gp5,nuclei,핵 밀도·크기,magenta,nuclei.density,ex_he_gp5_nuclei.png,헤마톡실린 색 분리 후 핵 후보(화소 단위)
 ex_ihc_benign,region,양성 샘 범위(주석),green,tissue.lesion_area,ex_ihc_benign_region.png,IHC 슬라이드의 공급자 주석 면적
-ex_ihc_benign,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_benign_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_benign,basal,기저세포 조각·둘레 비율,cyan,ihc.basal_fragments,ex_ihc_benign_basal.png,"샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시"
 ex_ihc_benign,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_benign_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
 ex_ihc_tumor,region,종양 범위(주석),red,tissue.lesion_area,ex_ihc_tumor_region.png,IHC 슬라이드의 공급자 주석 면적
-ex_ihc_tumor,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_tumor_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_tumor,basal,기저세포 조각·둘레 비율,cyan,ihc.basal_fragments,ex_ihc_tumor_basal.png,"샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시"
 ex_ihc_tumor,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_tumor_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
 ex_ihc_hgpin,region,HGPIN 범위(주석),orange,tissue.lesion_area,ex_ihc_hgpin_region.png,IHC 슬라이드의 공급자 주석 면적
-ex_ihc_hgpin,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_hgpin_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_hgpin,basal,기저세포 조각·둘레 비율,cyan,ihc.basal_fragments,ex_ihc_hgpin_basal.png,"샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시"
 ex_ihc_hgpin,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_hgpin_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
 ex_ihc_hgpin,read,판독,white,,ex_ihc_hgpin_read.png,공급자 주석 class
 ex_ihc_idc,region,관내암 범위(주석),magenta,tissue.lesion_area,ex_ihc_idc_region.png,IHC 슬라이드의 공급자 주석 면적
-ex_ihc_idc,basal,기저세포 둘레 비율,cyan,ihc.basal_coverage,ex_ihc_idc_basal.png,샘 경계 둘레 30 px 띠(흰색) 안의 갈색(HMWCK) 화소(노랑) 비율 · 샘별 중앙값 · 5% 이상이면 있음
+ex_ihc_idc,basal,기저세포 조각·둘레 비율,cyan,ihc.basal_fragments,ex_ihc_idc_basal.png,"샘 경계 ±7.5 µm 띠(흰색) 안의 갈색(HMWCK) 조각(노랑, 15 µm² 이상)을 셈 · 경계 100 µm당 0.35개 이상이면 있음 · 둘레 비율도 함께 표시"
 ex_ihc_idc,amacr,AMACR 양성 면적,magenta,ihc.amacr_fraction,ex_ihc_idc_amacr.png,주석 영역 중 분홍·적색(AMACR) 화소 비율 · 5% 이상이면 양성
 ex_ihc_idc,read,판독,white,,ex_ihc_idc_read.png,공급자 주석 class
+ex_he_basal_registered,lesion,종양·양성 샘(H&E 주석),red,tissue.lesion_area,ex_he_basal_registered_lesion.png,H&E 슬라이드의 공급자 주석(빨강 종양 · 초록 양성 샘)
+ex_he_basal_registered,ihc,정합한 IHC 절편,white,register.align,ex_he_basal_registered_ihc.png,IHC 슬라이드(0.18 µm/px)를 H&E 배율로 바꾸고 조직 조각마다 회전·이동을 맞춤(조직 마스크 Dice 0.81) · 켜면 같은 부위의 IHC가 보임(샘 단위 대응 아님)
+ex_he_basal_registered,basal_benign,양성 샘의 기저세포(정합한 IHC),yellow,ihc.basal_cell_presence,ex_he_basal_registered_basal_benign.png,"정합한 IHC에서 IHC 양성 샘 주석(윤곽) 안 샘 경계 100 µm당 갈색 기저세포 조각(노랑)을 셈 · 0.35 이상이면 있음 · 「정합한 IHC 절편」 층과 함께 보면 IHC 위, 끄면 H&E 위(같은 부위, 샘 단위 대응 아님)"
+ex_he_basal_registered,basal_tumour,종양의 기저세포(정합한 IHC),yellow,ihc.basal_cell_presence,ex_he_basal_registered_basal_tumour.png,"정합한 IHC에서 IHC 종양 주석(윤곽) 안 샘 경계 100 µm당 갈색 기저세포 조각(노랑)을 셈 · 0.35 이상이면 있음 · 「정합한 IHC 절편」 층과 함께 보면 IHC 위, 끄면 H&E 위(같은 부위, 샘 단위 대응 아님)"
 ex_he_slide_grading,patterns,슬라이드 전체 패턴 비율,orange,tissue.pattern_percent,ex_he_slide_grading_patterns.png,다시 붙인 주석에서 종양 면적 중 패턴별 비율
 ex_he_slide_grading,grade,계산한 글리슨 점수·등급군,red,grading.gleason_from_areas,ex_he_slide_grading_grade.png,가장 많은 패턴 + 가장 높은 나머지 패턴(생검 규칙) → 등급군
 ex_he_slide_grading,provider,공급자 판정(판독),white,,ex_he_slide_grading_provider.png,SICAPv2 wsi_labels의 primary·secondary

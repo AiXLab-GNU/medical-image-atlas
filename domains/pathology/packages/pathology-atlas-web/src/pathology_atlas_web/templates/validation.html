@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% block content %}
+<div class="breadcrumbs"><a href="/">홈</a><span>/</span><span>측정 검증</span></div>
+<section class="page-heading"><h1>측정 검증</h1><p class="lead">서비스의 자동 측정을 공급자 전문가 주석과 대조한 결과입니다. 결과에 따라 쓰는 범위를 정했고, 통과하지 못한 방법은 쓰지 않습니다.</p></section>
+{% if validation %}
+<section class="section"><div class="table-wrap"><table class="val-table"><thead><tr><th>검사</th><th>함수</th><th>기준(정답)</th><th>나눔</th><th>사례</th><th>지표</th><th>값</th><th>결정</th></tr></thead><tbody>
+{% for c in validation.checks %}<tr><td>{{ c.check_id }}</td><td><code>{{ c.function }}</code></td><td>{{ c.reference }}</td><td>{{ c.split }}</td><td>{{ c.cases }}</td><td>{{ c.metric }}</td><td><b>{{ c.value }}</b></td><td>{{ c.decision }}</td></tr>
+<tr class="val-note"><td></td><td colspan="7" class="muted small">{{ c.note_ko }}</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% set b = validation.results.basal %}
+<section class="panel section"><h2>기저세포 조각 수의 분포(IHC 창별)</h2>
+<p class="muted small">경계 100 µm당 갈색 기저세포 조각 수. 기준 {{ b.cutoff }} 이상이면 '있음'. 침윤암은 기저세포가 없어 낮고, 양성 샘·HGPIN·관내암·비정형 관내 증식은 남아 있어 높습니다.</p>
+<div class="table-wrap"><table><thead><tr><th>주석 class</th><th>창</th><th>최소</th><th>중앙값</th><th>최대</th></tr></thead><tbody>
+{% for k, v in b.by_class.items() %}{% if v %}<tr><td>{{ {'tumour':'침윤암','benign':'양성 샘','hgpin':'HGPIN','idc':'관내암','aip':'비정형 관내 증식'}[k] }}</td><td>{{ v|length }}</td><td>{{ v[0] }}</td><td>{{ v[v|length // 2] }}</td><td>{{ v[-1] }}</td></tr>{% endif %}{% endfor %}
+</tbody></table></div></section>
+<section class="panel section"><h2>읽는 법</h2>
+<ul><li>샘 분할은 화소 단위로는 주석과 대체로 겹치지만(Dice), 붙어 있는 샘을 한 덩어리로 묶고 큰 내강을 다 채우지 못해 샘 하나하나를 맞히는 비율(F1)은 낮습니다. 샘 개수는 참고용입니다.</li>
+<li>기저세포 기준값은 슬라이드마다 가장 큰 영역으로 정하고, 같은 슬라이드의 다른 영역에서 확인했습니다. 다른 기관·염색 배치에서의 검증은 아직 없습니다.</li>
+<li>H&E–IHC 정합은 조직 조각 단위입니다. 연속 절편 사이에서 샘이 바뀌어 샘 단위 대응은 되지 않습니다.</li>
+<li>검사 코드: <code>domains/pathology/code/evaluate_pathology_measures.py</code> · 생성 표 <code>i_measure_validation</code>.</li></ul></section>
+{% else %}<p class="muted">검증 결과가 아직 없습니다.</p>{% endif %}
+{% endblock %}

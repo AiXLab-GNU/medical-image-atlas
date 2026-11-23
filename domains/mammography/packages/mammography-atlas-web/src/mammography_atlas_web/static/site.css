@@ -825,3 +825,16 @@ dialog.modal::backdrop{background:rgba(10,15,20,.75)}
 .ms-dz-more,.ms-dz-none{font-size:.75rem;color:var(--faint)}
 .dz-links{margin:0;padding-left:18px}
 .dz-links li{margin:2px 0}
+
+/* bar above the domain header: portal (3개 영역 홈) and the other domains */
+.atlas-bar{background:#0f172a;color:#cbd5e1;font-size:.8rem}
+.atlas-bar-inner{max-width:1240px;margin:0 auto;padding:0 24px;height:34px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.atlas-bar a{color:#e2e8f0;text-decoration:none}
+.atlas-bar-home{display:flex;align-items:center;gap:7px;font-weight:700}
+.atlas-bar-home svg{width:18px;height:18px}
+.atlas-bar-home span{font-weight:500;color:#94a3b8;border:1px solid #334155;border-radius:999px;padding:0 8px;margin-left:2px}
+.atlas-bar nav{display:flex;gap:4px}
+.atlas-bar nav a{padding:3px 10px;border-radius:999px;color:#cbd5e1}
+.atlas-bar nav a:hover{background:#1e293b}
+.atlas-bar nav a[aria-current]{background:#e2e8f0;color:#0f172a;font-weight:700}
+@media (max-width:600px){.atlas-bar-inner{padding:0 16px}.atlas-bar-home span{display:none}}

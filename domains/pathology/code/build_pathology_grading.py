@@ -26,6 +26,7 @@ from pathology_measures import grading, tissue
 PATCH_RE = re.compile(r'(.+?)_Block_Region_(\d+)_(\d+)_(\d+)_xini_(\d+)_yini_(\d+)')
 SCALE = 16          # 40× pixels per canvas pixel (canvas at 2.5×)
 PATCH = 512 * 4 // SCALE
+MIN_PATTERN_PX = 30  # canvas pixels (2.5×): a pattern smaller than this (≈ one small gland) is annotation noise
 PAR_LABELS = registry.DATASETS / 'public_pathology/par/slide_labels.tsv'
 PAR_SLIDES = registry.DATASETS / 'public_pathology/par/hamamatsu'
 GG_CATS = [0, 1, 2, 3, 4, 5]
@@ -72,11 +73,14 @@ def sicap_grading():
     truth = pd.read_excel(registry.SICAP / 'wsi_labels.xlsx')
     truth = {str(r.slide_id): (int(r.Gleason_primary), int(r.Gleason_secondary)) for r in truth.itertuples()}
     rows = []
+    raw_areas = {}
     for slide, patches in sicap_patches().items():
         if slide not in truth:
             continue
         label, _ = sicap_slide_map(patches)
-        areas = {p: int((label == p).sum()) for p in (3, 4, 5)}
+        raw = {p: int((label == p).sum()) for p in (3, 4, 5)}
+        raw_areas[slide] = raw
+        areas = {p: (a if a >= MIN_PATTERN_PX else 0) for p, a in raw.items()}
         derived = grading.gleason_from_areas(areas)
         p, s = truth[slide]
         provider = f'{p}+{s}' if p else None
@@ -88,7 +92,34 @@ def sicap_grading():
                      **{f'p{k}': round(100 * v / tumour, 1) if tumour else 0.0 for k, v in areas.items()}})
     a = [r['gg_provider'] for r in rows]
     b = [r['gg_derived'] for r in rows]
+    variants = []
+    for key, label, specimen, min_px, legacy in (
+            ('legacy', '이전 규칙: 나머지 중 가장 높은 패턴(낮은 패턴도 양과 무관)', 'biopsy', 0, True),
+            ('isup_biopsy', 'ISUP 2014 생검 규칙(더 낮은 패턴은 5% 이상일 때만)', 'biopsy', 0, False),
+            ('isup_biopsy_min', f'ISUP 생검 규칙 + {MIN_PATTERN_PX} 화소 미만 패턴 제외(채택)', 'biopsy', MIN_PATTERN_PX, False),
+            ('two_most', '가장 많은 두 패턴(절제 규칙)', 'prostatectomy', 0, False)):
+        gg_v = []
+        for r in rows:
+            ar = {p: (x if x >= min_px else 0) for p, x in raw_areas[r['slide']].items()}
+            if legacy:
+                present = {p: x for p, x in ar.items() if x > 0}
+                if present:
+                    prim = sorted(present, key=lambda p: (-present[p], -p))[0]
+                    rest = [p for p in present if p != prim]
+                    score = f'{prim}+{max(rest) if rest else prim}'
+                else:
+                    score = None
+            else:
+                score = grading.gleason_from_areas(ar, specimen=specimen).value
+            gg_v.append(grading.grade_group(score).value or 0 if score else 0)
+        variants.append({'key': key, 'label': label, 'n': len(rows),
+                         'exact_gg': round(100 * np.mean([x == y for x, y in zip(a, gg_v)]), 1),
+                         'within_one_gg': round(100 * np.mean([abs(x - y) <= 1 for x, y in zip(a, gg_v)]), 1),
+                         'kappa': round(grading.kappa(a, gg_v, GG_CATS), 3),
+                         'kappa_quadratic': round(grading.kappa(a, gg_v, GG_CATS, 'quadratic'), 3),
+                         'higher': int(sum(y > x for x, y in zip(a, gg_v))), 'lower': int(sum(y < x for x, y in zip(a, gg_v)))})
     return {
+        'variants': variants, 'min_pattern_px': MIN_PATTERN_PX,
         'n': len(rows), 'exact_score': round(100 * np.mean([r['provider'] == r['derived'] for r in rows]), 1),
         'exact_gg': round(100 * np.mean([x == y for x, y in zip(a, b)]), 1),
         'within_one_gg': round(100 * np.mean([abs(x - y) <= 1 for x, y in zip(a, b)]), 1),

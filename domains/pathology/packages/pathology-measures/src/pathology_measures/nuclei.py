@@ -83,3 +83,44 @@ def hematoxylin_od(rgb, region) -> Measurement:
         return Measurement('ft_hematoxylin_od', None, 'OD', 'not_evaluable')
     return Measurement('ft_hematoxylin_od', round(float(hematoxylin(rgb)[region].mean()), 4), 'OD',
                        note='skimage HED 분리 · 염색·스캐너 보정 없음')
+
+
+
+def nucleolus_prominence(rgb, region, mpp=None, ratio=0.8, min_nucleus_um2=15.0, max_nucleus_um2=200.0) -> Measurement:
+    """EXPERIMENTAL — share of nuclei whose darkest point (total OD smoothed over 0.35 µm) exceeds the nucleus median
+    chromatin by ``ratio`` (relative contrast), on 40× pixels.
+
+    Not in the registry: on PRECISE it did not separate tumour from benign glands (see ``data/validation.json``,
+    check ``nucleoli``), because the nucleus mask is not accurate enough at this level.
+    """
+    if mpp and mpp > 0.35:
+        return Measurement('ft_nucleolus_prominence', None, '%', 'not_evaluable', '40× 화소(약 0.25 µm) 필요')
+    scale = mpp or 0.25
+    region = np.asarray(region, bool)
+    if region.sum() < 100:
+        return Measurement('ft_nucleolus_prominence', None, '%', 'not_evaluable')
+    h = filters.gaussian(hematoxylin(rgb), 0.5 / scale)
+    fg = ndi.binary_fill_holes(ndi.binary_opening((h > filters.threshold_otsu(h[region])) & region, iterations=2))
+    dist = ndi.distance_transform_edt(fg)
+    peaks = feature.peak_local_max(dist, min_distance=max(2, int(2.0 / scale)), labels=measure.label(fg), exclude_border=False)
+    markers = np.zeros(fg.shape, int)
+    markers[tuple(peaks.T)] = np.arange(1, len(peaks) + 1)
+    labels = segmentation.watershed(-dist, markers, mask=fg)
+    x = rgb_u8(rgb).astype(np.float32)
+    od = filters.gaussian(-np.log((x + 1) / 256).sum(2), 0.35 / scale)
+    lo, hi = min_nucleus_um2 / scale ** 2, max_nucleus_um2 / scale ** 2
+    n = hit = 0
+    for p in measure.regionprops(labels):
+        if not lo <= p.area <= hi:
+            continue
+        inner = ndi.binary_erosion(p.image, iterations=2)
+        if inner.sum() < 20:
+            continue
+        v = od[p.slice][inner]
+        med = float(np.median(v))
+        n += 1
+        hit += (v.max() - med) / max(med, 1e-3) > ratio
+    if n < 20:
+        return Measurement('ft_nucleolus_prominence', None, '%', 'not_evaluable', '핵 20개 미만')
+    return Measurement('ft_nucleolus_prominence', round(100 * hit / n, 1), '%', note='실험용 · 검증 미통과',
+                       detail={'nuclei': n, 'with_nucleolus': hit})

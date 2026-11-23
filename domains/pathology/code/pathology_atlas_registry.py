@@ -62,9 +62,12 @@ def precise_paths(image_name: str) -> dict[str, Path]:
             'ihc_mask': base / 'wsi_hmwck-amacr' / f'{image_name}_hmwck-amacr_mask.ome.tif'}
 
 
-def precise_mpp(image_name: str) -> float:
+def precise_mpp(image_name: str, kind: str = 'image') -> float:
+    """µm per pixel at level 0 of the H&E (``image``) or IHC (``ihc``) slide — the two are scanned at different sizes
+    (H&E mostly 0.243, IHC 0.177 µm/px). Masks share the geometry of their slide."""
     import tifffile
-    with tifffile.TiffFile(precise_paths(image_name)['image']) as tif:
+    kind = {'mask': 'image', 'ihc_mask': 'ihc'}.get(kind, kind)
+    with tifffile.TiffFile(precise_paths(image_name)[kind]) as tif:
         match = re.search(r'PhysicalSizeX="([0-9.]+)"', tif.ome_metadata or '')
     if not match:
         raise ValueError(f'{image_name}: no PhysicalSizeX in OME metadata')

@@ -75,7 +75,7 @@
           <label class="mx-row"><input type="checkbox" class="mx-switch" data-layer="{{ ex.id }}-{{ la.key }}"><span class="mx-sw sw-{{ la.tone }}" aria-hidden="true"></span><span class="mx-name">{{ la.label }}</span>{% if reading %}<span class="mx-tag">판독</span>{% endif %}<span class="mx-off">실행 전</span></label>
           <div class="mx-state" data-state="{{ ex.id }}-{{ la.key }}">
             <dl class="mx-vals" hidden>{% for f in la.features %}<div><dt><a href="#{{ f.id }}">{{ atlas.features[f.id].name }}</a></dt><dd class="st-{{ f.status }}">{{ f.value }}</dd></div>{% endfor %}</dl></div>
-          <details class="mx-how"><summary>방법</summary><p>{% if la.function %}<code><a href="/measurements/code/{{ la.features[0].id }}/">{{ la.function }}</a></code>{% else %}<span class="mx-read">판독 항목 · 계산 코드 없음</span>{% endif %}</p><p>{{ la.how }}</p></details>
+          <details class="mx-how"><summary>방법</summary><p>{% if la.function and la.features %}<code><a href="/measurements/code/{{ la.features[0].id }}/">{{ la.function }}</a></code>{% elif la.function %}<code>{{ la.function }}</code> · 표시용 층(값 없음){% else %}<span class="mx-read">판독 항목 · 계산 코드 없음</span>{% endif %}</p><p>{{ la.how }}</p></details>
         </li>{% endfor %}
       </ul>
     </div>

@@ -1,7 +1,7 @@
 # medical-image-atlas 작업 지침
 
 - 구조: `domains/<영역>/`마다 `DOMAIN.yaml`·`code/`·`docs/`·`packages/`·`references/`·`resources/`(링크 보기)를 둔다. 영역 공용
-  원자료와 그림은 루트 `resources/datasets/`에 한 번만 둔다. 영역을 새로 만들 때 쓰지 않는 빈 폴더는 만들지 않는다.
+  원자료와 그림은 루트 `resources/datasets/`에 한 번만 둔다. 영역을 새로 만들 때 쓰지 않는 빈 폴더는 만들지 않는다. 세 영역을 묶는 첫 페이지는 영역이 아니라 `portal/`(웹 패키지 하나)에 두고, 영역 데이터를 복사하지 않고 읽기만 한다. 영역 지도 맨 위 줄(첫 페이지·영역 바꾸기)과 포트(포털 8875·망막 8877·유방 8879·병리 8881)를 함께 맞춘다.
 - 이름: 파일·폴더는 ASCII `lower_snake_case`(배포 패키지는 kebab-case). 문서는 `<10|20|30|40|50|60|70|80|90>_<주제>_<종류>_vNN[_ko].md`.
   `final2`·`latest`·`misc`·`temp`·`new`·`copy` 같은 이름과 `_vNN` 사본을 만들지 않는다. 고칠 때는 같은 파일을 고친다.
 - 영상: 공개하는 영상은 CC BY 4.0·CC0 1.0만 쓰고 출처 줄을 단다. 제한 자료(FGADR, HYAMD, MAPLES-DR·MESSIDOR 영상, Tianjin,
