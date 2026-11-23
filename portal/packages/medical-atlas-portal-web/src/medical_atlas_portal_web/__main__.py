@@ -14,8 +14,9 @@ def main():
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error('--port must be between 1 and 65535')
-    print(f'Medical image atlas portal: http://{args.host}:{args.port}/', flush=True)
-    serve(create_app(), host=args.host, port=args.port, threads=4)
+    app = create_app()
+    print(f'Medical image atlas: http://{args.host}:{args.port}/ (mounted: /retinal/ /mammography/ /pathology/)', flush=True)
+    serve(app, host=args.host, port=args.port, threads=8)
 
 
 if __name__ == '__main__':

@@ -4,6 +4,7 @@ status: ACTIVE_V01_CATALOG_160_MEASUREMENTS_ALL_IMAGE_TYPES_EXAMPLES_EXPERT_REVI
 origin: oculophenome-xai projects/P003_ophthalmic_foundation_model_validation (copied 2026-11-23)
 web_package: packages/retinal-atlas-web
 web_port: 8877
+channel_path: /retinal/   # 하나의 채널(portal 8875) 안의 경로
 catalog_tables: docs/surveys/retinal_atlas_catalog/README.md
 data_schema: docs/protocols/40_retinal_atlas_data_schema_v01_ko.md
 rebuild_runbook: docs/protocols/50_retinal_atlas_rebuild_runbook_v01_ko.md

@@ -5,6 +5,7 @@ origin: new domain built 2026-11-23 in the same frame as domains/retinal and dom
 scope: prostate histopathology first (H&E, IHC); other organs to be added as further lesion groups
 web_package: packages/pathology-atlas-web
 web_port: 8881
+channel_path: /pathology/   # 하나의 채널(portal 8875) 안의 경로
 catalog_tables: docs/surveys/pathology_atlas_catalog/README.md
 data_schema: docs/protocols/40_pathology_atlas_data_schema_v01_ko.md
 rebuild_runbook: docs/protocols/50_pathology_atlas_rebuild_runbook_v01_ko.md

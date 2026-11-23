@@ -1,9 +1,10 @@
 """Front page of the medical image atlas: one entry for the retinal, mammography and prostate-pathology atlases.
 
-Each domain atlas is its own web service (own port, own home page). This page only reads their published data
-(``data/*.json`` of each domain web package and ``DOMAIN.yaml``) to show what each atlas holds, and links to the
-domain home. Domain URLs are built from the host of the current request with the domain's port, so the links work
-through an SSH tunnel that keeps the port numbers; ``MEDICAL_ATLAS_URL_<DOMAIN>`` overrides them.
+One channel: ``create_app(mount=True)`` (the default) serves this page at ``/`` and mounts the three domain atlases
+in the same process at ``/retinal/``, ``/mammography/`` and ``/pathology/`` (their web packages must be installed in
+this environment). Each atlas can still run alone on its own port; a domain whose package is not installed is linked
+by port instead (request host + 8877/8879/8881). The page only reads the domains' published data (``data/*.json`` and
+``DOMAIN.yaml``); ``MEDICAL_ATLAS_URL_<DOMAIN>`` overrides a link.
 """
 from __future__ import annotations
 
@@ -70,18 +71,43 @@ def load_domain(d: dict) -> dict:
         {p['overlay'] for p in previews if p['overlay']})
 
 
+MOUNTED: set[str] = set()
+
+
 def domain_url(d: dict) -> str:
     env = os.environ.get(f"MEDICAL_ATLAS_URL_{d['id'].upper()}")
     if env:
         return env.rstrip('/') + '/'
+    if d['id'] in MOUNTED:
+        return f"{request.script_root}/{d['id']}/"
     host = request.host.rsplit(':', 1)[0] if request.host.count(':') == 1 else request.host.split(']')[0] + ']'
     return f"{request.scheme}://{host}:{d['port']}/"
 
 
-def create_app(config: dict | None = None) -> Flask:
+def mount_domains(app: Flask) -> list[str]:
+    """Mount every installed domain atlas under /<domain id>/ in this process; returns the mounted ids."""
+    from importlib import import_module
+
+    from werkzeug.middleware.dispatcher import DispatcherMiddleware
+    mounts = {}
+    for d in DOMAINS:
+        try:
+            mod = import_module(d['module'])
+        except ImportError:
+            continue
+        mounts[f"/{d['id']}"] = mod.create_app()
+    if mounts:
+        app.wsgi_app = DispatcherMiddleware(app.wsgi_app, mounts)
+    return [k.strip('/') for k in mounts]
+
+
+def create_app(config: dict | None = None, mount: bool = True) -> Flask:
     app = Flask(__name__)
     if config:
         app.config.update(config)
+    MOUNTED.clear()
+    if mount:
+        MOUNTED.update(mount_domains(app))
     domains = [load_domain(d) for d in DOMAINS]
     by_id = {d['id']: d for d in domains}
 
@@ -106,8 +132,16 @@ def create_app(config: dict | None = None) -> Flask:
             abort(404)
         return redirect(domain_url(d))
 
+    @app.get('/<domain>')
+    def domain_root(domain):
+        from flask import redirect
+        if domain not in MOUNTED:
+            abort(404)
+        return redirect(f'{request.script_root}/{domain}/', code=301)
+
     @app.get('/health')
     def health():
-        return {'status': 'ok', 'site': 'medical_atlas_portal_web', 'domains': [d['id'] for d in domains]}
+        return {'status': 'ok', 'site': 'medical_atlas_portal_web', 'domains': [d['id'] for d in domains],
+                'mounted': sorted(MOUNTED)}
 
     return app

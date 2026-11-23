@@ -4,6 +4,7 @@ status: ACTIVE_V01_DMID_FFDM_EXAMPLES_DBT_CEM_IMAGES_PENDING_EXPERT_REVIEW_PENDI
 origin: new domain built 2026-11-23 in the same frame as domains/retinal (measurement code adapted from mammography-xai E124)
 web_package: packages/mammography-atlas-web
 web_port: 8879
+channel_path: /mammography/   # 하나의 채널(portal 8875) 안의 경로
 catalog_tables: docs/surveys/mammography_atlas_catalog/README.md
 data_schema: docs/protocols/40_mammography_atlas_data_schema_v01_ko.md
 rebuild_runbook: docs/protocols/50_mammography_atlas_rebuild_runbook_v01_ko.md

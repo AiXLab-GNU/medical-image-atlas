@@ -85,23 +85,45 @@ PENDING_REASON = {
 }
 
 # ------------------------------------------------------------------ links between the three atlases
-# The portal (3개 영역 홈, port 8875) and the domain atlases run as separate services. Links reuse the host of the
-# current request with each service's port (works through an SSH tunnel that keeps port numbers);
-# MEDICAL_ATLAS_URL_<ID> overrides one of them.
+# Two ways to run: one service (portal at /, domains mounted at /retinal/, /mammography/, /pathology/ — see
+# portal/packages/medical-atlas-portal-web) or each atlas on its own port (portal 8875, retinal 8877,
+# mammography 8879, pathology 8881). When mounted, request.script_root is the mount path; otherwise links reuse the
+# request host with each service's port. MEDICAL_ATLAS_URL_<ID> overrides one link.
 ATLAS_SITES = [('portal', '의료영상 지도', 8875), ('retinal', '안과', 8877), ('mammography', '유방', 8879),
                ('pathology', '전립선', 8881)]
 
 
 def atlas_links(current: str) -> dict:
+    urls = {}
+    mounted = bool(request.script_root)
     host = request.host
     host = host.rsplit(':', 1)[0] if host.count(':') == 1 else (host.split(']')[0] + ']' if host.startswith('[') else host)
-    urls = {}
     for sid, _, port in ATLAS_SITES:
         env = os.environ.get(f'MEDICAL_ATLAS_URL_{sid.upper()}')
-        urls[sid] = env.rstrip('/') + '/' if env else f'{request.scheme}://{host}:{port}/'
+        if env:
+            urls[sid] = env.rstrip('/') + '/'
+        elif mounted:
+            urls[sid] = request.host_url + ('' if sid == 'portal' else f'{sid}/')     # full URL: not re-prefixed below
+        else:
+            urls[sid] = f'{request.scheme}://{host}:{port}/'
     return {'portal': urls['portal'],
             'domains': [{'id': sid, 'label': label, 'url': urls[sid], 'current': sid == current}
                         for sid, label, _ in ATLAS_SITES if sid != 'portal']}
+
+
+def mount_prefix(response):
+    """When mounted under a path, put that path in front of root links of rendered pages and of redirects."""
+    root = request.script_root
+    if not root:
+        return response
+    if response.location and response.location.startswith('/') and not response.location.startswith(root + '/'):
+        response.location = root + response.location
+    if response.mimetype == 'text/html' and not response.direct_passthrough:
+        skip = re.escape(root.lstrip('/')) + '/'
+        html = response.get_data(as_text=True)
+        html = re.sub(r'((?:href|src|action)=")/(?!/|' + skip + ')', r'\1' + root + '/', html)
+        response.set_data(html)
+    return response
 
 
 
@@ -201,6 +223,7 @@ def matches(item: dict, query: str) -> bool:
 
 def create_app(config: dict | None = None) -> Flask:
     app = Flask(__name__)
+    app.after_request(mount_prefix)
     app.config.from_mapping(MASKED_ROOT=_domain_resource('pathology_atlas_masked_figures', 'PATHOLOGY_ATLAS_MASKED_ROOT'),
                             MEASURE_ROOT=_domain_resource('pathology_atlas_measurement_examples', 'PATHOLOGY_ATLAS_MEASURE_ROOT'),
                             PACKAGES_ROOT=default_packages_root())
@@ -488,7 +511,7 @@ def create_app(config: dict | None = None) -> Flask:
     @app.get('/measurements/code/<feature_id>/')
     def measurement_code(feature_id):
         feature = features.get(feature_id)
-        if not feature or feature['role'] != 'measurement':
+        if not feature or feature['role'] not in ('measurement', 'classification'):
             abort(404)
         links = code_index.links_for(feature)
         fn = code_index.function_source(links['function']) if links['function'] else None
