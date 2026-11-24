@@ -10,9 +10,9 @@
 | 영역 | 상태 | 진입점 |
 | --- | --- | --- |
 | 하나의 채널(`portal/`) | 3개 영역 홈 + 세 영역 지도를 경로로 붙여 웹 8875 하나로 서비스 | [portal README](portal/README.md) |
-| 망막(`domains/retinal/`) | 운영 v01 — 측정 160개, 영상 종류 8가지 모두 예시, 웹 8877 | [영역 README](domains/retinal/README.md) |
-| 유방촬영(`domains/mammography/`) | v01 — 측정 61개(함수 40), 예시 16장(FFDM·DBT·CEM), 웹 8879 | [영역 README](domains/mammography/README.md) |
-| 병리(`domains/pathology/`, 전립선) | v01 — 측정 34개(함수 32), H&E·IHC 예시 16장, 논문 패널 25, 등급 판독 일치도(PAR·SICAPv2), 측정 검증 페이지, 웹 8881 | [영역 README](domains/pathology/README.md) |
+| 망막(`domains/retinal/`) | 운영 v01 — 측정 160개(계산 구현 42)·판정 기준 3, 영상 종류 8가지 모두 예시, 웹 8877 | [영역 README](domains/retinal/README.md) |
+| 유방촬영(`domains/mammography/`) | v01 — 측정 61개(계산 구현 40)·판정 기준 1, 예시 16장(FFDM·DBT·CEM), 웹 8879 | [영역 README](domains/mammography/README.md) |
+| 병리(`domains/pathology/`, 전립선) | v01 — 측정 35개(계산 구현 30)·판정 기준 2, H&E·IHC 예시 16장, 실제 영상 그림 66(논문 패널 34)·해부·병변 45개 중 42개에 실제 영상, 등급 판독 일치도(PAR·SICAPv2), 측정 검증 페이지, 웹 8881 | [영역 README](domains/pathology/README.md) |
 
 ## 구조
 

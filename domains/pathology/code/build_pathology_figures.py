@@ -496,6 +496,96 @@ def he_ihc_pair():
                   f'{name}_h-e.ome.tif; {name}_hmwck-amacr.ome.tif', '두 슬라이드의 1/16 축소 영상을 높이 640 px로 나란히 붙임', outline_only=True)
 
 
+HPF_FIELD_NUMBER_MM = 22.0          # eyepiece field number of a common 10x eyepiece
+HPF_OBJECTIVE = 40.0
+
+
+def _label(dr, xy, text, tone='yellow', size=16):
+    font = _font(size)
+    box = dr.textbbox(xy, text, font=font)
+    dr.rectangle([box[0] - 4, box[1] - 3, box[2] + 4, box[3] + 3], fill=(15, 23, 42, 215))
+    dr.text(xy, text, fill=(*TONES[tone], 255), font=font)
+
+
+def reference_figures():
+    """Real-image figures for the gland lumen, the 40x high-power field and the pixel size (PRECISE, µm-calibrated)."""
+    figs, d = [], registry.MASKED_DIR
+    # gland lumen: service lumen estimate inside the provider's benign-gland annotation
+    name = 'sub-24_ses-01'                           # large benign glands with closed lumens
+    rgb, lab, mpp, win = precise_window(name, 2, level=1, side=1200)
+    benign = lab == 2
+    lum = glands.lumen_mask(rgb, benign, mpp=mpp)
+    base, size, s = display(rgb)
+    frac = glands.lumen_fraction(rgb, benign, mpp)
+    ov = overlay(size, fills=[(resize_mask(lum, size), 'blue', 150)], outlines=[(resize_mask(benign, size), 'green', 2)])
+    figs.append(figure_record(
+        'gland_lumen', ['ana_gland_lumen'], '샘 내강(서비스 자동 추정)',
+        f'양성 샘(초록 윤곽, 공급자 주석) 안의 비어 있는 내강(파랑)입니다. 내강은 서비스가 주석 샘 안의 밝고 채도 낮은 닫힌 공간을 '
+        f'자동으로 찾은 것입니다(glands.lumen_mask). 이 창의 내강 비율 {fmt(frac.value, frac.unit)}. PRECISE {name} · 화소 {mpp:.2f} µm.',
+        save(base, d, 'gland_lumen.jpg', jpg=True), save(ov, d, 'gland_lumen_mask.png'), size, SRC_P,
+        f'{name}_h-e.ome.tif', f'level 1 창 {win[3] - win[2]}×{win[1] - win[0]} px 축소'))
+    # high-power field: a 40x field drawn to scale on a calibrated tumour window
+    name = 'sub-20_ses-01'
+    rgb, lab, mpp, win = precise_window(name, 1, level=1, side=1400)
+    base, size, s = display(rgb)
+    diam_um = HPF_FIELD_NUMBER_MM / HPF_OBJECTIVE * 1000
+    area_mm2 = math.pi * (diam_um / 2000) ** 2
+    r = diam_um / mpp * s / 2
+    cx, cy = size[0] / 2, size[1] / 2
+    ov = overlay(size, outlines=[(resize_mask(lab == 1, size), 'red', 2)])
+    dr = ImageDraw.Draw(ov)
+    dr.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(*TONES['yellow'], 255), width=4)
+    dr.line([(cx - r, cy), (cx + r, cy)], fill=(*TONES['yellow'], 255), width=2)
+    _label(dr, (cx - 70, cy + 8), f'지름 {diam_um / 1000:.2f} mm')
+    _label(dr, (cx - 70, cy + 34), f'면적 {area_mm2:.2f} mm²')
+    figs.append(figure_record(
+        'hpf_field', ['ref_hpf'], '40× 고배율 시야(실제 축척)',
+        f'노란 원은 시야수 {HPF_FIELD_NUMBER_MM:.0f} mm 접안렌즈와 {HPF_OBJECTIVE:.0f}× 대물렌즈로 보는 한 시야(지름 {diam_um / 1000:.2f} mm, '
+        f'면적 {area_mm2:.2f} mm²)를 이 슬라이드의 화소 크기({mpp:.2f} µm)로 실제 축척에 맞춰 그린 것입니다. 시야수 20이면 0.20 mm², 26.5면 0.34 mm²로 '
+        f'장비마다 다르므로 「HPF당 개수」는 mm²당으로 바꿔 비교합니다. 빨간 윤곽은 종양(공급자 주석, 글리슨 4+5). PRECISE {name}.',
+        save(base, d, 'hpf_field.jpg', jpg=True), save(ov, d, 'hpf_field_mask.png'), size, SRC_P,
+        f'{name}_h-e.ome.tif', f'level 1 창 {win[3] - win[2]}×{win[1] - win[0]} px 축소'))
+    # pixel size: scale bar and an enlarged inset where single pixels are visible
+    name = 'sub-01_ses-01'
+    rgb, lab, mpp, win = precise_window(name, 2, level=0, side=560)
+    base, size, s = display(rgb, max_side=760)
+    ov = Image.new('RGBA', size, (0, 0, 0, 0))
+    dr = ImageDraw.Draw(ov)
+    bar_um = 50
+    bar = bar_um / mpp * s
+    x0, y0 = 24, size[1] - 34
+    dr.rectangle([x0 - 8, y0 - 30, x0 + bar + 8, y0 + 14], fill=(15, 23, 42, 200))
+    dr.rectangle([x0, y0, x0 + bar, y0 + 7], fill=(255, 255, 255, 255))
+    dr.text((x0, y0 - 26), f'{bar_um} µm = {bar_um / mpp:.0f} px', fill=(255, 255, 255, 255), font=_font(16))
+    n_px, cell = 12, 16                                  # 12x12 source pixels, each drawn as a 16-px cell
+    lum_y = rgb.mean(-1)                             # inset on the highest-contrast spot near the centre (a nucleus edge)
+    h0, w0 = rgb.shape[0] // 4, rgb.shape[1] // 4
+    spread = ndi.maximum_filter(lum_y, n_px) - ndi.minimum_filter(lum_y, n_px)
+    cr, cc = np.unravel_index(np.argmax(spread[h0:3 * h0, w0:3 * w0]), (2 * h0, 2 * w0))
+    cr, cc = int(cr) + h0 - n_px // 2, int(cc) + w0 - n_px // 2
+    crop = rgb[cr:cr + n_px, cc:cc + n_px]
+    inset = Image.fromarray(crop).resize((n_px * cell, n_px * cell), Image.NEAREST).convert('RGBA')
+    gd = ImageDraw.Draw(inset)
+    for k in range(n_px + 1):
+        gd.line([(k * cell, 0), (k * cell, n_px * cell)], fill=(255, 255, 255, 140), width=1)
+        gd.line([(0, k * cell), (n_px * cell, k * cell)], fill=(255, 255, 255, 140), width=1)
+    ix, iy = size[0] - n_px * cell - 20, 20
+    sx, sy = cc * s, cr * s
+    dr.line([(sx + n_px * s, sy), (ix, iy + n_px * cell)], fill=(*TONES['yellow'], 220), width=2)
+    dr.rectangle([sx - 2, sy - 2, sx + n_px * s + 2, sy + n_px * s + 2], outline=(*TONES['yellow'], 255), width=2)
+    ov.paste(inset, (ix, iy))
+    dr.rectangle([ix - 1, iy - 1, ix + n_px * cell, iy + n_px * cell], outline=(*TONES['yellow'], 255), width=2)
+    _label(dr, (ix, iy + n_px * cell + 8), f'한 칸 = 1 화소 = {mpp:.3f} µm', size=15)
+    figs.append(figure_record(
+        'pixel_size', ['ref_pixel_size'], '화소 크기(메타데이터 µm/px)',
+        f'원 해상도(level 0) 창입니다. 슬라이드 메타데이터의 화소 크기 {mpp:.3f} µm로 바꾸면 흰 막대 {bar_um} µm는 '
+        f'{bar_um / mpp:.0f} 화소입니다. 오른쪽 위는 노란 상자 안 {n_px}×{n_px} 화소를 확대해 한 칸이 화소 하나임을 보인 것입니다. '
+        f'면적은 화소 수 × ({mpp:.3f} µm)²로 바꾸며, 화소 크기가 없는 영상(SICAPv2 패치)은 화소 단위로만 잽니다. PRECISE {name}.',
+        save(base, d, 'pixel_size.jpg', jpg=True), save(ov, d, 'pixel_size_mask.png'), size, SRC_P,
+        f'{name}_h-e.ome.tif', f'level 0 창 {win[3] - win[2]}×{win[1] - win[0]} px · 표시 {s:.2f}배'))
+    return figs
+
+
 def main() -> int:
     for d in (registry.MASKED_DIR, registry.EXAMPLE_DIR):
         d.mkdir(parents=True, exist_ok=True)
@@ -553,6 +643,7 @@ def main() -> int:
         examples.append(ex)
         figs += f
     figs.append(he_ihc_pair())
+    figs += reference_figures()
     ex, f = registered_basal_example()
     examples.append(ex)
     figs += f

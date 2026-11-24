@@ -93,9 +93,9 @@ PANELS = [
      'Small tumor area (<5% of the whole tumor) of Gleason pattern 4 (poorly formed glands) in an extraprostatic position.'),
     ('paper_lvi', ['les_lymphovascular_invasion'], 'medicina-62-01465-g015.webp', None, 'Figure 15',
      '가운데 림프관 안에 암세포 덩어리가 떠 있는 림프관 침범입니다(HE ×200).', 'Invasion of lymphatic vessel. HE, ×200.'),
-    ('paper_svi', ['les_seminal_vesicle_invasion', 'les_cribriform'], 'medicina-62-01465-g010.webp', None, 'Figure 10',
+    ('paper_svi', ['les_seminal_vesicle_invasion', 'les_cribriform', 'ana_seminal_vesicle'], 'medicina-62-01465-g010.webp', None, 'Figure 10',
      '사상 샘암이 정낭을 침범한 모습입니다(HE ×100).', 'Cribriform adenocarcinoma invading seminal vesicles. HE, ×100.'),
-    ('paper_pni', ['les_perineural_invasion'], 'curroncol-33-00527-g003.webp', None, 'Figure 3',
+    ('paper_pni', ['les_perineural_invasion', 'ana_nerve'], 'curroncol-33-00527-g003.webp', None, 'Figure 3',
      '종양 세포가 신경 다발(가운데 둥근 섬유 구조)을 둘러싸고 파고든 신경주위 침범입니다(×200, 막대 100 µm). 원 논문의 종양은 전립선 선양낭성암으로, '
      '흔한 선방 선암이 아니지만 신경주위 침범의 모습은 같습니다.',
      'Hematoxylin and eosin staining demonstrating perineural invasion. Tumor cells are observed surrounding and '
@@ -110,6 +110,43 @@ PANELS = [
     ('paper_xanthogranulomatous_prostatitis', ['les_prostatitis'], 'gr1.jpg', (372, 577, 726, 849), 'Fig. 1F',
      '거품 조직구가 림프구·형질세포·호산구·호중구와 함께 빽빽이 들어찬 황색육아종성 전립선염입니다.',
      'Dense infiltration of foamy histiocytes, accompanied by lymphocytes, plasma cells, eosinophils, and neutrophils.'),
+    # normal structures and benign nodules (Skrok 2024, Żurowska 2023, Pollack 2025)
+    ('paper_blood_vessel', ['ana_blood_vessel'], 'boe-15-12-6816-g004.jpg', (8, 14, 170, 190), 'Fig. 4a',
+     '전립선 주변 조직의 혈관입니다. 가운데 내강(L)을 내막(TI)·중막(TM, 파란 점선)·외막(TA, 자홍 점선)이 차례로 둘러쌉니다(막대 200 µm).',
+     'Five examples of histology and en face OCT images of blood vessels located within periprostatic tissue. The blue '
+     'lines mark the boundaries of individual layers in the blood vessel wall: TI = tunica intima, TM = tunica media, '
+     'TA = tunica adventitia. L = vessel lumen, B = blood within blood vessels.'),
+    ('paper_nerve', ['ana_nerve'], 'boe-15-12-6816-g003.jpg', (12, 420, 174, 601), 'Fig. 3c',
+     '전립선 주변 지방 속의 신경입니다. 신경을 싸는 신경외막(초록 화살표) 안에 축삭(청록 화살표)이 모여 있고, 곁에 작은 혈관(빨간 화살표)이 있습니다(막대 200 µm).',
+     'Four examples of histology and en face OCT images of nerves present in periprostatic tissue. ... the blue arrows '
+     'correspond to axons, ... the red arrows correspond to blood vessels, and the green arrows correspond to the epineurium.'),
+    ('paper_corpora_amylacea', ['ana_corpora_amylacea'], 'boe-15-12-6816-g005.jpg', (218, 500, 384, 668), 'Fig. 5d',
+     '위축된 양성 샘의 내강에 든 둥근 층상 분비물 덩어리(유리체, 아밀라체; 화살표)입니다(막대 200 µm).',
+     'Histology and en face OCT images of various types of healthy prostatic glands: ... (d) atrophic with the presence '
+     'of corpora amylacea.'),
+    ('paper_periprostatic', ['ana_capsule'], 'boe-15-12-6816-g002.jpg', (12, 526, 261, 756), 'Fig. 2h',
+     '전립선 가장자리입니다. 샘(G)과 간질(S) 바깥에 전립선 주변 조직(P)이 이어지고, 그 안에 지방(A)·혈관(V)·신경(N)이 있습니다(막대 2 mm).',
+     'G = healthy gland, T = tumor, S = stroma, P = periprostatic tissue, A = adipose tissue, V = blood vessel, N = nerve.'),
+    ('paper_afms', ['ana_anterior_fibromuscular_stroma'], 'cancers-15-03682-g001b.jpg', (16, 27, 667, 518), 'Figure 1e',
+     '근치 전립선절제 전체 절편입니다. 위쪽(앞쪽)에 샘이 없는 분홍 섬유근육 조직(화살표)이 앞쪽 섬유근육 간질이며, 여기서는 두꺼워져 있습니다.',
+     'Hypertrophied anterior fibromuscular stroma (normal anatomic structure—PI-RADS 1): ... (e) whole mount '
+     'histopathology after radical prostatectomy confirms the diagnosis depicting anterior fibromuscular stroma in the '
+     'anterior part of the prostate (arrows).'),
+    ('paper_bph_nodule', ['les_nodular_hyperplasia'], 'cancers-15-03682-g008.jpg', (367, 788, 669, 1044), 'Figure 8B(b)',
+     '전체 절편의 오른엽(사진 왼쪽)에 피막으로 완전히 싸인 큰 결절성 과형성 결절(빨간 화살표)이 있습니다. 반대쪽 파란 선 안은 선방 선암입니다.',
+     'Whole mount histopathology specimen after prostatectomy show the acinar prostate adenocarcinoma in the PZ and TZ of '
+     'the left lobe of the prostate (... outlined and marked area on histopathology specimen) and large completely '
+     'encapsulated BPH nodule in the right lobe of prostate (... red arrow on histopathology specimen (b)).'),
+    ('paper_bph_stromal_nodule', ['les_nodular_hyperplasia'], 'cancers-15-03682-g009b.jpg', (8, 14, 716, 617), 'Figure 9g',
+     '이행대의 간질형 결절성 과형성 결절(화살표)입니다. 샘이 거의 없는 간질 결절이라 MRI에서 암처럼 보였던 예입니다. 위쪽에는 샘이 많은 과형성 결절들이 보입니다.',
+     'Atypical BPH nodule in the transition zone: ... (g) Histopathologically, it proved to be a stromal BPH nodule (arrow).'),
+    ('paper_tz_section', ['ana_transition_zone', 'ana_urethra'], 'jci-135-186939-g126.jpg', (28, 20, 190, 200), 'Figure 1A',
+     '전립선 가로 단면 전체입니다. 가운데가 요도이고, 빨간 네모는 결절성 과형성 결절이 있는 이행대 위치입니다(막대 1 cm).',
+     'H&E-stained transverse cross section through prostate (urethra center), with red square marking transition zone '
+     'location of BPH nodule.'),
+    ('paper_bph_mixed_nodule', ['les_nodular_hyperplasia'], 'jci-135-186939-g126.jpg', (195, 20, 378, 200), 'Figure 1B',
+     '왼쪽 단면 빨간 네모 부분을 키운 것입니다. 빨간 점선이 샘과 간질이 섞인 결절성 과형성 결절의 경계입니다(막대 1 mm).',
+     'Magnified view with nodule border (and microdissected region) demarcated by red-dashed line.'),
 ]
 
 
