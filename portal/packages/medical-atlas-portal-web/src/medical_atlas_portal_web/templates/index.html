@@ -2,11 +2,13 @@
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>의료영상 지도</title>
 <meta name="description" content="안과(망막)·유방(유방촬영)·전립선(병리) 영상 지도로 들어가는 첫 페이지입니다.">
+{% if site %}<meta name="author" content="{{ site.lab }}{% if site.pi %} · {{ site.pi_title }} {{ site.pi }}{% endif %}">{% endif %}
 <link rel="stylesheet" href="{{ url_for('static', filename='portal.css') }}"></head>
 <body>
 <header class="hub-top"><div class="hub-inner">
   <a class="hub-brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0f172a"/><circle cx="10" cy="12" r="5" fill="#c4562e"/><circle cx="22" cy="12" r="5" fill="#7c3aed"/><circle cx="16" cy="22" r="5" fill="#9b7fc4"/></svg><span>의료영상 지도</span></a>
   <span class="hub-tag">3개 영역 홈</span>
+  {% if site %}<span class="hub-by">{{ site.lab }}{% if site.affiliation %} · {{ site.affiliation }}{% endif %}</span>{% endif %}
 </div></header>
 <main class="hub-inner">
   <section class="hub-hero">
@@ -16,7 +18,8 @@
       <div><dt>영역</dt><dd>{{ domains|length }}</dd></div>
       <div><dt>해부 구조</dt><dd>{{ totals.anatomy }}</dd></div>
       <div><dt>병변</dt><dd>{{ totals.lesions }}</dd></div>
-      <div><dt>측정·판정 항목</dt><dd>{{ totals.features }}</dd></div>
+      <div><dt>측정 항목</dt><dd>{{ totals.measures }}</dd></div>
+      <div><dt>판정 기준</dt><dd>{{ totals.criteria }}</dd></div>
       <div><dt>질병</dt><dd>{{ totals.diseases }}</dd></div>
       <div><dt>실제 영상 그림</dt><dd>{{ totals.figures }}</dd></div>
     </dl>
@@ -35,24 +38,32 @@
           <p class="hub-lead">{{ d.lead }}</p>
           <ul class="hub-counts">
             <li><b>{{ d.counts.anatomy }}</b> 해부 구조</li><li><b>{{ d.counts.lesions }}</b> 병변</li>
-            <li><b>{{ d.counts.features }}</b> 측정·판정</li><li><b>{{ d.counts.diseases }}</b> 질병</li>
+            <li><b>{{ d.counts.measures }}</b> 측정 <small>+ 판정 기준 {{ d.counts.criteria }}</small></li><li><b>{{ d.counts.diseases }}</b> 질병</li>
             <li><b>{{ d.counts.figures }}</b> 영상 그림</li><li><b>{{ d.counts.examples }}</b> 측정 예시</li>
           </ul>
           <span class="hub-go">{{ d.name }} 홈으로 →</span>
-          {% if d.review_pending %}<p class="hub-note">목록 초안 · 전문가 검토 전</p>{% endif %}
+          {% if d.review_pending %}<p class="hub-note">협력 기관 전문의 검증 중</p>{% endif %}
         </div>
       </a>
     </article>
   {% endfor %}
   </section>
+  {% if site %}<section class="hub-maker" aria-label="만든 곳">
+    <p class="hub-maker-k">만든 곳</p>
+    <h2>{{ site.lab }}{% if site.lab_en %} <span>{{ site.lab_en }}</span>{% endif %}</h2>
+    <p class="hub-maker-who">{% if site.affiliation %}{{ site.affiliation }}{% endif %}{% if site.pi %}{% if site.affiliation %} · {% endif %}{{ site.pi_title }} {{ site.pi }}{% endif %}</p>
+    {% if site.intro %}<p>{{ site.intro }}</p>{% endif %}
+    {% set links = [] %}{% if site.url %}{% set _ = links.append('<a href="' ~ site.url ~ '" rel="noopener">연구실 홈페이지</a>') %}{% endif %}{% if site.repo %}{% set _ = links.append('<a href="' ~ site.repo ~ '" rel="noopener">소스 저장소</a>') %}{% endif %}{% if site.doi %}{% set _ = links.append('DOI <a href="https://doi.org/' ~ site.doi ~ '" rel="noopener">' ~ site.doi ~ '</a>') %}{% endif %}{% if site.contact %}{% set _ = links.append('문의 <a href="mailto:' ~ site.contact ~ '">' ~ site.contact ~ '</a>') %}{% endif %}
+    {% if links %}<p class="hub-maker-links">{{ links|join(' · ')|safe }}</p>{% endif %}
+  </section>{% endif %}
   <section class="hub-about">
     <h2>이 지도를 쓰는 법</h2>
     <ul>
       <li>각 영역은 독립된 지도입니다. 영역 안의 <b>홈</b>은 그 영역의 첫 페이지이고, 어느 영역에서든 맨 위 줄의 <b>의료영상 지도</b>를 누르면 이 페이지로 돌아옵니다.</li>
       <li>그림 위의 색 영역은 공개 데이터셋 제공자의 전문가 주석이거나, 캡션에 밝힌 서비스 자동 추정입니다.</li>
-      <li>진단 도구가 아니며, 항목 정의와 관계는 전문가 검토 전 초안입니다.</li>
+      <li>자료 검증을 위해 공개한 지도입니다. 현재 협력 기관 전문의(안과·영상의학과·병리과)와 함께 항목 정의와 항목 사이의 관계를 검증하고 있으며, 결과는 항목마다 「정의 검토 상태」로 표시됩니다. 진단 도구가 아닙니다.</li>
     </ul>
   </section>
 </main>
-<footer class="hub-foot"><div class="hub-inner"><span>의료영상 지도 · 안과 · 유방 · 전립선</span><span>그림의 출처와 라이선스는 각 영역의 「출처와 라이선스」 페이지에 있습니다.</span></div></footer>
+<footer class="hub-foot"><div class="hub-inner"><span>의료영상 지도 · 안과 · 유방 · 전립선{% if site %} · {{ site.lab }}{% endif %}</span><span>그림의 출처와 라이선스는 각 영역의 「출처와 라이선스」 페이지에 있습니다.</span></div></footer>
 </body></html>

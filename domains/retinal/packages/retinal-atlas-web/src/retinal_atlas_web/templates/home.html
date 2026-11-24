@@ -41,5 +41,5 @@
   <div class="section-heading"><h2>실제 영상으로 읽기</h2><a class="more" href="/images/">영상 읽기 전체 →</a></div>
   <div class="image-strip">{% for s in samples.values() %}<a href="{{ s.path }}"><img src="{{ url_for('sample_image', alias=s.image) }}" alt="" width="{{ s.width }}" height="{{ s.height }}" loading="lazy"><span>{{ s.label }}</span></a>{% endfor %}</div>
 </section>
-<p class="draft-note">이 지도는 그동안 모은 정의·측정 자료를 목록화한 초안입니다. 항목마다 근거와 검토 상태를 함께 표시합니다.</p>
+<p class="draft-note">이 지도는 그동안 모은 정의·측정 자료를 항목별 근거와 함께 정리해 자료 검증을 위해 공개했습니다. 현재 협력 기관 안과 전문의와 함께 항목 정의와 관계를 검증하고 있으며, 항목마다 검토 상태를 표시합니다.</p>
 {% endblock %}

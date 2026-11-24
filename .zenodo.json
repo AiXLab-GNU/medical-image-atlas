@@ -1,0 +1,14 @@
+{
+  "title": "Medical Image Atlas: retinal, mammography and prostate pathology",
+  "upload_type": "software",
+  "description": "<p>A multi-domain atlas of what is seen in medical images, what can be measured and on which images: anatomy, lesions, measurement items with open measurement code, grading criteria and diseases for retinal imaging, mammography and prostate pathology. Figures use only CC BY 4.0 / CC0 1.0 public images with attribution.</p><p>Code: MIT. Atlas tables and documentation: CC BY 4.0. Images: licence of each source (see LICENSE-docs.md). Browsable version: https://aixlab-gnu.github.io/medical-image-atlas/. Not a diagnostic tool.</p>",
+  "creators": [
+    {"name": "Kim, Jin Hyun", "affiliation": "AiXLab, Gyeongsang National University"}
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["medical imaging", "atlas", "retina", "mammography", "prostate pathology", "quantitative imaging"],
+  "related_identifiers": [
+    {"identifier": "https://aixlab-gnu.github.io/medical-image-atlas/", "relation": "isDocumentedBy", "scheme": "url"}
+  ]
+}

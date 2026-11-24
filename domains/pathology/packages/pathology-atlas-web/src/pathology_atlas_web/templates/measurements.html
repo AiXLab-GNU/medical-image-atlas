@@ -48,7 +48,7 @@
       <h2 class="ms-imgs-h">영상에 측정을 표시하는 예</h2>
       <p class="muted small">한 장의 영상에 여러 측정을 겹쳐 봅니다. 스위치를 켜면 측정 함수가 <b>실행된 결과</b>(표시와 계산값)가, 끄면 <b>실행 전</b> 원 영상이 보입니다. 계산 코드가 없는 정성 항목은 <b>판독</b> 표시로 볼 자리만 보여 줍니다.</p>
     </div>
-    <dl class="mx-stats"><div><dt>측정</dt><dd>{{ example_of|length }}</dd></div><div><dt>영상</dt><dd>{{ examples|length }}</dd></div><div><dt>표시 항목</dt><dd>{{ n_layers }}</dd></div></dl>
+    <dl class="mx-stats"><div><dt>영상 예시가 있는 측정</dt><dd>{{ example_of|length }} <small>/ {{ total }}</small></dd></div><div><dt>영상</dt><dd>{{ examples|length }}</dd></div><div><dt>표시 항목</dt><dd>{{ n_layers }}</dd></div></dl>
   </header>
   <nav class="mx-nav" aria-label="영상 종류·부위"><p class="mx-nav-note">숫자는 그 아래에 나오는 표시 항목(스위치) 개수 · 점선 +숫자는 이 영상에 해당하지만 아직 구현·표시되지 않은 측정 개수</p>
     <div class="mx-mods" role="tablist">{% for g in groups %}{% set gk = mod_key[g] %}{% set gx = examples|selectattr('modality','equalto',gk)|list %}<button type="button" class="mx-mod{% if loop.first %} on{% endif %}" data-group="{{ loop.index0 }}" data-example="{{ gx[0].id if gx else 'pending-' ~ gk }}">{{ g }}<span class="mx-count" title="표시 항목 {{ gx|map(attribute='layers')|map('length')|sum }}개 · 영상 {{ gx|length }}장">{{ gx|map(attribute='layers')|map('length')|sum }}</span>{% set pn = pending.get(gk, [])|map(attribute='rows')|map('length')|sum %}{% if pn %}<span class="mx-count mx-count-pending" title="미구현 측정 {{ pn }}개">+{{ pn }}</span>{% endif %}</button>{% endfor %}</div>

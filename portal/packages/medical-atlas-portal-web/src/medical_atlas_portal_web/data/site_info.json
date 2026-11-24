@@ -1,0 +1,13 @@
+{
+  "_note": "만든 곳 소개. lab 또는 pi가 비어 있으면 첫 페이지에 소개 블록을 표시하지 않는다. 값을 바꾸면 main에 push할 때 정적 버전도 다시 만들어진다.",
+  "lab": "AiXLab",
+  "lab_en": "",
+  "affiliation": "경상국립대학교",
+  "pi": "Jin Hyun Kim, PhD",
+  "pi_title": "연구책임자",
+  "intro": "AiXLab이 안과·유방·전립선 영상의 해부 구조, 병변, 측정 항목과 질병의 관계를 공개 영상(CC BY·CC0)과 공개 측정 코드로 정리한 연구 자료입니다.",
+  "url": "",
+  "repo": "https://github.com/AiXLab-GNU/medical-image-atlas",
+  "doi": "",
+  "contact": "jin.kim@gnu.ac.kr"
+}

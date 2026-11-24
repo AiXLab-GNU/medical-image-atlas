@@ -20,7 +20,7 @@
 </div></header>
 <main id="main">{% block content %}{% endblock %}</main>
 <footer class="footer"><div class="footer-inner">
-  <div><strong>병리 영상 지도 · 전립선</strong><span>해부 구조 {{ items.values()|selectattr('section','equalto','anatomy')|list|length }} · 병변 {{ items.values()|selectattr('section','equalto','lesions')|list|length }} · 질병 {{ atlas.diseases|length }} · 목록 초안</span></div>
+  <div><strong>병리 영상 지도 · 전립선</strong><span>해부 구조 {{ items.values()|selectattr('section','equalto','anatomy')|list|length }} · 병변 {{ items.values()|selectattr('section','equalto','lesions')|list|length }} · 질병 {{ atlas.diseases|length }} · 전문의 검증 중</span></div>
   <nav aria-label="보조 메뉴"><a href="/imaging/">영상 종류</a><a href="/validation/"{% if active == 'validation' %} aria-current="page"{% endif %}>측정 검증</a><a href="/sources/"{% if active == 'sources' %} aria-current="page"{% endif %}>출처와 라이선스</a></nav>
 </div></footer>
 {% block scripts %}{% endblock %}</body></html>

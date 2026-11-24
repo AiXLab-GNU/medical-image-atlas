@@ -65,10 +65,20 @@ def load_domain(d: dict) -> dict:
     return dict(d, counts={
         'anatomy': sum(1 for i in items if i.get('section') == 'anatomy'),
         'lesions': sum(1 for i in items if i.get('section') == 'lesions'),
-        'features': len(atlas.get('features', {})), 'diseases': len(atlas.get('diseases', {})),
+        'measures': sum(1 for f in atlas.get('features', {}).values() if f.get('role') == 'measurement'),
+        'criteria': sum(1 for f in atlas.get('features', {}).values() if f.get('role') == 'classification'),
+        'diseases': len(atlas.get('diseases', {})),
         'imaging': len(atlas.get('imaging', {})), 'figures': len(figures), 'examples': len(examples)},
         previews=previews, review_pending='EXPERT_REVIEW_PENDING' in status, files={p['base'] for p in previews} |
         {p['overlay'] for p in previews if p['overlay']})
+
+
+def load_site_info() -> dict:
+    """Who made the atlas (``data/site_info.json``); the intro block is shown only when ``lab`` or ``pi`` is set."""
+    path = Path(__file__).with_name('data') / 'site_info.json'
+    info = json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {}
+    info = {k: (v.strip() if isinstance(v, str) else v) for k, v in info.items() if not k.startswith('_')}
+    return info if (info.get('lab') or info.get('pi')) else {}
 
 
 MOUNTED: set[str] = set()
@@ -114,8 +124,8 @@ def create_app(config: dict | None = None, mount: bool = True) -> Flask:
     @app.get('/')
     def index():
         cards = [dict(d, url=domain_url(d)) for d in domains]
-        totals = {k: sum(d['counts'][k] for d in domains) for k in ('anatomy', 'lesions', 'features', 'diseases', 'figures', 'examples')}
-        return render_template('index.html', domains=cards, totals=totals)
+        totals = {k: sum(d['counts'][k] for d in domains) for k in ('anatomy', 'lesions', 'measures', 'criteria', 'diseases', 'figures', 'examples')}
+        return render_template('index.html', domains=cards, totals=totals, site=load_site_info())
 
     @app.get('/preview/<domain>/<path:name>')
     def preview(domain, name):

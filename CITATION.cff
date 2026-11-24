@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this atlas, please cite it as below."
+type: software
+title: "Medical Image Atlas: retinal, mammography and prostate pathology"
+abstract: >-
+  A multi-domain atlas of what is seen in medical images, what can be measured and on which images:
+  anatomy, lesions, measurement items with open measurement code, grading criteria and diseases for
+  retinal imaging, mammography and prostate pathology, illustrated with CC BY / CC0 public images.
+authors:
+  - family-names: Kim
+    given-names: Jin Hyun
+    email: jin.kim@gnu.ac.kr
+    affiliation: "AiXLab, Gyeongsang National University"
+repository-code: "https://github.com/AiXLab-GNU/medical-image-atlas"
+url: "https://aixlab-gnu.github.io/medical-image-atlas/"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-23
+keywords:
+  - medical imaging
+  - atlas
+  - retina
+  - mammography
+  - prostate pathology
+  - quantitative imaging

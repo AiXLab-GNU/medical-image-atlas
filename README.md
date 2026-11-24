@@ -43,3 +43,9 @@ cd domains/pathology/packages/pathology-atlas-web && uv venv .venv && uv pip ins
 ```
 
 전체 재구축과 항목을 늘리는 방법은 영역의 재구축 절차서(망막: `domains/retinal/docs/protocols/50_retinal_atlas_rebuild_runbook_v01_ko.md`, 유방촬영: `domains/mammography/docs/protocols/50_mammography_atlas_rebuild_runbook_v01_ko.md`, 병리: `domains/pathology/docs/protocols/50_pathology_atlas_rebuild_runbook_v01_ko.md`)를 따른다.
+
+## 만든 곳 · 라이선스 · 인용
+
+- AiXLab · 경상국립대학교 (연구책임자 Jin Hyun Kim, PhD · jin.kim@gnu.ac.kr). 첫 페이지의 소개 문구는 `portal/packages/medical-atlas-portal-web/src/medical_atlas_portal_web/data/site_info.json`에서 고친다.
+- 코드는 MIT([LICENSE](LICENSE)), 지식 표·문서·서비스가 그린 모식도와 겹침은 CC BY 4.0, 공개 영상은 각 원 라이선스(CC BY 4.0·CC0 1.0)를 따른다 — [LICENSE-docs.md](LICENSE-docs.md).
+- 인용 정보: [CITATION.cff](CITATION.cff). Zenodo 기록 정보: [.zenodo.json](.zenodo.json) — GitHub 릴리스를 만들면 Zenodo가 그 판에 DOI를 준다.
