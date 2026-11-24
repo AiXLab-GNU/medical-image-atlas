@@ -5,6 +5,7 @@
 
 **하나의 채널**: [`portal/`](portal/README.md)의 웹 8875 하나로 세 영역을 모두 본다 — `/`는 3개 영역 홈, `/retinal/`·`/mammography/`·`/pathology/`는 각 영역 홈.
 각 지도 맨 위 줄에서 첫 페이지와 다른 영역으로 옮겨 간다. 영역 지도는 따로 띄울 수도 있다(8877·8879·8881).
+같은 원본에서 **정적 버전**도 만든다(`medical-atlas-export-static` → `build/static_site/`, 서버 없이 GitHub Pages 등에 올림) — 차이는 [portal README](portal/README.md#두-가지-운용-동적정적).
 
 | 영역 | 상태 | 진입점 |
 | --- | --- | --- |

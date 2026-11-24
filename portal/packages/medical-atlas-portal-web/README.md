@@ -24,3 +24,6 @@ systemd-run --user --unit=medical-atlas-portal-web --property=Restart=on-failure
 - 영역 웹 패키지가 이 환경에 없으면 그 영역은 붙이지 않고 포트 링크(요청 호스트 + 8877/8879/8881)로 대신한다(`/health`의 `mounted`).
 - `MEDICAL_ATLAS_URL_<PORTAL|RETINAL|MAMMOGRAPHY|PATHOLOGY>`로 링크 주소를 바꿀 수 있다.
 - 영역 앱을 고친 뒤에는 이 서비스를 다시 시작한다(편집 가능 설치라 재설치는 필요 없다).
+
+정적 버전: `.venv/bin/medical-atlas-export-static [--out 경로]`(기본 `<저장소>/build/static_site/`, 약 10초·75 MB). 같은 앱을 프로세스 안에서 돌려 `/`부터 모든 링크를 따라가 저장하고,
+링크를 상대 경로로 바꾸며, 필터 조합 페이지·브라우저 검색(`static/static_site.js`)·`.nojekyll`·`404.html`을 넣는다. 닿지 않는 주소가 있으면 실패한다(`tests/test_export_static.py`).

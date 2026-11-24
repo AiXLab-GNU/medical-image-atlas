@@ -11,9 +11,10 @@ dependencies = ["Flask>=3.1,<4", "waitress>=3,<4"]
 
 [project.scripts]
 medical-atlas-portal-web = "medical_atlas_portal_web.__main__:main"
+medical-atlas-export-static = "medical_atlas_portal_web.export_static:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-medical_atlas_portal_web = ["templates/*.html", "static/*.css"]
+medical_atlas_portal_web = ["templates/*.html", "static/*.css", "static/*.js"]
