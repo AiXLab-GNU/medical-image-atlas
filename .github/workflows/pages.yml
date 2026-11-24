@@ -1,0 +1,59 @@
+# Build the static version of the one-channel atlas (portal + retinal, mammography, pathology) and publish it on
+# GitHub Pages. The dynamic Flask service stays the source; this only runs medical-atlas-export-static on the
+# committed files. One-time setup: Settings -> Pages -> Build and deployment -> Source = "GitHub Actions".
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install the portal and the three atlas web packages
+        run: |
+          uv venv .venv
+          uv pip install -p .venv/bin/python \
+            -e portal/packages/medical-atlas-portal-web \
+            -e domains/retinal/packages/retinal-atlas-web \
+            -e domains/mammography/packages/mammography-atlas-web \
+            -e domains/pathology/packages/pathology-atlas-web
+
+      - name: Test the portal and the static export
+        run: .venv/bin/python -m unittest discover -s portal/packages/medical-atlas-portal-web/tests
+
+      - name: Export the static site
+        run: .venv/bin/medical-atlas-export-static --out build/static_site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/static_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

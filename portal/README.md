@@ -31,3 +31,6 @@
 
 정적 사이트 확인: `python3 -m http.server 8874 --bind 127.0.0.1 --directory build/static_site` 후 `http://127.0.0.1:8874/`
 (`build`에서 띄우면 `http://127.0.0.1:8874/static_site/` — 하위 경로에 놓인 경우도 링크가 상대 경로라 그대로 동작한다).
+
+GitHub Pages: `.github/workflows/pages.yml`이 main에 push할 때마다(또는 Actions 탭에서 수동 실행) 정적 버전을 만들어 게시한다.
+처음 한 번 저장소 Settings → Pages → Build and deployment → Source를 **GitHub Actions**로 바꾼다.
