@@ -1,5 +1,17 @@
 [
   {
+    "filename": "diagnostics-16-01555-g011.jpg",
+    "download_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13205279.1/diagnostics-16-01555-g011.jpg",
+    "article_url": "https://doi.org/10.3390/diagnostics16101555",
+    "credit": "Prus-Ludwig et al. (2026), Figure 11",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256": "c7472fe6652e9b49444a275781c43fc528b2ed5d98cab17454308da0c5945ab1",
+    "modifications": "none; original published figure including source annotations",
+    "role": "design_review_sample",
+    "retrieved_on": "2026-11-24"
+  },
+  {
     "filename": "679a4fcbad112.png",
     "download_url": "https://storage.googleapis.com/jnl-lshtmp-j-ceh-files/journals/1/articles/833/679a4fcbad112.png",
     "article_url": "https://cehjournal.org/articles/10.56920/cehj.833",
@@ -9,7 +21,8 @@
     "sha256": "335577a3e691341298f77845a8be822b9d6e0460cada954a2e084341ba6702ea",
     "modifications": "none; original published figure including source annotations",
     "role": "design_review_sample",
-    "retrieved_on": "2026-11-20"
+    "retrieved_on": "2026-11-20",
+    "policy_exception": "CC BY-NC-SA 4.0: listed in LICENSE-docs.md; shown as published with no service overlay; non-commercial use only"
   },
   {
     "filename": "journal.pone.0099690.g001.png",

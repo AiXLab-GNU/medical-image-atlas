@@ -211,7 +211,7 @@ PK `source_id`.
 | `credit` | 그림·예시 아래 출처 줄에 그대로 쓰는 표기(패널 포함, 예: `… Fig. 1`) |
 | `citation` | 패널을 뺀 서지(영상 종류 그림은 패널을 따로 붙인다) |
 | `title` · `doi` · `pmcid` · `url` | 논문 제목 · DOI · PMC ID(이번에 직접 받은 논문만) · 대표 링크 |
-| `license` · `license_url` | `CC BY 4.0` 또는 `CC0 1.0`만 허용(검사기가 막는다) |
+| `license` · `license_url` | `CC BY 2.0`·`2.5`·`3.0`·`4.0` 또는 `CC0 1.0`만 허용(검사기가 막는다) |
 | `resource_path` | 데이터셋의 저장소 내 원본 위치(`resources/datasets/…`). 논문은 비움 |
 | `note_ko` | 같은 논문의 다른 그림 키 등 주의점 |
 
@@ -269,7 +269,7 @@ PK `file`. FK `source_id` → G 영상 출처.
 
 1. 모든 표가 `SCHEMA`에 있고, 각 표의 기본키가 비지 않고 겹치지 않는다(3.6의 대상 전체 행 예외).
 2. 모든 외래키 값이 참조 표에 있다(여러 값 칸은 값마다).
-3. G 영상 출처의 라이선스는 `CC BY 4.0`·`CC0 1.0`뿐이고, `credit`·`url`이 있다.
+3. G 영상 출처의 라이선스는 `CC BY 2.0` 이상·`CC0 1.0`뿐이고, `credit`·`url`이 있다.
 4. G 논문 그림 파일이 `provider_figures/`에 있고 SHA-256이 일치한다.
 5. H의 원 영상·겹침·층 그림 파일이 해당 `resources/datasets/retinal_atlas_*` 폴더에 있다.
 6. 예시마다 출처(`source_id` 또는 `modality_figure_id`)가 있고, 판독 층만 계산 함수가 비어 있다.

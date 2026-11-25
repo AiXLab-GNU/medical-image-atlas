@@ -1,220 +1,336 @@
 {
- "layers": [
-  {
-   "item": "ana_rnfl",
-   "shape": "point",
-   "x": 135,
-   "y": 245,
-   "label": "신경섬유층",
-   "color": "#e45756"
-  },
-  {
-   "item": "ana_gcl",
-   "shape": "point",
-   "x": 466,
-   "y": 293,
-   "label": "신경절세포층",
-   "color": "#e59b22"
-  },
-  {
-   "item": "ana_ipl",
-   "shape": "point",
-   "x": 1050,
-   "y": 331,
-   "label": "내망상층",
-   "color": "#9d9f23"
-  },
-  {
-   "item": "ana_inl",
-   "shape": "point",
-   "x": 1150,
-   "y": 351,
-   "label": "내핵층",
-   "color": "#1c9c75"
-  },
-  {
-   "item": "ana_opl",
-   "shape": "point",
-   "x": 1250,
-   "y": 365,
-   "label": "외망상층",
-   "color": "#218ea6"
-  },
-  {
-   "item": "ana_elm",
-   "shape": "point",
-   "x": 818,
-   "y": 408,
-   "label": "외경계막",
-   "color": "#4f77cf"
-  },
-  {
-   "item": "ana_ellipsoid_zone",
-   "shape": "point",
-   "x": 730,
-   "y": 423,
-   "label": "타원체대",
-   "color": "#8656c4"
-  },
-  {
-   "item": "ana_rpe",
-   "shape": "point",
-   "x": 885,
-   "y": 442,
-   "label": "망막색소상피",
-   "color": "#c4569d"
-  },
-  {
-   "item": "ana_choroid",
-   "shape": "point",
-   "x": 618,
-   "y": 468,
-   "label": "맥락막",
-   "color": "#a3734d"
-  },
-  {
-   "item": "ana_retina",
-   "shape": "point",
-   "x": 1050,
-   "y": 331,
-   "label": "망막",
-   "color": "#397bc8"
-  },
-  {
-   "item": "ana_rpe_bruch_complex",
-   "shape": "point",
-   "x": 885,
-   "y": 442,
-   "label": "망막색소상피",
-   "color": "#8656c4"
-  }
- ],
- "lesions": [
-  {
-   "item": "les_intraretinal_fluid",
-   "shape": "rect",
-   "rect": [
-    0,
-    0,
-    222,
-    128
-   ],
-   "label": "a · 망막 속 액체 공간"
-  },
-  {
-   "item": "les_retinal_schisis",
-   "shape": "rect",
-   "rect": [
-    230,
-    0,
-    222,
-    128
-   ],
-   "label": "b · 망막 층 사이의 벌어짐"
-  },
-  {
-   "item": "les_retinal_detachment_tractional",
-   "shape": "rect",
-   "rect": [
-    0,
-    137,
-    222,
-    126
-   ],
-   "label": "c · 당겨져 들린 망막"
-  },
-  {
-   "item": "les_serous_retinal_detachment",
-   "shape": "rect",
-   "rect": [
-    230,
-    137,
-    222,
-    126
-   ],
-   "label": "d · 액체로 들린 망막"
-  },
-  {
-   "item": "les_ez_disruption",
-   "shape": "rect",
-   "rect": [
-    0,
-    275,
-    222,
-    126
-   ],
-   "label": "e · 빛수용체 band의 끊김"
-  },
-  {
-   "item": "les_dril",
-   "shape": "rect",
-   "rect": [
-    230,
-    275,
-    222,
-    126
-   ],
-   "label": "f · 안쪽 층 배열의 흐트러짐"
-  },
-  {
-   "item": "les_hard_exudate",
-   "shape": "rect",
-   "rect": [
-    115,
-    413,
-    224,
-    125
-   ],
-   "label": "g · 밝게 보이는 침착물"
-  }
- ],
- "choroid": [
-  {
-   "item": "ana_choroid",
-   "shape": "whole",
-   "label": "맥락막"
-  },
-  {
-   "item": "ana_haller_layer",
-   "shape": "whole",
-   "label": "대혈관층"
-  },
-  {
-   "item": "ana_sattler_layer",
-   "shape": "whole",
-   "label": "중간혈관층"
-  },
-  {
-   "item": "ana_choriocapillaris",
-   "shape": "whole",
-   "label": "맥락막모세혈관층"
-  },
-  {
-   "item": "ana_choroid_sclera_junction",
-   "shape": "whole",
-   "label": "맥락막–공막 경계"
-  }
- ],
- "atrophy": [
-  {
-   "item": "les_geographic_atrophy",
-   "shape": "whole",
-   "label": "지도모양위축"
-  },
-  {
-   "item": "les_atrophy_complete",
-   "shape": "whole",
-   "label": "완전 위축 구성 소견"
-  },
-  {
-   "item": "ana_macula",
-   "shape": "whole",
-   "label": "황반"
-  },
-  {
-   "item": "ana_optic_disc",
-   "shape": "whole",
-   "label": "시신경유두"
-  }
- ]
+  "layers": [
+    {
+      "item": "ana_ilm",
+      "shape": "point",
+      "x": 567,
+      "y": 147,
+      "label": "내경계막",
+      "color": "#f2c14e"
+    },
+    {
+      "item": "ana_rnfl",
+      "shape": "point",
+      "x": 652,
+      "y": 146,
+      "label": "신경섬유층",
+      "color": "#e45756"
+    },
+    {
+      "item": "ana_gcl",
+      "shape": "point",
+      "x": 469,
+      "y": 192,
+      "label": "신경절세포층",
+      "color": "#e59b22"
+    },
+    {
+      "item": "ana_ipl",
+      "shape": "point",
+      "x": 269,
+      "y": 199,
+      "label": "내망상층",
+      "color": "#9d9f23"
+    },
+    {
+      "item": "ana_inl",
+      "shape": "point",
+      "x": 164,
+      "y": 192,
+      "label": "내핵층",
+      "color": "#1c9c75"
+    },
+    {
+      "item": "ana_opl",
+      "shape": "point",
+      "x": 58,
+      "y": 159,
+      "label": "외망상층",
+      "color": "#218ea6"
+    },
+    {
+      "item": "ana_onl",
+      "shape": "point",
+      "x": 25,
+      "y": 156,
+      "label": "외핵층",
+      "color": "#5aa0d8"
+    },
+    {
+      "item": "ana_elm",
+      "shape": "point",
+      "x": 73,
+      "y": 188,
+      "label": "외경계막",
+      "color": "#4f77cf"
+    },
+    {
+      "item": "ana_myoid_zone",
+      "shape": "point",
+      "x": 116,
+      "y": 211,
+      "label": "근양대",
+      "color": "#6c63c9"
+    },
+    {
+      "item": "ana_ellipsoid_zone",
+      "shape": "point",
+      "x": 161,
+      "y": 230,
+      "label": "타원체대",
+      "color": "#8656c4"
+    },
+    {
+      "item": "ana_interdigitation_zone",
+      "shape": "point",
+      "x": 245,
+      "y": 262,
+      "label": "맞물림대",
+      "color": "#a45fbf"
+    },
+    {
+      "item": "ana_rpe",
+      "shape": "point",
+      "x": 483,
+      "y": 281,
+      "label": "망막색소상피",
+      "color": "#c4569d"
+    },
+    {
+      "item": "ana_bruch_membrane",
+      "shape": "point",
+      "x": 537,
+      "y": 269,
+      "label": "브루크막",
+      "color": "#d0679a"
+    },
+    {
+      "item": "ana_choriocapillaris",
+      "shape": "point",
+      "x": 589,
+      "y": 255,
+      "label": "맥락막모세혈관층",
+      "color": "#b9825a"
+    },
+    {
+      "item": "ana_sattler_layer",
+      "shape": "point",
+      "x": 701,
+      "y": 220,
+      "label": "Sattler층",
+      "color": "#a3734d"
+    },
+    {
+      "item": "ana_haller_layer",
+      "shape": "point",
+      "x": 641,
+      "y": 265,
+      "label": "Haller층",
+      "color": "#8a5a3a"
+    },
+    {
+      "item": "ana_choroid",
+      "shape": "point",
+      "x": 641,
+      "y": 265,
+      "label": "맥락막",
+      "color": "#168e7c"
+    },
+    {
+      "item": "ana_retina",
+      "shape": "point",
+      "x": 164,
+      "y": 192,
+      "label": "망막",
+      "color": "#397bc8"
+    },
+    {
+      "item": "ana_rpe_bruch_complex",
+      "shape": "point",
+      "x": 510,
+      "y": 275,
+      "label": "망막색소상피·브루크막",
+      "color": "#8656c4"
+    }
+  ],
+  "layers_ref": [
+    {
+      "item": "ana_rnfl",
+      "shape": "figure",
+      "label": "신경섬유층"
+    },
+    {
+      "item": "ana_gcl",
+      "shape": "figure",
+      "label": "신경절세포층"
+    },
+    {
+      "item": "ana_ipl",
+      "shape": "figure",
+      "label": "내망상층"
+    },
+    {
+      "item": "ana_inl",
+      "shape": "figure",
+      "label": "내핵층"
+    },
+    {
+      "item": "ana_opl",
+      "shape": "figure",
+      "label": "외망상층"
+    },
+    {
+      "item": "ana_elm",
+      "shape": "figure",
+      "label": "외경계막"
+    },
+    {
+      "item": "ana_ellipsoid_zone",
+      "shape": "figure",
+      "label": "타원체대"
+    },
+    {
+      "item": "ana_rpe",
+      "shape": "figure",
+      "label": "망막색소상피"
+    },
+    {
+      "item": "ana_choroid",
+      "shape": "figure",
+      "label": "맥락막"
+    },
+    {
+      "item": "ana_retina",
+      "shape": "figure",
+      "label": "망막"
+    }
+  ],
+  "lesions": [
+    {
+      "item": "les_intraretinal_fluid",
+      "shape": "rect",
+      "rect": [
+        0,
+        0,
+        222,
+        128
+      ],
+      "label": "a · 망막 속 액체 공간"
+    },
+    {
+      "item": "les_retinal_schisis",
+      "shape": "rect",
+      "rect": [
+        230,
+        0,
+        222,
+        128
+      ],
+      "label": "b · 망막 층 사이의 벌어짐"
+    },
+    {
+      "item": "les_retinal_detachment_tractional",
+      "shape": "rect",
+      "rect": [
+        0,
+        137,
+        222,
+        126
+      ],
+      "label": "c · 당겨져 들린 망막"
+    },
+    {
+      "item": "les_serous_retinal_detachment",
+      "shape": "rect",
+      "rect": [
+        230,
+        137,
+        222,
+        126
+      ],
+      "label": "d · 액체로 들린 망막"
+    },
+    {
+      "item": "les_ez_disruption",
+      "shape": "rect",
+      "rect": [
+        0,
+        275,
+        222,
+        126
+      ],
+      "label": "e · 빛수용체 band의 끊김"
+    },
+    {
+      "item": "les_dril",
+      "shape": "rect",
+      "rect": [
+        230,
+        275,
+        222,
+        126
+      ],
+      "label": "f · 안쪽 층 배열의 흐트러짐"
+    },
+    {
+      "item": "les_hard_exudate",
+      "shape": "rect",
+      "rect": [
+        115,
+        413,
+        224,
+        125
+      ],
+      "label": "g · 밝게 보이는 침착물"
+    }
+  ],
+  "choroid": [
+    {
+      "item": "ana_choroid",
+      "shape": "whole",
+      "label": "맥락막"
+    },
+    {
+      "item": "ana_haller_layer",
+      "shape": "whole",
+      "label": "대혈관층"
+    },
+    {
+      "item": "ana_sattler_layer",
+      "shape": "whole",
+      "label": "중간혈관층"
+    },
+    {
+      "item": "ana_choriocapillaris",
+      "shape": "whole",
+      "label": "맥락막모세혈관층"
+    },
+    {
+      "item": "ana_choroid_sclera_junction",
+      "shape": "whole",
+      "label": "맥락막–공막 경계"
+    }
+  ],
+  "atrophy": [
+    {
+      "item": "les_geographic_atrophy",
+      "shape": "whole",
+      "label": "지도모양위축"
+    },
+    {
+      "item": "les_atrophy_complete",
+      "shape": "whole",
+      "label": "완전 위축 구성 소견"
+    },
+    {
+      "item": "ana_macula",
+      "shape": "whole",
+      "label": "황반"
+    },
+    {
+      "item": "ana_optic_disc",
+      "shape": "whole",
+      "label": "시신경유두"
+    }
+  ]
 }

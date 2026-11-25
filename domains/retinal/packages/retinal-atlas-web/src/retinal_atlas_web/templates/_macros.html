@@ -31,15 +31,16 @@
     <img src="{{ url_for('sample_image', alias=s.image) }}" alt="{{ s.alt }}" width="{{ s.width }}" height="{{ s.height }}">
     {% if m.shape == 'point' %}
     <svg class="mark-overlay" viewBox="0 0 {{ s.width }} {{ s.height }}" aria-hidden="true">
-      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="26" fill="none" stroke="#ffffff" stroke-width="9"/>
-      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="26" fill="none" stroke="{{ m.color }}" stroke-width="5"/>
-      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="7" fill="{{ m.color }}" stroke="#ffffff" stroke-width="2"/>
+      {% set k = s.mark_scale or 1 %}
+      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="{{ 26 * k }}" fill="none" stroke="#ffffff" stroke-width="{{ 9 * k }}"/>
+      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="{{ 26 * k }}" fill="none" stroke="{{ m.color }}" stroke-width="{{ 5 * k }}"/>
+      <circle cx="{{ m.x }}" cy="{{ m.y }}" r="{{ 7 * k }}" fill="{{ m.color }}" stroke="#ffffff" stroke-width="{{ 2 * k }}"/>
     </svg>
     {% endif %}
   </div>
   <figcaption>{% if m.shape == 'point' %}원 표시가 {{ m.label }}의 위치입니다(층 전체의 분할이 아닌 위치 안내).{% else %}{{ s.label }} 그림에서 {{ m.label }}을(를) 볼 수 있습니다.{% endif %}</figcaption>
   {% endif %}
-  <p class="figure-credit">{{ s.credit }} · <a href="{{ s.article }}" target="_blank" rel="noopener">원문</a> · <a href="{{ s.licenseUrl }}" target="_blank" rel="noopener">{{ s.license }}</a> · <a href="{{ s.path }}">이 영상 읽기</a></p>
+  <p class="figure-credit">{{ s.credit }} · <a href="{{ s.article }}" target="_blank" rel="noopener">원문</a> · <a href="{{ s.licenseUrl }}" target="_blank" rel="noopener">{{ s.license }}</a>{% if 'NC' in s.license %} <span class="lic-nc" title="상업적 이용 불가 · 고쳐 만든 것도 같은 조건">비영리 전용</span>{% endif %} · <a href="{{ s.path }}">이 영상 읽기</a></p>
 </figure>
 {%- endmacro %}
 

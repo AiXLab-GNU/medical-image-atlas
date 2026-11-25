@@ -25,7 +25,7 @@
      "features": [
       {
        "id": "ft_breast_area",
-       "value": "6,617,024 px²",
+       "value": "6,615,248 px²",
        "status": "ok"
       }
      ],
@@ -40,7 +40,7 @@
      "features": [
       {
        "id": "ft_pectoral_area",
-       "value": "2,030,368 px²",
+       "value": "2,032,144 px²",
        "status": "ok"
       },
       {
@@ -80,7 +80,7 @@
      "features": [
       {
        "id": "ft_dense_area",
-       "value": "2,019,030 px²",
+       "value": "2,018,667 px²",
        "status": "ok"
       },
       {
@@ -305,7 +305,7 @@
      "features": [
       {
        "id": "ft_pnl_cc_mlo_difference",
-       "value": "86.4 px",
+       "value": "86.0 px",
        "status": "ok"
       }
      ],

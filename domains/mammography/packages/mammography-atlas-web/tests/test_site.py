@@ -78,9 +78,9 @@ class SiteTest(unittest.TestCase):
 
     def test_only_open_licences_on_pages(self):
         for fig in self.content['masked']:
-            self.assertIn(fig['license'], {'CC BY 4.0', 'CC0 1.0'})
+            self.assertIn(fig['license'], {'CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0'})
         for ex in self.content['measure_examples']:
-            self.assertIn(ex['license'], {'CC BY 4.0', 'CC0 1.0'})
+            self.assertIn(ex['license'], {'CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0'})
 
 
 if __name__ == '__main__':

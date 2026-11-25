@@ -91,7 +91,7 @@ H·I 표는 `export_retinal_atlas_registry.py --check`로 최신인지 본다.
 
 ### 4.1 논문 그림 하나를 더할 때
 
-1. 논문이 **CC BY 4.0 또는 CC0**인지 확인한다(Europe PMC `LICENSE:"cc by"`, 또는 PMC 공개 자료 저장소의 `license_code`).
+1. 논문이 **CC BY 2.0 이상 또는 CC0**인지 확인한다(판 번호가 적혀 있지 않으면 쓰지 않는다)(Europe PMC `LICENSE:"cc by"`, 또는 PMC 공개 자료 저장소의 `license_code`).
    CC BY-NC·NC-ND는 쓰지 않는다.
 2. 그림 파일을 공급자 파일명 그대로 `provider_figures/`에 둔다. 이미 같은 이름이 있으면 학술지 접두어를 붙이고
    `provider_name`에 원래 이름을 적는다.
@@ -140,7 +140,7 @@ H·I 표는 `export_retinal_atlas_registry.py --check`로 최신인지 본다.
 
 ## 5. 지켜야 할 원칙
 
-- 공개하는 영상은 CC BY 4.0·CC0 1.0만 쓰고, 그림마다 출처 줄(저자·학술지·그림 번호·라이선스 링크)을 단다.
+- 공개하는 영상은 CC BY 2.0 이상·CC0 1.0만 쓰고, 그림마다 출처 줄(저자·학술지·그림 번호·라이선스 링크)을 단다.
 - 원자료와 논문 그림은 저장소에 한 번만 둔다. 원본 파일명과 바이트를 바꾸지 않는다(체크섬 고정).
 - 출처·라이선스·체크섬은 G 표에만 적는다. 생성 코드에 다시 적지 않는다.
 - 생성 표(H·I, F 기존 측정, D 적용)와 생성 JSON은 손으로 고치지 않는다.

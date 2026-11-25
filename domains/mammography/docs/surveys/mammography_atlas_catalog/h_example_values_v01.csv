@@ -1,10 +1,10 @@
 example_id,layer_key,feature_id,status,value
-ex_ffdm_mlo,breast,ft_breast_area,ok,"6,617,024 px²"
-ex_ffdm_mlo,pectoral,ft_pectoral_area,ok,"2,030,368 px²"
+ex_ffdm_mlo,breast,ft_breast_area,ok,"6,615,248 px²"
+ex_ffdm_mlo,pectoral,ft_pectoral_area,ok,"2,032,144 px²"
 ex_ffdm_mlo,pectoral,ft_pectoral_angle,ok,14.4 °
 ex_ffdm_mlo,pnl,ft_pnl_length,ok,"2,008 px"
 ex_ffdm_mlo,pnl,ft_pectoral_reaches_pnl,ok,있음
-ex_ffdm_mlo,dense,ft_dense_area,ok,"2,019,030 px²"
+ex_ffdm_mlo,dense,ft_dense_area,ok,"2,018,667 px²"
 ex_ffdm_mlo,dense,ft_percent_density,ok,30.5 %
 ex_ffdm_mlo,composition,ft_breast_composition,reading,b (공급자 보고서 ACR B)
 ex_ffdm_mlo,location,ft_lesion_distance_nipple,ok,"1,444 px"
@@ -21,7 +21,7 @@ ex_ffdm_cc,location,ft_lesion_view_half,ok,바깥쪽
 ex_ffdm_pair,match,ft_lesion_two_view,reading,있음 (CC·MLO 모두 표시)
 ex_ffdm_pair,quadrant,ft_lesion_quadrant,ok,외상사분면
 ex_ffdm_pair,quadrant,ft_lesion_clock_position,ok,11:00
-ex_ffdm_pair,pnl,ft_pnl_cc_mlo_difference,ok,86.4 px
+ex_ffdm_pair,pnl,ft_pnl_cc_mlo_difference,ok,86.0 px
 ex_ffdm_mass_circumscribed,outline,ft_mass_size,ok,462.3 px
 ex_ffdm_mass_circumscribed,outline,ft_mass_area,ok,"129,018 px²"
 ex_ffdm_mass_circumscribed,outline,ft_lesion_generic_presence,ok,있음

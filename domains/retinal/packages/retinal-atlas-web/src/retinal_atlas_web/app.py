@@ -18,7 +18,8 @@ from flask import Flask, Response, abort, jsonify, redirect, render_template, re
 
 
 IMAGE_FILES = {
-    'retina_layers.png': '679a4fcbad112.png',
+    'retina_layers.jpg': 'diagnostics-16-01555-g011.jpg',
+    'retina_layers_yorston.png': '679a4fcbad112.png',          # NC-SA policy exception (LICENSE-docs.md)
     'choroid.png': 'journal.pone.0099690.g001.png',
     'oct_lesions.jpg': 'jcm-11-03266-g002-550.jpg',
     'atrophy.webp': 'fnins-18-1415575-g001.webp',

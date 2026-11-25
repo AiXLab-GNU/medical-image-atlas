@@ -173,7 +173,8 @@ def segment_pectoral(image: np.ndarray, breast: np.ndarray, side: str, scale: fl
     if len(pts) < 15:
         return None, None
     pts = np.array(pts, float)
-    model, inliers = measure.ransac(pts, measure.LineModelND, min_samples=2, residual_threshold=3, max_trials=500)
+    model, inliers = measure.ransac(pts, measure.LineModelND, min_samples=2, residual_threshold=3, max_trials=500,
+                                    rng=0)                      # fixed seed: same line on every rebuild
     if inliers is None or inliers.sum() < 10:
         return None, None
     good = pts[inliers]

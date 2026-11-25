@@ -11,8 +11,8 @@
 | --- | --- | --- |
 | 하나의 채널(`portal/`) | 3개 영역 홈 + 세 영역 지도를 경로로 붙여 웹 8875 하나로 서비스 | [portal README](portal/README.md) |
 | 망막(`domains/retinal/`) | 운영 v01 — 측정 160개(계산 구현 42)·판정 기준 3, 영상 종류 8가지 모두 예시, 웹 8877 | [영역 README](domains/retinal/README.md) |
-| 유방촬영(`domains/mammography/`) | v01 — 측정 61개(계산 구현 40)·판정 기준 1, 예시 16장(FFDM·DBT·CEM), 웹 8879 | [영역 README](domains/mammography/README.md) |
-| 병리(`domains/pathology/`, 전립선) | v01 — 측정 35개(계산 구현 30)·판정 기준 2, H&E·IHC 예시 16장, 실제 영상 그림 66(논문 패널 34)·해부·병변 45개 중 42개에 실제 영상, 등급 판독 일치도(PAR·SICAPv2), 측정 검증 페이지, 웹 8881 | [영역 README](domains/pathology/README.md) |
+| 유방촬영(`domains/mammography/`) | v01 — 측정 61개(계산 구현 40)·판정 기준 1, 예시 16장(FFDM·DBT·CEM), 실제 영상 그림 65(DMID 판독문 판정 12·논문 패널 18·자동 구역 3 추가)·해부·병변 65개 중 64개에 실제 영상, 웹 8879 | [영역 README](domains/mammography/README.md) |
+| 병리(`domains/pathology/`, 전립선) | v01 — 측정 35개(계산 구현 30)·판정 기준 2, H&E·IHC 예시 16장, 실제 영상 그림 68(논문 패널 35)·해부·병변 45개 중 44개에 실제 영상, 등급 판독 일치도(PAR·SICAPv2), 측정 검증 페이지, 웹 8881 | [영역 README](domains/pathology/README.md) |
 
 ## 구조
 
@@ -47,5 +47,5 @@ cd domains/pathology/packages/pathology-atlas-web && uv venv .venv && uv pip ins
 ## 만든 곳 · 라이선스 · 인용
 
 - AiXLab · 경상국립대학교 (연구책임자 Jin Hyun Kim, PhD · jin.kim@gnu.ac.kr). 첫 페이지의 소개 문구는 `portal/packages/medical-atlas-portal-web/src/medical_atlas_portal_web/data/site_info.json`에서 고친다.
-- 코드는 MIT([LICENSE](LICENSE)), 지식 표·문서·서비스가 그린 모식도와 겹침은 CC BY 4.0, 공개 영상은 각 원 라이선스(CC BY 4.0·CC0 1.0)를 따른다 — [LICENSE-docs.md](LICENSE-docs.md).
+- 코드는 MIT([LICENSE](LICENSE)), 지식 표·문서·서비스가 그린 모식도와 겹침은 CC BY 4.0, 공개 영상은 각 원 라이선스(CC BY 2.0 이상·CC0 1.0, 예외로 표시한 비영리 그림 1개)를 따른다 — [LICENSE-docs.md](LICENSE-docs.md).
 - 인용 정보: [CITATION.cff](CITATION.cff). Zenodo 기록 정보: [.zenodo.json](.zenodo.json) — GitHub 릴리스를 만들면 Zenodo가 그 판에 DOI를 준다.

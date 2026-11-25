@@ -31,6 +31,7 @@ he_ihc_pair,ana_basal_cell_layer
 gland_lumen,ana_gland_lumen
 hpf_field,ref_hpf
 pixel_size,ref_pixel_size
+nucleolus_hpf,ana_nucleolus
 he_basal_registered,ana_basal_cell_layer
 he_basal_registered,les_adenocarcinoma
 slide_patterns,les_gleason_pattern_4
@@ -89,3 +90,4 @@ paper_bph_stromal_nodule,les_nodular_hyperplasia
 paper_tz_section,ana_transition_zone
 paper_tz_section,ana_urethra
 paper_bph_mixed_nodule,les_nodular_hyperplasia
+paper_peripheral_zone,ana_peripheral_zone

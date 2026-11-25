@@ -1,4 +1,4 @@
-"""DBT and CEM item figures and measurement examples from CC BY 4.0 paper figures.
+"""DBT and CEM item figures and measurement examples from CC BY paper figures (CC BY 2.0 or later).
 
 Provider files live once in ``resources/datasets/mammography_atlas_provider_figures/`` under their original names,
 pinned by SHA-256 in ``g_provider_figures``. Panels are cut by fixed boxes. Reader marks are found from the figure
@@ -304,6 +304,100 @@ def modality_figure():
             'license': src['license'], 'license_url': src['license_url']}
 
 
+# Plain paper panels: shown as published (the arrows/circles are the authors'); the finding is the author's caption.
+# id, items, source_id, file, box (None = whole figure), panel label, Korean caption, author caption
+PAPER_PANELS = [
+    ('paper_axillary_adenopathy', ['les_axillary_adenopathy', 'ana_axilla'], 'khoo2025', 'cureus-0017-00000100096-i01.jpg', None,
+     'Figure 1', '양쪽 MLO 영상에서 액와 림프절이 커지고 지방문 없이 하얗게 보입니다(화살표, 전이 의심). 왼쪽(B)의 림프절이 특히 큽니다.',
+     'Mammogram demonstrating bilateral axillary lymphadenopathy suspicious for metastasis as indicated by arrows.'),
+    ('paper_biopsy_clip', ['les_biopsy_marker'], 'weaver2021', '13244_2021_1136_Fig4_HTML.jpg', (397, 298, 784, 555),
+     'Fig. 4d', '정위 조직검사 뒤 CC 영상입니다. 원 안의 작은 금속이 조직검사 표지자(클립)이고, 화살표는 초음파 유도 조직검사 때 넣은 리본 모양 클립입니다.',
+     'Post-procedure CC mammogram demonstrating a stereotactic biopsy clip in appropriate position, with a minimal hematoma '
+     'and no sign of clip migration (circle). ... A ribbon-shaped clip was placed (arrow).'),
+    ('paper_focal_asymmetry', ['les_focal_asymmetry', 'les_asymmetry'], 'cohen2026', 'cureus-0018-00000114224-i01.webp', None,
+     'Figure 1', '선별 검사 CC(A)와 MLO(B) 두 영상 모두에서 내하사분면에 같은 국소 비대칭(흰 원)이 보입니다. 두 방향에서 보이고 종괴의 볼록한 경계는 없습니다.',
+     'Craniocaudal (A) and mediolateral oblique (B) digital mammographic views of the right breast for screening demonstrate '
+     'an abnormal focal asymmetry (open white circles) in the lower inner quadrant.'),
+    ('paper_coarse_heterogeneous', ['les_calc_coarse_heterogeneous', 'les_calc_fine_pleomorphic'], 'wang2026', 'fonc-16-1966376-g001.webp',
+     (150, 66, 372, 740), 'Figure 1A',
+     '왼쪽 MLO 영상의 크고 밀도가 높은 종괴 안에 거친 불균질 석회화와 미세 다형성 석회화가 있습니다(저자: 엽상종양). 그림 해상도가 낮아 석회화 하나하나는 잘 보이지 않습니다.',
+     'Left mediolateral oblique mammogram showing a large high-density central breast mass with internal coarse heterogeneous '
+     'and regional fine pleomorphic calcifications.'),
+    ('paper_breast_implant', ['les_breast_implant'], 'kanavou2023', 'diagnostics-13-03186-g008.jpg', (0, 0, 166, 392), 'Figure 8a',
+     '유방 절제 뒤 실리콘 보형물로 재건한 오른쪽 유방의 MLO 영상입니다. 보형물이 경계가 매끈한 타원형의 아주 밝은(방사선 비투과) 덩어리로 보입니다.',
+     'In the MLO view, the implant appears as a homogenous radiopaque oval mass with smooth borders.'),
+    ('paper_dystrophic_calc', ['les_calc_dystrophic', 'les_postsurgical_scar'], 'gigli2026', 'life-16-00701-g004.jpg', (0, 0, 743, 592),
+     'Figure 4a,b', '수술·방사선 치료 1년 뒤 CC(a)와 MLO(b) 영상입니다. 수술 부위의 어두운(지방) 영역 둘레에 가는 이영양성 석회화가 생긴 지방괴사이며, 짧은 흰 선은 수술 클립입니다.',
+     'Features consistent with fat necrosis are present, characterized mammographically by a radiolucent area with thin, '
+     'peripheral dystrophic calcifications (a,b).'),
+    ('paper_developing_asymmetry', ['les_developing_asymmetry', 'les_asymmetry'], 'shamir2024', 'bioengineering-11-00451-g001a.jpg',
+     (80, 30, 700, 526), 'Figure 1A,B',
+     '기준 선별 검사(A)와 17개월 뒤 추적 검사(B)의 네 방향 영상입니다. 왼쪽 유방에 이전에 없던 비대칭이 아주 미묘하게 새로 생겼습니다(저자: 맨눈으로 알아보기 어려움, 조직검사로 침윤성 암 확인).',
+     'Between the baseline screening mammogram (A) and the follow-up screening mammogram 17 months later (B), there has been '
+     'a very subtle development of left breast asymmetry that is difficult to perceive with the naked eye.'),
+    ('paper_global_asymmetry', ['les_global_asymmetry', 'les_asymmetry'], 'sudo2024', 'PMC11388040/gr1.jpg', None, 'Fig. 1',
+     '오른쪽(A)과 왼쪽(B) 유방을 비교하면 왼쪽의 섬유선 조직이 넓은 범위에서 더 많습니다. 원 그림의 대비가 낮습니다.',
+     'Mammography showed global asymmetry between the right (A) and left (B) breasts.'),
+    ('paper_axillary_tail', ['ana_axillary_tail'], 'schonour2025', 'PMC12546409/gr1.jpg', (0, 0, 791, 1330), 'Fig. 1A',
+     '오른쪽 MLO 영상에서 유방 위쪽 뒤로 겨드랑이를 향해 뻗은 액와 꼬리 부위에 둥근 종괴(빨간 원)가 있습니다(저자: 이소성 유방 조직의 섬유선종).',
+     'Diagnostic mammography (MLO C-view) demonstrates the presence of a 2.4 × 1.9 cm round, circumscribed, high-density mass in '
+     'the right axillary tail (circled, A).'),
+    ('paper_retromammary_fat', ['ana_retromammary_fat', 'ana_fibroglandular_tissue'], 'jabbour2025', 'diagnostics-15-02528-g005.jpg',
+     (262, 5, 756, 378), 'Figure 5b,c',
+     '왼쪽 유방 MLO(b)와 CC(c) 영상에서 밝은 섬유선 조직 뒤쪽 경계(노란 화살표)와 그 뒤의 어두운 유방후 지방층입니다.',
+     'The junction between the fibroglandular tissue and the retromammary fat ... seen on mediolateral oblique (MLO) (b) and '
+     'craniocaudal (CC) (c) views of the left breast (yellow arrows).'),
+    ('paper_inframammary_fold', ['ana_inframammary_fold', 'ref_posterior_nipple_line', 'ana_pectoralis_major'], 'karic2026',
+     'diagnostics-16-01218-g001.jpg', None, 'Figure 1',
+     '잘 찍은 오른쪽 MLO 영상입니다. 아래쪽 화살촉이 유방하주름, 점선이 후유두선, 파란 선이 대흉근 앞 경계입니다.',
+     'The posterior nipple line (PNL) is indicated by the dotted line. The pectoralis muscle ... (blue line) ... The '
+     'inframammary fold (arrow head) must be clearly visualized, without overlapping skin folds or air gaps.'),
+    ('paper_cooper_ligaments', ['ana_cooper_ligaments'], 'gharaibeh2023', 'fmed-10-1276434-g002.jpg', None, 'Figure 2',
+     '2D 유방촬영(A)에서 비대칭처럼 보인 부위가 DBT 단면(B)에서는 서로 겹친 쿠퍼 인대와 섬유선 조직(화살표)으로 풀립니다.',
+     'There is a symmetry that is seen in the right upper breast in the MLO view of 2D mammography (A). (B) DBT image detects '
+     'crossing cooper ligaments and fibro-glandular tissue (arrow) with no associated mass or speculation.'),
+    ('paper_dilated_duct', ['les_solitary_dilated_duct', 'ana_ducts'], 'pitarch2025', '13244_2025_1947_Fig4_HTML.jpg', (0, 0, 356, 300),
+     'Fig. 4a', '내하사분면에 관 모양 음영(화살촉)으로 보이는 확장된 유관입니다(저자: 유관 확장을 동반한 관내 유두종, 장액성 유두 분비).',
+     'Intraductal papilloma with duct dilatation. ... a Mammogram showing tubular structures in the lower inner quadrant (arrowheads).'),
+    ('paper_trabecular_thickening', ['les_trabecular_thickening', 'les_skin_thickening'], 'almohawes2023', 'bjrcr.20220160.g001.jpg', None,
+     'Figure 1', '오른쪽 유방(a MLO · c CC)은 피하 지방 사이 섬유 격벽이 굵어져 그물 모양이 짙고(소주 비후) 피부도 두껍습니다(부종). 왼쪽(b · d)은 비교용 반대쪽입니다.',
+     'Digital mammography of the right breast, (a) CC and (c) MLO views, shows diffuse subcutaneous fat infiltration associated with '
+     'increased trabeculation and dermal thickening are consistent with oedema ... Left breast (b, d) ...'),
+    ('paper_skin_lesion', ['les_skin_lesion'], 'park2026', 'PMC12934220/gr2.jpg', None, 'Fig. 2',
+     '만져지는 곳에 피부 표지자(작은 둥근 금속, BB)를 붙이고 찍은 접선 MLO 영상입니다. 피부와 이어진 작은 표재성 종괴들(화살표)이 피부 병변임을 보여 줍니다.',
+     'Diagnostic left tangential MLO mammogram obtained after placement of a BB skin marker at the area of palpable lump in the low '
+     'axilla demonstrates several small superficial masses in continuity with the skin.'),
+    ('paper_tdlu_histology', ['ana_tdlu'], 'debel2022', '41523_2021_378_Fig1_HTML.jpg', (0, 0, 330, 652), 'Fig. 1a,c',
+     '말단 유관 소엽 단위는 유방촬영에서 따로 보이지 않아 조직(H&E) 사진으로 보입니다. 위(a)는 소엽 하나, 아래(c)는 간질 속에 흩어진 여러 소엽입니다(막대 200·400 µm).',
+     'The top view (a, b) shows a single TDLU ... The bottom view gives a broad overview (c, d).'),
+    ('paper_milk_of_calcium', ['les_calc_milk_of_calcium'], 'nalawade2009', 'IJRI-19-282-g005.jpg', None, 'Figure 5',
+     '옆(측면) 영상입니다. 작은 낭종 안에 가라앉은 칼슘이 아래쪽에 반달·찻잔 모양으로 층을 이룹니다(화살표). 위쪽의 흐린 둥근 점들도 같은 석회화를 다른 각도에서 본 것입니다.',
+     'Lateral mammogram shows milk of calcium with layering (arrow).'),
+    ('paper_skin_calc', ['les_calc_skin'], 'nalawade2009', 'IJRI-19-282-g006.jpg', (0, 0, 364, 335), 'Figure 6A',
+     '가운데가 투명한 작은 고리 모양 석회화(화살표)로, 피부 석회화의 전형적인 모습입니다.',
+     'Mammogram (A) shows a lucent-centered focus (arrow) of dermal calcification.'),
+]
+
+
+def paper_panel(fid, items, source_id, name, box, label, caption, original):
+    rgb = Image.open(PROVIDER_DIR / name).convert('RGB')
+    crop = rgb.crop(box) if box else rgb
+    if crop.width < 460:
+        k = 460 / crop.width
+        crop = crop.resize((460, round(crop.height * k)), Image.LANCZOS)
+    src = source(source_id, label)
+    save_jpg(crop, registry.MASKED_DIR, f'{fid}.jpg')
+    ov = overlay(crop.size, texts=[((10, 10), '논문 그림 · 저자 표시', 'white')])
+    return {'id': fid, 'kind': 'paper', 'items': items, 'source': source_id, 'source_file': name, 'panel': label,
+            'mask_label': '논문 그림 · 저자 판정', 'legend': [], 'caption': caption + ' 화살표·원·선은 원 저자의 표시입니다.',
+            'original_caption': original,
+            'transform': (f'패널 {label} 잘라냄 (x {box[0]}–{box[2]}, y {box[1]}–{box[3]})' if box else f'원 그림 전체 {label}')
+                         + f', {crop.size[0]}×{crop.size[1]}',
+            'base': f'{fid}.jpg', 'overlay': save_png(ov, registry.MASKED_DIR, f'{fid}_mask.png'),
+            'width': crop.size[0], 'height': crop.size[1], 'name': src['name'], 'credit': src['credit'], 'url': src['url'],
+            'license': src['license'], 'license_url': src['license_url']}
+
+
 def build():
     provider()
     examples, figures = [], []
@@ -330,4 +424,5 @@ def build():
     examples.append(ex)
     figures.append(fig)
     figures.append(modality_figure())
+    figures += [paper_panel(*p) for p in PAPER_PANELS]
     return examples, figures

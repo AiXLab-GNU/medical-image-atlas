@@ -16,7 +16,7 @@ import export_pathology_atlas_registry as export
 import pathology_atlas_registry as registry
 
 CATALOG = registry.CATALOG
-LICENCES = ('CC BY 4.0', 'CC0 1.0')
+LICENCES = ('CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0')   # project policy: CC BY 2.0 or later / CC0
 VALUE_STATUS = {'ok', 'not_observed', 'not_evaluable', 'reading'}
 DOMAINS = {
     'imaging': ('a_imaging_v01.csv', 'imaging_id'), 'anatomy': ('b_anatomy_v01.csv', 'entity_id'),

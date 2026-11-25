@@ -80,7 +80,7 @@ class SiteTest(unittest.TestCase):
         self.assertGreaterEqual(len(masked), 10)
         for fig in masked:
             with self.subTest(figure=fig['id']):
-                self.assertIn(fig['license'], {'CC BY 4.0', 'CC0 1.0'})
+                self.assertIn(fig['license'], {'CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0'})
                 for name in (fig['base'], fig['overlay']):
                     self.assertEqual(self.client.get('/figures/' + name).status_code, 200)
                 for item_id in fig['items']:
@@ -294,10 +294,25 @@ class SiteTest(unittest.TestCase):
             self.assertIn('먼저, 어디를 보는 사진인가요?', html)
             self.assertIn('creativecommons.org/licenses/', html)
             self.assertIn('이 영상에서 볼 수 있는 항목', html)
-        self.assertIn('CC BY-NC-SA 4.0', self.client.get('/images/retinal-layers/').get_data(as_text=True))
+        self.assertNotIn('BY-NC', self.client.get('/images/retinal-layers/').get_data(as_text=True))
+        ref = self.client.get('/images/retinal-layers-2/').get_data(as_text=True)
+        self.assertIn('CC BY-NC-SA 4.0', ref)
+        self.assertIn('비영리 전용', ref)
+        self.assertNotIn('id="layer-overlay"', ref)          # exception figure: no service overlay (SA)
+
+    def test_licence_exceptions_are_declared_and_unmarked(self):
+        catalog = json.loads((DATA / 'catalog.json').read_text(encoding='utf-8'))
+        links = json.loads((DATA / 'image_links.json').read_text(encoding='utf-8'))
+        for key, sample in catalog['samples'].items():
+            if 'NC' in sample['license']:
+                self.assertTrue(sample.get('policy_exception'), key)
+                self.assertNotEqual(key, 'layers')
+                self.assertTrue(all(m['shape'] == 'figure' for m in links.get(key, [])), key)
+            else:
+                self.assertIn(sample['license'], {'CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0'})
 
     def test_image_allowlist_preserves_original_bytes_and_head(self):
-        pairs = {'retina_layers.png': '679a4fcbad112.png',
+        pairs = {'retina_layers.jpg': 'diagnostics-16-01555-g011.jpg', 'retina_layers_yorston.png': '679a4fcbad112.png',
                  'choroid.png': 'journal.pone.0099690.g001.png',
                  'oct_lesions.jpg': 'jcm-11-03266-g002-550.jpg',
                  'atrophy.webp': 'fnins-18-1415575-g001.webp'}

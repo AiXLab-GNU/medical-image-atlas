@@ -1,15 +1,17 @@
 # Retinal concept reference images
 
-정량 지도 설계 검토용 공개 논문 그림 네 개를 원본 바이트로 보존한다. 실제 사진·OCT와
+정량 지도 설계 검토용 공개 논문 그림 다섯 개를 원본 바이트로 보존한다. 실제 사진·OCT와
 출판된 설명 표식이 포함돼 있으며 생성 영상은 없다. 전체 개념 수록용 데이터셋은 아니다.
 이미지마다 출처·image-specific license·다운로드 URL·SHA-256을 `source_manifest.json`에
 기록한다. 원문 그림을 잘라 저장하거나 픽셀을 바꾸지 않았다. 웹의 계층별 색상 점·번호는
 별도 SVG 설명 계층이며 전문가 확정 segmentation이 아니다.
 
-- `679a4fcbad112.png`: © David Yorston, 2025, Figure 1.
+- `diagnostics-16-01555-g011.jpg`: Prus-Ludwig et al., 2026, Figure 11 (정상 망막층 이름표가 붙은 황반 OCT).
+  [Source](https://doi.org/10.3390/diagnostics16101555),
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- `679a4fcbad112.png`: © David Yorston, 2025, Figure 1, CC BY-NC-SA 4.0. 라이선스 예외 그림(LICENSE-docs.md)으로 「정상 망막층(다른 예)」에 원문 그대로 싣는다(서비스 표시 없음, 비영리 전용).
   [Source](https://cehjournal.org/articles/10.56920/cehj.833),
   [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-  본문 일반 license보다 그림에 직접 명시된 BY-NC-SA 조건을 따른다.
 - `journal.pone.0099690.g001.png`: Esmaeelpour et al., 2014, Figure 1.
   [Source](https://doi.org/10.1371/journal.pone.0099690),
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

@@ -1,67 +1,116 @@
 {
   "layers": [
     [
+      "ILM",
+      "내경계막",
+      "#f2c14e",
+      567,
+      147
+    ],
+    [
       "RNFL",
       "신경섬유층",
       "#e45756",
-      135,
-      245
+      652,
+      146
     ],
     [
       "GCL",
       "신경절세포층",
       "#e59b22",
-      466,
-      293
+      469,
+      192
     ],
     [
       "IPL",
       "내망상층",
       "#9d9f23",
-      1050,
-      331
+      269,
+      199
     ],
     [
       "INL",
       "내핵층",
       "#1c9c75",
-      1150,
-      351
+      164,
+      192
     ],
     [
       "OPL",
       "외망상층",
       "#218ea6",
-      1250,
-      365
+      58,
+      159
+    ],
+    [
+      "ONL",
+      "외핵층",
+      "#5aa0d8",
+      25,
+      156
     ],
     [
       "ELM",
       "외경계막",
       "#4f77cf",
-      818,
-      408
+      73,
+      188
+    ],
+    [
+      "MZ",
+      "근양대",
+      "#6c63c9",
+      116,
+      211
     ],
     [
       "EZ",
       "타원체대",
       "#8656c4",
-      730,
-      423
+      161,
+      230
+    ],
+    [
+      "IZ",
+      "맞물림대",
+      "#a45fbf",
+      245,
+      262
     ],
     [
       "RPE",
       "망막색소상피",
       "#c4569d",
-      885,
-      442
+      483,
+      281
     ],
     [
-      "CH",
-      "맥락막",
+      "BM",
+      "브루크막",
+      "#d0679a",
+      537,
+      269
+    ],
+    [
+      "CC",
+      "맥락막모세혈관층",
+      "#b9825a",
+      589,
+      255
+    ],
+    [
+      "SL",
+      "Sattler층",
       "#a3734d",
-      618,
-      468
+      701,
+      220
+    ],
+    [
+      "HL",
+      "Haller층",
+      "#8a5a3a",
+      641,
+      265
     ]
   ],
   "broad": [
@@ -69,22 +118,22 @@
       "RET",
       "망막",
       "#397bc8",
-      1050,
-      331
+      164,
+      192
     ],
     [
       "RPE",
       "망막색소상피",
       "#8656c4",
-      885,
-      442
+      483,
+      281
     ],
     [
       "CH",
       "맥락막",
       "#168e7c",
-      618,
-      468
+      641,
+      265
     ]
   ],
   "samples": {
@@ -94,13 +143,13 @@
         "정상 구조",
         "OCT"
       ],
-      "image": "retina_layers.png",
-      "alt": "실제 정상 황반 OCT. 원문 화살표가 신경섬유층, GCL, IPL, INL, OPL, ELM, EZ, RPE와 맥락막을 가리킵니다.",
+      "image": "retina_layers.jpg",
+      "alt": "실제 황반 OCT. 원 저자의 흰 화살표가 ILM, 신경섬유층, GCL, IPL, INL, OPL, ONL, ELM, 근양대, 타원체대, 외절, 맞물림대, 망막색소상피, 브루크막, 맥락막모세혈관층, Sattler층, Haller층을 가리킵니다.",
       "description": "망막 → 색소상피 → 맥락막의 위치를 먼저 살펴봅니다. 익숙해지면 ‘세부 망막층’을 선택해 층별 색상을 볼 수 있습니다.",
       "look": [
-        "원문 화살표와 같은 위치에 놓인 색상 점과 번호를 범례에서 확인합니다.",
+        "원문 흰 화살표 끝에 놓인 색상 점과 번호를 범례에서 확인합니다.",
         "중앙의 중심와 함몰과 주변 망막층 배열을 비교합니다.",
-        "ONL 등 모든 층을 이번 샘플에서 별도로 표시한 것은 아닙니다."
+        "원 논문은 비삼출성 황반변성 연구로, 가운데 아래 작은 괄호(])는 기저층 침착물 표시입니다. 층 이름표는 정상 층 구조를 보여 주는 용도입니다."
       ],
       "measures": [
         "층 두께",
@@ -110,16 +159,70 @@
       ],
       "requirements": "층 경계 정의, 원시 OCT의 axial·lateral scale, 스캔 위치와 분할 결과가 필요합니다.",
       "limitations": "색상 점은 원문 화살표에 대응한 설명용 위치 표식입니다. 층 전체를 추적한 분할 mask나 실제 두께 계산 결과가 아닙니다.",
-      "note": "원문 전체 OCT · 주황 화살표는 원문, 색상 점·번호는 추가 안내입니다. 색상 끄기로 원본을 확인할 수 있습니다.",
-      "credit": "© David Yorston (2025), Figure 1",
-      "article": "https://cehjournal.org/articles/10.56920/cehj.833",
-      "license": "CC BY-NC-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "note": "원문 전체 OCT · 흰 화살표와 이름표는 원문, 색상 점·번호는 추가 안내입니다. 색상 끄기로 원본을 확인할 수 있습니다.",
+      "credit": "Prus-Ludwig A, Wylęgała A, Wylęgała E, et al. (2026), Diagnostics 16:1555, Figure 11",
+      "article": "https://doi.org/10.3390/diagnostics16101555",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
       "tall": false,
       "key": "layers",
       "slug": "retinal-layers",
       "section": "anatomy",
       "label": "정상 망막층",
+      "width": 774,
+      "height": 342,
+      "anatomy": {
+        "location": "눈 뒤쪽의 중심 부위인 황반을 옆에서 잘라 보듯 찍은 단면 사진(OCT)입니다. 가운데 오목한 곳은 정상 중심와입니다.",
+        "parts": [
+          [
+            "망막",
+            "빛을 받아 신경 신호로 바꾸는 조직입니다. 여러 얇은 층으로 이루어져 있습니다."
+          ],
+          [
+            "망막색소상피",
+            "망막 바로 아래의 얇은 층으로 빛수용체를 지지합니다."
+          ],
+          [
+            "맥락막",
+            "색소상피 바깥쪽의 혈관이 풍부한 조직입니다."
+          ]
+        ],
+        "changes": []
+      },
+      "path": "/anatomy/retinal-layers/",
+      "mark_scale": 0.42
+    },
+    "layers_ref": {
+      "title": "정상 망막: 다른 OCT 예(원문 그대로)",
+      "tags": [
+        "정상 구조",
+        "OCT"
+      ],
+      "image": "retina_layers_yorston.png",
+      "alt": "실제 정상 황반 OCT. 원문 화살표가 신경섬유층, GCL, IPL, INL, OPL, ELM, EZ, RPE와 맥락막을 가리킵니다.",
+      "description": "다른 장비·기관의 정상 황반 OCT입니다. 원 저자의 주황 화살표가 주요 층을 가리킵니다. 이 그림은 비영리 전용(CC BY-NC-SA 4.0)이라 서비스 표시를 겹치지 않고 원문 그대로 싣습니다.",
+      "look": [
+        "원문 주황 화살표가 가리키는 층을 첫 번째 정상 망막층 그림의 색상 범례와 비교합니다.",
+        "중앙의 중심와 함몰과 주변 망막층 배열을 비교합니다."
+      ],
+      "measures": [
+        "층 두께",
+        "층 배열",
+        "band 연속성",
+        "중심와 형태"
+      ],
+      "requirements": "층 경계 정의, 원시 OCT의 axial·lateral scale, 스캔 위치와 분할 결과가 필요합니다.",
+      "limitations": "원문 그림 그대로이며 서비스가 겹친 표시가 없습니다. 층 경계 분할이나 두께 계산 결과가 아닙니다.",
+      "note": "원문 전체 OCT · 주황 화살표는 원문입니다. 비영리 전용 예외 그림이라 서비스 표시를 겹치지 않습니다.",
+      "credit": "© David Yorston (2025), Figure 1",
+      "article": "https://cehjournal.org/articles/10.56920/cehj.833",
+      "license": "CC BY-NC-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "tall": false,
+      "key": "layers_ref",
+      "slug": "retinal-layers-2",
+      "section": "anatomy",
+      "label": "정상 망막층(다른 예)",
       "width": 1862,
       "height": 693,
       "anatomy": {
@@ -140,7 +243,7 @@
         ],
         "changes": []
       },
-      "path": "/anatomy/retinal-layers/"
+      "policy_exception": true
     },
     "choroid": {
       "title": "맥락막의 경계와 혈관층",

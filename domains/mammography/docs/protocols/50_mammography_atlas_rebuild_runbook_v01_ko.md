@@ -28,7 +28,7 @@ DICOM Images.zip(4.9 GB)은 받지 않는다(화소 간격이 없는 8비트 2�
 
 ```bash
 .venv/bin/python -B $M/code/build_mammography_atlas_catalog.py      # 1) 표 검사·적용 관계·읽기 문서·atlas.json
-.venv/bin/python -B $M/code/build_mammography_figures.py            # 2) 그림 32·예시 16(약 1분, DBT·CEM은 build_mammography_paper_examples.py)
+.venv/bin/python -B $M/code/build_mammography_figures.py            # 2) 그림 65·예시 16(약 1분, DBT·CEM·논문 패널은 build_mammography_paper_examples.py)
 .venv/bin/python -B $M/code/export_mammography_atlas_registry.py    # 3) H·I 생성 표
 .venv/bin/python -B $M/code/check_mammography_atlas_registry.py     # 4) 23표 검사(0 errors)
 .venv/bin/python -B -m unittest discover -s $M/code/tests           # 5) 등록 표 테스트
@@ -51,7 +51,7 @@ systemd-run --user --unit=mammography-atlas-web --property=Restart=on-failure --
 
 - 항목·측정·질병을 늘릴 때: A–E 표를 고치고 1)부터 다시 실행한다. ID는 바꾸지 않는다.
 - 측정 함수를 늘릴 때: `packages/mammography-measures`에 함수를 넣고 `registry.py`에 `feature_id`를 등록한 뒤 테스트를 더한다.
-- 영상을 늘릴 때: CC BY 4.0·CC0 1.0 자료만 `g_image_sources`에 등록한다. 논문 그림은 원본 파일명 그대로
+- 영상을 늘릴 때: CC BY 2.0 이상·CC0 1.0 자료만 `g_image_sources`에 등록한다. 논문 그림은 원본 파일명 그대로
   `resources/datasets/mammography_atlas_provider_figures/`(새로 만듦)에 두고 `g_provider_figures`에 SHA-256을 고정한다.
 - 논문 그림: Europe PMC에서 `LICENSE:"cc by"`로 찾고 PMC OA S3(`pmc-oa-opendata`)에서 원본 파일을 받아 `resources/datasets/mammography_atlas_provider_figures/`에 원래 이름으로 둔다. 생성기는 SHA-256이 표와 다르면 멈춘다. 저자의 노란 원·파란 화살표는 측정 입력에서 지우고(가장 가까운 표시 없는 화소로 채움) 화면에는 그대로 둔다.
 - 우선 채울 곳: DBT 석회화 분포, 액와 림프절·피부 두께 함수, 자세 품질 판정.

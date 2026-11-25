@@ -34,7 +34,7 @@ mammography-measures registry : feature_id → 함수·입력(image·image_pair�
 ## 불변 조건(검사기가 확인)
 
 - 모든 키는 표 안에서 유일하고, 외래 키는 `SCHEMA`에 적은 도메인에 있다(`check_mammography_atlas_registry.py`).
-- 영상 출처 라이선스는 CC BY 4.0 또는 CC0 1.0.
+- 영상 출처 라이선스는 CC BY 2.0 이상(2.0·2.5·3.0·4.0) 또는 CC0 1.0.
 - H 그림 파일이 있고 SHA-256이 표와 같다. 판독 층(`status=reading`)만 함수가 비어 있다.
 - mammography-measures 레지스트리가 가리키는 특징은 모두 D에 있다.
 - 생성 표(H·I·`d_feature_applicability`)는 현재 웹 데이터로 다시 만든 결과와 같다.

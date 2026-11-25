@@ -147,6 +147,16 @@ PANELS = [
     ('paper_bph_mixed_nodule', ['les_nodular_hyperplasia'], 'jci-135-186939-g126.jpg', (195, 20, 378, 200), 'Figure 1B',
      '왼쪽 단면 빨간 네모 부분을 키운 것입니다. 빨간 점선이 샘과 간질이 섞인 결절성 과형성 결절의 경계입니다(막대 1 mm).',
      'Magnified view with nodule border (and microdissected region) demarcated by red-dashed line.'),
+    # zonal anatomy (Bonollo 2020): schematic with the authors' callout from the peripheral zone to a normal H&E
+    ('paper_peripheral_zone', ['ana_peripheral_zone'], 'cancers-12-01887-g002.jpg', None, 'Figure 2',
+     '위쪽은 전립선 구역 모식도로, 말초대(살구색)가 뒤쪽 아래를 감쌉니다. 저자는 말초대에서 선을 그어 아래 왼쪽 정상 전립선 조직 H&E에 '
+     '연결했습니다. 샘(상피가 둘러싼 흰 내강)이 섬유근육 간질에 싸여 있습니다. 오른쪽은 같은 구역에서 생긴 암 조직입니다(막대 50 µm). '
+     '설명문 자체는 정상 조직의 채취 구역을 명시하지 않습니다.',
+     'Prostate anatomy. Representation of the prostate anatomy oriented in the anterior-posterior body axis, with the '
+     'prostatic zones highlighted in different colors. PCa foci mainly occur in the peripheral zone of the prostate. '
+     'Representative histology (Hematoxylin and Eosin (H&E) staining) of normal prostate tissue (left), in which '
+     'epithelial cells form acinar structures surrounded by a fibromuscular stroma, and of PCa tissue (right), which '
+     'shows disruption of the epithelial organization and high stroma abundance. Scale bars: 50 µm.'),
 ]
 
 

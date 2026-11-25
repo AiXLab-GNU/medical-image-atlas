@@ -17,10 +17,11 @@
     $('layer-overlay').replaceChildren();
     $('layer-legend').replaceChildren();
     $('legend-title').textContent = detail ? '세부 망막층의 색상 범례' : '큰 해부 구조의 색상';
+    const s = ($('layer-overlay').viewBox.baseVal.width || 1862) / 1862;   // marks keep the same on-screen size
     points.forEach(([code, name, color, x, y], index) => {
       const group = svgElement('g', {});
-      group.append(svgElement('circle', {cx:x, cy:y, r:10, fill:color}));
-      const number = svgElement('text', {x:x-30, y:y+7});
+      group.append(svgElement('circle', {cx:x, cy:y, r:10*s, fill:color, 'stroke-width':2*s}));
+      const number = svgElement('text', {x:x-30*s, y:y+7*s, style:`font-size:${20*s}px;stroke-width:${4*s}px`});
       number.textContent = index + 1;
       group.append(number);
       $('layer-overlay').append(group);

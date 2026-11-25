@@ -584,6 +584,29 @@
    "overlay_sha256": "1fcb9b55330e4b6812faf43b8c135c00f0f03dc8914ac7f24c765ccc469f67d7"
   },
   {
+   "id": "nucleolus_hpf",
+   "items": [
+    "ana_nucleolus"
+   ],
+   "source": "precise",
+   "source_file": "sub-05_ses-01_h-e.ome.tif",
+   "mask_label": "종양 안 원 해상도 확대(표시 없음)",
+   "legend": [],
+   "caption": "전문가가 종양으로 주석한 부위(글리슨 3+4=7)를 원 해상도(0.243 µm/화소)에서 약 73 µm 폭으로 잘라 2.5배 키운 것입니다. 보라색 핵 안의 더 진한 작은 점이 핵소체이며, 암세포에서는 핵이 커지고 핵소체가 뚜렷해집니다. 핵소체 하나하나는 표시하지 않았습니다(자동 핵소체 검출은 검증에서 판별력이 없어 쓰지 않음). 흰 막대는 10 µm입니다. PRECISE sub-05_ses-01.",
+   "transform": "level 0 창 300×300 px · 표시 2.50배",
+   "base": "nucleolus_hpf.jpg",
+   "overlay": "nucleolus_hpf_mask.png",
+   "width": 750,
+   "height": 750,
+   "name": "PRECISE",
+   "credit": "Calapaquí Terán AK, González Bernad AA, et al. PRECISE (Zenodo 2026)",
+   "url": "https://doi.org/10.5281/zenodo.20721779",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "base_sha256": "dff4bea46222b850a58ad026a93951bff9b5675e29412405455392b9865d72d9",
+   "overlay_sha256": "488743435ffd173aca53441393dc9e457af4e4655fb6566104c353cda5b64daf"
+  },
+  {
    "id": "he_basal_registered",
    "items": [
     "ana_basal_cell_layer",
@@ -1677,6 +1700,33 @@
    "license": "CC BY 4.0",
    "license_url": "https://creativecommons.org/licenses/by/4.0/",
    "base_sha256": "1551b4ba5813935839be02e0efb197dbab2fc97edd601ba562d3d6984407e2ff",
+   "overlay_sha256": ""
+  },
+  {
+   "id": "paper_peripheral_zone",
+   "kind": "paper",
+   "items": [
+    "ana_peripheral_zone"
+   ],
+   "source": "bonollo2020",
+   "source_file": "cancers-12-01887-g002.jpg",
+   "panel": "Figure 2",
+   "mask_label": "논문 그림 · 저자 판정",
+   "legend": [],
+   "caption": "위쪽은 전립선 구역 모식도로, 말초대(살구색)가 뒤쪽 아래를 감쌉니다. 저자는 말초대에서 선을 그어 아래 왼쪽 정상 전립선 조직 H&E에 연결했습니다. 샘(상피가 둘러싼 흰 내강)이 섬유근육 간질에 싸여 있습니다. 오른쪽은 같은 구역에서 생긴 암 조직입니다(막대 50 µm). 설명문 자체는 정상 조직의 채취 구역을 명시하지 않습니다.",
+   "original_caption": "Prostate anatomy. Representation of the prostate anatomy oriented in the anterior-posterior body axis, with the prostatic zones highlighted in different colors. PCa foci mainly occur in the peripheral zone of the prostate. Representative histology (Hematoxylin and Eosin (H&E) staining) of normal prostate tissue (left), in which epithelial cells form acinar structures surrounded by a fibromuscular stroma, and of PCa tissue (right), which shows disruption of the epithelial organization and high stroma abundance. Scale bars: 50 µm.",
+   "transform": "패널 Figure 2 잘라냄 (x 12–744, y 13–577)",
+   "base": "paper_peripheral_zone.jpg",
+   "overlay": "",
+   "width": 732,
+   "height": 564,
+   "name": "Bonollo et al. 2020",
+   "credit": "Bonollo F, Thalmann GN, Kruithof-de Julio M, Karkampouna S (2020) Cancers 12:1887, Figure 2",
+   "source_credit": "Bonollo F, Thalmann GN, Kruithof-de Julio M, Karkampouna S (2020) Cancers 12:1887",
+   "url": "https://doi.org/10.3390/cancers12071887",
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "base_sha256": "852e76e23de94a371d5809714d5a463b6f93757b1a10096fff63945a26321d13",
    "overlay_sha256": ""
   }
  ]

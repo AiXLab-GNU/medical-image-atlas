@@ -583,6 +583,29 @@ def reference_figures():
         f'면적은 화소 수 × ({mpp:.3f} µm)²로 바꾸며, 화소 크기가 없는 영상(SICAPv2 패치)은 화소 단위로만 잽니다. PRECISE {name}.',
         save(base, d, 'pixel_size.jpg', jpg=True), save(ov, d, 'pixel_size_mask.png'), size, SRC_P,
         f'{name}_h-e.ome.tif', f'level 0 창 {win[3] - win[2]}×{win[1] - win[0]} px · 표시 {s:.2f}배'))
+
+    # nucleolus: highest-resolution window inside the expert tumour annotation; nothing is marked on the nuclei
+    name = 'sub-05_ses-01'
+    rgb, lab, mpp, win = precise_window(name, 1, level=0, side=300)
+    base, size, s = display(rgb, max_side=760)
+    base = Image.fromarray(rgb).resize((750, 750), Image.LANCZOS)
+    size, s = base.size, 750 / rgb.shape[1]
+    ov = Image.new('RGBA', size, (0, 0, 0, 0))
+    dr = ImageDraw.Draw(ov)
+    bar_um = 10
+    bar = bar_um / mpp * s
+    x0, y0 = 24, size[1] - 34
+    dr.rectangle([x0 - 8, y0 - 30, x0 + bar + 8, y0 + 14], fill=(15, 23, 42, 200))
+    dr.rectangle([x0, y0, x0 + bar, y0 + 7], fill=(255, 255, 255, 255))
+    dr.text((x0, y0 - 26), f'{bar_um} µm', fill=(255, 255, 255, 255), font=_font(16))
+    gleason, _, _ = meta(name)
+    figs.append(figure_record(
+        'nucleolus_hpf', ['ana_nucleolus'], '종양 안 원 해상도 확대(표시 없음)',
+        f'전문가가 종양으로 주석한 부위(글리슨 {gleason})를 원 해상도({mpp:.3f} µm/화소)에서 약 {300 * mpp:.0f} µm 폭으로 잘라 2.5배 키운 것입니다. '
+        '보라색 핵 안의 더 진한 작은 점이 핵소체이며, 암세포에서는 핵이 커지고 핵소체가 뚜렷해집니다. 핵소체 하나하나는 표시하지 않았습니다'
+        '(자동 핵소체 검출은 검증에서 판별력이 없어 쓰지 않음). 흰 막대는 10 µm입니다. PRECISE ' + name + '.',
+        save(base, d, 'nucleolus_hpf.jpg', jpg=True), save(ov, d, 'nucleolus_hpf_mask.png'), size, SRC_P,
+        f'{name}_h-e.ome.tif', f'level 0 창 {win[3] - win[2]}×{win[1] - win[0]} px · 표시 {s:.2f}배'))
     return figs
 
 

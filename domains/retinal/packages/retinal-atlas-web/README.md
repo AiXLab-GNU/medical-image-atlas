@@ -23,6 +23,7 @@ export RETINAL_ATLAS_IMAGE_ROOT=/data/retinal_concept_reference_images
 retinal-atlas-web --host 127.0.0.1 --port 8877
 ```
 
+- `diagnostics-16-01555-g011.jpg`
 - `679a4fcbad112.png`
 - `journal.pone.0099690.g001.png`
 - `jcm-11-03266-g002-550.jpg`
@@ -101,8 +102,9 @@ docker run --rm --name retinal-atlas-web -p 127.0.0.1:8877:8877 \
 배포 시 Waitress 앞의 reverse proxy에서 도메인·HTTPS를 구성할 수 있다.
 현재 서버 운영은 로컬 포트 8877이며 외부 도메인 배포를 완료한 상태는 아니다.
 
-정상 OCT 그림은 **CC BY-NC-SA 4.0**, 나머지는 CC BY 4.0이다. 이미지의 출처 표시와
-비영리·동일조건변경허락 조건을 보존한다. 색상 점과 금색 패널 테두리는 설명용이며
+정상 OCT(Prus-Ludwig 외 2026, Diagnostics 16:1555, Figure 11)와 나머지 세 그림은 CC BY 4.0이다. 「정상 망막층(다른 예)」의
+Yorston 2025 그림만 CC BY-NC-SA 4.0 예외(LICENSE-docs.md)로, 서비스 표시 없이 원문 그대로 싣고 「비영리 전용」 배지를 단다.
+이미지의 출처 표시를 보존한다. 색상 점과 금색 패널 테두리는 설명용이며
 병변 분할이나 실제 계측 결과가 아니다.
 
 설계·운영 기록: [프로젝트 문서](../../docs/concept/40_retinal_atlas_web_architecture_v01_ko.md).

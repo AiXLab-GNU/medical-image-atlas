@@ -20,7 +20,7 @@ ROOT = registry.ROOT
 MASKED_DIR = ROOT / 'resources/datasets/retinal_atlas_masked_figures'
 MODALITY_DIR = ROOT / 'resources/datasets/retinal_atlas_modality_figures'
 EXAMPLE_DIR = ROOT / 'resources/datasets/retinal_atlas_measurement_examples'
-LICENCES = ('CC BY 4.0', 'CC0 1.0')          # project policy: only CC BY / CC0 images are published
+LICENCES = ('CC BY 2.0', 'CC BY 2.5', 'CC BY 3.0', 'CC BY 4.0', 'CC0 1.0')   # project policy: CC BY 2.0 or later / CC0 images only
 VALUE_STATUS = {'ok', 'not_observed', 'not_evaluable', 'reading'}
 
 # Domains that foreign keys point to: name → (table, key column)

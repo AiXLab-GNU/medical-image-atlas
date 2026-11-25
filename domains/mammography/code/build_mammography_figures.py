@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 import sys
 import warnings
 
@@ -307,6 +308,197 @@ def pair_figure(fid, cc, mlo, items, label, caption, pick):
     }
 
 
+def report_line(image_id, needle):
+    """The DMID report sentence that names the finding (quoted verbatim in the caption).
+
+    Report lines wrap mid-sentence, so lines are joined until one ends with '.' or ')' before matching.
+    """
+    sentences, cur = [], ''
+    for raw in registry.dmid_report(image_id).splitlines():
+        line = re.sub(r'^\s*findings\s*:\s*', '', raw.strip(), flags=re.I)
+        if not line or re.match(r'^(breast composition|birads)\b', line, re.I):
+            if cur:
+                sentences.append(cur)
+            cur = ''
+            continue
+        cur = f'{cur} {line}'.strip()
+        if line.endswith(('.', ')')):
+            sentences.append(cur)
+            cur = ''
+    if cur:
+        sentences.append(cur)
+    for text in sentences:
+        if needle.lower() in text.lower():
+            return text[0].upper() + text[1:]
+    raise ValueError(f'{image_id}: report has no "{needle}"')
+
+
+def report_lesion_figure(fid, image_id, cls, nth, items, label, caption, needle, tone='yellow'):
+    """Expert ROI crop whose finding type comes from the DMID radiologist report (not from the ROI class)."""
+    quote = report_line(image_id, needle)
+    return lesion_figure(fid, image_id, cls, nth, items, label, caption, tone=tone,
+                         judged=f'소견 이름은 DMID 판독문의 판정입니다: “{quote}”')
+
+
+def report_view_figure(fid, image_id, items, label, caption, needle, roi_cls=None, note=''):
+    """Whole breast view with the DMID report sentence; nothing drawn on the finding itself (no ROI for it)."""
+    v = View(image_id)
+    quote = report_line(image_id, needle)
+    out = registry.MASKED_DIR
+    base_name = f'view_{v.id.lower()}.jpg'
+    if not (out / base_name).is_file():
+        save_jpg(v.base, out, base_name)
+    outlines = []
+    if roi_cls and v.roi is not None:
+        outlines = [(v.m(finding_mask(v.roi, finding(image_id, roi_cls))), 'red', 2)]
+    ov = overlay(v.size, outlines=outlines, texts=[((12, 12), '판독문 판정', 'white')])
+    m = v.meta
+    return {
+        'id': fid, 'items': items, 'source': 'dmid', 'source_file': f'TIFF Images/{image_id}.tif',
+        'mask_label': label, 'legend': [],
+        'caption': f"{caption} DMID {image_id} · {m['view']} {'오른쪽' if m['laterality'] == 'R' else '왼쪽'}. "
+                   f'DMID 판독문: “{quote}” 소견 위치를 표시한 ROI는 없어 영상 전체를 보입니다.'
+                   + (' 빨간 선은 같은 영상의 다른 병변에 대한 DMID 전문가 ROI입니다.' if outlines else '')
+                   + (f' {note}' if note else ''),
+        'transform': f"원본 {v.img.shape[1]}×{v.img.shape[0]}에서 유방 범위 ({v.win[2]},{v.win[0]})–({v.win[3]},{v.win[1]})을 잘라 높이 {v.size[1]} px로 축소",
+        'base': base_name, 'overlay': save_png(ov, out, f'{fid}_mask.png'), 'width': v.size[0], 'height': v.size[1],
+        'name': SOURCE['name'], 'credit': SOURCE['credit'], 'url': SOURCE['url'], 'license': SOURCE['license'],
+        'license_url': SOURCE['license_url'],
+    }
+
+
+def report_figures():
+    """Findings named in the DMID radiologist reports (image-level calls)."""
+    return [
+        report_lesion_figure('calc_amorphous_1', 'IMG429', 'CALC', 0, ['les_calc_amorphous'], '석회화 범위(전문가 ROI · 판독문 판정)',
+                             '작고 흐려 모양을 말하기 어려운 석회화가 모여 있습니다.', 'amorphous'),
+        report_lesion_figure('calc_fine_pleomorphic_1', 'IMG114', 'CALC', 1, ['les_calc_fine_pleomorphic'],
+                             '석회화 범위(전문가 ROI · 판독문 판정)', '모양과 크기가 서로 다른 아주 작은 석회화입니다.', 'pleomorphic'),
+        report_lesion_figure('calc_fine_linear_1', 'IMG419', 'CALC', 0, ['les_calc_fine_linear_branching', 'les_calc_amorphous'],
+                             '석회화 범위(전문가 ROI · 판독문 판정)',
+                             '가는 선·가지 모양 석회화와 무정형 석회화가 함께 있다고 판독된 범위입니다.', 'fine linear'),
+        report_lesion_figure('calc_punctate_1', 'IMG059', 'CALC', 0, ['les_calc_round_punctate'], '석회화 범위(전문가 ROI · 판독문 판정)',
+                             '작고 둥근 점 모양 석회화입니다.', 'punctate'),
+        report_view_figure('asymmetry_1', 'IMG262', ['les_asymmetry'], '판독문 판정',
+                           '위쪽 사분면에 주변보다 밝은 섬유선 조직 음영이 한쪽으로 몰려 있습니다.', 'asymmetric',
+                           note='DMID 분류도 비대칭(ASYM)이지만 이 영상의 ROI 파일은 없습니다. 한 방향 영상이라 국소·전반·새로 생긴 비대칭은 구분하지 않았습니다.'),
+        report_lesion_figure('intramammary_node_1', 'IMG394', 'CIRC', 0, ['les_intramammary_lymph_node'],
+                             '작은 종괴(전문가 ROI · 판독문 판정)',
+                             '위쪽 사분면의 아주 작고 경계가 분명한 음영입니다. 판독문은 양성 병변 또는 유방 내 림프절로 읽었습니다.',
+                             'intramammary', tone='green'),
+        report_view_figure('calc_vascular_1', 'IMG041', ['les_calc_vascular', 'ana_breast_vessels'], '판독문 판정',
+                           '지방이 많은 유방에서 길고 가는 관 모양의 혈관 음영과, 그 벽을 따라가는 가는 두 줄 석회화를 찾아보세요.', 'vascular calcification',
+                           roi_cls='CIRC'),
+        report_view_figure('nipple_retraction_1', 'IMG269', ['les_nipple_retraction'], '판독문 판정',
+                           'CC 영상에서 유두가 바깥으로 튀어나오지 않고 안쪽으로 당겨져 있습니다.', 'nipple retraction'),
+        report_view_figure('skin_retraction_1', 'IMG220', ['les_skin_retraction'], '판독문 판정',
+                           '침상형 종괴(빨간 선) 바깥쪽 피부가 종괴 쪽으로 당겨져 있습니다.', 'skin retraction', roi_cls='SPIC',
+                           note='빨간 선은 판독문이 말한 침상형 종괴에 대한 DMID 전문가 ROI입니다.'),
+        report_view_figure('skin_thickening_1', 'IMG435', ['les_skin_thickening', 'les_skin_retraction'], '판독문 판정',
+                           '유방 윤곽을 따라 피부 띠가 전체적으로 두껍습니다. 바깥쪽에는 구조왜곡이 피부를 당기고 있습니다.',
+                           'skin thickening', note='같은 판독문: “' + report_line('IMG435', 'skin retraction') + '”'),
+        report_view_figure('axillary_nodes_1', 'IMG181', ['ana_axillary_lymph_nodes', 'ana_axilla'], '판독문 판정',
+                           'MLO 위쪽 뒤 겨드랑이(액와)에 작은 타원형 림프절이 보입니다.', 'axillary',
+                           note='판독문의 “benign-looking”은 정상 모양이라는 뜻이라 림프절 비대가 아닌 정상 액와 림프절로 연결했습니다.'),
+        report_view_figure('postsurgical_1', 'IMG028', ['les_postsurgical_scar'], '판독문 판정',
+                           '수술 부위에 겹겹이 쌓인 큰 석회화(지방괴사)와 금속 스테이플이 보입니다.', 'postoperative fat',
+                           note='같은 판독문: “' + report_line('IMG028', 'staple') + '”'),
+    ]
+
+
+def central_region(v):
+    """Deep central band: along the posterior nipple line, behind the subareolar zone (service estimate)."""
+    h, w = v.size[1], v.size[0]
+    yy, xx = np.mgrid[0:h, 0:w]
+    nip = np.array(v.p(v.geo.nipple))
+    axis = np.array(v.p(v.geo.pnl_foot)) - nip
+    length = math.hypot(*axis)
+    t = ((xx - nip[0]) * axis[0] + (yy - nip[1]) * axis[1]) / max(length ** 2, 1e-9)
+    d = np.abs((xx - nip[0]) * axis[1] - (yy - nip[1]) * axis[0]) / max(length, 1e-9)
+    return v.m(v.geo.breast) & (t > 0.18) & (t < 0.85) & (d < 0.12 * length)
+
+
+def clock_figure(cc, mlo):
+    """CC·MLO pair with the expert ROI of one lesion, the nipple lines and a clock dial (service calculation)."""
+    out = registry.MASKED_DIR
+    gap = 16
+    w, h = cc.size[0] + gap + mlo.size[0], max(cc.size[1], mlo.size[1])
+    base_name = f'pair_{cc.id.lower()}_{mlo.id.lower()}.jpg'
+    canvas = np.zeros((h, w), bool)
+    lines, offsets = [], {}
+    for v, dx in ((cc, 0), (mlo, cc.size[0] + gap)):
+        lm = finding_mask(v.roi, finding(v.id, 'SPIC'))
+        c = location.centroid(lm)
+        g = v.geo
+        dm = v.m(lm)
+        canvas[: dm.shape[0], dx: dx + dm.shape[1]] |= dm
+        n, f = v.p(g.nipple), v.p(g.pnl_foot)
+        lines.append(((n[0] + dx, n[1]), (f[0] + dx, f[1]), 'white', 2))
+        axis = np.array(g.pnl_foot) - np.array(g.nipple)
+        t = (np.array(c, float) - np.array(g.nipple)) @ axis / max(axis @ axis, 1e-9)
+        offsets[v.meta['view']] = float(g.nipple[0] + t * axis[0] - c[0])
+    clock = location.clock_position(offsets['CC'], offsets['MLO'], cc.meta['laterality'])
+    ov = overlay((w, h), fills=[(canvas, 'red', 90)], outlines=[(canvas, 'red', 2)], lines=lines)
+    d = ImageDraw.Draw(ov)
+    r, cx, cy = 74, w - 100, h - 110
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(15, 23, 42, 220), outline=(255, 255, 255, 255), width=2)
+    for hour in range(12):
+        a = math.radians(90 - hour * 30)
+        x0, y0 = cx + (r - 8) * math.cos(a), cy - (r - 8) * math.sin(a)
+        x1, y1 = cx + r * math.cos(a), cy - r * math.sin(a)
+        d.line([(x0, y0), (x1, y1)], fill=(255, 255, 255, 255), width=2)
+    for hour, label in ((12, '12'), (3, '3'), (6, '6'), (9, '9')):
+        a = math.radians(90 - hour * 30)
+        d.text((cx + (r - 24) * math.cos(a) - 7, cy - (r - 24) * math.sin(a) - 9), label, fill=(255, 255, 255, 255), font=_font(15))
+    hh = int(clock.value.split(':')[0]) % 12
+    a = math.radians(90 - hh * 30)
+    d.line([(cx, cy), (cx + (r - 20) * math.cos(a), cy - (r - 20) * math.sin(a))], fill=(*TONES['red'], 255), width=4)
+    d.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=(255, 255, 255, 255))
+    d.text((cx - r, cy - r - 26), f'{clock.value} (계산)', fill=(*TONES['red'], 255), font=_font(16))
+    side = '오른쪽' if cc.meta['laterality'] == 'R' else '왼쪽'
+    return {
+        'id': 'zone_clock_face', 'items': ['zone_clock_face'], 'source': 'dmid',
+        'source_file': f'TIFF Images/{cc.id}.tif; {mlo.id}.tif', 'mask_label': '시계 방향 위치(서비스 계산)', 'legend': [],
+        'caption': f'{side} 유방 침상형 종괴(빨간색, DMID 전문가 ROI)의 위치를 시계 방향으로 적은 예입니다. CC에서 바깥·안쪽, MLO에서 위·아래로 '
+                   f'유두선에서 벗어난 거리를 합쳐 {clock.value}로 계산했습니다(환자를 마주 본 시계: 오른쪽 유방 바깥쪽 9시). '
+                   f'{PAIR_NOTE} {VIEW_NOTE} 시계 위치는 서비스 계산입니다.',
+        'transform': f'두 영상의 유방 범위를 잘라 높이 {h} px로 나란히 붙임; 전문가 ROI·유두선과 시계판을 겹침',
+        'base': base_name, 'overlay': save_png(ov, out, 'zone_clock_face_mask.png'), 'width': w, 'height': h,
+        'name': SOURCE['name'], 'credit': SOURCE['credit'], 'url': SOURCE['url'], 'license': SOURCE['license'],
+        'license_url': SOURCE['license_url'],
+    }
+
+
+def chest_wall_figure(cc, mlo):
+    """Chest-wall side of both views: MLO pectoralis behind its front edge, CC posterior image edge (service estimate)."""
+    out = registry.MASKED_DIR
+    gap = 16
+    w, h = cc.size[0] + gap + mlo.size[0], max(cc.size[1], mlo.size[1])
+    base_name = f'pair_{cc.id.lower()}_{mlo.id.lower()}.jpg'
+    fill = np.zeros((h, w), bool)
+    lines = []
+    br = cc.m(cc.geo.breast)
+    cols = np.nonzero(br.any(0))[0]
+    rows = np.nonzero(br.any(1))[0]
+    back = cols.max() if cc.p(cc.geo.pnl_foot)[0] > cc.p(cc.geo.nipple)[0] else cols.min()
+    lines.append(((back, rows.min()), (back, rows.max()), 'orange', 5))
+    dx = cc.size[0] + gap
+    if mlo.geo.pectoral is not None:
+        pm = mlo.m(mlo.geo.pectoral)
+        fill[: pm.shape[0], dx: dx + pm.shape[1]] = pm
+    ov = overlay((w, h), fills=[(fill, 'orange', 70)], lines=lines)
+    return {
+        'id': 'anat_chest_wall', 'items': ['ana_chest_wall'], 'source': 'dmid',
+        'source_file': f'TIFF Images/{cc.id}.tif; {mlo.id}.tif', 'mask_label': '흉벽 쪽(자동 추정)', 'legend': [],
+        'caption': 'CC에서는 영상 뒤쪽 끝(주황 선)이, MLO에서는 대흉근(주황)이 흉벽 쪽입니다. 늑골과 흉벽 자체는 대부분 영상 밖에 있어, '
+                   f'유방 뒤 경계를 흉벽 쪽으로 표시했습니다. {PAIR_NOTE} 표시는 서비스의 자동 추정입니다.',
+        'transform': f'두 영상의 유방 범위를 잘라 높이 {h} px로 나란히 붙임; 자동 경계를 겹침',
+        'base': base_name, 'overlay': save_png(ov, out, 'anat_chest_wall_mask.png'), 'width': w, 'height': h,
+        'name': SOURCE['name'], 'credit': SOURCE['credit'], 'url': SOURCE['url'], 'license': SOURCE['license'],
+        'license_url': SOURCE['license_url'],
+    }
+
+
 def masked_figures(cc, mlo):
     figs = [
         lesion_figure('mass_circumscribed_1', 'IMG008', 'CIRC', 0, ['les_mass_circumscribed', 'les_mass'],
@@ -395,7 +587,11 @@ def masked_figures(cc, mlo):
         return v.m(v.geo.breast) & (np.hypot(xx - nx, yy - ny) < rad)
     figs.append(pair_figure('zone_subareolar', cc, mlo, ['ana_subareolar_region'], '유륜하 영역(자동 추정)',
                             '유두 바로 뒤 영역입니다(후유두선 길이의 약 1/5 반경).', subareolar))
-    return figs
+    figs.append(pair_figure('zone_central_region', cc, mlo, ['ana_central_region'], '중앙부(자동 추정)',
+                            '유륜하 영역 뒤에서 후유두선을 따라 가운데로 이어지는 깊은 중앙 띠입니다(사분면에 넣지 않는 위치; '
+                            '후유두선 길이의 18–85% 깊이, 양옆 12% 폭).', central_region))
+    figs += [clock_figure(cc, mlo), chest_wall_figure(cc, mlo)]
+    return figs + report_figures()
 
 
 # ----------------------------------------------------------------------------------------- examples

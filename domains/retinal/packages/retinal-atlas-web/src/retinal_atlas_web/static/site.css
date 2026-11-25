@@ -838,3 +838,6 @@ dialog.modal::backdrop{background:rgba(10,15,20,.75)}
 .atlas-bar nav a:hover{background:#1e293b}
 .atlas-bar nav a[aria-current]{background:#e2e8f0;color:#0f172a;font-weight:700}
 @media (max-width:600px){.atlas-bar-inner{padding:0 16px}.atlas-bar-home span{display:none}}
+
+.lic-nc{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:#fde7e7;color:#9b1c1c;font-size:.78em;font-weight:700;border:1px solid #f3b4b4}
+@media (prefers-color-scheme:dark){.lic-nc{background:#3b1414;color:#fca5a5;border-color:#7f1d1d}}
