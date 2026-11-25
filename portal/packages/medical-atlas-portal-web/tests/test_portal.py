@@ -25,7 +25,7 @@ class MountedTest(unittest.TestCase):
         for domain in ('retinal', 'mammography', 'pathology'):
             html = self.get(f'/{domain}/lesions/').get_data(as_text=True)
             roots = {m for m in re.findall(r'(?:href|src|action)="(/[^"/]*)', html)}
-            self.assertEqual(roots, {f'/{domain}'}, domain)                 # every root link stays inside the domain
+            self.assertEqual(roots, {f'/{domain}', '/static', '/en'}, domain)                 # every root link stays inside the domain
             self.assertNotIn(f'/{domain}/{domain}/', html)                    # static url_for links not prefixed twice
             self.assertIn('href="http://example.test:8875/"', html)          # bar: back to the portal
             self.assertIn('href="http://example.test:8875/pathology/"', html)

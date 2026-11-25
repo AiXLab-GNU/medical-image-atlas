@@ -8,6 +8,7 @@
 <div class="atlas-bar"><div class="atlas-bar-inner">
   <a class="atlas-bar-home" href="{{ atlas_links.portal }}" title="세 영역 첫 화면으로"><span class="atlas-bar-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="10" cy="12" r="5" fill="#e0794f"/><circle cx="22" cy="12" r="5" fill="#a78bfa"/><circle cx="16" cy="22" r="5" fill="#c4b5fd"/></svg></span><span class="atlas-bar-name">의료영상 지도</span><span class="atlas-bar-sub">진단 AI를 위한 영상 지도</span></a>
   <nav class="atlas-bar-switch" aria-label="영역 바꾸기">{% for a in atlas_links.domains %}<a class="d-{{ a.id }}" href="{{ a.url }}"{% if a.current %} aria-current="true"{% endif %}><i aria-hidden="true"></i>{{ a.label }}</a>{% endfor %}</nav>
+  <!-- atlas-language-switch -->
 </div></div>
 <header class="top"><div class="top-inner">
   <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#c4562e"/><circle cx="21" cy="15" r="4.2" fill="#fbe3b5"/><circle cx="12" cy="17" r="3" fill="#7a2c14"/><path d="M19 12 C14 6 8 7 4 11 M19 18 C14 25 8 24 4 21" stroke="#7b1610" stroke-width="1.6" fill="none"/></svg><span>망막 영상 지도</span></a>

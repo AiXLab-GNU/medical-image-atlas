@@ -49,3 +49,11 @@ cd domains/pathology/packages/pathology-atlas-web && uv venv .venv && uv pip ins
 - AiXLab · 경상국립대학교 (연구책임자 Jin Hyun Kim, PhD · jin.kim@gnu.ac.kr). 첫 페이지의 소개 문구는 `portal/packages/medical-atlas-portal-web/src/medical_atlas_portal_web/data/site_info.json`에서 고친다.
 - 코드는 MIT([LICENSE](LICENSE)), 지식 표·문서·서비스가 그린 모식도와 겹침은 CC BY 4.0, 공개 영상은 각 원 라이선스(CC BY 2.0 이상·CC0 1.0, 예외로 표시한 비영리 그림 1개)를 따른다 — [LICENSE-docs.md](LICENSE-docs.md).
 - 인용 정보: [CITATION.cff](CITATION.cff). Zenodo 기록 정보: [.zenodo.json](.zenodo.json) — GitHub 릴리스를 만들면 Zenodo가 그 판에 DOI를 준다.
+
+## 한국어·English
+
+포털과 망막·유방촬영·병리의 전체 영어 미러를 같은 앱에서 제공한다. 한국어는 기존 `/`, 영어는 `/en/`이며,
+화면 상단 오른쪽의 한국어·English 버튼으로 같은 상세 페이지를 오간다(검색어·필터·앵커 유지).
+영어판은 정의·측정 설명·캡션·출처·검증 화면·검색과 서비스 SVG 모식도 라벨을 포함한다. 원본 영상·수치·다운로드 코드는 공유한다.
+정적 내보내기는 두 언어를 함께 만들며 미번역 문구가 있으면 실패한다.
+관리 방법: [영어 미러 유지보수](portal/docs/protocols/50_english_mirror_localization_runbook_v01_ko.md).

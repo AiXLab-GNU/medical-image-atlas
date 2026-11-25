@@ -16,7 +16,9 @@
     $('layer-overlay').toggleAttribute('hidden', !$('colors').checked);
     $('layer-overlay').replaceChildren();
     $('layer-legend').replaceChildren();
-    $('legend-title').textContent = detail ? '세부 망막층의 색상 범례' : '큰 해부 구조의 색상';
+    $('legend-title').textContent = document.documentElement.lang === 'en'
+      ? (detail ? 'Retinal layer color key' : 'Main anatomical structures')
+      : (detail ? '세부 망막층의 색상 범례' : '큰 해부 구조의 색상');
     const s = ($('layer-overlay').viewBox.baseVal.width || 1862) / 1862;   // marks keep the same on-screen size
     points.forEach(([code, name, color, x, y], index) => {
       const group = svgElement('g', {});

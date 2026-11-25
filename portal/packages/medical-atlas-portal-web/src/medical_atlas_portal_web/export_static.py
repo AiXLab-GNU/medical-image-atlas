@@ -28,6 +28,7 @@ from pathlib import Path
 from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlsplit
 
 from .app import DOMAINS, REPO, create_app
+from .localization import EnglishHTML, english_catalog, untranslated_text
 
 HOST = 'http://localhost'
 ATTR = re.compile(r'(?P<attr>\b(?:href|src|action))="(?P<url>[^"]*)"')
@@ -82,7 +83,7 @@ class Exporter:
         return path + ('?' + q if q else '')
 
     def crawl(self):
-        queue = collections.deque(['/'] + [f"/{d['id']}/search/" for d in DOMAINS])   # search pages: reached by forms
+        queue = collections.deque(['/', '/en/'] + [f"{prefix}/{d['id']}/search/" for prefix in ('', '/en') for d in DOMAINS])   # search pages: reached by forms
         while queue:
             url = queue.popleft()
             if url in self.kind:
@@ -117,6 +118,9 @@ class Exporter:
 
     def file_of(self, url: str) -> str:
         path, _, query = url.partition('?')
+        # Both mirrors refer to the same immutable image/code/style bytes.
+        if self.kind.get(url) == 'file' and path.startswith('/en/') and '/static/schematics/' not in path:
+            path = path[3:]
         return file_for(path, query, self.kind.get(url) in ('html', 'redirect'))
 
     def rewrite(self, url: str, html: str) -> str:
@@ -141,22 +145,27 @@ class Exporter:
                 if 'download' in q:
                     extra = ' download'
                 html_like = kind in ('html', 'redirect') or (kind is None and path.endswith('/'))
-                target = file_for(path, query, html_like)
+                target = self.file_of(k) if kind is not None else file_for(path, query, html_like)
                 link = relative(here, target)
             if frag:
                 link += '#' + frag
             return f'{m.group("attr")}="{link}"{extra}'
         html = ATTR.sub(sub, html)
-        domain = url.strip('/').split('/')[0] if url.strip('/') else ''
+        english = url.startswith('/en/')
+        local_path = url[3:] if english else url
+        domain = local_path.strip('/').split('/')[0] if local_path.strip('/') else ''
+        language_root = 'en/index.html' if english else 'index.html'
         script = relative(here, f'{STATIC_DIR}/static_site.js')
-        tag = (f'<script src="{script}" data-root="{relative(here, "index.html")}" '
+        tag = (f'<script src="{script}" data-root="{relative(here, language_root)}" data-language="{"en" if english else "ko"}" '
                f'data-domain="{domain if domain in {d["id"] for d in DOMAINS} else ""}" defer></script>')
         return html.replace('</body>', tag + '</body>', 1) if '</body>' in html else html + tag
 
-    def search_index(self, d: dict) -> list[dict]:
+    def search_index(self, d: dict, language: str = 'ko') -> list[dict]:
         mod = import_module(d['module'] + '.app')
         atlas = json.loads((REPO / 'domains' / d['id'] / 'packages' / d['web'] / 'src' / d['module'] / 'data' /
                             'atlas.json').read_text(encoding='utf-8'))
+        if language == 'en':
+            atlas = english_catalog(d['id']).localize(atlas)
         out = []
         for item in atlas['items'].values():
             if item.get('section') not in ('anatomy', 'lesions'):
@@ -190,17 +199,37 @@ class Exporter:
         static = self.out / STATIC_DIR
         static.mkdir(exist_ok=True)
         shutil.copy(Path(__file__).with_name('static') / 'static_site.js', static / 'static_site.js')
-        for d in DOMAINS:
-            (static / f"search_{d['id']}.json").write_text(json.dumps(self.search_index(d), ensure_ascii=False),
-                                                           encoding='utf-8')
+        for language in ('ko', 'en'):
+            index_dir = static if language == 'ko' else self.out / 'en' / STATIC_DIR
+            index_dir.mkdir(parents=True, exist_ok=True)
+            for d in DOMAINS:
+                (index_dir / f"search_{d['id']}.json").write_text(
+                    json.dumps(self.search_index(d, language), ensure_ascii=False), encoding='utf-8')
         (self.out / '.nojekyll').write_text('')
-        (self.out / '404.html').write_text(
-            '<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지 없음 · 의료영상 지도</title>'
-            '<body style="font-family:system-ui,sans-serif;padding:40px"><h1>페이지를 찾을 수 없습니다</h1>'
-            '<p><a href="./">의료영상 지도 첫 페이지로</a></p></body></html>', encoding='utf-8')
+        error_page = (
+            '<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>페이지 없음 · 의료영상 지도</title></head>'
+            '<body style="font-family:system-ui,sans-serif;padding:40px">'
+            '<h1 id="error-title">페이지를 찾을 수 없습니다</h1>'
+            '<p><a id="error-home" href="./">홈으로</a></p>'
+            '<script>const englishPath = location.pathname.match(/^(.*?\\/en)(?:\\/|$)/);'
+            'if(englishPath){document.documentElement.lang="en";document.title="Page not found · Medical Image Atlas";'
+            'document.getElementById("error-title").textContent="Page not found";'
+            'const home=document.getElementById("error-home");home.textContent="Atlas home";home.href=englishPath[1]+"/";}'
+            '</script></body></html>')
+        (self.out / '404.html').write_text(error_page, encoding='utf-8')
+        (self.out / 'en' / '404.html').write_text(
+            EnglishHTML(english_catalog(), 'localhost').render(error_page), encoding='utf-8')
         missing = [u for u, k in self.kind.items() if k == 'missing']
+        untranslated = [{'url': url, 'text': text}
+                        for url, body in self.pages.items() if url.startswith('/en/')
+                        for text in untranslated_text(body.decode('utf-8'))]
+        untranslated.extend({'url': url, 'text': text}
+                            for url, body in self.files.items()
+                            if url.startswith('/en/') and '/static/schematics/' in url and url.endswith('.svg')
+                            for text in untranslated_text(body.decode('utf-8')))
         return {'pages': len(self.pages), 'files': len(self.files), 'redirects': len(self.redirects),
-                'filter_pages': sum(1 for u in self.pages if '?' in u), 'missing': missing}
+                'filter_pages': sum(1 for u in self.pages if '?' in u), 'missing': missing,
+                'untranslated': untranslated}
 
 
 def main():
@@ -213,6 +242,10 @@ def main():
     size = sum(p.stat().st_size for p in args.out.rglob('*') if p.is_file())
     print(f"static site: {args.out} · pages {report['pages']} (filter pages {report['filter_pages']}) · files "
           f"{report['files']} · redirects {report['redirects']} · {size / 1e6:.1f} MB")
+    print(f"English pages: {sum(u.startswith('/en/') for u in ex.pages)} · untranslated text: {len(report['untranslated'])}")
+    if report['untranslated']:
+        print('untranslated English text:', *report['untranslated'][:20], sep='\n  ')
+        raise SystemExit(1)
     if report['missing']:
         print('missing:', *report['missing'][:20], sep='\n  ')
         raise SystemExit(1)

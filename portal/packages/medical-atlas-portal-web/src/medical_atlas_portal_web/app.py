@@ -12,7 +12,7 @@ import json
 import os
 from pathlib import Path
 
-from flask import Flask, abort, render_template, request, send_from_directory
+from flask import Flask, abort, current_app, render_template, request, send_from_directory
 
 REPO = Path(os.environ.get('MEDICAL_ATLAS_ROOT', Path(__file__).resolve().parents[5]))
 PORTAL_PORT = 8875
@@ -81,14 +81,11 @@ def load_site_info() -> dict:
     return info if (info.get('lab') or info.get('pi')) else {}
 
 
-MOUNTED: set[str] = set()
-
-
 def domain_url(d: dict) -> str:
     env = os.environ.get(f"MEDICAL_ATLAS_URL_{d['id'].upper()}")
     if env:
         return env.rstrip('/') + '/'
-    if d['id'] in MOUNTED:
+    if d['id'] in current_app.config.get('MOUNTED_DOMAINS', ()):
         return f"{request.script_root}/{d['id']}/"
     host = request.host.rsplit(':', 1)[0] if request.host.count(':') == 1 else request.host.split(']')[0] + ']'
     return f"{request.scheme}://{host}:{d['port']}/"
@@ -105,19 +102,24 @@ def mount_domains(app: Flask) -> list[str]:
             mod = import_module(d['module'])
         except ImportError:
             continue
-        mounts[f"/{d['id']}"] = mod.create_app()
+        from .localization import english_catalog
+        localize = english_catalog(d['id']).localize if app.config.get('ATLAS_LANGUAGE') == 'en' else lambda value: value
+        mounts[f"/{d['id']}"] = mod.create_app({'ATLAS_LOCALIZE': localize})
     if mounts:
         app.wsgi_app = DispatcherMiddleware(app.wsgi_app, mounts)
     return [k.strip('/') for k in mounts]
 
 
-def create_app(config: dict | None = None, mount: bool = True) -> Flask:
+def create_app(config: dict | None = None, mount: bool = True, language: str = 'ko') -> Flask:
     app = Flask(__name__)
     if config:
         app.config.update(config)
-    MOUNTED.clear()
-    if mount:
-        MOUNTED.update(mount_domains(app))
+    from .localization import BilingualApplication, english_catalog
+    catalog = english_catalog()
+    localize = catalog.localize if language == 'en' else lambda value: value
+    app.config['ATLAS_LOCALIZE'] = localize
+    app.config['ATLAS_LANGUAGE'] = language
+    app.config['MOUNTED_DOMAINS'] = set(mount_domains(app)) if mount else set()
     domains = [load_domain(d) for d in DOMAINS]
     by_id = {d['id']: d for d in domains}
 
@@ -145,13 +147,16 @@ def create_app(config: dict | None = None, mount: bool = True) -> Flask:
     @app.get('/<domain>')
     def domain_root(domain):
         from flask import redirect
-        if domain not in MOUNTED:
+        if domain not in app.config['MOUNTED_DOMAINS']:
             abort(404)
         return redirect(f'{request.script_root}/{domain}/', code=301)
 
     @app.get('/health')
     def health():
         return {'status': 'ok', 'site': 'medical_atlas_portal_web', 'domains': [d['id'] for d in domains],
-                'mounted': sorted(MOUNTED)}
+                'mounted': sorted(app.config['MOUNTED_DOMAINS'])}
 
+    if language == 'ko':
+        english = create_app(config, mount=mount, language='en')
+        app.wsgi_app = BilingualApplication(app.wsgi_app, english.wsgi_app, catalog)
     return app

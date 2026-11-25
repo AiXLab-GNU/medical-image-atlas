@@ -1,0 +1,12 @@
+/* The language switch is part of the header so it is visible when a page opens. */
+.atlas-language{position:static;display:inline-flex;align-items:center;gap:4px;flex:none;margin-left:auto;padding:3px;border:1px solid #cbd5e1;border-radius:999px;background:#fff;color:#0f172a;font:500 .9rem/1.4 system-ui,sans-serif}
+.atlas-language a{display:flex;align-items:center;justify-content:center;min-height:40px;padding:2px 12px;border-radius:999px;color:inherit;text-decoration:none;white-space:nowrap}
+.atlas-language a[aria-current]{background:#0f172a;color:#fff}
+.atlas-language a:hover{background:#eef1f7;color:#0f172a}
+.atlas-language a[aria-current]:hover{background:#1e293b;color:#fff}
+.atlas-language a:focus-visible{outline:3px solid #7c3aed;outline-offset:2px}
+body .hub-top .hub-inner{height:auto;min-height:62px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.atlas-bar .atlas-bar-inner{height:auto;min-height:44px;flex-wrap:wrap;row-gap:6px;padding-top:6px;padding-bottom:6px}
+@media(max-width:1100px){.hub-top .hub-tag{display:none}}
+@media(max-width:680px){.atlas-bar .atlas-bar-home{flex:1}.atlas-bar .atlas-bar-switch{order:3;flex:1 0 100%;justify-content:center}.atlas-language{font-size:.85rem}.atlas-language a{padding-left:10px;padding-right:10px}}
+@media print{.atlas-language{display:none}}

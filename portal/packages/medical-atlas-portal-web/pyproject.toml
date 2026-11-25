@@ -17,4 +17,4 @@ medical-atlas-export-static = "medical_atlas_portal_web.export_static:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-medical_atlas_portal_web = ["templates/*.html", "static/*.css", "static/*.js", "data/*.json"]
+medical_atlas_portal_web = ["templates/*.html", "static/*.css", "static/*.js", "data/*.json", "data/english/*.json"]

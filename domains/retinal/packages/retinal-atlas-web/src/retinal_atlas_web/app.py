@@ -14,7 +14,7 @@ from pathlib import Path
 from .code_links import PACKAGES, CodeIndex, default_packages_root
 from .disease_links import measurement_diseases
 from .modality_views import DEPTH_BANDS, MODALITY_VIEWS
-from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file
+from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file, current_app, has_app_context
 
 
 IMAGE_FILES = {
@@ -352,6 +352,9 @@ def matches(item: dict, query: str) -> bool:
         return True
     haystack = ' '.join([item['name'], item['name_en'], item['abbr'], item['definition'],
                          item.get('location', '')]).lower()
+    if has_app_context() and (localize := current_app.config.get('ATLAS_LOCALIZE')):
+        fields = [item['name'], item['name_en'], item['abbr'], item['definition'], item.get('location', '')]
+        haystack += ' ' + ' '.join(localize(fields)).lower()
     return all(token in haystack for token in query.lower().split())
 
 

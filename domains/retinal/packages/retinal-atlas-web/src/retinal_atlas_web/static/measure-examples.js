@@ -2,6 +2,7 @@
 // Measurement display examples: modality tabs → region chips → one card per image,
 // with one switch per measurement layer.
 (() => {
+  const english = document.documentElement.lang === 'en';
   const root = document.getElementById('examples');
   if (!root) return;
   const cards = [...root.querySelectorAll('.mx-card')];
@@ -27,10 +28,11 @@
     const boxes = [...card.querySelectorAll('input[data-layer]')];
     const n = boxes.filter(b => b.checked).length;
     const progress = card.querySelector('[data-progress]');
-    if (progress) progress.textContent = `${n} / ${boxes.length} 실행`;
+    if (progress) progress.textContent = (english ? `${n} / ${boxes.length} enabled` : `${n} / ${boxes.length} 실행`);
     const tag = card.querySelector('[data-stage-tag]');
     if (tag) {
-      tag.textContent = n ? `측정 ${n}개 표시 중` : '원 영상 · 실행 전';
+      tag.textContent = english ? (n ? `${n} measurements displayed` : 'Original image · no measurements')
+        : (n ? `측정 ${n}개 표시 중` : '원 영상 · 실행 전');
       tag.classList.toggle('on', n > 0);
     }
   }

@@ -34,3 +34,15 @@
 
 GitHub Pages: `.github/workflows/pages.yml`이 main에 push할 때마다(또는 Actions 탭에서 수동 실행) 정적 버전을 만들어 게시한다.
 처음 한 번 저장소 Settings → Pages → Build and deployment → Source를 **GitHub Actions**로 바꾼다.
+
+## 영어 미러
+
+같은 포트에서 `/en/`·`/en/retinal/`·`/en/mammography/`·`/en/pathology/`를 제공한다.
+번역은 포털 패키지 `data/english/*.json`의 수작업 카탈로그로 관리하며 외부 번역 서비스에 요청하지 않는다.
+`contexts.json`은 망막의 유두(optic disc)와 유방의 유두(nipple)처럼 영역에 따라 다른 뜻을 보정한다.
+한국어 원문 데이터는 그대로 렌더링하고 최종 화면 문구·검색 필드·뷰어 표시 데이터만 영어화한다.
+영어 SVG 모식도는 표시할 때 변환하지만 원본 공급자 영상과 다운로드 코드는 바꾸지 않는다.
+
+`medical-atlas-export-static`은 한국어 844쪽·영어 844쪽을 함께 만들고 자원은 가능한 한 같은 파일을 가리킨다.
+영어 본문·접근성 라벨·모식도에서 한국어가 남으면 종료 코드 1로 실패한다(언어 선택의 `한국어`, 원본 코드 목록은 제외).
+원본 영상에 인쇄된 저자 라벨은 원문 그대로다. 자세한 검사는 [유지보수 절차](docs/protocols/50_english_mirror_localization_runbook_v01_ko.md)를 따른다.

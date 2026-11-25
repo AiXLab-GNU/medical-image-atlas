@@ -27,3 +27,11 @@ systemd-run --user --unit=medical-atlas-portal-web --property=Restart=on-failure
 
 정적 버전: `.venv/bin/medical-atlas-export-static [--out 경로]`(기본 `<저장소>/build/static_site/`, 약 10초·75 MB). 같은 앱을 프로세스 안에서 돌려 `/`부터 모든 링크를 따라가 저장하고,
 링크를 상대 경로로 바꾸며, 필터 조합 페이지·브라우저 검색(`static/static_site.js`)·`.nojekyll`·`404.html`을 넣는다. 닿지 않는 주소가 있으면 실패한다(`tests/test_export_static.py`).
+
+## Languages
+
+The portal serves the existing Korean atlas at `/` and the complete English mirror at `/en/`.
+The language switch retains the page, query parameters and fragment. English source catalogs live in
+`src/medical_atlas_portal_web/data/english/`; `contexts.json` contains domain-specific terminology overrides.
+The static exporter builds both trees, shares image/code assets, and fails if visible English prose or generated
+schematic labels still contain Korean. Original code listings and provider-image lettering remain unchanged.

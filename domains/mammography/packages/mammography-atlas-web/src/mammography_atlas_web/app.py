@@ -10,7 +10,7 @@ import os
 import re
 from pathlib import Path
 
-from flask import Flask, Response, abort, jsonify, render_template, request, send_file
+from flask import Flask, Response, abort, jsonify, render_template, request, send_file, current_app, has_app_context
 
 from .code_links import PACKAGES, CodeIndex, default_packages_root
 from .disease_links import measurement_diseases
@@ -234,6 +234,9 @@ def matches(item: dict, query: str) -> bool:
     if not query:
         return True
     haystack = ' '.join([item['name'], item['name_en'], item['abbr'], item['definition'], item.get('location', '')]).lower()
+    if has_app_context() and (localize := current_app.config.get('ATLAS_LOCALIZE')):
+        fields = [item['name'], item['name_en'], item['abbr'], item['definition'], item.get('location', '')]
+        haystack += ' ' + ' '.join(localize(fields)).lower()
     return all(token in haystack for token in query.lower().split())
 
 
