@@ -5,7 +5,7 @@
   "affiliation": "경상국립대학교",
   "pi": "Jin Hyun Kim, PhD",
   "pi_title": "연구책임자",
-  "intro": "AiXLab이 안과·유방·전립선 영상의 해부 구조, 병변, 측정 항목과 질병의 관계를 공개 영상(CC BY·CC0)과 공개 측정 코드로 정리한 연구 자료입니다.",
+  "intro": "AiXLab이 안과·유방·전립선 영상의 임상 특징을 정의하고(정성 지표) 재는 코드를 만들어(정량 지표) 질병과 연결한 연구 자료입니다. 이 기준 위에서 판단 근거를 임상 특징으로 설명하는 진단 AI를 개발합니다.",
   "url": "",
   "repo": "https://github.com/AiXLab-GNU/medical-image-atlas",
   "doi": "",

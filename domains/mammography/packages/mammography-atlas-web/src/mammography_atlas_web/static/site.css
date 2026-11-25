@@ -827,14 +827,21 @@ dialog.modal::backdrop{background:rgba(10,15,20,.75)}
 .dz-links li{margin:2px 0}
 
 /* bar above the domain header: portal (3개 영역 홈) and the other domains */
-.atlas-bar{background:#0f172a;color:#cbd5e1;font-size:.8rem}
-.atlas-bar-inner{max-width:1240px;margin:0 auto;padding:0 24px;height:34px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.atlas-bar a{color:#e2e8f0;text-decoration:none}
-.atlas-bar-home{display:flex;align-items:center;gap:7px;font-weight:700}
-.atlas-bar-home svg{width:18px;height:18px}
-.atlas-bar-home span{font-weight:500;color:#94a3b8;border:1px solid #334155;border-radius:999px;padding:0 8px;margin-left:2px}
-.atlas-bar nav{display:flex;gap:4px}
-.atlas-bar nav a{padding:3px 10px;border-radius:999px;color:#cbd5e1}
-.atlas-bar nav a:hover{background:#1e293b}
-.atlas-bar nav a[aria-current]{background:#e2e8f0;color:#0f172a;font-weight:700}
-@media (max-width:600px){.atlas-bar-inner{padding:0 16px}.atlas-bar-home span{display:none}}
+.atlas-bar{background:linear-gradient(90deg,#0b1220,#18233d);color:#cbd5e1;font-size:.82rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.atlas-bar-inner{max-width:1320px;margin:0 auto;padding:0 28px;height:44px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.atlas-bar a{text-decoration:none}
+.atlas-bar-home{display:flex;align-items:center;gap:10px;color:#f8fafc;min-width:0}
+.atlas-bar-logo{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);flex:none}
+.atlas-bar-logo svg{width:20px;height:20px}
+.atlas-bar-name{font-weight:800;font-size:.92rem;letter-spacing:-.01em;white-space:nowrap}
+.atlas-bar-sub{color:#94a3b8;font-weight:500;padding-left:10px;border-left:1px solid rgba(255,255,255,.16);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.atlas-bar-home:hover .atlas-bar-name{text-decoration:underline;text-underline-offset:3px}
+.atlas-bar-switch{display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);flex:none}
+.atlas-bar-switch a{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;color:#cbd5e1;font-weight:600;transition:background .12s,color .12s}
+.atlas-bar-switch a:hover{background:rgba(255,255,255,.1);color:#fff}
+.atlas-bar-switch a[aria-current]{background:#fff;color:#0f172a;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.atlas-bar-switch i{width:7px;height:7px;border-radius:50%;background:#94a3b8}
+.atlas-bar-switch .d-retinal i{background:#e0794f}.atlas-bar-switch .d-mammography i{background:#a78bfa}.atlas-bar-switch .d-pathology i{background:#c084fc}
+.atlas-bar-switch a[aria-current].d-retinal i{background:#c4562e}.atlas-bar-switch a[aria-current].d-mammography i{background:#7c3aed}.atlas-bar-switch a[aria-current].d-pathology i{background:#9b7fc4}
+@media (max-width:720px){.atlas-bar-sub{display:none}}
+@media (max-width:600px){.atlas-bar-inner{padding:0 16px;height:42px}.atlas-bar-switch a{padding:4px 9px}}
